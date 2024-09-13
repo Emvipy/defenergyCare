@@ -1,0 +1,176 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'modal_info_duplicar_model.dart';
+export 'modal_info_duplicar_model.dart';
+
+class ModalInfoDuplicarWidget extends StatefulWidget {
+  const ModalInfoDuplicarWidget({super.key});
+
+  @override
+  State<ModalInfoDuplicarWidget> createState() =>
+      _ModalInfoDuplicarWidgetState();
+}
+
+class _ModalInfoDuplicarWidgetState extends State<ModalInfoDuplicarWidget> {
+  late ModalInfoDuplicarModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => ModalInfoDuplicarModel());
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: const AlignmentDirectional(0.0, -0.3),
+      child: Container(
+        width: 350.0,
+        height: 320.0,
+        decoration: BoxDecoration(
+          color: const Color(0xDAFFFFFF),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 5.0,
+              color: Color(0x3B1D2429),
+              offset: Offset(
+                0.0,
+                -3.0,
+              ),
+            )
+          ],
+          borderRadius: BorderRadius.circular(10.0),
+          border: Border.all(
+            color: const Color(0xE5FFFFFF),
+            width: 2.0,
+          ),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Flexible(
+                    child: Align(
+                      alignment: const AlignmentDirectional(1.0, 0.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.close_rounded,
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          size: 24.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Flexible(
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'o4tqlhv8' /* Utiliza esta opción para dupli... */,
+                      ),
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 0.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Flexible(
+                    child: Text(
+                      FFLocalizations.of(context).getText(
+                        'em717f2i' /* Si esta opción no está disponi... */,
+                      ),
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              child: Align(
+                alignment: const AlignmentDirectional(0.0, 1.0),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      Navigator.pop(context);
+                    },
+                    text: FFLocalizations.of(context).getText(
+                      'c49yuwpu' /* Entendido */,
+                    ),
+                    options: FFButtonOptions(
+                      width: 300.0,
+                      height: 40.0,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                      iconPadding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: FlutterFlowTheme.of(context).primary,
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                                letterSpacing: 0.0,
+                              ),
+                      elevation: 3.0,
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "542834776526",
+    "project_id": "defenergyapp-706fc",
+    "storage_bucket": "defenergyapp-706fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542834776526:android:60a4f557774a9e0d0d339f",
+        "android_client_info": {
+          "package_name": "com.defenergyapp.def"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHrz0_T46RHwaTt491fpP3DDxXqTJQwVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
