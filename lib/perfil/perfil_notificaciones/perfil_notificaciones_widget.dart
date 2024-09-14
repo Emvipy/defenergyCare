@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/perfil/modal_notificacion/modal_notificacion_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -174,6 +175,7 @@ class _PerfilNotificacionesWidgetState
                                           safeSetState(() =>
                                               _model.switchValue = newValue);
                                           if (newValue) {
+                                            await actions.getPushPermission();
                                             _model.apiResultm8y =
                                                 await PerfilActivaPushCall.call(
                                               authToken: FFAppState().authToken,

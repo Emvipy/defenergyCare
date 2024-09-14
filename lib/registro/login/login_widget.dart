@@ -450,13 +450,15 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       .emailAddressTextController
                                                       .text,
                                                 );
+                                                _model.tokenPush =
+                                                    await actions.getFCMToken();
                                                 _model.apiloginCopy =
                                                     await LoginCall.call(
                                                   email: _model
                                                       .emailAddressTextController
                                                       .text,
                                                   password: _model.passCopy,
-                                                  firebase: currentJwtToken,
+                                                  firebase: _model.tokenPush,
                                                 );
 
                                                 if ((_model.apiloginCopy

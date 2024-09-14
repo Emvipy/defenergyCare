@@ -17,6 +17,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // Stores action output result for [Custom Action - encodeBase64] action in Button widget.
   String? passCopy;
+  // Stores action output result for [Custom Action - getFCMToken] action in Button widget.
+  String? tokenPush;
   // Stores action output result for [Backend Call - API (login)] action in Button widget.
   ApiCallResponse? apiloginCopy;
 
