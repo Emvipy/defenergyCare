@@ -1,9 +1,19 @@
 import '/backend/api_requests/api_calls.dart';
+import '/empresa_encuestas/modal_noticia_creada/modal_noticia_creada_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'noticias_crea_widget.dart' show NoticiasCreaWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class NoticiasCreaModel extends FlutterFlowModel<NoticiasCreaWidget> {
   ///  Local state fields for this page.
@@ -115,7 +125,7 @@ class NoticiasCreaModel extends FlutterFlowModel<NoticiasCreaWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

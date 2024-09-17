@@ -2,12 +2,15 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emp_detalle_preguntas_model.dart';
 export 'emp_detalle_preguntas_model.dart';
@@ -98,7 +101,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -110,7 +113,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -119,8 +122,8 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                           child: Text(
                             valueOrDefault<String>(
                               FFLocalizations.of(context).languageCode == 'en'
-                                  ? widget.tituloEn
-                                  : widget.tituloEs,
+                                  ? widget!.tituloEn
+                                  : widget!.tituloEs,
                               'Encuesta',
                             ),
                             textAlign: TextAlign.center,
@@ -140,7 +143,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -162,7 +165,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                   ),
                   FutureBuilder<ApiCallResponse>(
                     future: EmpresaListadoPreguntasCall.call(
-                      encuestaId: widget.encuestaId,
+                      encuestaId: widget!.encuestaId,
                       authToken: FFAppState().authToken,
                     ),
                     builder: (context, snapshot) {
@@ -190,7 +193,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                           ).toList();
 
                           return ListView.separated(
-                            padding: const EdgeInsets.fromLTRB(
+                            padding: EdgeInsets.fromLTRB(
                               0,
                               0,
                               0,
@@ -199,12 +202,12 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: childPreguntas.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 15.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 15.0),
                             itemBuilder: (context, childPreguntasIndex) {
                               final childPreguntasItem =
                                   childPreguntas[childPreguntasIndex];
                               return Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
                                   decoration: BoxDecoration(
@@ -216,7 +219,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 5.0, 5.0, 5.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -258,7 +261,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                                           '1')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -332,7 +335,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                                           '2')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -406,7 +409,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                                           '3')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -480,7 +483,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                                           '4')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -554,7 +557,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
                       );
                     },
                   ),
-                ].addToEnd(const SizedBox(height: 100.0)),
+                ].addToEnd(SizedBox(height: 100.0)),
               ),
             ),
             if (!(isWeb
@@ -563,7 +566,7 @@ class _EmpDetallePreguntasWidgetState extends State<EmpDetallePreguntasWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 2,
                 ),
               ),

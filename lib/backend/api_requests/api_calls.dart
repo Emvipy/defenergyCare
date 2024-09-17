@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -20,13 +21,13 @@ class SignUpCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "email": "$email",
-  "password": "$password",
-  "nombre": "$nombre",
-  "apellidos": "$apellidos",
-  "perfil": $perfilId,
-  "date": "$fecha",
-  "dispositivo": "$dispositivo"
+  "email": "${email}",
+  "password": "${password}",
+  "nombre": "${nombre}",
+  "apellidos": "${apellidos}",
+  "perfil": ${perfilId},
+  "date": "${fecha}",
+  "dispositivo": "${dispositivo}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signUp',
@@ -77,7 +78,7 @@ class SignUpCancelaAltaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:1KdJYapv/user/cancela_alta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -97,7 +98,7 @@ class LegalCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'legal',
-      apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/tyc/$tycId',
+      apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/tyc/${tycId}',
       callType: ApiCallType.GET,
       headers: {},
       params: {
@@ -148,7 +149,7 @@ class SignUpReenviaCodeCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:1KdJYapv/user/reenvia_code',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -173,11 +174,11 @@ class SignUpCreaEnfermedadCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "covid": "$covid",
-  "fibro": "$fibro",
-  "em": "$em",
-  "otras": "$otras",
-  "into": "$into"
+  "covid": "${covid}",
+  "fibro": "${fibro}",
+  "em": "${em}",
+  "otras": "${otras}",
+  "into": "${into}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signUp crea enfermedad',
@@ -185,7 +186,7 @@ class SignUpCreaEnfermedadCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/crea_enfermedad',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -224,11 +225,11 @@ class SignUpCreaMixEnfermedadCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "email": "$email",
-  "id_enfermedad": $idEnfemedad,
-  "enfermedad": "$enfermedad",
-  "session_id": $sessionId,
-  "leido": "$leido"
+  "email": "${email}",
+  "id_enfermedad": ${idEnfemedad},
+  "enfermedad": "${enfermedad}",
+  "session_id": ${sessionId},
+  "leido": "${leido}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signUp crea mix enfermedad',
@@ -260,7 +261,7 @@ class SignUpBorraMixEnfermedadCall {
     return ApiManager.instance.makeApiCall(
       callName: 'signUp borra mix enfermedad',
       apiUrl:
-          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/mix_enfermedad/$mixEnfermedadId',
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/mix_enfermedad/${mixEnfermedadId}',
       callType: ApiCallType.DELETE,
       headers: {},
       params: {
@@ -283,8 +284,8 @@ class SignUpBorraMixEnfermedadAtrasCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "session_id": $sessionId,
-  "user_id": $userId
+  "session_id": ${sessionId},
+  "user_id": ${userId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signUp borra mix enfermedad atras',
@@ -435,38 +436,38 @@ class EditaDatosMedicosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "year_covid": "$yearCovid",
-  "veces_covid": "$vecesCovid",
-  "familiar_covid": "$familiarCovid",
-  "grado_covid": "$gradoCovid",
-  "otras_enfermedades": "$otrasEnfermedades",
-  "evento_fibro": "$eventoFibro",
-  "tiempo_fibro": "$tiempoFibro",
-  "empeora_sintoma_fibro": "$empeoraSintomaFibro",
-  "familiar_fibro": "$familiarFibro",
-  "grado_fibro": "$gradoFibro",
-  "tiempo_em": "$tiempoEm",
-  "criterios_em": "$criteriosEm",
-  "evento_em": "$eventoEm",
-  "familiar_em": "$familiarEm",
-  "grado_em": "$gradoEm",
-  "nombre_auto": "$nombreAuto",
-  "tiempo_auto": "$tiempoAuto",
-  "familiar_auto": "$familiarAuto",
-  "grado_auto": "$gradoAuto",
-  "intestino": "$intestino",
-  "tiempo_intestino": "$tiempoIntestino",
-  "familiar_into": "$familiarInto",
-  "grado_fam_into": "$gradoFamInto",
-  "into1": "$into1",
-  "tiempo_into1": "$tiempoInto1",
-  "into2": "$into2",
-  "tiempo_into2": "$tiempoInto2",
-  "into3": "$into3",
-  "tiempo_into3": "$tiempoInto3",
-  "into4": "$into4",
-  "tiempo_into4": "$tiempoInto4",
-  "tiene_auto": "$tieneAuto"
+  "year_covid": "${yearCovid}",
+  "veces_covid": "${vecesCovid}",
+  "familiar_covid": "${familiarCovid}",
+  "grado_covid": "${gradoCovid}",
+  "otras_enfermedades": "${otrasEnfermedades}",
+  "evento_fibro": "${eventoFibro}",
+  "tiempo_fibro": "${tiempoFibro}",
+  "empeora_sintoma_fibro": "${empeoraSintomaFibro}",
+  "familiar_fibro": "${familiarFibro}",
+  "grado_fibro": "${gradoFibro}",
+  "tiempo_em": "${tiempoEm}",
+  "criterios_em": "${criteriosEm}",
+  "evento_em": "${eventoEm}",
+  "familiar_em": "${familiarEm}",
+  "grado_em": "${gradoEm}",
+  "nombre_auto": "${nombreAuto}",
+  "tiempo_auto": "${tiempoAuto}",
+  "familiar_auto": "${familiarAuto}",
+  "grado_auto": "${gradoAuto}",
+  "intestino": "${intestino}",
+  "tiempo_intestino": "${tiempoIntestino}",
+  "familiar_into": "${familiarInto}",
+  "grado_fam_into": "${gradoFamInto}",
+  "into1": "${into1}",
+  "tiempo_into1": "${tiempoInto1}",
+  "into2": "${into2}",
+  "tiempo_into2": "${tiempoInto2}",
+  "into3": "${into3}",
+  "tiempo_into3": "${tiempoInto3}",
+  "into4": "${into4}",
+  "tiempo_into4": "${tiempoInto4}",
+  "tiene_auto": "${tieneAuto}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'edita datos medicos',
@@ -474,7 +475,7 @@ class EditaDatosMedicosCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/edita_info_medica',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -519,31 +520,31 @@ class SignUpFinalizaCopyCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "user_id": $userId,
-  "genero": "$genero",
-  "fumador": "$fumador",
-  "alcohol": "$alcohol",
-  "peso": $peso,
-  "altura": $altura,
-  "year_covid": "$yearCovid",
-  "veces_covid": "$vecesCovid",
-  "familiar_covid": "$familiarCovid",
-  "grado_covid": "$gradoCovid",
-  "otras_enfermedades": "$otrasEnfermedades",
-  "evento_fibro": "$eventoFibro",
-  "tiempo_fibro": "$tiempoFibro",
-  "empeora_sintoma_fibro": "$empeoraSintomaFibro",
-  "familiar_fibro": "$familiarFibro",
-  "grado_fibro": "$gradoFibro",
-  "tiempo_em": "$tiempoEm",
-  "criterios_em": "$criteriosEm",
-  "evento_em": "$eventoEm",
-  "familiar_em": "$familiarEm",
-  "grado_em": "$gradoEm",
-  "nombre_auto": "$nombreAuto",
-  "tiempo_auto": "$tiempoAuto",
-  "familiar_auto": "$familiarAuto",
-  "grado_auto": "$gradoAuto"
+  "user_id": ${userId},
+  "genero": "${genero}",
+  "fumador": "${fumador}",
+  "alcohol": "${alcohol}",
+  "peso": ${peso},
+  "altura": ${altura},
+  "year_covid": "${yearCovid}",
+  "veces_covid": "${vecesCovid}",
+  "familiar_covid": "${familiarCovid}",
+  "grado_covid": "${gradoCovid}",
+  "otras_enfermedades": "${otrasEnfermedades}",
+  "evento_fibro": "${eventoFibro}",
+  "tiempo_fibro": "${tiempoFibro}",
+  "empeora_sintoma_fibro": "${empeoraSintomaFibro}",
+  "familiar_fibro": "${familiarFibro}",
+  "grado_fibro": "${gradoFibro}",
+  "tiempo_em": "${tiempoEm}",
+  "criterios_em": "${criteriosEm}",
+  "evento_em": "${eventoEm}",
+  "familiar_em": "${familiarEm}",
+  "grado_em": "${gradoEm}",
+  "nombre_auto": "${nombreAuto}",
+  "tiempo_auto": "${tiempoAuto}",
+  "familiar_auto": "${familiarAuto}",
+  "grado_auto": "${gradoAuto}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signUp finaliza Copy',
@@ -672,16 +673,16 @@ class SignUpFinalizaEmpresaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "user_id": $userId,
-  "nif_cif": "$nifCif",
-  "profesion": "$profesion",
-  "num_colegiado": "$numColegiado",
-  "direccion": "$direccion",
-  "cp": "$cp",
-  "ciudad": "$ciudad",
-  "tipo_profesional": "$tipoProfesional",
-  "nombre_empresa": "$nombreEmpresa",
-  "email_corporativo": "$emailCorporativo"
+  "user_id": ${userId},
+  "nif_cif": "${nifCif}",
+  "profesion": "${profesion}",
+  "num_colegiado": "${numColegiado}",
+  "direccion": "${direccion}",
+  "cp": "${cp}",
+  "ciudad": "${ciudad}",
+  "tipo_profesional": "${tipoProfesional}",
+  "nombre_empresa": "${nombreEmpresa}",
+  "email_corporativo": "${emailCorporativo}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signUp finaliza empresa',
@@ -710,9 +711,9 @@ class LoginCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "email": "$email",
-  "password": "$password",
-  "firebase": "$firebase"
+  "email": "${email}",
+  "password": "${password}",
+  "firebase": "${firebase}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'login',
@@ -781,6 +782,10 @@ class LoginCall {
         response,
         r'''$.user1.avatar.url''',
       ));
+  static String? validado(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.user1.user_empresa_validado''',
+      ));
 }
 
 class UserIndividualCall {
@@ -792,7 +797,7 @@ class UserIndividualCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/individual',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -1024,7 +1029,7 @@ class DiarioCreaCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/crea',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -1056,20 +1061,20 @@ class DiarioUnoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "nivel_energia": $nivelEnergia,
-  "manana": "$manana",
-  "tarde": "$tarde",
-  "noche": "$noche",
-  "fatiga": $fatiga,
-  "editando": "$editando"
+  "diario_id": ${diarioId},
+  "nivel_energia": ${nivelEnergia},
+  "manana": "${manana}",
+  "tarde": "${tarde}",
+  "noche": "${noche}",
+  "fatiga": ${fatiga},
+  "editando": "${editando}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Uno',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p1',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1144,20 +1149,20 @@ class DiarioDosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "dolor": $dolor,
-  "migrana": $migrana,
-  "afectacion": $afectacion,
-  "editando": "$editando",
-  "dolor_txt": "$dolorTxt",
-  "migrana_txt": "$migranaTxt"
+  "diario_id": ${diarioId},
+  "dolor": ${dolor},
+  "migrana": ${migrana},
+  "afectacion": ${afectacion},
+  "editando": "${editando}",
+  "dolor_txt": "${dolorTxt}",
+  "migrana_txt": "${migranaTxt}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Dos',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p2',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1240,27 +1245,27 @@ class DiarioCuatroCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "trabajo": "$trabajo",
-  "estudios": "$estudios",
-  "familia": "$familia",
-  "hogar": "$hogar",
-  "social": "$social",
-  "ejercicio": "$ejercicio",
-  "caminar": "$caminar",
-  "leer": "$leer",
-  "higiene": "$higiene",
-  "otros": "$otros",
-  "contador": $contador,
-  "editando": "$editando",
-  "cama": "$cama"
+  "diario_id": ${diarioId},
+  "trabajo": "${trabajo}",
+  "estudios": "${estudios}",
+  "familia": "${familia}",
+  "hogar": "${hogar}",
+  "social": "${social}",
+  "ejercicio": "${ejercicio}",
+  "caminar": "${caminar}",
+  "leer": "${leer}",
+  "higiene": "${higiene}",
+  "otros": "${otros}",
+  "contador": ${contador},
+  "editando": "${editando}",
+  "cama": "${cama}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Cuatro',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p3',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1379,33 +1384,33 @@ class DiarioTresCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "cefalea": "$cefalea",
-  "garganta": "$garganta",
-  "hombroIzq": "$hombroIzq",
-  "hombroDer": "$hombroDer",
-  "pecho": "$pecho",
-  "codoIzq": "$codoIzq",
-  "codoDer": "$codoDer",
-  "abdomen": "$abdomen",
-  "munecaIzqF": "$munecaIzqF",
-  "munecaDerF": "$munecaDerF",
-  "musloIzq": "$musloIzq",
-  "musloDer": "$musloDer",
-  "rodillaIzq": "$rodillaIzq",
-  "rodillaDer": "$rodillaDer",
-  "tobilloIzq": "$tobilloIzq",
-  "tobilloDer": "$tobilloDer",
-  "cervical": "$cervical",
-  "espalda": "$espalda",
-  "lumbar": "$lumbar",
-  "munecaIzqB": "$munecaIzqB",
-  "munecaDerB": "$munecaDerB",
-  "gluteoIzq": "$gluteoIzq",
-  "gluteoDer": "$gluteoDer",
-  "contador": $contador,
-  "editando": "$editando",
-  "otro": "$otro"
+  "diario_id": ${diarioId},
+  "cefalea": "${cefalea}",
+  "garganta": "${garganta}",
+  "hombroIzq": "${hombroIzq}",
+  "hombroDer": "${hombroDer}",
+  "pecho": "${pecho}",
+  "codoIzq": "${codoIzq}",
+  "codoDer": "${codoDer}",
+  "abdomen": "${abdomen}",
+  "munecaIzqF": "${munecaIzqF}",
+  "munecaDerF": "${munecaDerF}",
+  "musloIzq": "${musloIzq}",
+  "musloDer": "${musloDer}",
+  "rodillaIzq": "${rodillaIzq}",
+  "rodillaDer": "${rodillaDer}",
+  "tobilloIzq": "${tobilloIzq}",
+  "tobilloDer": "${tobilloDer}",
+  "cervical": "${cervical}",
+  "espalda": "${espalda}",
+  "lumbar": "${lumbar}",
+  "munecaIzqB": "${munecaIzqB}",
+  "munecaDerB": "${munecaDerB}",
+  "gluteoIzq": "${gluteoIzq}",
+  "gluteoDer": "${gluteoDer}",
+  "contador": ${contador},
+  "editando": "${editando}",
+  "otro": "${otro}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Tres',
@@ -1413,7 +1418,7 @@ class DiarioTresCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p3_dolores',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1597,40 +1602,40 @@ class DiarioCincoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "insomnio": $insomnio,
-  "nauseas": $nauseas,
-  "vomitos": $vomitos,
-  "diarrea": $diarrea,
-  "fiebre": $fiebre,
-  "frio": $frio,
-  "tos": $tos,
-  "dif_respirar": $difRespirar,
-  "luz": $luz,
-  "ruido": $ruido,
-  "olores": $olores,
-  "cognitiva": $cognitiva,
-  "niebla_mental": $nieblaMental,
-  "vision_borrosa": $visionBorrosa,
-  "deb_muscular": $debMuscular,
-  "espasmos_musc": $espasmosMusc,
-  "ortostatica": $ortostatica,
-  "post_esfuerzo": $postEsfuerzo,
-  "palpitaciones": $palpitaciones,
-  "olfato": $olfato,
-  "gusto": $gusto,
-  "tristeza": $tristeza,
-  "ansiedad": $ansiedad,
-  "cefalea": $cefalea,
-  "articular": $articular,
-  "editando": "$editando"
+  "diario_id": ${diarioId},
+  "insomnio": ${insomnio},
+  "nauseas": ${nauseas},
+  "vomitos": ${vomitos},
+  "diarrea": ${diarrea},
+  "fiebre": ${fiebre},
+  "frio": ${frio},
+  "tos": ${tos},
+  "dif_respirar": ${difRespirar},
+  "luz": ${luz},
+  "ruido": ${ruido},
+  "olores": ${olores},
+  "cognitiva": ${cognitiva},
+  "niebla_mental": ${nieblaMental},
+  "vision_borrosa": ${visionBorrosa},
+  "deb_muscular": ${debMuscular},
+  "espasmos_musc": ${espasmosMusc},
+  "ortostatica": ${ortostatica},
+  "post_esfuerzo": ${postEsfuerzo},
+  "palpitaciones": ${palpitaciones},
+  "olfato": ${olfato},
+  "gusto": ${gusto},
+  "tristeza": ${tristeza},
+  "ansiedad": ${ansiedad},
+  "cefalea": ${cefalea},
+  "articular": ${articular},
+  "editando": "${editando}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Cinco',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p5',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1879,21 +1884,21 @@ class DiarioSeisCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "desencadenante": "$desencadenante",
-  "solucion": "$solucion",
-  "med1": "$med1",
-  "med2": "$med2",
-  "vit": "$vit",
-  "contador": $contador,
-  "editando": "$editando"
+  "diario_id": ${diarioId},
+  "desencadenante": "${desencadenante}",
+  "solucion": "${solucion}",
+  "med1": "${med1}",
+  "med2": "${med2}",
+  "vit": "${vit}",
+  "contador": ${contador},
+  "editando": "${editando}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Seis',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p6',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -1967,8 +1972,8 @@ class DiarioBuscadorMedicamentoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idioma": "$idioma",
-  "nombre": "$nombre"
+  "idioma": "${idioma}",
+  "nombre": "${nombre}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario buscador medicamento',
@@ -2027,7 +2032,7 @@ class DiarioUltimosMedsCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/ultimos_meds',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -2171,29 +2176,29 @@ class DiarioSieteCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "med1": "$med1",
-  "con_alivio": "$conAlivio",
-  "sin_alivio": "$sinAlivio",
-  "mejora1": "$mejora1",
-  "mejora2": "$mejora2",
-  "mejora3": "$mejora3",
-  "mejora4": "$mejora4",
-  "mejora5": "$mejora5",
-  "empeora1": "$empeora1",
-  "empeora2": "$empeora2",
-  "empeora3": "$empeora3",
-  "empeora4": "$empeora4",
-  "empeora5": "$empeora5",
-  "notas": "$notas",
-  "editando": "$editando"
+  "diario_id": ${diarioId},
+  "med1": "${med1}",
+  "con_alivio": "${conAlivio}",
+  "sin_alivio": "${sinAlivio}",
+  "mejora1": "${mejora1}",
+  "mejora2": "${mejora2}",
+  "mejora3": "${mejora3}",
+  "mejora4": "${mejora4}",
+  "mejora5": "${mejora5}",
+  "empeora1": "${empeora1}",
+  "empeora2": "${empeora2}",
+  "empeora3": "${empeora3}",
+  "empeora4": "${empeora4}",
+  "empeora5": "${empeora5}",
+  "notas": "${notas}",
+  "editando": "${editando}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Siete',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p7',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2230,29 +2235,29 @@ class DiarioOchoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "med1": "$med1",
-  "con_alivio": "$conAlivio",
-  "sin_alivio": "$sinAlivio",
-  "mejora1": "$mejora1",
-  "mejora2": "$mejora2",
-  "mejora3": "$mejora3",
-  "mejora4": "$mejora4",
-  "mejora5": "$mejora5",
-  "empeora1": "$empeora1",
-  "empeora2": "$empeora2",
-  "empeora3": "$empeora3",
-  "empeora4": "$empeora4",
-  "empeora5": "$empeora5",
-  "notas": "$notas",
-  "editando": "$editando"
+  "diario_id": ${diarioId},
+  "med1": "${med1}",
+  "con_alivio": "${conAlivio}",
+  "sin_alivio": "${sinAlivio}",
+  "mejora1": "${mejora1}",
+  "mejora2": "${mejora2}",
+  "mejora3": "${mejora3}",
+  "mejora4": "${mejora4}",
+  "mejora5": "${mejora5}",
+  "empeora1": "${empeora1}",
+  "empeora2": "${empeora2}",
+  "empeora3": "${empeora3}",
+  "empeora4": "${empeora4}",
+  "empeora5": "${empeora5}",
+  "notas": "${notas}",
+  "editando": "${editando}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Ocho',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p8',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2289,29 +2294,29 @@ class DiarioNueveCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "med1": "$med1",
-  "con_alivio": "$conAlivio",
-  "sin_alivio": "$sinAlivio",
-  "mejora1": "$mejora1",
-  "mejora2": "$mejora2",
-  "mejora3": "$mejora3",
-  "mejora4": "$mejora4",
-  "mejora5": "$mejora5",
-  "empeora1": "$empeora1",
-  "empeora2": "$empeora2",
-  "empeora3": "$empeora3",
-  "empeora4": "$empeora4",
-  "empeora5": "$empeora5",
-  "notas": "$notas",
-  "num_suplemento": $numSuplemento
+  "diario_id": ${diarioId},
+  "med1": "${med1}",
+  "con_alivio": "${conAlivio}",
+  "sin_alivio": "${sinAlivio}",
+  "mejora1": "${mejora1}",
+  "mejora2": "${mejora2}",
+  "mejora3": "${mejora3}",
+  "mejora4": "${mejora4}",
+  "mejora5": "${mejora5}",
+  "empeora1": "${empeora1}",
+  "empeora2": "${empeora2}",
+  "empeora3": "${empeora3}",
+  "empeora4": "${empeora4}",
+  "empeora5": "${empeora5}",
+  "notas": "${notas}",
+  "num_suplemento": ${numSuplemento}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Nueve',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/p9',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2333,8 +2338,8 @@ class DiarioBuscadorSuplementosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idioma": "$idioma",
-  "nombre": "$nombre"
+  "idioma": "${idioma}",
+  "nombre": "${nombre}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario buscador suplementos',
@@ -2375,14 +2380,14 @@ class DiarioFinalizaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "id_diario": $idDiario
+  "id_diario": ${idDiario}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario finaliza',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/finaliza',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2407,7 +2412,7 @@ class DiarioPantallaFinalCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/pantalla_fin',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -2448,7 +2453,7 @@ class DiarioInfoSelectorCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/info_selector',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -2538,7 +2543,7 @@ class DiarioInfoPushCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/mensaje_push',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -2567,14 +2572,14 @@ class DiarioActivaPushCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "accion": "$accion"
+  "accion": "${accion}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario activa push',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/activa_push',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2599,7 +2604,7 @@ class DiarioDuplicaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/user_duplica',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -2683,30 +2688,30 @@ class DiarioFinalizaSetupCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "autoinmune": "$autoinmune",
-  "nombre_auto": "$nombreAuto",
-  "tiempo_auto": "$tiempoAuto",
-  "familiar_auto": "$familiarAuto",
-  "grado_auto": "$gradoAuto",
-  "intestino": "$intestino",
-  "tiempo_intestino": "$tiempoIntestino",
-  "familiar_into": "$familiarInto",
-  "grado_into": "$gradoInto",
-  "into1": "$into1",
-  "tiempo_into1": "$tiempoInto1",
-  "into2": "$into2",
-  "tiempo_into2": "$tiempoInto2",
-  "into3": "$into3",
-  "tiempo_into3": "$tiempoInto3",
-  "into4": "$into4",
-  "tiempo_into4": "$tiempoInto4"
+  "autoinmune": "${autoinmune}",
+  "nombre_auto": "${nombreAuto}",
+  "tiempo_auto": "${tiempoAuto}",
+  "familiar_auto": "${familiarAuto}",
+  "grado_auto": "${gradoAuto}",
+  "intestino": "${intestino}",
+  "tiempo_intestino": "${tiempoIntestino}",
+  "familiar_into": "${familiarInto}",
+  "grado_into": "${gradoInto}",
+  "into1": "${into1}",
+  "tiempo_into1": "${tiempoInto1}",
+  "into2": "${into2}",
+  "tiempo_into2": "${tiempoInto2}",
+  "into3": "${into3}",
+  "tiempo_into3": "${tiempoInto3}",
+  "into4": "${into4}",
+  "tiempo_into4": "${tiempoInto4}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario finaliza setup',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/setup',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2744,23 +2749,23 @@ class DiarioFinalizaSetupIntoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "autoinmune": "$autoinmune",
-  "nombre_auto": "$nombreAuto",
-  "tiempo_auto": "$tiempoAuto",
-  "familiar_auto": "$familiarAuto",
-  "grado_auto": "$gradoAuto",
-  "intestino": "$intestino",
-  "tiempo_intestino": "$tiempoIntestino",
-  "familiar_into": "$familiarInto",
-  "grado_into": "$gradoInto",
-  "into1": "$into1",
-  "tiempo_into1": "$tiempoInto1",
-  "into2": "$into2",
-  "tiempo_into2": "$tiempoInto2",
-  "into3": "$into3",
-  "tiempo_into3": "$tiempoInto3",
-  "into4": "$into4",
-  "tiempo_into4": "$tiempoInto4"
+  "autoinmune": "${autoinmune}",
+  "nombre_auto": "${nombreAuto}",
+  "tiempo_auto": "${tiempoAuto}",
+  "familiar_auto": "${familiarAuto}",
+  "grado_auto": "${gradoAuto}",
+  "intestino": "${intestino}",
+  "tiempo_intestino": "${tiempoIntestino}",
+  "familiar_into": "${familiarInto}",
+  "grado_into": "${gradoInto}",
+  "into1": "${into1}",
+  "tiempo_into1": "${tiempoInto1}",
+  "into2": "${into2}",
+  "tiempo_into2": "${tiempoInto2}",
+  "into3": "${into3}",
+  "tiempo_into3": "${tiempoInto3}",
+  "into4": "${into4}",
+  "tiempo_into4": "${tiempoInto4}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario finaliza setup Into',
@@ -2768,7 +2773,7 @@ class DiarioFinalizaSetupIntoCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/setup_into',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -2792,7 +2797,7 @@ class SuenoCreaDiarioCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioSueno/crea',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -2840,36 +2845,36 @@ class DiarioSuenoUnoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "horas": $horas,
-  "conciliar": "$conciliar",
-  "mantener": "$mantener",
-  "calidad_txt": "$calidadTxt",
-  "fatiga": "$fatiga",
-  "medicamento": "$medicamento",
-  "suplemento": "$suplemento",
-  "calidad_num": $calidadNum,
-  "oscuro": "$oscuro",
-  "antifaz": "$antifaz",
-  "tapones": "$tapones",
-  "movil": "$movil",
-  "cena": "$cena",
-  "medicacion": "$medicacion",
-  "suplementos": "$suplementos",
-  "otras": "$otras",
-  "nada": "$nada",
-  "contador_conciliar": $contadorConciliar,
-  "contador_mantener": $contadorMantener,
-  "contador_calidad": $contadorCalidad,
-  "contador_fatiga": $contadorFatiga,
-  "contador_estrategia": $contadorEstrategia
+  "diario_id": ${diarioId},
+  "horas": ${horas},
+  "conciliar": "${conciliar}",
+  "mantener": "${mantener}",
+  "calidad_txt": "${calidadTxt}",
+  "fatiga": "${fatiga}",
+  "medicamento": "${medicamento}",
+  "suplemento": "${suplemento}",
+  "calidad_num": ${calidadNum},
+  "oscuro": "${oscuro}",
+  "antifaz": "${antifaz}",
+  "tapones": "${tapones}",
+  "movil": "${movil}",
+  "cena": "${cena}",
+  "medicacion": "${medicacion}",
+  "suplementos": "${suplementos}",
+  "otras": "${otras}",
+  "nada": "${nada}",
+  "contador_conciliar": ${contadorConciliar},
+  "contador_mantener": ${contadorMantener},
+  "contador_calidad": ${contadorCalidad},
+  "contador_fatiga": ${contadorFatiga},
+  "contador_estrategia": ${contadorEstrategia}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario sueno Uno',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioSueno/p1',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -3013,7 +3018,7 @@ class DiarioSuenoFinalizaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId
+  "diario_id": ${diarioId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario sueno finaliza',
@@ -3021,7 +3026,7 @@ class DiarioSuenoFinalizaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioSueno/finaliza',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -3045,16 +3050,16 @@ class DiarioSuenoDosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "med1": "$med1",
-  "mejora": "$mejora"
+  "diario_id": ${diarioId},
+  "med1": "${med1}",
+  "mejora": "${mejora}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario sueno Dos',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioSueno/p2',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -3078,16 +3083,16 @@ class DiarioSuenoTresCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "med1": "$med1",
-  "mejora": "$mejora"
+  "diario_id": ${diarioId},
+  "med1": "${med1}",
+  "mejora": "${mejora}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario sueno Tres',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioSueno/p3',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -3112,7 +3117,7 @@ class DiarioIntoCreaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/crea',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -3139,8 +3144,8 @@ class DiarioIntoAyerCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "respuesta": "$respuesta",
-  "diario_anterior": $diarioAnterior
+  "respuesta": "${respuesta}",
+  "diario_anterior": ${diarioAnterior}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario into ayer',
@@ -3148,7 +3153,7 @@ class DiarioIntoAyerCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/ayer',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -3232,22 +3237,22 @@ class DiarioIntoleranciaUnoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "momento": $momento,
-  "contador_comida": $contadorComida,
-  "carne": "$carne",
-  "pescado": "$pescado",
-  "marisco": "$marisco",
-  "lacteos": "$lacteos",
-  "huevos": "$huevos",
-  "cereales": "$cereales",
-  "frutas": "$frutas",
-  "verduras": "$verduras",
-  "legumbres": "$legumbres",
-  "fruto_secos": "$frutoSecos",
-  "salsas": "$salsas",
-  "bebidas": "$bebidas",
-  "editandoDiario": "$editandoDiario"
+  "diario_id": ${diarioId},
+  "momento": ${momento},
+  "contador_comida": ${contadorComida},
+  "carne": "${carne}",
+  "pescado": "${pescado}",
+  "marisco": "${marisco}",
+  "lacteos": "${lacteos}",
+  "huevos": "${huevos}",
+  "cereales": "${cereales}",
+  "frutas": "${frutas}",
+  "verduras": "${verduras}",
+  "legumbres": "${legumbres}",
+  "fruto_secos": "${frutoSecos}",
+  "salsas": "${salsas}",
+  "bebidas": "${bebidas}",
+  "editandoDiario": "${editandoDiario}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario intolerancia Uno',
@@ -3255,7 +3260,7 @@ class DiarioIntoleranciaUnoCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/p1',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -4073,88 +4078,88 @@ class DiarioIntoleranciaDosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "momento": $momento,
-  "carne1": "$carne1",
-  "carne2": "$carne2",
-  "carne3": "$carne3",
-  "carne4": "$carne4",
-  "carne5": "$carne5",
-  "carne6": "$carne6",
-  "carne7": "$carne7",
-  "pescado1": "$pescado1",
-  "pescado2": "$pescado2",
-  "pescado3": "$pescado3",
-  "pescado4": "$pescado4",
-  "pescado5": "$pescado5",
-  "pescado6": "$pescado6",
-  "pescado7": "$pescado7",
-  "marisco1": "$marisco1",
-  "marisco2": "$marisco2",
-  "marisco3": "$marisco3",
-  "marisco4": "$marisco4",
-  "marisco5": "$marisco5",
-  "marisco6": "$marisco6",
-  "marisco7": "$marisco7",
-  "lacteos1": "$lacteos1",
-  "lacteos2": "$lacteos2",
-  "lacteos3": "$lacteos3",
-  "lacteos4": "$lacteos4",
-  "lacteos5": "$lacteos5",
-  "lacteos6": "$lacteos6",
-  "lacteos7": "$lacteos7",
-  "huevos1": "$huevos1",
-  "cereales1": "$cereales1",
-  "cereales2": "$cereales2",
-  "cereales3": "$cereales3",
-  "cereales4": "$cereales4",
-  "cereales5": "$cereales5",
-  "cereales6": "$cereales6",
-  "cereales7": "$cereales7",
-  "frutas1": "$frutas1",
-  "frutas2": "$frutas2",
-  "frutas3": "$frutas3",
-  "frutas4": "$frutas4",
-  "frutas5": "$frutas5",
-  "frutas6": "$frutas6",
-  "frutas7": "$frutas7",
-  "verduras1": "$verduras1",
-  "verduras2": "$verduras2",
-  "verduras3": "$verduras3",
-  "verduras4": "$verduras4",
-  "verduras5": "$verduras5",
-  "verduras6": "$verduras6",
-  "verduras7": "$verduras7",
-  "legumbres1": "$legumbres1",
-  "legumbres2": "$legumbres2",
-  "legumbres3": "$legumbres3",
-  "legumbres4": "$legumbres4",
-  "legumbres5": "$legumbres5",
-  "legumbres6": "$legumbres6",
-  "legumbres7": "$legumbres7",
-  "secos1": "$secos1",
-  "secos2": "$secos2",
-  "secos3": "$secos3",
-  "secos4": "$secos4",
-  "secos5": "$secos5",
-  "secos6": "$secos6",
-  "secos7": "$secos7",
-  "salsas1": "$salsas1",
-  "salsas2": "$salsas2",
-  "salsas3": "$salsas3",
-  "salsas4": "$salsas4",
-  "salsas5": "$salsas5",
-  "salsas6": "$salsas6",
-  "salsas7": "$salsas7",
-  "bebidas1": "$bebidas1",
-  "bebidas2": "$bebidas2",
-  "bebidas3": "$bebidas3",
-  "bebidas4": "$bebidas4",
-  "bebidas5": "$bebidas5",
-  "bebidas6": "$bebidas6",
-  "bebidas7": "$bebidas7",
-  "sintoma": "$sintoma",
-  "editandoDiario": "$editandoDiario"
+  "diario_id": ${diarioId},
+  "momento": ${momento},
+  "carne1": "${carne1}",
+  "carne2": "${carne2}",
+  "carne3": "${carne3}",
+  "carne4": "${carne4}",
+  "carne5": "${carne5}",
+  "carne6": "${carne6}",
+  "carne7": "${carne7}",
+  "pescado1": "${pescado1}",
+  "pescado2": "${pescado2}",
+  "pescado3": "${pescado3}",
+  "pescado4": "${pescado4}",
+  "pescado5": "${pescado5}",
+  "pescado6": "${pescado6}",
+  "pescado7": "${pescado7}",
+  "marisco1": "${marisco1}",
+  "marisco2": "${marisco2}",
+  "marisco3": "${marisco3}",
+  "marisco4": "${marisco4}",
+  "marisco5": "${marisco5}",
+  "marisco6": "${marisco6}",
+  "marisco7": "${marisco7}",
+  "lacteos1": "${lacteos1}",
+  "lacteos2": "${lacteos2}",
+  "lacteos3": "${lacteos3}",
+  "lacteos4": "${lacteos4}",
+  "lacteos5": "${lacteos5}",
+  "lacteos6": "${lacteos6}",
+  "lacteos7": "${lacteos7}",
+  "huevos1": "${huevos1}",
+  "cereales1": "${cereales1}",
+  "cereales2": "${cereales2}",
+  "cereales3": "${cereales3}",
+  "cereales4": "${cereales4}",
+  "cereales5": "${cereales5}",
+  "cereales6": "${cereales6}",
+  "cereales7": "${cereales7}",
+  "frutas1": "${frutas1}",
+  "frutas2": "${frutas2}",
+  "frutas3": "${frutas3}",
+  "frutas4": "${frutas4}",
+  "frutas5": "${frutas5}",
+  "frutas6": "${frutas6}",
+  "frutas7": "${frutas7}",
+  "verduras1": "${verduras1}",
+  "verduras2": "${verduras2}",
+  "verduras3": "${verduras3}",
+  "verduras4": "${verduras4}",
+  "verduras5": "${verduras5}",
+  "verduras6": "${verduras6}",
+  "verduras7": "${verduras7}",
+  "legumbres1": "${legumbres1}",
+  "legumbres2": "${legumbres2}",
+  "legumbres3": "${legumbres3}",
+  "legumbres4": "${legumbres4}",
+  "legumbres5": "${legumbres5}",
+  "legumbres6": "${legumbres6}",
+  "legumbres7": "${legumbres7}",
+  "secos1": "${secos1}",
+  "secos2": "${secos2}",
+  "secos3": "${secos3}",
+  "secos4": "${secos4}",
+  "secos5": "${secos5}",
+  "secos6": "${secos6}",
+  "secos7": "${secos7}",
+  "salsas1": "${salsas1}",
+  "salsas2": "${salsas2}",
+  "salsas3": "${salsas3}",
+  "salsas4": "${salsas4}",
+  "salsas5": "${salsas5}",
+  "salsas6": "${salsas6}",
+  "salsas7": "${salsas7}",
+  "bebidas1": "${bebidas1}",
+  "bebidas2": "${bebidas2}",
+  "bebidas3": "${bebidas3}",
+  "bebidas4": "${bebidas4}",
+  "bebidas5": "${bebidas5}",
+  "bebidas6": "${bebidas6}",
+  "bebidas7": "${bebidas7}",
+  "sintoma": "${sintoma}",
+  "editandoDiario": "${editandoDiario}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario intolerancia Dos',
@@ -4162,7 +4167,7 @@ class DiarioIntoleranciaDosCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/p2',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -5582,28 +5587,28 @@ class DiarioIntoleranciasTresCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "momento": $momento,
-  "cefalea": $cefalea,
-  "abdominal": $abdominal,
-  "nauseas": $nauseas,
-  "vomitos": $vomitos,
-  "diarrea": $diarrea,
-  "respirar": $respirar,
-  "niebla": $niebla,
-  "vision": $vision,
-  "debilidad": $debilidad,
-  "palpitaciones": $palpitaciones,
-  "sudor": $sudor,
-  "picor": $picor,
-  "hinchazon": $hinchazon,
-  "gases": $gases,
-  "ardor": $ardor,
-  "reflujo": $reflujo,
-  "digestion": $digestion,
-  "calambres": $calambres,
-  "mareos": $mareos,
-  "editando": "$editando"
+  "diario_id": ${diarioId},
+  "momento": ${momento},
+  "cefalea": ${cefalea},
+  "abdominal": ${abdominal},
+  "nauseas": ${nauseas},
+  "vomitos": ${vomitos},
+  "diarrea": ${diarrea},
+  "respirar": ${respirar},
+  "niebla": ${niebla},
+  "vision": ${vision},
+  "debilidad": ${debilidad},
+  "palpitaciones": ${palpitaciones},
+  "sudor": ${sudor},
+  "picor": ${picor},
+  "hinchazon": ${hinchazon},
+  "gases": ${gases},
+  "ardor": ${ardor},
+  "reflujo": ${reflujo},
+  "digestion": ${digestion},
+  "calambres": ${calambres},
+  "mareos": ${mareos},
+  "editando": "${editando}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario Intolerancias Tres',
@@ -5611,7 +5616,7 @@ class DiarioIntoleranciasTresCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/p3',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -5910,19 +5915,19 @@ class DiarioIntoleranciasCuatroCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId,
-  "momento": $momento,
-  "dolor1": "$dolor1",
-  "dolor2": "$dolor2",
-  "dolor3": "$dolor3",
-  "dolor4": "$dolor4",
-  "dolor5": "$dolor5",
-  "dolor6": "$dolor6",
-  "dolor7": "$dolor7",
-  "dolor8": "$dolor8",
-  "dolor9": "$dolor9",
-  "editando": "$editando",
-  "contador": $contador
+  "diario_id": ${diarioId},
+  "momento": ${momento},
+  "dolor1": "${dolor1}",
+  "dolor2": "${dolor2}",
+  "dolor3": "${dolor3}",
+  "dolor4": "${dolor4}",
+  "dolor5": "${dolor5}",
+  "dolor6": "${dolor6}",
+  "dolor7": "${dolor7}",
+  "dolor8": "${dolor8}",
+  "dolor9": "${dolor9}",
+  "editando": "${editando}",
+  "contador": ${contador}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario intolerancias Cuatro',
@@ -5930,7 +5935,7 @@ class DiarioIntoleranciasCuatroCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/p4',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -6128,7 +6133,7 @@ class IntoleranciaFinalizaDiarioCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "diario_id": $diarioId
+  "diario_id": ${diarioId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'intolerancia finaliza diario',
@@ -6136,7 +6141,7 @@ class IntoleranciaFinalizaDiarioCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/finaliza',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -6163,7 +6168,7 @@ class ResumenListadoDiariosCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/resumen/listado_diarios',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'mes': mes,
@@ -6209,7 +6214,7 @@ class ResumenListadoDiariosCalendarCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/resumen/listado_diarios_date',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'fecha': fecha,
@@ -6281,7 +6286,7 @@ class ResumenDiarioCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/resumen/diario',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'diario_id': diarioId,
@@ -8100,7 +8105,7 @@ class ReporteStdCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:uRynCvzY/reporte/carga_std',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'dias': dias,
@@ -8221,7 +8226,7 @@ class ReporteCusCargaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:uRynCvzY/reporte/carga_cus',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'session_id': sessionId,
@@ -8342,18 +8347,18 @@ class ReporteCusCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "user_id": $userId,
-  "dias": $dias,
-  "fecha_inicio": "$fechaInicio",
-  "fecha_fin": "$fechaFin",
-  "session_id": $sessionId
+  "user_id": ${userId},
+  "dias": ${dias},
+  "fecha_inicio": "${fechaInicio}",
+  "fecha_fin": "${fechaFin}",
+  "session_id": ${sessionId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'reporte cus',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:uRynCvzY/reporte',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -8379,7 +8384,7 @@ class ReporteIntoStdCargaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:uRynCvzY/reporte_into/carga_std',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'dias': dias,
@@ -8465,10 +8470,10 @@ class ReporteIntoCusCreaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "dias": $dias,
-  "user_id": $userId,
-  "fecha_inicio": "$fechaInicio",
-  "fecha_fin": "$fechaFin"
+  "dias": ${dias},
+  "user_id": ${userId},
+  "fecha_inicio": "${fechaInicio}",
+  "fecha_fin": "${fechaFin}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'reporte into cus crea',
@@ -8647,10 +8652,10 @@ class NoticiaIndividualCall {
     return ApiManager.instance.makeApiCall(
       callName: 'noticia individual',
       apiUrl:
-          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/noticias/$noticiasId',
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/noticias/${noticiasId}',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'noticias_id': noticiasId,
@@ -8879,7 +8884,7 @@ class ComentarioNoticiaBorraCall {
     return ApiManager.instance.makeApiCall(
       callName: 'comentario noticia borra',
       apiUrl:
-          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/comentarios_noticias/$comentariosNoticiasId',
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/comentarios_noticias/${comentariosNoticiasId}',
       callType: ApiCallType.DELETE,
       headers: {},
       params: {
@@ -8903,8 +8908,8 @@ class NoticiasLikeCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "noticia_id": $noticiaId,
-  "accion": "$accion"
+  "noticia_id": ${noticiaId},
+  "accion": "${accion}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'noticias like',
@@ -8912,7 +8917,7 @@ class NoticiasLikeCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/crea_like',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -8935,8 +8940,8 @@ class NoticiaCreaComentarioCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "texto": "$texto",
-  "noticia_id": $noticiaId
+  "texto": "${texto}",
+  "noticia_id": ${noticiaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'noticia crea comentario',
@@ -8944,7 +8949,7 @@ class NoticiaCreaComentarioCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/crea_comentario',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -8966,14 +8971,14 @@ class InvitaAmigoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "email_amigo": "$emailAmigo"
+  "email_amigo": "${emailAmigo}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'invita amigo',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/invitaciones',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -8998,7 +9003,7 @@ class EncuestasListadoCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/encuestas',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'id_enfermedad': idEnfermedad,
@@ -9045,7 +9050,7 @@ class EncuestasCancelaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'encuestas cancela',
@@ -9053,7 +9058,7 @@ class EncuestasCancelaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:fVcWMeJP/encuestaFF/cancela',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9187,14 +9192,14 @@ class EncuestaGuardaRespuestaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId,
-  "pregunta_id": $preguntaId,
-  "texto_libre": "$textoLibre",
-  "desp_opciones": "$despOpciones",
-  "desp5": $desp5,
-  "desp10": $desp10,
-  "pregunta": "$pregunta",
-  "tipo_pregunta": $tipoPregunta
+  "encuesta_id": ${encuestaId},
+  "pregunta_id": ${preguntaId},
+  "texto_libre": "${textoLibre}",
+  "desp_opciones": "${despOpciones}",
+  "desp5": ${desp5},
+  "desp10": ${desp10},
+  "pregunta": "${pregunta}",
+  "tipo_pregunta": ${tipoPregunta}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'encuesta guarda respuesta',
@@ -9202,7 +9207,7 @@ class EncuestaGuardaRespuestaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:fVcWMeJP/encuestaFF/guarda_respuesta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9224,7 +9229,7 @@ class EncuestaFinalizaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'encuesta finaliza',
@@ -9232,7 +9237,7 @@ class EncuestaFinalizaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:fVcWMeJP/encuestaFF/actualiza_cantidad',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9410,7 +9415,7 @@ class MarketplaceIndividualCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/marketplace/individual',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'producto_id': productoId,
@@ -9481,7 +9486,7 @@ class MarketplaceIntentoCompraCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "producto_id": $porductoId
+  "producto_id": ${porductoId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'marketplace intento compra',
@@ -9489,7 +9494,7 @@ class MarketplaceIntentoCompraCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/marketplace/intentos_compra',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9670,15 +9675,15 @@ class ComunidadLikesCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "post_id": $postId,
-  "accion": "$accion"
+  "post_id": ${postId},
+  "accion": "${accion}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'comunidad likes',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/likes',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9700,7 +9705,7 @@ class ComunidadReporaPostCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "post_id": $postId
+  "post_id": ${postId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'comunidad repora post',
@@ -9708,7 +9713,7 @@ class ComunidadReporaPostCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/reporta_post',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9730,7 +9735,7 @@ class ComunidadEliminaPostCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "post_id": $postId
+  "post_id": ${postId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'comunidad elimina post',
@@ -9738,7 +9743,7 @@ class ComunidadEliminaPostCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/elimina_post',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9763,7 +9768,7 @@ class ComunidadCreaPostCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/crea_post',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -9835,7 +9840,7 @@ class ComunidadSubeImagenCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/sube_foto',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'post_id': postId,
@@ -9860,8 +9865,8 @@ class CamunidadGuardaDatosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "post_id": $postId,
-  "texto": "$texto"
+  "post_id": ${postId},
+  "texto": "${texto}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'camunidad guarda datos',
@@ -9869,7 +9874,7 @@ class CamunidadGuardaDatosCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/guarda_post',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -9890,7 +9895,7 @@ class TestlogCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "user_id": $userId
+  "user_id": ${userId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'testlog',
@@ -10004,10 +10009,10 @@ class ComunidadEliminaComentarioCall {
     return ApiManager.instance.makeApiCall(
       callName: 'comunidad elimina comentario',
       apiUrl:
-          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/comentarios_post/$comentariosPostId',
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/comentarios_post/${comentariosPostId}',
       callType: ApiCallType.DELETE,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'comentarios_post_id': comentariosPostId,
@@ -10031,9 +10036,9 @@ class ComunidadAgregaComentarioCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "comentario": "$comentario",
-  "posts_id": $postId,
-  "user_id": $userId
+  "comentario": "${comentario}",
+  "posts_id": ${postId},
+  "user_id": ${userId}
  }
 ''';
     return ApiManager.instance.makeApiCall(
@@ -10041,7 +10046,7 @@ class ComunidadAgregaComentarioCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/comentarios_post',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10064,8 +10069,8 @@ class ChatInvitaUserCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "user_id_emisor": $emisorId,
-  "user_id_receptor": $receptorId
+  "user_id_emisor": ${emisorId},
+  "user_id_receptor": ${receptorId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'chat invita user',
@@ -10073,7 +10078,7 @@ class ChatInvitaUserCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/user_solicita_contacto',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10096,8 +10101,8 @@ class ChatGestionaInvitacionesCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "id_conversacion": $idConversacion,
-  "estado": "$estado"
+  "id_conversacion": ${idConversacion},
+  "estado": "${estado}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'chat gestiona invitaciones',
@@ -10105,7 +10110,7 @@ class ChatGestionaInvitacionesCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/acepta-rechaza_contacto',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10130,7 +10135,7 @@ class ChatListadoInvitacionesCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/invitaciones_pendientes',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -10172,7 +10177,7 @@ class ChatMisConversacionesCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/mis_conversaciones',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -10283,7 +10288,7 @@ class ChatEliminaConversacionCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "conversacion_id": $conversacionId
+  "conversacion_id": ${conversacionId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'chat elimina conversacion',
@@ -10291,7 +10296,7 @@ class ChatEliminaConversacionCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/elimina_conversacion',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10316,7 +10321,7 @@ class ChatMensajesCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/mensajes',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'conversacion_id': conversacionId,
@@ -10386,9 +10391,9 @@ class ChatCreaMensajeCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "conversacion_id": $conversacionId,
-  "texto": "$texto",
-  "nombre": "$nombre"
+  "conversacion_id": ${conversacionId},
+  "texto": "${texto}",
+  "nombre": "${nombre}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'chat crea mensaje',
@@ -10396,7 +10401,7 @@ class ChatCreaMensajeCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/crea_mensaje',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10418,7 +10423,7 @@ class ChatEliminaMensajeCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "mensaje_id": $mensajeId
+  "mensaje_id": ${mensajeId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'chat elimina mensaje',
@@ -10426,7 +10431,7 @@ class ChatEliminaMensajeCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/elimina_mensaje',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10448,7 +10453,7 @@ class ChatActualizaLeidosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "conversacion_id": $conversacionId
+  "conversacion_id": ${conversacionId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'chat actualiza leidos',
@@ -10456,7 +10461,7 @@ class ChatActualizaLeidosCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/actualiza_leidos',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10519,7 +10524,7 @@ class PerfilSubeAvatarCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/sube_imagen',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'img': img,
@@ -10542,7 +10547,7 @@ class PerfilUsaAvatarCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "avatar_id": $avatarId
+  "avatar_id": ${avatarId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'perfil usa avatar',
@@ -10550,7 +10555,7 @@ class PerfilUsaAvatarCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/profile/usa_avatar',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10643,17 +10648,17 @@ class PerilContactoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "movil": "$movil",
-  "motivo": "$motivo",
-  "modo": "$modo",
-  "mensaje": "$mensaje"
+  "movil": "${movil}",
+  "motivo": "${motivo}",
+  "modo": "${modo}",
+  "mensaje": "${mensaje}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'peril contacto',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/contacto',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10675,7 +10680,7 @@ class PerfilActivaPushCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "accion": "$accion"
+  "accion": "${accion}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'perfil activa push',
@@ -10683,7 +10688,7 @@ class PerfilActivaPushCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/activa_push',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10708,7 +10713,7 @@ class PerfilNotificacionesCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/notificaciones',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -10801,7 +10806,7 @@ class PerfilEliminaNotificacionCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "notificacion_id": $notificacionId
+  "notificacion_id": ${notificacionId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'perfil elimina notificacion',
@@ -10809,7 +10814,7 @@ class PerfilEliminaNotificacionCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/elimina_notificacion',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10834,7 +10839,7 @@ class PerfilMisMedicamentosCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/mis_medicamentos',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -10893,7 +10898,7 @@ class PerfilCreaMedicamentoCall {
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfi/crea_med',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -10963,18 +10968,18 @@ class PerfilEditaMedicamentoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "accion": "$accion",
-  "med_id": $medId,
-  "nombre": "$nombre",
-  "dosis": "$dosis",
-  "posologia": "$posologia"
+  "accion": "${accion}",
+  "med_id": ${medId},
+  "nombre": "${nombre}",
+  "dosis": "${dosis}",
+  "posologia": "${posologia}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'perfil edita medicamento',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/edita_med',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -10999,7 +11004,7 @@ class UserEliminaCuentaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/elimina_cuenta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.NONE,
@@ -11027,14 +11032,14 @@ class PerfilActualizaDatosPersonalesCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "nombre": "$nombre",
-  "apellidos": "$apellidos",
-  "genero": "$genero",
-  "fecha": "$fecha",
-  "peso": $peso,
-  "altura": $altura,
-  "fumador": "$fumador",
-  "alcohol": "$alcohol"
+  "nombre": "${nombre}",
+  "apellidos": "${apellidos}",
+  "genero": "${genero}",
+  "fecha": "${fecha}",
+  "peso": ${peso},
+  "altura": ${altura},
+  "fumador": "${fumador}",
+  "alcohol": "${alcohol}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'perfil actualiza datos personales',
@@ -11042,7 +11047,7 @@ class PerfilActualizaDatosPersonalesCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/actualiza_datos_pers',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11067,7 +11072,7 @@ class PerfilEnfermedadIndividualCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/user_enfermedad_individual',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -11250,7 +11255,7 @@ class PerfilMisAsociacionesCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/mis_asociaciones',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       returnBody: true,
@@ -11308,8 +11313,8 @@ class PerfilGestionAsoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "aso_id": $asoId,
-  "accion": "$accion"
+  "aso_id": ${asoId},
+  "accion": "${accion}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'perfil gestion aso',
@@ -11317,7 +11322,7 @@ class PerfilGestionAsoCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/gestiona_asos',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11343,7 +11348,7 @@ class EmpresaListadoEncuestasCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/encuesta_listado',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'finalizada': finalizada,
@@ -11442,7 +11447,7 @@ class EmpresaEncuestaIndividualCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/encuesta_individual',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'encuesta_id': encuestaId,
@@ -11554,8 +11559,8 @@ class EmpresaEncuestaVisibilidadCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId,
-  "accion": "$accion"
+  "encuesta_id": ${encuestaId},
+  "accion": "${accion}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa encuesta visibilidad',
@@ -11563,7 +11568,7 @@ class EmpresaEncuestaVisibilidadCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/visibilidad_encuesta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11585,7 +11590,7 @@ class EmpresaEncuestaFinalizaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa encuesta finaliza',
@@ -11593,7 +11598,7 @@ class EmpresaEncuestaFinalizaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/finaliza_encuesta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11619,7 +11624,7 @@ class EmpresaListadoPreguntasCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:fVcWMeJP/empresa/listado_preguntas',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'encuesta_id': encuestaId,
@@ -11688,8 +11693,8 @@ class EmpresaExportaEncuestaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "user_id": $userId,
-  "encuesta_id": $encuestaId
+  "user_id": ${userId},
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa exporta encuesta',
@@ -11697,7 +11702,7 @@ class EmpresaExportaEncuestaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:IZ8IN-R8/create_and_store_csv',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11730,18 +11735,18 @@ class EmpresaCreaEncuestaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "titulo_es": "$tituloEs",
-  "titulo_en": "$tituloEn",
-  "publico_todos": "$publicoTodos",
-  "enf1": $enf1,
-  "enf2": $enf2,
-  "enf3": $enf3,
-  "enf4": $enf4,
-  "enf5": $enf5,
-  "enf6": $enf6,
-  "enf7": $enf7,
-  "enf8": $enf8,
-  "enf9": $enf9
+  "titulo_es": "${tituloEs}",
+  "titulo_en": "${tituloEn}",
+  "publico_todos": "${publicoTodos}",
+  "enf1": ${enf1},
+  "enf2": ${enf2},
+  "enf3": ${enf3},
+  "enf4": ${enf4},
+  "enf5": ${enf5},
+  "enf6": ${enf6},
+  "enf7": ${enf7},
+  "enf8": ${enf8},
+  "enf9": ${enf9}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa crea encuesta',
@@ -11749,7 +11754,7 @@ class EmpresaCreaEncuestaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/crea_encuesta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11780,7 +11785,7 @@ class EmpresaListadoPreguntasEncuestaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/listado_preguntas',
       callType: ApiCallType.GET,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'encuesta_id': encuestaId,
@@ -11857,7 +11862,7 @@ class EmpresaCreaPreguntaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa crea pregunta',
@@ -11865,7 +11870,7 @@ class EmpresaCreaPreguntaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/crea_preguntas123',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11895,10 +11900,10 @@ class EmpresaCreaOpcionDesplegableCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "pregunta_id": $preguntaId,
-  "opcion": "$opcion",
-  "encuesta_id": $encuestaId,
-  "opcion_en": "$opcionEn"
+  "pregunta_id": ${preguntaId},
+  "opcion": "${opcion}",
+  "encuesta_id": ${encuestaId},
+  "opcion_en": "${opcionEn}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa crea opcion desplegable',
@@ -11906,7 +11911,7 @@ class EmpresaCreaOpcionDesplegableCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/crea_opcion_desplegable',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -11980,7 +11985,7 @@ class EmpresaBorraOpcionEncuestaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "opcion_id": $opcionId
+  "opcion_id": ${opcionId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa borra opcion encuesta',
@@ -12012,11 +12017,11 @@ class EmpresaEditaPreguntaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "pregunta_id": $preguntaId,
-  "pregunta_es": "$preguntaEs",
-  "pregunta_en": "$preguntaEn",
-  "tipo_respuesta": $tipoRespuesta,
-  "encuesta_id": $encuestaId
+  "pregunta_id": ${preguntaId},
+  "pregunta_es": "${preguntaEs}",
+  "pregunta_en": "${preguntaEn}",
+  "tipo_respuesta": ${tipoRespuesta},
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa edita pregunta',
@@ -12024,7 +12029,7 @@ class EmpresaEditaPreguntaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/edita_pregunta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -12051,7 +12056,7 @@ class EmpresasubeFotoEncuestaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/sube_foto_encuesta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'img': img,
@@ -12128,7 +12133,7 @@ class EmpresaBorraImagenEncuestaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "pregunta_id": $preguntaId
+  "pregunta_id": ${preguntaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa borra imagen encuesta',
@@ -12155,7 +12160,7 @@ class EmpresaCuentaPreguntasCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa cuenta preguntas',
@@ -12189,8 +12194,8 @@ class EmpresaBorraPreguntaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "pregunta_id": $preguntaId,
-  "encuesta_id": $encuestaId
+  "pregunta_id": ${preguntaId},
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa borra pregunta',
@@ -12198,7 +12203,7 @@ class EmpresaBorraPreguntaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/elimina_pregunta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -12220,7 +12225,7 @@ class EmpresaFinalizaEncuestaCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "encuesta_id": $encuestaId
+  "encuesta_id": ${encuestaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa finaliza encuesta',
@@ -12228,7 +12233,7 @@ class EmpresaFinalizaEncuestaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/fin_crea_encuesta',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -12253,7 +12258,7 @@ class EmpresaCreaNoticiaCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa_news/crea_noticia',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       bodyType: BodyType.JSON,
@@ -12356,7 +12361,7 @@ class EmpresaNoticiaSubeImagenCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa_news/sube_imagen',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {
         'img': img,
@@ -12380,7 +12385,7 @@ class EmpresaBorraImagenNewsCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "noticia_id": $noticiaId
+  "noticia_id": ${noticiaId}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa borra imagen news',
@@ -12388,7 +12393,7 @@ class EmpresaBorraImagenNewsCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa_news/borra_imagen',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -12420,17 +12425,17 @@ class EmpresaEditaNewsCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "noticia_id": $noticiaId,
-  "titulo_es": "$tituloEs",
-  "titulo_en": "$tituloEn",
-  "desc_es": "$descEs",
-  "desc_en": "$descEn",
-  "text_es": "$textEs",
-  "text_en": "$textEn",
-  "tag": "$tag",
-  "url": "$url",
-  "boton_es": "$botonEs",
-  "boton_en": "$botonEn"
+  "noticia_id": ${noticiaId},
+  "titulo_es": "${tituloEs}",
+  "titulo_en": "${tituloEn}",
+  "desc_es": "${descEs}",
+  "desc_en": "${descEn}",
+  "text_es": "${textEs}",
+  "text_en": "${textEn}",
+  "tag": "${tag}",
+  "url": "${url}",
+  "boton_es": "${botonEs}",
+  "boton_en": "${botonEn}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa edita news',
@@ -12438,7 +12443,7 @@ class EmpresaEditaNewsCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa_news/edita',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -12467,14 +12472,14 @@ class EmpresaActualizaPerfilCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "profesion": "$profesion",
-  "num_colegiado": "$numColegiado",
-  "nif": "$nif",
-  "direccion": "$direccion",
-  "ciudad": "$ciudad",
-  "cp": "$cp",
-  "nombre_emp": "$nombreEmp",
-  "email_emp": "$emailEmp"
+  "profesion": "${profesion}",
+  "num_colegiado": "${numColegiado}",
+  "nif": "${nif}",
+  "direccion": "${direccion}",
+  "ciudad": "${ciudad}",
+  "cp": "${cp}",
+  "nombre_emp": "${nombreEmp}",
+  "email_emp": "${emailEmp}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa actualiza perfil',
@@ -12482,7 +12487,36 @@ class EmpresaActualizaPerfilCall {
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/actualiza_datos_pro',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer $authToken',
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UserLogActivityCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    String? seccion = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "seccion": "${seccion}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'user log activity',
+      apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/logActivity',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
       },
       params: {},
       body: ffApiRequestBody,

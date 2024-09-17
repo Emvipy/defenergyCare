@@ -6,10 +6,12 @@ import '/diario_sintomas/modal_info_finalizar/modal_info_finalizar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_diario_model.dart';
 export 'menu_diario_model.dart';
@@ -101,7 +103,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -112,9 +114,9 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -122,7 +124,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       '3i4i9mgm' /* Selecciona una opción */,
@@ -144,9 +146,9 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 3.0, 15.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -154,7 +156,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'o6x1qx7s' /* Las opciones solo estarán disp... */,
@@ -189,7 +191,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                             ? 1.0
                             : 0.5,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: 335.0,
@@ -202,7 +204,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -210,7 +212,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                       Flexible(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -233,7 +235,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          const ModalInfoCrearWidget(),
+                                                          ModalInfoCrearWidget(),
                                                     ),
                                                   );
                                                 },
@@ -254,7 +256,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 5.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -289,12 +291,22 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                         context.goNamed(
                                           'diario1',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
                                             ),
                                           },
+                                        );
+
+                                        unawaited(
+                                          () async {
+                                            await UserLogActivityCall.call(
+                                              authToken: FFAppState().authToken,
+                                              seccion:
+                                                  'Acceso Crear Diario Sintomas desde Menú Diario',
+                                            );
+                                          }(),
                                         );
                                       }
 
@@ -313,7 +325,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Icon(
                                               Icons.add_circle_outline,
                                               color: (DiarioInfoSelectorCall
@@ -338,7 +350,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -399,7 +411,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                             ? 1.0
                             : 0.5,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: 335.0,
@@ -412,7 +424,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -420,7 +432,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                       Flexible(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -443,7 +455,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          const ModalInfoDuplicarWidget(),
+                                                          ModalInfoDuplicarWidget(),
                                                     ),
                                                   );
                                                 },
@@ -464,7 +476,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 5.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -509,7 +521,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
@@ -519,6 +531,16 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                               .apiRequestCompleter = null);
                                           await _model
                                               .waitForApiRequestCompleted();
+                                          unawaited(
+                                            () async {
+                                              await UserLogActivityCall.call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                seccion:
+                                                    'Acceso Replicar Diario Sintomas desde Menú Diario',
+                                              );
+                                            }(),
+                                          );
                                         }
                                       }
 
@@ -537,7 +559,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Icon(
                                               Icons.content_copy_rounded,
                                               color: (DiarioInfoSelectorCall
@@ -562,7 +584,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -612,7 +634,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                             ? 1.0
                             : 0.5,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: 335.0,
@@ -625,7 +647,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -633,7 +655,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                       Flexible(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -656,7 +678,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          const ModalInfoEditarWidget(),
+                                                          ModalInfoEditarWidget(),
                                                     ),
                                                   );
                                                 },
@@ -677,7 +699,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 5.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -702,12 +724,22 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                         context.pushNamed(
                                           'diario1',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
                                             ),
                                           },
+                                        );
+
+                                        unawaited(
+                                          () async {
+                                            await UserLogActivityCall.call(
+                                              authToken: FFAppState().authToken,
+                                              seccion:
+                                                  'Acceso Editar Diario Sintomas desde Menú Diario',
+                                            );
+                                          }(),
                                         );
                                       }
                                     },
@@ -724,7 +756,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Icon(
                                               Icons.edit_road_rounded,
                                               color: DiarioInfoSelectorCall
@@ -743,7 +775,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -787,7 +819,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                             ? 1.0
                             : 0.5,
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: 335.0,
@@ -800,7 +832,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -808,7 +840,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                       Flexible(
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -831,7 +863,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          const ModalInfoFinalizarWidget(),
+                                                          ModalInfoFinalizarWidget(),
                                                     ),
                                                   );
                                                 },
@@ -852,7 +884,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 5.0, 5.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -873,6 +905,15 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                               .jsonBody,
                                         )!;
                                         safeSetState(() {});
+                                        unawaited(
+                                          () async {
+                                            await UserLogActivityCall.call(
+                                              authToken: FFAppState().authToken,
+                                              seccion:
+                                                  'Acceso Finalizar Diario Sintomas desde Menú Diario',
+                                            );
+                                          }(),
+                                        );
                                         if (DiarioInfoSelectorCall
                                                 .ultimaPantalla(
                                               menuDiarioDiarioInfoSelectorResponse
@@ -883,7 +924,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                             'diario1',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -901,7 +942,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                               'diario2',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -919,7 +960,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                 'diario3',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -937,7 +978,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   'diario4',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -956,7 +997,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                     'diario5',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -975,7 +1016,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                       'diario6',
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -996,7 +1037,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                                 .info,
                                                           ),
                                                         ),
-                                                        duration: const Duration(
+                                                        duration: Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
@@ -1025,7 +1066,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Icon(
                                               Icons.move_down,
                                               color: DiarioInfoSelectorCall
@@ -1044,7 +1085,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1080,13 +1121,13 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                           ),
                         ),
                       ),
-                    ].addToEnd(const SizedBox(height: 30.0)),
+                    ].addToEnd(SizedBox(height: 30.0)),
                   ),
                 ),
                 wrapWithModel(
                   model: _model.menuUsuarioModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const MenuUsuarioWidget(
+                  child: MenuUsuarioWidget(
                     index: 0,
                   ),
                 ),

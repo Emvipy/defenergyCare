@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'sign_up_detalle_enfermedad_model.dart';
@@ -112,16 +113,16 @@ class _SignUpDetalleEnfermedadWidgetState
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(32.0, 10.0, 32.0, 32.0),
+              padding: EdgeInsetsDirectional.fromSTEB(32.0, 10.0, 32.0, 32.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -129,7 +130,7 @@ class _SignUpDetalleEnfermedadWidgetState
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Text(
                         FFAppState().enfermedadTxt,
                         textAlign: TextAlign.center,
@@ -145,7 +146,7 @@ class _SignUpDetalleEnfermedadWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 18.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 18.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'ftxcjcvr' /* Ahora necesitamos conocer algo... */,
@@ -165,7 +166,7 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().xUserId == 129986556)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -198,7 +199,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         letterSpacing: 0.0,
                                       ),
                                 ),
-                                barRadius: const Radius.circular(5.0),
+                                barRadius: Radius.circular(5.0),
                                 padding: EdgeInsets.zero,
                               ),
                             ),
@@ -207,7 +208,7 @@ class _SignUpDetalleEnfermedadWidgetState
                       ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.dropDownGeneroValueController ??=
                             FormFieldController<String>(null),
@@ -245,7 +246,7 @@ class _SignUpDetalleEnfermedadWidgetState
                         borderColor: Colors.transparent,
                         borderWidth: 2.0,
                         borderRadius: 12.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: false,
@@ -255,7 +256,7 @@ class _SignUpDetalleEnfermedadWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.dropDownFumadorValueController ??=
                             FormFieldController<String>(null),
@@ -293,7 +294,7 @@ class _SignUpDetalleEnfermedadWidgetState
                         borderColor: Colors.transparent,
                         borderWidth: 2.0,
                         borderRadius: 12.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: false,
@@ -303,7 +304,7 @@ class _SignUpDetalleEnfermedadWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.dropDownAlcoholValueController ??=
                             FormFieldController<String>(null),
@@ -344,7 +345,7 @@ class _SignUpDetalleEnfermedadWidgetState
                         borderColor: Colors.transparent,
                         borderWidth: 2.0,
                         borderRadius: 12.0,
-                        margin: const EdgeInsetsDirectional.fromSTEB(
+                        margin: EdgeInsetsDirectional.fromSTEB(
                             16.0, 4.0, 16.0, 4.0),
                         hidesUnderline: true,
                         isOverButton: false,
@@ -354,7 +355,7 @@ class _SignUpDetalleEnfermedadWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: DespPesoCall.call(),
                         builder: (context, snapshot) {
@@ -412,7 +413,7 @@ class _SignUpDetalleEnfermedadWidgetState
                             borderColor: Colors.transparent,
                             borderWidth: 2.0,
                             borderRadius: 12.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
+                            margin: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: false,
@@ -424,7 +425,7 @@ class _SignUpDetalleEnfermedadWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: DespAlturaCall.call(),
                         builder: (context, snapshot) {
@@ -483,7 +484,7 @@ class _SignUpDetalleEnfermedadWidgetState
                             borderColor: Colors.transparent,
                             borderWidth: 2.0,
                             borderRadius: 12.0,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
+                            margin: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
                             isOverButton: false,
@@ -496,10 +497,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 1)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -519,7 +520,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -572,7 +573,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -598,7 +599,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -670,7 +671,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -696,7 +697,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -741,7 +742,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -768,7 +769,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -817,7 +818,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -863,7 +864,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -915,7 +916,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue == null ||
@@ -995,7 +996,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1013,9 +1014,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -1029,7 +1030,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1048,10 +1049,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 2)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -1071,7 +1072,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1131,7 +1132,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -1157,7 +1158,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1208,7 +1209,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -1234,7 +1235,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1279,7 +1280,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -1305,7 +1306,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1350,7 +1351,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -1377,7 +1378,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -1426,7 +1427,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -1472,7 +1473,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -1524,7 +1525,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue == null ||
@@ -1601,7 +1602,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -1619,9 +1620,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -1635,7 +1636,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -1654,10 +1655,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 3)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -1677,7 +1678,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1731,7 +1732,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -1757,7 +1758,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1807,7 +1808,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -1833,7 +1834,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1892,7 +1893,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -1918,7 +1919,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -1963,7 +1964,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -1990,7 +1991,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -2038,7 +2039,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -2084,7 +2085,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -2136,7 +2137,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue == null ||
@@ -2223,7 +2224,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -2241,9 +2242,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -2257,7 +2258,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -2276,10 +2277,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 4)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -2299,7 +2300,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FutureBuilder<ApiCallResponse>(
                                       future: DespEnfermedadesAutoinmunesCall
@@ -2374,7 +2375,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           borderWidth: 2.0,
                                           borderRadius: 12.0,
                                           margin:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 4.0, 16.0, 4.0),
                                           hidesUnderline: true,
                                           isOverButton: false,
@@ -2402,7 +2403,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -2453,7 +2454,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -2479,7 +2480,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -2524,7 +2525,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -2551,7 +2552,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -2600,7 +2601,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -2646,7 +2647,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -2698,7 +2699,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue ==
@@ -2779,7 +2780,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -2797,9 +2798,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -2813,7 +2814,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -2832,10 +2833,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 5)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -2875,7 +2876,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -2927,7 +2928,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue ==
@@ -2985,7 +2986,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -3003,9 +3004,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -3019,7 +3020,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -3038,10 +3039,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 6)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -3061,7 +3062,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -3114,7 +3115,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -3140,7 +3141,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -3212,7 +3213,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -3238,7 +3239,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -3283,7 +3284,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -3310,7 +3311,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -3359,7 +3360,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -3385,7 +3386,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -3439,7 +3440,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -3465,7 +3466,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -3515,7 +3516,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -3541,7 +3542,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -3600,7 +3601,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -3626,7 +3627,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -3671,7 +3672,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -3698,7 +3699,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -3746,7 +3747,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -3792,7 +3793,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -3844,7 +3845,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue == null ||
@@ -3932,7 +3933,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -3950,9 +3951,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -3966,7 +3967,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -3985,10 +3986,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 7)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -4008,7 +4009,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4068,7 +4069,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -4094,7 +4095,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4145,7 +4146,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -4171,7 +4172,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4216,7 +4217,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -4242,7 +4243,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4287,7 +4288,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -4314,7 +4315,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -4363,7 +4364,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -4389,7 +4390,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4443,7 +4444,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -4469,7 +4470,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4519,7 +4520,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -4545,7 +4546,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4604,7 +4605,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -4630,7 +4631,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -4675,7 +4676,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -4702,7 +4703,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -4750,7 +4751,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -4796,7 +4797,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -4848,7 +4849,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue == null ||
@@ -4940,7 +4941,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -4958,9 +4959,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -4974,7 +4975,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -4993,10 +4994,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 8)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -5016,7 +5017,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -5069,7 +5070,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -5095,7 +5096,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -5167,7 +5168,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -5193,7 +5194,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -5238,7 +5239,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -5265,7 +5266,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -5314,7 +5315,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -5340,7 +5341,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -5400,7 +5401,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -5426,7 +5427,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -5477,7 +5478,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -5503,7 +5504,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -5548,7 +5549,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -5574,7 +5575,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -5619,7 +5620,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -5646,7 +5647,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -5695,7 +5696,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -5741,7 +5742,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -5793,7 +5794,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue == null ||
@@ -5882,7 +5883,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -5900,9 +5901,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -5916,7 +5917,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -5935,10 +5936,10 @@ class _SignUpDetalleEnfermedadWidgetState
                     if (FFAppState().enfermedadId == 9)
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Container(
                           width: 332.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -5958,7 +5959,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6011,7 +6012,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6037,7 +6038,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6109,7 +6110,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6135,7 +6136,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6180,7 +6181,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6207,7 +6208,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -6256,7 +6257,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -6282,7 +6283,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6342,7 +6343,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6368,7 +6369,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6419,7 +6420,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6445,7 +6446,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6490,7 +6491,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6516,7 +6517,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6561,7 +6562,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6588,7 +6589,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -6637,7 +6638,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -6663,7 +6664,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6717,7 +6718,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -6743,7 +6744,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6793,7 +6794,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6819,7 +6820,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6878,7 +6879,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6904,7 +6905,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: FlutterFlowDropDown<String>(
                                       controller: _model
@@ -6949,7 +6950,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 4.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
@@ -6976,7 +6977,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
@@ -7024,7 +7025,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -7070,7 +7071,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -7122,7 +7123,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: ((_model.dropDownGeneroValue == null || _model.dropDownGeneroValue == '') ||
@@ -7222,7 +7223,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -7240,9 +7241,9 @@ class _SignUpDetalleEnfermedadWidgetState
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 44.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).azulPerm,
@@ -7256,7 +7257,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -7274,7 +7275,7 @@ class _SignUpDetalleEnfermedadWidgetState
                       ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await showModalBottomSheet(
@@ -7287,7 +7288,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                 onTap: () => FocusScope.of(context).unfocus(),
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: const ModalCancelaSignWidget(),
+                                  child: ModalCancelaSignWidget(),
                                 ),
                               );
                             },
@@ -7299,11 +7300,11 @@ class _SignUpDetalleEnfermedadWidgetState
                         options: FFButtonOptions(
                           width: 300.0,
                           height: 44.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0x00FFFFFF),
+                          color: Color(0x00FFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Poppins',

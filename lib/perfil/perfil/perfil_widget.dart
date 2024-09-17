@@ -9,6 +9,7 @@ import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'perfil_model.dart';
 export 'perfil_model.dart';
@@ -32,9 +33,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.modoOscuro = true;
-      safeSetState(() {});
-        });
+      if ((Theme.of(context).brightness == Brightness.dark) != null) {
+        _model.modoOscuro = true;
+        safeSetState(() {});
+      } else {
+        _model.modoOscuro = false;
+        safeSetState(() {});
+      }
+    });
 
     _model.switchValue2 = _model.modoOscuro;
     _model.switchValue3 = true;
@@ -107,20 +113,20 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 5.0, 15.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -144,7 +150,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     context.pushNamed(
                                       'perfil_foto',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -156,7 +162,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     width: 60.0,
                                     height: 60.0,
                                     clipBehavior: Clip.antiAlias,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.network(
@@ -169,14 +175,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 0.0, 0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 2.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -188,7 +194,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                             'perfil_datos_personales',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -240,9 +246,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               ),
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -253,7 +259,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         context.pushNamed(
                                           'perfil_datos_personales',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -282,7 +288,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 15.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -299,9 +305,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).secondary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -312,7 +318,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -324,7 +330,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         if (FFAppState().perfilId == 1)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 15.0, 10.0, 5.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -340,7 +346,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -360,7 +366,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 10.0),
                                         child: Text(
                                           UserIndividualCall.ranking(
@@ -389,7 +395,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         if (FFAppState().perfilId == 1)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 15.0, 15.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -405,7 +411,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: Icon(
                                               Icons
@@ -418,7 +424,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -440,7 +446,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ],
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6863A4DC),
                                       ),
@@ -454,10 +460,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -469,7 +475,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 'perfil_datos_medicos',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -487,7 +493,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ),
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6563A4DC),
                                       ),
@@ -499,7 +505,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         if (FFAppState().perfilId == 1)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 5.0, 15.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -515,7 +521,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: Icon(
                                               Icons.medication_liquid,
@@ -527,7 +533,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -549,7 +555,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ],
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6863A4DC),
                                       ),
@@ -563,10 +569,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -578,7 +584,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 'perfil_medicamentos',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -596,7 +602,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ),
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6563A4DC),
                                       ),
@@ -608,7 +614,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         if (FFAppState().perfilId == 1)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 5.0, 15.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -624,7 +630,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: Icon(
                                               Icons.account_balance,
@@ -636,7 +642,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -658,7 +664,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ],
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6863A4DC),
                                       ),
@@ -672,10 +678,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -687,7 +693,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 'perfil_asociaciones',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -705,7 +711,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ),
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6563A4DC),
                                       ),
@@ -716,7 +722,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 5.0, 15.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -732,7 +738,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.notifications_none,
@@ -743,7 +749,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -763,7 +769,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ],
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6863A4DC),
                                     ),
@@ -776,9 +782,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -790,7 +796,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               'perfil_notificaciones',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -807,7 +813,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ),
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6563A4DC),
                                     ),
@@ -819,7 +825,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         ),
                         if (FFAppState().authToken == '1')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 5.0, 15.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -835,7 +841,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
                                             child: Icon(
                                               Icons.translate_sharp,
@@ -847,7 +853,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
@@ -869,7 +875,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ],
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6863A4DC),
                                       ),
@@ -883,10 +889,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -898,7 +904,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 'perfil_idiomas',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -916,7 +922,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                           ),
                                         ),
                                       ),
-                                      const Divider(
+                                      Divider(
                                         thickness: 1.0,
                                         color: Color(0x6563A4DC),
                                       ),
@@ -927,7 +933,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 5.0, 15.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -943,7 +949,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.help_outline,
@@ -954,7 +960,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -974,7 +980,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ],
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6863A4DC),
                                     ),
@@ -987,9 +993,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1001,7 +1007,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               'perfil_faqs',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1018,7 +1024,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ),
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6563A4DC),
                                     ),
@@ -1029,7 +1035,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 5.0, 15.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1045,7 +1051,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.mail_outline,
@@ -1056,7 +1062,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1076,7 +1082,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ],
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6863A4DC),
                                     ),
@@ -1089,9 +1095,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1103,7 +1109,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               'perfil_contacto',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1120,7 +1126,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ),
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6563A4DC),
                                     ),
@@ -1131,7 +1137,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 5.0, 15.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1147,7 +1153,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.menu_book_outlined,
@@ -1158,7 +1164,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1178,7 +1184,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ],
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6863A4DC),
                                     ),
@@ -1191,9 +1197,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1205,7 +1211,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               'legal_uso',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1222,7 +1228,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ),
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6563A4DC),
                                     ),
@@ -1233,7 +1239,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 5.0, 15.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1249,7 +1255,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
                                             Icons.search,
@@ -1260,7 +1266,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -1280,7 +1286,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ],
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6863A4DC),
                                     ),
@@ -1293,9 +1299,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 5.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -1307,7 +1313,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               'legal_investigacion',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1324,7 +1330,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ),
                                     ),
-                                    const Divider(
+                                    Divider(
                                       thickness: 1.0,
                                       color: Color(0x6563A4DC),
                                     ),
@@ -1335,7 +1341,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Container(
                             width: 366.0,
@@ -1349,9 +1355,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'Idioma: ${FFLocalizations.of(context).languageCode == 'en' ? 'English' : 'Español'}',
@@ -1366,9 +1372,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 ),
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                    alignment: AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Switch.adaptive(
                                         value: _model.switchValue1 ??=
@@ -1379,8 +1385,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                 : false,
                                         onChanged: (newValue) async {
                                           safeSetState(() =>
-                                              _model.switchValue1 = newValue);
-                                          if (newValue) {
+                                              _model.switchValue1 = newValue!);
+                                          if (newValue!) {
                                             setAppLanguage(context, 'en');
                                           } else {
                                             setAppLanguage(context, 'es');
@@ -1404,7 +1410,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Container(
                             width: 366.0,
@@ -1418,9 +1424,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1437,16 +1443,16 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 ),
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                    alignment: AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Switch.adaptive(
                                         value: _model.switchValue2!,
                                         onChanged: (newValue) async {
                                           safeSetState(() =>
-                                              _model.switchValue2 = newValue);
-                                          if (newValue) {
+                                              _model.switchValue2 = newValue!);
+                                          if (newValue!) {
                                             setDarkModeSetting(
                                                 context, ThemeMode.dark);
                                           } else {
@@ -1483,9 +1489,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -1502,15 +1508,15 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               ),
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  alignment: AlignmentDirectional(1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 10.0, 0.0),
                                     child: Switch.adaptive(
                                       value: _model.switchValue3!,
                                       onChanged: (newValue) async {
                                         safeSetState(() =>
-                                            _model.switchValue3 = newValue);
+                                            _model.switchValue3 = newValue!);
                                       },
                                       activeColor:
                                           FlutterFlowTheme.of(context).primary,
@@ -1527,7 +1533,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 25.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1543,7 +1549,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     'welcome',
                                     context.mounted,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1595,9 +1601,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1608,7 +1614,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -1619,7 +1625,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 25.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1639,7 +1645,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: const ModalEliminaCuentaWidget(),
+                                          child: ModalEliminaCuentaWidget(),
                                         ),
                                       );
                                     },
@@ -1651,9 +1657,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -1677,7 +1683,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 25.0, 10.0, 25.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1695,14 +1701,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                             ],
                           ),
                         ),
-                      ].addToEnd(const SizedBox(height: 90.0)),
+                      ].addToEnd(SizedBox(height: 90.0)),
                     ),
                   ),
                 ),
                 wrapWithModel(
                   model: _model.menuUsuarioModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const MenuUsuarioWidget(
+                  child: MenuUsuarioWidget(
                     index: 0,
                   ),
                 ),

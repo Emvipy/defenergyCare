@@ -5,9 +5,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emp_detalle_encuesta_model.dart';
 export 'emp_detalle_encuesta_model.dart';
@@ -64,7 +66,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
     return FutureBuilder<ApiCallResponse>(
       future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
             ..complete(EmpresaEncuestaIndividualCall.call(
-              encuestaId: widget.encuestaId,
+              encuestaId: widget!.encuestaId,
               authToken: FFAppState().authToken,
             )))
           .future,
@@ -121,7 +123,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -132,7 +134,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -180,7 +182,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 5.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -241,7 +243,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 5.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -304,7 +306,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -315,7 +317,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                 await EmpresaEncuestaVisibilidadCall
                                                     .call(
                                               authToken: FFAppState().authToken,
-                                              encuestaId: widget.encuestaId,
+                                              encuestaId: widget!.encuestaId,
                                               accion: 'ocultar',
                                             );
 
@@ -347,7 +349,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -358,7 +360,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                 await EmpresaEncuestaVisibilidadCall
                                                     .call(
                                               authToken: FFAppState().authToken,
-                                              encuestaId: widget.encuestaId,
+                                              encuestaId: widget!.encuestaId,
                                               accion: 'mostrar',
                                             );
 
@@ -386,7 +388,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 5.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -445,7 +447,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 5.0, 5.0, 5.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -512,14 +514,14 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                           ) ==
                           'no')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 1.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               _model.apiFinalizaEncuesta =
                                   await EmpresaEncuestaFinalizaCall.call(
                                 authToken: FFAppState().authToken,
-                                encuestaId: widget.encuestaId,
+                                encuestaId: widget!.encuestaId,
                               );
 
                               if ((_model.apiFinalizaEncuesta?.succeeded ??
@@ -527,7 +529,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                 context.pushNamed(
                                   'encuestas',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -544,9 +546,9 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -563,7 +565,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                         ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: Container(
                           width: 350.0,
                           decoration: BoxDecoration(
@@ -575,7 +577,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -608,7 +610,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'si')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -638,7 +640,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -691,7 +693,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             1
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -712,7 +714,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -765,7 +767,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             2
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -786,7 +788,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -839,7 +841,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             3
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -860,7 +862,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -913,7 +915,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             4
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -934,7 +936,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -974,7 +976,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             5
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -995,7 +997,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1048,7 +1050,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             6
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -1069,7 +1071,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1122,7 +1124,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             7
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -1143,7 +1145,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 5.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1196,7 +1198,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             8
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -1217,7 +1219,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                   ) ==
                                   'no')
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 5.0, 5.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1270,7 +1272,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                                             8
                                                         ? 'SI'
                                                         : 'NO',
-                                                style: const TextStyle(),
+                                                style: TextStyle(),
                                               )
                                             ],
                                             style: FlutterFlowTheme.of(context)
@@ -1291,14 +1293,14 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 1.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 1.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             context.pushNamed(
                               'emp_detalle_preguntas',
                               queryParameters: {
                                 'encuestaId': serializeParam(
-                                  widget.encuestaId,
+                                  widget!.encuestaId,
                                   ParamType.int,
                                 ),
                                 'tituloEs': serializeParam(
@@ -1317,7 +1319,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                 ),
                               }.withoutNulls,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -1330,9 +1332,9 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1349,14 +1351,14 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 1.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 1.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.apiExportaEncuesta =
                                 await EmpresaExportaEncuestaCall.call(
                               authToken: FFAppState().authToken,
                               userId: FFAppState().xUserId,
-                              encuestaId: widget.encuestaId,
+                              encuestaId: widget!.encuestaId,
                             );
 
                             if ((_model.apiExportaEncuesta?.succeeded ??
@@ -1370,7 +1372,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                           .secondaryBackground,
                                     ),
                                   ),
-                                  duration: const Duration(milliseconds: 4000),
+                                  duration: Duration(milliseconds: 4000),
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).success,
                                 ),
@@ -1385,7 +1387,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                                           .secondaryBackground,
                                     ),
                                   ),
-                                  duration: const Duration(milliseconds: 4000),
+                                  duration: Duration(milliseconds: 4000),
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).error,
                                 ),
@@ -1400,9 +1402,9 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1440,7 +1442,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                           ),
                         ],
                       ),
-                    ].addToEnd(const SizedBox(height: 100.0)),
+                    ].addToEnd(SizedBox(height: 100.0)),
                   ),
                 ),
                 if (!(isWeb
@@ -1449,7 +1451,7 @@ class _EmpDetalleEncuestaWidgetState extends State<EmpDetalleEncuestaWidget> {
                   wrapWithModel(
                     model: _model.menuUsuarioModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const MenuUsuarioWidget(
+                    child: MenuUsuarioWidget(
                       index: 2,
                     ),
                   ),

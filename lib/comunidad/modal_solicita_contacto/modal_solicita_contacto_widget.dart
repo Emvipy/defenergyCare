@@ -2,7 +2,10 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'modal_solicita_contacto_model.dart';
 export 'modal_solicita_contacto_model.dart';
@@ -59,13 +62,13 @@ class _ModalSolicitaContactoWidgetState
         desktop: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 1.0),
+        alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 312.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 5.0,
                 color: Color(0x3B1D2429),
@@ -75,7 +78,7 @@ class _ModalSolicitaContactoWidgetState
                 ),
               )
             ],
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(16.0),
@@ -86,7 +89,7 @@ class _ModalSolicitaContactoWidgetState
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -109,7 +112,7 @@ class _ModalSolicitaContactoWidgetState
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -135,7 +138,7 @@ class _ModalSolicitaContactoWidgetState
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
-                                widget.nombreContacto,
+                                widget!.nombreContacto,
                                 '-',
                               ),
                               style: TextStyle(
@@ -148,11 +151,11 @@ class _ModalSolicitaContactoWidgetState
                               text: FFLocalizations.of(context).getText(
                                 'efkzky1q' /*   */,
                               ),
-                              style: const TextStyle(),
+                              style: TextStyle(),
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
-                                widget.apellidosContacto,
+                                widget!.apellidosContacto,
                                 '-',
                               ),
                               style: TextStyle(
@@ -175,14 +178,14 @@ class _ModalSolicitaContactoWidgetState
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Flexible(
                       child: Text(
-                        'Como es la primera vez que vas a enviar un mensaje a ${widget.nombreContacto}, antes debes solicitarle contacto.',
+                        'Como es la primera vez que vas a enviar un mensaje a ${widget!.nombreContacto}, antes debes solicitarle contacto.',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
@@ -197,7 +200,7 @@ class _ModalSolicitaContactoWidgetState
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -222,18 +225,18 @@ class _ModalSolicitaContactoWidgetState
               ),
               Flexible(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -241,13 +244,13 @@ class _ModalSolicitaContactoWidgetState
                                     await ChatInvitaUserCall.call(
                                   authToken: FFAppState().authToken,
                                   emisorId: FFAppState().xUserId,
-                                  receptorId: widget.contactoId,
+                                  receptorId: widget!.contactoId,
                                 );
 
                                 context.pushNamed(
                                   'comunidad',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -263,9 +266,9 @@ class _ModalSolicitaContactoWidgetState
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -276,7 +279,7 @@ class _ModalSolicitaContactoWidgetState
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

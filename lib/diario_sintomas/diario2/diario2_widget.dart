@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'diario2_model.dart';
@@ -89,7 +91,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
               context.pushNamed(
                 'diario1',
                 extra: <String, dynamic>{
-                  kTransitionInfoKey: const TransitionInfo(
+                  kTransitionInfoKey: TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.fade,
                     duration: Duration(milliseconds: 0),
@@ -99,7 +101,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'eye7oetk' /* Diario de Síntomas */,
@@ -112,7 +114,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -127,14 +129,14 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Container(
                             width: double.infinity,
                             height: 24.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -144,7 +146,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: LinearPercentIndicator(
                                         percent: 0.3,
                                         width: 300.0,
@@ -170,7 +172,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        barRadius: const Radius.circular(10.0),
+                                        barRadius: Radius.circular(10.0),
                                         padding: EdgeInsets.zero,
                                       ),
                                     ),
@@ -183,7 +185,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             'yh4dipol' /* Indica si hoy has tenido  */,
@@ -198,11 +200,11 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           height: 100.0,
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -326,7 +328,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                       ),
                       if (_model.dolores == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 20.0, 10.0, 0.0),
                           child: Container(
                             width: double.infinity,
@@ -341,7 +343,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 4.0, 10.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -520,7 +522,7 @@ class _Diario2WidgetState extends State<Diario2Widget> {
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 3.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -568,7 +570,7 @@ dolor */
                         ),
                       if (_model.migrana == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 20.0, 10.0, 0.0),
                           child: Container(
                             width: double.infinity,
@@ -583,7 +585,7 @@ dolor */
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 4.0, 10.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -762,7 +764,7 @@ dolor */
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 3.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -810,7 +812,7 @@ dolor */
                         ),
                       if (_model.dolores == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 15.0, 15.0, 10.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
@@ -828,12 +830,12 @@ dolor */
                         ),
                       if (_model.dolores == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 25.0),
                           child: Container(
                             width: double.infinity,
                             height: 72.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -843,7 +845,7 @@ dolor */
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -866,7 +868,7 @@ dolor */
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -890,7 +892,7 @@ dolor */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -913,7 +915,7 @@ dolor */
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -937,7 +939,7 @@ dolor */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -960,7 +962,7 @@ dolor */
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -984,7 +986,7 @@ dolor */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1007,7 +1009,7 @@ dolor */
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1031,7 +1033,7 @@ dolor */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1054,7 +1056,7 @@ dolor */
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1078,7 +1080,7 @@ dolor */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1101,7 +1103,7 @@ dolor */
                                           ),
                                           child: Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1127,7 +1129,7 @@ dolor */
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 3.0, 15.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1198,7 +1200,7 @@ dolor */
                                   context.pushNamed(
                                     'diario3',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -1208,7 +1210,7 @@ dolor */
                                   context.pushNamed(
                                     'diario4',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -1224,9 +1226,9 @@ dolor */
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1237,7 +1239,7 @@ dolor */
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -1249,7 +1251,7 @@ dolor */
                       ),
                       if (FFAppState().editandoDiario == 'no')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1275,7 +1277,7 @@ dolor */
                                               .secondaryBackground,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
+                                      duration: Duration(milliseconds: 4000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).success,
                                     ),
@@ -1286,7 +1288,7 @@ dolor */
                                   context.pushNamed(
                                     'Home',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1302,11 +1304,11 @@ dolor */
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x0063A4DC),
+                                  color: Color(0x0063A4DC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -1329,7 +1331,7 @@ dolor */
                         ),
                       if (FFAppState().editandoDiario == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1355,7 +1357,7 @@ dolor */
                                               .secondaryBackground,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
+                                      duration: Duration(milliseconds: 4000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).success,
                                     ),
@@ -1366,7 +1368,7 @@ dolor */
                                   context.pushNamed(
                                     'Home',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -1382,11 +1384,11 @@ dolor */
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x0063A4DC),
+                                  color: Color(0x0063A4DC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

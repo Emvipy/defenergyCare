@@ -4,8 +4,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_usuario_copy_model.dart';
 export 'menu_usuario_copy_model.dart';
@@ -47,8 +51,8 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 150.0.ms,
-            begin: const Offset(0.6, 1.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 1.0),
+            end: Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -66,8 +70,8 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 150.0.ms,
-            begin: const Offset(0.6, 1.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 1.0),
+            end: Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -85,8 +89,8 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 150.0.ms,
-            begin: const Offset(0.6, 1.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 1.0),
+            end: Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -104,8 +108,8 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 150.0.ms,
-            begin: const Offset(0.6, 1.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 1.0),
+            end: Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -123,8 +127,8 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 150.0.ms,
-            begin: const Offset(0.6, 1.0),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.6, 1.0),
+            end: Offset(1.0, 1.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -150,7 +154,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: 390.0,
         height: 97.0,
@@ -165,9 +169,9 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
             desktop: false,
           ),
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
               child: Container(
                 width: 360.0,
                 height: 70.0,
@@ -185,7 +189,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Opacity(
-                            opacity: widget.index == 1 ? 1.0 : 0.5,
+                            opacity: widget!.index == 1 ? 1.0 : 0.5,
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -200,7 +204,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                 context.pushNamed(
                                   'Home',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -210,7 +214,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               },
                             ),
                           ),
-                          if (widget.index == 1)
+                          if (widget!.index == 1)
                             SizedBox(
                               width: 30.0,
                               child: Divider(
@@ -229,7 +233,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Opacity(
-                            opacity: widget.index == 2 ? 1.0 : 0.5,
+                            opacity: widget!.index == 2 ? 1.0 : 0.5,
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -243,13 +247,15 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               onPressed: () async {
                                 if (FFAppState().email ==
                                     'enrique@emvipy.com') {
-                                  if ((FFAppState().authToken != '') &&
-                                      (FFAppState().email != '')) {
+                                  if ((FFAppState().authToken != null &&
+                                          FFAppState().authToken != '') &&
+                                      (FFAppState().email != null &&
+                                          FFAppState().email != '')) {
                                     if (FFAppState().creadoOk == 'si') {
                                       context.pushNamed(
                                         'encuestas',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -266,7 +272,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                           return Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),
-                                            child: const ModalErrorCuentaWidget(),
+                                            child: ModalErrorCuentaWidget(),
                                           );
                                         },
                                       ).then((value) => safeSetState(() {}));
@@ -275,7 +281,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                     context.pushNamed(
                                       'login',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -288,7 +294,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               },
                             ),
                           ),
-                          if (widget.index == 2)
+                          if (widget!.index == 2)
                             SizedBox(
                               width: 30.0,
                               child: Divider(
@@ -307,7 +313,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Opacity(
-                            opacity: widget.index == 3 ? 1.0 : 0.5,
+                            opacity: widget!.index == 3 ? 1.0 : 0.5,
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -321,13 +327,15 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               onPressed: () async {
                                 if (FFAppState().email ==
                                     'enrique@emvipy.com') {
-                                  if ((FFAppState().authToken != '') &&
-                                      (FFAppState().email != '')) {
+                                  if ((FFAppState().authToken != null &&
+                                          FFAppState().authToken != '') &&
+                                      (FFAppState().email != null &&
+                                          FFAppState().email != '')) {
                                     if (FFAppState().creadoOk == 'si') {
                                       context.pushNamed(
                                         'marketplace',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -344,7 +352,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                           return Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),
-                                            child: const ModalErrorCuentaWidget(),
+                                            child: ModalErrorCuentaWidget(),
                                           );
                                         },
                                       ).then((value) => safeSetState(() {}));
@@ -353,7 +361,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                     context.pushNamed(
                                       'login',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -366,7 +374,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               },
                             ),
                           ),
-                          if (widget.index == 3)
+                          if (widget!.index == 3)
                             SizedBox(
                               width: 30.0,
                               child: Divider(
@@ -385,7 +393,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Opacity(
-                            opacity: widget.index == 4 ? 1.0 : 0.5,
+                            opacity: widget!.index == 4 ? 1.0 : 0.5,
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -399,13 +407,15 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               onPressed: () async {
                                 if (FFAppState().email ==
                                     'enrique@emvipy.com') {
-                                  if ((FFAppState().authToken != '') &&
-                                      (FFAppState().email != '')) {
+                                  if ((FFAppState().authToken != null &&
+                                          FFAppState().authToken != '') &&
+                                      (FFAppState().email != null &&
+                                          FFAppState().email != '')) {
                                     if (FFAppState().creadoOk == 'si') {
                                       context.pushNamed(
                                         'comunidad',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -422,7 +432,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                           return Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),
-                                            child: const ModalErrorCuentaWidget(),
+                                            child: ModalErrorCuentaWidget(),
                                           );
                                         },
                                       ).then((value) => safeSetState(() {}));
@@ -431,7 +441,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                     context.pushNamed(
                                       'login',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -444,7 +454,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               },
                             ),
                           ),
-                          if (widget.index == 4)
+                          if (widget!.index == 4)
                             SizedBox(
                               width: 30.0,
                               child: Divider(
@@ -463,7 +473,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Opacity(
-                            opacity: widget.index == 5 ? 1.0 : 0.5,
+                            opacity: widget!.index == 5 ? 1.0 : 0.5,
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 20.0,
@@ -483,7 +493,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                                   'welcome',
                                   context.mounted,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -531,7 +541,7 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                               },
                             ),
                           ),
-                          if (widget.index == 5)
+                          if (widget!.index == 5)
                             SizedBox(
                               width: 30.0,
                               child: Divider(
@@ -545,9 +555,9 @@ class _MenuUsuarioCopyWidgetState extends State<MenuUsuarioCopyWidget>
                       ),
                     ),
                   ]
-                      .divide(const SizedBox(width: 16.0))
-                      .addToStart(const SizedBox(width: 16.0))
-                      .addToEnd(const SizedBox(width: 16.0)),
+                      .divide(SizedBox(width: 16.0))
+                      .addToStart(SizedBox(width: 16.0))
+                      .addToEnd(SizedBox(width: 16.0)),
                 ),
               ),
             ),

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'modal_add_med_model.dart';
 export 'modal_add_med_model.dart';
@@ -62,10 +63,10 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 1.0),
+        alignment: AlignmentDirectional(0.0, 1.0),
         child: FutureBuilder<ApiCallResponse>(
           future: PerfilMedicamentoIndividualCall.call(
-            medId: widget.medId,
+            medId: widget!.medId,
           ),
           builder: (context, snapshot) {
             // Customize what your widget looks like when it's loading.
@@ -89,7 +90,7 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
               height: 422.0,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
                     blurRadius: 5.0,
                     color: Color(0x3B1D2429),
@@ -99,7 +100,7 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                     ),
                   )
                 ],
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(0.0),
                   topLeft: Radius.circular(16.0),
@@ -111,7 +112,7 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -133,10 +134,10 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                       ],
                     ),
                   ),
-                  if (widget.edita == 'no')
+                  if (widget!.edita == 'no')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -162,10 +163,10 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                         ],
                       ),
                     ),
-                  if (widget.edita == 'si')
+                  if (widget!.edita == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -193,16 +194,16 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                     ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
-                            child: SizedBox(
+                            child: Container(
                               width: 350.0,
                               child: TextFormField(
                                 controller: _model.nombreTextController ??=
@@ -284,16 +285,16 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
-                            child: SizedBox(
+                            child: Container(
                               width: 350.0,
                               child: TextFormField(
                                 controller: _model.dosisTextController ??=
@@ -375,16 +376,16 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
-                            child: SizedBox(
+                            child: Container(
                               width: 350.0,
                               child: TextFormField(
                                 controller: _model.posologiaTextController ??=
@@ -466,26 +467,26 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                       ],
                     ),
                   ),
-                  if (widget.edita == 'si')
+                  if (widget!.edita == 'si')
                     Flexible(
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 1.0),
+                                alignment: AlignmentDirectional(0.0, 1.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     _model.apiResult960 =
                                         await PerfilEditaMedicamentoCall.call(
                                       authToken: FFAppState().authToken,
                                       accion: 'eliminar',
-                                      medId: widget.medId,
+                                      medId: widget!.medId,
                                       nombre: 'n/a',
                                       dosis: 'n/a',
                                       posologia: 'n/a',
@@ -496,7 +497,7 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                                       context.pushNamed(
                                         'perfil_medicamentos',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -514,9 +515,9 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color:
                                         FlutterFlowTheme.of(context).secondary,
@@ -528,7 +529,7 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -543,23 +544,23 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                     ),
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      alignment: AlignmentDirectional(0.0, 1.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 20.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   _model.apiResult960Copy =
                                       await PerfilEditaMedicamentoCall.call(
                                     authToken: FFAppState().authToken,
                                     accion: 'edita',
-                                    medId: widget.medId,
+                                    medId: widget!.medId,
                                     nombre: _model.nombreTextController.text,
                                     dosis: _model.dosisTextController.text,
                                     posologia:
@@ -571,7 +572,7 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                                     context.pushNamed(
                                       'perfil_medicamentos',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -589,9 +590,9 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -602,7 +603,7 @@ class _ModalAddMedWidgetState extends State<ModalAddMedWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

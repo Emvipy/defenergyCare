@@ -118,3 +118,5 @@ export '/encuestas/encuestas_detalle_copy/encuestas_detalle_copy_widget.dart'
     show EncuestasDetalleCopyWidget;
 export '/empresa_encuestas/noticias_crea/noticias_crea_widget.dart'
     show NoticiasCreaWidget;
+export '/registro/empresa_pdte_validacion_copy/empresa_pdte_validacion_copy_widget.dart'
+    show EmpresaPdteValidacionCopyWidget;

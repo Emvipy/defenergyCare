@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emp_crea_edita_pregunta_model.dart';
 export 'emp_crea_edita_pregunta_model.dart';
@@ -127,7 +128,7 @@ class _EmpCreaEditaPreguntaWidgetState
                   context.pushNamed(
                     'emp_crea_encuesta2',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                       ),
@@ -146,151 +147,66 @@ class _EmpCreaEditaPreguntaWidgetState
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: Stack(
               children: [
-                SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            10.0, 10.0, 10.0, 10.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'my5onai0' /* Editar pregunta */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color:
-                                        FlutterFlowTheme.of(context).primary,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: SizedBox(
-                          width: 350.0,
-                          child: TextFormField(
-                            controller: _model.pregEsTextController ??=
-                                TextEditingController(
-                              text: EmpresaImagenPreguntaCall.preguntaEs(
-                                empCreaEditaPreguntaEmpresaImagenPreguntaResponse
-                                    .jsonBody,
-                              ),
-                            ),
-                            focusNode: _model.pregEsFocusNode,
-                            onChanged: (_) => EasyDebounce.debounce(
-                              '_model.pregEsTextController',
-                              const Duration(milliseconds: 100),
-                              () => safeSetState(() {}),
-                            ),
-                            autofocus: false,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              isDense: true,
-                              labelText: FFLocalizations.of(context).getText(
-                                '905d0kri' /* Pregunta en Español */,
-                              ),
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    letterSpacing: 0.0,
-                                  ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
+                if (FFAppState().nuevaPreguntaId != null)
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 10.0, 10.0, 10.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'my5onai0' /* Editar pregunta */,
                                 ),
-                                borderRadius: BorderRadius.circular(10.0),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              filled: true,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  letterSpacing: 0.0,
-                                ),
-                            cursorColor:
-                                FlutterFlowTheme.of(context).primaryText,
-                            validator: _model.pregEsTextControllerValidator
-                                .asValidator(context),
+                            ],
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
-                          child: SizedBox(
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
-                              controller: _model.pregEnTextController ??=
+                              controller: _model.pregEsTextController ??=
                                   TextEditingController(
-                                text: EmpresaImagenPreguntaCall.preguntaEn(
+                                text: EmpresaImagenPreguntaCall.preguntaEs(
                                   empCreaEditaPreguntaEmpresaImagenPreguntaResponse
                                       .jsonBody,
                                 ),
                               ),
-                              focusNode: _model.pregEnFocusNode,
+                              focusNode: _model.pregEsFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
-                                '_model.pregEnTextController',
-                                const Duration(milliseconds: 100),
+                                '_model.pregEsTextController',
+                                Duration(milliseconds: 100),
                                 () => safeSetState(() {}),
                               ),
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText:
-                                    FFLocalizations.of(context).getText(
-                                  'm7o1bndi' /* Pregunta en Inglés */,
+                                labelText: FFLocalizations.of(context).getText(
+                                  '905d0kri' /* Pregunta en Español */,
                                 ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -305,14 +221,14 @@ class _EmpCreaEditaPreguntaWidgetState
                                       letterSpacing: 0.0,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -344,142 +260,102 @@ class _EmpCreaEditaPreguntaWidgetState
                                   ),
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
-                              validator: _model.pregEnTextControllerValidator
+                              validator: _model.pregEsTextControllerValidator
                                   .asValidator(context),
                             ),
                           ),
                         ),
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 15.0, 0.0, 0.0),
-                          child: Container(
-                            width: 350.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 5.0, 5.0, 5.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                    children: [
-                                      Flexible(
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'm7pypx92' /* Selecciona el tipo de respuest... */,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color: FlutterFlowTheme.of(
-                                                        context)
-                                                    .primary,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Container(
+                              width: 350.0,
+                              child: TextFormField(
+                                controller: _model.pregEnTextController ??=
+                                    TextEditingController(
+                                  text: EmpresaImagenPreguntaCall.preguntaEn(
+                                    empCreaEditaPreguntaEmpresaImagenPreguntaResponse
+                                        .jsonBody,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      5.0, 0.0, 5.0, 10.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      FlutterFlowDropDown<int>(
-                                        controller:
-                                            _model.dropDownValueController ??=
-                                                FormFieldController<int>(
-                                          _model.dropDownValue ??=
-                                              EmpresaImagenPreguntaCall
-                                                  .tipoPregunta(
-                                            empCreaEditaPreguntaEmpresaImagenPreguntaResponse
-                                                .jsonBody,
-                                          ),
-                                        ),
-                                        options: List<int>.from([1, 2, 3, 4]),
-                                        optionLabels: [
-                                          FFLocalizations.of(context).getText(
-                                            'vh35j9d3' /* Texto libre */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '5zf8jyfd' /* Desplegable con opciones */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            '6psqkd2i' /* Escala de 0 a 5 */,
-                                          ),
-                                          FFLocalizations.of(context).getText(
-                                            'odq4p4lk' /* Escala de 0 a 10 */,
-                                          )
-                                        ],
-                                        onChanged: (val) async {
-                                          safeSetState(() =>
-                                              _model.dropDownValue = val);
-                                          _model.tipo = _model.dropDownValue!;
-                                          safeSetState(() {});
-                                        },
-                                        width: 340.0,
-                                        height: 40.0,
-                                        textStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  letterSpacing: 0.0,
-                                                ),
-                                        hintText: FFLocalizations.of(context)
-                                            .getText(
-                                          'lbsaywum' /* Selecciona la opción */,
-                                        ),
-                                        icon: Icon(
-                                          Icons.keyboard_arrow_down_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 24.0,
-                                        ),
-                                        fillColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                        elevation: 2.0,
-                                        borderColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        borderWidth: 2.0,
-                                        borderRadius: 8.0,
-                                        margin:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                12.0, 0.0, 12.0, 0.0),
-                                        hidesUnderline: true,
-                                        isOverButton: false,
-                                        isSearchable: false,
-                                        isMultiSelect: false,
-                                      ),
-                                    ],
-                                  ),
+                                focusNode: _model.pregEnFocusNode,
+                                onChanged: (_) => EasyDebounce.debounce(
+                                  '_model.pregEnTextController',
+                                  Duration(milliseconds: 100),
+                                  () => safeSetState(() {}),
                                 ),
-                              ],
+                                autofocus: false,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  isDense: true,
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'm7o1bndi' /* Pregunta en Inglés */,
+                                  ),
+                                  labelStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context).error,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  filled: true,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      letterSpacing: 0.0,
+                                    ),
+                                cursorColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                validator: _model.pregEnTextControllerValidator
+                                    .asValidator(context),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      if (_model.tipo == 2)
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 0.0),
                             child: Container(
                               width: 350.0,
@@ -492,8 +368,8 @@ class _EmpCreaEditaPreguntaWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 5.0, 5.0, 2.0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 5.0, 5.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -501,306 +377,619 @@ class _EmpCreaEditaPreguntaWidgetState
                                       children: [
                                         Flexible(
                                           child: Text(
-                                            FFLocalizations.of(context)
-                                                .getText(
-                                              'licvga01' /* Crea las opciones de respuesta... */,
+                                            FFLocalizations.of(context).getText(
+                                              'm7pypx92' /* Selecciona el tipo de respuest... */,
                                             ),
                                             textAlign: TextAlign.center,
-                                            style:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      letterSpacing: 0.0,
-                                                    ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        5.0, 0.0, 5.0, 5.0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 5.0, 10.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
                                       children: [
-                                        Flexible(
-                                          child: Text(
-                                            FFLocalizations.of(context)
-                                                .getText(
-                                              'wlwjeaxb' /* Las opciones se mostrarán en o... */,
+                                        FlutterFlowDropDown<int>(
+                                          controller:
+                                              _model.dropDownValueController ??=
+                                                  FormFieldController<int>(
+                                            _model.dropDownValue ??=
+                                                EmpresaImagenPreguntaCall
+                                                    .tipoPregunta(
+                                              empCreaEditaPreguntaEmpresaImagenPreguntaResponse
+                                                  .jsonBody,
                                             ),
-                                            textAlign: TextAlign.center,
-                                            style:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .alternate,
-                                                      fontSize: 12.0,
-                                                      letterSpacing: 0.0,
-                                                    ),
                                           ),
+                                          options: List<int>.from([1, 2, 3, 4]),
+                                          optionLabels: [
+                                            FFLocalizations.of(context).getText(
+                                              'vh35j9d3' /* Texto libre */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              '5zf8jyfd' /* Desplegable con opciones */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              '6psqkd2i' /* Escala de 0 a 5 */,
+                                            ),
+                                            FFLocalizations.of(context).getText(
+                                              'odq4p4lk' /* Escala de 0 a 10 */,
+                                            )
+                                          ],
+                                          onChanged: (val) async {
+                                            safeSetState(() =>
+                                                _model.dropDownValue = val);
+                                            _model.tipo = _model.dropDownValue!;
+                                            safeSetState(() {});
+                                          },
+                                          width: 340.0,
+                                          height: 40.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'lbsaywum' /* Selecciona la opción */,
+                                          ),
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: false,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
                                         ),
                                       ],
                                     ),
                                   ),
-                                  FutureBuilder<ApiCallResponse>(
-                                    future: (_model.apiRequestCompleter ??=
-                                            Completer<ApiCallResponse>()
-                                              ..complete(
-                                                  EmpresaListadoOpcionesCall
-                                                      .call(
-                                                preguntaId: FFAppState()
-                                                    .nuevaPreguntaId,
-                                                encuestaId: FFAppState()
-                                                    .nuevaEncuestaId,
-                                              )))
-                                        .future,
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: SpinKitCircle(
-                                              color:
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        if (_model.tipo == 2)
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 15.0, 0.0, 0.0),
+                              child: Container(
+                                width: 350.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 5.0, 5.0, 2.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'licvga01' /* Crea las opciones de respuesta... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
                                                   FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 50.0,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
-                                        );
-                                      }
-                                      final listViewEmpresaListadoOpcionesResponse =
-                                          snapshot.data!;
-
-                                      return Builder(
-                                        builder: (context) {
-                                          final childOpciones = getJsonField(
-                                            listViewEmpresaListadoOpcionesResponse
-                                                .jsonBody,
-                                            r'''$''',
-                                          ).toList();
-
-                                          return ListView.separated(
-                                            padding: const EdgeInsets.fromLTRB(
-                                              0,
-                                              0,
-                                              0,
-                                              10.0,
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 5.0, 5.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'wlwjeaxb' /* Las opciones se mostrarán en o... */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
-                                            shrinkWrap: true,
-                                            scrollDirection: Axis.vertical,
-                                            itemCount: childOpciones.length,
-                                            separatorBuilder: (_, __) =>
-                                                const SizedBox(height: 10.0),
-                                            itemBuilder: (context,
-                                                childOpcionesIndex) {
-                                              final childOpcionesItem =
-                                                  childOpciones[
-                                                      childOpcionesIndex];
-                                              return Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        0.0, 0.0),
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 1.0),
-                                                  child: Container(
-                                                    width: 340.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          const Color(0x8063A4DC),
-                                                      borderRadius:
-                                                          BorderRadius
-                                                              .circular(10.0),
-                                                    ),
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  10.0,
-                                                                  5.0,
-                                                                  10.0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                            context)
-                                                                        .languageCode ==
-                                                                    'en'
-                                                                ? getJsonField(
-                                                                    childOpcionesItem,
-                                                                    r'''$.texto_en''',
-                                                                  ).toString()
-                                                                : getJsonField(
-                                                                    childOpcionesItem,
-                                                                    r'''$.texto''',
-                                                                  ).toString(),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                          ),
-                                                          Flexible(
-                                                            child: Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      1.0,
-                                                                      0.0),
-                                                              child: InkWell(
-                                                                splashColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  _model.apiResultt7e =
-                                                                      await EmpresaBorraOpcionEncuestaCall
-                                                                          .call(
-                                                                    opcionId:
-                                                                        getJsonField(
-                                                                      childOpcionesItem,
-                                                                      r'''$.id''',
-                                                                    ),
-                                                                  );
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    FutureBuilder<ApiCallResponse>(
+                                      future: (_model.apiRequestCompleter ??=
+                                              Completer<ApiCallResponse>()
+                                                ..complete(
+                                                    EmpresaListadoOpcionesCall
+                                                        .call(
+                                                  preguntaId: FFAppState()
+                                                      .nuevaPreguntaId,
+                                                  encuestaId: FFAppState()
+                                                      .nuevaEncuestaId,
+                                                )))
+                                          .future,
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitCircle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 50.0,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        final listViewEmpresaListadoOpcionesResponse =
+                                            snapshot.data!;
 
-                                                                  if ((_model
-                                                                          .apiResultt7e
-                                                                          ?.succeeded ??
-                                                                      true)) {
-                                                                    safeSetState(() =>
-                                                                        _model.apiRequestCompleter =
-                                                                            null);
-                                                                    await _model
-                                                                        .waitForApiRequestCompleted();
-                                                                    FFAppState()
-                                                                            .contadorOpcionesEncuestas =
-                                                                        FFAppState().contadorOpcionesEncuestas +
-                                                                            -1;
+                                        return Builder(
+                                          builder: (context) {
+                                            final childOpciones = getJsonField(
+                                              listViewEmpresaListadoOpcionesResponse
+                                                  .jsonBody,
+                                              r'''$''',
+                                            ).toList();
+
+                                            return ListView.separated(
+                                              padding: EdgeInsets.fromLTRB(
+                                                0,
+                                                0,
+                                                0,
+                                                10.0,
+                                              ),
+                                              shrinkWrap: true,
+                                              scrollDirection: Axis.vertical,
+                                              itemCount: childOpciones.length,
+                                              separatorBuilder: (_, __) =>
+                                                  SizedBox(height: 10.0),
+                                              itemBuilder: (context,
+                                                  childOpcionesIndex) {
+                                                final childOpcionesItem =
+                                                    childOpciones[
+                                                        childOpcionesIndex];
+                                                return Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 1.0),
+                                                    child: Container(
+                                                      width: 340.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0x8063A4DC),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10.0),
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    5.0,
+                                                                    10.0,
+                                                                    5.0,
+                                                                    10.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Text(
+                                                              FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode ==
+                                                                      'en'
+                                                                  ? getJsonField(
+                                                                      childOpcionesItem,
+                                                                      r'''$.texto_en''',
+                                                                    ).toString()
+                                                                  : getJsonField(
+                                                                      childOpcionesItem,
+                                                                      r'''$.texto''',
+                                                                    ).toString(),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                            Flexible(
+                                                              child: Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        1.0,
+                                                                        0.0),
+                                                                child: InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    _model.apiResultt7e =
+                                                                        await EmpresaBorraOpcionEncuestaCall
+                                                                            .call(
+                                                                      opcionId:
+                                                                          getJsonField(
+                                                                        childOpcionesItem,
+                                                                        r'''$.id''',
+                                                                      ),
+                                                                    );
+
+                                                                    if ((_model
+                                                                            .apiResultt7e
+                                                                            ?.succeeded ??
+                                                                        true)) {
+                                                                      safeSetState(() =>
+                                                                          _model.apiRequestCompleter =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForApiRequestCompleted();
+                                                                      FFAppState()
+                                                                              .contadorOpcionesEncuestas =
+                                                                          FFAppState().contadorOpcionesEncuestas +
+                                                                              -1;
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    }
+
                                                                     safeSetState(
                                                                         () {});
-                                                                  }
-
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .delete_forever,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  size: 24.0,
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .delete_forever,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                    size: 24.0,
+                                                                  ),
                                                                 ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          );
-                                        },
-                                      );
-                                    },
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 10.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        FFButtonWidget(
-                                          onPressed: () async {
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding: MediaQuery
-                                                        .viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalAddOpcionWidget(
-                                                      numPreg:
-                                                          EmpresaImagenPreguntaCall
-                                                              .numPregunta(
-                                                        empCreaEditaPreguntaEmpresaImagenPreguntaResponse
-                                                            .jsonBody,
-                                                      )!,
                                                     ),
                                                   ),
                                                 );
                                               },
-                                            ).then((value) =>
-                                                safeSetState(() {}));
+                                            );
                                           },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '3r8gd58z' /* Agregar Opción al desplegable */,
-                                          ),
-                                          options: FFButtonOptions(
-                                            width: 300.0,
-                                            height: 40.0,
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconPadding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                            color:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
+                                        );
+                                      },
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 10.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              await showModalBottomSheet(
+                                                isScrollControlled: true,
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                enableDrag: false,
+                                                context: context,
+                                                builder: (context) {
+                                                  return GestureDetector(
+                                                    onTap: () =>
+                                                        FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalAddOpcionWidget(
+                                                        numPreg:
+                                                            EmpresaImagenPreguntaCall
+                                                                .numPregunta(
+                                                          empCreaEditaPreguntaEmpresaImagenPreguntaResponse
+                                                              .jsonBody,
+                                                        )!,
+                                                      ),
                                                     ),
-                                            elevation: 0.0,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                  );
+                                                },
+                                              ).then((value) =>
+                                                  safeSetState(() {}));
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '3r8gd58z' /* Agregar Opción al desplegable */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 300.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 0.0),
+                            child: Container(
+                              width: 350.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 10.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          EmpresaImagenPreguntaCall.imagen(
+                                            empCreaEditaPreguntaEmpresaImagenPreguntaResponse
+                                                .jsonBody,
+                                          )!,
+                                          width: 300.0,
+                                          height: 200.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 20.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            final selectedMedia =
+                                                await selectMediaWithSourceBottomSheet(
+                                              context: context,
+                                              maxWidth: 900.00,
+                                              maxHeight: 600.00,
+                                              allowPhoto: true,
+                                            );
+                                            if (selectedMedia != null &&
+                                                selectedMedia.every((m) =>
+                                                    validateFileFormat(
+                                                        m.storagePath,
+                                                        context))) {
+                                              safeSetState(() => _model
+                                                  .isDataUploading = true);
+                                              var selectedUploadedFiles =
+                                                  <FFUploadedFile>[];
+
+                                              try {
+                                                selectedUploadedFiles =
+                                                    selectedMedia
+                                                        .map((m) =>
+                                                            FFUploadedFile(
+                                                              name: m
+                                                                  .storagePath
+                                                                  .split('/')
+                                                                  .last,
+                                                              bytes: m.bytes,
+                                                              height: m
+                                                                  .dimensions
+                                                                  ?.height,
+                                                              width: m
+                                                                  .dimensions
+                                                                  ?.width,
+                                                              blurHash:
+                                                                  m.blurHash,
+                                                            ))
+                                                        .toList();
+                                              } finally {
+                                                _model.isDataUploading = false;
+                                              }
+                                              if (selectedUploadedFiles
+                                                      .length ==
+                                                  selectedMedia.length) {
+                                                safeSetState(() {
+                                                  _model.uploadedLocalFile =
+                                                      selectedUploadedFiles
+                                                          .first;
+                                                });
+                                              } else {
+                                                safeSetState(() {});
+                                                return;
+                                              }
+                                            }
+
+                                            _model.apiResultg9x =
+                                                await EmpresasubeFotoEncuestaCall
+                                                    .call(
+                                              img: _model.uploadedLocalFile,
+                                              preguntaId:
+                                                  FFAppState().nuevaPreguntaId,
+                                              authToken: FFAppState().authToken,
+                                            );
+
+                                            if ((_model
+                                                    .apiResultg9x?.succeeded ??
+                                                true)) {
+                                              context.pushNamed(
+                                                'emp_crea_edita_pregunta',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
+                                              );
+                                            }
+
+                                            safeSetState(() {});
+                                          },
+                                          child: Icon(
+                                            Icons.file_upload_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .azulPerm,
+                                            size: 30.0,
+                                          ),
+                                        ),
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            _model.apiResultwhi =
+                                                await EmpresaBorraImagenEncuestaCall
+                                                    .call(
+                                              preguntaId:
+                                                  FFAppState().nuevaPreguntaId,
+                                            );
+
+                                            if ((_model
+                                                    .apiResultwhi?.succeeded ??
+                                                true)) {
+                                              context.pushNamed(
+                                                'emp_crea_edita_pregunta',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
+                                              );
+                                            }
+
+                                            safeSetState(() {});
+                                          },
+                                          child: Icon(
+                                            Icons.delete_forever,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            size: 30.0,
                                           ),
                                         ),
                                       ],
@@ -811,435 +1000,252 @@ class _EmpCreaEditaPreguntaWidgetState
                             ),
                           ),
                         ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: Container(
-                            width: 350.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 10.0),
-                                    child: ClipRRect(
-                                      borderRadius:
-                                          BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        EmpresaImagenPreguntaCall.imagen(
-                                          empCreaEditaPreguntaEmpresaImagenPreguntaResponse
-                                              .jsonBody,
-                                        )!,
-                                        width: 300.0,
-                                        height: 200.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  _model.apiResultywt =
+                                      await EmpresaBorraPreguntaCall.call(
+                                    authToken: FFAppState().authToken,
+                                    preguntaId: FFAppState().nuevaPreguntaId,
+                                    encuestaId: FFAppState().nuevaEncuestaId,
+                                  );
+
+                                  if ((_model.apiResultywt?.succeeded ??
+                                      true)) {
+                                    FFAppState().nuevaPreguntaId = 0;
+                                    safeSetState(() {});
+
+                                    context.pushNamed(
+                                      'emp_crea_encuesta2',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                        ),
+                                      },
+                                    );
+                                  }
+
+                                  safeSetState(() {});
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'lm0f5s19' /* Eliminar Pregunta */,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 20.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          final selectedMedia =
-                                              await selectMediaWithSourceBottomSheet(
-                                            context: context,
-                                            maxWidth: 900.00,
-                                            maxHeight: 600.00,
-                                            allowPhoto: true,
-                                          );
-                                          if (selectedMedia != null &&
-                                              selectedMedia.every((m) =>
-                                                  validateFileFormat(
-                                                      m.storagePath,
-                                                      context))) {
-                                            safeSetState(() => _model
-                                                .isDataUploading = true);
-                                            var selectedUploadedFiles =
-                                                <FFUploadedFile>[];
-
-                                            try {
-                                              selectedUploadedFiles =
-                                                  selectedMedia
-                                                      .map((m) =>
-                                                          FFUploadedFile(
-                                                            name: m
-                                                                .storagePath
-                                                                .split('/')
-                                                                .last,
-                                                            bytes: m.bytes,
-                                                            height: m
-                                                                .dimensions
-                                                                ?.height,
-                                                            width: m
-                                                                .dimensions
-                                                                ?.width,
-                                                            blurHash:
-                                                                m.blurHash,
-                                                          ))
-                                                      .toList();
-                                            } finally {
-                                              _model.isDataUploading = false;
-                                            }
-                                            if (selectedUploadedFiles
-                                                    .length ==
-                                                selectedMedia.length) {
-                                              safeSetState(() {
-                                                _model.uploadedLocalFile =
-                                                    selectedUploadedFiles
-                                                        .first;
-                                              });
-                                            } else {
-                                              safeSetState(() {});
-                                              return;
-                                            }
-                                          }
-
-                                          _model.apiResultg9x =
-                                              await EmpresasubeFotoEncuestaCall
-                                                  .call(
-                                            img: _model.uploadedLocalFile,
-                                            preguntaId:
-                                                FFAppState().nuevaPreguntaId,
-                                            authToken: FFAppState().authToken,
-                                          );
-
-                                          if ((_model
-                                                  .apiResultg9x?.succeeded ??
-                                              true)) {
-                                            context.pushNamed(
-                                              'emp_crea_edita_pregunta',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration: Duration(
-                                                      milliseconds: 0),
-                                                ),
-                                              },
-                                            );
-                                          }
-
-                                          safeSetState(() {});
-                                        },
-                                        child: Icon(
-                                          Icons.file_upload_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .azulPerm,
-                                          size: 30.0,
-                                        ),
+                                options: FFButtonOptions(
+                                  width: 300.0,
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).error,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
                                       ),
-                                      InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          _model.apiResultwhi =
-                                              await EmpresaBorraImagenEncuestaCall
-                                                  .call(
-                                            preguntaId:
-                                                FFAppState().nuevaPreguntaId,
-                                          );
+                                  elevation: 0.0,
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        if ((_model.tipo == 2) &&
+                            (_model.pregEsTextController.text != null &&
+                                _model.pregEsTextController.text != '') &&
+                            (_model.pregEnTextController.text != null &&
+                                _model.pregEnTextController.text != ''))
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    _model.apiResulta09 =
+                                        await EmpresaEditaPreguntaCall.call(
+                                      authToken: FFAppState().authToken,
+                                      preguntaId: FFAppState().nuevaPreguntaId,
+                                      encuestaId: FFAppState().nuevaEncuestaId,
+                                      preguntaEs:
+                                          _model.pregEsTextController.text,
+                                      preguntaEn:
+                                          _model.pregEnTextController.text,
+                                      tipoRespuesta: _model.tipo,
+                                    );
 
-                                          if ((_model
-                                                  .apiResultwhi?.succeeded ??
-                                              true)) {
-                                            context.pushNamed(
-                                              'emp_crea_edita_pregunta',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    const TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration: Duration(
-                                                      milliseconds: 0),
-                                                ),
-                                              },
-                                            );
-                                          }
-
-                                          safeSetState(() {});
-                                        },
-                                        child: Icon(
-                                          Icons.delete_forever,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondary,
-                                          size: 30.0,
+                                    if ((_model.apiResulta09?.succeeded ??
+                                        true)) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Pregunta guardada!',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
                                         ),
-                                      ),
-                                    ],
+                                      );
+                                      FFAppState().nuevaPreguntaId = 0;
+                                      safeSetState(() {});
+
+                                      context.pushNamed(
+                                        'emp_crea_encuesta2',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                          ),
+                                        },
+                                      );
+                                    }
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'y24dbx4b' /* Guardar */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 15.0, 0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FFButtonWidget(
-                              onPressed: () async {
-                                _model.apiResultywt =
-                                    await EmpresaBorraPreguntaCall.call(
-                                  authToken: FFAppState().authToken,
-                                  preguntaId: FFAppState().nuevaPreguntaId,
-                                  encuestaId: FFAppState().nuevaEncuestaId,
-                                );
+                        if ((_model.tipo != 2) &&
+                            (_model.pregEsTextController.text != null &&
+                                _model.pregEsTextController.text != '') &&
+                            (_model.pregEnTextController.text != null &&
+                                _model.pregEnTextController.text != ''))
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    _model.apiResulta092 =
+                                        await EmpresaEditaPreguntaCall.call(
+                                      authToken: FFAppState().authToken,
+                                      preguntaId: FFAppState().nuevaPreguntaId,
+                                      encuestaId: FFAppState().nuevaEncuestaId,
+                                      preguntaEs:
+                                          _model.pregEsTextController.text,
+                                      preguntaEn:
+                                          _model.pregEnTextController.text,
+                                      tipoRespuesta: _model.tipo,
+                                    );
 
-                                if ((_model.apiResultywt?.succeeded ??
-                                    true)) {
-                                  FFAppState().nuevaPreguntaId = 0;
-                                  safeSetState(() {});
+                                    if ((_model.apiResulta092?.succeeded ??
+                                        true)) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Pregunta guardada!',
+                                            style: TextStyle(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          ),
+                                          duration:
+                                              Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
+                                        ),
+                                      );
+                                      FFAppState().nuevaPreguntaId = 0;
+                                      safeSetState(() {});
 
-                                  context.pushNamed(
-                                    'emp_crea_encuesta2',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType:
-                                            PageTransitionType.fade,
-                                      ),
-                                    },
-                                  );
-                                }
+                                      context.pushNamed(
+                                        'emp_crea_encuesta2',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                          ),
+                                        },
+                                      );
+                                    }
 
-                                safeSetState(() {});
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'lm0f5s19' /* Eliminar Pregunta */,
-                              ),
-                              options: FFButtonOptions(
-                                width: 300.0,
-                                height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).error,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
-                                    ),
-                                elevation: 0.0,
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'hh0fkh45' /* Guardar */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
-                      if ((_model.tipo == 2) &&
-                          (_model.pregEsTextController.text != '') &&
-                          (_model.pregEnTextController.text != ''))
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 15.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FFButtonWidget(
-                                onPressed: () async {
-                                  _model.apiResulta09 =
-                                      await EmpresaEditaPreguntaCall.call(
-                                    authToken: FFAppState().authToken,
-                                    preguntaId: FFAppState().nuevaPreguntaId,
-                                    encuestaId: FFAppState().nuevaEncuestaId,
-                                    preguntaEs:
-                                        _model.pregEsTextController.text,
-                                    preguntaEn:
-                                        _model.pregEnTextController.text,
-                                    tipoRespuesta: _model.tipo,
-                                  );
-
-                                  if ((_model.apiResulta09?.succeeded ??
-                                      true)) {
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Pregunta guardada!',
-                                          style: TextStyle(
-                                            color:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                          ),
-                                        ),
-                                        duration:
-                                            const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .success,
-                                      ),
-                                    );
-                                    FFAppState().nuevaPreguntaId = 0;
-                                    safeSetState(() {});
-
-                                    context.pushNamed(
-                                      'emp_crea_encuesta2',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.fade,
-                                        ),
-                                      },
-                                    );
-                                  }
-
-                                  safeSetState(() {});
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'y24dbx4b' /* Guardar */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: 300.0,
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 0.0,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ],
                           ),
-                        ),
-                      if ((_model.tipo != 2) &&
-                          (_model.pregEsTextController.text != '') &&
-                          (_model.pregEnTextController.text != ''))
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 15.0, 0.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FFButtonWidget(
-                                onPressed: () async {
-                                  _model.apiResulta092 =
-                                      await EmpresaEditaPreguntaCall.call(
-                                    authToken: FFAppState().authToken,
-                                    preguntaId: FFAppState().nuevaPreguntaId,
-                                    encuestaId: FFAppState().nuevaEncuestaId,
-                                    preguntaEs:
-                                        _model.pregEsTextController.text,
-                                    preguntaEn:
-                                        _model.pregEnTextController.text,
-                                    tipoRespuesta: _model.tipo,
-                                  );
-
-                                  if ((_model.apiResulta092?.succeeded ??
-                                      true)) {
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Pregunta guardada!',
-                                          style: TextStyle(
-                                            color:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
-                                          ),
-                                        ),
-                                        duration:
-                                            const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .success,
-                                      ),
-                                    );
-                                    FFAppState().nuevaPreguntaId = 0;
-                                    safeSetState(() {});
-
-                                    context.pushNamed(
-                                      'emp_crea_encuesta2',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.fade,
-                                        ),
-                                      },
-                                    );
-                                  }
-
-                                  safeSetState(() {});
-                                },
-                                text: FFLocalizations.of(context).getText(
-                                  'hh0fkh45' /* Guardar */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: 300.0,
-                                  height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Colors.white,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 0.0,
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                    ].addToEnd(const SizedBox(height: 150.0)),
+                      ].addToEnd(SizedBox(height: 150.0)),
+                    ),
                   ),
-                ),
                 if (!(isWeb
                     ? MediaQuery.viewInsetsOf(context).bottom > 0
                     : _isKeyboardVisible))
                   wrapWithModel(
                     model: _model.menuUsuarioModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const MenuUsuarioWidget(
+                    child: MenuUsuarioWidget(
                       index: 2,
                     ),
                   ),

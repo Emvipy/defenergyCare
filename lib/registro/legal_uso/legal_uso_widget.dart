@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'legal_uso_model.dart';
 export 'legal_uso_model.dart';
 
@@ -80,7 +82,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -101,7 +103,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                       child: Column(
                         children: [
                           Align(
-                            alignment: const Alignment(0.0, 0),
+                            alignment: Alignment(0.0, 0),
                             child: TabBar(
                               labelColor:
                                   FlutterFlowTheme.of(context).primaryText,
@@ -114,10 +116,10 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                   ),
-                              unselectedLabelStyle: const TextStyle(),
+                              unselectedLabelStyle: TextStyle(),
                               indicatorColor:
                                   FlutterFlowTheme.of(context).primary,
-                              padding: const EdgeInsets.all(4.0),
+                              padding: EdgeInsets.all(4.0),
                               tabs: [
                                 Tab(
                                   text: FFLocalizations.of(context).getText(
@@ -171,7 +173,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -202,7 +204,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -232,7 +234,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -262,7 +264,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -292,7 +294,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -320,7 +322,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                               ],
                                             ),
                                           ),
-                                        ].addToEnd(const SizedBox(height: 30.0)),
+                                        ].addToEnd(SizedBox(height: 30.0)),
                                       ),
                                     );
                                   },
@@ -356,7 +358,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 15.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -387,7 +389,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 15.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -418,7 +420,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 15.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -449,7 +451,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 15.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -480,7 +482,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 15.0, 10.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -509,7 +511,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                               ],
                                             ),
                                           ),
-                                        ].addToEnd(const SizedBox(height: 30.0)),
+                                        ].addToEnd(SizedBox(height: 30.0)),
                                       ),
                                     );
                                   },
@@ -527,22 +529,22 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                 phone: false,
               ))
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 10.0, 16.0, 4.0),
                             child: Container(
                               width: 1008.0,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
@@ -557,7 +559,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                               child: Column(
                                 children: [
                                   Align(
-                                    alignment: const Alignment(0.0, 0),
+                                    alignment: Alignment(0.0, 0),
                                     child: TabBar(
                                       labelColor: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -571,10 +573,10 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                           ),
-                                      unselectedLabelStyle: const TextStyle(),
+                                      unselectedLabelStyle: TextStyle(),
                                       indicatorColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      padding: const EdgeInsets.all(4.0),
+                                      padding: EdgeInsets.all(4.0),
                                       tabs: [
                                         Tab(
                                           text: FFLocalizations.of(context)
@@ -628,7 +630,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 10.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -665,7 +667,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 10.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -700,7 +702,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 10.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -735,7 +737,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 10.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -770,7 +772,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 10.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -804,7 +806,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                     ),
                                                   ),
                                                 ].addToEnd(
-                                                    const SizedBox(height: 30.0)),
+                                                    SizedBox(height: 30.0)),
                                               ),
                                             );
                                           },
@@ -838,7 +840,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 15.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -875,7 +877,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 15.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -912,7 +914,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 15.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -949,7 +951,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 15.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -986,7 +988,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 15.0,
                                                                 8.0, 0.0),
                                                     child: Row(
@@ -1022,7 +1024,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                                     ),
                                                   ),
                                                 ].addToEnd(
-                                                    const SizedBox(height: 30.0)),
+                                                    SizedBox(height: 30.0)),
                                               ),
                                             );
                                           },
@@ -1036,7 +1038,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 50.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1052,9 +1054,9 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1065,7 +1067,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

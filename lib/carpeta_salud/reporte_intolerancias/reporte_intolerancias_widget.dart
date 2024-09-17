@@ -7,6 +7,8 @@ import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'reporte_intolerancias_model.dart';
 export 'reporte_intolerancias_model.dart';
@@ -123,7 +125,7 @@ class _ReporteIntoleranciasWidgetState
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'l52912zx' /* Reporte de Intolerancias */,
@@ -136,7 +138,7 @@ class _ReporteIntoleranciasWidgetState
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -148,7 +150,7 @@ class _ReporteIntoleranciasWidgetState
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -171,7 +173,7 @@ class _ReporteIntoleranciasWidgetState
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -263,11 +265,11 @@ class _ReporteIntoleranciasWidgetState
                                   decoration: BoxDecoration(
                                     color: _model.rango == 1
                                         ? FlutterFlowTheme.of(context).secondary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'vp2754fx' /* 7 Días */,
@@ -363,11 +365,11 @@ class _ReporteIntoleranciasWidgetState
                                   decoration: BoxDecoration(
                                     color: _model.rango == 2
                                         ? FlutterFlowTheme.of(context).secondary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'nwsttlwf' /* 30 Días */,
@@ -406,11 +408,11 @@ class _ReporteIntoleranciasWidgetState
                                   decoration: BoxDecoration(
                                     color: _model.rango == 3
                                         ? FlutterFlowTheme.of(context).secondary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'b5sblil8' /* Personalizado */,
@@ -439,7 +441,7 @@ class _ReporteIntoleranciasWidgetState
                   if (_model.rango == 3)
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -460,7 +462,7 @@ class _ReporteIntoleranciasWidgetState
                                     ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -470,7 +472,7 @@ class _ReporteIntoleranciasWidgetState
                                     await showModalBottomSheet<bool>(
                                         context: context,
                                         builder: (context) {
-                                          final datePicked1CupertinoTheme =
+                                          final _datePicked1CupertinoTheme =
                                               CupertinoTheme.of(context);
                                           return Container(
                                             height: MediaQuery.of(context)
@@ -483,10 +485,10 @@ class _ReporteIntoleranciasWidgetState
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             child: CupertinoTheme(
-                                              data: datePicked1CupertinoTheme
+                                              data: _datePicked1CupertinoTheme
                                                   .copyWith(
                                                 textTheme:
-                                                    datePicked1CupertinoTheme
+                                                    _datePicked1CupertinoTheme
                                                         .textTheme
                                                         .copyWith(
                                                   dateTimePickerTextStyle:
@@ -538,9 +540,9 @@ class _ReporteIntoleranciasWidgetState
                                     ),
                                     child: Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -583,7 +585,7 @@ class _ReporteIntoleranciasWidgetState
                                     ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -593,7 +595,7 @@ class _ReporteIntoleranciasWidgetState
                                     await showModalBottomSheet<bool>(
                                         context: context,
                                         builder: (context) {
-                                          final datePicked2CupertinoTheme =
+                                          final _datePicked2CupertinoTheme =
                                               CupertinoTheme.of(context);
                                           return Container(
                                             height: MediaQuery.of(context)
@@ -606,10 +608,10 @@ class _ReporteIntoleranciasWidgetState
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             child: CupertinoTheme(
-                                              data: datePicked2CupertinoTheme
+                                              data: _datePicked2CupertinoTheme
                                                   .copyWith(
                                                 textTheme:
-                                                    datePicked2CupertinoTheme
+                                                    _datePicked2CupertinoTheme
                                                         .textTheme
                                                         .copyWith(
                                                   dateTimePickerTextStyle:
@@ -661,9 +663,9 @@ class _ReporteIntoleranciasWidgetState
                                     ),
                                     child: Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -696,7 +698,7 @@ class _ReporteIntoleranciasWidgetState
                   if (_model.rango == 3)
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -714,10 +716,10 @@ class _ReporteIntoleranciasWidgetState
                                       userId: FFAppState().xUserId,
                                       fechaInicio: _model
                                           .fechaInicio?.millisecondsSinceEpoch
-                                          .toString(),
+                                          ?.toString(),
                                       fechaFin: _model
                                           .fechaFin?.millisecondsSinceEpoch
-                                          .toString(),
+                                          ?.toString(),
                                     );
 
                                     if ((_model.apiCusInto?.succeeded ??
@@ -791,9 +793,9 @@ class _ReporteIntoleranciasWidgetState
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -804,7 +806,7 @@ class _ReporteIntoleranciasWidgetState
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -819,7 +821,7 @@ class _ReporteIntoleranciasWidgetState
                   if (_model.generando == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -847,7 +849,7 @@ class _ReporteIntoleranciasWidgetState
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -855,7 +857,7 @@ class _ReporteIntoleranciasWidgetState
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -879,7 +881,7 @@ class _ReporteIntoleranciasWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Container(
                               width: 150.0,
@@ -889,7 +891,7 @@ class _ReporteIntoleranciasWidgetState
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   valueOrDefault<String>(
                                     _model.cantDiarios,
@@ -910,7 +912,7 @@ class _ReporteIntoleranciasWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -934,7 +936,7 @@ class _ReporteIntoleranciasWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 5.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -956,7 +958,7 @@ class _ReporteIntoleranciasWidgetState
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 5.0, 10.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -986,7 +988,7 @@ class _ReporteIntoleranciasWidgetState
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -998,7 +1000,7 @@ class _ReporteIntoleranciasWidgetState
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1006,7 +1008,7 @@ class _ReporteIntoleranciasWidgetState
                                 children: [
                                   Flexible(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -1031,7 +1033,7 @@ class _ReporteIntoleranciasWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 15.0),
                               child: Container(
                                 width: 325.0,
@@ -1041,7 +1043,7 @@ class _ReporteIntoleranciasWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       _model.comidaSintoma,
@@ -1068,7 +1070,7 @@ class _ReporteIntoleranciasWidgetState
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1080,7 +1082,7 @@ class _ReporteIntoleranciasWidgetState
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1088,7 +1090,7 @@ class _ReporteIntoleranciasWidgetState
                                 children: [
                                   Flexible(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -1113,7 +1115,7 @@ class _ReporteIntoleranciasWidgetState
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 15.0),
                               child: Container(
                                 width: 325.0,
@@ -1123,7 +1125,7 @@ class _ReporteIntoleranciasWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       '6itobulm' /* Desayuno */,
@@ -1145,7 +1147,7 @@ class _ReporteIntoleranciasWidgetState
                             if (_model.desayuno1 != null &&
                                 _model.desayuno1 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1172,7 +1174,7 @@ class _ReporteIntoleranciasWidgetState
                             if (_model.desayuno2 != null &&
                                 _model.desayuno2 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1199,7 +1201,7 @@ class _ReporteIntoleranciasWidgetState
                             if (_model.desayuno3 != null &&
                                 _model.desayuno3 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1224,7 +1226,7 @@ class _ReporteIntoleranciasWidgetState
                                 ),
                               ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 15.0),
                               child: Container(
                                 width: 325.0,
@@ -1234,7 +1236,7 @@ class _ReporteIntoleranciasWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'iflohp1o' /* Comida */,
@@ -1255,7 +1257,7 @@ class _ReporteIntoleranciasWidgetState
                             ),
                             if (_model.comida1 != null && _model.comida1 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1281,7 +1283,7 @@ class _ReporteIntoleranciasWidgetState
                               ),
                             if (_model.comida2 != null && _model.comida2 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1307,7 +1309,7 @@ class _ReporteIntoleranciasWidgetState
                               ),
                             if (_model.comida3 != null && _model.comida3 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1332,7 +1334,7 @@ class _ReporteIntoleranciasWidgetState
                                 ),
                               ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 15.0),
                               child: Container(
                                 width: 325.0,
@@ -1342,7 +1344,7 @@ class _ReporteIntoleranciasWidgetState
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'zboy0mlw' /* Cena */,
@@ -1363,7 +1365,7 @@ class _ReporteIntoleranciasWidgetState
                             ),
                             if (_model.cena1 != null && _model.cena1 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1389,7 +1391,7 @@ class _ReporteIntoleranciasWidgetState
                               ),
                             if (_model.cena2 != null && _model.cena2 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1415,7 +1417,7 @@ class _ReporteIntoleranciasWidgetState
                               ),
                             if (_model.cena3 != null && _model.cena3 != '')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 0.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1443,13 +1445,13 @@ class _ReporteIntoleranciasWidgetState
                         ),
                       ),
                     ),
-                ].addToEnd(const SizedBox(height: 120.0)),
+                ].addToEnd(SizedBox(height: 120.0)),
               ),
             ),
             wrapWithModel(
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
-              child: const MenuUsuarioWidget(
+              child: MenuUsuarioWidget(
                 index: 1,
               ),
             ),

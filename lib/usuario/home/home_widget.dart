@@ -3,6 +3,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/diario_sueno/modal_aviso_sueno_hecho/modal_aviso_sueno_hecho_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/resumen_diarios/modal_sin_diario/modal_sin_diario_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
@@ -11,9 +12,11 @@ import '/usuario/modal_info_resumen/modal_info_resumen_widget.dart';
 import '/usuario/modal_info_salud/modal_info_salud_widget.dart';
 import '/usuario/modal_info_sintomas/modal_info_sintomas_widget.dart';
 import '/usuario/modal_info_sueno/modal_info_sueno_widget.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
@@ -50,7 +53,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           'welcome',
           context.mounted,
           extra: <String, dynamic>{
-            kTransitionInfoKey: const TransitionInfo(
+            kTransitionInfoKey: TransitionInfo(
               hasTransition: true,
               transitionType: PageTransitionType.fade,
               duration: Duration(milliseconds: 0),
@@ -153,12 +156,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -171,19 +174,32 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     onTap: () async {
                                       if (FFAppState().email ==
                                           'enrique@emvipy.com') {
-                                        if ((FFAppState().authToken != '') &&
-                                            (FFAppState().email != '')) {
+                                        if ((FFAppState().authToken != null &&
+                                                FFAppState().authToken != '') &&
+                                            (FFAppState().email != null &&
+                                                FFAppState().email != '')) {
                                           if (FFAppState().creadoOk == 'si') {
-                                            context.pushNamed(
+                                            context.pushNamedAuth(
                                               'perfil',
+                                              context.mounted,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
                                                 ),
                                               },
+                                            );
+
+                                            unawaited(
+                                              () async {
+                                                await UserLogActivityCall.call(
+                                                  authToken:
+                                                      FFAppState().authToken,
+                                                  seccion: 'Acceso Mi Perfil',
+                                                );
+                                              }(),
                                             );
                                           } else {
                                             await showModalBottomSheet(
@@ -202,7 +218,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         MediaQuery.viewInsetsOf(
                                                             context),
                                                     child:
-                                                        const ModalErrorCuentaWidget(),
+                                                        ModalErrorCuentaWidget(),
                                                   ),
                                                 );
                                               },
@@ -210,11 +226,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 (value) => safeSetState(() {}));
                                           }
                                         } else {
-                                          context.pushNamed(
+                                          context.pushNamedAuth(
                                             'login',
+                                            context.mounted,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -224,13 +241,70 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             },
                                           );
                                         }
+                                      } else {
+                                        GoRouter.of(context).prepareAuthEvent();
+                                        await authManager.signOut();
+                                        GoRouter.of(context)
+                                            .clearRedirectLocation();
+
+                                        FFAppState().deleteAuthToken();
+                                        FFAppState().authToken = '';
+
+                                        FFAppState().deleteXUserId();
+                                        FFAppState().xUserId = 0;
+
+                                        FFAppState().deleteEmail();
+                                        FFAppState().email = '';
+
+                                        FFAppState().deleteNombre();
+                                        FFAppState().nombre = '';
+
+                                        FFAppState().deleteApellidos();
+                                        FFAppState().apellidos = '';
+
+                                        FFAppState().deleteAvatar();
+                                        FFAppState().avatar = '';
+
+                                        FFAppState().deletePerfil();
+                                        FFAppState().perfil = '';
+
+                                        FFAppState().deleteSessionId();
+                                        FFAppState().sessionId = 0;
+
+                                        FFAppState().deleteEnfermedadId();
+                                        FFAppState().enfermedadId = 0;
+
+                                        FFAppState().deleteEnfermedadTxt();
+                                        FFAppState().enfermedadTxt = '';
+
+                                        FFAppState().deletePerfilId();
+                                        FFAppState().perfilId = 0;
+
+                                        FFAppState().deleteCreadoOk();
+                                        FFAppState().creadoOk = '';
+
+                                        safeSetState(() {});
+
+                                        context.pushNamedAuth(
+                                          'welcome',
+                                          context.mounted,
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       }
                                     },
                                     child: Container(
                                       width: 45.0,
                                       height: 45.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: const BoxDecoration(
+                                      decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.network(
@@ -242,7 +316,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         3.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -251,7 +325,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -261,18 +335,36 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             onTap: () async {
                                               if (FFAppState().email ==
                                                   'enrique@emvipy.com') {
-                                                if ((FFAppState()
+                                                if ((FFAppState().authToken !=
+                                                            null &&
+                                                        FFAppState()
                                                                 .authToken !=
                                                             '') &&
                                                     (FFAppState().email !=
+                                                            null &&
+                                                        FFAppState().email !=
                                                             '')) {
                                                   if (FFAppState().creadoOk ==
                                                       'si') {
-                                                    context.pushNamed(
+                                                    unawaited(
+                                                      () async {
+                                                        await UserLogActivityCall
+                                                            .call(
+                                                          authToken:
+                                                              FFAppState()
+                                                                  .authToken,
+                                                          seccion:
+                                                              'Acceso Mi Perfil',
+                                                        );
+                                                      }(),
+                                                    );
+
+                                                    context.pushNamedAuth(
                                                       'perfil',
+                                                      context.mounted,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -298,7 +390,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .viewInsetsOf(
                                                                     context),
                                                             child:
-                                                                const ModalErrorCuentaWidget(),
+                                                                ModalErrorCuentaWidget(),
                                                           ),
                                                         );
                                                       },
@@ -306,11 +398,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         safeSetState(() {}));
                                                   }
                                                 } else {
-                                                  context.pushNamed(
+                                                  context.pushNamedAuth(
                                                     'login',
+                                                    context.mounted,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -321,10 +414,72 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     },
                                                   );
                                                 }
+                                              } else {
+                                                GoRouter.of(context)
+                                                    .prepareAuthEvent();
+                                                await authManager.signOut();
+                                                GoRouter.of(context)
+                                                    .clearRedirectLocation();
+
+                                                FFAppState().deleteAuthToken();
+                                                FFAppState().authToken = '';
+
+                                                FFAppState().deleteXUserId();
+                                                FFAppState().xUserId = 0;
+
+                                                FFAppState().deleteEmail();
+                                                FFAppState().email = '';
+
+                                                FFAppState().deleteNombre();
+                                                FFAppState().nombre = '';
+
+                                                FFAppState().deleteApellidos();
+                                                FFAppState().apellidos = '';
+
+                                                FFAppState().deleteAvatar();
+                                                FFAppState().avatar = '';
+
+                                                FFAppState().deletePerfil();
+                                                FFAppState().perfil = '';
+
+                                                FFAppState().deleteSessionId();
+                                                FFAppState().sessionId = 0;
+
+                                                FFAppState()
+                                                    .deleteEnfermedadId();
+                                                FFAppState().enfermedadId = 0;
+
+                                                FFAppState()
+                                                    .deleteEnfermedadTxt();
+                                                FFAppState().enfermedadTxt = '';
+
+                                                FFAppState().deletePerfilId();
+                                                FFAppState().perfilId = 0;
+
+                                                FFAppState().deleteCreadoOk();
+                                                FFAppState().creadoOk = '';
+
+                                                safeSetState(() {});
+
+                                                context.pushNamedAuth(
+                                                  'welcome',
+                                                  context.mounted,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
                                               }
                                             },
                                             child: Text(
-                                              'Hola ${FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
+                                              'Hola ${FFAppState().authToken != null && FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -342,7 +497,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -352,18 +507,36 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             onTap: () async {
                                               if (FFAppState().email ==
                                                   'enrique@emvipy.com') {
-                                                if ((FFAppState()
+                                                if ((FFAppState().authToken !=
+                                                            null &&
+                                                        FFAppState()
                                                                 .authToken !=
                                                             '') &&
                                                     (FFAppState().email !=
+                                                            null &&
+                                                        FFAppState().email !=
                                                             '')) {
                                                   if (FFAppState().creadoOk ==
                                                       'si') {
-                                                    context.pushNamed(
+                                                    unawaited(
+                                                      () async {
+                                                        await UserLogActivityCall
+                                                            .call(
+                                                          authToken:
+                                                              FFAppState()
+                                                                  .authToken,
+                                                          seccion:
+                                                              'Acceso Mi Perfil',
+                                                        );
+                                                      }(),
+                                                    );
+
+                                                    context.pushNamedAuth(
                                                       'perfil',
+                                                      context.mounted,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -389,7 +562,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 .viewInsetsOf(
                                                                     context),
                                                             child:
-                                                                const ModalErrorCuentaWidget(),
+                                                                ModalErrorCuentaWidget(),
                                                           ),
                                                         );
                                                       },
@@ -397,11 +570,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         safeSetState(() {}));
                                                   }
                                                 } else {
-                                                  context.pushNamed(
+                                                  context.pushNamedAuth(
                                                     'login',
+                                                    context.mounted,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -412,6 +586,68 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     },
                                                   );
                                                 }
+                                              } else {
+                                                GoRouter.of(context)
+                                                    .prepareAuthEvent();
+                                                await authManager.signOut();
+                                                GoRouter.of(context)
+                                                    .clearRedirectLocation();
+
+                                                FFAppState().deleteAuthToken();
+                                                FFAppState().authToken = '';
+
+                                                FFAppState().deleteXUserId();
+                                                FFAppState().xUserId = 0;
+
+                                                FFAppState().deleteEmail();
+                                                FFAppState().email = '';
+
+                                                FFAppState().deleteNombre();
+                                                FFAppState().nombre = '';
+
+                                                FFAppState().deleteApellidos();
+                                                FFAppState().apellidos = '';
+
+                                                FFAppState().deleteAvatar();
+                                                FFAppState().avatar = '';
+
+                                                FFAppState().deletePerfil();
+                                                FFAppState().perfil = '';
+
+                                                FFAppState().deleteSessionId();
+                                                FFAppState().sessionId = 0;
+
+                                                FFAppState()
+                                                    .deleteEnfermedadId();
+                                                FFAppState().enfermedadId = 0;
+
+                                                FFAppState()
+                                                    .deleteEnfermedadTxt();
+                                                FFAppState().enfermedadTxt = '';
+
+                                                FFAppState().deletePerfilId();
+                                                FFAppState().perfilId = 0;
+
+                                                FFAppState().deleteCreadoOk();
+                                                FFAppState().creadoOk = '';
+
+                                                safeSetState(() {});
+
+                                                context.pushNamedAuth(
+                                                  'welcome',
+                                                  context.mounted,
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
                                               }
                                             },
                                             child: Text(
@@ -439,7 +675,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   ),
                                   Flexible(
                                     child: Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Container(
                                         width: 45.0,
                                         height: 45.0,
@@ -450,7 +686,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         ),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -486,7 +722,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 25.0, 15.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -497,7 +733,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                             child: Opacity(
                                               opacity: 0.9,
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   width: 360.0,
@@ -516,7 +752,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     5.0,
@@ -550,8 +786,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
@@ -580,11 +820,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Sintomas Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           } else {
                                                                             _model.apiDiarioCrea3 =
@@ -630,11 +879,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               context.pushNamed(
                                                                                 'diario1',
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: const TransitionInfo(
+                                                                                  kTransitionInfoKey: TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.fade,
                                                                                   ),
                                                                                 },
+                                                                              );
+
+                                                                              unawaited(
+                                                                                () async {
+                                                                                  await UserLogActivityCall.call(
+                                                                                    authToken: FFAppState().authToken,
+                                                                                    seccion: 'Acceso Diario Sintomas Home',
+                                                                                  );
+                                                                                }(),
                                                                               );
                                                                             } else {
                                                                               ScaffoldMessenger.of(context).showSnackBar(
@@ -645,7 +903,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     ),
                                                                                   ),
-                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  duration: Duration(milliseconds: 4000),
                                                                                   backgroundColor: FlutterFlowTheme.of(context).error,
                                                                                 ),
                                                                               );
@@ -707,11 +965,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             context.pushNamed(
                                                                               'diario1',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Sintomas Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           } else {
                                                                             ScaffoldMessenger.of(context).showSnackBar(
@@ -722,7 +989,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
                                                                                 ),
-                                                                                duration: const Duration(milliseconds: 4000),
+                                                                                duration: Duration(milliseconds: 4000),
                                                                                 backgroundColor: FlutterFlowTheme.of(context).error,
                                                                               ),
                                                                             );
@@ -735,7 +1002,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                             ),
@@ -760,7 +1027,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalErrorCuentaWidget(),
+                                                                              child: ModalErrorCuentaWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -775,7 +1042,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -810,7 +1077,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -829,8 +1096,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
@@ -859,11 +1130,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Sintomas Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           } else {
                                                                             _model.apiDiarioCreaCopy =
@@ -909,11 +1189,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               context.pushNamed(
                                                                                 'diario1',
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: const TransitionInfo(
+                                                                                  kTransitionInfoKey: TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.fade,
                                                                                   ),
                                                                                 },
+                                                                              );
+
+                                                                              unawaited(
+                                                                                () async {
+                                                                                  await UserLogActivityCall.call(
+                                                                                    authToken: FFAppState().authToken,
+                                                                                    seccion: 'Acceso Diario Sintomas Home',
+                                                                                  );
+                                                                                }(),
                                                                               );
                                                                             } else {
                                                                               ScaffoldMessenger.of(context).showSnackBar(
@@ -924,7 +1213,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     ),
                                                                                   ),
-                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  duration: Duration(milliseconds: 4000),
                                                                                   backgroundColor: FlutterFlowTheme.of(context).error,
                                                                                 ),
                                                                               );
@@ -986,11 +1275,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             context.pushNamed(
                                                                               'diario1',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Sintomas Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           } else {
                                                                             ScaffoldMessenger.of(context).showSnackBar(
@@ -1001,7 +1299,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
                                                                                 ),
-                                                                                duration: const Duration(milliseconds: 4000),
+                                                                                duration: Duration(milliseconds: 4000),
                                                                                 backgroundColor: FlutterFlowTheme.of(context).error,
                                                                               ),
                                                                             );
@@ -1014,7 +1312,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                             ),
@@ -1039,7 +1337,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalErrorCuentaWidget(),
+                                                                              child: ModalErrorCuentaWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -1054,7 +1352,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -1096,7 +1394,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child: InkWell(
@@ -1132,7 +1430,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                const ModalInfoSintomasWidget(),
+                                                                                ModalInfoSintomasWidget(),
                                                                           ),
                                                                         );
                                                                       },
@@ -1156,7 +1454,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     8.0,
@@ -1172,7 +1470,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: InkWell(
@@ -1189,8 +1487,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   onTap:
                                                                       () async {
                                                                     if ((FFAppState().authToken !=
+                                                                                null &&
+                                                                            FFAppState().authToken !=
                                                                                 '') &&
                                                                         (FFAppState().email !=
+                                                                                null &&
+                                                                            FFAppState().email !=
                                                                                 '')) {
                                                                       if (FFAppState()
                                                                               .creadoOk ==
@@ -1207,6 +1509,15 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   homeUserIndividualResponse.jsonBody,
                                                                                 ) !=
                                                                                 4) {
+                                                                              unawaited(
+                                                                                () async {
+                                                                                  await UserLogActivityCall.call(
+                                                                                    authToken: FFAppState().authToken,
+                                                                                    seccion: 'Acceso Diario Sintomas Home',
+                                                                                  );
+                                                                                }(),
+                                                                              );
+
                                                                               context.pushNamed(
                                                                                 'setup',
                                                                                 queryParameters: {
@@ -1218,7 +1529,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: const TransitionInfo(
+                                                                                  kTransitionInfoKey: TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.fade,
                                                                                   ),
@@ -1263,10 +1574,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 FFAppState().deleteTmpCantidadSuplementos();
                                                                                 FFAppState().tmpCantidadSuplementos = 0;
 
+                                                                                unawaited(
+                                                                                  () async {
+                                                                                    await UserLogActivityCall.call(
+                                                                                      authToken: FFAppState().authToken,
+                                                                                      seccion: 'Acceso Diario Sintomas Home',
+                                                                                    );
+                                                                                  }(),
+                                                                                );
+
                                                                                 context.pushNamed(
                                                                                   'diario1',
                                                                                   extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: const TransitionInfo(
+                                                                                    kTransitionInfoKey: TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.fade,
                                                                                     ),
@@ -1281,7 +1601,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4000),
+                                                                                    duration: Duration(milliseconds: 4000),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).error,
                                                                                   ),
                                                                                 );
@@ -1328,10 +1648,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               FFAppState().deleteTmpCantidadSuplementos();
                                                                               FFAppState().tmpCantidadSuplementos = 0;
 
+                                                                              unawaited(
+                                                                                () async {
+                                                                                  await UserLogActivityCall.call(
+                                                                                    authToken: FFAppState().authToken,
+                                                                                    seccion: 'Acceso Diario Sintomas Home',
+                                                                                  );
+                                                                                }(),
+                                                                              );
+
                                                                               context.pushNamed(
                                                                                 'diario1',
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: const TransitionInfo(
+                                                                                  kTransitionInfoKey: TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.fade,
                                                                                   ),
@@ -1346,7 +1675,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     ),
                                                                                   ),
-                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  duration: Duration(milliseconds: 4000),
                                                                                   backgroundColor: FlutterFlowTheme.of(context).error,
                                                                                 ),
                                                                               );
@@ -1358,7 +1687,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             'menu_diario',
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                               ),
@@ -1381,7 +1710,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalErrorCuentaWidget(),
+                                                                                child: ModalErrorCuentaWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -1395,7 +1724,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -1469,8 +1798,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       .transparent,
                                                               onTap: () async {
                                                                 if ((FFAppState().authToken !=
+                                                                            null &&
+                                                                        FFAppState().authToken !=
                                                                             '') &&
                                                                     (FFAppState().email !=
+                                                                            null &&
+                                                                        FFAppState().email !=
                                                                             '')) {
                                                                   if (FFAppState()
                                                                           .creadoOk ==
@@ -1504,11 +1837,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             }.withoutNulls,
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                               ),
                                                                             },
+                                                                          );
+
+                                                                          unawaited(
+                                                                            () async {
+                                                                              await UserLogActivityCall.call(
+                                                                                authToken: FFAppState().authToken,
+                                                                                seccion: 'Acceso Diario Sintomas Home',
+                                                                              );
+                                                                            }(),
                                                                           );
                                                                         } else {
                                                                           _model.apiDiarioCrea =
@@ -1569,11 +1911,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             context.pushNamed(
                                                                               'diario1',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Sintomas Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           } else {
                                                                             ScaffoldMessenger.of(context).showSnackBar(
@@ -1584,7 +1935,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
                                                                                 ),
-                                                                                duration: const Duration(milliseconds: 4000),
+                                                                                duration: Duration(milliseconds: 4000),
                                                                                 backgroundColor: FlutterFlowTheme.of(context).error,
                                                                               ),
                                                                             );
@@ -1662,11 +2013,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             'diario1',
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                               ),
                                                                             },
+                                                                          );
+
+                                                                          unawaited(
+                                                                            () async {
+                                                                              await UserLogActivityCall.call(
+                                                                                authToken: FFAppState().authToken,
+                                                                                seccion: 'Acceso Diario Sintomas Home',
+                                                                              );
+                                                                            }(),
                                                                           );
                                                                         } else {
                                                                           ScaffoldMessenger.of(context)
@@ -1678,7 +2038,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 ),
                                                                               ),
-                                                                              duration: const Duration(milliseconds: 4000),
+                                                                              duration: Duration(milliseconds: 4000),
                                                                               backgroundColor: FlutterFlowTheme.of(context).error,
                                                                             ),
                                                                           );
@@ -1691,7 +2051,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -1721,7 +2081,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                const ModalErrorCuentaWidget(),
+                                                                                ModalErrorCuentaWidget(),
                                                                           ),
                                                                         );
                                                                       },
@@ -1736,7 +2096,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -1773,7 +2133,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 5.0, 15.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1782,7 +2142,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         children: [
                                           Flexible(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Column(
@@ -1806,7 +2166,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -1842,8 +2202,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   onTap:
                                                                       () async {
                                                                     if ((FFAppState().authToken !=
+                                                                                null &&
+                                                                            FFAppState().authToken !=
                                                                                 '') &&
                                                                         (FFAppState().email !=
+                                                                                null &&
+                                                                            FFAppState().email !=
                                                                                 '')) {
                                                                       if (FFAppState()
                                                                               .creadoOk ==
@@ -1890,11 +2254,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             context.pushNamed(
                                                                               'setupInto',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Inolerancias Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           } else {
                                                                             _model.apiDiarioInto1Icon =
@@ -1935,11 +2308,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                   ),
                                                                                 }.withoutNulls,
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: const TransitionInfo(
+                                                                                  kTransitionInfoKey: TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.fade,
                                                                                   ),
                                                                                 },
+                                                                              );
+
+                                                                              unawaited(
+                                                                                () async {
+                                                                                  await UserLogActivityCall.call(
+                                                                                    authToken: FFAppState().authToken,
+                                                                                    seccion: 'Acceso Diario Inolerancias Home',
+                                                                                  );
+                                                                                }(),
                                                                               );
                                                                             } else {
                                                                               ScaffoldMessenger.of(context).showSnackBar(
@@ -1950,7 +2332,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     ),
                                                                                   ),
-                                                                                  duration: const Duration(milliseconds: 4000),
+                                                                                  duration: Duration(milliseconds: 4000),
                                                                                   backgroundColor: FlutterFlowTheme.of(context).error,
                                                                                 ),
                                                                               );
@@ -1962,7 +2344,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             'menu_intolerancias',
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                               ),
@@ -1985,7 +2367,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalErrorCuentaWidget(),
+                                                                                child: ModalErrorCuentaWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -1999,7 +2381,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -2035,7 +2417,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -2071,7 +2453,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalInfoIntoWidget(),
+                                                                              child: ModalInfoIntoWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -2096,7 +2478,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -2120,8 +2502,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
@@ -2171,11 +2557,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             'setupInto',
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                               ),
                                                                             },
+                                                                          );
+
+                                                                          unawaited(
+                                                                            () async {
+                                                                              await UserLogActivityCall.call(
+                                                                                authToken: FFAppState().authToken,
+                                                                                seccion: 'Acceso Diario Inolerancias Home',
+                                                                              );
+                                                                            }(),
                                                                           );
                                                                         } else {
                                                                           _model.apiDiarioInto4 =
@@ -2232,11 +2627,20 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 ),
                                                                               }.withoutNulls,
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Inolerancias Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           } else {
                                                                             ScaffoldMessenger.of(context).showSnackBar(
@@ -2247,7 +2651,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
                                                                                 ),
-                                                                                duration: const Duration(milliseconds: 4000),
+                                                                                duration: Duration(milliseconds: 4000),
                                                                                 backgroundColor: FlutterFlowTheme.of(context).error,
                                                                               ),
                                                                             );
@@ -2260,7 +2664,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                             ),
@@ -2285,7 +2689,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalErrorCuentaWidget(),
+                                                                              child: ModalErrorCuentaWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -2300,7 +2704,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -2339,7 +2743,7 @@ intolerancias */
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -2358,9 +2762,11 @@ intolerancias */
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      if ((FFAppState().authToken !=
+                                                                      if ((FFAppState().authToken != null &&
+                                                                              FFAppState().authToken !=
                                                                                   '') &&
-                                                                          (FFAppState().email != '')) {
+                                                                          (FFAppState().email != null &&
+                                                                              FFAppState().email != '')) {
                                                                         if (FFAppState().creadoOk ==
                                                                             'si') {
                                                                           if (UserIndividualCall.primerInto(
@@ -2391,11 +2797,20 @@ intolerancias */
                                                                               context.pushNamed(
                                                                                 'setupInto',
                                                                                 extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: const TransitionInfo(
+                                                                                  kTransitionInfoKey: TransitionInfo(
                                                                                     hasTransition: true,
                                                                                     transitionType: PageTransitionType.fade,
                                                                                   ),
                                                                                 },
+                                                                              );
+
+                                                                              unawaited(
+                                                                                () async {
+                                                                                  await UserLogActivityCall.call(
+                                                                                    authToken: FFAppState().authToken,
+                                                                                    seccion: 'Acceso Diario Inolerancias Home',
+                                                                                  );
+                                                                                }(),
                                                                               );
                                                                             } else {
                                                                               _model.apiDiarioInto1 = await DiarioIntoCreaCall.call(
@@ -2434,11 +2849,20 @@ intolerancias */
                                                                                     ),
                                                                                   }.withoutNulls,
                                                                                   extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: const TransitionInfo(
+                                                                                    kTransitionInfoKey: TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.fade,
                                                                                     ),
                                                                                   },
+                                                                                );
+
+                                                                                unawaited(
+                                                                                  () async {
+                                                                                    await UserLogActivityCall.call(
+                                                                                      authToken: FFAppState().authToken,
+                                                                                      seccion: 'Acceso Diario Inolerancias Home',
+                                                                                    );
+                                                                                  }(),
                                                                                 );
                                                                               } else {
                                                                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -2449,7 +2873,7 @@ intolerancias */
                                                                                         color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                       ),
                                                                                     ),
-                                                                                    duration: const Duration(milliseconds: 4000),
+                                                                                    duration: Duration(milliseconds: 4000),
                                                                                     backgroundColor: FlutterFlowTheme.of(context).error,
                                                                                   ),
                                                                                 );
@@ -2459,7 +2883,7 @@ intolerancias */
                                                                             context.pushNamed(
                                                                               'menu_intolerancias',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
@@ -2482,7 +2906,7 @@ intolerancias */
                                                                                 onTap: () => FocusScope.of(context).unfocus(),
                                                                                 child: Padding(
                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: const ModalErrorCuentaWidget(),
+                                                                                  child: ModalErrorCuentaWidget(),
                                                                                 ),
                                                                               );
                                                                             },
@@ -2496,7 +2920,7 @@ intolerancias */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                               duration: Duration(milliseconds: 0),
@@ -2532,7 +2956,7 @@ intolerancias */
                                           ),
                                           Flexible(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Column(
@@ -2556,7 +2980,7 @@ intolerancias */
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -2592,8 +3016,12 @@ intolerancias */
                                                                   onTap:
                                                                       () async {
                                                                     if ((FFAppState().authToken !=
+                                                                                null &&
+                                                                            FFAppState().authToken !=
                                                                                 '') &&
                                                                         (FFAppState().email !=
+                                                                                null &&
+                                                                            FFAppState().email !=
                                                                                 '')) {
                                                                       if (FFAppState()
                                                                               .creadoOk ==
@@ -2617,7 +3045,7 @@ intolerancias */
                                                                                 onTap: () => FocusScope.of(context).unfocus(),
                                                                                 child: Padding(
                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: const ModalAvisoSuenoHechoWidget(),
+                                                                                  child: ModalAvisoSuenoHechoWidget(),
                                                                                 ),
                                                                               );
                                                                             },
@@ -2649,11 +3077,20 @@ intolerancias */
                                                                             'diario_sueno1',
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                               ),
                                                                             },
+                                                                          );
+
+                                                                          unawaited(
+                                                                            () async {
+                                                                              await UserLogActivityCall.call(
+                                                                                authToken: FFAppState().authToken,
+                                                                                seccion: 'Acceso Diario Sueño Home',
+                                                                              );
+                                                                            }(),
                                                                           );
                                                                         }
                                                                       } else {
@@ -2672,7 +3109,7 @@ intolerancias */
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalErrorCuentaWidget(),
+                                                                                child: ModalErrorCuentaWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -2686,7 +3123,7 @@ intolerancias */
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -2722,7 +3159,7 @@ intolerancias */
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -2758,7 +3195,7 @@ intolerancias */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalInfoSuenoWidget(),
+                                                                              child: ModalInfoSuenoWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -2783,7 +3220,7 @@ intolerancias */
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       15.0,
@@ -2807,6 +3244,9 @@ intolerancias */
                                                                 onTap:
                                                                     () async {
                                                                   if (FFAppState()
+                                                                              .authToken !=
+                                                                          null &&
+                                                                      FFAppState()
                                                                               .authToken !=
                                                                           '') {
                                                                     if (FFAppState()
@@ -2832,7 +3272,7 @@ intolerancias */
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalAvisoSuenoHechoWidget(),
+                                                                                child: ModalAvisoSuenoHechoWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -2865,11 +3305,20 @@ intolerancias */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                             ),
                                                                           },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Diario Sueño Home',
+                                                                            );
+                                                                          }(),
                                                                         );
                                                                       }
                                                                     } else {
@@ -2890,7 +3339,7 @@ intolerancias */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalErrorCuentaWidget(),
+                                                                              child: ModalErrorCuentaWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -2905,7 +3354,7 @@ intolerancias */
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -2942,7 +3391,7 @@ intolerancias */
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -2961,9 +3410,13 @@ intolerancias */
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      if ((FFAppState().authToken !=
+                                                                      var _shouldSetState =
+                                                                          false;
+                                                                      if ((FFAppState().authToken != null &&
+                                                                              FFAppState().authToken !=
                                                                                   '') &&
-                                                                          (FFAppState().email != '')) {
+                                                                          (FFAppState().email != null &&
+                                                                              FFAppState().email != '')) {
                                                                         if (FFAppState().creadoOk ==
                                                                             'si') {
                                                                           if (UserIndividualCall.suenoHecho(
@@ -2980,18 +3433,24 @@ intolerancias */
                                                                                   onTap: () => FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: const ModalAvisoSuenoHechoWidget(),
+                                                                                    child: ModalAvisoSuenoHechoWidget(),
                                                                                   ),
                                                                                 );
                                                                               },
                                                                             ).then((value) =>
                                                                                 safeSetState(() {}));
+
+                                                                            if (_shouldSetState)
+                                                                              safeSetState(() {});
+                                                                            return;
                                                                           } else {
                                                                             _model.apiCreaSueno =
                                                                                 await SuenoCreaDiarioCall.call(
                                                                               authToken: FFAppState().authToken,
                                                                             );
 
+                                                                            _shouldSetState =
+                                                                                true;
                                                                             FFAppState().diarioSuenoId =
                                                                                 SuenoCreaDiarioCall.id(
                                                                               (_model.apiCreaSueno?.jsonBody ?? ''),
@@ -3008,11 +3467,20 @@ intolerancias */
                                                                             context.pushNamed(
                                                                               'diario_sueno1',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Diario Sueño Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           }
                                                                         } else {
@@ -3031,7 +3499,7 @@ intolerancias */
                                                                                 onTap: () => FocusScope.of(context).unfocus(),
                                                                                 child: Padding(
                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: const ModalErrorCuentaWidget(),
+                                                                                  child: ModalErrorCuentaWidget(),
                                                                                 ),
                                                                               );
                                                                             },
@@ -3045,7 +3513,7 @@ intolerancias */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                               duration: Duration(milliseconds: 0),
@@ -3054,8 +3522,9 @@ intolerancias */
                                                                         );
                                                                       }
 
-                                                                      safeSetState(
-                                                                          () {});
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
                                                                     },
                                                                     child: Icon(
                                                                       Icons
@@ -3083,7 +3552,7 @@ intolerancias */
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 5.0, 15.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -3092,7 +3561,7 @@ intolerancias */
                                         children: [
                                           Flexible(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 10.0, 0.0),
                                               child: Column(
@@ -3116,7 +3585,7 @@ intolerancias */
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -3152,8 +3621,12 @@ intolerancias */
                                                                   onTap:
                                                                       () async {
                                                                     if ((FFAppState().authToken !=
+                                                                                null &&
+                                                                            FFAppState().authToken !=
                                                                                 '') &&
                                                                         (FFAppState().email !=
+                                                                                null &&
+                                                                            FFAppState().email !=
                                                                                 '')) {
                                                                       if (FFAppState()
                                                                               .creadoOk ==
@@ -3177,7 +3650,7 @@ intolerancias */
                                                                                 onTap: () => FocusScope.of(context).unfocus(),
                                                                                 child: Padding(
                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: const ModalSinDiarioWidget(),
+                                                                                  child: ModalSinDiarioWidget(),
                                                                                 ),
                                                                               );
                                                                             },
@@ -3189,11 +3662,20 @@ intolerancias */
                                                                             'listado',
                                                                             extra: <String,
                                                                                 dynamic>{
-                                                                              kTransitionInfoKey: const TransitionInfo(
+                                                                              kTransitionInfoKey: TransitionInfo(
                                                                                 hasTransition: true,
                                                                                 transitionType: PageTransitionType.fade,
                                                                               ),
                                                                             },
+                                                                          );
+
+                                                                          unawaited(
+                                                                            () async {
+                                                                              await UserLogActivityCall.call(
+                                                                                authToken: FFAppState().authToken,
+                                                                                seccion: 'Acceso Resumen Diarios Home',
+                                                                              );
+                                                                            }(),
                                                                           );
                                                                         }
                                                                       } else {
@@ -3212,7 +3694,7 @@ intolerancias */
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalErrorCuentaWidget(),
+                                                                                child: ModalErrorCuentaWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -3226,7 +3708,7 @@ intolerancias */
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -3259,7 +3741,7 @@ intolerancias */
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -3295,7 +3777,7 @@ intolerancias */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalInfoResumenWidget(),
+                                                                              child: ModalInfoResumenWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -3320,7 +3802,7 @@ intolerancias */
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -3344,8 +3826,12 @@ intolerancias */
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
@@ -3370,7 +3856,7 @@ intolerancias */
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalSinDiarioWidget(),
+                                                                                child: ModalSinDiarioWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -3383,11 +3869,20 @@ intolerancias */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                             ),
                                                                           },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Resumen Diarios Home',
+                                                                            );
+                                                                          }(),
                                                                         );
                                                                       }
                                                                     } else {
@@ -3408,7 +3903,7 @@ intolerancias */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalErrorCuentaWidget(),
+                                                                              child: ModalErrorCuentaWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -3423,7 +3918,7 @@ intolerancias */
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -3459,7 +3954,7 @@ Diarios */
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -3478,9 +3973,11 @@ Diarios */
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      if ((FFAppState().authToken !=
+                                                                      if ((FFAppState().authToken != null &&
+                                                                              FFAppState().authToken !=
                                                                                   '') &&
-                                                                          (FFAppState().email != '')) {
+                                                                          (FFAppState().email != null &&
+                                                                              FFAppState().email != '')) {
                                                                         if (FFAppState().creadoOk ==
                                                                             'si') {
                                                                           if (UserIndividualCall.primerDiario(
@@ -3497,7 +3994,7 @@ Diarios */
                                                                                   onTap: () => FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: const ModalSinDiarioWidget(),
+                                                                                    child: ModalSinDiarioWidget(),
                                                                                   ),
                                                                                 );
                                                                               },
@@ -3507,11 +4004,20 @@ Diarios */
                                                                             context.pushNamed(
                                                                               'listado',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Resumen Diarios Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           }
                                                                         } else {
@@ -3530,7 +4036,7 @@ Diarios */
                                                                                 onTap: () => FocusScope.of(context).unfocus(),
                                                                                 child: Padding(
                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: const ModalErrorCuentaWidget(),
+                                                                                  child: ModalErrorCuentaWidget(),
                                                                                 ),
                                                                               );
                                                                             },
@@ -3544,7 +4050,7 @@ Diarios */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                               duration: Duration(milliseconds: 0),
@@ -3577,7 +4083,7 @@ Diarios */
                                           ),
                                           Flexible(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Column(
@@ -3601,7 +4107,7 @@ Diarios */
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -3625,8 +4131,12 @@ Diarios */
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
@@ -3651,7 +4161,7 @@ Diarios */
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalSinDiarioWidget(),
+                                                                                child: ModalSinDiarioWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -3664,11 +4174,20 @@ Diarios */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                             ),
                                                                           },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Carpeta de Salud Home',
+                                                                            );
+                                                                          }(),
                                                                         );
                                                                       }
                                                                     } else {
@@ -3689,7 +4208,7 @@ Diarios */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalErrorCuentaWidget(),
+                                                                              child: ModalErrorCuentaWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -3704,7 +4223,7 @@ Diarios */
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -3749,7 +4268,7 @@ Diarios */
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -3785,7 +4304,7 @@ Diarios */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalInfoSaludWidget(),
+                                                                              child: ModalInfoSaludWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -3810,7 +4329,7 @@ Diarios */
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -3834,8 +4353,12 @@ Diarios */
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
@@ -3860,7 +4383,7 @@ Diarios */
                                                                               onTap: () => FocusScope.of(context).unfocus(),
                                                                               child: Padding(
                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: const ModalSinDiarioWidget(),
+                                                                                child: ModalSinDiarioWidget(),
                                                                               ),
                                                                             );
                                                                           },
@@ -3873,11 +4396,20 @@ Diarios */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                             ),
                                                                           },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Carpeta de Salud Home',
+                                                                            );
+                                                                          }(),
                                                                         );
                                                                       }
                                                                     } else {
@@ -3898,7 +4430,7 @@ Diarios */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: const ModalErrorCuentaWidget(),
+                                                                              child: ModalErrorCuentaWidget(),
                                                                             ),
                                                                           );
                                                                         },
@@ -3913,7 +4445,7 @@ Diarios */
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -3949,7 +4481,7 @@ Salud */
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -3968,9 +4500,11 @@ Salud */
                                                                             .transparent,
                                                                     onTap:
                                                                         () async {
-                                                                      if ((FFAppState().authToken !=
+                                                                      if ((FFAppState().authToken != null &&
+                                                                              FFAppState().authToken !=
                                                                                   '') &&
-                                                                          (FFAppState().email != '')) {
+                                                                          (FFAppState().email != null &&
+                                                                              FFAppState().email != '')) {
                                                                         if (FFAppState().creadoOk ==
                                                                             'si') {
                                                                           if (UserIndividualCall.primerDiario(
@@ -3987,7 +4521,7 @@ Salud */
                                                                                   onTap: () => FocusScope.of(context).unfocus(),
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: const ModalSinDiarioWidget(),
+                                                                                    child: ModalSinDiarioWidget(),
                                                                                   ),
                                                                                 );
                                                                               },
@@ -3997,11 +4531,20 @@ Salud */
                                                                             context.pushNamed(
                                                                               'reporteSalud',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                 ),
                                                                               },
+                                                                            );
+
+                                                                            unawaited(
+                                                                              () async {
+                                                                                await UserLogActivityCall.call(
+                                                                                  authToken: FFAppState().authToken,
+                                                                                  seccion: 'Acceso Carpeta de Salud Home',
+                                                                                );
+                                                                              }(),
                                                                             );
                                                                           }
                                                                         } else {
@@ -4020,7 +4563,7 @@ Salud */
                                                                                 onTap: () => FocusScope.of(context).unfocus(),
                                                                                 child: Padding(
                                                                                   padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: const ModalErrorCuentaWidget(),
+                                                                                  child: ModalErrorCuentaWidget(),
                                                                                 ),
                                                                               );
                                                                             },
@@ -4034,7 +4577,7 @@ Salud */
                                                                           extra: <String,
                                                                               dynamic>{
                                                                             kTransitionInfoKey:
-                                                                                const TransitionInfo(
+                                                                                TransitionInfo(
                                                                               hasTransition: true,
                                                                               transitionType: PageTransitionType.fade,
                                                                               duration: Duration(milliseconds: 0),
@@ -4069,7 +4612,7 @@ Salud */
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 5.0, 15.0, 10.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -4077,20 +4620,34 @@ Salud */
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          if ((FFAppState().authToken !=
+                                          if ((FFAppState().authToken != null &&
+                                                  FFAppState().authToken !=
                                                       '') &&
-                                              (FFAppState().email != '')) {
+                                              (FFAppState().email != null &&
+                                                  FFAppState().email != '')) {
                                             if (FFAppState().creadoOk == 'si') {
                                               context.pushNamed(
                                                 'noticias',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
                                                   ),
                                                 },
+                                              );
+
+                                              unawaited(
+                                                () async {
+                                                  await UserLogActivityCall
+                                                      .call(
+                                                    authToken:
+                                                        FFAppState().authToken,
+                                                    seccion:
+                                                        'Home Acceso a Noticias',
+                                                  );
+                                                }(),
                                               );
                                             } else {
                                               await showModalBottomSheet(
@@ -4109,7 +4666,7 @@ Salud */
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          const ModalErrorCuentaWidget(),
+                                                          ModalErrorCuentaWidget(),
                                                     ),
                                                   );
                                                 },
@@ -4121,7 +4678,7 @@ Salud */
                                               'login',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -4166,7 +4723,7 @@ Salud */
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 5.0, 15.0, 10.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -4174,20 +4731,34 @@ Salud */
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          if ((FFAppState().authToken !=
+                                          if ((FFAppState().authToken != null &&
+                                                  FFAppState().authToken !=
                                                       '') &&
-                                              (FFAppState().email != '')) {
+                                              (FFAppState().email != null &&
+                                                  FFAppState().email != '')) {
                                             if (FFAppState().creadoOk == 'si') {
                                               context.pushNamed(
                                                 'invitarAmigo',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
                                                   ),
                                                 },
+                                              );
+
+                                              unawaited(
+                                                () async {
+                                                  await UserLogActivityCall
+                                                      .call(
+                                                    authToken:
+                                                        FFAppState().authToken,
+                                                    seccion:
+                                                        'Home Acceso a Invitar amigos',
+                                                  );
+                                                }(),
                                               );
                                             } else {
                                               await showModalBottomSheet(
@@ -4206,7 +4777,7 @@ Salud */
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          const ModalErrorCuentaWidget(),
+                                                          ModalErrorCuentaWidget(),
                                                     ),
                                                   );
                                                 },
@@ -4218,7 +4789,7 @@ Salud */
                                               'login',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -4262,7 +4833,7 @@ Salud */
                                         ),
                                       ),
                                     ),
-                                  ].addToEnd(const SizedBox(height: 100.0)),
+                                  ].addToEnd(SizedBox(height: 100.0)),
                                 ),
                               ),
                             ),
@@ -4270,11 +4841,11 @@ Salud */
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: wrapWithModel(
                           model: _model.menuUsuarioModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const MenuUsuarioWidget(
+                          child: MenuUsuarioWidget(
                             index: 1,
                           ),
                         ),

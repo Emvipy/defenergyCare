@@ -3,7 +3,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'welcome_model.dart';
 export 'welcome_model.dart';
 
@@ -52,7 +55,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 2.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -86,7 +89,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -110,7 +113,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -135,7 +138,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                     opacity: 0.85,
                                     child: Align(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -0.5),
+                                          AlignmentDirectional(0.0, -0.5),
                                       child: Container(
                                         width: 303.0,
                                         height: 170.0,
@@ -147,7 +150,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 10.0, 10.0, 10.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -188,7 +191,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -199,7 +202,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               context.goNamed(
                                 'login',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                   ),
@@ -221,9 +224,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 15.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -231,9 +234,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               children: [
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 1.0),
+                                    alignment: AlignmentDirectional(1.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -274,7 +277,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 2.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -293,7 +296,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 20.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -320,7 +323,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -346,13 +349,13 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 10.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -395,14 +398,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -436,7 +439,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -462,13 +465,13 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 10.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -485,7 +488,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                               ),
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -515,14 +518,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -556,7 +559,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -582,13 +585,13 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 10.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -605,7 +608,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                               ),
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -635,14 +638,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -676,7 +679,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -687,7 +690,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               context.goNamed(
                                 'login',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                   ),
@@ -709,9 +712,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 15.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -719,9 +722,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               children: [
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(-1.0, 1.0),
+                                    alignment: AlignmentDirectional(-1.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -748,9 +751,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 1.0),
+                                    alignment: AlignmentDirectional(1.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -791,7 +794,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 2.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -810,7 +813,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 20.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -837,7 +840,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -863,13 +866,13 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 10.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -912,14 +915,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -953,7 +956,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -979,13 +982,13 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 10.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -1002,7 +1005,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                               ),
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -1032,14 +1035,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -1073,7 +1076,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1099,13 +1102,13 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 10.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: ClipRRect(
@@ -1122,7 +1125,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                               ),
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -1152,14 +1155,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Text(
@@ -1193,7 +1196,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -1204,7 +1207,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               context.goNamed(
                                 'login',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                   ),
@@ -1226,9 +1229,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 5.0, 10.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1236,9 +1239,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               children: [
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(-1.0, 1.0),
+                                    alignment: AlignmentDirectional(-1.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -1265,9 +1268,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 ),
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 1.0),
+                                    alignment: AlignmentDirectional(1.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 20.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:
@@ -1308,7 +1311,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 2.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1327,7 +1330,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 20.0, 10.0, 35.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1354,7 +1357,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 20.0, 10.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1362,7 +1365,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Lottie.asset(
                                     'assets/lottie_animations/Animation_-_1724191873865.json',
                                     width: 240.0,
@@ -1376,7 +1379,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 55.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1387,7 +1390,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                   context.goNamed(
                                     'signup',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -1400,9 +1403,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1413,7 +1416,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -1424,9 +1427,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 5.0, 10.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1434,9 +1437,9 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                               children: [
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(-1.0, 1.0),
+                                    alignment: AlignmentDirectional(-1.0, 1.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           15.0, 0.0, 0.0, 0.0),
                                       child: FlutterFlowIconButton(
                                         borderColor:

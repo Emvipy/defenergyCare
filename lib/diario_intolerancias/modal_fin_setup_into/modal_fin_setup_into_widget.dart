@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'modal_fin_setup_into_model.dart';
 export 'modal_fin_setup_into_model.dart';
@@ -49,13 +51,13 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 1.0),
+        alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 270.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 5.0,
                 color: Color(0x3B1D2429),
@@ -65,7 +67,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                 ),
               )
             ],
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(16.0),
@@ -76,7 +78,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -90,7 +92,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                         context.pushNamed(
                           'Home',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                               duration: Duration(milliseconds: 0),
@@ -108,7 +110,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +135,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -158,18 +160,18 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
               ),
               Flexible(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -208,7 +210,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -224,7 +226,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                                               .secondaryBackground,
                                         ),
                                       ),
-                                      duration: const Duration(milliseconds: 4000),
+                                      duration: Duration(milliseconds: 4000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).error,
                                     ),
@@ -239,9 +241,9 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).secondary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -252,7 +254,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -262,16 +264,16 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 context.pushNamed(
                                   'Home',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -285,9 +287,9 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -298,7 +300,7 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

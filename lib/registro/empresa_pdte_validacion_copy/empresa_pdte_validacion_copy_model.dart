@@ -4,29 +4,45 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
-import 'recordar_pass_widget.dart' show RecordarPassWidget;
-import 'package:easy_debounce/easy_debounce.dart';
+import 'empresa_pdte_validacion_copy_widget.dart'
+    show EmpresaPdteValidacionCopyWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 
-class RecordarPassModel extends FlutterFlowModel<RecordarPassWidget> {
-  ///  State fields for stateful widgets in this page.
+class EmpresaPdteValidacionCopyModel
+    extends FlutterFlowModel<EmpresaPdteValidacionCopyWidget> {
+  ///  Local state fields for this page.
 
-  // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressTextController;
-  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  String covid = 'no';
+
+  int? covidMixId = 0;
+
+  String em = 'no';
+
+  int? emMixId = 0;
+
+  String fibro = 'no';
+
+  int? fibroMixId = 0;
+
+  String otras = 'no';
+
+  int? otrasMixId = 0;
+
+  String into = 'no';
+
+  int? intoMixId = 0;
+
+  int? contador = 0;
 
   @override
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    emailAddressFocusNode?.dispose();
-    emailAddressTextController?.dispose();
-  }
+  void dispose() {}
 }

@@ -9,6 +9,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'perfil_asociaciones_model.dart';
 export 'perfil_asociaciones_model.dart';
@@ -90,20 +91,20 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -167,7 +168,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                             }
 
                             return ListView.separated(
-                              padding: const EdgeInsets.fromLTRB(
+                              padding: EdgeInsets.fromLTRB(
                                 0,
                                 0,
                                 0,
@@ -178,12 +179,12 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                               scrollDirection: Axis.vertical,
                               itemCount: childAsociaciones.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 15.0),
+                                  SizedBox(height: 15.0),
                               itemBuilder: (context, childAsociacionesIndex) {
                                 final childAsociacionesItem =
                                     childAsociaciones[childAsociacionesIndex];
                                 return Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -272,7 +273,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Container(
                                                 width: 60.0,
@@ -294,7 +295,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -327,11 +328,11 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Icon(
@@ -358,7 +359,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -368,7 +369,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                               context.pushNamed(
                                 'perfil',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                   ),
@@ -381,9 +382,9 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -394,7 +395,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -404,7 +405,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                         ],
                       ),
                     ),
-                  ].addToEnd(const SizedBox(height: 100.0)),
+                  ].addToEnd(SizedBox(height: 100.0)),
                 ),
               ),
             ),
@@ -414,7 +415,7 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 0,
                 ),
               ),

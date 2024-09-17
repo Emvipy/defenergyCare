@@ -1,10 +1,12 @@
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_empresa_model.dart';
 export 'home_empresa_model.dart';
@@ -80,23 +82,23 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: wrapWithModel(
                           model: _model.menuUsuarioModel,
                           updateCallback: () => safeSetState(() {}),
-                          child: const MenuUsuarioWidget(
+                          child: MenuUsuarioWidget(
                             index: 1,
                           ),
                         ),
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -109,14 +111,16 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                     onTap: () async {
                                       if (FFAppState().email ==
                                           'enrique@emvipy.com') {
-                                        if ((FFAppState().authToken != '') &&
-                                            (FFAppState().email != '')) {
+                                        if ((FFAppState().authToken != null &&
+                                                FFAppState().authToken != '') &&
+                                            (FFAppState().email != null &&
+                                                FFAppState().email != '')) {
                                           if (FFAppState().creadoOk == 'si') {
                                             context.pushNamed(
                                               'perfil',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -140,7 +144,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         MediaQuery.viewInsetsOf(
                                                             context),
                                                     child:
-                                                        const ModalErrorCuentaWidget(),
+                                                        ModalErrorCuentaWidget(),
                                                   ),
                                                 );
                                               },
@@ -152,7 +156,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                             'login',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -168,7 +172,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       width: 45.0,
                                       height: 45.0,
                                       clipBehavior: Clip.antiAlias,
-                                      decoration: const BoxDecoration(
+                                      decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                       ),
                                       child: Image.network(
@@ -181,7 +185,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         3.0, 0.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -190,7 +194,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -200,10 +204,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                             onTap: () async {
                                               if (FFAppState().email ==
                                                   'enrique@emvipy.com') {
-                                                if ((FFAppState()
+                                                if ((FFAppState().authToken !=
+                                                            null &&
+                                                        FFAppState()
                                                                 .authToken !=
                                                             '') &&
                                                     (FFAppState().email !=
+                                                            null &&
+                                                        FFAppState().email !=
                                                             '')) {
                                                   if (FFAppState().creadoOk ==
                                                       'si') {
@@ -211,7 +219,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                       'perfil',
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -237,7 +245,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                 .viewInsetsOf(
                                                                     context),
                                                             child:
-                                                                const ModalErrorCuentaWidget(),
+                                                                ModalErrorCuentaWidget(),
                                                           ),
                                                         );
                                                       },
@@ -249,7 +257,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     'login',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -263,7 +271,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                               }
                                             },
                                             child: Text(
-                                              'Hola ${FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
+                                              'Hola ${FFAppState().authToken != null && FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -281,7 +289,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -291,10 +299,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                             onTap: () async {
                                               if (FFAppState().email ==
                                                   'enrique@emvipy.com') {
-                                                if ((FFAppState()
+                                                if ((FFAppState().authToken !=
+                                                            null &&
+                                                        FFAppState()
                                                                 .authToken !=
                                                             '') &&
                                                     (FFAppState().email !=
+                                                            null &&
+                                                        FFAppState().email !=
                                                             '')) {
                                                   if (FFAppState().creadoOk ==
                                                       'si') {
@@ -302,7 +314,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                       'perfil',
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -328,7 +340,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                 .viewInsetsOf(
                                                                     context),
                                                             child:
-                                                                const ModalErrorCuentaWidget(),
+                                                                ModalErrorCuentaWidget(),
                                                           ),
                                                         );
                                                       },
@@ -340,7 +352,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     'login',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -378,7 +390,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                   ),
                                   Flexible(
                                     child: Align(
-                                      alignment: const AlignmentDirectional(1.0, 0.0),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Container(
                                         width: 45.0,
                                         height: 45.0,
@@ -389,7 +401,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                         ),
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -420,7 +432,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 25.0, 15.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -431,7 +443,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       opacity: 0.9,
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 360.0,
                                           height: 100.0,
@@ -445,7 +457,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 0.0),
                                                 child: Row(
@@ -474,8 +486,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         onTap: () async {
                                                           if ((FFAppState()
                                                                           .authToken !=
+                                                                      null &&
+                                                                  FFAppState()
+                                                                          .authToken !=
                                                                       '') &&
                                                               (FFAppState()
+                                                                          .email !=
+                                                                      null &&
+                                                                  FFAppState()
                                                                           .email !=
                                                                       '')) {
                                                             if (FFAppState()
@@ -490,7 +508,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -509,7 +527,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -544,7 +562,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                           .viewInsetsOf(
                                                                               context),
                                                                       child:
-                                                                          const ModalErrorCuentaWidget(),
+                                                                          ModalErrorCuentaWidget(),
                                                                     ),
                                                                   );
                                                                 },
@@ -558,7 +576,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -583,7 +601,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -601,8 +619,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         onTap: () async {
                                                           if ((FFAppState()
                                                                           .authToken !=
+                                                                      null &&
+                                                                  FFAppState()
+                                                                          .authToken !=
                                                                       '') &&
                                                               (FFAppState()
+                                                                          .email !=
+                                                                      null &&
+                                                                  FFAppState()
                                                                           .email !=
                                                                       '')) {
                                                             if (FFAppState()
@@ -617,7 +641,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -636,7 +660,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -671,7 +695,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                           .viewInsetsOf(
                                                                               context),
                                                                       child:
-                                                                          const ModalErrorCuentaWidget(),
+                                                                          ModalErrorCuentaWidget(),
                                                                     ),
                                                                   );
                                                                 },
@@ -685,7 +709,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -727,7 +751,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -753,7 +777,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 8.0, 5.0, 0.0),
                                                 child: Row(
@@ -764,7 +788,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -778,8 +802,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         onTap: () async {
                                                           if ((FFAppState()
                                                                           .authToken !=
+                                                                      null &&
+                                                                  FFAppState()
+                                                                          .authToken !=
                                                                       '') &&
                                                               (FFAppState()
+                                                                          .email !=
+                                                                      null &&
+                                                                  FFAppState()
                                                                           .email !=
                                                                       '')) {
                                                             if (FFAppState()
@@ -794,7 +824,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -813,7 +843,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -848,7 +878,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                           .viewInsetsOf(
                                                                               context),
                                                                       child:
-                                                                          const ModalErrorCuentaWidget(),
+                                                                          ModalErrorCuentaWidget(),
                                                                     ),
                                                                   );
                                                                 },
@@ -862,7 +892,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -897,7 +927,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -911,8 +941,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           onTap: () async {
                                                             if ((FFAppState()
                                                                             .authToken !=
+                                                                        null &&
+                                                                    FFAppState()
+                                                                            .authToken !=
                                                                         '') &&
                                                                 (FFAppState()
+                                                                            .email !=
+                                                                        null &&
+                                                                    FFAppState()
                                                                             .email !=
                                                                         '')) {
                                                               if (FFAppState()
@@ -927,7 +963,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -945,7 +981,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                       extra: <String,
                                                                           dynamic>{
                                                                         kTransitionInfoKey:
-                                                                            const TransitionInfo(
+                                                                            TransitionInfo(
                                                                           hasTransition:
                                                                               true,
                                                                           transitionType:
@@ -979,7 +1015,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const ModalErrorCuentaWidget(),
+                                                                            ModalErrorCuentaWidget(),
                                                                       ),
                                                                     );
                                                                   },
@@ -993,7 +1029,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1031,7 +1067,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 15.0, 15.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1042,7 +1078,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       opacity: 0.9,
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 360.0,
                                           height: 100.0,
@@ -1056,7 +1092,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 0.0),
                                                 child: Row(
@@ -1085,8 +1121,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         onTap: () async {
                                                           if ((FFAppState()
                                                                           .authToken !=
+                                                                      null &&
+                                                                  FFAppState()
+                                                                          .authToken !=
                                                                       '') &&
                                                               (FFAppState()
+                                                                          .email !=
+                                                                      null &&
+                                                                  FFAppState()
                                                                           .email !=
                                                                       '')) {
                                                             if (FFAppState()
@@ -1097,7 +1139,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1129,7 +1171,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                           .viewInsetsOf(
                                                                               context),
                                                                       child:
-                                                                          const ModalErrorCuentaWidget(),
+                                                                          ModalErrorCuentaWidget(),
                                                                     ),
                                                                   );
                                                                 },
@@ -1143,7 +1185,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1168,7 +1210,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -1186,8 +1228,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         onTap: () async {
                                                           if ((FFAppState()
                                                                           .authToken !=
+                                                                      null &&
+                                                                  FFAppState()
+                                                                          .authToken !=
                                                                       '') &&
                                                               (FFAppState()
+                                                                          .email !=
+                                                                      null &&
+                                                                  FFAppState()
                                                                           .email !=
                                                                       '')) {
                                                             if (FFAppState()
@@ -1198,7 +1246,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1230,7 +1278,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                           .viewInsetsOf(
                                                                               context),
                                                                       child:
-                                                                          const ModalErrorCuentaWidget(),
+                                                                          ModalErrorCuentaWidget(),
                                                                     ),
                                                                   );
                                                                 },
@@ -1244,7 +1292,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1286,7 +1334,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -1312,7 +1360,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 8.0, 5.0, 0.0),
                                                 child: Row(
@@ -1333,8 +1381,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                       onTap: () async {
                                                         if ((FFAppState()
                                                                         .authToken !=
+                                                                    null &&
+                                                                FFAppState()
+                                                                        .authToken !=
                                                                     '') &&
                                                             (FFAppState()
+                                                                        .email !=
+                                                                    null &&
+                                                                FFAppState()
                                                                         .email !=
                                                                     '')) {
                                                           if (FFAppState()
@@ -1345,7 +1399,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -1376,7 +1430,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                         .viewInsetsOf(
                                                                             context),
                                                                     child:
-                                                                        const ModalErrorCuentaWidget(),
+                                                                        ModalErrorCuentaWidget(),
                                                                   ),
                                                                 );
                                                               },
@@ -1390,7 +1444,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  const TransitionInfo(
+                                                                  TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -1425,7 +1479,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -1439,8 +1493,14 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           onTap: () async {
                                                             if ((FFAppState()
                                                                             .authToken !=
+                                                                        null &&
+                                                                    FFAppState()
+                                                                            .authToken !=
                                                                         '') &&
                                                                 (FFAppState()
+                                                                            .email !=
+                                                                        null &&
+                                                                    FFAppState()
                                                                             .email !=
                                                                         '')) {
                                                               if (FFAppState()
@@ -1452,7 +1512,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -1483,7 +1543,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const ModalErrorCuentaWidget(),
+                                                                            ModalErrorCuentaWidget(),
                                                                       ),
                                                                     );
                                                                   },
@@ -1497,7 +1557,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -1535,7 +1595,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 15.0, 15.0, 10.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -1545,13 +1605,15 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                 onTap: () async {
                                   if (FFAppState().email ==
                                       'enrique@emvipy.com') {
-                                    if ((FFAppState().authToken != '') &&
-                                        (FFAppState().email != '')) {
+                                    if ((FFAppState().authToken != null &&
+                                            FFAppState().authToken != '') &&
+                                        (FFAppState().email != null &&
+                                            FFAppState().email != '')) {
                                       if (FFAppState().creadoOk == 'si') {
                                         context.pushNamed(
                                           'noticias',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1573,7 +1635,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: const ModalErrorCuentaWidget(),
+                                                child: ModalErrorCuentaWidget(),
                                               ),
                                             );
                                           },
@@ -1583,7 +1645,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       context.pushNamed(
                                         'login',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -1625,7 +1687,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 15.0, 15.0, 10.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -1635,13 +1697,15 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                 onTap: () async {
                                   if (FFAppState().email ==
                                       'enrique@emvipy.com') {
-                                    if ((FFAppState().authToken != '') &&
-                                        (FFAppState().email != '')) {
+                                    if ((FFAppState().authToken != null &&
+                                            FFAppState().authToken != '') &&
+                                        (FFAppState().email != null &&
+                                            FFAppState().email != '')) {
                                       if (FFAppState().creadoOk == 'si') {
                                         context.pushNamed(
                                           'invitarAmigo',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1663,7 +1727,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: const ModalErrorCuentaWidget(),
+                                                child: ModalErrorCuentaWidget(),
                                               ),
                                             );
                                           },
@@ -1673,7 +1737,7 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       context.pushNamed(
                                         'login',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,

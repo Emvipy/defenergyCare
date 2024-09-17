@@ -1,9 +1,19 @@
 import '/backend/api_requests/api_calls.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/noticias/modal_crea_comentario/modal_crea_comentario_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'noticias_detalle_widget.dart' show NoticiasDetalleWidget;
+import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 
 class NoticiasDetalleModel extends FlutterFlowModel<NoticiasDetalleWidget> {
   ///  Local state fields for this page.
@@ -40,7 +50,7 @@ class NoticiasDetalleModel extends FlutterFlowModel<NoticiasDetalleWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleter2?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -55,7 +65,7 @@ class NoticiasDetalleModel extends FlutterFlowModel<NoticiasDetalleWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(const Duration(milliseconds: 50));
+      await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = apiRequestCompleter1?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

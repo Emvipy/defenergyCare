@@ -8,6 +8,8 @@ import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emp_crea_encuesta1_model.dart';
 export 'emp_crea_encuesta1_model.dart';
@@ -94,7 +96,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -106,7 +108,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -128,15 +130,15 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: SizedBox(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Container(
                       width: 350.0,
                       child: TextFormField(
                         controller: _model.tituloEsTextController,
                         focusNode: _model.tituloEsFocusNode,
                         onChanged: (_) => EasyDebounce.debounce(
                           '_model.tituloEsTextController',
-                          const Duration(milliseconds: 100),
+                          Duration(milliseconds: 100),
                           () => safeSetState(() {}),
                         ),
                         autofocus: false,
@@ -157,14 +159,14 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1.0,
                             ),
@@ -199,18 +201,18 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                      child: SizedBox(
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      child: Container(
                         width: 350.0,
                         child: TextFormField(
                           controller: _model.tituloEnTextController,
                           focusNode: _model.tituloEnFocusNode,
                           onChanged: (_) => EasyDebounce.debounce(
                             '_model.tituloEnTextController',
-                            const Duration(milliseconds: 100),
+                            Duration(milliseconds: 100),
                             () => safeSetState(() {}),
                           ),
                           autofocus: false,
@@ -233,14 +235,14 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
@@ -277,10 +279,10 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -292,7 +294,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 10.0, 5.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -318,7 +320,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 10.0, 5.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -433,7 +435,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                             ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -513,7 +515,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -590,7 +592,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -667,7 +669,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -744,7 +746,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -821,7 +823,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -898,7 +900,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -975,7 +977,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1052,7 +1054,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                               ),
                             if (_model.checkTodas == false)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 5.0, 5.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -1134,15 +1136,18 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         FFButtonWidget(
                           onPressed: ((_model.tituloEsTextController.text ==
+                                          null ||
+                                      _model.tituloEsTextController.text ==
                                           '') ||
-                                  (_model.tituloEnTextController.text ==
+                                  (_model.tituloEnTextController.text == null ||
+                                      _model.tituloEnTextController.text ==
                                           '') ||
                                   (_model.contador < 1))
                               ? null
@@ -1177,7 +1182,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     context.pushNamed(
                                       'emp_crea_encuesta2',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -1194,9 +1199,9 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1215,7 +1220,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                       ],
                     ),
                   ),
-                ].addToEnd(const SizedBox(height: 150.0)),
+                ].addToEnd(SizedBox(height: 150.0)),
               ),
             ),
             if (!(isWeb
@@ -1224,7 +1229,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 2,
                 ),
               ),

@@ -5,9 +5,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'emp_encuestas_model.dart';
 export 'emp_encuestas_model.dart';
@@ -88,7 +90,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -99,7 +101,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -155,11 +157,11 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                               decoration: BoxDecoration(
                                 color: _model.tipo == 'no'
                                     ? FlutterFlowTheme.of(context).secondary
-                                    : const Color(0x00000000),
+                                    : Color(0x00000000),
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     '5mja1dvk' /* Vigentes */,
@@ -196,11 +198,11 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                               decoration: BoxDecoration(
                                 color: _model.tipo == 'si'
                                     ? FlutterFlowTheme.of(context).secondary
-                                    : const Color(0x00000000),
+                                    : Color(0x00000000),
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'rpahkhqi' /* Finalizadas */,
@@ -230,7 +232,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
                           future: (_model.apiRequestCompleter ??=
                                   Completer<ApiCallResponse>()
@@ -270,7 +272,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                 }
 
                                 return ListView.separated(
-                                  padding: const EdgeInsets.fromLTRB(
+                                  padding: EdgeInsets.fromLTRB(
                                     0,
                                     0,
                                     0,
@@ -281,12 +283,12 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                   scrollDirection: Axis.vertical,
                                   itemCount: childEncuestas.length,
                                   separatorBuilder: (_, __) =>
-                                      const SizedBox(height: 15.0),
+                                      SizedBox(height: 15.0),
                                   itemBuilder: (context, childEncuestasIndex) {
                                     final childEncuestasItem =
                                         childEncuestas[childEncuestasIndex];
                                     return Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Container(
                                         width: 350.0,
                                         decoration: BoxDecoration(
@@ -305,7 +307,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 5.0,
                                                                 5.0, 5.0),
                                                     child: Row(
@@ -348,7 +350,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 5.0, 5.0),
                                                     child: Row(
@@ -417,7 +419,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 5.0, 5.0),
                                                     child: Row(
@@ -486,7 +488,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 5.0, 5.0),
                                                     child: Row(
@@ -588,7 +590,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -632,7 +634,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                         context.pushNamed(
                           'emp_crea_encuesta1',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                             ),
@@ -645,10 +647,10 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                       options: FFButtonOptions(
                         width: 300.0,
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -662,7 +664,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                     ),
                   ],
                 ),
-              ].addToEnd(const SizedBox(height: 100.0)),
+              ].addToEnd(SizedBox(height: 100.0)),
             ),
             if (!(isWeb
                 ? MediaQuery.viewInsetsOf(context).bottom > 0
@@ -670,7 +672,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 2,
                 ),
               ),

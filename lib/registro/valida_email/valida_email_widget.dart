@@ -5,11 +5,14 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
 import '/registro/modal_info_spam/modal_info_spam_widget.dart';
+import 'dart:math';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'valida_email_model.dart';
 export 'valida_email_model.dart';
@@ -47,7 +50,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
               onTap: () => FocusScope.of(context).unfocus(),
               child: Padding(
                 padding: MediaQuery.viewInsetsOf(context),
-                child: const ModalInfoSpamWidget(),
+                child: ModalInfoSpamWidget(),
               ),
             );
           },
@@ -71,22 +74,22 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 140.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -116,7 +119,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).background,
             ),
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -128,7 +131,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -147,17 +150,17 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 10.0, 16.0, 4.0),
                           child: Container(
                             width: double.infinity,
-                            constraints: const BoxConstraints(
+                            constraints: BoxConstraints(
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 4.0,
                                   color: Color(0x33000000),
@@ -170,9 +173,9 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(32.0),
+                                padding: EdgeInsets.all(32.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -194,7 +197,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                           ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 24.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -239,7 +242,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                         fieldHeight: 44.0,
                                         fieldWidth: 44.0,
                                         borderWidth: 2.0,
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(8.0),
                                           bottomRight: Radius.circular(8.0),
                                           topLeft: Radius.circular(8.0),
@@ -273,7 +276,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
@@ -294,7 +297,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -312,7 +315,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                           .asValidator(context),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -322,7 +325,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                           // You will have to add an action on this rich text to go to your login page.
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 12.0),
                                             child: RichText(
                                               textScaler: MediaQuery.of(context)
@@ -401,7 +404,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                                             .secondaryBackground,
                                                                       ),
                                                                     ),
-                                                                    duration: const Duration(
+                                                                    duration: Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -423,7 +426,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                                             .secondaryBackground,
                                                                       ),
                                                                     ),
-                                                                    duration: const Duration(
+                                                                    duration: Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -444,7 +447,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color:
-                                                              const Color(0xFF101213),
+                                                              Color(0xFF101213),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -457,7 +460,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 20.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -481,7 +484,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 10.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -551,7 +554,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                         Flexible(
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -609,7 +612,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                                             context.pushNamed(
                                                                               'legal_uso',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -659,7 +662,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                                             context.pushNamed(
                                                                               'legal_uso',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -687,7 +690,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 10.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -758,7 +761,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                         Flexible(
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -816,7 +819,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                                             context.pushNamed(
                                                                               'legal_investigacion',
                                                                               extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                kTransitionInfoKey: TransitionInfo(
                                                                                   hasTransition: true,
                                                                                   transitionType: PageTransitionType.fade,
                                                                                   duration: Duration(milliseconds: 0),
@@ -850,7 +853,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: ((_model.legal == false) ||
@@ -876,7 +879,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                     }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -891,7 +894,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                     'signUpEmpresa',
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
-                                                          const TransitionInfo(
+                                                          TransitionInfo(
                                                         hasTransition: true,
                                                         transitionType:
                                                             PageTransitionType
@@ -911,10 +914,10 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .azulPerm,
@@ -929,7 +932,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -945,7 +948,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -964,7 +967,7 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                       MediaQuery.viewInsetsOf(
                                                           context),
                                                   child:
-                                                      const ModalCancelaSignWidget(),
+                                                      ModalCancelaSignWidget(),
                                                 ),
                                               );
                                             },
@@ -979,12 +982,12 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: const Color(0x00FFFFFF),
+                                          color: Color(0x00FFFFFF),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall
@@ -1020,14 +1023,14 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 5.0, 15.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(

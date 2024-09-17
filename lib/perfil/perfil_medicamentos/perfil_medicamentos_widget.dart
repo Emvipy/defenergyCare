@@ -6,9 +6,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/perfil/modal_add_med/modal_add_med_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'perfil_medicamentos_model.dart';
 export 'perfil_medicamentos_model.dart';
@@ -90,7 +92,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -102,7 +104,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 0,
                 ),
               ),
@@ -110,7 +112,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -141,7 +143,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: FutureBuilder<ApiCallResponse>(
                             future: PerfilMisMedicamentosCall.call(
@@ -174,7 +176,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                   ).toList();
 
                                   return ListView.separated(
-                                    padding: const EdgeInsets.fromLTRB(
+                                    padding: EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -184,7 +186,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                     scrollDirection: Axis.vertical,
                                     itemCount: childMedicamentos.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 15.0),
+                                        SizedBox(height: 15.0),
                                     itemBuilder:
                                         (context, childMedicamentosIndex) {
                                       final childMedicamentosItem =
@@ -192,7 +194,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                               childMedicamentosIndex];
                                       return Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
                                           decoration: BoxDecoration(
@@ -205,7 +207,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 5.0),
                                                 child: Row(
@@ -242,7 +244,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 5.0),
                                                 child: Row(
@@ -286,7 +288,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                                                 r'''$.dosis''',
                                                               ).toString(),
                                                               style:
-                                                                  const TextStyle(),
+                                                                  TextStyle(),
                                                             )
                                                           ],
                                                           style: FlutterFlowTheme
@@ -305,7 +307,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 0.0),
                                                 child: Row(
@@ -349,7 +351,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                                                 r'''$.posologia''',
                                                               ).toString(),
                                                               style:
-                                                                  const TextStyle(),
+                                                                  TextStyle(),
                                                             )
                                                           ],
                                                           style: FlutterFlowTheme
@@ -368,7 +370,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 0.0, 5.0, 5.0),
                                                 child: Row(
@@ -378,7 +380,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -451,7 +453,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                             },
                           ),
                         ),
-                      ].addToEnd(const SizedBox(height: 100.0)),
+                      ].addToEnd(SizedBox(height: 100.0)),
                     ),
                   ),
                 ),
@@ -499,9 +501,9 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                         options: FFButtonOptions(
                           width: 300.0,
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -511,7 +513,7 @@ class _PerfilMedicamentosWidgetState extends State<PerfilMedicamentosWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

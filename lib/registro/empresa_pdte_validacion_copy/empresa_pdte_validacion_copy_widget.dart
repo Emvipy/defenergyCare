@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/registro/modal_equivocado/modal_equivocado_widget.dart';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -12,20 +11,21 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'empresa_pdte_validacion_model.dart';
-export 'empresa_pdte_validacion_model.dart';
+import 'empresa_pdte_validacion_copy_model.dart';
+export 'empresa_pdte_validacion_copy_model.dart';
 
-class EmpresaPdteValidacionWidget extends StatefulWidget {
-  const EmpresaPdteValidacionWidget({super.key});
+class EmpresaPdteValidacionCopyWidget extends StatefulWidget {
+  const EmpresaPdteValidacionCopyWidget({super.key});
 
   @override
-  State<EmpresaPdteValidacionWidget> createState() =>
-      _EmpresaPdteValidacionWidgetState();
+  State<EmpresaPdteValidacionCopyWidget> createState() =>
+      _EmpresaPdteValidacionCopyWidgetState();
 }
 
-class _EmpresaPdteValidacionWidgetState
-    extends State<EmpresaPdteValidacionWidget> with TickerProviderStateMixin {
-  late EmpresaPdteValidacionModel _model;
+class _EmpresaPdteValidacionCopyWidgetState
+    extends State<EmpresaPdteValidacionCopyWidget>
+    with TickerProviderStateMixin {
+  late EmpresaPdteValidacionCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -34,7 +34,7 @@ class _EmpresaPdteValidacionWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EmpresaPdteValidacionModel());
+    _model = createModel(context, () => EmpresaPdteValidacionCopyModel());
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
@@ -158,7 +158,7 @@ class _EmpresaPdteValidacionWidgetState
                                       backgroundColor: Colors.transparent,
                                       center: Text(
                                         FFLocalizations.of(context).getText(
-                                          'yzulmned' /* 50% */,
+                                          '92jx22q7' /* 50% */,
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -212,7 +212,7 @@ class _EmpresaPdteValidacionWidgetState
                                           0.0, 0.0, 0.0, 24.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'db58padd' /* Tu cuenta se ha creado correct... */,
+                                          'xzewre61' /* Tu cuenta aún no ha sido valid... */,
                                         ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
@@ -233,7 +233,7 @@ class _EmpresaPdteValidacionWidgetState
                                           0.0, 0.0, 0.0, 24.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'krmx2alh' /* Te avisaremos por email en cua... */,
+                                          '98by5gvu' /* Te avisaremos por email en cua... */,
                                         ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
@@ -315,7 +315,7 @@ class _EmpresaPdteValidacionWidgetState
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          '6iktiq6o' /* Finalizar */,
+                                          '0xwyifpz' /* Entendido */,
                                         ),
                                         options: FFButtonOptions(
                                           width: 300.0,
@@ -344,70 +344,6 @@ class _EmpresaPdteValidacionWidgetState
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            width: 1.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 16.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          await showModalBottomSheet(
-                                            isScrollControlled: true,
-                                            backgroundColor: Colors.transparent,
-                                            enableDrag: false,
-                                            context: context,
-                                            builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () =>
-                                                    FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child:
-                                                      ModalEquivocadoWidget(),
-                                                ),
-                                              );
-                                            },
-                                          ).then(
-                                              (value) => safeSetState(() {}));
-                                        },
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          'h0tsoqu7' /* Me he equivocado de tipo de us... */,
-                                        ),
-                                        options: FFButtonOptions(
-                                          width: 300.0,
-                                          height: 44.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0x00FFFFFF),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
                                             width: 1.0,
                                           ),
                                           borderRadius:

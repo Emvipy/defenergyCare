@@ -10,6 +10,7 @@ import '/registro/modal_equivocado/modal_equivocado_widget.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'sign_up_empresa_model.dart';
@@ -83,20 +84,20 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(100.0),
+          preferredSize: Size.fromHeight(100.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).background,
             automaticallyImplyLeading: false,
-            actions: const [],
+            actions: [],
             flexibleSpace: FlexibleSpaceBar(
               title: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Flexible(
+                    Flexible(
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
@@ -108,7 +109,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'zyyumz1q' /* Más información */,
@@ -135,9 +136,9 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(32.0, 10.0, 32.0, 32.0),
+              padding: EdgeInsetsDirectional.fromSTEB(32.0, 10.0, 32.0, 32.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -145,7 +146,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 18.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 18.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'n0kf5dy8' /* Ahora necesitamos conocer algo... */,
@@ -165,7 +166,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                     if (FFAppState().authToken == '12')
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -198,7 +199,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                 ),
-                                barRadius: const Radius.circular(5.0),
+                                barRadius: Radius.circular(5.0),
                                 padding: EdgeInsets.zero,
                               ),
                             ),
@@ -208,7 +209,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                     if (FFAppState().perfilId == 2)
                       Container(
                         width: 332.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -228,7 +229,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FutureBuilder<ApiCallResponse>(
                                     future: DespProfesionCall.call(),
@@ -295,10 +296,10 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         fillColor: FlutterFlowTheme.of(context)
                                             .rellenoCampo2,
                                         elevation: 0.0,
-                                        borderColor: const Color(0x0063A4DC),
+                                        borderColor: Color(0x0063A4DC),
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 4.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
@@ -309,7 +310,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -318,7 +319,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         _model.textFieldColegiadoFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldColegiadoTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -341,7 +342,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x0063A4DC),
                                           width: 2.0,
                                         ),
@@ -391,7 +392,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -399,7 +400,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                     focusNode: _model.textFieldNifProFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldNifProTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -422,7 +423,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x0063A4DC),
                                           width: 2.0,
                                         ),
@@ -472,7 +473,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller: _model
@@ -481,7 +482,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         _model.textFieldDireccionProFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldDireccionProTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -504,7 +505,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x0063A4DC),
                                           width: 2.0,
                                         ),
@@ -554,7 +555,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -563,7 +564,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         _model.textFieldCiudadProFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldCiudadProTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -586,7 +587,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x0063A4DC),
                                           width: 2.0,
                                         ),
@@ -636,7 +637,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -644,7 +645,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                     focusNode: _model.textFieldCpProFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldCpProTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -667,7 +668,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x0063A4DC),
                                           width: 2.0,
                                         ),
@@ -719,7 +720,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: ((_model.dropDownProfesionValue ==
@@ -728,17 +729,30 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                                     .dropDownProfesionValue ==
                                                 '') ||
                                         (_model
+                                                    .textFieldNifProTextController.text ==
+                                                null ||
+                                            _model
                                                     .textFieldNifProTextController
                                                     .text ==
                                                 '') ||
                                         (_model
                                                     .textFieldDireccionProTextController
                                                     .text ==
+                                                null ||
+                                            _model
+                                                    .textFieldDireccionProTextController
+                                                    .text ==
                                                 '') ||
                                         (_model.textFieldCiudadProTextController
                                                     .text ==
+                                                null ||
+                                            _model.textFieldCiudadProTextController
+                                                    .text ==
                                                 '') ||
                                         (_model.textFieldCpProTextController
+                                                    .text ==
+                                                null ||
+                                            _model.textFieldCpProTextController
                                                     .text ==
                                                 ''))
                                     ? null
@@ -804,7 +818,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                           'empresa_pdte_validacion',
                                           context.mounted,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -822,9 +836,9 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 44.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).azulPerm,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -837,7 +851,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -856,7 +870,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                         (FFAppState().perfilId == 4))
                       Container(
                         width: 332.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -865,7 +879,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -873,7 +887,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                     focusNode: _model.textFieldRazonFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldRazonTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -895,7 +909,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -945,7 +959,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -953,7 +967,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                     focusNode: _model.textFieldCifFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldCifTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -976,7 +990,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -1026,7 +1040,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -1035,7 +1049,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         _model.textFieldDireccionFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldDireccionTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -1058,7 +1072,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -1108,7 +1122,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -1116,7 +1130,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                     focusNode: _model.textFieldCiudadFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldCiudadTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -1139,7 +1153,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -1189,7 +1203,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -1197,7 +1211,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                     focusNode: _model.textFieldCpEFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldCpETextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -1220,7 +1234,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -1270,7 +1284,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: TextFormField(
                                     controller:
@@ -1278,7 +1292,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                     focusNode: _model.textFieldEmailFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textFieldEmailTextController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -1301,7 +1315,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -1353,23 +1367,36 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 16.0),
                               child: FFButtonWidget(
-                                onPressed: ((_model.textFieldRazonTextController
+                                onPressed: ((_model.textFieldRazonTextController.text ==
+                                                null ||
+                                            _model.textFieldRazonTextController
                                                     .text ==
                                                 '') ||
                                         (_model.textFieldCifTextController.text ==
+                                                null ||
+                                            _model.textFieldCifTextController.text ==
                                                 '') ||
                                         (_model.textFieldDireccionTextController
                                                     .text ==
+                                                null ||
+                                            _model.textFieldDireccionTextController
+                                                    .text ==
                                                 '') ||
-                                        (_model.textFieldCiudadTextController
+                                        (_model.textFieldCiudadTextController.text ==
+                                                null ||
+                                            _model.textFieldCiudadTextController
                                                     .text ==
                                                 '') ||
                                         (_model.textFieldCpETextController.text ==
+                                                null ||
+                                            _model.textFieldCpETextController.text ==
                                                 '') ||
-                                        (_model.textFieldEmailTextController.text == ''))
+                                        (_model.textFieldEmailTextController.text ==
+                                                null ||
+                                            _model.textFieldEmailTextController.text == ''))
                                     ? null
                                     : () async {
                                         _model.apifinaliza2emp =
@@ -1432,7 +1459,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                           'empresa_pdte_validacion',
                                           context.mounted,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1450,9 +1477,9 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 44.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).azulPerm,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1465,7 +1492,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -1482,7 +1509,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                       ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 15.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await showModalBottomSheet(
@@ -1495,7 +1522,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                 onTap: () => FocusScope.of(context).unfocus(),
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: const ModalEquivocadoWidget(),
+                                  child: ModalEquivocadoWidget(),
                                 ),
                               );
                             },
@@ -1507,11 +1534,11 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                         options: FFButtonOptions(
                           width: 300.0,
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0x0063A4DC),
+                          color: Color(0x0063A4DC),
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(
@@ -1530,7 +1557,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await showModalBottomSheet(
@@ -1543,7 +1570,7 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                                 onTap: () => FocusScope.of(context).unfocus(),
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: const ModalCancelaSignWidget(),
+                                  child: ModalCancelaSignWidget(),
                                 ),
                               );
                             },
@@ -1555,11 +1582,11 @@ class _SignUpEmpresaWidgetState extends State<SignUpEmpresaWidget> {
                         options: FFButtonOptions(
                           width: 300.0,
                           height: 44.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0x00FFFFFF),
+                          color: Color(0x00FFFFFF),
                           textStyle: FlutterFlowTheme.of(context)
                               .titleSmall
                               .override(

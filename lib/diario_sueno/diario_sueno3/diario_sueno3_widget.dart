@@ -6,6 +6,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'diario_sueno3_model.dart';
@@ -75,7 +77,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                 context.pushNamed(
                   'diario_sueno2',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -86,7 +88,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                 context.pushNamed(
                   'diario_sueno1',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -97,7 +99,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'kacp34y7' /* Diario de Sueño */,
@@ -110,7 +112,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -125,14 +127,14 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Container(
                             width: double.infinity,
                             height: 24.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -142,7 +144,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: LinearPercentIndicator(
                                         percent: 0.99,
                                         width: 300.0,
@@ -168,7 +170,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        barRadius: const Radius.circular(10.0),
+                                        barRadius: Radius.circular(10.0),
                                         padding: EdgeInsets.zero,
                                       ),
                                     ),
@@ -181,7 +183,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                       ),
                       if (_model.nombreMed == null || _model.nombreMed == '')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -189,7 +191,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                             children: [
                               Flexible(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 5.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -211,7 +213,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                         ),
                       if (_model.nombreMed != null && _model.nombreMed != '')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -219,7 +221,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                             children: [
                               Flexible(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 5.0),
                                   child: Text(
                                     _model.nombreMed!,
@@ -242,7 +244,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                         ),
                       if (_model.nombreMed != null && _model.nombreMed != '')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 5.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -250,7 +252,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                             children: [
                               Flexible(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 5.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
@@ -275,26 +277,26 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                         ),
                       if (_model.nombreMed == null || _model.nombreMed == '')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Container(
                             width: 350.0,
                             height: 60.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: SizedBox(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Container(
                                     width: 300.0,
                                     child: TextFormField(
                                       controller: _model.textController1,
                                       focusNode: _model.textFieldFocusNode1,
                                       onChanged: (_) => EasyDebounce.debounce(
                                         '_model.textController1',
-                                        const Duration(milliseconds: 100),
+                                        Duration(milliseconds: 100),
                                         () => safeSetState(() {}),
                                       ),
                                       autofocus: true,
@@ -319,7 +321,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                               fontStyle: FontStyle.italic,
                                             ),
                                         enabledBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 2.0,
                                           ),
@@ -364,7 +366,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                                       ?.clear();
                                                   safeSetState(() {});
                                                 },
-                                                child: const Icon(
+                                                child: Icon(
                                                   Icons.clear,
                                                   size: 24.0,
                                                 ),
@@ -384,7 +386,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                 ),
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: FlutterFlowIconButton(
                                       borderColor:
@@ -401,7 +403,9 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                         size: 24.0,
                                       ),
                                       onPressed: () async {
-                                        if (_model.textController1.text != '') {
+                                        if (_model.textController1.text !=
+                                                null &&
+                                            _model.textController1.text != '') {
                                           _model.respuestaBusqueda = [];
                                           safeSetState(() {});
                                           _model.apiBuscadorSuplemento =
@@ -437,7 +441,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                         ),
                       if (_model.nombreMed == null || _model.nombreMed == '')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -464,12 +468,12 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                               _model.nombreMed == '') &&
                           (_model.mostrarListado == 'si'))
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: 303.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -485,12 +489,12 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                         scrollDirection: Axis.vertical,
                                         itemCount: list.length,
                                         separatorBuilder: (_, __) =>
-                                            const SizedBox(height: 10.0),
+                                            SizedBox(height: 10.0),
                                         itemBuilder: (context, listIndex) {
                                           final listItem = list[listIndex];
                                           return Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Container(
                                               width: 350.0,
                                               decoration: BoxDecoration(
@@ -501,7 +505,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                                     BorderRadius.circular(8.0),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 3.0, 10.0, 3.0),
                                                 child: Row(
@@ -555,11 +559,11 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     1.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -631,7 +635,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                               _model.nombreMed == '') &&
                           (FFAppState().diarioSuenoUltSup != 'no'))
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Container(
                             width: 350.0,
@@ -645,7 +649,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -670,7 +674,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -697,7 +701,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -729,12 +733,12 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                         ),
                       if (_model.nombreMed != null && _model.nombreMed != '')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
                             height: 100.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -849,18 +853,18 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                         ),
                       if (FFAppState().authToken == '1')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Expanded(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
-                                    child: SizedBox(
+                                    child: Container(
                                       width: 350.0,
                                       child: TextFormField(
                                         controller: _model.textController2,
@@ -892,7 +896,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                                     fontStyle: FontStyle.italic,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 2.0,
                                             ),
@@ -955,7 +959,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                         ),
                       if (_model.nombreMed != null && _model.nombreMed != '')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -983,7 +987,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                         context.pushNamed(
                                           'diario_suenoFin',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -999,9 +1003,9 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -1012,7 +1016,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -1027,7 +1031,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                           ),
                         ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 20.0, 0.0, 20.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -1047,7 +1051,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                       child: Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
-                                        child: const ModalCancelaSuenoWidget(),
+                                        child: ModalCancelaSuenoWidget(),
                                       ),
                                     );
                                   },
@@ -1059,11 +1063,11 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0x0063A4DC),
+                                color: Color(0x0063A4DC),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -1083,7 +1087,7 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                           ],
                         ),
                       ),
-                    ].addToEnd(const SizedBox(height: 50.0)),
+                    ].addToEnd(SizedBox(height: 50.0)),
                   ),
                 ),
               ),

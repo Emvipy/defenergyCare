@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'diario4_model.dart';
@@ -100,7 +102,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                 context.pushNamed(
                   'diario3',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -111,7 +113,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                 context.pushNamed(
                   'diario2',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: const TransitionInfo(
+                    kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 0),
@@ -122,7 +124,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'zkqsl9j5' /* Diario de Síntomas */,
@@ -135,7 +137,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -150,14 +152,14 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Container(
                             width: double.infinity,
                             height: 24.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -167,7 +169,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: LinearPercentIndicator(
                                         percent: 0.6,
                                         width: 300.0,
@@ -193,7 +195,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        barRadius: const Radius.circular(10.0),
+                                        barRadius: Radius.circular(10.0),
                                         padding: EdgeInsets.zero,
                                       ),
                                     ),
@@ -206,7 +208,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '79sljha7' /* ¿Qué actividades has podido ha... */,
@@ -220,7 +222,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 20.0, 10.0, 0.0),
                         child: Container(
                           width: double.infinity,
@@ -234,7 +236,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     5.0, 20.0, 5.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -242,7 +244,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -265,14 +267,14 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -283,19 +285,19 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -333,7 +335,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -356,14 +358,14 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -374,19 +376,19 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -424,7 +426,7 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -447,14 +449,14 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -465,19 +467,19 @@ class _Diario4WidgetState extends State<Diario4Widget> {
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -523,14 +525,14 @@ familia */
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(5.0),
+                                padding: EdgeInsets.all(5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -553,14 +555,14 @@ familia */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -570,19 +572,19 @@ familia */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -625,7 +627,7 @@ Hogar */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -648,14 +650,14 @@ Hogar */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -665,19 +667,19 @@ Hogar */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -715,7 +717,7 @@ Hogar */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -738,14 +740,14 @@ Hogar */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -756,19 +758,19 @@ Hogar */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -817,14 +819,14 @@ Físico */
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(5.0),
+                                padding: EdgeInsets.all(5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -847,14 +849,14 @@ Físico */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -865,19 +867,19 @@ Físico */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -918,7 +920,7 @@ Físico */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -941,14 +943,14 @@ Físico */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -958,19 +960,19 @@ Físico */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -1007,7 +1009,7 @@ Físico */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1030,14 +1032,14 @@ Físico */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -1048,19 +1050,19 @@ Físico */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -1106,14 +1108,14 @@ Higiene Pers. */
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(5.0),
+                                padding: EdgeInsets.all(5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1136,14 +1138,14 @@ Higiene Pers. */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -1153,19 +1155,19 @@ Higiene Pers. */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -1206,7 +1208,7 @@ Higiene Pers. */
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -1238,14 +1240,14 @@ Higiene Pers. */
                                         child: Container(
                                           width: 100.0,
                                           height: 120.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 75.0,
@@ -1255,19 +1257,19 @@ Higiene Pers. */
                                                         ? FlutterFlowTheme.of(
                                                                 context)
                                                             .azulPerm
-                                                        : const Color(0x00000000),
+                                                        : Color(0x00000000),
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Container(
                                                       width: 70.0,
                                                       height: 70.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -1316,7 +1318,7 @@ Higiene Pers. */
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -1347,7 +1349,7 @@ Higiene Pers. */
                                       context.pushNamed(
                                         'diario5',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -1363,9 +1365,9 @@ Higiene Pers. */
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1376,7 +1378,7 @@ Higiene Pers. */
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -1392,7 +1394,7 @@ Higiene Pers. */
                       ),
                       if (FFAppState().editandoDiario == 'no')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1433,7 +1435,7 @@ Higiene Pers. */
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .success,
@@ -1445,7 +1447,7 @@ Higiene Pers. */
                                         context.pushNamed(
                                           'Home',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1463,11 +1465,11 @@ Higiene Pers. */
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x0063A4DC),
+                                  color: Color(0x0063A4DC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -1494,7 +1496,7 @@ Higiene Pers. */
                         ),
                       if (FFAppState().editandoDiario == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1535,7 +1537,7 @@ Higiene Pers. */
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .success,
@@ -1547,7 +1549,7 @@ Higiene Pers. */
                                         context.pushNamed(
                                           'Home',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1565,11 +1567,11 @@ Higiene Pers. */
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x0063A4DC),
+                                  color: Color(0x0063A4DC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

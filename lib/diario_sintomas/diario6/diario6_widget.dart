@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'diario6_model.dart';
@@ -114,7 +115,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                   context.pushNamed(
                     'diario5',
                     extra: <String, dynamic>{
-                      kTransitionInfoKey: const TransitionInfo(
+                      kTransitionInfoKey: TransitionInfo(
                         hasTransition: true,
                         transitionType: PageTransitionType.fade,
                         duration: Duration(milliseconds: 0),
@@ -124,7 +125,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                 },
               ),
               title: Align(
-                alignment: const AlignmentDirectional(-1.0, 0.0),
+                alignment: AlignmentDirectional(-1.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     '2xk0afml' /* Diario de Síntomas */,
@@ -137,7 +138,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                       ),
                 ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -152,14 +153,14 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 24.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -170,7 +171,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: LinearPercentIndicator(
                                             percent: 0.9,
                                             width: 300.0,
@@ -198,7 +199,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                            barRadius: const Radius.circular(10.0),
+                                            barRadius: Radius.circular(10.0),
                                             padding: EdgeInsets.zero,
                                           ),
                                         ),
@@ -210,7 +211,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -226,7 +227,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: FutureBuilder<ApiCallResponse>(
                               future: DespDesencadenantesCall.call(),
@@ -298,7 +299,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 2.0,
                                   borderRadius: 12.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -309,7 +310,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -325,7 +326,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: FutureBuilder<ApiCallResponse>(
                               future: DespSolucionesCall.call(),
@@ -396,7 +397,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 2.0,
                                   borderRadius: 12.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   hidesUnderline: true,
                                   isOverButton: false,
@@ -407,7 +408,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -423,12 +424,12 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Container(
                               width: double.infinity,
                               height: 100.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -563,14 +564,14 @@ Medicamentos */
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 0.0),
                             child: Container(
                               width: double.infinity,
                               height: 100.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 1.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -617,7 +618,7 @@ Medicamentos */
                                             ),
                                             Flexible(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 0.0),
                                                 child: Text(
@@ -649,7 +650,7 @@ Medicamentos */
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -718,7 +719,7 @@ Medicamentos */
                                               'diario7',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -732,7 +733,7 @@ Medicamentos */
                                                 'diario8',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
@@ -757,7 +758,7 @@ Medicamentos */
                                                   'diarioFin',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -777,9 +778,9 @@ Medicamentos */
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -790,7 +791,7 @@ Medicamentos */
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -806,7 +807,7 @@ Medicamentos */
                           ),
                           if (FFAppState().editandoDiario == 'no')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 30.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -842,7 +843,7 @@ Medicamentos */
                                                         .secondaryBackground,
                                                   ),
                                                 ),
-                                                duration: const Duration(
+                                                duration: Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -888,7 +889,7 @@ Medicamentos */
                                               'Home',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -906,12 +907,12 @@ Medicamentos */
                                     options: FFButtonOptions(
                                       width: 300.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0x0063A4DC),
+                                      color: Color(0x0063A4DC),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -939,7 +940,7 @@ Medicamentos */
                             ),
                           if (FFAppState().editandoDiario == 'si')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 30.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -975,7 +976,7 @@ Medicamentos */
                                                         .secondaryBackground,
                                                   ),
                                                 ),
-                                                duration: const Duration(
+                                                duration: Duration(
                                                     milliseconds: 4000),
                                                 backgroundColor:
                                                     FlutterFlowTheme.of(context)
@@ -1021,7 +1022,7 @@ Medicamentos */
                                               'Home',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1039,12 +1040,12 @@ Medicamentos */
                                     options: FFButtonOptions(
                                       width: 300.0,
                                       height: 40.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0x0063A4DC),
+                                      color: Color(0x0063A4DC),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

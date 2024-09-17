@@ -2,6 +2,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_cancela_modificacion_model.dart';
 export 'modal_cancela_modificacion_model.dart';
 
@@ -50,7 +53,7 @@ class _ModalCancelaModificacionWidgetState
         height: 270.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3B1D2429),
@@ -60,7 +63,7 @@ class _ModalCancelaModificacionWidgetState
               ),
             )
           ],
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(16.0),
@@ -71,7 +74,7 @@ class _ModalCancelaModificacionWidgetState
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -94,7 +97,7 @@ class _ModalCancelaModificacionWidgetState
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -119,9 +122,9 @@ class _ModalCancelaModificacionWidgetState
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 25.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 25.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -136,10 +139,10 @@ class _ModalCancelaModificacionWidgetState
                       options: FFButtonOptions(
                         width: 300.0,
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -148,7 +151,7 @@ class _ModalCancelaModificacionWidgetState
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

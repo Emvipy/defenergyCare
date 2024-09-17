@@ -5,11 +5,17 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
+import 'dart:async';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -55,22 +61,22 @@ class _LoginWidgetState extends State<LoginWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 140.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -86,6 +92,8 @@ class _LoginWidgetState extends State<LoginWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -98,7 +106,7 @@ class _LoginWidgetState extends State<LoginWidget>
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).background,
             ),
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -110,7 +118,7 @@ class _LoginWidgetState extends State<LoginWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 2.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -129,17 +137,17 @@ class _LoginWidgetState extends State<LoginWidget>
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 10.0, 16.0, 4.0),
                           child: Container(
                             width: double.infinity,
-                            constraints: const BoxConstraints(
+                            constraints: BoxConstraints(
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 4.0,
                                   color: Color(0x33000000),
@@ -152,16 +160,16 @@ class _LoginWidgetState extends State<LoginWidget>
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     32.0, 15.0, 32.0, 15.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
                                           'u4e2wups' /* Bienvenid@! */,
@@ -181,7 +189,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 10.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -202,9 +210,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
-                                      child: SizedBox(
+                                      child: Container(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
@@ -214,11 +222,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.emailAddressTextController',
-                                            const Duration(milliseconds: 100),
+                                            Duration(milliseconds: 100),
                                             () => safeSetState(() {}),
                                           ),
                                           autofocus: false,
-                                          autofillHints: const [AutofillHints.email],
+                                          autofillHints: [AutofillHints.email],
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             isDense: true,
@@ -241,7 +249,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 2.0,
                                               ),
@@ -259,7 +267,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -268,7 +276,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -300,9 +308,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 3.0),
-                                      child: SizedBox(
+                                      child: Container(
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
@@ -311,11 +319,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                           onChanged: (_) =>
                                               EasyDebounce.debounce(
                                             '_model.passwordTextController',
-                                            const Duration(milliseconds: 100),
+                                            Duration(milliseconds: 100),
                                             () => safeSetState(() {}),
                                           ),
                                           autofocus: false,
-                                          autofillHints: const [
+                                          autofillHints: [
                                             AutofillHints.password
                                           ],
                                           obscureText:
@@ -341,7 +349,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 2.0,
                                               ),
@@ -359,7 +367,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   BorderRadius.circular(12.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -368,7 +376,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             ),
                                             focusedErrorBorder:
                                                 OutlineInputBorder(
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Color(0xFFE0E3E7),
                                                 width: 2.0,
                                               ),
@@ -417,17 +425,24 @@ class _LoginWidgetState extends State<LoginWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: ((_model.emailAddressTextController
                                                             .text ==
+                                                        null ||
+                                                    _model.emailAddressTextController
+                                                            .text ==
                                                         '') ||
                                                 (_model.passwordTextController
+                                                            .text ==
+                                                        null ||
+                                                    _model.passwordTextController
                                                             .text ==
                                                         ''))
                                             ? null
                                             : () async {
+                                                var _shouldSetState = false;
                                                 GoRouter.of(context)
                                                     .prepareAuthEvent();
 
@@ -450,17 +465,16 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       .emailAddressTextController
                                                       .text,
                                                 );
-                                                _model.tokenPush =
-                                                    await actions.getFCMToken();
+                                                _shouldSetState = true;
                                                 _model.apiloginCopy =
                                                     await LoginCall.call(
                                                   email: _model
                                                       .emailAddressTextController
                                                       .text,
                                                   password: _model.passCopy,
-                                                  firebase: _model.tokenPush,
                                                 );
 
+                                                _shouldSetState = true;
                                                 if ((_model.apiloginCopy
                                                         ?.succeeded ??
                                                     true)) {
@@ -537,6 +551,17 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           ''),
                                                     )!;
                                                     safeSetState(() {});
+                                                    unawaited(
+                                                      () async {
+                                                        await UserLogActivityCall
+                                                            .call(
+                                                          authToken:
+                                                              FFAppState()
+                                                                  .authToken,
+                                                          seccion: 'Login',
+                                                        );
+                                                      }(),
+                                                    );
                                                     if (LoginCall.perfilId(
                                                           (_model.apiloginCopy
                                                                   ?.jsonBody ??
@@ -549,7 +574,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -570,32 +595,60 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ?.clear();
                                                       });
                                                     } else {
-                                                      context.pushNamedAuth(
-                                                        'Home_empresa',
-                                                        context.mounted,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              const TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .fade,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                          ),
-                                                        },
-                                                      );
+                                                      if (LoginCall.validado(
+                                                            (_model.apiloginCopy
+                                                                    ?.jsonBody ??
+                                                                ''),
+                                                          ) ==
+                                                          'si') {
+                                                        context.pushNamedAuth(
+                                                          'Home_empresa',
+                                                          context.mounted,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      0),
+                                                            ),
+                                                          },
+                                                        );
 
-                                                      safeSetState(() {
-                                                        _model
-                                                            .emailAddressTextController
-                                                            ?.clear();
-                                                        _model
-                                                            .passwordTextController
-                                                            ?.clear();
-                                                      });
+                                                        safeSetState(() {
+                                                          _model
+                                                              .emailAddressTextController
+                                                              ?.clear();
+                                                          _model
+                                                              .passwordTextController
+                                                              ?.clear();
+                                                        });
+                                                      } else {
+                                                        context.goNamedAuth(
+                                                          'empresa_pdte_validacionCopy',
+                                                          context.mounted,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                            ),
+                                                          },
+                                                        );
+
+                                                        if (_shouldSetState)
+                                                          safeSetState(() {});
+                                                        return;
+                                                      }
                                                     }
                                                   } else {
                                                     await showModalBottomSheet(
@@ -616,7 +669,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 .viewInsetsOf(
                                                                     context),
                                                             child:
-                                                                const ModalErrorCuentaWidget(),
+                                                                ModalErrorCuentaWidget(),
                                                           ),
                                                         );
                                                       },
@@ -635,7 +688,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .secondaryBackground,
                                                         ),
                                                       ),
-                                                      duration: const Duration(
+                                                      duration: Duration(
                                                           milliseconds: 4000),
                                                       backgroundColor:
                                                           FlutterFlowTheme.of(
@@ -645,7 +698,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   );
                                                 }
 
-                                                safeSetState(() {});
+                                                if (_shouldSetState)
+                                                  safeSetState(() {});
                                               },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -655,10 +709,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                           width: 300.0,
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -671,7 +725,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -689,12 +743,12 @@ class _LoginWidgetState extends State<LoginWidget>
                                     Container(
                                       width: 300.0,
                                       height: 29.0,
-                                      decoration: const BoxDecoration(
+                                      decoration: BoxDecoration(
                                         color: Color(0x00FFFFFF),
                                       ),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(1.0, 0.0),
+                                            AlignmentDirectional(1.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -705,7 +759,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                               'recordar_pass',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -736,7 +790,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             .languageCode !=
                                         'en')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 50.0, 0.0, 8.0),
                                         child: RichText(
                                           textScaler:
@@ -785,7 +839,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           extra: <String,
                                                               dynamic>{
                                                             kTransitionInfoKey:
-                                                                const TransitionInfo(
+                                                                TransitionInfo(
                                                               hasTransition:
                                                                   true,
                                                               transitionType:
@@ -801,7 +855,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Poppins',
-                                                  color: const Color(0xFF101213),
+                                                  color: Color(0xFF101213),
                                                   fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -840,7 +894,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                             'signup',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -884,14 +938,14 @@ class _LoginWidgetState extends State<LoginWidget>
                   ))
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 5.0, 15.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -918,14 +972,14 @@ class _LoginWidgetState extends State<LoginWidget>
                   ))
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 15.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(

@@ -2,11 +2,13 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'encuestas_model.dart';
 export 'encuestas_model.dart';
@@ -73,21 +75,21 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -114,7 +116,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -141,10 +143,10 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
                           future: (_model.apiRequestCompleter ??=
                                   Completer<ApiCallResponse>()
@@ -193,7 +195,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                     await _model.waitForApiRequestCompleted();
                                   },
                                   child: ListView.separated(
-                                    padding: const EdgeInsets.fromLTRB(
+                                    padding: EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -204,7 +206,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                     scrollDirection: Axis.vertical,
                                     itemCount: childEncuestas.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 15.0),
+                                        SizedBox(height: 15.0),
                                     itemBuilder:
                                         (context, childEncuestasIndex) {
                                       final childEncuestasItem =
@@ -219,10 +221,10 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                                 false,
                                         child: Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Container(
                                               width: 350.0,
@@ -245,7 +247,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       10.0,
@@ -297,7 +299,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -342,7 +344,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -458,7 +460,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -495,14 +497,14 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                         ),
                       ),
                     ),
-                  ].addToEnd(const SizedBox(height: 100.0)),
+                  ].addToEnd(SizedBox(height: 100.0)),
                 ),
               ),
             ),
             wrapWithModel(
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
-              child: const MenuUsuarioWidget(
+              child: MenuUsuarioWidget(
                 index: 2,
               ),
             ),

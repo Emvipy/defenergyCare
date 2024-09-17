@@ -2,9 +2,11 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'diario1_model.dart';
@@ -97,7 +99,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
               backgroundColor: FlutterFlowTheme.of(context).background,
               automaticallyImplyLeading: false,
               title: Align(
-                alignment: const AlignmentDirectional(-1.0, 0.0),
+                alignment: AlignmentDirectional(-1.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'y3fcv165' /* Diario de Síntomas */,
@@ -110,7 +112,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                       ),
                 ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -125,14 +127,14 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 24.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -143,7 +145,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: LinearPercentIndicator(
                                             percent: 0.15,
                                             width: 300.0,
@@ -171,7 +173,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                            barRadius: const Radius.circular(10.0),
+                                            barRadius: Radius.circular(10.0),
                                             padding: EdgeInsets.zero,
                                           ),
                                         ),
@@ -183,7 +185,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -199,7 +201,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Container(
                               width: 360.0,
@@ -213,12 +215,12 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                 ),
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 20.0, 0.0),
                                       child: Slider(
                                         activeColor:
@@ -251,7 +253,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, -1.0),
+                                            AlignmentDirectional(0.0, -1.0),
                                         child: Text(
                                           '${formatNumber(
                                             _model.sliderValue,
@@ -276,7 +278,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 20.0, 15.0, 0.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -320,14 +322,14 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 15.0),
                             child: Container(
                               width: double.infinity,
                               height: 100.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 1.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -514,7 +516,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 10.0, 15.0, 15.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -531,17 +533,17 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 25.0),
                             child: Container(
                               width: double.infinity,
                               height: 72.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 5.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -550,7 +552,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -574,7 +576,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -601,7 +603,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -625,7 +627,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -652,7 +654,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -676,7 +678,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -703,7 +705,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -727,7 +729,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -754,7 +756,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -778,7 +780,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -805,7 +807,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -829,7 +831,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
@@ -858,7 +860,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         15.0, 3.0, 15.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -867,7 +869,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -884,7 +886,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -907,7 +909,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -929,7 +931,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                     context.pushNamed(
                                       'diario2',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -945,9 +947,9 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -958,7 +960,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -970,14 +972,14 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                           ),
                           if (FFAppState().editandoDiario == 'no')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 20.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 30.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -1005,7 +1007,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .success,
@@ -1017,7 +1019,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         context.pushNamed(
                                           'Home',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1035,12 +1037,12 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                       options: FFButtonOptions(
                                         width: 300.0,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0x0063A4DC),
+                                        color: Color(0x0063A4DC),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -1066,14 +1068,14 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                             ),
                           if (FFAppState().editandoDiario == 'si')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 20.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 30.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -1101,7 +1103,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .success,
@@ -1113,7 +1115,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         context.pushNamed(
                                           'Home',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -1131,12 +1133,12 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                       options: FFButtonOptions(
                                         width: 300.0,
                                         height: 40.0,
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 0.0, 24.0, 0.0),
                                         iconPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: const Color(0x0063A4DC),
+                                        color: Color(0x0063A4DC),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(

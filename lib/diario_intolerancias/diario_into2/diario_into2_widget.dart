@@ -7,6 +7,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'diario_into2_model.dart';
@@ -1072,7 +1074,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
               context.pushNamed(
                 'diario_Into1',
                 extra: <String, dynamic>{
-                  kTransitionInfoKey: const TransitionInfo(
+                  kTransitionInfoKey: TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.fade,
                   ),
@@ -1081,7 +1083,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'rbtby12n' /* Diario de Intolerancias */,
@@ -1094,7 +1096,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -1110,14 +1112,14 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 10.0),
                             child: Container(
                               width: double.infinity,
                               height: 24.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -1127,7 +1129,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: LinearPercentIndicator(
                                           percent: () {
                                             if (FFAppState().momento == 1) {
@@ -1169,7 +1171,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                          barRadius: const Radius.circular(10.0),
+                                          barRadius: Radius.circular(10.0),
                                           padding: EdgeInsets.zero,
                                         ),
                                       ),
@@ -1182,7 +1184,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                         ),
                         if (FFLocalizations.of(context).languageCode == 'es')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1216,7 +1218,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFLocalizations.of(context).languageCode == 'en')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1250,7 +1252,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoCarnes == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 5.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -1261,7 +1263,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -1273,7 +1275,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1329,12 +1331,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1471,7 +1473,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarCarne == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1480,12 +1482,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -1588,7 +1590,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -1607,7 +1609,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more meat'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -1713,7 +1715,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -1735,7 +1737,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more meat'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -1841,7 +1843,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -1863,7 +1865,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more meat'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -1969,7 +1971,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -1991,7 +1993,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more meat'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -2097,7 +2099,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -2119,7 +2121,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more meat'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -2225,7 +2227,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -2247,7 +2249,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more meat'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -2353,7 +2355,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -2377,7 +2379,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoPescado == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -2388,7 +2390,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -2400,7 +2402,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -2456,12 +2458,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -2576,7 +2578,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarPescado == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -2585,12 +2587,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -2693,7 +2695,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -2712,7 +2714,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fish'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -2818,7 +2820,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -2840,7 +2842,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fish'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -2946,7 +2948,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -2968,7 +2970,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fish'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -3074,7 +3076,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -3096,7 +3098,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fish'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -3202,7 +3204,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -3224,7 +3226,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fish'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -3330,7 +3332,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -3352,7 +3354,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fish'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -3458,7 +3460,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -3482,7 +3484,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoMarisco == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -3493,7 +3495,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -3505,7 +3507,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -3561,12 +3563,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -3681,7 +3683,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarMarisco == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -3690,12 +3692,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -3798,7 +3800,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -3817,7 +3819,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more seafood'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -3923,7 +3925,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -3945,7 +3947,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more seafood'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -4051,7 +4053,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -4073,7 +4075,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more seafood'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -4179,7 +4181,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -4201,7 +4203,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more seafood'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -4307,7 +4309,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -4329,7 +4331,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more seafood'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -4435,7 +4437,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -4457,7 +4459,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more seafood'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -4563,7 +4565,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -4587,7 +4589,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoLacteos == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -4598,7 +4600,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -4610,7 +4612,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -4666,12 +4668,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -4786,7 +4788,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarLacteos == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -4795,12 +4797,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -4903,7 +4905,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -4922,7 +4924,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more dairy'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -5028,7 +5030,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -5050,7 +5052,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more dairy'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -5156,7 +5158,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -5178,7 +5180,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more dairy'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -5284,7 +5286,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -5306,7 +5308,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more dairy'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -5412,7 +5414,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -5434,7 +5436,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more dairy'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -5540,7 +5542,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -5562,7 +5564,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more dairy'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -5668,7 +5670,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -5692,7 +5694,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoHuevos == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -5703,7 +5705,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -5715,7 +5717,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -5771,12 +5773,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -5891,7 +5893,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarHuevos == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -5900,12 +5902,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -5982,7 +5984,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -6003,7 +6005,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoCereales == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -6014,7 +6016,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -6026,7 +6028,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -6082,12 +6084,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -6202,7 +6204,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarCereales == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -6211,12 +6213,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -6319,7 +6321,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -6338,7 +6340,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more cereals or bread'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -6444,7 +6446,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -6466,7 +6468,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more cereals or bread'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -6572,7 +6574,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -6594,7 +6596,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more cereals or bread'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -6700,7 +6702,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -6722,7 +6724,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more cereals or bread'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -6828,7 +6830,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -6850,7 +6852,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more cereals or bread'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -6956,7 +6958,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -6978,7 +6980,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more cereals or bread'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -7084,7 +7086,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -7108,7 +7110,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoFrutas == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -7119,7 +7121,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -7131,7 +7133,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -7187,12 +7189,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -7307,7 +7309,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarFrutas == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -7316,12 +7318,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -7424,7 +7426,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -7443,7 +7445,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fruit'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -7549,7 +7551,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -7571,7 +7573,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fruit'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -7677,7 +7679,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -7699,7 +7701,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fruit'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -7805,7 +7807,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -7827,7 +7829,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fruit'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -7933,7 +7935,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -7955,7 +7957,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fruit'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -8061,7 +8063,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -8083,7 +8085,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more fruit'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -8189,7 +8191,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -8213,7 +8215,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoVerduras == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -8224,7 +8226,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -8236,7 +8238,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -8292,12 +8294,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -8412,7 +8414,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarVerduras == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -8421,12 +8423,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -8529,7 +8531,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -8548,7 +8550,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more vegetables'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -8654,7 +8656,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -8676,7 +8678,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more vegetables'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -8782,7 +8784,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -8804,7 +8806,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more vegetables'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -8910,7 +8912,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -8932,7 +8934,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more vegetables'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -9038,7 +9040,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -9060,7 +9062,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more vegetables'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -9166,7 +9168,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -9188,7 +9190,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more vegetables'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -9294,7 +9296,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -9318,7 +9320,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoLegumbres == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -9329,7 +9331,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -9341,7 +9343,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -9398,12 +9400,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -9518,7 +9520,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarLegumbres == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -9527,12 +9529,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -9635,7 +9637,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -9654,7 +9656,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more legumes'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -9760,7 +9762,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -9782,7 +9784,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more legumes'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -9888,7 +9890,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -9910,7 +9912,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more legumes'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -10016,7 +10018,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -10038,7 +10040,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more legumes'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -10144,7 +10146,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -10166,7 +10168,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more legumes'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -10272,7 +10274,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -10294,7 +10296,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more legumes'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -10400,7 +10402,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -10424,7 +10426,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoFrutosSecos == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -10435,7 +10437,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -10447,7 +10449,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -10503,12 +10505,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -10621,7 +10623,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarSecos == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -10630,12 +10632,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -10738,7 +10740,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -10757,7 +10759,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more nuts'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -10863,7 +10865,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -10885,7 +10887,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more nuts'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -10991,7 +10993,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -11013,7 +11015,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more nuts'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -11119,7 +11121,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -11141,7 +11143,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more nuts'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -11247,7 +11249,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -11269,7 +11271,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more nuts'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -11375,7 +11377,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -11397,7 +11399,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not eaten any more nuts'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -11503,7 +11505,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -11527,7 +11529,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoSalsas == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -11538,7 +11540,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -11550,7 +11552,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -11606,12 +11608,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -11726,7 +11728,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarSalsas == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -11735,12 +11737,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -11843,7 +11845,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -11862,7 +11864,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not used any other sauces or condiments.'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -11968,7 +11970,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -11990,7 +11992,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not used any other sauces or condiments.'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -12096,7 +12098,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -12118,7 +12120,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not used any other sauces or condiments.'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -12224,7 +12226,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -12246,7 +12248,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not used any other sauces or condiments.'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -12352,7 +12354,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -12374,7 +12376,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not used any other sauces or condiments.'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -12480,7 +12482,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -12502,7 +12504,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I have not used any other sauces or condiments.'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -12608,7 +12610,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -12632,7 +12634,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().intoBebidas == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 1.0, 10.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -12643,7 +12645,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Container(
                                       width: 350.0,
@@ -12655,7 +12657,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -12711,12 +12713,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -12831,7 +12833,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   ),
                                   if (_model.mostrarBebidas == 'si')
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 15.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -12840,12 +12842,12 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: FlutterFlowDropDown<
@@ -12948,7 +12950,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                     borderWidth: 2.0,
                                                     borderRadius: 8.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -12967,7 +12969,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I haven\'t drunk anything else'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -13073,7 +13075,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -13095,7 +13097,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I haven\'t drunk anything else'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -13201,7 +13203,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -13223,7 +13225,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I haven\'t drunk anything else'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -13329,7 +13331,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -13351,7 +13353,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I haven\'t drunk anything else'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -13457,7 +13459,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -13479,7 +13481,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I haven\'t drunk anything else'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -13585,7 +13587,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -13607,7 +13609,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         'I haven\'t drunk anything else'))
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 10.0),
                                                     child: FlutterFlowDropDown<
@@ -13713,7 +13715,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       borderWidth: 2.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   4.0,
@@ -13736,7 +13738,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -13760,7 +13762,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 20.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -13860,7 +13862,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -13965,7 +13967,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             'diario_Into3',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -13982,7 +13984,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               'diario_Into1',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -14002,7 +14004,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               'diarioIntoFin',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -14020,9 +14022,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -14033,7 +14035,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -14049,7 +14051,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                         ),
                         if (FFAppState().editandoDiario == 'no')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 30.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -14161,7 +14163,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
@@ -14191,7 +14193,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -14207,11 +14209,11 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0x0063A4DC),
+                                    color: Color(0x0063A4DC),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -14238,7 +14240,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                           ),
                         if (FFAppState().editandoDiario == 'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 30.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -14350,7 +14352,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .success,
@@ -14380,7 +14382,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                             'Home',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -14396,11 +14398,11 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0x0063A4DC),
+                                    color: Color(0x0063A4DC),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -14434,10 +14436,10 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(

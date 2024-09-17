@@ -1,8 +1,19 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
+import '/registro/modal_equivocado/modal_equivocado_widget.dart';
 import 'sign_up_empresa_widget.dart' show SignUpEmpresaWidget;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+import 'package:provider/provider.dart';
 
 class SignUpEmpresaModel extends FlutterFlowModel<SignUpEmpresaWidget> {
   ///  State fields for stateful widgets in this page.

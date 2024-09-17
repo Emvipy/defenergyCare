@@ -2,14 +2,15 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/perfil/modal_notificacion/modal_notificacion_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
-import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'perfil_notificaciones_model.dart';
 export 'perfil_notificaciones_model.dart';
@@ -115,7 +116,7 @@ class _PerfilNotificacionesWidgetState
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -126,9 +127,9 @@ class _PerfilNotificacionesWidgetState
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: 350.0,
@@ -142,9 +143,9 @@ class _PerfilNotificacionesWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -161,9 +162,9 @@ class _PerfilNotificacionesWidgetState
                                 ),
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(1.0, 0.0),
+                                    alignment: AlignmentDirectional(1.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 10.0, 0.0),
                                       child: Switch.adaptive(
                                         value: _model.switchValue ??=
@@ -173,9 +174,8 @@ class _PerfilNotificacionesWidgetState
                                         )!,
                                         onChanged: (newValue) async {
                                           safeSetState(() =>
-                                              _model.switchValue = newValue);
-                                          if (newValue) {
-                                            await actions.getPushPermission();
+                                              _model.switchValue = newValue!);
+                                          if (newValue!) {
                                             _model.apiResultm8y =
                                                 await PerfilActivaPushCall.call(
                                               authToken: FFAppState().authToken,
@@ -216,7 +216,7 @@ class _PerfilNotificacionesWidgetState
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
                           future: (_model.apiRequestCompleter ??=
                                   Completer<ApiCallResponse>()
@@ -255,7 +255,7 @@ class _PerfilNotificacionesWidgetState
                                     await _model.waitForApiRequestCompleted();
                                   },
                                   child: ListView.separated(
-                                    padding: const EdgeInsets.fromLTRB(
+                                    padding: EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -265,7 +265,7 @@ class _PerfilNotificacionesWidgetState
                                     scrollDirection: Axis.vertical,
                                     itemCount: childNotificaciones.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 15.0),
+                                        SizedBox(height: 15.0),
                                     itemBuilder:
                                         (context, childNotificacionesIndex) {
                                       final childNotificacionesItem =
@@ -273,7 +273,7 @@ class _PerfilNotificacionesWidgetState
                                               childNotificacionesIndex];
                                       return Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
                                           decoration: BoxDecoration(
@@ -286,7 +286,7 @@ class _PerfilNotificacionesWidgetState
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 5.0),
                                                 child: Row(
@@ -316,7 +316,7 @@ class _PerfilNotificacionesWidgetState
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Text(
                                                           getJsonField(
@@ -343,7 +343,7 @@ class _PerfilNotificacionesWidgetState
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 10.0),
                                                 child: Row(
@@ -439,7 +439,7 @@ class _PerfilNotificacionesWidgetState
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Container(
                                                           width: 100.0,
@@ -460,7 +460,7 @@ class _PerfilNotificacionesWidgetState
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -601,7 +601,7 @@ class _PerfilNotificacionesWidgetState
                           },
                         ),
                       ),
-                    ].addToEnd(const SizedBox(height: 100.0)),
+                    ].addToEnd(SizedBox(height: 100.0)),
                   ),
                 ),
                 if (!(isWeb
@@ -610,7 +610,7 @@ class _PerfilNotificacionesWidgetState
                   wrapWithModel(
                     model: _model.menuUsuarioModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const MenuUsuarioWidget(
+                    child: MenuUsuarioWidget(
                       index: 0,
                     ),
                   ),

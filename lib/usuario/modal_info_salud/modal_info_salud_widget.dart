@@ -2,6 +2,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_info_salud_model.dart';
 export 'modal_info_salud_model.dart';
 
@@ -37,13 +40,13 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, -0.3),
+      alignment: AlignmentDirectional(0.0, -0.3),
       child: Container(
         width: 350.0,
         height: 408.0,
         decoration: BoxDecoration(
-          color: const Color(0xDAFFFFFF),
-          boxShadow: const [
+          color: Color(0xDAFFFFFF),
+          boxShadow: [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3B1D2429),
@@ -55,7 +58,7 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
           ],
           borderRadius: BorderRadius.circular(10.0),
           border: Border.all(
-            color: const Color(0xE5FFFFFF),
+            color: Color(0xE5FFFFFF),
             width: 2.0,
           ),
         ),
@@ -63,13 +66,13 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(1.0, 0.0),
+                      alignment: AlignmentDirectional(1.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -90,7 +93,7 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -114,9 +117,9 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 5.0, 8.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 5.0, 8.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -142,9 +145,9 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
             ),
             Flexible(
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       Navigator.pop(context);
@@ -156,9 +159,9 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
                       width: 300.0,
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -167,7 +170,7 @@ class _ModalInfoSaludWidgetState extends State<ModalInfoSaludWidget> {
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

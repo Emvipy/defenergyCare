@@ -9,6 +9,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'perfil_faqs_model.dart';
 export 'perfil_faqs_model.dart';
@@ -89,7 +90,7 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -101,10 +102,10 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                 Container(
                   width: double.infinity,
                   height: 583.0,
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -138,7 +139,7 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                                   ).toList();
 
                                   return ListView.separated(
-                                    padding: const EdgeInsets.fromLTRB(
+                                    padding: EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -149,23 +150,23 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                                     scrollDirection: Axis.vertical,
                                     itemCount: childFaqs.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 20.0),
+                                        SizedBox(height: 20.0),
                                     itemBuilder: (context, childFaqsIndex) {
                                       final childFaqsItem =
                                           childFaqs[childFaqsIndex];
                                       return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   width: 800.0,
-                                                  color: const Color(0x00000000),
+                                                  color: Color(0x00000000),
                                                   child: ExpandableNotifier(
                                                     initialExpanded: false,
                                                     child: ExpandablePanel(
@@ -196,7 +197,7 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                                                       collapsed: Container(),
                                                       expanded: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
@@ -268,13 +269,13 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                 ),
                 Flexible(
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         context.pushNamed(
                           'perfil_contacto',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: const TransitionInfo(
+                            kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
                             ),
@@ -287,10 +288,10 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                       options: FFButtonOptions(
                         width: 300.0,
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -300,7 +301,7 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),
@@ -317,7 +318,7 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 0,
                 ),
               ),

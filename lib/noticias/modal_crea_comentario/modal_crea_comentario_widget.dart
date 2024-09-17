@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'modal_crea_comentario_model.dart';
 export 'modal_crea_comentario_model.dart';
@@ -59,13 +61,13 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 1.0),
+        alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 315.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 5.0,
                 color: Color(0x3B1D2429),
@@ -75,7 +77,7 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                 ),
               )
             ],
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(16.0),
@@ -86,7 +88,7 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -109,7 +111,7 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -134,17 +136,17 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 15.0, 8.0, 0.0),
-                  child: SizedBox(
+                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 15.0, 8.0, 0.0),
+                  child: Container(
                     width: 350.0,
                     child: TextFormField(
                       controller: _model.textController,
                       focusNode: _model.textFieldFocusNode,
                       onChanged: (_) => EasyDebounce.debounce(
                         '_model.textController',
-                        const Duration(milliseconds: 100),
+                        Duration(milliseconds: 100),
                         () => safeSetState(() {}),
                       ),
                       autofocus: false,
@@ -169,28 +171,28 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                                   fontStyle: FontStyle.italic,
                                 ),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 1.5,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 1.5,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 1.5,
                           ),
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Color(0x00000000),
                             width: 1.5,
                           ),
@@ -199,7 +201,7 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                         filled: true,
                         fillColor: FlutterFlowTheme.of(context).rellenoCampo2,
                         contentPadding:
-                            const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                            EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
@@ -215,16 +217,17 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
               ),
               Flexible(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 25.0, 10.0, 25.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 25.0, 10.0, 25.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         FFButtonWidget(
-                          onPressed: (_model.textController.text == '')
+                          onPressed: (_model.textController.text == null ||
+                                  _model.textController.text == '')
                               ? null
                               : () async {
                                   _model.apiResulteis =
@@ -233,19 +236,19 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                                     texto: functions
                                         .formatTextwithLineBreaksToXano(
                                             _model.textController.text),
-                                    noticiaId: widget.noticiaId,
+                                    noticiaId: widget!.noticiaId,
                                   );
 
                                   context.pushNamed(
                                     'noticiasDetalle',
                                     queryParameters: {
                                       'noticiasId': serializeParam(
-                                        widget.noticiaId,
+                                        widget!.noticiaId,
                                         ParamType.int,
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -261,9 +264,9 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -274,7 +277,7 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

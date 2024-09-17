@@ -2,10 +2,13 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'marketplace_productos_model.dart';
 export 'marketplace_productos_model.dart';
 
@@ -69,7 +72,7 @@ class _MarketplaceProductosWidgetState
           ),
           title: Text(
             valueOrDefault<String>(
-              widget.nombreCat,
+              widget!.nombreCat,
               '-',
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -79,21 +82,21 @@ class _MarketplaceProductosWidgetState
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -119,15 +122,15 @@ class _MarketplaceProductosWidgetState
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: FutureBuilder<ApiCallResponse>(
                           future: (_model.apiRequestCompleter ??=
                                   Completer<ApiCallResponse>()
                                     ..complete(MarketplaceProductosCall.call(
-                                      categoriaId: widget.categoriaId,
+                                      categoriaId: widget!.categoriaId,
                                     )))
                               .future,
                           builder: (context, snapshot) {
@@ -166,7 +169,7 @@ class _MarketplaceProductosWidgetState
                                     await _model.waitForApiRequestCompleted();
                                   },
                                   child: ListView.separated(
-                                    padding: const EdgeInsets.fromLTRB(
+                                    padding: EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -177,17 +180,17 @@ class _MarketplaceProductosWidgetState
                                     scrollDirection: Axis.vertical,
                                     itemCount: childProductos.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 15.0),
+                                        SizedBox(height: 15.0),
                                     itemBuilder:
                                         (context, childProductosIndex) {
                                       final childProductosItem =
                                           childProductos[childProductosIndex];
                                       return Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: Container(
                                             width: 350.0,
@@ -234,7 +237,7 @@ class _MarketplaceProductosWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     3.0,
@@ -265,7 +268,7 @@ class _MarketplaceProductosWidgetState
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -314,11 +317,11 @@ class _MarketplaceProductosWidgetState
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       3.0,
@@ -352,7 +355,7 @@ class _MarketplaceProductosWidgetState
                                                                 extra: <String,
                                                                     dynamic>{
                                                                   kTransitionInfoKey:
-                                                                      const TransitionInfo(
+                                                                      TransitionInfo(
                                                                     hasTransition:
                                                                         true,
                                                                     transitionType:
@@ -400,11 +403,11 @@ class _MarketplaceProductosWidgetState
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       3.0,
@@ -418,7 +421,7 @@ class _MarketplaceProductosWidgetState
                                                               Flexible(
                                                                 child: Align(
                                                                   alignment:
-                                                                      const AlignmentDirectional(
+                                                                      AlignmentDirectional(
                                                                           1.0,
                                                                           0.0),
                                                                   child:
@@ -454,7 +457,7 @@ class _MarketplaceProductosWidgetState
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
-                                                                              const TransitionInfo(
+                                                                              TransitionInfo(
                                                                             hasTransition:
                                                                                 true,
                                                                             transitionType:
@@ -508,14 +511,14 @@ class _MarketplaceProductosWidgetState
                         ),
                       ),
                     ),
-                  ].addToEnd(const SizedBox(height: 100.0)),
+                  ].addToEnd(SizedBox(height: 100.0)),
                 ),
               ),
             ),
             wrapWithModel(
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
-              child: const MenuUsuarioWidget(
+              child: MenuUsuarioWidget(
                 index: 3,
               ),
             ),

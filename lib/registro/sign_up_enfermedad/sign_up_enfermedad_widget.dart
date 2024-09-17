@@ -5,9 +5,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_cancela_modificacion/modal_cancela_modificacion_widget.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'sign_up_enfermedad_model.dart';
@@ -65,22 +68,22 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 140.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 140.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -110,7 +113,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).background,
             ),
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -122,7 +125,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 30.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -142,7 +145,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                         ),
                         if (FFAppState().authToken == '12')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -157,7 +160,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 1.0, 0.0, 0.0),
                                     child: LinearPercentIndicator(
                                       percent: 0.5,
@@ -181,7 +184,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                      barRadius: const Radius.circular(5.0),
+                                      barRadius: Radius.circular(5.0),
                                       padding: EdgeInsets.zero,
                                     ),
                                   ),
@@ -190,17 +193,17 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 10.0, 16.0, 4.0),
                           child: Container(
                             width: double.infinity,
-                            constraints: const BoxConstraints(
+                            constraints: BoxConstraints(
                               maxWidth: 570.0,
                             ),
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: const [
+                              boxShadow: [
                                 BoxShadow(
                                   blurRadius: 4.0,
                                   color: Color(0x33000000),
@@ -213,15 +216,15 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                             child: Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(32.0),
+                                padding: EdgeInsets.all(32.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 24.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -242,7 +245,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -266,10 +269,10 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: _model.covid == 'no'
                                               ? FlutterFlowTheme.of(context)
@@ -294,7 +297,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                   ),
                                           elevation:
                                               _model.covid == 'no' ? 3.0 : 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -304,7 +307,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -328,10 +331,10 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: _model.em == 'no'
                                               ? FlutterFlowTheme.of(context)
@@ -356,7 +359,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                   ),
                                           elevation:
                                               _model.em == 'no' ? 3.0 : 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -366,7 +369,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -390,10 +393,10 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: _model.fibro == 'no'
                                               ? FlutterFlowTheme.of(context)
@@ -418,7 +421,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                   ),
                                           elevation:
                                               _model.fibro == 'no' ? 3.0 : 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -428,7 +431,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -452,10 +455,10 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: _model.otras == 'no'
                                               ? FlutterFlowTheme.of(context)
@@ -480,7 +483,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                   ),
                                           elevation:
                                               _model.otras == 'no' ? 3.0 : 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -490,7 +493,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -514,10 +517,10 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: _model.into == 'no'
                                               ? FlutterFlowTheme.of(context)
@@ -542,7 +545,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                   ),
                                           elevation:
                                               _model.into == 'no' ? 3.0 : 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -552,7 +555,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 30.0, 0.0, 15.0),
                                       child: FFButtonWidget(
                                         onPressed: (_model.contador! < 1)
@@ -585,28 +588,31 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                       ''),
                                                 )!;
                                                 FFAppState().creadoOk = 'no';
-                                                context.pushNamed(
-                                                  'signUp_detalle_enfermedad',
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        const TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .fade,
-                                                      duration: Duration(
-                                                          milliseconds: 0),
-                                                    ),
-                                                  },
-                                                );
+                                                if (FFAppState().enfermedadId !=
+                                                    null) {
+                                                  context.pushNamed(
+                                                    'signUp_detalle_enfermedad',
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
 
-                                                _model.covid = 'no';
-                                                _model.em = 'no';
-                                                _model.fibro = 'no';
-                                                _model.otras = 'no';
-                                                _model.into = 'no';
-                                                _model.contador = 0;
-                                              
+                                                  _model.covid = 'no';
+                                                  _model.em = 'no';
+                                                  _model.fibro = 'no';
+                                                  _model.otras = 'no';
+                                                  _model.into = 'no';
+                                                  _model.contador = 0;
+                                                }
+
                                                 safeSetState(() {});
                                               },
                                         text:
@@ -617,10 +623,10 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                           width: 300.0,
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -635,7 +641,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                 letterSpacing: 0.0,
                                               ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -651,11 +657,11 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          if (widget.editando == 'no') {
+                                          if (widget!.editando == 'no') {
                                             await showModalBottomSheet(
                                               isScrollControlled: true,
                                               backgroundColor:
@@ -672,14 +678,14 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                         MediaQuery.viewInsetsOf(
                                                             context),
                                                     child:
-                                                        const ModalCancelaSignWidget(),
+                                                        ModalCancelaSignWidget(),
                                                   ),
                                                 );
                                               },
                                             ).then(
                                                 (value) => safeSetState(() {}));
                                           } else {
-                                            if (widget.editando ==
+                                            if (widget!.editando ==
                                                 'modificado') {
                                               await showModalBottomSheet(
                                                 isScrollControlled: true,
@@ -697,7 +703,7 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          const ModalCancelaModificacionWidget(),
+                                                          ModalCancelaModificacionWidget(),
                                                     ),
                                                   );
                                                 },
@@ -716,12 +722,12 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: const Color(0x00FFFFFF),
+                                          color: Color(0x00FFFFFF),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall

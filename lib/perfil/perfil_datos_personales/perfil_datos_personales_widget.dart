@@ -8,9 +8,11 @@ import '/flutter_flow/form_field_controller.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'perfil_datos_personales_model.dart';
 export 'perfil_datos_personales_model.dart';
@@ -155,7 +157,7 @@ class _PerfilDatosPersonalesWidgetState
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -166,7 +168,7 @@ class _PerfilDatosPersonalesWidgetState
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             15.0, 15.0, 15.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -195,21 +197,21 @@ class _PerfilDatosPersonalesWidgetState
                       ),
                       if (FFAppState().perfilId == 1)
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -231,7 +233,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -259,7 +261,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -283,7 +285,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                       ),
                                                       Expanded(
-                                                        child: SizedBox(
+                                                        child: Container(
                                                           width: 200.0,
                                                           child: TextFormField(
                                                             controller: _model
@@ -302,7 +304,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 EasyDebounce
                                                                     .debounce(
                                                               '_model.textFieldNombreTextController',
-                                                              const Duration(
+                                                              Duration(
                                                                   milliseconds:
                                                                       100),
                                                               () =>
@@ -343,7 +345,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -356,7 +358,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -369,7 +371,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               errorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -382,7 +384,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -428,13 +430,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -456,7 +458,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -484,7 +486,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -508,7 +510,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                       ),
                                                       Expanded(
-                                                        child: SizedBox(
+                                                        child: Container(
                                                           width: 200.0,
                                                           child: TextFormField(
                                                             controller: _model
@@ -527,7 +529,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 EasyDebounce
                                                                     .debounce(
                                                               '_model.textFieldApellidosTextController',
-                                                              const Duration(
+                                                              Duration(
                                                                   milliseconds:
                                                                       100),
                                                               () =>
@@ -568,7 +570,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -581,7 +583,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -594,7 +596,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               errorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -607,7 +609,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -653,13 +655,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -681,7 +683,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -709,7 +711,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -734,7 +736,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                       ),
                                                       Expanded(
-                                                        child: SizedBox(
+                                                        child: Container(
                                                           width: 200.0,
                                                           child: TextFormField(
                                                             controller: _model
@@ -753,7 +755,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 EasyDebounce
                                                                     .debounce(
                                                               '_model.textController3',
-                                                              const Duration(
+                                                              Duration(
                                                                   milliseconds:
                                                                       100),
                                                               () =>
@@ -795,7 +797,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -808,7 +810,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -821,7 +823,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               errorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -834,7 +836,7 @@ class _PerfilDatosPersonalesWidgetState
                                                               focusedErrorBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -870,7 +872,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -896,13 +898,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -924,7 +926,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -952,7 +954,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -978,9 +980,9 @@ class _PerfilDatosPersonalesWidgetState
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   -1.0, 0.0),
-                                                          child: SizedBox(
+                                                          child: Container(
                                                             width: 300.0,
                                                             child:
                                                                 TextFormField(
@@ -992,7 +994,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                   EasyDebounce
                                                                       .debounce(
                                                                 '_model.textController4',
-                                                                const Duration(
+                                                                Duration(
                                                                     milliseconds:
                                                                         100),
                                                                 () =>
@@ -1033,7 +1035,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1046,7 +1048,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1059,7 +1061,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 errorBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1072,7 +1074,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 focusedErrorBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1109,7 +1111,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1135,13 +1137,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1163,7 +1165,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1191,7 +1193,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -1218,9 +1220,9 @@ class _PerfilDatosPersonalesWidgetState
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   -1.0, 0.0),
-                                                          child: SizedBox(
+                                                          child: Container(
                                                             width: 300.0,
                                                             child:
                                                                 TextFormField(
@@ -1248,7 +1250,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                   EasyDebounce
                                                                       .debounce(
                                                                 '_model.textController5',
-                                                                const Duration(
+                                                                Duration(
                                                                     milliseconds:
                                                                         100),
                                                                 () =>
@@ -1289,7 +1291,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 enabledBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1302,7 +1304,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1315,7 +1317,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 errorBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1328,7 +1330,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 focusedErrorBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1365,7 +1367,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1381,7 +1383,7 @@ class _PerfilDatosPersonalesWidgetState
                                                           highlightColor: Colors
                                                               .transparent,
                                                           onTap: () async {
-                                                            final datePickedDate =
+                                                            final _datePickedDate =
                                                                 await showDatePicker(
                                                               context: context,
                                                               initialDate:
@@ -1443,16 +1445,16 @@ class _PerfilDatosPersonalesWidgetState
                                                               },
                                                             );
 
-                                                            if (datePickedDate !=
+                                                            if (_datePickedDate !=
                                                                 null) {
                                                               safeSetState(() {
                                                                 _model.datePicked =
                                                                     DateTime(
-                                                                  datePickedDate
+                                                                  _datePickedDate
                                                                       .year,
-                                                                  datePickedDate
+                                                                  _datePickedDate
                                                                       .month,
-                                                                  datePickedDate
+                                                                  _datePickedDate
                                                                       .day,
                                                                 );
                                                               });
@@ -1483,13 +1485,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1511,7 +1513,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1539,7 +1541,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -1627,7 +1629,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     12.0,
                                                                     0.0,
@@ -1650,13 +1652,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1678,7 +1680,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1706,7 +1708,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -1821,7 +1823,7 @@ class _PerfilDatosPersonalesWidgetState
                                                             borderWidth: 0.0,
                                                             borderRadius: 8.0,
                                                             margin:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -1848,13 +1850,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1876,7 +1878,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1904,7 +1906,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -2019,7 +2021,7 @@ class _PerfilDatosPersonalesWidgetState
                                                             borderWidth: 0.0,
                                                             borderRadius: 8.0,
                                                             margin:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -2046,13 +2048,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -2074,7 +2076,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -2102,7 +2104,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -2216,7 +2218,7 @@ class _PerfilDatosPersonalesWidgetState
                                                             borderWidth: 0.0,
                                                             borderRadius: 8.0,
                                                             margin:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -2243,13 +2245,13 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             17.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -2271,7 +2273,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -2299,7 +2301,7 @@ class _PerfilDatosPersonalesWidgetState
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     2.0,
                                                                     0.0,
@@ -2418,7 +2420,7 @@ class _PerfilDatosPersonalesWidgetState
                                                             borderWidth: 0.0,
                                                             borderRadius: 8.0,
                                                             margin:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         0.0,
@@ -2445,7 +2447,7 @@ class _PerfilDatosPersonalesWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -2454,8 +2456,14 @@ class _PerfilDatosPersonalesWidgetState
                                       FFButtonWidget(
                                         onPressed: ((_model.textFieldNombreTextController
                                                             .text ==
+                                                        null ||
+                                                    _model.textFieldNombreTextController
+                                                            .text ==
                                                         '') ||
                                                 (_model.textFieldApellidosTextController
+                                                            .text ==
+                                                        null ||
+                                                    _model.textFieldApellidosTextController
                                                             .text ==
                                                         ''))
                                             ? null
@@ -2504,7 +2512,7 @@ class _PerfilDatosPersonalesWidgetState
                                                             .secondaryBackground,
                                                       ),
                                                     ),
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 4000),
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
@@ -2517,7 +2525,7 @@ class _PerfilDatosPersonalesWidgetState
                                                   'perfil',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -2536,10 +2544,10 @@ class _PerfilDatosPersonalesWidgetState
                                           width: 300.0,
                                           height: 40.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -2568,16 +2576,16 @@ class _PerfilDatosPersonalesWidgetState
                         ),
                       if (FFAppState().perfilId != 1)
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Container(
                             width: 350.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 if (FFAppState().perfilId == 2)
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -2601,7 +2609,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: FutureBuilder<
@@ -2692,11 +2700,11 @@ class _PerfilDatosPersonalesWidgetState
                                                             .rellenoCampo2,
                                                     elevation: 0.0,
                                                     borderColor:
-                                                        const Color(0x0063A4DC),
+                                                        Color(0x0063A4DC),
                                                     borderWidth: 2.0,
                                                     borderRadius: 12.0,
                                                     margin:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 4.0,
                                                                 16.0, 4.0),
                                                     hidesUnderline: true,
@@ -2708,7 +2716,7 @@ class _PerfilDatosPersonalesWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: TextFormField(
@@ -2726,7 +2734,7 @@ class _PerfilDatosPersonalesWidgetState
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldColegiadoTextController',
-                                                  const Duration(milliseconds: 100),
+                                                  Duration(milliseconds: 100),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -2753,7 +2761,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0x0063A4DC),
                                                       width: 2.0,
                                                     ),
@@ -2819,7 +2827,7 @@ class _PerfilDatosPersonalesWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: TextFormField(
@@ -2837,7 +2845,7 @@ class _PerfilDatosPersonalesWidgetState
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldNifProTextController',
-                                                  const Duration(milliseconds: 100),
+                                                  Duration(milliseconds: 100),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -2864,7 +2872,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0x0063A4DC),
                                                       width: 2.0,
                                                     ),
@@ -2930,7 +2938,7 @@ class _PerfilDatosPersonalesWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: TextFormField(
@@ -2948,7 +2956,7 @@ class _PerfilDatosPersonalesWidgetState
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldDireccionProTextController',
-                                                  const Duration(milliseconds: 100),
+                                                  Duration(milliseconds: 100),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -2975,7 +2983,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0x0063A4DC),
                                                       width: 2.0,
                                                     ),
@@ -3041,7 +3049,7 @@ class _PerfilDatosPersonalesWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: TextFormField(
@@ -3059,7 +3067,7 @@ class _PerfilDatosPersonalesWidgetState
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldCiudadProTextController',
-                                                  const Duration(milliseconds: 100),
+                                                  Duration(milliseconds: 100),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -3086,7 +3094,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0x0063A4DC),
                                                       width: 2.0,
                                                     ),
@@ -3152,7 +3160,7 @@ class _PerfilDatosPersonalesWidgetState
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 10.0),
                                               child: TextFormField(
@@ -3169,7 +3177,7 @@ class _PerfilDatosPersonalesWidgetState
                                                 onChanged: (_) =>
                                                     EasyDebounce.debounce(
                                                   '_model.textFieldCpProTextController',
-                                                  const Duration(milliseconds: 100),
+                                                  Duration(milliseconds: 100),
                                                   () => safeSetState(() {}),
                                                 ),
                                                 autofocus: true,
@@ -3196,7 +3204,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Color(0x0063A4DC),
                                                       width: 2.0,
                                                     ),
@@ -3265,7 +3273,7 @@ class _PerfilDatosPersonalesWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: ((_model
@@ -3273,17 +3281,29 @@ class _PerfilDatosPersonalesWidgetState
                                                             null ||
                                                         _model.dropDownProfesionValue ==
                                                             '') ||
-                                                    (_model
+                                                    (_model.textFieldNifProTextController
+                                                                .text ==
+                                                            null ||
+                                                        _model
                                                                 .textFieldNifProTextController.text ==
                                                             '') ||
-                                                    (_model
+                                                    (_model.textFieldDireccionProTextController
+                                                                .text ==
+                                                            null ||
+                                                        _model
                                                                 .textFieldDireccionProTextController
                                                                 .text ==
                                                             '') ||
                                                     (_model.textFieldCiudadProTextController
                                                                 .text ==
+                                                            null ||
+                                                        _model.textFieldCiudadProTextController
+                                                                .text ==
                                                             '') ||
                                                     (_model.textFieldCpProTextController
+                                                                .text ==
+                                                            null ||
+                                                        _model.textFieldCpProTextController
                                                                 .text ==
                                                             ''))
                                                 ? null
@@ -3327,7 +3347,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                   .secondaryBackground,
                                                             ),
                                                           ),
-                                                          duration: const Duration(
+                                                          duration: Duration(
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
@@ -3342,7 +3362,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -3364,9 +3384,9 @@ class _PerfilDatosPersonalesWidgetState
                                             options: FFButtonOptions(
                                               width: 300.0,
                                               height: 44.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -3383,7 +3403,7 @@ class _PerfilDatosPersonalesWidgetState
                                                             FontWeight.w500,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -3412,7 +3432,7 @@ class _PerfilDatosPersonalesWidgetState
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: TextFormField(
                                               controller: _model
@@ -3429,7 +3449,7 @@ class _PerfilDatosPersonalesWidgetState
                                               onChanged: (_) =>
                                                   EasyDebounce.debounce(
                                                 '_model.textFieldRazonTextController',
-                                                const Duration(milliseconds: 100),
+                                                Duration(milliseconds: 100),
                                                 () => safeSetState(() {}),
                                               ),
                                               autofocus: true,
@@ -3455,7 +3475,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 2.0,
                                                   ),
@@ -3517,7 +3537,7 @@ class _PerfilDatosPersonalesWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: TextFormField(
                                               controller: _model
@@ -3533,7 +3553,7 @@ class _PerfilDatosPersonalesWidgetState
                                               onChanged: (_) =>
                                                   EasyDebounce.debounce(
                                                 '_model.textFieldCifTextController',
-                                                const Duration(milliseconds: 100),
+                                                Duration(milliseconds: 100),
                                                 () => safeSetState(() {}),
                                               ),
                                               autofocus: true,
@@ -3560,7 +3580,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 2.0,
                                                   ),
@@ -3622,7 +3642,7 @@ class _PerfilDatosPersonalesWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: TextFormField(
                                               controller: _model
@@ -3639,7 +3659,7 @@ class _PerfilDatosPersonalesWidgetState
                                               onChanged: (_) =>
                                                   EasyDebounce.debounce(
                                                 '_model.textFieldDireccionTextController',
-                                                const Duration(milliseconds: 100),
+                                                Duration(milliseconds: 100),
                                                 () => safeSetState(() {}),
                                               ),
                                               autofocus: true,
@@ -3666,7 +3686,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 2.0,
                                                   ),
@@ -3728,7 +3748,7 @@ class _PerfilDatosPersonalesWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: TextFormField(
                                               controller: _model
@@ -3744,7 +3764,7 @@ class _PerfilDatosPersonalesWidgetState
                                               onChanged: (_) =>
                                                   EasyDebounce.debounce(
                                                 '_model.textFieldCiudadTextController',
-                                                const Duration(milliseconds: 100),
+                                                Duration(milliseconds: 100),
                                                 () => safeSetState(() {}),
                                               ),
                                               autofocus: true,
@@ -3771,7 +3791,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 2.0,
                                                   ),
@@ -3833,7 +3853,7 @@ class _PerfilDatosPersonalesWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: TextFormField(
                                               controller: _model
@@ -3849,7 +3869,7 @@ class _PerfilDatosPersonalesWidgetState
                                               onChanged: (_) =>
                                                   EasyDebounce.debounce(
                                                 '_model.textFieldCpETextController',
-                                                const Duration(milliseconds: 100),
+                                                Duration(milliseconds: 100),
                                                 () => safeSetState(() {}),
                                               ),
                                               autofocus: true,
@@ -3876,7 +3896,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 2.0,
                                                   ),
@@ -3938,7 +3958,7 @@ class _PerfilDatosPersonalesWidgetState
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: TextFormField(
                                               controller: _model
@@ -3955,7 +3975,7 @@ class _PerfilDatosPersonalesWidgetState
                                               onChanged: (_) =>
                                                   EasyDebounce.debounce(
                                                 '_model.textFieldEmailTextController',
-                                                const Duration(milliseconds: 100),
+                                                Duration(milliseconds: 100),
                                                 () => safeSetState(() {}),
                                               ),
                                               autofocus: true,
@@ -3982,7 +4002,7 @@ class _PerfilDatosPersonalesWidgetState
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 2.0,
                                                   ),
@@ -4045,23 +4065,38 @@ class _PerfilDatosPersonalesWidgetState
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 20.0, 0.0, 16.0),
                                         child: FFButtonWidget(
-                                          onPressed: ((_model.textFieldRazonTextController.text ==
+                                          onPressed: ((_model
+                                                              .textFieldRazonTextController
+                                                              .text ==
+                                                          null ||
+                                                      _model.textFieldRazonTextController.text ==
                                                           '') ||
-                                                  (_model.textFieldCifTextController.text ==
+                                                  (_model.textFieldCifTextController.text == null ||
+                                                      _model.textFieldCifTextController.text ==
                                                           '') ||
-                                                  (_model.textFieldDireccionTextController.text ==
+                                                  (_model.textFieldDireccionTextController.text == null ||
+                                                      _model.textFieldDireccionTextController.text ==
                                                           '') ||
-                                                  (_model
+                                                  (_model.textFieldCiudadTextController
+                                                              .text ==
+                                                          null ||
+                                                      _model
                                                               .textFieldCiudadTextController
                                                               .text ==
                                                           '') ||
                                                   (_model.textFieldCpETextController
                                                               .text ==
+                                                          null ||
+                                                      _model.textFieldCpETextController
+                                                              .text ==
                                                           '') ||
                                                   (_model.textFieldEmailTextController
+                                                              .text ==
+                                                          null ||
+                                                      _model.textFieldEmailTextController
                                                               .text ==
                                                           ''))
                                               ? null
@@ -4106,7 +4141,7 @@ class _PerfilDatosPersonalesWidgetState
                                                                 .secondaryBackground,
                                                           ),
                                                         ),
-                                                        duration: const Duration(
+                                                        duration: Duration(
                                                             milliseconds: 4000),
                                                         backgroundColor:
                                                             FlutterFlowTheme.of(
@@ -4119,7 +4154,7 @@ class _PerfilDatosPersonalesWidgetState
                                                       'perfil',
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -4141,10 +4176,10 @@ class _PerfilDatosPersonalesWidgetState
                                             width: 300.0,
                                             height: 44.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .azulPerm,
@@ -4160,7 +4195,7 @@ class _PerfilDatosPersonalesWidgetState
                                                           FontWeight.w500,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -4181,7 +4216,7 @@ class _PerfilDatosPersonalesWidgetState
                             ),
                           ),
                         ),
-                    ].addToEnd(const SizedBox(height: 120.0)),
+                    ].addToEnd(SizedBox(height: 120.0)),
                   ),
                 ),
                 if (!(isWeb
@@ -4190,7 +4225,7 @@ class _PerfilDatosPersonalesWidgetState
                   wrapWithModel(
                     model: _model.menuUsuarioModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const MenuUsuarioWidget(
+                    child: MenuUsuarioWidget(
                       index: 0,
                     ),
                   ),

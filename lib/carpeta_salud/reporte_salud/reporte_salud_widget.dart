@@ -6,8 +6,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'reporte_salud_model.dart';
 export 'reporte_salud_model.dart';
@@ -140,7 +143,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'rcf5yeea' /* Carpeta de Salud */,
@@ -153,7 +156,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -165,7 +168,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -188,7 +191,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -303,11 +306,11 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   decoration: BoxDecoration(
                                     color: _model.rango == 1
                                         ? FlutterFlowTheme.of(context).secondary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'cn2e8nnv' /* 7 Días */,
@@ -426,11 +429,11 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   decoration: BoxDecoration(
                                     color: _model.rango == 2
                                         ? FlutterFlowTheme.of(context).secondary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         '1mi5atx2' /* 30 Días */,
@@ -469,11 +472,11 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   decoration: BoxDecoration(
                                     color: _model.rango == 3
                                         ? FlutterFlowTheme.of(context).secondary
-                                        : const Color(0x00000000),
+                                        : Color(0x00000000),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
                                         'alepwlal' /* Personalizado */,
@@ -502,7 +505,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.rango == 3)
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -523,7 +526,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                     ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -533,7 +536,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                     await showModalBottomSheet<bool>(
                                         context: context,
                                         builder: (context) {
-                                          final datePicked1CupertinoTheme =
+                                          final _datePicked1CupertinoTheme =
                                               CupertinoTheme.of(context);
                                           return Container(
                                             height: MediaQuery.of(context)
@@ -546,10 +549,10 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             child: CupertinoTheme(
-                                              data: datePicked1CupertinoTheme
+                                              data: _datePicked1CupertinoTheme
                                                   .copyWith(
                                                 textTheme:
-                                                    datePicked1CupertinoTheme
+                                                    _datePicked1CupertinoTheme
                                                         .textTheme
                                                         .copyWith(
                                                   dateTimePickerTextStyle:
@@ -601,9 +604,9 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                     ),
                                     child: Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -646,7 +649,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                     ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -656,7 +659,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                     await showModalBottomSheet<bool>(
                                         context: context,
                                         builder: (context) {
-                                          final datePicked2CupertinoTheme =
+                                          final _datePicked2CupertinoTheme =
                                               CupertinoTheme.of(context);
                                           return Container(
                                             height: MediaQuery.of(context)
@@ -669,10 +672,10 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             child: CupertinoTheme(
-                                              data: datePicked2CupertinoTheme
+                                              data: _datePicked2CupertinoTheme
                                                   .copyWith(
                                                 textTheme:
-                                                    datePicked2CupertinoTheme
+                                                    _datePicked2CupertinoTheme
                                                         .textTheme
                                                         .copyWith(
                                                   dateTimePickerTextStyle:
@@ -724,9 +727,9 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                     ),
                                     child: Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
@@ -759,7 +762,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.rango == 3)
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -777,10 +780,10 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                       dias: 1,
                                       fechaInicio: _model
                                           .fechaInicio?.millisecondsSinceEpoch
-                                          .toString(),
+                                          ?.toString(),
                                       fechaFin: _model
                                           .fechaFin?.millisecondsSinceEpoch
-                                          .toString(),
+                                          ?.toString(),
                                       sessionId: FFAppState().xUserId,
                                     );
 
@@ -885,9 +888,9 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -898,7 +901,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                     letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -913,7 +916,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.generando == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -941,7 +944,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -949,7 +952,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               children: [
                                 Flexible(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 10.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -973,7 +976,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Container(
                               width: 150.0,
@@ -983,7 +986,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
                                   '${valueOrDefault<String>(
                                     _model.promedioEnergia?.toString(),
@@ -1006,7 +1009,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           if (_model.momentoEnergia != null &&
                               _model.momentoEnergia != '')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1030,7 +1033,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           if (_model.momentoEnergia == null ||
                               _model.momentoEnergia == '')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1061,7 +1064,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1073,7 +1076,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1101,7 +1104,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Container(
                                 width: 150.0,
@@ -1111,7 +1114,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       _model.promedioDolor?.toString(),
@@ -1139,7 +1142,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1151,7 +1154,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1179,7 +1182,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1207,7 +1210,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Container(
                                 width: 150.0,
@@ -1217,7 +1220,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       _model.actividades,
@@ -1238,7 +1241,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1294,7 +1297,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1356,7 +1359,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1368,7 +1371,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1396,7 +1399,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Container(
                                 width: 150.0,
@@ -1406,7 +1409,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       _model.evoSintomas,
@@ -1428,7 +1431,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1484,7 +1487,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1546,7 +1549,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1558,7 +1561,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1586,7 +1589,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1619,7 +1622,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1631,7 +1634,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1659,7 +1662,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1692,7 +1695,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1704,7 +1707,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1732,7 +1735,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1765,7 +1768,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1777,7 +1780,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1805,7 +1808,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Container(
                                 width: 150.0,
@@ -1815,7 +1818,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     '${valueOrDefault<String>(
                                       _model.diasSintomasInto,
@@ -1836,7 +1839,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1882,7 +1885,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                                 .getText(
                                               'pm9r7tky' /* de los días */,
                                             ),
-                                            style: const TextStyle(),
+                                            style: TextStyle(),
                                           )
                                         ],
                                         style: FlutterFlowTheme.of(context)
@@ -1905,7 +1908,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1917,7 +1920,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -1945,7 +1948,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Container(
                                 width: 150.0,
@@ -1955,7 +1958,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       _model.promedioHoras,
@@ -1983,7 +1986,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -1995,7 +1998,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2023,7 +2026,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Container(
                                 width: 150.0,
@@ -2033,7 +2036,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
                                       _model.promedioCalidad,
@@ -2061,7 +2064,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -2073,7 +2076,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2101,7 +2104,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2134,7 +2137,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -2146,7 +2149,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2174,7 +2177,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2207,7 +2210,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   if (_model.mostrarDatos == 'si')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -2219,7 +2222,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 10.0, 10.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2247,7 +2250,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 10.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -2279,7 +2282,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                     ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -2289,7 +2292,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                             context.pushNamed(
                               'reporteIntolerancias',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -2302,9 +2305,9 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2315,7 +2318,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -2327,7 +2330,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -2344,7 +2347,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   onTap: () => FocusScope.of(context).unfocus(),
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: const ModalPDFWidget(),
+                                    child: ModalPDFWidget(),
                                   ),
                                 );
                               },
@@ -2356,9 +2359,9 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -2369,7 +2372,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -2379,13 +2382,13 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                       ],
                     ),
                   ),
-                ].addToEnd(const SizedBox(height: 120.0)),
+                ].addToEnd(SizedBox(height: 120.0)),
               ),
             ),
             wrapWithModel(
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
-              child: const MenuUsuarioWidget(
+              child: MenuUsuarioWidget(
                 index: 1,
               ),
             ),

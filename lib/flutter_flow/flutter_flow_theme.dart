@@ -159,22 +159,22 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xFFFFFFFF);
 
-  late Color background = const Color(0xFFF4F6F9);
-  late Color botonDesactivado = const Color(0xFFDFE4DF);
-  late Color azulPerm = const Color(0xFF63A4DC);
-  late Color rellenoCampos = const Color(0xFFF1F4F8);
-  late Color rellenoCampo2 = const Color(0xFFFFFFFF);
-  late Color sintomas = const Color(0xFFC5E6EF);
-  late Color reportes = const Color(0xFFF7E391);
-  late Color resumen = const Color(0xFFD4E7BF);
-  late Color lavanda = const Color(0xFFAAAADD);
-  late Color suenoMal = const Color(0xFFEEC4C9);
-  late Color suenoReg = const Color(0xFFF5E8C1);
-  late Color suenoOk = const Color(0xFFCDECC8);
-  late Color rojoHome = const Color(0xFFFF7F7E);
-  late Color rosaHome = const Color(0xFFFED0D3);
-  late Color share = const Color(0xFF55D365);
-  late Color negroPerm = const Color(0xFF14181B);
+  late Color background = Color(0xFFF4F6F9);
+  late Color botonDesactivado = Color(0xFFDFE4DF);
+  late Color azulPerm = Color(0xFF63A4DC);
+  late Color rellenoCampos = Color(0xFFF1F4F8);
+  late Color rellenoCampo2 = Color(0xFFFFFFFF);
+  late Color sintomas = Color(0xFFC5E6EF);
+  late Color reportes = Color(0xFFF7E391);
+  late Color resumen = Color(0xFFD4E7BF);
+  late Color lavanda = Color(0xFFAAAADD);
+  late Color suenoMal = Color(0xFFEEC4C9);
+  late Color suenoReg = Color(0xFFF5E8C1);
+  late Color suenoOk = Color(0xFFCDECC8);
+  late Color rojoHome = Color(0xFFFF7F7E);
+  late Color rosaHome = Color(0xFFFED0D3);
+  late Color share = Color(0xFF55D365);
+  late Color negroPerm = Color(0xFF14181B);
 }
 
 abstract class Typography {
@@ -347,22 +347,22 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFFF5963);
   late Color info = const Color(0xCCFFFFFF);
 
-  late Color background = const Color(0xFF3B4448);
-  late Color botonDesactivado = const Color(0xFFDFE4DF);
-  late Color azulPerm = const Color(0xFF63A4DC);
-  late Color rellenoCampos = const Color(0xFF41484D);
-  late Color rellenoCampo2 = const Color(0xFF41484D);
-  late Color sintomas = const Color(0xFFC5E6EF);
-  late Color reportes = const Color(0xCCFFFFFF);
-  late Color resumen = const Color(0xFFD4E7BF);
-  late Color lavanda = const Color(0xFFAAAADD);
-  late Color suenoMal = const Color(0xFFEEC4C9);
-  late Color suenoReg = const Color(0xFFF5E8C1);
-  late Color suenoOk = const Color(0xFFCDECC8);
-  late Color rojoHome = const Color(0xFFFF7F7E);
-  late Color rosaHome = const Color(0xFFFED0D3);
-  late Color share = const Color(0xFF55D365);
-  late Color negroPerm = const Color(0xFF14181B);
+  late Color background = Color(0xFF3B4448);
+  late Color botonDesactivado = Color(0xFFDFE4DF);
+  late Color azulPerm = Color(0xFF63A4DC);
+  late Color rellenoCampos = Color(0xFF41484D);
+  late Color rellenoCampo2 = Color(0xFF41484D);
+  late Color sintomas = Color(0xFFC5E6EF);
+  late Color reportes = Color(0xCCFFFFFF);
+  late Color resumen = Color(0xFFD4E7BF);
+  late Color lavanda = Color(0xFFAAAADD);
+  late Color suenoMal = Color(0xFFEEC4C9);
+  late Color suenoReg = Color(0xFFF5E8C1);
+  late Color suenoOk = Color(0xFFCDECC8);
+  late Color rojoHome = Color(0xFFFF7F7E);
+  late Color rosaHome = Color(0xFFFED0D3);
+  late Color share = Color(0xFF55D365);
+  late Color negroPerm = Color(0xFF14181B);
 }
 
 extension TextStyleHelper on TextStyle {

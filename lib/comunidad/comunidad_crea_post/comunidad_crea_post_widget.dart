@@ -11,6 +11,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'comunidad_crea_post_model.dart';
 export 'comunidad_crea_post_model.dart';
@@ -69,7 +70,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
     return FutureBuilder<ApiCallResponse>(
       future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
             ..complete(ComunidadPostIndividualCall.call(
-              postId: widget.postId,
+              postId: widget!.postId,
             )))
           .future,
       builder: (context, snapshot) {
@@ -124,20 +125,20 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -164,11 +165,11 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        Container(
                           width: 350.0,
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: SizedBox(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Container(
                               width: 350.0,
                               child: TextFormField(
                                 controller: _model.textController ??=
@@ -181,7 +182,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                 focusNode: _model.textFieldFocusNode,
                                 onChanged: (_) => EasyDebounce.debounce(
                                   '_model.textController',
-                                  const Duration(milliseconds: 100),
+                                  Duration(milliseconds: 100),
                                   () => safeSetState(() {}),
                                 ),
                                 autofocus: false,
@@ -205,7 +206,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         fontStyle: FontStyle.italic,
                                       ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 2.0,
                                     ),
@@ -251,7 +252,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Container(
                             width: 350.0,
@@ -265,9 +266,9 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -321,13 +322,14 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                           }
                                         }
 
-                                        if ((_model.uploadedLocalFile1.bytes
+                                        if (_model.uploadedLocalFile1 != null &&
+                                            (_model.uploadedLocalFile1.bytes
                                                     ?.isNotEmpty ??
                                                 false)) {
                                           _model.apiResult93tCopy =
                                               await ComunidadSubeImagenCall
                                                   .call(
-                                            postId: widget.postId,
+                                            postId: widget!.postId,
                                             img: _model.uploadedLocalFile1,
                                             authToken: FFAppState().authToken,
                                           );
@@ -353,7 +355,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -380,7 +382,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -432,12 +434,13 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         }
                                       }
 
-                                      if ((_model.uploadedLocalFile2.bytes
+                                      if (_model.uploadedLocalFile2 != null &&
+                                          (_model.uploadedLocalFile2.bytes
                                                   ?.isNotEmpty ??
                                               false)) {
                                         _model.apiResult93t =
                                             await ComunidadSubeImagenCall.call(
-                                          postId: widget.postId,
+                                          postId: widget!.postId,
                                           img: _model.uploadedLocalFile2,
                                           authToken: FFAppState().authToken,
                                         );
@@ -462,7 +465,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .error,
@@ -493,20 +496,22 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 25.0, 10.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FFButtonWidget(
-                                onPressed: (_model.textController.text == '')
+                                onPressed: (_model.textController.text ==
+                                            null ||
+                                        _model.textController.text == '')
                                     ? null
                                     : () async {
                                         _model.apiResultf6y =
                                             await CamunidadGuardaDatosCall.call(
                                           authToken: FFAppState().authToken,
-                                          postId: widget.postId,
+                                          postId: widget!.postId,
                                           texto: functions
                                               .formatTextwithLineBreaksToXano(
                                                   _model.textController.text),
@@ -518,7 +523,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                             'comunidad',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  const TransitionInfo(
+                                                  TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -540,7 +545,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                 ),
                                               ),
                                               duration:
-                                                  const Duration(milliseconds: 4000),
+                                                  Duration(milliseconds: 4000),
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .error,
@@ -556,9 +561,9 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -569,7 +574,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -582,7 +587,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -593,7 +598,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                   context.pushNamed(
                                     'comunidad',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -607,11 +612,11 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x0063A4DC),
+                                  color: Color(0x0063A4DC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -632,7 +637,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                             ],
                           ),
                         ),
-                      ].addToEnd(const SizedBox(height: 100.0)),
+                      ].addToEnd(SizedBox(height: 100.0)),
                     ),
                   ),
                 ),
@@ -642,7 +647,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                   wrapWithModel(
                     model: _model.menuUsuarioModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const MenuUsuarioWidget(
+                    child: MenuUsuarioWidget(
                       index: 6,
                     ),
                   ),

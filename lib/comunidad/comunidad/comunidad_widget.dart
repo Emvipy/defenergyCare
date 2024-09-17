@@ -9,10 +9,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'comunidad_model.dart';
 export 'comunidad_model.dart';
@@ -79,14 +81,14 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -140,7 +142,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                       scrollDirection: Axis.vertical,
                                       itemCount: childPosts.length,
                                       separatorBuilder: (_, __) =>
-                                          const SizedBox(height: 10.0),
+                                          SizedBox(height: 10.0),
                                       itemBuilder: (context, childPostsIndex) {
                                         final childPostsItem =
                                             childPosts[childPostsIndex];
@@ -153,7 +155,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: Row(
@@ -162,7 +164,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -188,7 +190,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                           clipBehavior:
                                                               Clip.antiAlias,
                                                           decoration:
-                                                              const BoxDecoration(
+                                                              BoxDecoration(
                                                             shape:
                                                                 BoxShape.circle,
                                                           ),
@@ -204,7 +206,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   0.0,
@@ -251,11 +253,11 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -278,7 +280,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -315,11 +317,11 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -380,6 +382,19 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                                 ).then((value) =>
                                                                     safeSetState(
                                                                         () {}));
+
+                                                                unawaited(
+                                                                  () async {
+                                                                    await UserLogActivityCall
+                                                                        .call(
+                                                                      authToken:
+                                                                          FFAppState()
+                                                                              .authToken,
+                                                                      seccion:
+                                                                          'Comunidad invitar a conectar',
+                                                                    );
+                                                                  }(),
+                                                                );
                                                               },
                                                               child: Icon(
                                                                 Icons
@@ -401,11 +416,11 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -486,7 +501,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                   )) !=
                                                   'Paciente')
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 2.0, 0.0, 0.0),
                                                   child: Row(
@@ -495,7 +510,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     15.0,
                                                                     0.0,
@@ -521,7 +536,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                   ),
                                                 ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 10.0),
                                                 child: Row(
@@ -531,11 +546,11 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 -1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       15.0,
                                                                       0.0,
@@ -636,7 +651,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                   ),
                                                 ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 8.0),
                                                 child: Row(
@@ -648,7 +663,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                     Flexible(
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     1.0,
                                                                     0.0,
@@ -679,7 +694,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
-                                                                    const TransitionInfo(
+                                                                    TransitionInfo(
                                                                   hasTransition:
                                                                       true,
                                                                   transitionType:
@@ -717,7 +732,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 5.0, 0.0, 8.0),
                                                 child: Row(
@@ -747,7 +762,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                               false)
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -766,8 +781,12 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     _model.apiLikes =
                                                                         await ComunidadLikesCall
@@ -810,7 +829,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                const ModalErrorCuentaWidget(),
+                                                                                ModalErrorCuentaWidget(),
                                                                           ),
                                                                         );
                                                                       },
@@ -841,7 +860,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                               true)
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -860,8 +879,12 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                                 onTap:
                                                                     () async {
                                                                   if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
                                                                               '') &&
                                                                       (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
                                                                               '')) {
                                                                     _model.apiLikesDelete =
                                                                         await ComunidadLikesCall
@@ -904,7 +927,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                                             padding:
                                                                                 MediaQuery.viewInsetsOf(context),
                                                                             child:
-                                                                                const ModalErrorCuentaWidget(),
+                                                                                ModalErrorCuentaWidget(),
                                                                           ),
                                                                         );
                                                                       },
@@ -928,7 +951,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                             ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -959,11 +982,11 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -1054,13 +1077,13 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                               );
                             },
                           ),
-                        ].addToEnd(const SizedBox(height: 50.0)),
+                        ].addToEnd(SizedBox(height: 50.0)),
                       ),
                     ),
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 17.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -1084,11 +1107,20 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                   ),
                                 }.withoutNulls,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: const TransitionInfo(
+                                  kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                   ),
                                 },
+                              );
+
+                              unawaited(
+                                () async {
+                                  await UserLogActivityCall.call(
+                                    authToken: FFAppState().authToken,
+                                    seccion: 'Comunidad Crear Post',
+                                  );
+                                }(),
                               );
                             }
 
@@ -1097,16 +1129,16 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                           text: FFLocalizations.of(context).getText(
                             'zko5vzom' /* Crear Publicación */,
                           ),
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.add_circle_outline,
                             size: 24.0,
                           ),
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1117,7 +1149,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -1127,13 +1159,13 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                       ],
                     ),
                   ),
-                ].addToEnd(const SizedBox(height: 100.0)),
+                ].addToEnd(SizedBox(height: 100.0)),
               ),
             ),
             wrapWithModel(
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
-              child: const MenuUsuarioWidget(
+              child: MenuUsuarioWidget(
                 index: 6,
               ),
             ),

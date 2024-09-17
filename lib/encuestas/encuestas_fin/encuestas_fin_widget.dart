@@ -2,6 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'encuestas_fin_model.dart';
 export 'encuestas_fin_model.dart';
@@ -59,7 +61,7 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -68,13 +70,13 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -103,7 +105,7 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
@@ -116,7 +118,7 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +128,7 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                                 context.pushNamed(
                                   'encuestas',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -139,9 +141,9 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -152,7 +154,7 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -162,7 +164,7 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                           ],
                         ),
                       ),
-                    ].addToEnd(const SizedBox(height: 100.0)),
+                    ].addToEnd(SizedBox(height: 100.0)),
                   ),
                 ),
               ),

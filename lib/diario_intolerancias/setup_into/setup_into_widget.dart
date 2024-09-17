@@ -10,6 +10,7 @@ import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'setup_into_model.dart';
 export 'setup_into_model.dart';
@@ -92,7 +93,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -108,9 +109,9 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                     children: [
                       Flexible(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 10.0, 15.0, 5.0),
                             child: Text(
                               '${FFAppState().nombre} necesitamos que respondas a las siguientes cuestiones, para terminar de configurar tu Diario de Intolerancias',
@@ -133,9 +134,9 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                     children: [
                       Flexible(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 15.0, 10.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -158,10 +159,10 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: Container(
                       width: 332.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -181,7 +182,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model
@@ -224,7 +225,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 2.0,
                                   borderRadius: 12.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 4.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
@@ -251,7 +252,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -302,7 +303,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 2.0,
                                     borderRadius: 12.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -328,7 +329,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
@@ -371,7 +372,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                   borderColor: Colors.transparent,
                                   borderWidth: 2.0,
                                   borderRadius: 12.0,
-                                  margin: const EdgeInsetsDirectional.fromSTEB(
+                                  margin: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 4.0),
                                   hidesUnderline: true,
                                   isOverButton: true,
@@ -398,7 +399,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -445,7 +446,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 2.0,
                                     borderRadius: 12.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -471,7 +472,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: FutureBuilder<ApiCallResponse>(
                                   future: DespIntoleranciasCall.call(),
@@ -538,7 +539,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       borderColor: Colors.transparent,
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
-                                      margin: const EdgeInsetsDirectional.fromSTEB(
+                                      margin: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
@@ -569,7 +570,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -619,7 +620,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 2.0,
                                     borderRadius: 12.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -648,7 +649,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FutureBuilder<ApiCallResponse>(
                                     future: DespIntoleranciasCall.call(),
@@ -717,7 +718,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -748,7 +749,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -798,7 +799,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 2.0,
                                     borderRadius: 12.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -827,7 +828,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FutureBuilder<ApiCallResponse>(
                                     future: DespIntoleranciasCall.call(),
@@ -896,7 +897,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -927,7 +928,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -977,7 +978,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 2.0,
                                     borderRadius: 12.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -1006,7 +1007,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FutureBuilder<ApiCallResponse>(
                                     future: DespIntoleranciasCall.call(),
@@ -1075,7 +1076,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                         borderColor: Colors.transparent,
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
-                                        margin: const EdgeInsetsDirectional.fromSTEB(
+                                        margin: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 4.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
@@ -1106,7 +1107,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 10.0),
                                   child: FlutterFlowDropDown<String>(
                                     controller: _model
@@ -1156,7 +1157,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 2.0,
                                     borderRadius: 12.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 4.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -1167,7 +1168,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                               ],
                             ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 16.0),
                             child: FFButtonWidget(
                               onPressed: ((_model.dropDownIntestinoValue ==
@@ -1269,7 +1270,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                             child: Padding(
                                               padding: MediaQuery.viewInsetsOf(
                                                   context),
-                                              child: const ModalFinSetupIntoWidget(),
+                                              child: ModalFinSetupIntoWidget(),
                                             ),
                                           );
                                         },
@@ -1283,9 +1284,9 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 44.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).azulPerm,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1298,7 +1299,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -1310,7 +1311,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                               ),
                             ),
                           ),
-                        ].addToEnd(const SizedBox(height: 100.0)),
+                        ].addToEnd(SizedBox(height: 100.0)),
                       ),
                     ),
                   ),
@@ -1320,7 +1321,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
             wrapWithModel(
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
-              child: const MenuUsuarioWidget(
+              child: MenuUsuarioWidget(
                 index: 0,
               ),
             ),

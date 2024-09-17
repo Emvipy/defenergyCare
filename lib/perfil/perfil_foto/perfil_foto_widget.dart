@@ -10,6 +10,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'perfil_foto_model.dart';
 export 'perfil_foto_model.dart';
@@ -115,20 +116,20 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 15.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -159,7 +160,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                           width: 120.0,
                           height: 120.0,
                           clipBehavior: Clip.antiAlias,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: Image.network(
@@ -170,7 +171,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -207,7 +208,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                         return GridView.builder(
                                           padding: EdgeInsets.zero,
                                           gridDelegate:
-                                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                              SliverGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 4,
                                             crossAxisSpacing: 1.0,
                                             mainAxisSpacing: 10.0,
@@ -222,7 +223,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                 childAvatares[
                                                     childAvataresIndex];
                                             return Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
@@ -231,7 +232,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                 highlightColor:
                                                     Colors.transparent,
                                                 onTap: () async {
-                                                  var shouldSetState = false;
+                                                  var _shouldSetState = false;
                                                   if (functions
                                                           .parseJsonValueToInteger(
                                                               getJsonField(
@@ -308,7 +309,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                           .uploadedLocalFile,
                                                     );
 
-                                                    shouldSetState = true;
+                                                    _shouldSetState = true;
                                                     if ((_model.apiResultqs1
                                                             ?.succeeded ??
                                                         true)) {
@@ -330,7 +331,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                                   .secondaryBackground,
                                                             ),
                                                           ),
-                                                          duration: const Duration(
+                                                          duration: Duration(
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
@@ -341,9 +342,8 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                       );
                                                     }
 
-                                                    if (shouldSetState) {
+                                                    if (_shouldSetState)
                                                       safeSetState(() {});
-                                                    }
                                                     return;
                                                   } else {
                                                     _model.apiResultyvv =
@@ -357,7 +357,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                       ),
                                                     );
 
-                                                    shouldSetState = true;
+                                                    _shouldSetState = true;
                                                     if ((_model.apiResultyvv
                                                             ?.succeeded ??
                                                         true)) {
@@ -379,7 +379,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                                   .secondaryBackground,
                                                             ),
                                                           ),
-                                                          duration: const Duration(
+                                                          duration: Duration(
                                                               milliseconds:
                                                                   4000),
                                                           backgroundColor:
@@ -390,21 +390,19 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                                       );
                                                     }
 
-                                                    if (shouldSetState) {
+                                                    if (_shouldSetState)
                                                       safeSetState(() {});
-                                                    }
                                                     return;
                                                   }
 
-                                                  if (shouldSetState) {
+                                                  if (_shouldSetState)
                                                     safeSetState(() {});
-                                                  }
                                                 },
                                                 child: Container(
                                                   width: 60.0,
                                                   height: 60.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: const BoxDecoration(
+                                                  decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.network(
@@ -428,7 +426,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -439,7 +437,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                   context.pushNamed(
                                     'perfil',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -452,9 +450,9 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -465,7 +463,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -475,7 +473,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                             ],
                           ),
                         ),
-                      ].addToEnd(const SizedBox(height: 100.0)),
+                      ].addToEnd(SizedBox(height: 100.0)),
                     ),
                   ),
                 ),
@@ -485,7 +483,7 @@ class _PerfilFotoWidgetState extends State<PerfilFotoWidget> {
                   wrapWithModel(
                     model: _model.menuUsuarioModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const MenuUsuarioWidget(
+                    child: MenuUsuarioWidget(
                       index: 0,
                     ),
                   ),

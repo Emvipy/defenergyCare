@@ -3,11 +3,13 @@ import '/comunidad/modal_reporta_post/modal_reporta_post_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'comunidad_comentarios_model.dart';
 export 'comunidad_comentarios_model.dart';
@@ -84,7 +86,7 @@ class _ComunidadComentariosWidgetState
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -95,12 +97,12 @@ class _ComunidadComentariosWidgetState
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: FutureBuilder<ApiCallResponse>(
                     future: (_model.apiRequestCompleter ??=
                             Completer<ApiCallResponse>()
                               ..complete(ComunidadComentariosCall.call(
-                                postId: widget.postId,
+                                postId: widget!.postId,
                               )))
                         .future,
                     builder: (context, snapshot) {
@@ -139,7 +141,7 @@ class _ComunidadComentariosWidgetState
                               await _model.waitForApiRequestCompleted();
                             },
                             child: ListView.separated(
-                              padding: const EdgeInsets.fromLTRB(
+                              padding: EdgeInsets.fromLTRB(
                                 0,
                                 0,
                                 0,
@@ -150,16 +152,16 @@ class _ComunidadComentariosWidgetState
                               scrollDirection: Axis.vertical,
                               itemCount: childComentarios.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 15.0),
+                                  SizedBox(height: 15.0),
                               itemBuilder: (context, childComentariosIndex) {
                                 final childComentariosItem =
                                     childComentarios[childComentariosIndex];
                                 return Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width: 350.0,
                                     decoration: BoxDecoration(
-                                      color: const Color(0x4163A4DC),
+                                      color: Color(0x4163A4DC),
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     child: Column(
@@ -170,7 +172,7 @@ class _ComunidadComentariosWidgetState
                                           children: [
                                             Container(
                                               width: 350.0,
-                                              decoration: const BoxDecoration(
+                                              decoration: BoxDecoration(
                                                 color: Color(0x7F63A4DC),
                                                 borderRadius: BorderRadius.only(
                                                   bottomLeft:
@@ -184,7 +186,7 @@ class _ComunidadComentariosWidgetState
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         3.0, 3.0, 3.0, 3.0),
                                                 child: Row(
@@ -193,7 +195,7 @@ class _ComunidadComentariosWidgetState
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child: Container(
                                                         width: 38.0,
@@ -201,7 +203,7 @@ class _ComunidadComentariosWidgetState
                                                         clipBehavior:
                                                             Clip.antiAlias,
                                                         decoration:
-                                                            const BoxDecoration(
+                                                            BoxDecoration(
                                                           shape:
                                                               BoxShape.circle,
                                                         ),
@@ -217,7 +219,7 @@ class _ComunidadComentariosWidgetState
                                                     Flexible(
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     0.0,
@@ -258,7 +260,7 @@ class _ComunidadComentariosWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -283,7 +285,7 @@ class _ComunidadComentariosWidgetState
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   5.0, 5.0, 5.0, 5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -315,7 +317,7 @@ class _ComunidadComentariosWidgetState
                                                 Flexible(
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
@@ -347,7 +349,7 @@ class _ComunidadComentariosWidgetState
                                                                         context),
                                                                 child:
                                                                     ModalReportaPostWidget(
-                                                                  postId: widget
+                                                                  postId: widget!
                                                                       .postId!,
                                                                 ),
                                                               ),
@@ -387,7 +389,7 @@ class _ComunidadComentariosWidgetState
                                                 Flexible(
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: InkWell(
                                                       splashColor:
@@ -463,18 +465,18 @@ class _ComunidadComentariosWidgetState
             ),
             Flexible(
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
                       width: 390.0,
                       height: 100.0,
-                      decoration: const BoxDecoration(),
+                      decoration: BoxDecoration(),
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -482,14 +484,14 @@ class _ComunidadComentariosWidgetState
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       15.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -566,9 +568,9 @@ class _ComunidadComentariosWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -0.9),
+                                alignment: AlignmentDirectional(0.0, -0.9),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -576,8 +578,9 @@ class _ComunidadComentariosWidgetState
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      var shouldSetState = false;
-                                      if (_model.textController.text != '') {
+                                      var _shouldSetState = false;
+                                      if (_model.textController.text != null &&
+                                          _model.textController.text != '') {
                                         _model.apiResultwzq =
                                             await ComunidadAgregaComentarioCall
                                                 .call(
@@ -585,11 +588,11 @@ class _ComunidadComentariosWidgetState
                                           comentario: functions
                                               .formatTextwithLineBreaksToXano(
                                                   _model.textController.text),
-                                          postId: widget.postId,
+                                          postId: widget!.postId,
                                           userId: FFAppState().xUserId,
                                         );
 
-                                        shouldSetState = true;
+                                        _shouldSetState = true;
                                         if ((_model.apiResultwzq?.succeeded ??
                                             true)) {
                                           safeSetState(() {
@@ -601,13 +604,12 @@ class _ComunidadComentariosWidgetState
                                               .waitForApiRequestCompleted();
                                         }
                                       } else {
-                                        if (shouldSetState) {
+                                        if (_shouldSetState)
                                           safeSetState(() {});
-                                        }
                                         return;
                                       }
 
-                                      if (shouldSetState) safeSetState(() {});
+                                      if (_shouldSetState) safeSetState(() {});
                                     },
                                     child: Container(
                                       width: 40.0,
@@ -619,7 +621,7 @@ class _ComunidadComentariosWidgetState
                                       ),
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Icon(
                                           Icons.send_outlined,
                                           color: FlutterFlowTheme.of(context)

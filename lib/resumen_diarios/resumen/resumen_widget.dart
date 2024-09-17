@@ -2,9 +2,11 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'resumen_model.dart';
 export 'resumen_model.dart';
@@ -47,7 +49,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: ResumenDiarioCall.call(
-        diarioId: widget.diarioId,
+        diarioId: widget!.diarioId,
         authToken: FFAppState().authToken,
       ),
       builder: (context, snapshot) {
@@ -92,9 +94,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                 },
               ),
               title: Align(
-                alignment: const AlignmentDirectional(-1.0, 0.0),
+                alignment: AlignmentDirectional(-1.0, 0.0),
                 child: Text(
-                  'Resumen del ${widget.fechaTxt}',
+                  'Resumen del ${widget!.fechaTxt}',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Open Sans',
                         color: FlutterFlowTheme.of(context).secondaryText,
@@ -103,20 +105,20 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                       ),
                 ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -140,10 +142,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: ClipRRect(
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(0.0),
                                               bottomRight: Radius.circular(0.0),
                                               topLeft: Radius.circular(0.0),
@@ -163,7 +165,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -208,7 +210,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 3.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -234,7 +236,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -294,7 +296,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Container(
                                         width: 90.0,
@@ -307,7 +309,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   'si'
                                               ? FlutterFlowTheme.of(context)
                                                   .primary
-                                              : const Color(0x0063A4DC),
+                                              : Color(0x0063A4DC),
                                           borderRadius:
                                               BorderRadius.circular(10.0),
                                         ),
@@ -366,7 +368,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Container(
                                       width: 90.0,
@@ -379,7 +381,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 'si'
                                             ? FlutterFlowTheme.of(context)
                                                 .primary
-                                            : const Color(0x0063A4DC),
+                                            : Color(0x0063A4DC),
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
@@ -437,7 +439,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Container(
                                       width: 90.0,
@@ -450,7 +452,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 'si'
                                             ? FlutterFlowTheme.of(context)
                                                 .primary
-                                            : const Color(0x0063A4DC),
+                                            : Color(0x0063A4DC),
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
@@ -470,7 +472,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ) !=
                                 '')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 3.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -504,7 +506,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ) !=
                                 '')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -533,7 +535,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ) !=
                                 '')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -560,7 +562,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 3.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -591,7 +593,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             Expanded(
                               child: FutureBuilder<ApiCallResponse>(
                                 future: ResumenActividadesRealizadasCall.call(
-                                  diarioId: widget.diarioId,
+                                  diarioId: widget!.diarioId,
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -622,7 +624,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       return GridView.builder(
                                         padding: EdgeInsets.zero,
                                         gridDelegate:
-                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                            SliverGridDelegateWithFixedCrossAxisCount(
                                           crossAxisCount: 2,
                                           crossAxisSpacing: 10.0,
                                           mainAxisSpacing: 10.0,
@@ -639,9 +641,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   childActividadesIndex];
                                           return Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
                                               child: Container(
@@ -663,11 +665,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   10.0),
@@ -695,7 +697,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                     Flexible(
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     5.0,
                                                                     0.0,
@@ -740,7 +742,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 3.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -766,16 +768,16 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 3.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: FutureBuilder<ApiCallResponse>(
                                   future: ResumenSintomasCall.call(
-                                    diarioId: widget.diarioId,
+                                    diarioId: widget!.diarioId,
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -804,7 +806,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ).toList();
 
                                         return ListView.separated(
-                                          padding: const EdgeInsets.fromLTRB(
+                                          padding: EdgeInsets.fromLTRB(
                                             0,
                                             0,
                                             0,
@@ -815,14 +817,14 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           scrollDirection: Axis.vertical,
                                           itemCount: childSintomas.length,
                                           separatorBuilder: (_, __) =>
-                                              const SizedBox(height: 10.0),
+                                              SizedBox(height: 10.0),
                                           itemBuilder:
                                               (context, childSintomasIndex) {
                                             final childSintomasItem =
                                                 childSintomas[
                                                     childSintomasIndex];
                                             return Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Container(
                                                 width: 350.0,
@@ -841,7 +843,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   0.0,
@@ -870,11 +872,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                     Flexible(
                                                       child: Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       0.0,
@@ -918,7 +920,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 3.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -944,7 +946,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -965,7 +967,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 5.0, 0.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -993,7 +995,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 3.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -1001,9 +1003,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -1046,7 +1048,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ) ==
                                 'no'))
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 3.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1054,9 +1056,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               children: [
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -1089,14 +1091,14 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 5.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Container(
                                         width: 350.0,
                                         decoration: BoxDecoration(
@@ -1106,13 +1108,13 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               BorderRadius.circular(10.0),
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsets.all(5.0),
+                                          padding: EdgeInsets.all(5.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Flexible(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           5.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -1150,7 +1152,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                               Container(
                                 width: 350.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -1159,7 +1161,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ) ==
                                         'no')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1194,7 +1196,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ) ==
                                         'si')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1229,7 +1231,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ) !=
                                         'n/a')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1264,7 +1266,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ) !=
                                         'n/a')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1299,7 +1301,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ) !=
                                         'n/a')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1334,7 +1336,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ) !=
                                         'n/a')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1369,7 +1371,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ) !=
                                         'n/a')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1409,13 +1411,13 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             ) ==
                             'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1423,7 +1425,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
                                           decoration: BoxDecoration(
@@ -1433,14 +1435,14 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 BorderRadius.circular(10.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(5.0),
+                                            padding: EdgeInsets.all(5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Flexible(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -1479,7 +1481,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ),
                                 Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -1490,7 +1492,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'no')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1528,7 +1530,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'si')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1566,7 +1568,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1604,7 +1606,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1642,7 +1644,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1680,7 +1682,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1718,7 +1720,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1760,13 +1762,13 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             ) ==
                             'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1774,7 +1776,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
                                           decoration: BoxDecoration(
@@ -1784,14 +1786,14 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 BorderRadius.circular(10.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(5.0),
+                                            padding: EdgeInsets.all(5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Flexible(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -1830,7 +1832,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ),
                                 Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -1841,7 +1843,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'no')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1879,7 +1881,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'si')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1917,7 +1919,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1955,7 +1957,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1993,7 +1995,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2031,7 +2033,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2069,7 +2071,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2111,13 +2113,13 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             ) ==
                             'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -2125,7 +2127,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
                                           decoration: BoxDecoration(
@@ -2135,14 +2137,14 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 BorderRadius.circular(10.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(5.0),
+                                            padding: EdgeInsets.all(5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Flexible(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -2181,7 +2183,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ),
                                 Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -2192,7 +2194,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'no')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2230,7 +2232,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'si')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2268,7 +2270,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2306,7 +2308,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2344,7 +2346,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2382,7 +2384,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2420,7 +2422,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2462,13 +2464,13 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             ) ==
                             'si')
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -2476,7 +2478,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Container(
                                           width: 350.0,
                                           decoration: BoxDecoration(
@@ -2486,14 +2488,14 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 BorderRadius.circular(10.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(5.0),
+                                            padding: EdgeInsets.all(5.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Flexible(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -2532,7 +2534,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ),
                                 Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -2543,7 +2545,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'no')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2581,7 +2583,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'si')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2619,7 +2621,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2657,7 +2659,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2695,7 +2697,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2733,7 +2735,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2771,7 +2773,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           'n/a')
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 5.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2809,7 +2811,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             ),
                           ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2817,9 +2819,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             children: [
                               Flexible(
                                 child: Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -2846,7 +2848,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             )! <
                             1)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -2854,9 +2856,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               children: [
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -2886,7 +2888,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             )! >=
                             1)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -2900,7 +2902,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   onTap: () async {
                                     _model.apiDesayuno =
                                         await ResumenCargaAlimentosCall.call(
-                                      diarioId: widget.diarioId,
+                                      diarioId: widget!.diarioId,
                                     );
 
                                     _model.momento = 1;
@@ -3349,7 +3351,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   onTap: () async {
                                     _model.apiComida =
                                         await ResumenCargaAlimentosCall.call(
-                                      diarioId: widget.diarioId,
+                                      diarioId: widget!.diarioId,
                                     );
 
                                     _model.momento = 2;
@@ -3798,7 +3800,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   onTap: () async {
                                     _model.apiCena =
                                         await ResumenCargaAlimentosCall.call(
-                                      diarioId: widget.diarioId,
+                                      diarioId: widget!.diarioId,
                                     );
 
                                     _model.momento = 3;
@@ -4244,7 +4246,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                           ),
                         if (_model.momento != null)
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 10.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -4252,9 +4254,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               children: [
                                 Flexible(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
@@ -4282,7 +4284,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             if (_model.carnes == 'si')
                               Container(
                                 width: 350.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -4296,7 +4298,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             BorderRadius.circular(10.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -4339,12 +4341,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                             Flexible(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 32.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -4434,10 +4436,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.carne1 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 10.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -4457,10 +4459,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.carne2 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -4480,10 +4482,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.carne3 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -4503,10 +4505,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.carne4 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -4526,10 +4528,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.carne5 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -4549,10 +4551,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.carne6 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -4572,10 +4574,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.carne7 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -4596,11 +4598,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.pescado == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -4615,7 +4617,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -4662,12 +4664,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -4761,10 +4763,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.pescado1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -4785,10 +4787,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.pescado2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -4809,10 +4811,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.pescado3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -4833,10 +4835,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.pescado4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -4857,10 +4859,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.pescado5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -4881,10 +4883,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.pescado6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -4905,10 +4907,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.pescado7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -4931,11 +4933,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.marisco == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -4950,7 +4952,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -4997,12 +4999,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -5096,10 +5098,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.marisco1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5120,10 +5122,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.marisco2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5144,10 +5146,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.marisco3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5168,10 +5170,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.marisco4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5192,10 +5194,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.marisco5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5216,10 +5218,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.marisco6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5240,10 +5242,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.marisco7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5266,11 +5268,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.lacteos == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -5285,7 +5287,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -5332,12 +5334,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -5431,10 +5433,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.lacteos1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5455,10 +5457,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.lacteos2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5479,10 +5481,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.lacteos3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5503,10 +5505,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.lacteos4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5527,10 +5529,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.lacteos5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5551,10 +5553,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.lacteos6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5575,10 +5577,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.lacteos7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5601,11 +5603,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.huevos == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -5620,7 +5622,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -5665,12 +5667,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -5764,10 +5766,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.huevos1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5790,11 +5792,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.cereales == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -5809,7 +5811,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -5856,12 +5858,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -5955,10 +5957,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.cereales1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -5979,10 +5981,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.cereales2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6003,10 +6005,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.cereales3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6027,10 +6029,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.cereales4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6051,10 +6053,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.cereales5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6075,10 +6077,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.cereales6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6099,10 +6101,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.cereales7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6125,11 +6127,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.frutas == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -6144,7 +6146,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -6189,12 +6191,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -6288,10 +6290,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.frutas1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6312,10 +6314,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.frutas2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6336,10 +6338,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.frutas3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6360,10 +6362,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.frutas4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6384,10 +6386,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.frutas5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6408,10 +6410,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.frutas6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6432,10 +6434,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.frutas7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6458,11 +6460,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.verduras == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -6477,7 +6479,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -6524,12 +6526,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -6621,10 +6623,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.verduras1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6645,10 +6647,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.verduras2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6669,10 +6671,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.verduras3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6693,10 +6695,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.verduras4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6717,10 +6719,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.verduras5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6741,10 +6743,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.verduras6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6765,10 +6767,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.verduras7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6791,11 +6793,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.legumbres == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -6810,7 +6812,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -6857,12 +6859,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -6956,10 +6958,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.legumbres1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -6980,10 +6982,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.legumbres2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7004,10 +7006,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.legumbres3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7028,10 +7030,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.legumbres4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7052,10 +7054,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.legumbres5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7076,10 +7078,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.legumbres6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7100,10 +7102,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.legumbres7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7126,11 +7128,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.secos == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -7145,7 +7147,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -7190,12 +7192,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -7289,10 +7291,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.secos1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7313,10 +7315,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.secos2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7337,10 +7339,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.secos3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7361,10 +7363,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.secos4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7385,10 +7387,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.secos5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7409,10 +7411,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.secos6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7433,10 +7435,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.secos7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7459,11 +7461,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.salsas == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -7478,7 +7480,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -7523,12 +7525,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -7622,10 +7624,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.salsa1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7646,10 +7648,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.salsa2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7670,10 +7672,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.salsa3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7694,10 +7696,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.salsa4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7718,10 +7720,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.salsa5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7742,10 +7744,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.salsa6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7766,10 +7768,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.salsa7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7792,11 +7794,11 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             if (_model.bebidas == 'si')
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Container(
                                   width: 350.0,
-                                  decoration: const BoxDecoration(),
+                                  decoration: BoxDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -7811,7 +7813,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -7858,12 +7860,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Flexible(
                                                 child: Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Container(
                                                     width: 100.0,
                                                     height: 32.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration: BoxDecoration(),
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -7957,10 +7959,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.bebidas1 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 10.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -7981,10 +7983,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.bebidas2 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -8005,10 +8007,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.bebidas3 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -8029,10 +8031,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.bebidas4 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -8053,10 +8055,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.bebidas5 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -8077,10 +8079,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.bebidas6 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -8101,10 +8103,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           _model.bebidas7 != '')
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     3.0, 5.0, 0.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -8130,7 +8132,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 )! >=
                                 1)
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -8139,10 +8141,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -8175,7 +8177,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     )! >=
                                     1))
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -8184,10 +8186,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     Flexible(
                                       child: Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -8215,7 +8217,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             if (_model.bebidas == 'si')
                               Container(
                                 width: 350.0,
-                                decoration: const BoxDecoration(),
+                                decoration: BoxDecoration(),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -8223,10 +8225,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.sintoma1 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 10.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -8246,10 +8248,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.sintoma2 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -8269,10 +8271,10 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         _model.sintoma3 != '')
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-1.0, 0.0),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 5.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
@@ -8293,14 +8295,14 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                           ],
                         ),
-                      ].addToEnd(const SizedBox(height: 150.0)),
+                      ].addToEnd(SizedBox(height: 150.0)),
                     ),
                   ),
                 ),
                 wrapWithModel(
                   model: _model.menuUsuarioModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const MenuUsuarioWidget(
+                  child: MenuUsuarioWidget(
                     index: 1,
                   ),
                 ),

@@ -1,13 +1,21 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -72,38 +80,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HubLoginWidget() : const WelcomeWidget(),
+          appStateNotifier.loggedIn ? HubLoginWidget() : WelcomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HubLoginWidget() : const WelcomeWidget(),
+              appStateNotifier.loggedIn ? HubLoginWidget() : WelcomeWidget(),
         ),
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => const HomeWidget(),
+          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
           name: 'signup',
           path: '/signup',
-          builder: (context, params) => const SignupWidget(),
+          builder: (context, params) => SignupWidget(),
         ),
         FFRoute(
           name: 'valida_email',
           path: '/validaEmail',
-          builder: (context, params) => const ValidaEmailWidget(),
+          builder: (context, params) => ValidaEmailWidget(),
         ),
         FFRoute(
           name: 'legal_uso',
           path: '/legalUso',
-          builder: (context, params) => const LegalUsoWidget(),
+          builder: (context, params) => LegalUsoWidget(),
         ),
         FFRoute(
           name: 'legal_investigacion',
           path: '/legalInvestigacion',
-          builder: (context, params) => const LegalInvestigacionWidget(),
+          builder: (context, params) => LegalInvestigacionWidget(),
         ),
         FFRoute(
           name: 'signUpEnfermedad',
@@ -118,97 +126,97 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'signUpEmpresa',
           path: '/signUpEmpresa',
-          builder: (context, params) => const SignUpEmpresaWidget(),
+          builder: (context, params) => SignUpEmpresaWidget(),
         ),
         FFRoute(
           name: 'signUp_detalle_enfermedad',
           path: '/signUpDetalleEnfermedad',
-          builder: (context, params) => const SignUpDetalleEnfermedadWidget(),
+          builder: (context, params) => SignUpDetalleEnfermedadWidget(),
         ),
         FFRoute(
           name: 'Home_empresa',
           path: '/homeEmpresa',
-          builder: (context, params) => const HomeEmpresaWidget(),
+          builder: (context, params) => HomeEmpresaWidget(),
         ),
         FFRoute(
           name: 'empresa_pdte_validacion',
           path: '/empresaPdteValidacion',
-          builder: (context, params) => const EmpresaPdteValidacionWidget(),
+          builder: (context, params) => EmpresaPdteValidacionWidget(),
         ),
         FFRoute(
           name: 'welcome',
           path: '/welcome',
-          builder: (context, params) => const WelcomeWidget(),
+          builder: (context, params) => WelcomeWidget(),
         ),
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: 'recordar_pass',
           path: '/recordarPass',
-          builder: (context, params) => const RecordarPassWidget(),
+          builder: (context, params) => RecordarPassWidget(),
         ),
         FFRoute(
           name: 'diario1',
           path: '/diario1',
-          builder: (context, params) => const Diario1Widget(),
+          builder: (context, params) => Diario1Widget(),
         ),
         FFRoute(
           name: 'menu_diario',
           path: '/menuDiario',
-          builder: (context, params) => const MenuDiarioWidget(),
+          builder: (context, params) => MenuDiarioWidget(),
         ),
         FFRoute(
           name: 'diario2',
           path: '/diario2',
-          builder: (context, params) => const Diario2Widget(),
+          builder: (context, params) => Diario2Widget(),
         ),
         FFRoute(
           name: 'diario4',
           path: '/diario3',
-          builder: (context, params) => const Diario4Widget(),
+          builder: (context, params) => Diario4Widget(),
         ),
         FFRoute(
           name: 'diario3',
           path: '/diario4',
-          builder: (context, params) => const Diario3Widget(),
+          builder: (context, params) => Diario3Widget(),
         ),
         FFRoute(
           name: 'diario5',
           path: '/diario5',
-          builder: (context, params) => const Diario5Widget(),
+          builder: (context, params) => Diario5Widget(),
         ),
         FFRoute(
           name: 'diario6',
           path: '/diario6',
-          builder: (context, params) => const Diario6Widget(),
+          builder: (context, params) => Diario6Widget(),
         ),
         FFRoute(
           name: 'diario7',
           path: '/diario7',
-          builder: (context, params) => const Diario7Widget(),
+          builder: (context, params) => Diario7Widget(),
         ),
         FFRoute(
           name: 'diario8',
           path: '/diario8',
-          builder: (context, params) => const Diario8Widget(),
+          builder: (context, params) => Diario8Widget(),
         ),
         FFRoute(
           name: 'diario9',
           path: '/diario9',
-          builder: (context, params) => const Diario9Widget(),
+          builder: (context, params) => Diario9Widget(),
         ),
         FFRoute(
           name: 'diarioFin',
           path: '/diarioFin',
-          builder: (context, params) => const DiarioFinWidget(),
+          builder: (context, params) => DiarioFinWidget(),
         ),
         FFRoute(
           name: 'hubLogin',
           path: '/hubLogin',
-          builder: (context, params) => const HubLoginWidget(),
+          builder: (context, params) => HubLoginWidget(),
         ),
         FFRoute(
           name: 'setup',
@@ -223,27 +231,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'diario_sueno1',
           path: '/diarioSueno1',
-          builder: (context, params) => const DiarioSueno1Widget(),
+          builder: (context, params) => DiarioSueno1Widget(),
         ),
         FFRoute(
           name: 'diario_sueno2',
           path: '/diario_sueno2',
-          builder: (context, params) => const DiarioSueno2Widget(),
+          builder: (context, params) => DiarioSueno2Widget(),
         ),
         FFRoute(
           name: 'diario_suenoFin',
           path: '/diario_suenoFin',
-          builder: (context, params) => const DiarioSuenoFinWidget(),
+          builder: (context, params) => DiarioSuenoFinWidget(),
         ),
         FFRoute(
           name: 'diario_sueno3',
           path: '/diario_sueno3',
-          builder: (context, params) => const DiarioSueno3Widget(),
+          builder: (context, params) => DiarioSueno3Widget(),
         ),
         FFRoute(
           name: 'setupInto',
           path: '/setupInto',
-          builder: (context, params) => const SetupIntoWidget(),
+          builder: (context, params) => SetupIntoWidget(),
         ),
         FFRoute(
           name: 'diario_Into1',
@@ -258,32 +266,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'menu_intolerancias',
           path: '/menuIntolerancias',
-          builder: (context, params) => const MenuIntoleranciasWidget(),
+          builder: (context, params) => MenuIntoleranciasWidget(),
         ),
         FFRoute(
           name: 'diario_Into2',
           path: '/diario_Into2',
-          builder: (context, params) => const DiarioInto2Widget(),
+          builder: (context, params) => DiarioInto2Widget(),
         ),
         FFRoute(
           name: 'diarioIntoFin',
           path: '/diarioIntoFin',
-          builder: (context, params) => const DiarioIntoFinWidget(),
+          builder: (context, params) => DiarioIntoFinWidget(),
         ),
         FFRoute(
           name: 'diario_Into3',
           path: '/diario_Into3',
-          builder: (context, params) => const DiarioInto3Widget(),
+          builder: (context, params) => DiarioInto3Widget(),
         ),
         FFRoute(
           name: 'diario_Into4',
           path: '/diario_Into4',
-          builder: (context, params) => const DiarioInto4Widget(),
+          builder: (context, params) => DiarioInto4Widget(),
         ),
         FFRoute(
           name: 'listado',
           path: '/listado',
-          builder: (context, params) => const ListadoWidget(),
+          builder: (context, params) => ListadoWidget(),
         ),
         FFRoute(
           name: 'resumen',
@@ -302,17 +310,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'reporteSalud',
           path: '/reporteSalud',
-          builder: (context, params) => const ReporteSaludWidget(),
+          builder: (context, params) => ReporteSaludWidget(),
         ),
         FFRoute(
           name: 'reporteIntolerancias',
           path: '/reporteIntolerancias',
-          builder: (context, params) => const ReporteIntoleranciasWidget(),
+          builder: (context, params) => ReporteIntoleranciasWidget(),
         ),
         FFRoute(
           name: 'noticias',
           path: '/noticias',
-          builder: (context, params) => const NoticiasWidget(),
+          builder: (context, params) => NoticiasWidget(),
         ),
         FFRoute(
           name: 'noticiasDetalle',
@@ -327,12 +335,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'invitarAmigo',
           path: '/invitarAmigo',
-          builder: (context, params) => const InvitarAmigoWidget(),
+          builder: (context, params) => InvitarAmigoWidget(),
         ),
         FFRoute(
           name: 'encuestas',
           path: '/encuestas',
-          builder: (context, params) => const EncuestasWidget(),
+          builder: (context, params) => EncuestasWidget(),
         ),
         FFRoute(
           name: 'encuestasFin',
@@ -347,7 +355,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'marketplace',
           path: '/marketplace',
-          builder: (context, params) => const MarketplaceWidget(),
+          builder: (context, params) => MarketplaceWidget(),
         ),
         FFRoute(
           name: 'marketplaceProductos',
@@ -376,7 +384,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'comunidad',
           path: '/comunidad',
-          builder: (context, params) => const ComunidadWidget(),
+          builder: (context, params) => ComunidadWidget(),
         ),
         FFRoute(
           name: 'comunidad_crea_post',
@@ -401,7 +409,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'chat_conversaciones',
           path: '/chatConversaciones',
-          builder: (context, params) => const ChatConversacionesWidget(),
+          builder: (context, params) => ChatConversacionesWidget(),
         ),
         FFRoute(
           name: 'chat_mensajes',
@@ -420,57 +428,57 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'perfil',
           path: '/perfil',
-          builder: (context, params) => const PerfilWidget(),
+          builder: (context, params) => PerfilWidget(),
         ),
         FFRoute(
           name: 'perfil_foto',
           path: '/perfilFoto',
-          builder: (context, params) => const PerfilFotoWidget(),
+          builder: (context, params) => PerfilFotoWidget(),
         ),
         FFRoute(
           name: 'perfil_idiomas',
           path: '/perfilIdiomas',
-          builder: (context, params) => const PerfilIdiomasWidget(),
+          builder: (context, params) => PerfilIdiomasWidget(),
         ),
         FFRoute(
           name: 'perfil_faqs',
           path: '/perfilFaqs',
-          builder: (context, params) => const PerfilFaqsWidget(),
+          builder: (context, params) => PerfilFaqsWidget(),
         ),
         FFRoute(
           name: 'perfil_contacto',
           path: '/perfilContacto',
-          builder: (context, params) => const PerfilContactoWidget(),
+          builder: (context, params) => PerfilContactoWidget(),
         ),
         FFRoute(
           name: 'perfil_notificaciones',
           path: '/perfilNotificaciones',
-          builder: (context, params) => const PerfilNotificacionesWidget(),
+          builder: (context, params) => PerfilNotificacionesWidget(),
         ),
         FFRoute(
           name: 'perfil_medicamentos',
           path: '/perfilMedicamentos',
-          builder: (context, params) => const PerfilMedicamentosWidget(),
+          builder: (context, params) => PerfilMedicamentosWidget(),
         ),
         FFRoute(
           name: 'perfil_datos_personales',
           path: '/perfilDatosPersonales',
-          builder: (context, params) => const PerfilDatosPersonalesWidget(),
+          builder: (context, params) => PerfilDatosPersonalesWidget(),
         ),
         FFRoute(
           name: 'perfil_datos_medicos',
           path: '/perfilDatosMedicos',
-          builder: (context, params) => const PerfilDatosMedicosWidget(),
+          builder: (context, params) => PerfilDatosMedicosWidget(),
         ),
         FFRoute(
           name: 'perfil_asociaciones',
           path: '/perfilAsociaciones',
-          builder: (context, params) => const PerfilAsociacionesWidget(),
+          builder: (context, params) => PerfilAsociacionesWidget(),
         ),
         FFRoute(
           name: 'emp_encuestas',
           path: '/empEncuestas',
-          builder: (context, params) => const EmpEncuestasWidget(),
+          builder: (context, params) => EmpEncuestasWidget(),
         ),
         FFRoute(
           name: 'emp_detalle_encuesta',
@@ -503,22 +511,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'emp_crea_encuesta1',
           path: '/empCreaEncuesta1',
-          builder: (context, params) => const EmpCreaEncuesta1Widget(),
+          builder: (context, params) => EmpCreaEncuesta1Widget(),
         ),
         FFRoute(
           name: 'emp_crea_encuesta2',
           path: '/empCreaEncuesta2',
-          builder: (context, params) => const EmpCreaEncuesta2Widget(),
+          builder: (context, params) => EmpCreaEncuesta2Widget(),
         ),
         FFRoute(
           name: 'emp_crea_encuesta3',
           path: '/empCreaEncuesta3',
-          builder: (context, params) => const EmpCreaEncuesta3Widget(),
+          builder: (context, params) => EmpCreaEncuesta3Widget(),
         ),
         FFRoute(
           name: 'emp_crea_edita_pregunta',
           path: '/empCreaEditaPregunta',
-          builder: (context, params) => const EmpCreaEditaPreguntaWidget(),
+          builder: (context, params) => EmpCreaEditaPreguntaWidget(),
         ),
         FFRoute(
           name: 'encuestasDetalleCopy',
@@ -551,6 +559,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'empresa_pdte_validacionCopy',
+          path: '/empresaPdteValidacionCopy',
+          builder: (context, params) => EmpresaPdteValidacionCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -788,7 +801,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

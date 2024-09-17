@@ -13927,6 +13927,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
+  // empresa_pdte_validacionCopy
+  {
+    '92jx22q7': {
+      'es': '50%',
+      'en': '',
+    },
+    'xzewre61': {
+      'es': 'Tu cuenta aún no ha sido validada por el Administrador',
+      'en': '',
+    },
+    '98by5gvu': {
+      'es': 'Te avisaremos por email en cuanto esté todo listo. ',
+      'en': '',
+    },
+    '0xwyifpz': {
+      'es': 'Entendido',
+      'en': '',
+    },
+    'bng3gmva': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
   // modal_cancela_sign
   {
     '9brglm8b': {

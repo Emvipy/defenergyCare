@@ -2,8 +2,11 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'legal_investigacion_model.dart';
 export 'legal_investigacion_model.dart';
 
@@ -91,7 +94,7 @@ class _LegalInvestigacionWidgetState extends State<LegalInvestigacionWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -109,7 +112,7 @@ class _LegalInvestigacionWidgetState extends State<LegalInvestigacionWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -138,7 +141,7 @@ class _LegalInvestigacionWidgetState extends State<LegalInvestigacionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -166,7 +169,7 @@ class _LegalInvestigacionWidgetState extends State<LegalInvestigacionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -194,7 +197,7 @@ class _LegalInvestigacionWidgetState extends State<LegalInvestigacionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -222,7 +225,7 @@ class _LegalInvestigacionWidgetState extends State<LegalInvestigacionWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,

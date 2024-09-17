@@ -11,6 +11,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'noticias_model.dart';
 export 'noticias_model.dart';
@@ -94,7 +95,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -106,28 +107,28 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 0.0, 15.0, 20.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Expanded(
                                   child: Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                    child: SizedBox(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Container(
                                       width: 350.0,
                                       child: TextFormField(
                                         controller: _model.textController,
                                         focusNode: _model.textFieldFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.textController',
-                                          const Duration(milliseconds: 100),
+                                          Duration(milliseconds: 100),
                                           () => safeSetState(() {}),
                                         ),
                                         autofocus: false,
@@ -154,7 +155,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                     fontStyle: FontStyle.italic,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 2.0,
                                             ),
@@ -162,7 +163,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                 BorderRadius.circular(30.0),
                                           ),
                                           focusedBorder: OutlineInputBorder(
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Color(0x00000000),
                                               width: 2.0,
                                             ),
@@ -208,7 +209,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                         ?.clear();
                                                     safeSetState(() {});
                                                   },
-                                                  child: const Icon(
+                                                  child: Icon(
                                                     Icons.clear,
                                                     size: 24.0,
                                                   ),
@@ -229,7 +230,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 1.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -260,7 +261,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                           ),
                           if (_model.mostrarFiltro == 'si')
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 15.0, 20.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -322,7 +323,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                     borderColor: Colors.transparent,
                                     borderWidth: 2.0,
                                     borderRadius: 10.0,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(
+                                    margin: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
                                     hidesUnderline: true,
                                     isOverButton: true,
@@ -365,7 +366,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                   ).toList();
 
                                   return ListView.separated(
-                                    padding: const EdgeInsets.fromLTRB(
+                                    padding: EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -376,13 +377,13 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                     scrollDirection: Axis.vertical,
                                     itemCount: childNoticias.length,
                                     separatorBuilder: (_, __) =>
-                                        const SizedBox(height: 15.0),
+                                        SizedBox(height: 15.0),
                                     itemBuilder: (context, childNoticiasIndex) {
                                       final childNoticiasItem =
                                           childNoticias[childNoticiasIndex];
                                       return Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Material(
                                           color: Colors.transparent,
                                           elevation: 4.0,
@@ -426,7 +427,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
                                                         kTransitionInfoKey:
-                                                            const TransitionInfo(
+                                                            TransitionInfo(
                                                           hasTransition: true,
                                                           transitionType:
                                                               PageTransitionType
@@ -444,11 +445,11 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 -1.0, -0.6),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       5.0,
                                                                       5.0,
@@ -475,11 +476,11 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                       Flexible(
                                                         child: Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         5.0,
@@ -527,7 +528,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 3.0, 5.0, 5.0),
                                                   child: Row(
@@ -566,7 +567,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 5.0, 5.0),
                                                   child: Row(
@@ -575,7 +576,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -614,17 +615,17 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                               );
                             },
                           ),
-                        ].addToEnd(const SizedBox(height: 50.0)),
+                        ].addToEnd(SizedBox(height: 50.0)),
                       ),
                     ),
                   ),
                 ),
                 if (FFAppState().perfilId != 1)
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 1.0),
+                    alignment: AlignmentDirectional(0.0, 1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -652,7 +653,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -668,9 +669,9 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -688,7 +689,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                       ),
                     ),
                   ),
-              ].addToEnd(const SizedBox(height: 100.0)),
+              ].addToEnd(SizedBox(height: 100.0)),
             ),
             if (!(isWeb
                 ? MediaQuery.viewInsetsOf(context).bottom > 0
@@ -696,7 +697,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 0,
                 ),
               ),

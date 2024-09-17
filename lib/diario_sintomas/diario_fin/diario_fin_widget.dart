@@ -3,8 +3,10 @@ import '/diario_sintomas/modal_push/modal_push_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'diario_fin_model.dart';
 export 'diario_fin_model.dart';
@@ -70,7 +72,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
               backgroundColor: FlutterFlowTheme.of(context).background,
               automaticallyImplyLeading: false,
               title: Align(
-                alignment: const AlignmentDirectional(-1.0, 0.0),
+                alignment: AlignmentDirectional(-1.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
                     'xvg4soab' /* Diario de Síntomas */,
@@ -83,7 +85,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                       ),
                 ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -98,17 +100,17 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                       'Crea tu primer diario para participar')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Container(
                         width: 397.0,
                         height: 293.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Flexible(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     15.0, 10.0, 15.0, 10.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -144,15 +146,15 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                       'Crea tu primer diario para participar')
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Container(
                         width: 397.0,
-                        decoration: const BoxDecoration(),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 0.0, 15.0, 1.0),
                               child: RichText(
                                 textScaler: MediaQuery.of(context).textScaler,
@@ -183,7 +185,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
  Es tu posición en el ranking... */
                                         ,
                                       ),
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontSize: 16.0,
                                       ),
                                     )
@@ -213,7 +215,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                     ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         FFAppState().deleteDiarioId();
@@ -264,7 +266,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                                 onTap: () => FocusScope.of(context).unfocus(),
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
-                                  child: const ModalPushWidget(),
+                                  child: ModalPushWidget(),
                                 ),
                               );
                             },
@@ -273,7 +275,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                           context.goNamed(
                             'Home',
                             extra: <String, dynamic>{
-                              kTransitionInfoKey: const TransitionInfo(
+                              kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
                                 transitionType: PageTransitionType.fade,
                               ),
@@ -287,10 +289,10 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                       options: FFButtonOptions(
                         width: 300.0,
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -299,7 +301,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

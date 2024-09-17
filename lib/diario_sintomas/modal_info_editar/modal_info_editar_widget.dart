@@ -2,6 +2,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'modal_info_editar_model.dart';
 export 'modal_info_editar_model.dart';
 
@@ -37,13 +40,13 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, -0.3),
+      alignment: AlignmentDirectional(0.0, -0.3),
       child: Container(
         width: 350.0,
         height: 320.0,
         decoration: BoxDecoration(
-          color: const Color(0xDAFFFFFF),
-          boxShadow: const [
+          color: Color(0xDAFFFFFF),
+          boxShadow: [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3B1D2429),
@@ -55,7 +58,7 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
           ],
           borderRadius: BorderRadius.circular(10.0),
           border: Border.all(
-            color: const Color(0xE5FFFFFF),
+            color: Color(0xE5FFFFFF),
             width: 2.0,
           ),
         ),
@@ -63,13 +66,13 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(1.0, 0.0),
+                      alignment: AlignmentDirectional(1.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -90,7 +93,7 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -110,7 +113,7 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -132,9 +135,9 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
             ),
             Flexible(
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 1.0),
+                alignment: AlignmentDirectional(0.0, 1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       Navigator.pop(context);
@@ -146,9 +149,9 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
                       width: 300.0,
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -157,7 +160,7 @@ class _ModalInfoEditarWidgetState extends State<ModalInfoEditarWidget> {
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

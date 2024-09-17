@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'diario3_model.dart';
@@ -142,7 +144,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
               context.pushNamed(
                 'diario2',
                 extra: <String, dynamic>{
-                  kTransitionInfoKey: const TransitionInfo(
+                  kTransitionInfoKey: TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.fade,
                     duration: Duration(milliseconds: 0),
@@ -152,7 +154,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'fr8voisn' /* Diario de Síntomas */,
@@ -165,7 +167,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -180,14 +182,14 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 10.0, 0.0, 10.0),
                           child: Container(
                             width: double.infinity,
                             height: 24.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -197,7 +199,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: LinearPercentIndicator(
                                         percent: 0.45,
                                         width: 300.0,
@@ -223,7 +225,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        barRadius: const Radius.circular(10.0),
+                                        barRadius: Radius.circular(10.0),
                                         padding: EdgeInsets.zero,
                                       ),
                                     ),
@@ -235,7 +237,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 0.0, 15.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
@@ -250,7 +252,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             60.0, 0.0, 60.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -311,14 +313,14 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                     child: Stack(
                                       children: [
                                         Align(
-                                          alignment: const AlignmentDirectional(
+                                          alignment: AlignmentDirectional(
                                               -0.12, -0.95),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -328,7 +330,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.cabeza == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -363,7 +365,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.cabeza == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -404,14 +406,14 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                         ),
                                         Align(
-                                          alignment: const AlignmentDirectional(
+                                          alignment: AlignmentDirectional(
                                               -0.12, -0.75),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -421,7 +423,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.garganta == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -457,7 +459,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.garganta == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -500,13 +502,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.06, -0.57),
+                                              AlignmentDirectional(0.06, -0.57),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -516,7 +518,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.corazon == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -551,7 +553,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.corazon == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -593,13 +595,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.8, -0.65),
+                                              AlignmentDirectional(-0.8, -0.65),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -609,7 +611,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.hombroIzq == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -645,7 +647,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.hombroIzq == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -688,13 +690,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.6, -0.65),
+                                              AlignmentDirectional(0.6, -0.65),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -704,7 +706,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.hombroDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -740,7 +742,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.hombroDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -783,13 +785,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.6, -0.3),
+                                              AlignmentDirectional(0.6, -0.3),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -799,7 +801,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.codoDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -834,7 +836,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.codoDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -875,14 +877,14 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                         ),
                                         Align(
-                                          alignment: const AlignmentDirectional(
+                                          alignment: AlignmentDirectional(
                                               -0.13, -0.33),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -892,7 +894,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.abdomen == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -927,7 +929,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.abdomen == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -969,13 +971,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.85, -0.3),
+                                              AlignmentDirectional(-0.85, -0.3),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.8),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -985,7 +987,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.codoIzq == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1020,7 +1022,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.codoIzq == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1062,13 +1064,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.9, -0.1),
+                                              AlignmentDirectional(-0.9, -0.1),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1078,7 +1080,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munecaIzq == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1114,7 +1116,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munecaIzq == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1157,13 +1159,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.7, -0.1),
+                                              AlignmentDirectional(0.7, -0.1),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1173,7 +1175,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munecaDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1209,7 +1211,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munecaDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1252,13 +1254,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.55, 0.15),
+                                              AlignmentDirectional(-0.55, 0.15),
                                           child: Container(
                                             width: 74.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, -0.4),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1268,7 +1270,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.musloIzq == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1304,7 +1306,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.musloIzq == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1347,13 +1349,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.24, 0.15),
+                                              AlignmentDirectional(0.24, 0.15),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1363,7 +1365,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.musloDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1399,7 +1401,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.musloDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1442,13 +1444,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.25, 0.4),
+                                              AlignmentDirectional(0.25, 0.4),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1458,7 +1460,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.rodillaDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1494,7 +1496,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.rodillaDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1537,13 +1539,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.5, 0.4),
+                                              AlignmentDirectional(-0.5, 0.4),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1553,7 +1555,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.rodillaIzq == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1591,7 +1593,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.rodillaIzq == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1634,13 +1636,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.5, 0.75),
+                                              AlignmentDirectional(-0.5, 0.75),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1650,7 +1652,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.tobilloIzq == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1686,7 +1688,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.tobilloIzq == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1729,15 +1731,15 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.25, 0.75),
+                                              AlignmentDirectional(0.25, 0.75),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.1),
+                                                AlignmentDirectional(0.0, 0.1),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1747,7 +1749,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.tobilloDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1783,7 +1785,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.tobilloDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1840,13 +1842,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.08, -0.73),
+                                              AlignmentDirectional(0.08, -0.73),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1856,7 +1858,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.cervical == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1892,7 +1894,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.cervical == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1935,13 +1937,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.08, -0.53),
+                                              AlignmentDirectional(0.08, -0.53),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1951,7 +1953,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.espalda == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -1986,7 +1988,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.espalda == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2028,13 +2030,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.08, -0.27),
+                                              AlignmentDirectional(0.08, -0.27),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -2044,7 +2046,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.lumbar == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2079,7 +2081,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.lumbar == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2121,13 +2123,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.8, -0.03),
+                                              AlignmentDirectional(-0.8, -0.03),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -2137,7 +2139,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munIz == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2172,7 +2174,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munIz == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2214,13 +2216,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.9, -0.03),
+                                              AlignmentDirectional(0.9, -0.03),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -2230,7 +2232,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2265,7 +2267,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.munDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2307,13 +2309,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.4, 0.0),
+                                              AlignmentDirectional(0.4, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -2323,7 +2325,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.gluteoDer == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2359,7 +2361,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.gluteoDer == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2402,13 +2404,13 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.23, 0.0),
+                                              AlignmentDirectional(-0.23, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 30.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
@@ -2418,7 +2420,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.gluteoIzq == 'si')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2454,7 +2456,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                                   if (_model.gluteoIzq == 'no')
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: InkWell(
                                                         splashColor:
@@ -2506,7 +2508,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -2549,7 +2551,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                   context.pushNamed(
                                     'diario4',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -2564,9 +2566,9 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -2577,7 +2579,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -2589,7 +2591,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -2633,7 +2635,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                       context.pushNamed(
                                         'diario4',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -2649,9 +2651,9 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -2662,7 +2664,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -2678,7 +2680,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                       ),
                       if (FFAppState().editandoDiario == 'no')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2731,7 +2733,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .success,
@@ -2743,7 +2745,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         context.pushNamed(
                                           'Home',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -2761,11 +2763,11 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x0063A4DC),
+                                  color: Color(0x0063A4DC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -2792,7 +2794,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                         ),
                       if (FFAppState().editandoDiario == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -2845,7 +2847,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                               ),
                                             ),
                                             duration:
-                                                const Duration(milliseconds: 4000),
+                                                Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .success,
@@ -2857,7 +2859,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         context.pushNamed(
                                           'Home',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
+                                            kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -2875,11 +2877,11 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x0063A4DC),
+                                  color: Color(0x0063A4DC),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

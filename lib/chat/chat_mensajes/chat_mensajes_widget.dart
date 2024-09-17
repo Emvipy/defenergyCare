@@ -3,6 +3,7 @@ import '/chat/modal_elimina_mensaje/modal_elimina_mensaje_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
@@ -10,6 +11,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'chat_mensajes_model.dart';
 export 'chat_mensajes_model.dart';
@@ -43,11 +45,11 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
       await Future.delayed(const Duration(milliseconds: 1000));
       await _model.columnController?.animateTo(
         _model.columnController!.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 100),
+        duration: Duration(milliseconds: 100),
         curve: Curves.ease,
       );
       _model.instantTimer = InstantTimer.periodic(
-        duration: const Duration(milliseconds: 10000),
+        duration: Duration(milliseconds: 10000),
         callback: (timer) async {
           safeSetState(() => _model.apiRequestCompleter = null);
           await _model.waitForApiRequestCompleted();
@@ -93,7 +95,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
               context.pushNamed(
                 'chat_conversaciones',
                 extra: <String, dynamic>{
-                  kTransitionInfoKey: const TransitionInfo(
+                  kTransitionInfoKey: TransitionInfo(
                     hasTransition: true,
                     transitionType: PageTransitionType.fade,
                   ),
@@ -103,7 +105,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
           ),
           title: Text(
             valueOrDefault<String>(
-              widget.nombre,
+              widget!.nombre,
               'Mensajes',
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -113,7 +115,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -126,7 +128,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                   flex: 90,
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: SingleChildScrollView(
                       controller: _model.columnController,
                       child: Column(
@@ -136,7 +138,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                             future: (_model.apiRequestCompleter ??=
                                     Completer<ApiCallResponse>()
                                       ..complete(ChatMensajesCall.call(
-                                        conversacionId: widget.conversacionId,
+                                        conversacionId: widget!.conversacionId,
                                         authToken: FFAppState().authToken,
                                       )))
                                 .future,
@@ -166,7 +168,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                   ).toList();
 
                                   return ListView.builder(
-                                    padding: const EdgeInsets.fromLTRB(
+                                    padding: EdgeInsets.fromLTRB(
                                       0,
                                       0,
                                       0,
@@ -181,7 +183,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                           childMensajes[childMensajesIndex];
                                       return Container(
                                         width: 393.0,
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -193,7 +195,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                   r'''$.user_emisor''',
                                                 )))
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 5.0),
                                                 child: Row(
@@ -209,11 +211,11 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   -1.0, -1.0),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         3.0,
                                                                         0.0,
@@ -238,13 +240,13 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                         ),
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Container(
                                                             width: 320.0,
                                                             decoration:
                                                                 BoxDecoration(
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0x9963A4DC),
                                                               borderRadius:
                                                                   BorderRadius
@@ -269,12 +271,12 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                                             .max,
                                                                     children: [
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               3.0,
                                                                               3.0,
                                                                               3.0,
@@ -295,12 +297,12 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                                         ),
                                                                       ),
                                                                       Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               3.0,
                                                                               3.0,
                                                                               3.0,
@@ -342,7 +344,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                   r'''$.user_emisor''',
                                                 )))
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         5.0, 5.0, 5.0, 5.0),
                                                 child: InkWell(
@@ -379,9 +381,9 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                                 r'''$.id''',
                                                               ),
                                                               conversacionId:
-                                                                  widget
+                                                                  widget!
                                                                       .conversacionId!,
-                                                              nombre: widget
+                                                              nombre: widget!
                                                                   .nombre!,
                                                             ),
                                                           ),
@@ -405,11 +407,11 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     1.0, -1.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           3.0,
                                                                           0.0,
@@ -434,13 +436,13 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Container(
                                                               width: 320.0,
                                                               decoration:
                                                                   BoxDecoration(
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0x9AFFA1B0),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -460,12 +462,12 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           3.0,
                                                                           3.0,
                                                                           3.0,
@@ -490,12 +492,12 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                                   ),
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             -1.0,
                                                                             -1.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           3.0,
                                                                           3.0,
                                                                           3.0,
@@ -539,7 +541,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                               );
                             },
                           ),
-                        ].addToEnd(const SizedBox(height: 30.0)),
+                        ].addToEnd(SizedBox(height: 30.0)),
                       ),
                     ),
                   ),
@@ -547,23 +549,23 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                 Expanded(
                   flex: 15,
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 1.0),
+                    alignment: AlignmentDirectional(0.0, 1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 25.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
                               width: 390.0,
                               height: 89.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 5.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -573,7 +575,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   15.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model.textController,
@@ -582,7 +584,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                             onChanged: (_) =>
                                                 EasyDebounce.debounce(
                                               '_model.textController',
-                                              const Duration(milliseconds: 100),
+                                              Duration(milliseconds: 100),
                                               () => safeSetState(() {}),
                                             ),
                                             autofocus: false,
@@ -671,10 +673,10 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, -0.9),
+                                            AlignmentDirectional(0.0, -0.9),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -683,6 +685,8 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               if (_model.textController.text !=
+                                                      null &&
+                                                  _model.textController.text !=
                                                       '') {
                                                 _model.apiResult8ml =
                                                     await ChatCreaMensajeCall
@@ -690,7 +694,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                   authToken:
                                                       FFAppState().authToken,
                                                   conversacionId:
-                                                      widget.conversacionId,
+                                                      widget!.conversacionId,
                                                   texto: functions
                                                       .formatTextwithLineBreaksToXano(
                                                           _model.textController
@@ -721,7 +725,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Icon(
                                                   Icons.send_outlined,

@@ -9,6 +9,8 @@ import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'encuestas_detalle_copy_model.dart';
 export 'encuestas_detalle_copy_model.dart';
@@ -77,20 +79,20 @@ class _EncuestasDetalleCopyWidgetState
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -99,7 +101,7 @@ class _EncuestasDetalleCopyWidgetState
                           Flexible(
                             child: Text(
                               valueOrDefault<String>(
-                                widget.titulo,
+                                widget!.titulo,
                                 '-',
                               ),
                               textAlign: TextAlign.center,
@@ -120,12 +122,12 @@ class _EncuestasDetalleCopyWidgetState
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: (_model.apiRequestCompleter1 ??=
                                 Completer<ApiCallResponse>()
                                   ..complete(EncuestaPreguntaCall.call(
-                                    encuestaId: widget.encuestaId,
+                                    encuestaId: widget!.encuestaId,
                                     preguntaId:
                                         FFAppState().encuestaPreguntaActual,
                                   )))
@@ -149,13 +151,13 @@ class _EncuestasDetalleCopyWidgetState
 
                           return Container(
                             width: 360.0,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -198,7 +200,7 @@ class _EncuestasDetalleCopyWidgetState
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 15.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -231,9 +233,9 @@ class _EncuestasDetalleCopyWidgetState
                                       ) ==
                                       'si')
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 15.0, 0.0, 25.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -294,16 +296,16 @@ class _EncuestasDetalleCopyWidgetState
                                       ) ==
                                       1)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: 350.0,
                                                 child: TextFormField(
                                                   controller:
@@ -313,7 +315,7 @@ class _EncuestasDetalleCopyWidgetState
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController',
-                                                    const Duration(milliseconds: 50),
+                                                    Duration(milliseconds: 50),
                                                     () => safeSetState(() {}),
                                                   ),
                                                   autofocus: false,
@@ -352,7 +354,7 @@ class _EncuestasDetalleCopyWidgetState
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 2.0,
@@ -430,7 +432,7 @@ class _EncuestasDetalleCopyWidgetState
                                       ) ==
                                       2)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -439,13 +441,13 @@ class _EncuestasDetalleCopyWidgetState
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child:
                                                 FutureBuilder<ApiCallResponse>(
                                               future:
                                                   EncuestaDesplegableOpcionesCall
                                                       .call(
-                                                encuestaId: widget.encuestaId,
+                                                encuestaId: widget!.encuestaId,
                                                 preguntaId: FFAppState()
                                                     .encuestaPreguntaActual,
                                               ),
@@ -531,7 +533,7 @@ class _EncuestasDetalleCopyWidgetState
                                                       Colors.transparent,
                                                   borderWidth: 2.0,
                                                   borderRadius: 8.0,
-                                                  margin: const EdgeInsetsDirectional
+                                                  margin: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 4.0, 16.0, 4.0),
                                                   hidesUnderline: true,
@@ -551,7 +553,7 @@ class _EncuestasDetalleCopyWidgetState
                                       ) ==
                                       3)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -572,7 +574,7 @@ class _EncuestasDetalleCopyWidgetState
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 5.0, 0.0, 0.0),
                                                   child: Text(
@@ -593,10 +595,10 @@ class _EncuestasDetalleCopyWidgetState
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
-                                                  child: SizedBox(
+                                                  child: Container(
                                                     width: 300.0,
                                                     child: Slider(
                                                       activeColor:
@@ -673,7 +675,7 @@ class _EncuestasDetalleCopyWidgetState
                                       ) ==
                                       4)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -694,7 +696,7 @@ class _EncuestasDetalleCopyWidgetState
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 5.0, 0.0, 0.0),
                                                   child: Text(
@@ -715,10 +717,10 @@ class _EncuestasDetalleCopyWidgetState
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
-                                                  child: SizedBox(
+                                                  child: Container(
                                                     width: 300.0,
                                                     child: Slider(
                                                       activeColor:
@@ -795,7 +797,7 @@ class _EncuestasDetalleCopyWidgetState
                                       ) !=
                                       1)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 15.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -814,7 +816,7 @@ class _EncuestasDetalleCopyWidgetState
                                                       authToken: FFAppState()
                                                           .authToken,
                                                       encuestaId:
-                                                          widget.encuestaId,
+                                                          widget!.encuestaId,
                                                       preguntaId: FFAppState()
                                                           .encuestaPreguntaActual,
                                                       textoLibre: _model
@@ -859,7 +861,7 @@ class _EncuestasDetalleCopyWidgetState
                                                         authToken: FFAppState()
                                                             .authToken,
                                                         encuestaId:
-                                                            widget.encuestaId,
+                                                            widget!.encuestaId,
                                                       );
 
                                                       context.pushNamed(
@@ -867,14 +869,14 @@ class _EncuestasDetalleCopyWidgetState
                                                         queryParameters: {
                                                           'encuestaId':
                                                               serializeParam(
-                                                            widget.encuestaId,
+                                                            widget!.encuestaId,
                                                             ParamType.int,
                                                           ),
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -916,10 +918,10 @@ class _EncuestasDetalleCopyWidgetState
                                             options: FFButtonOptions(
                                               width: 300.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -949,7 +951,7 @@ class _EncuestasDetalleCopyWidgetState
                                       ) ==
                                       1)
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 15.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -958,6 +960,9 @@ class _EncuestasDetalleCopyWidgetState
                                         children: [
                                           FFButtonWidget(
                                             onPressed: (_model.textController
+                                                            .text ==
+                                                        null ||
+                                                    _model.textController
                                                             .text ==
                                                         '')
                                                 ? null
@@ -968,7 +973,7 @@ class _EncuestasDetalleCopyWidgetState
                                                       authToken: FFAppState()
                                                           .authToken,
                                                       encuestaId:
-                                                          widget.encuestaId,
+                                                          widget!.encuestaId,
                                                       preguntaId: FFAppState()
                                                           .encuestaPreguntaActual,
                                                       textoLibre: _model
@@ -1013,7 +1018,7 @@ class _EncuestasDetalleCopyWidgetState
                                                         authToken: FFAppState()
                                                             .authToken,
                                                         encuestaId:
-                                                            widget.encuestaId,
+                                                            widget!.encuestaId,
                                                       );
 
                                                       context.pushNamed(
@@ -1021,14 +1026,14 @@ class _EncuestasDetalleCopyWidgetState
                                                         queryParameters: {
                                                           'encuestaId':
                                                               serializeParam(
-                                                            widget.encuestaId,
+                                                            widget!.encuestaId,
                                                             ParamType.int,
                                                           ),
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              const TransitionInfo(
+                                                              TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -1070,10 +1075,10 @@ class _EncuestasDetalleCopyWidgetState
                                             options: FFButtonOptions(
                                               width: 300.0,
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1087,7 +1092,7 @@ class _EncuestasDetalleCopyWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: const BorderSide(
+                                              borderSide: BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -1102,7 +1107,7 @@ class _EncuestasDetalleCopyWidgetState
                                       ),
                                     ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -1114,14 +1119,14 @@ class _EncuestasDetalleCopyWidgetState
                                             _model.apiResultoj2 =
                                                 await EncuestasCancelaCall.call(
                                               authToken: FFAppState().authToken,
-                                              encuestaId: widget.encuestaId,
+                                              encuestaId: widget!.encuestaId,
                                             );
 
                                             context.goNamed(
                                               'encuestas',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    const TransitionInfo(
+                                                    TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -1141,10 +1146,10 @@ class _EncuestasDetalleCopyWidgetState
                                             width: 300.0,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondary,
@@ -1157,7 +1162,7 @@ class _EncuestasDetalleCopyWidgetState
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 3.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),
@@ -1168,14 +1173,14 @@ class _EncuestasDetalleCopyWidgetState
                                       ],
                                     ),
                                   ),
-                                ].addToEnd(const SizedBox(height: 50.0)),
+                                ].addToEnd(SizedBox(height: 50.0)),
                               ),
                             ),
                           );
                         },
                       ),
                     ),
-                  ].addToEnd(const SizedBox(height: 100.0)),
+                  ].addToEnd(SizedBox(height: 100.0)),
                 ),
               ),
             ),

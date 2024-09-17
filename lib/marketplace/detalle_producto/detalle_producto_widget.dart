@@ -10,6 +10,8 @@ import 'dart:async';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'detalle_producto_model.dart';
 export 'detalle_producto_model.dart';
@@ -50,7 +52,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: MarketplaceIndividualCall.call(
-        productoId: widget.productoId,
+        productoId: widget!.productoId,
         authToken: FFAppState().authToken,
       ),
       builder: (context, snapshot) {
@@ -105,14 +107,14 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
             body: Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
@@ -166,7 +168,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -204,7 +206,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -243,7 +245,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -275,7 +277,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 25.0, 10.0, 30.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -289,7 +291,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                                           await MarketplaceIntentoCompraCall
                                               .call(
                                         authToken: FFAppState().authToken,
-                                        porductoId: widget.productoId,
+                                        porductoId: widget!.productoId,
                                       );
                                     }(),
                                   );
@@ -305,7 +307,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: const ModalAvisoCarritoWidget(),
+                                          child: ModalAvisoCarritoWidget(),
                                         ),
                                       );
                                     },
@@ -319,9 +321,9 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).secondary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -332,7 +334,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -351,7 +353,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -390,7 +392,7 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 5.0, 10.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -427,14 +429,14 @@ class _DetalleProductoWidgetState extends State<DetalleProductoWidget> {
                             ],
                           ),
                         ),
-                      ].addToEnd(const SizedBox(height: 100.0)),
+                      ].addToEnd(SizedBox(height: 100.0)),
                     ),
                   ),
                 ),
                 wrapWithModel(
                   model: _model.menuUsuarioModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const MenuUsuarioWidget(
+                  child: MenuUsuarioWidget(
                     index: 3,
                   ),
                 ),

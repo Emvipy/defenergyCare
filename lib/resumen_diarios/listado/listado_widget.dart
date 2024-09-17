@@ -3,11 +3,13 @@ import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'listado_model.dart';
 export 'listado_model.dart';
@@ -65,7 +67,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
           backgroundColor: FlutterFlowTheme.of(context).background,
           automaticallyImplyLeading: false,
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 'oid5mtbq' /* Diarios de Síntomas */,
@@ -78,14 +80,14 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -140,7 +142,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -165,7 +167,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 20.0, 10.0, 10.0),
                       child: SingleChildScrollView(
                         child: Column(
@@ -179,7 +181,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                       authToken: FFAppState().authToken,
                                       fecha: _model.fecha != null
                                           ? _model.fecha?.millisecondsSinceEpoch
-                                              .toString()
+                                              ?.toString()
                                           : getCurrentTimestamp
                                               .millisecondsSinceEpoch
                                               .toString(),
@@ -220,7 +222,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                     }
 
                                     return ListView.separated(
-                                      padding: const EdgeInsets.fromLTRB(
+                                      padding: EdgeInsets.fromLTRB(
                                         0,
                                         0,
                                         0,
@@ -231,7 +233,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                       scrollDirection: Axis.vertical,
                                       itemCount: childDiarios.length,
                                       separatorBuilder: (_, __) =>
-                                          const SizedBox(height: 15.0),
+                                          SizedBox(height: 15.0),
                                       itemBuilder:
                                           (context, childDiariosIndex) {
                                         final childDiariosItem =
@@ -247,7 +249,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     5.0, 5.0, 5.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -274,7 +276,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -297,11 +299,11 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                                 Flexible(
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -345,7 +347,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                                             extra: <String,
                                                                 dynamic>{
                                                               kTransitionInfoKey:
-                                                                  const TransitionInfo(
+                                                                  TransitionInfo(
                                                                 hasTransition:
                                                                     true,
                                                                 transitionType:
@@ -378,11 +380,11 @@ class _ListadoWidgetState extends State<ListadoWidget> {
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 1,
                 ),
               ),

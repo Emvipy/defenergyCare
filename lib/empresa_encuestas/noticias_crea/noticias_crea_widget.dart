@@ -11,6 +11,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'noticias_crea_model.dart';
 export 'noticias_crea_model.dart';
@@ -88,7 +89,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
     return FutureBuilder<ApiCallResponse>(
       future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
             ..complete(EmpresaNoticiaIndividualCall.call(
-              noticiaId: widget.noticiaId,
+              noticiaId: widget!.noticiaId,
             )))
           .future,
       builder: (context, snapshot) {
@@ -143,7 +144,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -153,9 +154,9 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      if (widget.edita == 'no')
+                      if (widget!.edita == 'no')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -179,9 +180,9 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                             ],
                           ),
                         ),
-                      if (widget.edita == 'si')
+                      if (widget!.edita == 'si')
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -206,8 +207,8 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                           ),
                         ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
-                        child: SizedBox(
+                        alignment: AlignmentDirectional(0.0, -1.0),
+                        child: Container(
                           width: 350.0,
                           child: TextFormField(
                             controller: _model.tituloEsTextController ??=
@@ -242,14 +243,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                     fontStyle: FontStyle.italic,
                                   ),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 1.0,
                                 ),
@@ -287,11 +288,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.tituloEnTextController ??=
@@ -326,14 +327,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -372,11 +373,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.descEsTextController ??=
@@ -411,14 +412,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -459,11 +460,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.descEnTextController ??=
@@ -498,14 +499,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -546,11 +547,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.textoEsTextController ??=
@@ -585,14 +586,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -633,11 +634,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.textoEnTextController ??=
@@ -672,14 +673,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -720,11 +721,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.tagTextController ??=
@@ -759,14 +760,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -807,11 +808,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.urlTextController ??=
@@ -846,14 +847,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -894,11 +895,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.botonEsTextController ??=
@@ -933,14 +934,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -981,11 +982,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: 350.0,
                             child: TextFormField(
                               controller: _model.botonEnTextController ??=
@@ -1020,14 +1021,14 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       fontStyle: FontStyle.italic,
                                     ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 1.0,
                                   ),
@@ -1068,9 +1069,9 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 15.0, 0.0, 0.0),
                           child: Container(
                             width: 350.0,
@@ -1083,9 +1084,9 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
@@ -1102,7 +1103,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -1171,7 +1172,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                               await EmpresaNoticiaSubeImagenCall
                                                   .call(
                                             img: _model.uploadedLocalFile,
-                                            noticiaId: widget.noticiaId,
+                                            noticiaId: widget!.noticiaId,
                                             authToken: FFAppState().authToken,
                                           );
 
@@ -1202,7 +1203,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                           _model.apiResultwhi =
                                               await EmpresaBorraImagenNewsCall
                                                   .call(
-                                            noticiaId: widget.noticiaId,
+                                            noticiaId: widget!.noticiaId,
                                             authToken: FFAppState().authToken,
                                           );
 
@@ -1233,30 +1234,42 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FFButtonWidget(
                               onPressed: ((_model.tituloEsTextController.text ==
+                                              null ||
+                                          _model.tituloEsTextController.text ==
                                               '') ||
                                       (_model.tituloEnTextController.text ==
+                                              null ||
+                                          _model.tituloEnTextController.text ==
                                               '') ||
                                       (_model.descEsTextController.text ==
+                                              null ||
+                                          _model.descEsTextController.text ==
                                               '') ||
                                       (_model.descEnTextController.text ==
+                                              null ||
+                                          _model.descEnTextController.text ==
                                               '') ||
                                       (_model.textoEsTextController.text ==
+                                              null ||
+                                          _model.textoEsTextController.text ==
                                               '') ||
                                       (_model.textoEnTextController.text ==
+                                              null ||
+                                          _model.textoEnTextController.text ==
                                               ''))
                                   ? null
                                   : () async {
                                       _model.apiResultitk =
                                           await EmpresaEditaNewsCall.call(
                                         authToken: FFAppState().authToken,
-                                        noticiaId: widget.noticiaId,
+                                        noticiaId: widget!.noticiaId,
                                         tituloEs: functions
                                             .formatTextwithLineBreaksToXano(
                                                 _model.tituloEsTextController
@@ -1283,6 +1296,8 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                                     .text),
                                         tag: _model.tagTextController.text,
                                         url: _model.urlTextController.text !=
+                                                    null &&
+                                                _model.urlTextController.text !=
                                                     ''
                                             ? _model.urlTextController.text
                                             : 'empty',
@@ -1310,7 +1325,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                                     MediaQuery.viewInsetsOf(
                                                         context),
                                                 child:
-                                                    const ModalNoticiaCreadaWidget(),
+                                                    ModalNoticiaCreadaWidget(),
                                               ),
                                             );
                                           },
@@ -1325,9 +1340,9 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1346,7 +1361,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                           ],
                         ),
                       ),
-                    ].addToEnd(const SizedBox(height: 150.0)),
+                    ].addToEnd(SizedBox(height: 150.0)),
                   ),
                 ),
                 if (!(isWeb
@@ -1355,7 +1370,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                   wrapWithModel(
                     model: _model.menuUsuarioModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: const MenuUsuarioWidget(
+                    child: MenuUsuarioWidget(
                       index: 0,
                     ),
                   ),

@@ -10,6 +10,9 @@ import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'perfil_contacto_model.dart';
 export 'perfil_contacto_model.dart';
@@ -96,7 +99,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -108,7 +111,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 7.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 7.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -133,24 +136,24 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: 350.0,
                                 child: TextFormField(
                                   controller: _model.textFieldCelTextController,
                                   focusNode: _model.textFieldCelFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
                                     '_model.textFieldCelTextController',
-                                    const Duration(milliseconds: 100),
+                                    Duration(milliseconds: 100),
                                     () => safeSetState(() {}),
                                   ),
                                   autofocus: true,
@@ -228,7 +231,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -274,7 +277,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
@@ -285,17 +288,17 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 8.0, 0.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: 350.0,
                                 child: TextFormField(
                                   controller:
@@ -303,7 +306,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                   focusNode: _model.textFieldMensajeFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
                                     '_model.textFieldMensajeTextController',
-                                    const Duration(milliseconds: 100),
+                                    Duration(milliseconds: 100),
                                     () => safeSetState(() {}),
                                   ),
                                   autofocus: true,
@@ -383,7 +386,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -423,7 +426,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                           borderColor: FlutterFlowTheme.of(context).alternate,
                           borderWidth: 2.0,
                           borderRadius: 8.0,
-                          margin: const EdgeInsetsDirectional.fromSTEB(
+                          margin: EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 16.0, 4.0),
                           hidesUnderline: true,
                           isOverButton: true,
@@ -435,7 +438,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 20.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -443,10 +446,14 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                         FFButtonWidget(
                           onPressed: ((_model.dropDownModoValue == null ||
                                       _model.dropDownModoValue == '') ||
-                                  (_model.textFieldMensajeTextController
+                                  (_model.textFieldMensajeTextController.text ==
+                                          null ||
+                                      _model.textFieldMensajeTextController
                                               .text ==
                                           '') ||
                                   (_model.textFieldCelTextController.text ==
+                                          null ||
+                                      _model.textFieldCelTextController.text ==
                                           '') ||
                                   (_model.dropDownModoValue == null ||
                                       _model.dropDownModoValue == ''))
@@ -478,7 +485,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                                 .secondaryBackground,
                                           ),
                                         ),
-                                        duration: const Duration(milliseconds: 4000),
+                                        duration: Duration(milliseconds: 4000),
                                         backgroundColor:
                                             FlutterFlowTheme.of(context)
                                                 .success,
@@ -499,7 +506,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                     context.pushNamed(
                                       'Home',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -520,7 +527,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                                 .secondaryBackground,
                                           ),
                                         ),
-                                        duration: const Duration(milliseconds: 4000),
+                                        duration: Duration(milliseconds: 4000),
                                         backgroundColor:
                                             FlutterFlowTheme.of(context).error,
                                       ),
@@ -541,9 +548,9 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                           options: FFButtonOptions(
                             width: 300.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -554,7 +561,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -566,7 +573,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                       ],
                     ),
                   ),
-                ].addToEnd(const SizedBox(height: 40.0)),
+                ].addToEnd(SizedBox(height: 40.0)),
               ),
             ),
             if (!(isWeb
@@ -575,7 +582,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 0,
                 ),
               ),

@@ -9,6 +9,8 @@ import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'invitar_amigo_model.dart';
@@ -93,20 +95,20 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
@@ -119,7 +121,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -145,7 +147,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -173,7 +175,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -185,7 +187,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -214,7 +216,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                             ),
                             Builder(
                               builder: (context) => Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 15.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -230,9 +232,9 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                                   options: FFButtonOptions(
                                     width: 300.0,
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).share,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -243,7 +245,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
@@ -258,7 +260,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Container(
                         width: 350.0,
                         decoration: BoxDecoration(
@@ -270,7 +272,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -298,18 +300,18 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 10.0, 8.0, 10.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: 300.0,
                                   child: TextFormField(
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
-                                      const Duration(milliseconds: 100),
+                                      Duration(milliseconds: 100),
                                       () => safeSetState(() {}),
                                     ),
                                     autofocus: false,
@@ -351,7 +353,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -359,7 +361,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                                             BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 2.0,
                                         ),
@@ -381,10 +383,12 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 15.0),
                               child: FFButtonWidget(
-                                onPressed: (_model.textController.text == '')
+                                onPressed: (_model.textController.text ==
+                                            null ||
+                                        _model.textController.text == '')
                                     ? null
                                     : () async {
                                         _model.apiResult7vm =
@@ -413,7 +417,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                                                   padding:
                                                       MediaQuery.viewInsetsOf(
                                                           context),
-                                                  child: const ModalEnviadoWidget(),
+                                                  child: ModalEnviadoWidget(),
                                                 ),
                                               );
                                             },
@@ -429,9 +433,9 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                                 options: FFButtonOptions(
                                   width: 300.0,
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -442,7 +446,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -456,7 +460,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
                         ),
                       ),
                     ),
-                  ].addToEnd(const SizedBox(height: 30.0)),
+                  ].addToEnd(SizedBox(height: 30.0)),
                 ),
               ),
             ),
@@ -466,7 +470,7 @@ class _InvitarAmigoWidgetState extends State<InvitarAmigoWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 0,
                 ),
               ),

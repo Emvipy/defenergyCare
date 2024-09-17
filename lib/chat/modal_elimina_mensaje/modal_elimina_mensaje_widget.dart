@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'modal_elimina_mensaje_model.dart';
 export 'modal_elimina_mensaje_model.dart';
@@ -58,13 +60,13 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
         desktop: false,
       ),
       child: Align(
-        alignment: const AlignmentDirectional(0.0, 1.0),
+        alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
           height: 312.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 5.0,
                 color: Color(0x3B1D2429),
@@ -74,7 +76,7 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
                 ),
               )
             ],
-            borderRadius: const BorderRadius.only(
+            borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(0.0),
               bottomRight: Radius.circular(0.0),
               topLeft: Radius.circular(16.0),
@@ -85,7 +87,7 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -108,7 +110,7 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +135,7 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -157,7 +159,7 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -182,25 +184,25 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
               ),
               Flexible(
                 child: Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 5.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 1.0),
+                          alignment: AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 25.0),
                             child: FFButtonWidget(
                               onPressed: () async {
                                 _model.apiDeleteMensaje =
                                     await ChatEliminaMensajeCall.call(
                                   authToken: FFAppState().authToken,
-                                  mensajeId: widget.mensajeId,
+                                  mensajeId: widget!.mensajeId,
                                 );
 
                                 if ((_model.apiDeleteMensaje?.succeeded ??
@@ -209,16 +211,16 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
                                     'chat_mensajes',
                                     queryParameters: {
                                       'nombre': serializeParam(
-                                        widget.nombre,
+                                        widget!.nombre,
                                         ParamType.String,
                                       ),
                                       'conversacionId': serializeParam(
-                                        widget.conversacionId,
+                                        widget!.conversacionId,
                                         ParamType.int,
                                       ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -235,9 +237,9 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
                               options: FFButtonOptions(
                                 width: 300.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).secondary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -248,7 +250,7 @@ class _ModalEliminaMensajeWidgetState extends State<ModalEliminaMensajeWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

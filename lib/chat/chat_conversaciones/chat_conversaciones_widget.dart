@@ -3,12 +3,14 @@ import '/chat/modal_elimina_conversacion/modal_elimina_conversacion_widget.dart'
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'chat_conversaciones_model.dart';
 export 'chat_conversaciones_model.dart';
@@ -90,20 +92,20 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: Stack(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -130,7 +132,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Container(
                         width: 360.0,
                         decoration: BoxDecoration(
@@ -139,9 +141,9 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                           borderRadius: BorderRadius.circular(4.0),
                         ),
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: FutureBuilder<ApiCallResponse>(
                               future: (_model.apiRequestCompleter1 ??=
@@ -185,7 +187,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                     }
 
                                     return ListView.separated(
-                                      padding: const EdgeInsets.fromLTRB(
+                                      padding: EdgeInsets.fromLTRB(
                                         0,
                                         0,
                                         0,
@@ -196,7 +198,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                       scrollDirection: Axis.vertical,
                                       itemCount: childInvitaciones.length,
                                       separatorBuilder: (_, __) =>
-                                          const SizedBox(height: 10.0),
+                                          SizedBox(height: 10.0),
                                       itemBuilder:
                                           (context, childInvitacionesIndex) {
                                         final childInvitacionesItem =
@@ -204,7 +206,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                 childInvitacionesIndex];
                                         return Align(
                                           alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 350.0,
                                             height: 60.0,
@@ -221,11 +223,11 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                 Flexible(
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   5.0,
                                                                   0.0,
@@ -259,16 +261,16 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                 Flexible(
                                                   child: Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             1.0, 0.0),
                                                     child: Container(
                                                       width: 120.0,
                                                       height: 47.0,
                                                       decoration:
-                                                          const BoxDecoration(),
+                                                          BoxDecoration(),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -416,7 +418,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -480,7 +482,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                 await _model.waitForApiRequestCompleted2();
                               },
                               child: ListView.separated(
-                                padding: const EdgeInsets.fromLTRB(
+                                padding: EdgeInsets.fromLTRB(
                                   0,
                                   0,
                                   0,
@@ -490,14 +492,14 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                 scrollDirection: Axis.vertical,
                                 itemCount: childMisConversaciones.length,
                                 separatorBuilder: (_, __) =>
-                                    const SizedBox(height: 15.0),
+                                    SizedBox(height: 15.0),
                                 itemBuilder:
                                     (context, childMisConversacionesIndex) {
                                   final childMisConversacionesItem =
                                       childMisConversaciones[
                                           childMisConversacionesIndex];
                                   return Align(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Container(
                                       width: 360.0,
                                       decoration: BoxDecoration(
@@ -511,7 +513,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 2.0, 0.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -520,11 +522,11 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 2.0,
                                                                 10.0, 0.0),
                                                     child: Container(
@@ -567,7 +569,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child:
@@ -610,7 +612,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                             Flexible(
                                                               child: Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         1.0,
                                                                         0.0),
                                                                 child:
@@ -638,7 +640,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -659,7 +661,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -746,7 +748,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                     extra: <String,
                                                                         dynamic>{
                                                                       kTransitionInfoKey:
-                                                                          const TransitionInfo(
+                                                                          TransitionInfo(
                                                                         hasTransition:
                                                                             true,
                                                                         transitionType:
@@ -765,7 +767,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                   clipBehavior:
                                                                       Clip.antiAlias,
                                                                   decoration:
-                                                                      const BoxDecoration(
+                                                                      BoxDecoration(
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
@@ -793,7 +795,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         5.0,
                                                                         0.0,
@@ -863,7 +865,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                   extra: <String,
                                                                       dynamic>{
                                                                     kTransitionInfoKey:
-                                                                        const TransitionInfo(
+                                                                        TransitionInfo(
                                                                       hasTransition:
                                                                           true,
                                                                       transitionType:
@@ -926,7 +928,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            const AlignmentDirectional(
+                                                            AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: InkWell(
                                                           splashColor: Colors
@@ -1000,7 +1002,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                         );
                       },
                     ),
-                  ].addToEnd(const SizedBox(height: 100.0)),
+                  ].addToEnd(SizedBox(height: 100.0)),
                 ),
               ),
             ),
@@ -1010,7 +1012,7 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
               wrapWithModel(
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const MenuUsuarioWidget(
+                child: MenuUsuarioWidget(
                   index: 7,
                 ),
               ),
