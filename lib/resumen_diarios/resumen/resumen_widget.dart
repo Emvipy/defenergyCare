@@ -8303,7 +8303,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                   model: _model.menuUsuarioModel,
                   updateCallback: () => safeSetState(() {}),
                   child: MenuUsuarioWidget(
-                    index: 1,
+                    index: 0,
                   ),
                 ),
               ],

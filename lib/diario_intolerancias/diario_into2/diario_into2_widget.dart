@@ -14169,25 +14169,6 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .success,
                                             ),
                                           );
-                                          FFAppState().deleteDiarioIntoId();
-                                          FFAppState().diarioIntoId = 0;
-
-                                          FFAppState().primerDiarioInto = '';
-                                          FFAppState().diarioIntoAnterior = 0;
-                                          FFAppState().intoCarnes = 'no';
-                                          FFAppState().intoMarisco = 'no';
-                                          FFAppState().momento = 1;
-                                          FFAppState().intoPescado = 'no';
-                                          FFAppState().intoLacteos = 'no';
-                                          FFAppState().intoHuevos = 'no';
-                                          FFAppState().intoCereales = 'no';
-                                          FFAppState().intoFrutas = 'no';
-                                          FFAppState().intoVerduras = 'no';
-                                          FFAppState().intoLegumbres = 'no';
-                                          FFAppState().intoFrutosSecos = 'no';
-                                          FFAppState().intoSalsas = 'no';
-                                          FFAppState().intoBebidas = 'no';
-                                          FFAppState().mostrarAyer = 'si';
 
                                           context.goNamed(
                                             'Home',
@@ -14358,25 +14339,6 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .success,
                                             ),
                                           );
-                                          FFAppState().deleteDiarioIntoId();
-                                          FFAppState().diarioIntoId = 0;
-
-                                          FFAppState().primerDiarioInto = '';
-                                          FFAppState().diarioIntoAnterior = 0;
-                                          FFAppState().intoCarnes = 'no';
-                                          FFAppState().intoMarisco = 'no';
-                                          FFAppState().momento = 1;
-                                          FFAppState().intoPescado = 'no';
-                                          FFAppState().intoLacteos = 'no';
-                                          FFAppState().intoHuevos = 'no';
-                                          FFAppState().intoCereales = 'no';
-                                          FFAppState().intoFrutas = 'no';
-                                          FFAppState().intoVerduras = 'no';
-                                          FFAppState().intoLegumbres = 'no';
-                                          FFAppState().intoFrutosSecos = 'no';
-                                          FFAppState().intoSalsas = 'no';
-                                          FFAppState().intoBebidas = 'no';
-                                          FFAppState().mostrarAyer = 'si';
 
                                           context.goNamed(
                                             'Home',

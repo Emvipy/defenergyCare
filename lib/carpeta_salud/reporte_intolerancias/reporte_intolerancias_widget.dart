@@ -1452,7 +1452,7 @@ class _ReporteIntoleranciasWidgetState
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
               child: MenuUsuarioWidget(
-                index: 1,
+                index: 0,
               ),
             ),
           ],

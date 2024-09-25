@@ -9587,6 +9587,20 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                   editando: FFAppState().editandoDiario,
                                 );
 
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'DIario guardado!',
+                                      style: TextStyle(
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
+                                      ),
+                                    ),
+                                    duration: Duration(milliseconds: 4000),
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).success,
+                                  ),
+                                );
                                 FFAppState().deleteDiarioIntoId();
                                 FFAppState().diarioIntoId = 0;
 
@@ -9606,20 +9620,6 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                 FFAppState().intoBebidas = 'no';
                                 FFAppState().mostrarAyer = 'si';
                                 FFAppState().momento = 1;
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'DIario guardado!',
-                                      style: TextStyle(
-                                        color:
-                                            FlutterFlowTheme.of(context).info,
-                                      ),
-                                    ),
-                                    duration: Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).success,
-                                  ),
-                                );
 
                                 context.pushNamed(
                                   'Home',
@@ -9700,25 +9700,6 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                   editando: FFAppState().editandoDiario,
                                 );
 
-                                FFAppState().deleteDiarioIntoId();
-                                FFAppState().diarioIntoId = 0;
-
-                                FFAppState().primerDiarioInto = '';
-                                FFAppState().diarioIntoAnterior = 0;
-                                FFAppState().intoCarnes = 'no';
-                                FFAppState().intoMarisco = 'no';
-                                FFAppState().intoPescado = 'no';
-                                FFAppState().intoLacteos = 'no';
-                                FFAppState().intoHuevos = 'no';
-                                FFAppState().intoCereales = 'no';
-                                FFAppState().intoFrutas = 'no';
-                                FFAppState().intoVerduras = 'no';
-                                FFAppState().intoLegumbres = 'no';
-                                FFAppState().intoFrutosSecos = 'no';
-                                FFAppState().intoSalsas = 'no';
-                                FFAppState().intoBebidas = 'no';
-                                FFAppState().mostrarAyer = 'si';
-                                FFAppState().momento = 1;
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
@@ -9743,6 +9724,26 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                     ),
                                   },
                                 );
+
+                                FFAppState().deleteDiarioIntoId();
+                                FFAppState().diarioIntoId = 0;
+
+                                FFAppState().primerDiarioInto = '';
+                                FFAppState().diarioIntoAnterior = 0;
+                                FFAppState().intoCarnes = 'no';
+                                FFAppState().intoMarisco = 'no';
+                                FFAppState().intoPescado = 'no';
+                                FFAppState().intoLacteos = 'no';
+                                FFAppState().intoHuevos = 'no';
+                                FFAppState().intoCereales = 'no';
+                                FFAppState().intoFrutas = 'no';
+                                FFAppState().intoVerduras = 'no';
+                                FFAppState().intoLegumbres = 'no';
+                                FFAppState().intoFrutosSecos = 'no';
+                                FFAppState().intoSalsas = 'no';
+                                FFAppState().intoBebidas = 'no';
+                                FFAppState().mostrarAyer = 'si';
+                                FFAppState().momento = 1;
 
                                 safeSetState(() {});
                               },

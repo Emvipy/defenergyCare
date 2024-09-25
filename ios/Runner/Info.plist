@@ -59,9 +59,9 @@
 	<true/>
 
 	<key>NSCameraUsageDescription</key>
-    <string>In order to take a picture or video, this app requires permission to access the camera.</string>
+    <string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para usar la cámara.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>In order to upload data, this app requires permission to access the photo library.</string>
+    <string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para acceder a tus imágenes.</string>
 
 
 

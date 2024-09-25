@@ -120,3 +120,9 @@ export '/empresa_encuestas/noticias_crea/noticias_crea_widget.dart'
     show NoticiasCreaWidget;
 export '/registro/empresa_pdte_validacion_copy/empresa_pdte_validacion_copy_widget.dart'
     show EmpresaPdteValidacionCopyWidget;
+export '/comunidad/comunidad_copy/comunidad_copy_widget.dart'
+    show ComunidadCopyWidget;
+export '/perfil/perfil_medicamentos_crea/perfil_medicamentos_crea_widget.dart'
+    show PerfilMedicamentosCreaWidget;
+export '/perfil/perfil_medicamentos_edita/perfil_medicamentos_edita_widget.dart'
+    show PerfilMedicamentosEditaWidget;

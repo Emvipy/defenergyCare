@@ -57,9 +57,6 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
     _model.textFieldOtrasCovid4TextController ??= TextEditingController();
     _model.textFieldOtrasCovid4FocusNode ??= FocusNode();
 
-    _model.textFieldOtrasCovid5TextController ??= TextEditingController();
-    _model.textFieldOtrasCovid5FocusNode ??= FocusNode();
-
     _model.textFieldOtrasCovid6TextController ??= TextEditingController();
     _model.textFieldOtrasCovid6FocusNode ??= FocusNode();
 
@@ -150,16 +147,6 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
             ),
             body: Stack(
               children: [
-                if (!(isWeb
-                    ? MediaQuery.viewInsetsOf(context).bottom > 0
-                    : _isKeyboardVisible))
-                  wrapWithModel(
-                    model: _model.menuUsuarioModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: MenuUsuarioWidget(
-                      index: 0,
-                    ),
-                  ),
                 Align(
                   alignment: AlignmentDirectional(0.0, -1.0),
                   child: Padding(
@@ -169,25 +156,31 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Flexible(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 30.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'yxwl5i70' /* Aquí puedes modificar tu enfer... */,
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 15.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'yxwl5i70' /* Aquí puedes modificar tu enfer... */,
                                   ),
-                            ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         Padding(
@@ -363,7 +356,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -487,7 +480,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -575,7 +568,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -671,7 +664,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: true,
                                               isSearchable: false,
@@ -871,7 +864,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -1008,9 +1001,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
-                                                                    4.0,
+                                                                    0.0,
                                                                     16.0,
-                                                                    4.0),
+                                                                    0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
                                                         isSearchable: false,
@@ -1125,8 +1118,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -1224,7 +1217,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -1332,8 +1325,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -1431,7 +1424,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -1544,8 +1537,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -1583,8 +1576,11 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                       FormFieldController<
                                                           String>(
                                                     _model.dropDownFamIntoValue1 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue1,
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -1640,7 +1636,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -1748,8 +1744,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -1884,9 +1880,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -1994,7 +1990,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -2129,9 +2125,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -2242,7 +2238,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -2377,7 +2373,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
                                                                   4.0),
                                                       hidesUnderline: true,
@@ -2490,7 +2486,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -2625,9 +2621,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -2738,7 +2734,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -3032,7 +3028,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -3128,7 +3124,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -3216,7 +3212,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -3304,7 +3300,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -3400,7 +3396,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -3600,7 +3596,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -3737,9 +3733,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
-                                                                    4.0,
+                                                                    0.0,
                                                                     16.0,
-                                                                    4.0),
+                                                                    0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
                                                         isSearchable: false,
@@ -3854,8 +3850,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -3953,7 +3949,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -4061,8 +4057,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -4160,7 +4156,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -4273,8 +4269,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -4312,8 +4308,11 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                       FormFieldController<
                                                           String>(
                                                     _model.dropDownFamIntoValue2 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue2,
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -4369,7 +4368,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -4477,8 +4476,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -4613,9 +4612,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -4723,7 +4722,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -4858,9 +4857,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -4971,7 +4970,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -5106,9 +5105,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -5219,7 +5218,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -5354,9 +5353,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -5467,7 +5466,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -5754,7 +5753,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -5851,7 +5850,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -5960,7 +5959,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -6048,7 +6047,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -6143,7 +6142,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -6343,7 +6342,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -6480,9 +6479,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
-                                                                    4.0,
+                                                                    0.0,
                                                                     16.0,
-                                                                    4.0),
+                                                                    0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
                                                         isSearchable: false,
@@ -6597,8 +6596,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -6696,7 +6695,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -6804,8 +6803,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -6903,7 +6902,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -7016,8 +7015,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -7055,8 +7054,11 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                       FormFieldController<
                                                           String>(
                                                     _model.dropDownFamIntoValue3 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue3,
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -7112,7 +7114,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -7220,8 +7222,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -7356,9 +7358,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -7466,7 +7468,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -7601,9 +7603,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -7714,7 +7716,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -7849,9 +7851,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -7962,7 +7964,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -8097,9 +8099,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -8210,7 +8212,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -8517,7 +8519,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 borderRadius: 12.0,
                                                 margin: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        16.0, 4.0, 16.0, 4.0),
+                                                        16.0, 0.0, 16.0, 0.0),
                                                 hidesUnderline: true,
                                                 isOverButton: false,
                                                 isSearchable: false,
@@ -8615,7 +8617,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -8703,7 +8705,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -8799,7 +8801,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -9569,7 +9571,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -9682,8 +9684,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -9721,8 +9723,11 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                       FormFieldController<
                                                           String>(
                                                     _model.dropDownFamIntoValue4 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue4,
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -9778,7 +9783,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -9886,8 +9891,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -10022,9 +10027,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -10132,7 +10137,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -10267,9 +10272,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -10380,7 +10385,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -10515,9 +10520,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -10628,7 +10633,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -10763,9 +10768,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -10876,7 +10881,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -11054,165 +11059,1514 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                               ),
                             ),
                           ),
-                        if ((FFAppState().enfermedadId == 5) &&
-                            (FFAppState().authToken == '1'))
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
-                            child: Container(
-                              width: 332.0,
-                              decoration: BoxDecoration(),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          'lkzx4b2z' /* Escribe aquí tus otras enferme... */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
+                        if (FFAppState().enfermedadId == 5)
+                          Flexible(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Container(
+                                width: 332.0,
+                                decoration: BoxDecoration(),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 10.0, 0.0, 0.0),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'nypajel1' /* ¿Tienes diagnóstico de síndrom... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
-                                      ),
-                                      TextFormField(
-                                        controller: _model
-                                            .textFieldOtrasCovid5TextController,
-                                        focusNode: _model
-                                            .textFieldOtrasCovid5FocusNode,
-                                        autofocus: false,
-                                        obscureText: false,
-                                        decoration: InputDecoration(
-                                          labelStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    letterSpacing: 0.0,
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownIntestinoValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownIntestinoValue5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .intestino(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
                                                   ),
-                                          hintStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .labelMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    letterSpacing: 0.0,
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'tbp1xekh' /* Si */,
                                                   ),
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: Color(0x00000000),
-                                              width: 2.0,
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mhyusxp8' /* No */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownIntestinoValue5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ftxmzhwa' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
                                             ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          errorBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          focusedErrorBorder:
-                                              OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
-                                              width: 2.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          filled: true,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .rellenoCampo2,
+                                          ],
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              letterSpacing: 0.0,
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '39bbzsfl' /* ¿Cuánto tiempo llevas diagnost... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
-                                        maxLines: null,
-                                        validator: _model
-                                            .textFieldOtrasCovid5TextControllerValidator
-                                            .asValidator(context),
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 16.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        FFAppState().creadoOk = 'si';
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownTiempoIntestinoValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownTiempoIntestinoValue5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .tiempoIntestino(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
+                                                  ),
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '6g6lo4fc' /* Menos de 1 año */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'aafpb1qu' /* De 1 a 3 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'anw8e8hp' /* De 3 a 5 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '07fsogqt' /* Más de 5 años */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownTiempoIntestinoValue5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ta5uncoj' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'vb47bgb2' /* ¿Tienes algún familiar directo... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownFamIntoValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownFamIntoValue5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .damInto1(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
+                                                  ),
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4rb65ojy' /* Si */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'lewvcvgp' /* No */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownFamIntoValue5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '7qmkl4ss' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '0qlfhh2z' /* Indica el grado familiar */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownGradoIntoValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownGradoIntoValue5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .gradoFamInto1(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
+                                                  ),
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'uoe2tr4d' /* Familiar de primer grado */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '7zdciint' /* Familiar de segundo grado */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'fr6m4ved' /* Familiar de tercer grado */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownGradoIntoValue5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'bsc0krrm' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'om19psar' /* 1-¿Tienes alguna sensibilidad/... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child: FutureBuilder<
+                                                  ApiCallResponse>(
+                                                future: DespIntoleranciasCall
+                                                    .call(),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child: SpinKitCircle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 50.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  final dropDownInto1DespIntoleranciasResponse =
+                                                      snapshot.data!;
 
-                                        context.goNamed(
-                                          'Home',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType:
-                                                  PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 0),
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropDownInto1ValueController5 ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropDownInto1Value5 ??=
+                                                          PerfilEnfermedadIndividualCall
+                                                              .into1(
+                                                        perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                            .jsonBody,
+                                                      ),
+                                                    ),
+                                                    options: FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode ==
+                                                            'en'
+                                                        ? DespIntoleranciasCall
+                                                            .en(
+                                                            dropDownInto1DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!
+                                                        : DespIntoleranciasCall
+                                                            .es(
+                                                            dropDownInto1DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropDownInto1Value5 =
+                                                            val),
+                                                    width: 509.0,
+                                                    height: 50.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'ku7ywr6j' /* Selecciona tu respuesta... */,
+                                                    ),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .azulPerm,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .rellenoCampo2,
+                                                    elevation: 0.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 2.0,
+                                                    borderRadius: 12.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: true,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  );
+                                                },
+                                              ),
                                             ),
-                                          },
-                                        );
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'pz7bsw9s' /* Finalizar */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 300.0,
-                                        height: 44.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .azulPerm,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
+                                          ],
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'c7026zmw' /* ¿Cuánto tiempo llevas diagnost... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownTiempoInto1ValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownTiempoInto1Value5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .tiempoInto1(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
+                                                  ),
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'eatte6ws' /* Menos de 1 año */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'nrs2fa47' /* De 1 a 3 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'g6y0qskl' /* De 3 a 5 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'cj5obsk9' /* Más de 5 años */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownTiempoInto1Value5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'il3gdewb' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '1efw8j5d' /* 2-¿Tienes otra sensibilidad/in... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child: FutureBuilder<
+                                                  ApiCallResponse>(
+                                                future: DespIntoleranciasCall
+                                                    .call(),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child: SpinKitCircle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 50.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  final dropDownInto2DespIntoleranciasResponse =
+                                                      snapshot.data!;
+
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropDownInto2ValueController5 ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropDownInto2Value5 ??=
+                                                          PerfilEnfermedadIndividualCall
+                                                              .into2(
+                                                        perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                            .jsonBody,
+                                                      ),
+                                                    ),
+                                                    options: FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode ==
+                                                            'en'
+                                                        ? DespIntoleranciasCall
+                                                            .en(
+                                                            dropDownInto2DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!
+                                                        : DespIntoleranciasCall
+                                                            .es(
+                                                            dropDownInto2DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropDownInto2Value5 =
+                                                            val),
+                                                    width: 509.0,
+                                                    height: 50.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '89a47ugf' /* Selecciona tu respuesta... */,
+                                                    ),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .azulPerm,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .rellenoCampo2,
+                                                    elevation: 0.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 2.0,
+                                                    borderRadius: 12.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: true,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'xv2x4pcl' /* ¿Cuánto tiempo llevas diagnost... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownTiempoInto2ValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownTiempoInto2Value5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .tiempoInto2(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
+                                                  ),
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4u6ix6cc' /* Menos de 1 año */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '8q38cx95' /* De 1 a 3 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'htpgwamn' /* De 3 a 5 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'z532yr6a' /* Más de 5 años */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownTiempoInto2Value5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ga445qdy' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'fklgbeib' /* 3-¿Tienes otra sensibilidad/in... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child: FutureBuilder<
+                                                  ApiCallResponse>(
+                                                future: DespIntoleranciasCall
+                                                    .call(),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child: SpinKitCircle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 50.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  final dropDownInto3DespIntoleranciasResponse =
+                                                      snapshot.data!;
+
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropDownInto3ValueController5 ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropDownInto3Value5 ??=
+                                                          PerfilEnfermedadIndividualCall
+                                                              .into3(
+                                                        perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                            .jsonBody,
+                                                      ),
+                                                    ),
+                                                    options: FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode ==
+                                                            'en'
+                                                        ? DespIntoleranciasCall
+                                                            .en(
+                                                            dropDownInto3DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!
+                                                        : DespIntoleranciasCall
+                                                            .es(
+                                                            dropDownInto3DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropDownInto3Value5 =
+                                                            val),
+                                                    width: 509.0,
+                                                    height: 50.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      've77jur8' /* Selecciona tu respuesta... */,
+                                                    ),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .azulPerm,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .rellenoCampo2,
+                                                    elevation: 0.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 2.0,
+                                                    borderRadius: 12.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: true,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ojs71i9z' /* ¿Cuánto tiempo llevas diagnost... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownTiempoInto3ValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownTiempoInto3Value5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .tiempoInto3(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
+                                                  ),
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'kfqhdip2' /* Menos de 1 año */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'i4ljq0lp' /* De 1 a 3 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '2ox7f2a9' /* De 3 a 5 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '98ytbqq1' /* Más de 5 años */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownTiempoInto3Value5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'aqvy2sfh' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'e0jrjxy8' /* 4-¿Tienes otra sensibilidad/in... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child: FutureBuilder<
+                                                  ApiCallResponse>(
+                                                future: DespIntoleranciasCall
+                                                    .call(),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        child: SpinKitCircle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 50.0,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  final dropDownInto4DespIntoleranciasResponse =
+                                                      snapshot.data!;
+
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    controller: _model
+                                                            .dropDownInto4ValueController5 ??=
+                                                        FormFieldController<
+                                                            String>(
+                                                      _model.dropDownInto4Value5 ??=
+                                                          PerfilEnfermedadIndividualCall
+                                                              .into4(
+                                                        perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                            .jsonBody,
+                                                      ),
+                                                    ),
+                                                    options: FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode ==
+                                                            'en'
+                                                        ? DespIntoleranciasCall
+                                                            .en(
+                                                            dropDownInto4DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!
+                                                        : DespIntoleranciasCall
+                                                            .es(
+                                                            dropDownInto4DespIntoleranciasResponse
+                                                                .jsonBody,
+                                                          )!,
+                                                    onChanged: (val) =>
+                                                        safeSetState(() => _model
+                                                                .dropDownInto4Value5 =
+                                                            val),
+                                                    width: 509.0,
+                                                    height: 50.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'gdd8csr2' /* Selecciona tu respuesta... */,
+                                                    ),
+                                                    icon: Icon(
+                                                      Icons
+                                                          .keyboard_arrow_down_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .azulPerm,
+                                                      size: 24.0,
+                                                    ),
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .rellenoCampo2,
+                                                    elevation: 0.0,
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderWidth: 2.0,
+                                                    borderRadius: 12.0,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    hidesUnderline: true,
+                                                    isOverButton: true,
+                                                    isSearchable: false,
+                                                    isMultiSelect: false,
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'mnpjnnvd' /* ¿Cuánto tiempo llevas diagnost... */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child:
+                                                  FlutterFlowDropDown<String>(
+                                                controller: _model
+                                                        .dropDownTiempoInto4ValueController5 ??=
+                                                    FormFieldController<String>(
+                                                  _model.dropDownTiempoInto4Value5 ??=
+                                                      PerfilEnfermedadIndividualCall
+                                                          .tiempoInto4(
+                                                    perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                        .jsonBody,
+                                                  ),
+                                                ),
+                                                options: [
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '8uawfdow' /* Menos de 1 año */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'v9ddooez' /* De 1 a 3 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'm4rp45yh' /* De 3 a 5 años */,
+                                                  ),
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'hjx4sg3i' /* Más de 5 años */,
+                                                  )
+                                                ],
+                                                onChanged: (val) =>
+                                                    safeSetState(() => _model
+                                                            .dropDownTiempoInto4Value5 =
+                                                        val),
+                                                width: 509.0,
+                                                height: 50.0,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'r52qbcnj' /* Selecciona tu respuesta... */,
+                                                ),
+                                                icon: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_down_rounded,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .azulPerm,
+                                                  size: 24.0,
+                                                ),
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .rellenoCampo2,
+                                                elevation: 0.0,
+                                                borderColor: Colors.transparent,
+                                                borderWidth: 2.0,
+                                                borderRadius: 12.0,
+                                                margin: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                hidesUnderline: true,
+                                                isOverButton: true,
+                                                isSearchable: false,
+                                                isMultiSelect: false,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 20.0, 0.0, 16.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              _model.editaid5 =
+                                                  await EditaDatosMedicosCall
+                                                      .call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                yearCovid: 'n/a',
+                                                familiarCovid: 'n/a',
+                                                vecesCovid: 'n/a',
+                                                gradoCovid: 'n/a',
+                                                tieneAuto: 'n/a',
+                                                nombreAuto: 'n/a',
+                                                familiarAuto: 'n/a',
+                                                gradoAuto: 'n/a',
+                                                intestino: _model
+                                                    .dropDownIntestinoValue5,
+                                                tiempoIntestino: _model
+                                                    .dropDownTiempoIntestinoValue5,
+                                                familiarInto: _model
+                                                    .dropDownFamIntoValue5,
+                                                gradoFamInto: _model
+                                                    .dropDownGradoIntoValue5,
+                                                into1:
+                                                    _model.dropDownInto1Value5,
+                                                tiempoInto1: _model
+                                                    .dropDownTiempoInto1Value5,
+                                                into2:
+                                                    _model.dropDownInto2Value5,
+                                                tiempoInto2: _model
+                                                    .dropDownTiempoInto2Value5,
+                                                into3:
+                                                    _model.dropDownInto3Value5,
+                                                tiempoInto3: _model
+                                                    .dropDownTiempoInto3Value5,
+                                                into4:
+                                                    _model.dropDownInto4Value5,
+                                                tiempoInto4: _model
+                                                    .dropDownTiempoInto4Value5,
+                                                eventoFibro: 'n/a',
+                                                tiempoFibro: 'n/a',
+                                                empeoraSintomaFibro: 'n/a',
+                                                familiarFibro: 'n/a',
+                                                gradoFibro: 'n/a',
+                                                tiempoEm: 'n/a',
+                                                criteriosEm: 'n/a',
+                                                familiarEm: 'n/a',
+                                                gradoEm: 'n/a',
+                                                eventoEm: 'n/a',
+                                                tiempoAuto: 'n/a',
+                                              );
+
+                                              context.pushNamed(
+                                                'perfil',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                  ),
+                                                },
+                                              );
+
+                                              safeSetState(() {});
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'rrtr44f9' /* Finalizar */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 300.0,
+                                              height: 44.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .azulPerm,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                        fontSize: 16.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 16.0),
+                                          child: FFButtonWidget(
+                                            onPressed: () async {
+                                              context.pop();
+                                            },
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'krtaen2i' /* Cancelar */,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 300.0,
+                                              height: 44.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color: Color(0x00FFFFFF),
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                              elevation: 0.0,
+                                              borderSide: BorderSide(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0),
+                                            ),
+                                          ),
+                                        ),
+                                      ].addToEnd(SizedBox(height: 100.0)),
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
                             ),
                           ),
@@ -11320,7 +12674,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -11445,7 +12799,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -11533,7 +12887,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -11629,7 +12983,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -11730,7 +13084,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -11827,7 +13181,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -11936,7 +13290,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -12024,7 +13378,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -12119,7 +13473,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -12319,7 +13673,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -12456,9 +13810,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
-                                                                    4.0,
+                                                                    0.0,
                                                                     16.0,
-                                                                    4.0),
+                                                                    0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
                                                         isSearchable: false,
@@ -12573,8 +13927,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -12672,7 +14026,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -12780,8 +14134,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -12815,10 +14169,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownIntestinoValueController5 ??=
+                                                          .dropDownIntestinoValueController6 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownIntestinoValue5 ??=
+                                                    _model.dropDownIntestinoValue6 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .intestino(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -12837,7 +14191,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownIntestinoValue5 =
+                                                              .dropDownIntestinoValue6 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -12879,7 +14233,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -12888,7 +14242,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownIntestinoValue5 ==
+                                          if (_model.dropDownIntestinoValue6 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -12915,10 +14269,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownTiempoIntestinoValueController5 ??=
+                                                            .dropDownTiempoIntestinoValueController6 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownTiempoIntestinoValue5 ??=
+                                                      _model.dropDownTiempoIntestinoValue6 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .tiempoIntestino(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -12949,7 +14303,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownTiempoIntestinoValue5 =
+                                                                .dropDownTiempoIntestinoValue6 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -12992,8 +14346,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -13027,12 +14381,15 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownFamIntoValueController5 ??=
+                                                          .dropDownFamIntoValueController6 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownFamIntoValue5 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue5,
+                                                    _model.dropDownFamIntoValue6 ??=
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -13046,7 +14403,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownFamIntoValue5 =
+                                                              .dropDownFamIntoValue6 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -13088,7 +14445,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -13097,7 +14454,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownFamIntoValue5 ==
+                                          if (_model.dropDownFamIntoValue6 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -13124,10 +14481,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownGradoIntoValueController5 ??=
+                                                            .dropDownGradoIntoValueController6 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownGradoIntoValue5 ??=
+                                                      _model.dropDownGradoIntoValue6 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .gradoFamInto1(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -13153,7 +14510,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownGradoIntoValue5 =
+                                                                .dropDownGradoIntoValue6 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -13196,8 +14553,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -13257,10 +14614,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto1ValueController5 ??=
+                                                              .dropDownInto1ValueController6 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto1Value5 ??=
+                                                        _model.dropDownInto1Value6 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into1(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -13283,7 +14640,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto1Value5 =
+                                                              _model.dropDownInto1Value6 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -13332,9 +14689,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -13370,10 +14727,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto1ValueController5 ??=
+                                                          .dropDownTiempoInto1ValueController6 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto1Value5 ??=
+                                                    _model.dropDownTiempoInto1Value6 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto1(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -13400,7 +14757,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto1Value5 =
+                                                              .dropDownTiempoInto1Value6 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -13442,7 +14799,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -13502,10 +14859,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto2ValueController5 ??=
+                                                              .dropDownInto2ValueController6 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto2Value5 ??=
+                                                        _model.dropDownInto2Value6 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into2(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -13528,7 +14885,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto2Value5 =
+                                                              _model.dropDownInto2Value6 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -13577,9 +14934,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -13618,10 +14975,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto2ValueController5 ??=
+                                                          .dropDownTiempoInto2ValueController6 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto2Value5 ??=
+                                                    _model.dropDownTiempoInto2Value6 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto2(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -13648,7 +15005,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto2Value5 =
+                                                              .dropDownTiempoInto2Value6 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -13690,7 +15047,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -13750,10 +15107,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto3ValueController5 ??=
+                                                              .dropDownInto3ValueController6 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto3Value5 ??=
+                                                        _model.dropDownInto3Value6 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into3(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -13776,7 +15133,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto3Value5 =
+                                                              _model.dropDownInto3Value6 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -13825,9 +15182,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -13866,10 +15223,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto3ValueController5 ??=
+                                                          .dropDownTiempoInto3ValueController6 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto3Value5 ??=
+                                                    _model.dropDownTiempoInto3Value6 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto3(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -13896,7 +15253,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto3Value5 =
+                                                              .dropDownTiempoInto3Value6 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -13938,7 +15295,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -13998,10 +15355,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto4ValueController5 ??=
+                                                              .dropDownInto4ValueController6 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto4Value5 ??=
+                                                        _model.dropDownInto4Value6 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into4(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -14024,7 +15381,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto4Value5 =
+                                                              _model.dropDownInto4Value6 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -14073,9 +15430,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -14114,10 +15471,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto4ValueController5 ??=
+                                                          .dropDownTiempoInto4ValueController6 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto4Value5 ??=
+                                                    _model.dropDownTiempoInto4Value6 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto4(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -14144,7 +15501,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto4Value5 =
+                                                              .dropDownTiempoInto4Value6 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -14186,7 +15543,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -14225,29 +15582,29 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   gradoAuto: _model
                                                       .dropDownGradoAutoValue5,
                                                   intestino: _model
-                                                      .dropDownIntestinoValue5,
+                                                      .dropDownIntestinoValue6,
                                                   tiempoIntestino: _model
-                                                      .dropDownTiempoIntestinoValue5,
+                                                      .dropDownTiempoIntestinoValue6,
                                                   familiarInto: _model
-                                                      .dropDownFamIntoValue5,
+                                                      .dropDownFamIntoValue6,
                                                   gradoFamInto: _model
-                                                      .dropDownGradoIntoValue5,
+                                                      .dropDownGradoIntoValue6,
                                                   into1: _model
-                                                      .dropDownInto1Value5,
+                                                      .dropDownInto1Value6,
                                                   tiempoInto1: _model
-                                                      .dropDownTiempoInto1Value5,
+                                                      .dropDownTiempoInto1Value6,
                                                   into2: _model
-                                                      .dropDownInto2Value5,
+                                                      .dropDownInto2Value6,
                                                   tiempoInto2: _model
-                                                      .dropDownTiempoInto2Value5,
+                                                      .dropDownTiempoInto2Value6,
                                                   into3: _model
-                                                      .dropDownInto3Value5,
+                                                      .dropDownInto3Value6,
                                                   tiempoInto3: _model
-                                                      .dropDownTiempoInto3Value5,
+                                                      .dropDownTiempoInto3Value6,
                                                   into4: _model
-                                                      .dropDownInto4Value5,
+                                                      .dropDownInto4Value6,
                                                   tiempoInto4: _model
-                                                      .dropDownTiempoInto4Value5,
+                                                      .dropDownTiempoInto4Value6,
                                                   eventoFibro: 'n/a',
                                                   tiempoFibro: 'n/a',
                                                   empeoraSintomaFibro: 'n/a',
@@ -14485,7 +15842,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -14581,7 +15938,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -14669,7 +16026,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -14757,7 +16114,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -14853,7 +16210,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -14953,7 +16310,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -15050,7 +16407,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -15159,7 +16516,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -15247,7 +16604,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -15342,7 +16699,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -15542,7 +16899,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -15679,9 +17036,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
-                                                                    4.0,
+                                                                    0.0,
                                                                     16.0,
-                                                                    4.0),
+                                                                    0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
                                                         isSearchable: false,
@@ -15796,8 +17153,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -15895,7 +17252,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -16003,8 +17360,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -16038,10 +17395,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownIntestinoValueController6 ??=
+                                                          .dropDownIntestinoValueController7 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownIntestinoValue6 ??=
+                                                    _model.dropDownIntestinoValue7 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .intestino(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16060,7 +17417,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownIntestinoValue6 =
+                                                              .dropDownIntestinoValue7 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -16102,7 +17459,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -16111,7 +17468,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownIntestinoValue6 ==
+                                          if (_model.dropDownIntestinoValue7 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -16138,10 +17495,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownTiempoIntestinoValueController6 ??=
+                                                            .dropDownTiempoIntestinoValueController7 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownTiempoIntestinoValue6 ??=
+                                                      _model.dropDownTiempoIntestinoValue7 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .tiempoIntestino(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16172,7 +17529,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownTiempoIntestinoValue6 =
+                                                                .dropDownTiempoIntestinoValue7 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -16250,12 +17607,15 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownFamIntoValueController6 ??=
+                                                          .dropDownFamIntoValueController7 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownFamIntoValue6 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue6,
+                                                    _model.dropDownFamIntoValue7 ??=
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -16269,7 +17629,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownFamIntoValue6 =
+                                                              .dropDownFamIntoValue7 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -16320,7 +17680,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownFamIntoValue6 ==
+                                          if (_model.dropDownFamIntoValue7 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -16347,10 +17707,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownGradoIntoValueController6 ??=
+                                                            .dropDownGradoIntoValueController7 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownGradoIntoValue6 ??=
+                                                      _model.dropDownGradoIntoValue7 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .gradoFamInto1(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16376,7 +17736,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownGradoIntoValue6 =
+                                                                .dropDownGradoIntoValue7 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -16419,8 +17779,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -16480,10 +17840,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto1ValueController6 ??=
+                                                              .dropDownInto1ValueController7 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto1Value6 ??=
+                                                        _model.dropDownInto1Value7 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into1(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16506,7 +17866,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto1Value6 =
+                                                              _model.dropDownInto1Value7 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -16555,9 +17915,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -16593,10 +17953,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto1ValueController6 ??=
+                                                          .dropDownTiempoInto1ValueController7 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto1Value6 ??=
+                                                    _model.dropDownTiempoInto1Value7 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto1(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16623,7 +17983,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto1Value6 =
+                                                              .dropDownTiempoInto1Value7 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -16665,7 +18025,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -16725,10 +18085,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto2ValueController6 ??=
+                                                              .dropDownInto2ValueController7 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto2Value6 ??=
+                                                        _model.dropDownInto2Value7 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into2(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16751,7 +18111,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto2Value6 =
+                                                              _model.dropDownInto2Value7 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -16800,9 +18160,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -16841,10 +18201,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto2ValueController6 ??=
+                                                          .dropDownTiempoInto2ValueController7 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto2Value6 ??=
+                                                    _model.dropDownTiempoInto2Value7 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto2(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16871,7 +18231,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto2Value6 =
+                                                              .dropDownTiempoInto2Value7 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -16913,7 +18273,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -16973,10 +18333,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto3ValueController6 ??=
+                                                              .dropDownInto3ValueController7 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto3Value6 ??=
+                                                        _model.dropDownInto3Value7 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into3(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -16999,7 +18359,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto3Value6 =
+                                                              _model.dropDownInto3Value7 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -17048,9 +18408,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -17089,10 +18449,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto3ValueController6 ??=
+                                                          .dropDownTiempoInto3ValueController7 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto3Value6 ??=
+                                                    _model.dropDownTiempoInto3Value7 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto3(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -17119,7 +18479,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto3Value6 =
+                                                              .dropDownTiempoInto3Value7 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -17161,7 +18521,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -17221,10 +18581,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto4ValueController6 ??=
+                                                              .dropDownInto4ValueController7 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto4Value6 ??=
+                                                        _model.dropDownInto4Value7 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into4(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -17247,7 +18607,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto4Value6 =
+                                                              _model.dropDownInto4Value7 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -17296,9 +18656,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -17337,10 +18697,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto4ValueController6 ??=
+                                                          .dropDownTiempoInto4ValueController7 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto4Value6 ??=
+                                                    _model.dropDownTiempoInto4Value7 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto4(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -17367,7 +18727,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto4Value6 =
+                                                              .dropDownTiempoInto4Value7 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -17409,7 +18769,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -17444,29 +18804,29 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   gradoAuto: _model
                                                       .dropDownGradoAutoValue6,
                                                   intestino: _model
-                                                      .dropDownIntestinoValue6,
+                                                      .dropDownIntestinoValue7,
                                                   tiempoIntestino: _model
-                                                      .dropDownTiempoIntestinoValue6,
+                                                      .dropDownTiempoIntestinoValue7,
                                                   familiarInto: _model
-                                                      .dropDownFamIntoValue6,
+                                                      .dropDownFamIntoValue7,
                                                   gradoFamInto: _model
-                                                      .dropDownGradoIntoValue6,
+                                                      .dropDownGradoIntoValue7,
                                                   into1: _model
-                                                      .dropDownInto1Value6,
+                                                      .dropDownInto1Value7,
                                                   tiempoInto1: _model
-                                                      .dropDownTiempoInto1Value6,
+                                                      .dropDownTiempoInto1Value7,
                                                   into2: _model
-                                                      .dropDownInto2Value6,
+                                                      .dropDownInto2Value7,
                                                   tiempoInto2: _model
-                                                      .dropDownTiempoInto2Value6,
+                                                      .dropDownTiempoInto2Value7,
                                                   into3: _model
-                                                      .dropDownInto3Value6,
+                                                      .dropDownInto3Value7,
                                                   tiempoInto3: _model
-                                                      .dropDownTiempoInto3Value6,
+                                                      .dropDownTiempoInto3Value7,
                                                   into4: _model
-                                                      .dropDownInto4Value6,
+                                                      .dropDownInto4Value7,
                                                   tiempoInto4: _model
-                                                      .dropDownTiempoInto4Value6,
+                                                      .dropDownTiempoInto4Value7,
                                                   eventoFibro: _model
                                                       .dropDownEventoFibro7Value,
                                                   tiempoFibro: _model
@@ -17701,7 +19061,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -17825,7 +19185,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -17913,7 +19273,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -18009,7 +19369,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -18117,7 +19477,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -18213,7 +19573,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -18301,7 +19661,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -18389,7 +19749,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -18485,7 +19845,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -18685,7 +20045,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -18822,9 +20182,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
-                                                                    4.0,
+                                                                    0.0,
                                                                     16.0,
-                                                                    4.0),
+                                                                    0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
                                                         isSearchable: false,
@@ -18939,8 +20299,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -19038,7 +20398,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -19146,8 +20506,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -19181,10 +20541,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownIntestinoValueController7 ??=
+                                                          .dropDownIntestinoValueController8 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownIntestinoValue7 ??=
+                                                    _model.dropDownIntestinoValue8 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .intestino(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -19203,7 +20563,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownIntestinoValue7 =
+                                                              .dropDownIntestinoValue8 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -19245,7 +20605,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -19254,7 +20614,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownIntestinoValue7 ==
+                                          if (_model.dropDownIntestinoValue8 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -19281,10 +20641,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownTiempoIntestinoValueController7 ??=
+                                                            .dropDownTiempoIntestinoValueController8 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownTiempoIntestinoValue7 ??=
+                                                      _model.dropDownTiempoIntestinoValue8 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .tiempoIntestino(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -19315,7 +20675,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownTiempoIntestinoValue7 =
+                                                                .dropDownTiempoIntestinoValue8 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -19358,8 +20718,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -19393,12 +20753,15 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownFamIntoValueController7 ??=
+                                                          .dropDownFamIntoValueController8 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownFamIntoValue7 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue7,
+                                                    _model.dropDownFamIntoValue8 ??=
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -19412,7 +20775,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownFamIntoValue7 =
+                                                              .dropDownFamIntoValue8 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -19454,7 +20817,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -19463,7 +20826,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownFamIntoValue7 ==
+                                          if (_model.dropDownFamIntoValue8 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -19490,10 +20853,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownGradoIntoValueController7 ??=
+                                                            .dropDownGradoIntoValueController8 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownGradoIntoValue7 ??=
+                                                      _model.dropDownGradoIntoValue8 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .gradoFamInto1(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -19519,7 +20882,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownGradoIntoValue7 =
+                                                                .dropDownGradoIntoValue8 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -19562,8 +20925,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -19623,10 +20986,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto1ValueController7 ??=
+                                                              .dropDownInto1ValueController8 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto1Value7 ??=
+                                                        _model.dropDownInto1Value8 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into1(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -19649,7 +21012,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto1Value7 =
+                                                              _model.dropDownInto1Value8 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -19698,9 +21061,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -19736,10 +21099,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto1ValueController7 ??=
+                                                          .dropDownTiempoInto1ValueController8 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto1Value7 ??=
+                                                    _model.dropDownTiempoInto1Value8 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto1(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -19766,7 +21129,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto1Value7 =
+                                                              .dropDownTiempoInto1Value8 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -19808,7 +21171,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -19868,10 +21231,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto2ValueController7 ??=
+                                                              .dropDownInto2ValueController8 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto2Value7 ??=
+                                                        _model.dropDownInto2Value8 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into2(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -19894,7 +21257,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto2Value7 =
+                                                              _model.dropDownInto2Value8 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -19943,9 +21306,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -19984,10 +21347,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto2ValueController7 ??=
+                                                          .dropDownTiempoInto2ValueController8 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto2Value7 ??=
+                                                    _model.dropDownTiempoInto2Value8 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto2(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -20014,7 +21377,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto2Value7 =
+                                                              .dropDownTiempoInto2Value8 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -20056,7 +21419,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -20116,10 +21479,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto3ValueController7 ??=
+                                                              .dropDownInto3ValueController8 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto3Value7 ??=
+                                                        _model.dropDownInto3Value8 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into3(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -20142,7 +21505,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto3Value7 =
+                                                              _model.dropDownInto3Value8 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -20191,9 +21554,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -20232,10 +21595,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto3ValueController7 ??=
+                                                          .dropDownTiempoInto3ValueController8 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto3Value7 ??=
+                                                    _model.dropDownTiempoInto3Value8 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto3(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -20262,7 +21625,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto3Value7 =
+                                                              .dropDownTiempoInto3Value8 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -20304,7 +21667,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -20364,10 +21727,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto4ValueController7 ??=
+                                                              .dropDownInto4ValueController8 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto4Value7 ??=
+                                                        _model.dropDownInto4Value8 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into4(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -20390,7 +21753,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto4Value7 =
+                                                              _model.dropDownInto4Value8 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -20439,9 +21802,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -20480,10 +21843,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto4ValueController7 ??=
+                                                          .dropDownTiempoInto4ValueController8 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto4Value7 ??=
+                                                    _model.dropDownTiempoInto4Value8 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto4(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -20510,7 +21873,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto4Value7 =
+                                                              .dropDownTiempoInto4Value8 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -20552,7 +21915,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -20591,29 +21954,29 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   gradoAuto: _model
                                                       .dropDownGradoAutoValue7,
                                                   intestino: _model
-                                                      .dropDownIntestinoValue7,
+                                                      .dropDownIntestinoValue8,
                                                   tiempoIntestino: _model
-                                                      .dropDownTiempoIntestinoValue7,
+                                                      .dropDownTiempoIntestinoValue8,
                                                   familiarInto: _model
-                                                      .dropDownFamIntoValue7,
+                                                      .dropDownFamIntoValue8,
                                                   gradoFamInto: _model
-                                                      .dropDownGradoIntoValue7,
+                                                      .dropDownGradoIntoValue8,
                                                   into1: _model
-                                                      .dropDownInto1Value7,
+                                                      .dropDownInto1Value8,
                                                   tiempoInto1: _model
-                                                      .dropDownTiempoInto1Value7,
+                                                      .dropDownTiempoInto1Value8,
                                                   into2: _model
-                                                      .dropDownInto2Value7,
+                                                      .dropDownInto2Value8,
                                                   tiempoInto2: _model
-                                                      .dropDownTiempoInto2Value7,
+                                                      .dropDownTiempoInto2Value8,
                                                   into3: _model
-                                                      .dropDownInto3Value7,
+                                                      .dropDownInto3Value8,
                                                   tiempoInto3: _model
-                                                      .dropDownTiempoInto3Value7,
+                                                      .dropDownTiempoInto3Value8,
                                                   into4: _model
-                                                      .dropDownInto4Value7,
+                                                      .dropDownInto4Value8,
                                                   tiempoInto4: _model
-                                                      .dropDownTiempoInto4Value7,
+                                                      .dropDownTiempoInto4Value8,
                                                   eventoFibro: _model
                                                       .dropDownEventoFibro8Value,
                                                   tiempoFibro: _model
@@ -20843,7 +22206,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -20967,7 +22330,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -21055,7 +22418,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -21151,7 +22514,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -21259,7 +22622,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -21355,7 +22718,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -21443,7 +22806,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -21531,7 +22894,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -21627,7 +22990,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -21727,7 +23090,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: true,
                                             isSearchable: false,
@@ -21824,7 +23187,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -21933,7 +23296,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -22021,7 +23384,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             borderRadius: 12.0,
                                             margin:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 4.0, 16.0, 4.0),
+                                                    16.0, 0.0, 16.0, 0.0),
                                             hidesUnderline: true,
                                             isOverButton: false,
                                             isSearchable: false,
@@ -22116,7 +23479,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               borderRadius: 12.0,
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 4.0, 16.0, 4.0),
+                                                      16.0, 0.0, 16.0, 0.0),
                                               hidesUnderline: true,
                                               isOverButton: false,
                                               isSearchable: false,
@@ -22316,7 +23679,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -22453,9 +23816,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
-                                                                    4.0,
+                                                                    0.0,
                                                                     16.0,
-                                                                    4.0),
+                                                                    0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: true,
                                                         isSearchable: false,
@@ -22570,8 +23933,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -22669,7 +24032,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -22777,8 +24140,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -22812,10 +24175,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownIntestinoValueController8 ??=
+                                                          .dropDownIntestinoValueController9 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownIntestinoValue8 ??=
+                                                    _model.dropDownIntestinoValue9 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .intestino(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -22834,7 +24197,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownIntestinoValue8 =
+                                                              .dropDownIntestinoValue9 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -22876,7 +24239,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -22885,7 +24248,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownIntestinoValue8 ==
+                                          if (_model.dropDownIntestinoValue9 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -22912,10 +24275,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownTiempoIntestinoValueController8 ??=
+                                                            .dropDownTiempoIntestinoValueController9 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownTiempoIntestinoValue8 ??=
+                                                      _model.dropDownTiempoIntestinoValue9 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .tiempoIntestino(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -22946,7 +24309,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownTiempoIntestinoValue8 =
+                                                                .dropDownTiempoIntestinoValue9 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -22989,8 +24352,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -23024,12 +24387,15 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownFamIntoValueController8 ??=
+                                                          .dropDownFamIntoValueController9 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownFamIntoValue8 ??=
-                                                        _model
-                                                            .dropDownGradoIntoValue8,
+                                                    _model.dropDownFamIntoValue9 ??=
+                                                        PerfilEnfermedadIndividualCall
+                                                            .damInto1(
+                                                      perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                          .jsonBody,
+                                                    ),
                                                   ),
                                                   options: [
                                                     FFLocalizations.of(context)
@@ -23043,7 +24409,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownFamIntoValue8 =
+                                                              .dropDownFamIntoValue9 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -23085,7 +24451,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -23094,7 +24460,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               ),
                                             ],
                                           ),
-                                          if (_model.dropDownFamIntoValue8 ==
+                                          if (_model.dropDownFamIntoValue9 ==
                                               'Si')
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -23121,10 +24487,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   child: FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model
-                                                            .dropDownGradoIntoValueController8 ??=
+                                                            .dropDownGradoIntoValueController9 ??=
                                                         FormFieldController<
                                                             String>(
-                                                      _model.dropDownGradoIntoValue8 ??=
+                                                      _model.dropDownGradoIntoValue9 ??=
                                                           PerfilEnfermedadIndividualCall
                                                               .gradoFamInto1(
                                                         perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -23150,7 +24516,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     ],
                                                     onChanged: (val) =>
                                                         safeSetState(() => _model
-                                                                .dropDownGradoIntoValue8 =
+                                                                .dropDownGradoIntoValue9 =
                                                             val),
                                                     width: 509.0,
                                                     height: 50.0,
@@ -23193,8 +24559,8 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     borderRadius: 12.0,
                                                     margin:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 4.0,
-                                                                16.0, 4.0),
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
                                                     hidesUnderline: true,
                                                     isOverButton: true,
                                                     isSearchable: false,
@@ -23254,10 +24620,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto1ValueController8 ??=
+                                                              .dropDownInto1ValueController9 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto1Value8 ??=
+                                                        _model.dropDownInto1Value9 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into1(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -23280,7 +24646,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto1Value8 =
+                                                              _model.dropDownInto1Value9 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -23329,9 +24695,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -23367,10 +24733,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto1ValueController8 ??=
+                                                          .dropDownTiempoInto1ValueController9 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto1Value8 ??=
+                                                    _model.dropDownTiempoInto1Value9 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto1(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -23397,7 +24763,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto1Value8 =
+                                                              .dropDownTiempoInto1Value9 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -23439,7 +24805,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -23499,10 +24865,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto2ValueController8 ??=
+                                                              .dropDownInto2ValueController9 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto2Value8 ??=
+                                                        _model.dropDownInto2Value9 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into2(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -23525,7 +24891,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto2Value8 =
+                                                              _model.dropDownInto2Value9 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -23574,9 +24940,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -23615,10 +24981,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto2ValueController8 ??=
+                                                          .dropDownTiempoInto2ValueController9 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto2Value8 ??=
+                                                    _model.dropDownTiempoInto2Value9 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto2(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -23645,7 +25011,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto2Value8 =
+                                                              .dropDownTiempoInto2Value9 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -23687,7 +25053,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -23747,10 +25113,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto3ValueController8 ??=
+                                                              .dropDownInto3ValueController9 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto3Value8 ??=
+                                                        _model.dropDownInto3Value9 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into3(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -23773,7 +25139,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto3Value8 =
+                                                              _model.dropDownInto3Value9 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -23822,9 +25188,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -23863,10 +25229,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto3ValueController8 ??=
+                                                          .dropDownTiempoInto3ValueController9 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto3Value8 ??=
+                                                    _model.dropDownTiempoInto3Value9 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto3(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -23893,7 +25259,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto3Value8 =
+                                                              .dropDownTiempoInto3Value9 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -23935,7 +25301,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -23995,10 +25361,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .dropDownInto4ValueController8 ??=
+                                                              .dropDownInto4ValueController9 ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.dropDownInto4Value8 ??=
+                                                        _model.dropDownInto4Value9 ??=
                                                             PerfilEnfermedadIndividualCall
                                                                 .into4(
                                                           perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -24021,7 +25387,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                             )!,
                                                       onChanged: (val) =>
                                                           safeSetState(() =>
-                                                              _model.dropDownInto4Value8 =
+                                                              _model.dropDownInto4Value9 =
                                                                   val),
                                                       width: 509.0,
                                                       height: 50.0,
@@ -24070,9 +25436,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
-                                                                  4.0,
+                                                                  0.0,
                                                                   16.0,
-                                                                  4.0),
+                                                                  0.0),
                                                       hidesUnderline: true,
                                                       isOverButton: true,
                                                       isSearchable: false,
@@ -24111,10 +25477,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 child:
                                                     FlutterFlowDropDown<String>(
                                                   controller: _model
-                                                          .dropDownTiempoInto4ValueController8 ??=
+                                                          .dropDownTiempoInto4ValueController9 ??=
                                                       FormFieldController<
                                                           String>(
-                                                    _model.dropDownTiempoInto4Value8 ??=
+                                                    _model.dropDownTiempoInto4Value9 ??=
                                                         PerfilEnfermedadIndividualCall
                                                             .tiempoInto4(
                                                       perfilDatosMedicosPerfilEnfermedadIndividualResponse
@@ -24141,7 +25507,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   ],
                                                   onChanged: (val) =>
                                                       safeSetState(() => _model
-                                                              .dropDownTiempoInto4Value8 =
+                                                              .dropDownTiempoInto4Value9 =
                                                           val),
                                                   width: 509.0,
                                                   height: 50.0,
@@ -24183,7 +25549,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   borderRadius: 12.0,
                                                   margin: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 4.0, 16.0, 4.0),
+                                                          16.0, 0.0, 16.0, 0.0),
                                                   hidesUnderline: true,
                                                   isOverButton: true,
                                                   isSearchable: false,
@@ -24222,29 +25588,29 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                   gradoAuto: _model
                                                       .dropDownGradoAutoValue8,
                                                   intestino: _model
-                                                      .dropDownIntestinoValue8,
+                                                      .dropDownIntestinoValue9,
                                                   tiempoIntestino: _model
-                                                      .dropDownTiempoIntestinoValue8,
+                                                      .dropDownTiempoIntestinoValue9,
                                                   familiarInto: _model
-                                                      .dropDownFamIntoValue8,
+                                                      .dropDownFamIntoValue9,
                                                   gradoFamInto: _model
-                                                      .dropDownGradoIntoValue8,
+                                                      .dropDownGradoIntoValue9,
                                                   into1: _model
-                                                      .dropDownInto1Value8,
+                                                      .dropDownInto1Value9,
                                                   tiempoInto1: _model
-                                                      .dropDownTiempoInto1Value8,
+                                                      .dropDownTiempoInto1Value9,
                                                   into2: _model
-                                                      .dropDownInto2Value8,
+                                                      .dropDownInto2Value9,
                                                   tiempoInto2: _model
-                                                      .dropDownTiempoInto2Value8,
+                                                      .dropDownTiempoInto2Value9,
                                                   into3: _model
-                                                      .dropDownInto3Value8,
+                                                      .dropDownInto3Value9,
                                                   tiempoInto3: _model
-                                                      .dropDownTiempoInto3Value8,
+                                                      .dropDownTiempoInto3Value9,
                                                   into4: _model
-                                                      .dropDownInto4Value8,
+                                                      .dropDownInto4Value9,
                                                   tiempoInto4: _model
-                                                      .dropDownTiempoInto4Value8,
+                                                      .dropDownTiempoInto4Value9,
                                                   eventoFibro: _model
                                                       .dropDownEventoFibro9Value,
                                                   tiempoFibro: _model
@@ -24380,6 +25746,16 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                     ),
                   ),
                 ),
+                if (!(isWeb
+                    ? MediaQuery.viewInsetsOf(context).bottom > 0
+                    : _isKeyboardVisible))
+                  wrapWithModel(
+                    model: _model.menuUsuarioModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: MenuUsuarioWidget(
+                      index: 0,
+                    ),
+                  ),
               ],
             ),
           ),

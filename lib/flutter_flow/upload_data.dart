@@ -89,7 +89,9 @@ Future<List<SelectedFile>?> selectMediaWithSourceBottomSheet({
                 padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
                 child: ListTile(
                   title: Text(
-                    'Choose Source',
+                    FFLocalizations.of(context).getText(
+                      '7uzuvmxl' /* Selecciona el origen */,
+                    ),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.getFont(
                       pickerFontFamily,
@@ -106,27 +108,39 @@ Future<List<SelectedFile>?> selectMediaWithSourceBottomSheet({
             ],
             if (allowPhoto && allowVideo) ...[
               createUploadMediaListTile(
-                'Gallery (Photo)',
+                FFLocalizations.of(context).getText(
+                  'el72q7yt' /* Galería de Fotos */,
+                ),
                 MediaSource.photoGallery,
               ),
               const Divider(),
               createUploadMediaListTile(
-                'Gallery (Video)',
+                FFLocalizations.of(context).getText(
+                  '83ow2df9' /* Galería de Fotos */,
+                ),
                 MediaSource.videoGallery,
               ),
             ] else if (allowPhoto)
               createUploadMediaListTile(
-                'Gallery',
+                FFLocalizations.of(context).getText(
+                  'ay06sts5' /* Galería */,
+                ),
                 MediaSource.photoGallery,
               )
             else
               createUploadMediaListTile(
-                'Gallery',
+                FFLocalizations.of(context).getText(
+                  'ay06sts5' /* Galería */,
+                ),
                 MediaSource.videoGallery,
               ),
             if (!kIsWeb) ...[
               const Divider(),
-              createUploadMediaListTile('Camera', MediaSource.camera),
+              createUploadMediaListTile(
+                  FFLocalizations.of(context).getText(
+                    'yehfjdtx' /* Cámara */,
+                  ),
+                  MediaSource.camera),
               const Divider(),
             ],
             const SizedBox(height: 10),
@@ -232,7 +246,9 @@ bool validateFileFormat(String filePath, BuildContext context) {
   ScaffoldMessenger.of(context)
     ..hideCurrentSnackBar()
     ..showSnackBar(SnackBar(
-      content: Text('Invalid file format: ${mime(filePath)}'),
+      content: Text(FFLocalizations.of(context).getText(
+        '8ykcpmof' /* Formato de archivo incorrecto */,
+      )),
     ));
   return false;
 }

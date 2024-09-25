@@ -45,11 +45,11 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
       });
     }
 
-    _model.textFieldCelTextController ??= TextEditingController();
-    _model.textFieldCelFocusNode ??= FocusNode();
-
     _model.textFieldMensajeTextController ??= TextEditingController();
     _model.textFieldMensajeFocusNode ??= FocusNode();
+
+    _model.textFieldCelTextController ??= TextEditingController();
+    _model.textFieldCelFocusNode ??= FocusNode();
   }
 
   @override
@@ -139,105 +139,10 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 8.0, 0.0),
-                              child: Container(
-                                width: 350.0,
-                                child: TextFormField(
-                                  controller: _model.textFieldCelTextController,
-                                  focusNode: _model.textFieldCelFocusNode,
-                                  onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.textFieldCelTextController',
-                                    Duration(milliseconds: 100),
-                                    () => safeSetState(() {}),
-                                  ),
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      'w43hukio' /* Móvil */,
-                                    ),
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  keyboardType: TextInputType.phone,
-                                  validator: _model
-                                      .textFieldCelTextControllerValidator
-                                      .asValidator(context),
-                                  inputFormatters: [_model.textFieldCelMask],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         FlutterFlowDropDown<String>(
-                          controller: _model.dropDownValueController ??=
+                          controller: _model.dropDownMotivoValueController ??=
                               FormFieldController<String>(null),
                           options: [
                             FFLocalizations.of(context).getText(
@@ -256,8 +161,8 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                               '5boosjcs' /* Sugerencias o comentarios */,
                             )
                           ],
-                          onChanged: (val) =>
-                              safeSetState(() => _model.dropDownValue = val),
+                          onChanged: (val) => safeSetState(
+                              () => _model.dropDownMotivoValue = val),
                           width: 350.0,
                           height: 50.0,
                           textStyle:
@@ -273,12 +178,14 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           elevation: 2.0,
-                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderColor: Colors.transparent,
                           borderWidth: 2.0,
                           borderRadius: 8.0,
                           margin: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 16.0, 4.0),
+                              16.0, 0.0, 16.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: true,
                           isSearchable: false,
@@ -288,7 +195,8 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 7.0, 0.0, 0.0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -309,7 +217,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                     Duration(milliseconds: 100),
                                     () => safeSetState(() {}),
                                   ),
-                                  autofocus: true,
+                                  autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText:
@@ -334,16 +242,14 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                         ),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                        color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: Color(0x00000000),
                                         width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
@@ -364,6 +270,9 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
+                                    filled: true,
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -422,12 +331,14 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           elevation: 2.0,
-                          borderColor: FlutterFlowTheme.of(context).alternate,
+                          borderColor: Colors.transparent,
                           borderWidth: 2.0,
                           borderRadius: 8.0,
                           margin: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 4.0, 16.0, 4.0),
+                              16.0, 0.0, 16.0, 0.0),
                           hidesUnderline: true,
                           isOverButton: true,
                           isSearchable: false,
@@ -436,6 +347,115 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                       ],
                     ),
                   ),
+                  if ((_model.dropDownModoValue == 'WhatsApp') ||
+                      (_model.dropDownModoValue == 'Llamada'))
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 8.0, 0.0),
+                                child: Container(
+                                  width: 350.0,
+                                  child: TextFormField(
+                                    controller:
+                                        _model.textFieldCelTextController,
+                                    focusNode: _model.textFieldCelFocusNode,
+                                    onChanged: (_) => EasyDebounce.debounce(
+                                      '_model.textFieldCelTextController',
+                                      Duration(milliseconds: 100),
+                                      () => safeSetState(() {}),
+                                    ),
+                                    autofocus: false,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'w43hukio' /* Móvil */,
+                                      ),
+                                      labelStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'bx9mgmli' /* +34 666 666 666 */,
+                                      ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Color(0x00000000),
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      filled: true,
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    keyboardType: TextInputType.phone,
+                                    validator: _model
+                                        .textFieldCelTextControllerValidator
+                                        .asValidator(context),
+                                    inputFormatters: [_model.textFieldCelMask],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 20.0),
@@ -451,19 +471,15 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                       _model.textFieldMensajeTextController
                                               .text ==
                                           '') ||
-                                  (_model.textFieldCelTextController.text ==
-                                          null ||
-                                      _model.textFieldCelTextController.text ==
-                                          '') ||
-                                  (_model.dropDownModoValue == null ||
-                                      _model.dropDownModoValue == ''))
+                                  (_model.dropDownMotivoValue == null ||
+                                      _model.dropDownMotivoValue == ''))
                               ? null
                               : () async {
                                   _model.apiResultwle2 =
                                       await PerilContactoCall.call(
                                     authToken: FFAppState().authToken,
                                     modo: _model.dropDownModoValue,
-                                    motivo: _model.dropDownValue,
+                                    motivo: _model.dropDownMotivoValue,
                                     movil:
                                         _model.textFieldCelTextController.text,
                                     mensaje: _model
@@ -498,7 +514,8 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                           ?.clear();
                                     });
                                     safeSetState(() {
-                                      _model.dropDownValueController?.reset();
+                                      _model.dropDownMotivoValueController
+                                          ?.reset();
                                       _model.dropDownModoValueController
                                           ?.reset();
                                     });

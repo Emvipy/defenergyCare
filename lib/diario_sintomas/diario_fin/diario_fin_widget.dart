@@ -218,6 +218,38 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        if (DiarioPantallaFinalCall.mensajePush(
+                              diarioFinDiarioPantallaFinalResponse.jsonBody,
+                            ) ==
+                            'si') {
+                          await showModalBottomSheet(
+                            isScrollControlled: true,
+                            backgroundColor: Colors.transparent,
+                            isDismissible: false,
+                            enableDrag: false,
+                            context: context,
+                            builder: (context) {
+                              return GestureDetector(
+                                onTap: () => FocusScope.of(context).unfocus(),
+                                child: Padding(
+                                  padding: MediaQuery.viewInsetsOf(context),
+                                  child: ModalPushWidget(),
+                                ),
+                              );
+                            },
+                          ).then((value) => safeSetState(() {}));
+                        } else {
+                          context.goNamed(
+                            'Home',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                              ),
+                            },
+                          );
+                        }
+
                         FFAppState().deleteDiarioId();
                         FFAppState().diarioId = 0;
 
@@ -250,38 +282,6 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
 
                         FFAppState().deleteTmpCantidadSuplementos();
                         FFAppState().tmpCantidadSuplementos = 0;
-
-                        if (DiarioPantallaFinalCall.mensajePush(
-                              diarioFinDiarioPantallaFinalResponse.jsonBody,
-                            ) ==
-                            'si') {
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            isDismissible: false,
-                            enableDrag: false,
-                            context: context,
-                            builder: (context) {
-                              return GestureDetector(
-                                onTap: () => FocusScope.of(context).unfocus(),
-                                child: Padding(
-                                  padding: MediaQuery.viewInsetsOf(context),
-                                  child: ModalPushWidget(),
-                                ),
-                              );
-                            },
-                          ).then((value) => safeSetState(() {}));
-                        } else {
-                          context.goNamed(
-                            'Home',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                              ),
-                            },
-                          );
-                        }
                       },
                       text: FFLocalizations.of(context).getText(
                         '5iux48nb' /* Finalizar */,

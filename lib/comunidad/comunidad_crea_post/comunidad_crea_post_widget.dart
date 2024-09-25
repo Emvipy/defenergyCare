@@ -251,23 +251,145 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
-                          child: Container(
-                            width: 350.0,
-                            height: 250.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, -1.0),
-                                  child: Padding(
+                        if (_model.cargador == 'no')
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Container(
+                              width: 350.0,
+                              height: 250.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, -1.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          final selectedMedia =
+                                              await selectMediaWithSourceBottomSheet(
+                                            context: context,
+                                            maxWidth: 900.00,
+                                            maxHeight: 200.00,
+                                            allowPhoto: true,
+                                          );
+                                          if (selectedMedia != null &&
+                                              selectedMedia.every((m) =>
+                                                  validateFileFormat(
+                                                      m.storagePath,
+                                                      context))) {
+                                            safeSetState(() =>
+                                                _model.isDataUploading1 = true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
+
+                                            try {
+                                              selectedUploadedFiles =
+                                                  selectedMedia
+                                                      .map(
+                                                          (m) => FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                      .toList();
+                                            } finally {
+                                              _model.isDataUploading1 = false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                selectedMedia.length) {
+                                              safeSetState(() {
+                                                _model.uploadedLocalFile1 =
+                                                    selectedUploadedFiles.first;
+                                              });
+                                            } else {
+                                              safeSetState(() {});
+                                              return;
+                                            }
+                                          }
+
+                                          if (_model.uploadedLocalFile1 !=
+                                                  null &&
+                                              (_model.uploadedLocalFile1.bytes
+                                                      ?.isNotEmpty ??
+                                                  false)) {
+                                            _model.apiResult93tCopy =
+                                                await ComunidadSubeImagenCall
+                                                    .call(
+                                              postId: widget!.postId,
+                                              img: _model.uploadedLocalFile1,
+                                              authToken: FFAppState().authToken,
+                                            );
+
+                                            if ((_model.apiResult93tCopy
+                                                    ?.succeeded ??
+                                                true)) {
+                                              safeSetState(() => _model
+                                                  .apiRequestCompleter = null);
+                                              await _model
+                                                  .waitForApiRequestCompleted();
+                                            }
+                                          } else {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Ha ocurrido un error...',
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                ),
+                                                duration: Duration(
+                                                    milliseconds: 4000),
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                              ),
+                                            );
+                                          }
+
+                                          safeSetState(() {});
+                                        },
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.network(
+                                            ComunidadPostIndividualCall.imagen(
+                                              comunidadCreaPostComunidadPostIndividualResponse
+                                                  .jsonBody,
+                                            )!,
+                                            width: 300.0,
+                                            height: 200.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: InkWell(
@@ -279,8 +401,6 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         final selectedMedia =
                                             await selectMediaWithSourceBottomSheet(
                                           context: context,
-                                          maxWidth: 900.00,
-                                          maxHeight: 200.00,
                                           allowPhoto: true,
                                         );
                                         if (selectedMedia != null &&
@@ -288,7 +408,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                 validateFileFormat(
                                                     m.storagePath, context))) {
                                           safeSetState(() =>
-                                              _model.isDataUploading1 = true);
+                                              _model.isDataUploading2 = true);
                                           var selectedUploadedFiles =
                                               <FFUploadedFile>[];
 
@@ -308,12 +428,12 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                         ))
                                                     .toList();
                                           } finally {
-                                            _model.isDataUploading1 = false;
+                                            _model.isDataUploading2 = false;
                                           }
                                           if (selectedUploadedFiles.length ==
                                               selectedMedia.length) {
                                             safeSetState(() {
-                                              _model.uploadedLocalFile1 =
+                                              _model.uploadedLocalFile2 =
                                                   selectedUploadedFiles.first;
                                             });
                                           } else {
@@ -322,25 +442,28 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                           }
                                         }
 
-                                        if (_model.uploadedLocalFile1 != null &&
-                                            (_model.uploadedLocalFile1.bytes
+                                        if (_model.uploadedLocalFile2 != null &&
+                                            (_model.uploadedLocalFile2.bytes
                                                     ?.isNotEmpty ??
                                                 false)) {
-                                          _model.apiResult93tCopy =
+                                          _model.cargador = 'si';
+                                          safeSetState(() {});
+                                          _model.apiResult93t =
                                               await ComunidadSubeImagenCall
                                                   .call(
                                             postId: widget!.postId,
-                                            img: _model.uploadedLocalFile1,
+                                            img: _model.uploadedLocalFile2,
                                             authToken: FFAppState().authToken,
                                           );
 
-                                          if ((_model.apiResult93tCopy
-                                                  ?.succeeded ??
+                                          if ((_model.apiResult93t?.succeeded ??
                                               true)) {
                                             safeSetState(() => _model
                                                 .apiRequestCompleter = null);
                                             await _model
                                                 .waitForApiRequestCompleted();
+                                            _model.cargador = 'no';
+                                            safeSetState(() {});
                                           }
                                         } else {
                                           ScaffoldMessenger.of(context)
@@ -365,136 +488,43 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
 
                                         safeSetState(() {});
                                       },
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          ComunidadPostIndividualCall.imagen(
-                                            comunidadCreaPostComunidadPostIndividualResponse
-                                                .jsonBody,
-                                          )!,
-                                          width: 300.0,
-                                          height: 200.0,
-                                          fit: BoxFit.cover,
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'rwop4f3e' /* Click aquí para subir una imag... */,
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 10.0, 0.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      final selectedMedia =
-                                          await selectMediaWithSourceBottomSheet(
-                                        context: context,
-                                        maxWidth: 900.00,
-                                        maxHeight: 200.00,
-                                        allowPhoto: true,
-                                      );
-                                      if (selectedMedia != null &&
-                                          selectedMedia.every((m) =>
-                                              validateFileFormat(
-                                                  m.storagePath, context))) {
-                                        safeSetState(() =>
-                                            _model.isDataUploading2 = true);
-                                        var selectedUploadedFiles =
-                                            <FFUploadedFile>[];
-
-                                        try {
-                                          selectedUploadedFiles = selectedMedia
-                                              .map((m) => FFUploadedFile(
-                                                    name: m.storagePath
-                                                        .split('/')
-                                                        .last,
-                                                    bytes: m.bytes,
-                                                    height:
-                                                        m.dimensions?.height,
-                                                    width: m.dimensions?.width,
-                                                    blurHash: m.blurHash,
-                                                  ))
-                                              .toList();
-                                        } finally {
-                                          _model.isDataUploading2 = false;
-                                        }
-                                        if (selectedUploadedFiles.length ==
-                                            selectedMedia.length) {
-                                          safeSetState(() {
-                                            _model.uploadedLocalFile2 =
-                                                selectedUploadedFiles.first;
-                                          });
-                                        } else {
-                                          safeSetState(() {});
-                                          return;
-                                        }
-                                      }
-
-                                      if (_model.uploadedLocalFile2 != null &&
-                                          (_model.uploadedLocalFile2.bytes
-                                                  ?.isNotEmpty ??
-                                              false)) {
-                                        _model.apiResult93t =
-                                            await ComunidadSubeImagenCall.call(
-                                          postId: widget!.postId,
-                                          img: _model.uploadedLocalFile2,
-                                          authToken: FFAppState().authToken,
-                                        );
-
-                                        if ((_model.apiResult93t?.succeeded ??
-                                            true)) {
-                                          safeSetState(() => _model
-                                              .apiRequestCompleter = null);
-                                          await _model
-                                              .waitForApiRequestCompleted();
-                                        }
-                                      } else {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Ha ocurrido un error...',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
                                             ),
-                                            duration:
-                                                Duration(milliseconds: 4000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .error,
-                                          ),
-                                        );
-                                      }
-
-                                      safeSetState(() {});
-                                    },
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'rwop4f3e' /* Click aquí para subir una imag... */,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
+                        if (_model.cargador == 'si')
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/Ellipsis@1x-1.0s-200px-200px.gif',
+                                  width: 200.0,
+                                  height: 50.0,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ],
+                          ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 25.0, 10.0, 15.0),

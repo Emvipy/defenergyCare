@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/diario_sueno/modal_aviso_sueno_hecho/modal_aviso_sueno_hecho_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -13,6 +12,7 @@ import '/usuario/modal_info_salud/modal_info_salud_widget.dart';
 import '/usuario/modal_info_sintomas/modal_info_sintomas_widget.dart';
 import '/usuario/modal_info_sueno/modal_info_sueno_widget.dart';
 import 'dart:async';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -40,63 +40,15 @@ class _HomeWidgetState extends State<HomeWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiResult98n = await UserIndividualCall.call(
+      _model.apiCargaUser = await UserIndividualCall.call(
         authToken: FFAppState().authToken,
       );
 
-      if (!(_model.apiResult98n?.succeeded ?? true)) {
-        GoRouter.of(context).prepareAuthEvent();
-        await authManager.signOut();
-        GoRouter.of(context).clearRedirectLocation();
-
-        context.pushNamedAuth(
-          'welcome',
-          context.mounted,
-          extra: <String, dynamic>{
-            kTransitionInfoKey: TransitionInfo(
-              hasTransition: true,
-              transitionType: PageTransitionType.fade,
-              duration: Duration(milliseconds: 0),
-            ),
-          },
+      if ((_model.apiCargaUser?.succeeded ?? true)) {
+        FFAppState().userIndividual = getJsonField(
+          (_model.apiCargaUser?.jsonBody ?? ''),
+          r'''$''',
         );
-
-        FFAppState().deleteAuthToken();
-        FFAppState().authToken = '';
-
-        FFAppState().deleteXUserId();
-        FFAppState().xUserId = 0;
-
-        FFAppState().deleteEmail();
-        FFAppState().email = '';
-
-        FFAppState().deleteNombre();
-        FFAppState().nombre = '';
-
-        FFAppState().deleteApellidos();
-        FFAppState().apellidos = '';
-
-        FFAppState().deleteAvatar();
-        FFAppState().avatar = '';
-
-        FFAppState().deletePerfil();
-        FFAppState().perfil = '';
-
-        FFAppState().deleteSessionId();
-        FFAppState().sessionId = 0;
-
-        FFAppState().deleteEnfermedadId();
-        FFAppState().enfermedadId = 0;
-
-        FFAppState().deleteEnfermedadTxt();
-        FFAppState().enfermedadTxt = '';
-
-        FFAppState().deletePerfilId();
-        FFAppState().perfilId = 0;
-
-        FFAppState().deleteCreadoOk();
-        FFAppState().creadoOk = '';
-
         safeSetState(() {});
       }
     });
@@ -113,1614 +65,390 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return FutureBuilder<ApiCallResponse>(
-      future: UserIndividualCall.call(
-        authToken: FFAppState().authToken,
-      ),
-      builder: (context, snapshot) {
-        // Customize what your widget looks like when it's loading.
-        if (!snapshot.hasData) {
-          return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: Center(
-              child: SizedBox(
-                width: 50.0,
-                height: 50.0,
-                child: SpinKitCircle(
-                  color: FlutterFlowTheme.of(context).primary,
-                  size: 50.0,
-                ),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        body: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 50.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).primaryBackground,
               ),
             ),
-          );
-        }
-        final homeUserIndividualResponse = snapshot.data!;
+            Flexible(
+              child: Stack(
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  if ((FFAppState().authToken != null &&
+                                          FFAppState().authToken != '') &&
+                                      (FFAppState().email != null &&
+                                          FFAppState().email != '')) {
+                                    if (FFAppState().creadoOk == 'si') {
+                                      context.pushNamed(
+                                        'perfil',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                          ),
+                                        },
+                                      );
 
-        return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Scaffold(
-            key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            body: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 50.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryBackground,
-                  ),
-                ),
-                Flexible(
-                  child: Stack(
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 10.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      if (FFAppState().email ==
-                                          'enrique@emvipy.com') {
-                                        if ((FFAppState().authToken != null &&
-                                                FFAppState().authToken != '') &&
-                                            (FFAppState().email != null &&
-                                                FFAppState().email != '')) {
-                                          if (FFAppState().creadoOk == 'si') {
-                                            context.pushNamedAuth(
-                                              'perfil',
-                                              context.mounted,
+                                      unawaited(
+                                        () async {
+                                          await UserLogActivityCall.call(
+                                            authToken: FFAppState().authToken,
+                                            seccion: 'Acceso Mi Perfil',
+                                          );
+                                        }(),
+                                      );
+                                    } else {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        enableDrag: false,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () => FocusScope.of(context)
+                                                .unfocus(),
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: ModalErrorCuentaWidget(),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    }
+                                  } else {
+                                    context.pushNamed(
+                                      'login',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+                                  }
+                                },
+                                child: Container(
+                                  width: 45.0,
+                                  height: 45.0,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.network(
+                                    getJsonField(
+                                      FFAppState().userIndividual,
+                                      r'''$.avatar.url''',
+                                    ).toString(),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    3.0, 0.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          if ((FFAppState().authToken != null &&
+                                                  FFAppState().authToken !=
+                                                      '') &&
+                                              (FFAppState().email != null &&
+                                                  FFAppState().email != '')) {
+                                            if (FFAppState().creadoOk == 'si') {
+                                              unawaited(
+                                                () async {
+                                                  await UserLogActivityCall
+                                                      .call(
+                                                    authToken:
+                                                        FFAppState().authToken,
+                                                    seccion: 'Acceso Mi Perfil',
+                                                  );
+                                                }(),
+                                              );
+
+                                              context.pushNamed(
+                                                'perfil',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                  ),
+                                                },
+                                              );
+                                            } else {
+                                              await showModalBottomSheet(
+                                                isScrollControlled: true,
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                enableDrag: false,
+                                                context: context,
+                                                builder: (context) {
+                                                  return GestureDetector(
+                                                    onTap: () =>
+                                                        FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalErrorCuentaWidget(),
+                                                    ),
+                                                  );
+                                                },
+                                              ).then((value) =>
+                                                  safeSetState(() {}));
+                                            }
+                                          } else {
+                                            context.pushNamed(
+                                              'login',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
                                                 ),
                                               },
                                             );
-
-                                            unawaited(
-                                              () async {
-                                                await UserLogActivityCall.call(
-                                                  authToken:
-                                                      FFAppState().authToken,
-                                                  seccion: 'Acceso Mi Perfil',
-                                                );
-                                              }(),
-                                            );
-                                          } else {
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalErrorCuentaWidget(),
-                                                  ),
-                                                );
-                                              },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
                                           }
-                                        } else {
-                                          context.pushNamedAuth(
-                                            'login',
-                                            context.mounted,
+                                        },
+                                        child: Text(
+                                          'Hola ${FFAppState().authToken != null && FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          5.0, 0.0, 0.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {},
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ay8wdlx9' /* ¿Cómo te encuentras hoy? */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                                fontSize: 13.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Flexible(
+                                child: Align(
+                                  alignment: AlignmentDirectional(1.0, 0.0),
+                                  child: Container(
+                                    width: 45.0,
+                                    height: 45.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'perfil_notificaciones',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 0),
                                               ),
                                             },
                                           );
-                                        }
-                                      } else {
-                                        GoRouter.of(context).prepareAuthEvent();
-                                        await authManager.signOut();
-                                        GoRouter.of(context)
-                                            .clearRedirectLocation();
-
-                                        FFAppState().deleteAuthToken();
-                                        FFAppState().authToken = '';
-
-                                        FFAppState().deleteXUserId();
-                                        FFAppState().xUserId = 0;
-
-                                        FFAppState().deleteEmail();
-                                        FFAppState().email = '';
-
-                                        FFAppState().deleteNombre();
-                                        FFAppState().nombre = '';
-
-                                        FFAppState().deleteApellidos();
-                                        FFAppState().apellidos = '';
-
-                                        FFAppState().deleteAvatar();
-                                        FFAppState().avatar = '';
-
-                                        FFAppState().deletePerfil();
-                                        FFAppState().perfil = '';
-
-                                        FFAppState().deleteSessionId();
-                                        FFAppState().sessionId = 0;
-
-                                        FFAppState().deleteEnfermedadId();
-                                        FFAppState().enfermedadId = 0;
-
-                                        FFAppState().deleteEnfermedadTxt();
-                                        FFAppState().enfermedadTxt = '';
-
-                                        FFAppState().deletePerfilId();
-                                        FFAppState().perfilId = 0;
-
-                                        FFAppState().deleteCreadoOk();
-                                        FFAppState().creadoOk = '';
-
-                                        safeSetState(() {});
-
-                                        context.pushNamedAuth(
-                                          'welcome',
-                                          context.mounted,
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType:
-                                                  PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 0),
-                                            ),
-                                          },
-                                        );
-                                      }
-                                    },
-                                    child: Container(
-                                      width: 45.0,
-                                      height: 45.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.network(
-                                        UserIndividualCall.avatar(
-                                          homeUserIndividualResponse.jsonBody,
-                                        )!,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        3.0, 0.0, 0.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              if (FFAppState().email ==
-                                                  'enrique@emvipy.com') {
-                                                if ((FFAppState().authToken !=
-                                                            null &&
-                                                        FFAppState()
-                                                                .authToken !=
-                                                            '') &&
-                                                    (FFAppState().email !=
-                                                            null &&
-                                                        FFAppState().email !=
-                                                            '')) {
-                                                  if (FFAppState().creadoOk ==
-                                                      'si') {
-                                                    unawaited(
-                                                      () async {
-                                                        await UserLogActivityCall
-                                                            .call(
-                                                          authToken:
-                                                              FFAppState()
-                                                                  .authToken,
-                                                          seccion:
-                                                              'Acceso Mi Perfil',
-                                                        );
-                                                      }(),
-                                                    );
-
-                                                    context.pushNamedAuth(
-                                                      'perfil',
-                                                      context.mounted,
-                                                      extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
-                                                            TransitionInfo(
-                                                          hasTransition: true,
-                                                          transitionType:
-                                                              PageTransitionType
-                                                                  .fade,
-                                                        ),
-                                                      },
-                                                    );
-                                                  } else {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return GestureDetector(
-                                                          onTap: () =>
-                                                              FocusScope.of(
-                                                                      context)
-                                                                  .unfocus(),
-                                                          child: Padding(
-                                                            padding: MediaQuery
-                                                                .viewInsetsOf(
-                                                                    context),
-                                                            child:
-                                                                ModalErrorCuentaWidget(),
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  }
-                                                } else {
-                                                  context.pushNamedAuth(
-                                                    'login',
-                                                    context.mounted,
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .fade,
-                                                        duration: Duration(
-                                                            milliseconds: 0),
-                                                      ),
-                                                    },
-                                                  );
-                                                }
-                                              } else {
-                                                GoRouter.of(context)
-                                                    .prepareAuthEvent();
-                                                await authManager.signOut();
-                                                GoRouter.of(context)
-                                                    .clearRedirectLocation();
-
-                                                FFAppState().deleteAuthToken();
-                                                FFAppState().authToken = '';
-
-                                                FFAppState().deleteXUserId();
-                                                FFAppState().xUserId = 0;
-
-                                                FFAppState().deleteEmail();
-                                                FFAppState().email = '';
-
-                                                FFAppState().deleteNombre();
-                                                FFAppState().nombre = '';
-
-                                                FFAppState().deleteApellidos();
-                                                FFAppState().apellidos = '';
-
-                                                FFAppState().deleteAvatar();
-                                                FFAppState().avatar = '';
-
-                                                FFAppState().deletePerfil();
-                                                FFAppState().perfil = '';
-
-                                                FFAppState().deleteSessionId();
-                                                FFAppState().sessionId = 0;
-
-                                                FFAppState()
-                                                    .deleteEnfermedadId();
-                                                FFAppState().enfermedadId = 0;
-
-                                                FFAppState()
-                                                    .deleteEnfermedadTxt();
-                                                FFAppState().enfermedadTxt = '';
-
-                                                FFAppState().deletePerfilId();
-                                                FFAppState().perfilId = 0;
-
-                                                FFAppState().deleteCreadoOk();
-                                                FFAppState().creadoOk = '';
-
-                                                safeSetState(() {});
-
-                                                context.pushNamedAuth(
-                                                  'welcome',
-                                                  context.mounted,
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .fade,
-                                                      duration: Duration(
-                                                          milliseconds: 0),
-                                                    ),
-                                                  },
-                                                );
-                                              }
-                                            },
-                                            child: Text(
-                                              'Hola ${FFAppState().authToken != null && FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 0.0, 0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              if (FFAppState().email ==
-                                                  'enrique@emvipy.com') {
-                                                if ((FFAppState().authToken !=
-                                                            null &&
-                                                        FFAppState()
-                                                                .authToken !=
-                                                            '') &&
-                                                    (FFAppState().email !=
-                                                            null &&
-                                                        FFAppState().email !=
-                                                            '')) {
-                                                  if (FFAppState().creadoOk ==
-                                                      'si') {
-                                                    unawaited(
-                                                      () async {
-                                                        await UserLogActivityCall
-                                                            .call(
-                                                          authToken:
-                                                              FFAppState()
-                                                                  .authToken,
-                                                          seccion:
-                                                              'Acceso Mi Perfil',
-                                                        );
-                                                      }(),
-                                                    );
-
-                                                    context.pushNamedAuth(
-                                                      'perfil',
-                                                      context.mounted,
-                                                      extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
-                                                            TransitionInfo(
-                                                          hasTransition: true,
-                                                          transitionType:
-                                                              PageTransitionType
-                                                                  .fade,
-                                                        ),
-                                                      },
-                                                    );
-                                                  } else {
-                                                    await showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      enableDrag: false,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return GestureDetector(
-                                                          onTap: () =>
-                                                              FocusScope.of(
-                                                                      context)
-                                                                  .unfocus(),
-                                                          child: Padding(
-                                                            padding: MediaQuery
-                                                                .viewInsetsOf(
-                                                                    context),
-                                                            child:
-                                                                ModalErrorCuentaWidget(),
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        safeSetState(() {}));
-                                                  }
-                                                } else {
-                                                  context.pushNamedAuth(
-                                                    'login',
-                                                    context.mounted,
-                                                    extra: <String, dynamic>{
-                                                      kTransitionInfoKey:
-                                                          TransitionInfo(
-                                                        hasTransition: true,
-                                                        transitionType:
-                                                            PageTransitionType
-                                                                .fade,
-                                                        duration: Duration(
-                                                            milliseconds: 0),
-                                                      ),
-                                                    },
-                                                  );
-                                                }
-                                              } else {
-                                                GoRouter.of(context)
-                                                    .prepareAuthEvent();
-                                                await authManager.signOut();
-                                                GoRouter.of(context)
-                                                    .clearRedirectLocation();
-
-                                                FFAppState().deleteAuthToken();
-                                                FFAppState().authToken = '';
-
-                                                FFAppState().deleteXUserId();
-                                                FFAppState().xUserId = 0;
-
-                                                FFAppState().deleteEmail();
-                                                FFAppState().email = '';
-
-                                                FFAppState().deleteNombre();
-                                                FFAppState().nombre = '';
-
-                                                FFAppState().deleteApellidos();
-                                                FFAppState().apellidos = '';
-
-                                                FFAppState().deleteAvatar();
-                                                FFAppState().avatar = '';
-
-                                                FFAppState().deletePerfil();
-                                                FFAppState().perfil = '';
-
-                                                FFAppState().deleteSessionId();
-                                                FFAppState().sessionId = 0;
-
-                                                FFAppState()
-                                                    .deleteEnfermedadId();
-                                                FFAppState().enfermedadId = 0;
-
-                                                FFAppState()
-                                                    .deleteEnfermedadTxt();
-                                                FFAppState().enfermedadTxt = '';
-
-                                                FFAppState().deletePerfilId();
-                                                FFAppState().perfilId = 0;
-
-                                                FFAppState().deleteCreadoOk();
-                                                FFAppState().creadoOk = '';
-
-                                                safeSetState(() {});
-
-                                                context.pushNamedAuth(
-                                                  'welcome',
-                                                  context.mounted,
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .fade,
-                                                      duration: Duration(
-                                                          milliseconds: 0),
-                                                    ),
-                                                  },
-                                                );
-                                              }
-                                            },
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'ay8wdlx9' /* ¿Cómo te encuentras hoy? */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        fontSize: 13.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Flexible(
-                                    child: Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
-                                      child: Container(
-                                        width: 45.0,
-                                        height: 45.0,
-                                        decoration: BoxDecoration(
+                                        },
+                                        child: Icon(
+                                          Icons.notifications_none,
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: InkWell(
-                                            splashColor: Colors.transparent,
-                                            focusColor: Colors.transparent,
-                                            hoverColor: Colors.transparent,
-                                            highlightColor: Colors.transparent,
-                                            onTap: () async {
-                                              if (FFLocalizations.of(context)
-                                                      .languageCode ==
-                                                  'en') {
-                                                setAppLanguage(context, 'es');
-                                              } else {
-                                                setAppLanguage(context, 'en');
-                                              }
-                                            },
-                                            child: Icon(
-                                              Icons.notifications_none,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              size: 26.0,
-                                            ),
-                                          ),
+                                              .secondaryText,
+                                          size: 26.0,
                                         ),
                                       ),
                                     ),
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
-                            Flexible(
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15.0, 25.0, 15.0, 10.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Flexible(
-                                            child: Opacity(
-                                              opacity: 0.9,
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.0),
-                                                child: Container(
-                                                  width: 360.0,
-                                                  height: 100.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
+                            ],
+                          ),
+                        ),
+                        Flexible(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 25.0, 15.0, 10.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: Opacity(
+                                          opacity: 0.9,
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Container(
+                                              width: 360.0,
+                                              height: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
                                                         .rosaHome,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    5.0,
-                                                                    5.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            Container(
-                                                              width: 50.0,
-                                                              height: 50.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                shape: BoxShape
-                                                                    .circle,
-                                                              ),
-                                                              child: InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  if ((FFAppState().authToken !=
-                                                                              null &&
-                                                                          FFAppState().authToken !=
-                                                                              '') &&
-                                                                      (FFAppState().email !=
-                                                                              null &&
-                                                                          FFAppState().email !=
-                                                                              '')) {
-                                                                    if (FFAppState()
-                                                                            .creadoOk ==
-                                                                        'si') {
-                                                                      if (UserIndividualCall
-                                                                              .primerDiario(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
-                                                                          'si') {
-                                                                        if (UserIndividualCall.finalizoSetup(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) ==
-                                                                            'no') {
-                                                                          if (UserIndividualCall.enfermedadId(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) !=
-                                                                              4) {
-                                                                            context.pushNamed(
-                                                                              'setup',
-                                                                              queryParameters: {
-                                                                                'enfermedadId': serializeParam(
-                                                                                  UserIndividualCall.enfermedadId(
-                                                                                    homeUserIndividualResponse.jsonBody,
-                                                                                  ),
-                                                                                  ParamType.int,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Diario Sintomas Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          } else {
-                                                                            _model.apiDiarioCrea3 =
-                                                                                await DiarioCreaCall.call(
-                                                                              authToken: FFAppState().authToken,
-                                                                            );
-
-                                                                            if ((_model.apiDiarioCrea3?.succeeded ??
-                                                                                true)) {
-                                                                              FFAppState().diarioId = DiarioCreaCall.diarioId(
-                                                                                (_model.apiDiarioCreaCopy?.jsonBody ?? ''),
-                                                                              )!;
-                                                                              FFAppState().deleteDiarioDolor();
-                                                                              FFAppState().diarioDolor = 'no';
-
-                                                                              FFAppState().deleteDiarioMed1();
-                                                                              FFAppState().diarioMed1 = 'no';
-
-                                                                              FFAppState().deleteDiarioMed2();
-                                                                              FFAppState().diarioMed2 = 'no';
-
-                                                                              FFAppState().deleteDiarioVit();
-                                                                              FFAppState().diarioVit = 'no';
-
-                                                                              FFAppState().deleteDiarioUltimoMed1();
-                                                                              FFAppState().diarioUltimoMed1 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoMed2();
-                                                                              FFAppState().diarioUltimoMed2 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup1();
-                                                                              FFAppState().diarioUltimoSup1 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup2();
-                                                                              FFAppState().diarioUltimoSup2 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup3();
-                                                                              FFAppState().diarioUltimoSup3 = '';
-
-                                                                              FFAppState().deleteTmpCantidadSuplementos();
-                                                                              FFAppState().tmpCantidadSuplementos = 0;
-
-                                                                              context.pushNamed(
-                                                                                'diario1',
-                                                                                extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
-                                                                                    hasTransition: true,
-                                                                                    transitionType: PageTransitionType.fade,
-                                                                                  ),
-                                                                                },
-                                                                              );
-
-                                                                              unawaited(
-                                                                                () async {
-                                                                                  await UserLogActivityCall.call(
-                                                                                    authToken: FFAppState().authToken,
-                                                                                    seccion: 'Acceso Diario Sintomas Home',
-                                                                                  );
-                                                                                }(),
-                                                                              );
-                                                                            } else {
-                                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                                SnackBar(
-                                                                                  content: Text(
-                                                                                    'Ha ocurrido un error...',
-                                                                                    style: TextStyle(
-                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    ),
-                                                                                  ),
-                                                                                  duration: Duration(milliseconds: 4000),
-                                                                                  backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                                ),
-                                                                              );
-                                                                            }
-                                                                          }
-                                                                        } else {
-                                                                          _model.apiDiarioCrea3Copy =
-                                                                              await DiarioCreaCall.call(
-                                                                            authToken:
-                                                                                FFAppState().authToken,
-                                                                          );
-
-                                                                          if ((_model.apiDiarioCrea3Copy?.succeeded ??
-                                                                              true)) {
-                                                                            FFAppState().diarioId =
-                                                                                DiarioCreaCall.diarioId(
-                                                                              (_model.apiDiarioCrea2Copy?.jsonBody ?? ''),
-                                                                            )!;
-                                                                            FFAppState().deleteDiarioDolor();
-                                                                            FFAppState().diarioDolor =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioMed1();
-                                                                            FFAppState().diarioMed1 =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioMed2();
-                                                                            FFAppState().diarioMed2 =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioVit();
-                                                                            FFAppState().diarioVit =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioUltimoMed1();
-                                                                            FFAppState().diarioUltimoMed1 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoMed2();
-                                                                            FFAppState().diarioUltimoMed2 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoSup1();
-                                                                            FFAppState().diarioUltimoSup1 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoSup2();
-                                                                            FFAppState().diarioUltimoSup2 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoSup3();
-                                                                            FFAppState().diarioUltimoSup3 =
-                                                                                '';
-
-                                                                            FFAppState().deleteTmpCantidadSuplementos();
-                                                                            FFAppState().tmpCantidadSuplementos =
-                                                                                0;
-
-                                                                            context.pushNamed(
-                                                                              'diario1',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Diario Sintomas Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          } else {
-                                                                            ScaffoldMessenger.of(context).showSnackBar(
-                                                                              SnackBar(
-                                                                                content: Text(
-                                                                                  'Ha ocurrido un error...',
-                                                                                  style: TextStyle(
-                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  ),
-                                                                                ),
-                                                                                duration: Duration(milliseconds: 4000),
-                                                                                backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                              ),
-                                                                            );
-                                                                          }
-                                                                        }
-                                                                      } else {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'menu_diario',
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.fade,
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      }
-                                                                    } else {
-                                                                      await showModalBottomSheet(
-                                                                        isScrollControlled:
-                                                                            true,
-                                                                        backgroundColor:
-                                                                            Colors.transparent,
-                                                                        enableDrag:
-                                                                            false,
-                                                                        context:
-                                                                            context,
-                                                                        builder:
-                                                                            (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalErrorCuentaWidget(),
-                                                                            ),
-                                                                          );
-                                                                        },
-                                                                      ).then((value) =>
-                                                                          safeSetState(
-                                                                              () {}));
-                                                                    }
-                                                                  } else {
-                                                                    context
-                                                                        .pushNamed(
-                                                                      'login',
-                                                                      extra: <String,
-                                                                          dynamic>{
-                                                                        kTransitionInfoKey:
-                                                                            TransitionInfo(
-                                                                          hasTransition:
-                                                                              true,
-                                                                          transitionType:
-                                                                              PageTransitionType.fade,
-                                                                          duration:
-                                                                              Duration(milliseconds: 0),
-                                                                        ),
-                                                                      },
-                                                                    );
-                                                                  }
-
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                  child: Image
-                                                                      .asset(
-                                                                    'assets/images/diario_sintomas.png',
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    fit: BoxFit
-                                                                        .cover,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  if ((FFAppState().authToken !=
-                                                                              null &&
-                                                                          FFAppState().authToken !=
-                                                                              '') &&
-                                                                      (FFAppState().email !=
-                                                                              null &&
-                                                                          FFAppState().email !=
-                                                                              '')) {
-                                                                    if (FFAppState()
-                                                                            .creadoOk ==
-                                                                        'si') {
-                                                                      if (UserIndividualCall
-                                                                              .primerDiario(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
-                                                                          'si') {
-                                                                        if (UserIndividualCall.finalizoSetup(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) ==
-                                                                            'no') {
-                                                                          if (UserIndividualCall.enfermedadId(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) !=
-                                                                              4) {
-                                                                            context.pushNamed(
-                                                                              'setup',
-                                                                              queryParameters: {
-                                                                                'enfermedadId': serializeParam(
-                                                                                  UserIndividualCall.enfermedadId(
-                                                                                    homeUserIndividualResponse.jsonBody,
-                                                                                  ),
-                                                                                  ParamType.int,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Diario Sintomas Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          } else {
-                                                                            _model.apiDiarioCreaCopy =
-                                                                                await DiarioCreaCall.call(
-                                                                              authToken: FFAppState().authToken,
-                                                                            );
-
-                                                                            if ((_model.apiDiarioCreaCopy?.succeeded ??
-                                                                                true)) {
-                                                                              FFAppState().diarioId = DiarioCreaCall.diarioId(
-                                                                                (_model.apiDiarioCreaCopy?.jsonBody ?? ''),
-                                                                              )!;
-                                                                              FFAppState().deleteDiarioDolor();
-                                                                              FFAppState().diarioDolor = 'no';
-
-                                                                              FFAppState().deleteDiarioMed1();
-                                                                              FFAppState().diarioMed1 = 'no';
-
-                                                                              FFAppState().deleteDiarioMed2();
-                                                                              FFAppState().diarioMed2 = 'no';
-
-                                                                              FFAppState().deleteDiarioVit();
-                                                                              FFAppState().diarioVit = 'no';
-
-                                                                              FFAppState().deleteDiarioUltimoMed1();
-                                                                              FFAppState().diarioUltimoMed1 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoMed2();
-                                                                              FFAppState().diarioUltimoMed2 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup1();
-                                                                              FFAppState().diarioUltimoSup1 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup2();
-                                                                              FFAppState().diarioUltimoSup2 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup3();
-                                                                              FFAppState().diarioUltimoSup3 = '';
-
-                                                                              FFAppState().deleteTmpCantidadSuplementos();
-                                                                              FFAppState().tmpCantidadSuplementos = 0;
-
-                                                                              context.pushNamed(
-                                                                                'diario1',
-                                                                                extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
-                                                                                    hasTransition: true,
-                                                                                    transitionType: PageTransitionType.fade,
-                                                                                  ),
-                                                                                },
-                                                                              );
-
-                                                                              unawaited(
-                                                                                () async {
-                                                                                  await UserLogActivityCall.call(
-                                                                                    authToken: FFAppState().authToken,
-                                                                                    seccion: 'Acceso Diario Sintomas Home',
-                                                                                  );
-                                                                                }(),
-                                                                              );
-                                                                            } else {
-                                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                                SnackBar(
-                                                                                  content: Text(
-                                                                                    'Ha ocurrido un error...',
-                                                                                    style: TextStyle(
-                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    ),
-                                                                                  ),
-                                                                                  duration: Duration(milliseconds: 4000),
-                                                                                  backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                                ),
-                                                                              );
-                                                                            }
-                                                                          }
-                                                                        } else {
-                                                                          _model.apiDiarioCrea2Copy =
-                                                                              await DiarioCreaCall.call(
-                                                                            authToken:
-                                                                                FFAppState().authToken,
-                                                                          );
-
-                                                                          if ((_model.apiDiarioCrea2Copy?.succeeded ??
-                                                                              true)) {
-                                                                            FFAppState().diarioId =
-                                                                                DiarioCreaCall.diarioId(
-                                                                              (_model.apiDiarioCrea2Copy?.jsonBody ?? ''),
-                                                                            )!;
-                                                                            FFAppState().deleteDiarioDolor();
-                                                                            FFAppState().diarioDolor =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioMed1();
-                                                                            FFAppState().diarioMed1 =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioMed2();
-                                                                            FFAppState().diarioMed2 =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioVit();
-                                                                            FFAppState().diarioVit =
-                                                                                'no';
-
-                                                                            FFAppState().deleteDiarioUltimoMed1();
-                                                                            FFAppState().diarioUltimoMed1 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoMed2();
-                                                                            FFAppState().diarioUltimoMed2 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoSup1();
-                                                                            FFAppState().diarioUltimoSup1 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoSup2();
-                                                                            FFAppState().diarioUltimoSup2 =
-                                                                                '';
-
-                                                                            FFAppState().deleteDiarioUltimoSup3();
-                                                                            FFAppState().diarioUltimoSup3 =
-                                                                                '';
-
-                                                                            FFAppState().deleteTmpCantidadSuplementos();
-                                                                            FFAppState().tmpCantidadSuplementos =
-                                                                                0;
-
-                                                                            context.pushNamed(
-                                                                              'diario1',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Diario Sintomas Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          } else {
-                                                                            ScaffoldMessenger.of(context).showSnackBar(
-                                                                              SnackBar(
-                                                                                content: Text(
-                                                                                  'Ha ocurrido un error...',
-                                                                                  style: TextStyle(
-                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  ),
-                                                                                ),
-                                                                                duration: Duration(milliseconds: 4000),
-                                                                                backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                              ),
-                                                                            );
-                                                                          }
-                                                                        }
-                                                                      } else {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'menu_diario',
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.fade,
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      }
-                                                                    } else {
-                                                                      await showModalBottomSheet(
-                                                                        isScrollControlled:
-                                                                            true,
-                                                                        backgroundColor:
-                                                                            Colors.transparent,
-                                                                        enableDrag:
-                                                                            false,
-                                                                        context:
-                                                                            context,
-                                                                        builder:
-                                                                            (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalErrorCuentaWidget(),
-                                                                            ),
-                                                                          );
-                                                                        },
-                                                                      ).then((value) =>
-                                                                          safeSetState(
-                                                                              () {}));
-                                                                    }
-                                                                  } else {
-                                                                    context
-                                                                        .pushNamed(
-                                                                      'login',
-                                                                      extra: <String,
-                                                                          dynamic>{
-                                                                        kTransitionInfoKey:
-                                                                            TransitionInfo(
-                                                                          hasTransition:
-                                                                              true,
-                                                                          transitionType:
-                                                                              PageTransitionType.fade,
-                                                                          duration:
-                                                                              Duration(milliseconds: 0),
-                                                                        ),
-                                                                      },
-                                                                    );
-                                                                  }
-
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'b3dcw7yz' /* Diario de Síntomas */,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .negroPerm,
-                                                                        fontSize:
-                                                                            18.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w500,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Flexible(
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        1.0,
-                                                                        0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showModalBottomSheet(
-                                                                      isScrollControlled:
-                                                                          true,
-                                                                      backgroundColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      enableDrag:
-                                                                          false,
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
-                                                                          child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
-                                                                            child:
-                                                                                ModalInfoSintomasWidget(),
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    ).then((value) =>
-                                                                        safeSetState(
-                                                                            () {}));
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .more_vert,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryText,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    5.0,
-                                                                    8.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .end,
-                                                          children: [
-                                                            Flexible(
-                                                              child: Align(
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        -1.0,
-                                                                        0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    if ((FFAppState().authToken !=
-                                                                                null &&
-                                                                            FFAppState().authToken !=
-                                                                                '') &&
-                                                                        (FFAppState().email !=
-                                                                                null &&
-                                                                            FFAppState().email !=
-                                                                                '')) {
-                                                                      if (FFAppState()
-                                                                              .creadoOk ==
-                                                                          'si') {
-                                                                        if (UserIndividualCall.primerDiario(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) ==
-                                                                            'si') {
-                                                                          if (UserIndividualCall.finalizoSetup(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'no') {
-                                                                            if (UserIndividualCall.enfermedadId(
-                                                                                  homeUserIndividualResponse.jsonBody,
-                                                                                ) !=
-                                                                                4) {
-                                                                              unawaited(
-                                                                                () async {
-                                                                                  await UserLogActivityCall.call(
-                                                                                    authToken: FFAppState().authToken,
-                                                                                    seccion: 'Acceso Diario Sintomas Home',
-                                                                                  );
-                                                                                }(),
-                                                                              );
-
-                                                                              context.pushNamed(
-                                                                                'setup',
-                                                                                queryParameters: {
-                                                                                  'enfermedadId': serializeParam(
-                                                                                    UserIndividualCall.enfermedadId(
-                                                                                      homeUserIndividualResponse.jsonBody,
-                                                                                    ),
-                                                                                    ParamType.int,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                                extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
-                                                                                    hasTransition: true,
-                                                                                    transitionType: PageTransitionType.fade,
-                                                                                  ),
-                                                                                },
-                                                                              );
-                                                                            } else {
-                                                                              _model.apiDiarioCrea4 = await DiarioCreaCall.call(
-                                                                                authToken: FFAppState().authToken,
-                                                                              );
-
-                                                                              if ((_model.apiDiarioCrea4?.succeeded ?? true)) {
-                                                                                FFAppState().diarioId = DiarioCreaCall.diarioId(
-                                                                                  (_model.apiDiarioCreaCopy?.jsonBody ?? ''),
-                                                                                )!;
-                                                                                FFAppState().deleteDiarioDolor();
-                                                                                FFAppState().diarioDolor = 'no';
-
-                                                                                FFAppState().deleteDiarioMed1();
-                                                                                FFAppState().diarioMed1 = 'no';
-
-                                                                                FFAppState().deleteDiarioMed2();
-                                                                                FFAppState().diarioMed2 = 'no';
-
-                                                                                FFAppState().deleteDiarioVit();
-                                                                                FFAppState().diarioVit = 'no';
-
-                                                                                FFAppState().deleteDiarioUltimoMed1();
-                                                                                FFAppState().diarioUltimoMed1 = '';
-
-                                                                                FFAppState().deleteDiarioUltimoMed2();
-                                                                                FFAppState().diarioUltimoMed2 = '';
-
-                                                                                FFAppState().deleteDiarioUltimoSup1();
-                                                                                FFAppState().diarioUltimoSup1 = '';
-
-                                                                                FFAppState().deleteDiarioUltimoSup2();
-                                                                                FFAppState().diarioUltimoSup2 = '';
-
-                                                                                FFAppState().deleteDiarioUltimoSup3();
-                                                                                FFAppState().diarioUltimoSup3 = '';
-
-                                                                                FFAppState().deleteTmpCantidadSuplementos();
-                                                                                FFAppState().tmpCantidadSuplementos = 0;
-
-                                                                                unawaited(
-                                                                                  () async {
-                                                                                    await UserLogActivityCall.call(
-                                                                                      authToken: FFAppState().authToken,
-                                                                                      seccion: 'Acceso Diario Sintomas Home',
-                                                                                    );
-                                                                                  }(),
-                                                                                );
-
-                                                                                context.pushNamed(
-                                                                                  'diario1',
-                                                                                  extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
-                                                                                      hasTransition: true,
-                                                                                      transitionType: PageTransitionType.fade,
-                                                                                    ),
-                                                                                  },
-                                                                                );
-                                                                              } else {
-                                                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                                                  SnackBar(
-                                                                                    content: Text(
-                                                                                      'Ha ocurrido un error...',
-                                                                                      style: TextStyle(
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      ),
-                                                                                    ),
-                                                                                    duration: Duration(milliseconds: 4000),
-                                                                                    backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                                  ),
-                                                                                );
-                                                                              }
-                                                                            }
-                                                                          } else {
-                                                                            _model.apiDiarioCrea4Copy =
-                                                                                await DiarioCreaCall.call(
-                                                                              authToken: FFAppState().authToken,
-                                                                            );
-
-                                                                            if ((_model.apiDiarioCrea4Copy?.succeeded ??
-                                                                                true)) {
-                                                                              FFAppState().diarioId = DiarioCreaCall.diarioId(
-                                                                                (_model.apiDiarioCrea2Copy?.jsonBody ?? ''),
-                                                                              )!;
-                                                                              FFAppState().deleteDiarioDolor();
-                                                                              FFAppState().diarioDolor = 'no';
-
-                                                                              FFAppState().deleteDiarioMed1();
-                                                                              FFAppState().diarioMed1 = 'no';
-
-                                                                              FFAppState().deleteDiarioMed2();
-                                                                              FFAppState().diarioMed2 = 'no';
-
-                                                                              FFAppState().deleteDiarioVit();
-                                                                              FFAppState().diarioVit = 'no';
-
-                                                                              FFAppState().deleteDiarioUltimoMed1();
-                                                                              FFAppState().diarioUltimoMed1 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoMed2();
-                                                                              FFAppState().diarioUltimoMed2 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup1();
-                                                                              FFAppState().diarioUltimoSup1 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup2();
-                                                                              FFAppState().diarioUltimoSup2 = '';
-
-                                                                              FFAppState().deleteDiarioUltimoSup3();
-                                                                              FFAppState().diarioUltimoSup3 = '';
-
-                                                                              FFAppState().deleteTmpCantidadSuplementos();
-                                                                              FFAppState().tmpCantidadSuplementos = 0;
-
-                                                                              unawaited(
-                                                                                () async {
-                                                                                  await UserLogActivityCall.call(
-                                                                                    authToken: FFAppState().authToken,
-                                                                                    seccion: 'Acceso Diario Sintomas Home',
-                                                                                  );
-                                                                                }(),
-                                                                              );
-
-                                                                              context.pushNamed(
-                                                                                'diario1',
-                                                                                extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
-                                                                                    hasTransition: true,
-                                                                                    transitionType: PageTransitionType.fade,
-                                                                                  ),
-                                                                                },
-                                                                              );
-                                                                            } else {
-                                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                                SnackBar(
-                                                                                  content: Text(
-                                                                                    'Ha ocurrido un error...',
-                                                                                    style: TextStyle(
-                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    ),
-                                                                                  ),
-                                                                                  duration: Duration(milliseconds: 4000),
-                                                                                  backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                                ),
-                                                                              );
-                                                                            }
-                                                                          }
-                                                                        } else {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            'menu_diario',
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.fade,
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        }
-                                                                      } else {
-                                                                        await showModalBottomSheet(
-                                                                          isScrollControlled:
-                                                                              true,
-                                                                          backgroundColor:
-                                                                              Colors.transparent,
-                                                                          enableDrag:
-                                                                              false,
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
-                                                                              ),
-                                                                            );
-                                                                          },
-                                                                        ).then((value) =>
-                                                                            safeSetState(() {}));
-                                                                      }
-                                                                    } else {
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 5.0,
+                                                                5.0, 0.0),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            if ((FFAppState()
+                                                                            .authToken !=
+                                                                        null &&
+                                                                    FFAppState()
+                                                                            .authToken !=
+                                                                        '') &&
+                                                                (FFAppState()
+                                                                            .email !=
+                                                                        null &&
+                                                                    FFAppState()
+                                                                            .email !=
+                                                                        '')) {
+                                                              if (FFAppState()
+                                                                      .creadoOk ==
+                                                                  'si') {
+                                                                if (functions
+                                                                        .parseJsonValueToString(
+                                                                            getJsonField(
+                                                                      FFAppState()
+                                                                          .userIndividual,
+                                                                      r'''$.primer_diario''',
+                                                                    )) ==
+                                                                    'si') {
+                                                                  if (functions
+                                                                          .parseJsonValueToString(
+                                                                              getJsonField(
+                                                                        FFAppState()
+                                                                            .userIndividual,
+                                                                        r'''$.finalizo_setup''',
+                                                                      )) ==
+                                                                      'no') {
+                                                                    if (functions
+                                                                            .parseJsonValueToString(getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.id_enfermedad''',
+                                                                        )) !=
+                                                                        '4') {
                                                                       context
                                                                           .pushNamed(
-                                                                        'login',
+                                                                        'setup',
+                                                                        queryParameters:
+                                                                            {
+                                                                          'enfermedadId':
+                                                                              serializeParam(
+                                                                            getJsonField(
+                                                                              FFAppState().userIndividual,
+                                                                              r'''$.id_enfermedad''',
+                                                                            ),
+                                                                            ParamType.int,
+                                                                          ),
+                                                                        }.withoutNulls,
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
@@ -1729,230 +457,450 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 true,
                                                                             transitionType:
                                                                                 PageTransitionType.fade,
-                                                                            duration:
-                                                                                Duration(milliseconds: 0),
                                                                           ),
                                                                         },
                                                                       );
-                                                                    }
 
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  },
-                                                                  child: Text(
-                                                                    () {
-                                                                      if ((UserIndividualCall
-                                                                                  .diarioHecho(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'no') &&
-                                                                          (FFLocalizations.of(context).languageCode !=
-                                                                              'en')) {
-                                                                        return 'Aún no has completado tu diario de hoy...';
-                                                                      } else if ((UserIndividualCall
-                                                                                  .diarioHecho(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'no') &&
-                                                                          (FFLocalizations.of(context).languageCode ==
-                                                                              'en')) {
-                                                                        return 'You have not yet completed today\'s diary...';
-                                                                      } else if ((UserIndividualCall
-                                                                                  .diarioHecho(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'si') &&
-                                                                          (FFLocalizations.of(context).languageCode !=
-                                                                              'en')) {
-                                                                        return 'Ya has hecho tu diario de hoy...';
-                                                                      } else {
-                                                                        return 'You\'ve already done your diary for today...';
-                                                                      }
-                                                                    }(),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).negroPerm,
-                                                                          fontSize:
-                                                                              13.0,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if ((FFAppState().authToken !=
-                                                                            null &&
-                                                                        FFAppState().authToken !=
-                                                                            '') &&
-                                                                    (FFAppState().email !=
-                                                                            null &&
-                                                                        FFAppState().email !=
-                                                                            '')) {
-                                                                  if (FFAppState()
-                                                                          .creadoOk ==
-                                                                      'si') {
-                                                                    if (UserIndividualCall
-                                                                            .primerDiario(
-                                                                          homeUserIndividualResponse
-                                                                              .jsonBody,
-                                                                        ) ==
-                                                                        'si') {
-                                                                      if (UserIndividualCall
-                                                                              .finalizoSetup(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
-                                                                          'no') {
-                                                                        if (UserIndividualCall.enfermedadId(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) !=
-                                                                            4) {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            'setup',
-                                                                            queryParameters:
-                                                                                {
-                                                                              'enfermedadId': serializeParam(
-                                                                                UserIndividualCall.enfermedadId(
-                                                                                  homeUserIndividualResponse.jsonBody,
-                                                                                ),
-                                                                                ParamType.int,
-                                                                              ),
-                                                                            }.withoutNulls,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.fade,
-                                                                              ),
-                                                                            },
-                                                                          );
-
-                                                                          unawaited(
-                                                                            () async {
-                                                                              await UserLogActivityCall.call(
-                                                                                authToken: FFAppState().authToken,
-                                                                                seccion: 'Acceso Diario Sintomas Home',
-                                                                              );
-                                                                            }(),
-                                                                          );
-                                                                        } else {
-                                                                          _model.apiDiarioCrea =
-                                                                              await DiarioCreaCall.call(
+                                                                      unawaited(
+                                                                        () async {
+                                                                          await UserLogActivityCall
+                                                                              .call(
                                                                             authToken:
                                                                                 FFAppState().authToken,
+                                                                            seccion:
+                                                                                'Acceso Diario Sintomas Home',
                                                                           );
+                                                                        }(),
+                                                                      );
+                                                                    } else {
+                                                                      _model.apiDiarioCreaicon =
+                                                                          await DiarioCreaCall
+                                                                              .call(
+                                                                        authToken:
+                                                                            FFAppState().authToken,
+                                                                      );
 
-                                                                          if ((_model.apiDiarioCrea?.succeeded ??
-                                                                              true)) {
-                                                                            FFAppState().diarioId =
-                                                                                DiarioCreaCall.diarioId(
-                                                                              (_model.apiDiarioCrea?.jsonBody ?? ''),
-                                                                            )!;
-                                                                            FFAppState().deleteDiarioDolor();
-                                                                            FFAppState().diarioDolor =
-                                                                                'no';
+                                                                      if ((_model
+                                                                              .apiDiarioCreaicon
+                                                                              ?.succeeded ??
+                                                                          true)) {
+                                                                        FFAppState().diarioId =
+                                                                            DiarioCreaCall.diarioId(
+                                                                          (_model.apiDiarioCreaicon?.jsonBody ??
+                                                                              ''),
+                                                                        )!;
+                                                                        FFAppState()
+                                                                            .deleteDiarioDolor();
+                                                                        FFAppState().diarioDolor =
+                                                                            'no';
 
-                                                                            FFAppState().deleteDiarioMed1();
-                                                                            FFAppState().diarioMed1 =
-                                                                                'no';
+                                                                        FFAppState()
+                                                                            .deleteDiarioMed1();
+                                                                        FFAppState().diarioMed1 =
+                                                                            'no';
 
-                                                                            FFAppState().deleteDiarioMed2();
-                                                                            FFAppState().diarioMed2 =
-                                                                                'no';
+                                                                        FFAppState()
+                                                                            .deleteDiarioMed2();
+                                                                        FFAppState().diarioMed2 =
+                                                                            'no';
 
-                                                                            FFAppState().deleteDiarioVit();
-                                                                            FFAppState().diarioVit =
-                                                                                'no';
+                                                                        FFAppState()
+                                                                            .deleteDiarioVit();
+                                                                        FFAppState().diarioVit =
+                                                                            'no';
 
-                                                                            FFAppState().deleteDiarioUltimoMed1();
-                                                                            FFAppState().diarioUltimoMed1 =
-                                                                                '';
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoMed1();
+                                                                        FFAppState().diarioUltimoMed1 =
+                                                                            '';
 
-                                                                            FFAppState().deleteDiarioUltimoMed2();
-                                                                            FFAppState().diarioUltimoMed2 =
-                                                                                '';
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoMed2();
+                                                                        FFAppState().diarioUltimoMed2 =
+                                                                            '';
 
-                                                                            FFAppState().deleteDiarioUltimoSup1();
-                                                                            FFAppState().diarioUltimoSup1 =
-                                                                                '';
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoSup1();
+                                                                        FFAppState().diarioUltimoSup1 =
+                                                                            '';
 
-                                                                            FFAppState().deleteDiarioUltimoSup2();
-                                                                            FFAppState().diarioUltimoSup2 =
-                                                                                '';
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoSup2();
+                                                                        FFAppState().diarioUltimoSup2 =
+                                                                            '';
 
-                                                                            FFAppState().deleteDiarioUltimoSup3();
-                                                                            FFAppState().diarioUltimoSup3 =
-                                                                                '';
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoSup3();
+                                                                        FFAppState().diarioUltimoSup3 =
+                                                                            '';
 
-                                                                            FFAppState().deleteTmpCantidadSuplementos();
-                                                                            FFAppState().tmpCantidadSuplementos =
-                                                                                0;
+                                                                        FFAppState()
+                                                                            .deleteTmpCantidadSuplementos();
+                                                                        FFAppState()
+                                                                            .tmpCantidadSuplementos = 0;
 
-                                                                            FFAppState().editandoDiario =
-                                                                                'no';
+                                                                        FFAppState().editandoDiario =
+                                                                            'no';
 
-                                                                            context.pushNamed(
-                                                                              'diario1',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
+                                                                        context
+                                                                            .pushNamed(
+                                                                          'diario1',
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            kTransitionInfoKey:
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                            ),
+                                                                          },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Diario Sintomas Home',
                                                                             );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Diario Sintomas Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          } else {
-                                                                            ScaffoldMessenger.of(context).showSnackBar(
-                                                                              SnackBar(
-                                                                                content: Text(
-                                                                                  'Ha ocurrido un error...',
-                                                                                  style: TextStyle(
-                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                  ),
-                                                                                ),
-                                                                                duration: Duration(milliseconds: 4000),
-                                                                                backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                              ),
-                                                                            );
-                                                                          }
-                                                                        }
+                                                                          }(),
+                                                                        );
                                                                       } else {
-                                                                        _model.apiDiarioCrea2 =
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Ha ocurrido un error...',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).error,
+                                                                          ),
+                                                                        );
+                                                                      }
+                                                                    }
+                                                                  } else {
+                                                                    _model.apiDiarioCrea2icon =
+                                                                        await DiarioCreaCall
+                                                                            .call(
+                                                                      authToken:
+                                                                          FFAppState()
+                                                                              .authToken,
+                                                                    );
+
+                                                                    if ((_model
+                                                                            .apiDiarioCrea2icon
+                                                                            ?.succeeded ??
+                                                                        true)) {
+                                                                      FFAppState()
+                                                                              .diarioId =
+                                                                          DiarioCreaCall
+                                                                              .diarioId(
+                                                                        (_model.apiDiarioCrea2icon?.jsonBody ??
+                                                                            ''),
+                                                                      )!;
+                                                                      FFAppState()
+                                                                          .deleteDiarioDolor();
+                                                                      FFAppState()
+                                                                              .diarioDolor =
+                                                                          'no';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioMed1();
+                                                                      FFAppState()
+                                                                              .diarioMed1 =
+                                                                          'no';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioMed2();
+                                                                      FFAppState()
+                                                                              .diarioMed2 =
+                                                                          'no';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioVit();
+                                                                      FFAppState()
+                                                                              .diarioVit =
+                                                                          'no';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioUltimoMed1();
+                                                                      FFAppState()
+                                                                          .diarioUltimoMed1 = '';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioUltimoMed2();
+                                                                      FFAppState()
+                                                                          .diarioUltimoMed2 = '';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioUltimoSup1();
+                                                                      FFAppState()
+                                                                          .diarioUltimoSup1 = '';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioUltimoSup2();
+                                                                      FFAppState()
+                                                                          .diarioUltimoSup2 = '';
+
+                                                                      FFAppState()
+                                                                          .deleteDiarioUltimoSup3();
+                                                                      FFAppState()
+                                                                          .diarioUltimoSup3 = '';
+
+                                                                      FFAppState()
+                                                                          .deleteTmpCantidadSuplementos();
+                                                                      FFAppState()
+                                                                          .tmpCantidadSuplementos = 0;
+
+                                                                      FFAppState()
+                                                                              .editandoDiario =
+                                                                          'no';
+
+                                                                      context
+                                                                          .pushNamed(
+                                                                        'diario1',
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          kTransitionInfoKey:
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.fade,
+                                                                          ),
+                                                                        },
+                                                                      );
+
+                                                                      unawaited(
+                                                                        () async {
+                                                                          await UserLogActivityCall
+                                                                              .call(
+                                                                            authToken:
+                                                                                FFAppState().authToken,
+                                                                            seccion:
+                                                                                'Acceso Diario Sintomas Home',
+                                                                          );
+                                                                        }(),
+                                                                      );
+                                                                    } else {
+                                                                      ScaffoldMessenger.of(
+                                                                              context)
+                                                                          .showSnackBar(
+                                                                        SnackBar(
+                                                                          content:
+                                                                              Text(
+                                                                            'Ha ocurrido un error...',
+                                                                            style:
+                                                                                TextStyle(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            ),
+                                                                          ),
+                                                                          duration:
+                                                                              Duration(milliseconds: 4000),
+                                                                          backgroundColor:
+                                                                              FlutterFlowTheme.of(context).error,
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                  }
+                                                                } else {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'menu_diario',
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      kTransitionInfoKey:
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                      ),
+                                                                    },
+                                                                  );
+                                                                }
+                                                              } else {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return GestureDetector(
+                                                                      onTap: () =>
+                                                                          FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ModalErrorCuentaWidget(),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+                                                              }
+                                                            } else {
+                                                              context.pushNamed(
+                                                                'login',
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
+                                                              );
+                                                            }
+
+                                                            safeSetState(() {});
+                                                          },
+                                                          child: Container(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .info,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/images/diario_sintomas.png',
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              if ((FFAppState()
+                                                                              .authToken !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .authToken !=
+                                                                          '') &&
+                                                                  (FFAppState()
+                                                                              .email !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .email !=
+                                                                          '')) {
+                                                                if (FFAppState()
+                                                                        .creadoOk ==
+                                                                    'si') {
+                                                                  if (functions
+                                                                          .parseJsonValueToString(
+                                                                              getJsonField(
+                                                                        FFAppState()
+                                                                            .userIndividual,
+                                                                        r'''$.primer_diario''',
+                                                                      )) ==
+                                                                      'si') {
+                                                                    if (functions
+                                                                            .parseJsonValueToString(getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.finalizo_setup''',
+                                                                        )) ==
+                                                                        'no') {
+                                                                      if (functions
+                                                                              .parseJsonValueToString(getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.id_enfermedad''',
+                                                                          )) !=
+                                                                          '4') {
+                                                                        context
+                                                                            .pushNamed(
+                                                                          'setup',
+                                                                          queryParameters:
+                                                                              {
+                                                                            'enfermedadId':
+                                                                                serializeParam(
+                                                                              getJsonField(
+                                                                                FFAppState().userIndividual,
+                                                                                r'''$.id_enfermedad''',
+                                                                              ),
+                                                                              ParamType.int,
+                                                                            ),
+                                                                          }.withoutNulls,
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            kTransitionInfoKey:
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                            ),
+                                                                          },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Diario Sintomas Home',
+                                                                            );
+                                                                          }(),
+                                                                        );
+                                                                      } else {
+                                                                        _model.apiDiarioCreaTitulo =
                                                                             await DiarioCreaCall.call(
                                                                           authToken:
                                                                               FFAppState().authToken,
                                                                         );
 
-                                                                        if ((_model.apiDiarioCrea2?.succeeded ??
+                                                                        if ((_model.apiDiarioCreaTitulo?.succeeded ??
                                                                             true)) {
                                                                           FFAppState().diarioId =
                                                                               DiarioCreaCall.diarioId(
-                                                                            (_model.apiDiarioCrea2?.jsonBody ??
+                                                                            (_model.apiDiarioCreaTitulo?.jsonBody ??
                                                                                 ''),
                                                                           )!;
                                                                           FFAppState()
@@ -2045,9 +993,1011 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         }
                                                                       }
                                                                     } else {
+                                                                      _model.apiDiarioCrea2Titulo =
+                                                                          await DiarioCreaCall
+                                                                              .call(
+                                                                        authToken:
+                                                                            FFAppState().authToken,
+                                                                      );
+
+                                                                      if ((_model
+                                                                              .apiDiarioCrea2Titulo
+                                                                              ?.succeeded ??
+                                                                          true)) {
+                                                                        FFAppState().diarioId =
+                                                                            DiarioCreaCall.diarioId(
+                                                                          (_model.apiDiarioCrea2Titulo?.jsonBody ??
+                                                                              ''),
+                                                                        )!;
+                                                                        FFAppState()
+                                                                            .deleteDiarioDolor();
+                                                                        FFAppState().diarioDolor =
+                                                                            'no';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioMed1();
+                                                                        FFAppState().diarioMed1 =
+                                                                            'no';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioMed2();
+                                                                        FFAppState().diarioMed2 =
+                                                                            'no';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioVit();
+                                                                        FFAppState().diarioVit =
+                                                                            'no';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoMed1();
+                                                                        FFAppState().diarioUltimoMed1 =
+                                                                            '';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoMed2();
+                                                                        FFAppState().diarioUltimoMed2 =
+                                                                            '';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoSup1();
+                                                                        FFAppState().diarioUltimoSup1 =
+                                                                            '';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoSup2();
+                                                                        FFAppState().diarioUltimoSup2 =
+                                                                            '';
+
+                                                                        FFAppState()
+                                                                            .deleteDiarioUltimoSup3();
+                                                                        FFAppState().diarioUltimoSup3 =
+                                                                            '';
+
+                                                                        FFAppState()
+                                                                            .deleteTmpCantidadSuplementos();
+                                                                        FFAppState()
+                                                                            .tmpCantidadSuplementos = 0;
+
+                                                                        FFAppState().editandoDiario =
+                                                                            'no';
+
+                                                                        context
+                                                                            .pushNamed(
+                                                                          'diario1',
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            kTransitionInfoKey:
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                            ),
+                                                                          },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Diario Sintomas Home',
+                                                                            );
+                                                                          }(),
+                                                                        );
+                                                                      } else {
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Ha ocurrido un error...',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).error,
+                                                                          ),
+                                                                        );
+                                                                      }
+                                                                    }
+                                                                  } else {
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'menu_diario',
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.fade,
+                                                                        ),
+                                                                      },
+                                                                    );
+                                                                  }
+                                                                } else {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalErrorCuentaWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                }
+                                                              } else {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'login',
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .fade,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              0),
+                                                                    ),
+                                                                  },
+                                                                );
+                                                              }
+
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'b3dcw7yz' /* Diario de Síntomas */,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .negroPerm,
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Flexible(
+                                                          child: Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    1.0, 0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return GestureDetector(
+                                                                      onTap: () =>
+                                                                          FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ModalInfoSintomasWidget(),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+                                                              },
+                                                              child: Icon(
+                                                                Icons.more_vert,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryText,
+                                                                size: 24.0,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 8.0,
+                                                                5.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        if ((FFAppState()
+                                                                        .authToken !=
+                                                                    null &&
+                                                                FFAppState()
+                                                                        .authToken !=
+                                                                    '') &&
+                                                            (FFAppState()
+                                                                        .email !=
+                                                                    null &&
+                                                                FFAppState()
+                                                                        .email !=
+                                                                    '')) {
+                                                          if (FFAppState()
+                                                                  .creadoOk ==
+                                                              'si') {
+                                                            if (functions
+                                                                    .parseJsonValueToString(
+                                                                        getJsonField(
+                                                                  FFAppState()
+                                                                      .userIndividual,
+                                                                  r'''$.primer_diario''',
+                                                                )) ==
+                                                                'si') {
+                                                              if (functions
+                                                                      .parseJsonValueToString(
+                                                                          getJsonField(
+                                                                    FFAppState()
+                                                                        .userIndividual,
+                                                                    r'''$.finalizo_setup''',
+                                                                  )) ==
+                                                                  'no') {
+                                                                if (functions
+                                                                        .parseJsonValueToString(
+                                                                            getJsonField(
+                                                                      FFAppState()
+                                                                          .userIndividual,
+                                                                      r'''$.id_enfermedad''',
+                                                                    )) !=
+                                                                    '4') {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'setup',
+                                                                    queryParameters:
+                                                                        {
+                                                                      'enfermedadId':
+                                                                          serializeParam(
+                                                                        getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.id_enfermedad''',
+                                                                        ),
+                                                                        ParamType
+                                                                            .int,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      kTransitionInfoKey:
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                      ),
+                                                                    },
+                                                                  );
+
+                                                                  unawaited(
+                                                                    () async {
+                                                                      await UserLogActivityCall
+                                                                          .call(
+                                                                        authToken:
+                                                                            FFAppState().authToken,
+                                                                        seccion:
+                                                                            'Acceso Diario Sintomas Home',
+                                                                      );
+                                                                    }(),
+                                                                  );
+                                                                } else {
+                                                                  _model.apiDiarioCrea =
+                                                                      await DiarioCreaCall
+                                                                          .call(
+                                                                    authToken:
+                                                                        FFAppState()
+                                                                            .authToken,
+                                                                  );
+
+                                                                  if ((_model
+                                                                          .apiDiarioCrea
+                                                                          ?.succeeded ??
+                                                                      true)) {
+                                                                    FFAppState()
+                                                                            .diarioId =
+                                                                        DiarioCreaCall
+                                                                            .diarioId(
+                                                                      (_model.apiDiarioCrea
+                                                                              ?.jsonBody ??
+                                                                          ''),
+                                                                    )!;
+                                                                    FFAppState()
+                                                                        .deleteDiarioDolor();
+                                                                    FFAppState()
+                                                                            .diarioDolor =
+                                                                        'no';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioMed1();
+                                                                    FFAppState()
+                                                                            .diarioMed1 =
+                                                                        'no';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioMed2();
+                                                                    FFAppState()
+                                                                            .diarioMed2 =
+                                                                        'no';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioVit();
+                                                                    FFAppState()
+                                                                            .diarioVit =
+                                                                        'no';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioUltimoMed1();
+                                                                    FFAppState()
+                                                                        .diarioUltimoMed1 = '';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioUltimoMed2();
+                                                                    FFAppState()
+                                                                        .diarioUltimoMed2 = '';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioUltimoSup1();
+                                                                    FFAppState()
+                                                                        .diarioUltimoSup1 = '';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioUltimoSup2();
+                                                                    FFAppState()
+                                                                        .diarioUltimoSup2 = '';
+
+                                                                    FFAppState()
+                                                                        .deleteDiarioUltimoSup3();
+                                                                    FFAppState()
+                                                                        .diarioUltimoSup3 = '';
+
+                                                                    FFAppState()
+                                                                        .deleteTmpCantidadSuplementos();
+                                                                    FFAppState()
+                                                                        .tmpCantidadSuplementos = 0;
+
+                                                                    FFAppState()
+                                                                            .editandoDiario =
+                                                                        'no';
+
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'diario1',
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.fade,
+                                                                        ),
+                                                                      },
+                                                                    );
+
+                                                                    unawaited(
+                                                                      () async {
+                                                                        await UserLogActivityCall
+                                                                            .call(
+                                                                          authToken:
+                                                                              FFAppState().authToken,
+                                                                          seccion:
+                                                                              'Acceso Diario Sintomas Home',
+                                                                        );
+                                                                      }(),
+                                                                    );
+                                                                  } else {
+                                                                    ScaffoldMessenger.of(
+                                                                            context)
+                                                                        .showSnackBar(
+                                                                      SnackBar(
+                                                                        content:
+                                                                            Text(
+                                                                          'Ha ocurrido un error...',
+                                                                          style:
+                                                                              TextStyle(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                        ),
+                                                                        duration:
+                                                                            Duration(milliseconds: 4000),
+                                                                        backgroundColor:
+                                                                            FlutterFlowTheme.of(context).error,
+                                                                      ),
+                                                                    );
+                                                                  }
+                                                                }
+                                                              } else {
+                                                                _model.apiDiarioCrea2 =
+                                                                    await DiarioCreaCall
+                                                                        .call(
+                                                                  authToken:
+                                                                      FFAppState()
+                                                                          .authToken,
+                                                                );
+
+                                                                if ((_model
+                                                                        .apiDiarioCrea2
+                                                                        ?.succeeded ??
+                                                                    true)) {
+                                                                  FFAppState()
+                                                                          .diarioId =
+                                                                      DiarioCreaCall
+                                                                          .diarioId(
+                                                                    (_model.apiDiarioCrea2
+                                                                            ?.jsonBody ??
+                                                                        ''),
+                                                                  )!;
+                                                                  FFAppState()
+                                                                      .deleteDiarioDolor();
+                                                                  FFAppState()
+                                                                          .diarioDolor =
+                                                                      'no';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioMed1();
+                                                                  FFAppState()
+                                                                          .diarioMed1 =
+                                                                      'no';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioMed2();
+                                                                  FFAppState()
+                                                                          .diarioMed2 =
+                                                                      'no';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioVit();
+                                                                  FFAppState()
+                                                                          .diarioVit =
+                                                                      'no';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioUltimoMed1();
+                                                                  FFAppState()
+                                                                      .diarioUltimoMed1 = '';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioUltimoMed2();
+                                                                  FFAppState()
+                                                                      .diarioUltimoMed2 = '';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioUltimoSup1();
+                                                                  FFAppState()
+                                                                      .diarioUltimoSup1 = '';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioUltimoSup2();
+                                                                  FFAppState()
+                                                                      .diarioUltimoSup2 = '';
+
+                                                                  FFAppState()
+                                                                      .deleteDiarioUltimoSup3();
+                                                                  FFAppState()
+                                                                      .diarioUltimoSup3 = '';
+
+                                                                  FFAppState()
+                                                                      .deleteTmpCantidadSuplementos();
+                                                                  FFAppState()
+                                                                      .tmpCantidadSuplementos = 0;
+
+                                                                  FFAppState()
+                                                                          .editandoDiario =
+                                                                      'no';
+
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'diario1',
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      kTransitionInfoKey:
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                      ),
+                                                                    },
+                                                                  );
+
+                                                                  unawaited(
+                                                                    () async {
+                                                                      await UserLogActivityCall
+                                                                          .call(
+                                                                        authToken:
+                                                                            FFAppState().authToken,
+                                                                        seccion:
+                                                                            'Acceso Diario Sintomas Home',
+                                                                      );
+                                                                    }(),
+                                                                  );
+                                                                } else {
+                                                                  ScaffoldMessenger.of(
+                                                                          context)
+                                                                      .showSnackBar(
+                                                                    SnackBar(
+                                                                      content:
+                                                                          Text(
+                                                                        'Ha ocurrido un error...',
+                                                                        style:
+                                                                            TextStyle(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                      ),
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              4000),
+                                                                      backgroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .error,
+                                                                    ),
+                                                                  );
+                                                                }
+                                                              }
+                                                            } else {
+                                                              context.pushNamed(
+                                                                'menu_diario',
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                  ),
+                                                                },
+                                                              );
+                                                            }
+                                                          } else {
+                                                            await showModalBottomSheet(
+                                                              isScrollControlled:
+                                                                  true,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              enableDrag: false,
+                                                              context: context,
+                                                              builder:
+                                                                  (context) {
+                                                                return GestureDetector(
+                                                                  onTap: () =>
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus(),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        ModalErrorCuentaWidget(),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ).then((value) =>
+                                                                safeSetState(
+                                                                    () {}));
+                                                          }
+                                                        } else {
+                                                          context.pushNamed(
+                                                            'login',
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                              ),
+                                                            },
+                                                          );
+                                                        }
+
+                                                        safeSetState(() {});
+                                                      },
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.0,
+                                                                      0.0),
+                                                              child: Text(
+                                                                () {
+                                                                  if ((FFLocalizations.of(context)
+                                                                              .languageCode !=
+                                                                          'en') &&
+                                                                      (functions.parseJsonValueToString(
+                                                                              getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.diario_hoy_hecho''',
+                                                                          )) ==
+                                                                          'no')) {
+                                                                    return 'Aún no has completado tu diario de hoy...';
+                                                                  } else if ((FFLocalizations.of(context)
+                                                                              .languageCode ==
+                                                                          'en') &&
+                                                                      (functions.parseJsonValueToString(
+                                                                              getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.diario_hoy_hecho''',
+                                                                          )) ==
+                                                                          'no')) {
+                                                                    return 'You have not yet completed today\'s diary...';
+                                                                  } else if ((FFLocalizations.of(context)
+                                                                              .languageCode !=
+                                                                          'en') &&
+                                                                      (functions
+                                                                              .parseJsonValueToString(getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.diario_hoy_hecho''',
+                                                                          )) ==
+                                                                          'si')) {
+                                                                    return 'Ya has hecho tu diario de hoy...';
+                                                                  } else {
+                                                                    return 'You\'ve already done your diary for today...';
+                                                                  }
+                                                                }(),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .negroPerm,
+                                                                      fontSize:
+                                                                          13.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Icon(
+                                                            Icons
+                                                                .chevron_right_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .negroPerm,
+                                                            size: 28.0,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 5.0, 15.0, 10.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 10.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 170.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .resumen,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Container(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .info,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                if ((FFAppState().authToken !=
+                                                                            null &&
+                                                                        FFAppState().authToken !=
+                                                                            '') &&
+                                                                    (FFAppState().email !=
+                                                                            null &&
+                                                                        FFAppState().email !=
+                                                                            '')) {
+                                                                  if (FFAppState()
+                                                                          .creadoOk ==
+                                                                      'si') {
+                                                                    if (functions
+                                                                            .parseJsonValueToString(getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.primer_diario_into''',
+                                                                        )) ==
+                                                                        'si') {
+                                                                      if (functions
+                                                                              .parseJsonValueToString(getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.setup_intolerancias''',
+                                                                          )) ==
+                                                                          'no') {
+                                                                        FFAppState().diarioIntoAnterior =
+                                                                            getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.id_diario_into_editar''',
+                                                                        );
+                                                                        FFAppState().intoCarnes =
+                                                                            'no';
+                                                                        FFAppState().intoMarisco =
+                                                                            'no';
+                                                                        FFAppState().intoPescado =
+                                                                            'no';
+                                                                        FFAppState().intoLacteos =
+                                                                            'no';
+                                                                        FFAppState().intoHuevos =
+                                                                            'no';
+                                                                        FFAppState().intoCereales =
+                                                                            'no';
+                                                                        FFAppState().intoFrutas =
+                                                                            'no';
+                                                                        FFAppState().intoVerduras =
+                                                                            'no';
+                                                                        FFAppState().intoLegumbres =
+                                                                            'no';
+                                                                        FFAppState().intoFrutosSecos =
+                                                                            'no';
+                                                                        FFAppState().intoSalsas =
+                                                                            'no';
+                                                                        FFAppState().intoBebidas =
+                                                                            'no';
+                                                                        FFAppState().editandoDiario =
+                                                                            'no';
+
+                                                                        context
+                                                                            .pushNamed(
+                                                                          'setupInto',
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            kTransitionInfoKey:
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                            ),
+                                                                          },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Diario Inolerancias Home',
+                                                                            );
+                                                                          }(),
+                                                                        );
+                                                                      } else {
+                                                                        _model.apiDiarioInto1Icon =
+                                                                            await DiarioIntoCreaCall.call(
+                                                                          authToken:
+                                                                              FFAppState().authToken,
+                                                                        );
+
+                                                                        if ((_model.apiDiarioInto1Icon?.succeeded ??
+                                                                            true)) {
+                                                                          FFAppState().diarioIntoId =
+                                                                              DiarioIntoCreaCall.id(
+                                                                            (_model.apiDiarioInto1Icon?.jsonBody ??
+                                                                                ''),
+                                                                          )!;
+                                                                          FFAppState().primerDiarioInto =
+                                                                              'si';
+                                                                          FFAppState().diarioIntoAnterior =
+                                                                              getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.id_diario_into_editar''',
+                                                                          );
+                                                                          FFAppState().editandoDiario =
+                                                                              'no';
+                                                                          FFAppState().mostrarAyer =
+                                                                              'no';
+                                                                          FFAppState().intoCarnes =
+                                                                              'no';
+                                                                          FFAppState().intoMarisco =
+                                                                              'no';
+                                                                          FFAppState().intoPescado =
+                                                                              'no';
+                                                                          FFAppState().intoLacteos =
+                                                                              'no';
+                                                                          FFAppState().intoHuevos =
+                                                                              'no';
+                                                                          FFAppState().intoCereales =
+                                                                              'no';
+                                                                          FFAppState().intoFrutas =
+                                                                              'no';
+                                                                          FFAppState().intoVerduras =
+                                                                              'no';
+                                                                          FFAppState().intoLegumbres =
+                                                                              'no';
+                                                                          FFAppState().intoFrutosSecos =
+                                                                              'no';
+                                                                          FFAppState().intoSalsas =
+                                                                              'no';
+                                                                          FFAppState().intoBebidas =
+                                                                              'no';
+
+                                                                          context
+                                                                              .pushNamed(
+                                                                            'diario_Into1',
+                                                                            queryParameters:
+                                                                                {
+                                                                              'primerIdario': serializeParam(
+                                                                                'si',
+                                                                                ParamType.String,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                            extra: <String,
+                                                                                dynamic>{
+                                                                              kTransitionInfoKey: TransitionInfo(
+                                                                                hasTransition: true,
+                                                                                transitionType: PageTransitionType.fade,
+                                                                              ),
+                                                                            },
+                                                                          );
+
+                                                                          unawaited(
+                                                                            () async {
+                                                                              await UserLogActivityCall.call(
+                                                                                authToken: FFAppState().authToken,
+                                                                                seccion: 'Acceso Diario Inolerancias Home',
+                                                                              );
+                                                                            }(),
+                                                                          );
+                                                                        } else {
+                                                                          ScaffoldMessenger.of(context)
+                                                                              .showSnackBar(
+                                                                            SnackBar(
+                                                                              content: Text(
+                                                                                'Ha ocurrido un error...',
+                                                                                style: TextStyle(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                              ),
+                                                                              duration: Duration(milliseconds: 4000),
+                                                                              backgroundColor: FlutterFlowTheme.of(context).error,
+                                                                            ),
+                                                                          );
+                                                                        }
+                                                                      }
+                                                                    } else {
                                                                       context
                                                                           .pushNamed(
-                                                                        'menu_diario',
+                                                                        'menu_intolerancias',
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
@@ -2111,273 +2061,184 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 safeSetState(
                                                                     () {});
                                                               },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .chevron_right_rounded,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .negroPerm,
-                                                                size: 28.0,
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child:
+                                                                    Image.asset(
+                                                                  'assets/images/intolerancia.png',
+                                                                  width: 40.0,
+                                                                  height: 40.0,
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
                                                               ),
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15.0, 5.0, 15.0, 10.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Flexible(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 10.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Container(
-                                                    width: 170.0,
-                                                    height: 100.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .resumen,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Container(
-                                                                width: 40.0,
-                                                                height: 40.0,
-                                                                decoration:
-                                                                    BoxDecoration(
+                                                          ),
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalInfoIntoWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .more_vert,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .info,
-                                                                  shape: BoxShape
-                                                                      .circle,
+                                                                      .secondaryText,
+                                                                  size: 24.0,
                                                                 ),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    if ((FFAppState().authToken !=
-                                                                                null &&
-                                                                            FFAppState().authToken !=
-                                                                                '') &&
-                                                                        (FFAppState().email !=
-                                                                                null &&
-                                                                            FFAppState().email !=
-                                                                                '')) {
-                                                                      if (FFAppState()
-                                                                              .creadoOk ==
-                                                                          'si') {
-                                                                        if (UserIndividualCall.primerInto(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) ==
-                                                                            'si') {
-                                                                          if (UserIndividualCall.finalizoIntolerancias(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'no') {
-                                                                            FFAppState().diarioIntoAnterior =
-                                                                                UserIndividualCall.idIntoEditar(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            )!;
-                                                                            FFAppState().intoCarnes =
-                                                                                'no';
-                                                                            FFAppState().intoMarisco =
-                                                                                'no';
-                                                                            FFAppState().intoPescado =
-                                                                                'no';
-                                                                            FFAppState().intoLacteos =
-                                                                                'no';
-                                                                            FFAppState().intoHuevos =
-                                                                                'no';
-                                                                            FFAppState().intoCereales =
-                                                                                'no';
-                                                                            FFAppState().intoFrutas =
-                                                                                'no';
-                                                                            FFAppState().intoVerduras =
-                                                                                'no';
-                                                                            FFAppState().intoLegumbres =
-                                                                                'no';
-                                                                            FFAppState().intoFrutosSecos =
-                                                                                'no';
-                                                                            FFAppState().intoSalsas =
-                                                                                'no';
-                                                                            FFAppState().intoBebidas =
-                                                                                'no';
-                                                                            FFAppState().editandoDiario =
-                                                                                'no';
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              if ((FFAppState()
+                                                                              .authToken !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .authToken !=
+                                                                          '') &&
+                                                                  (FFAppState()
+                                                                              .email !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .email !=
+                                                                          '')) {
+                                                                if (FFAppState()
+                                                                        .creadoOk ==
+                                                                    'si') {
+                                                                  if (functions
+                                                                          .parseJsonValueToString(
+                                                                              getJsonField(
+                                                                        FFAppState()
+                                                                            .userIndividual,
+                                                                        r'''$.primer_diario_into''',
+                                                                      )) ==
+                                                                      'si') {
+                                                                    if (functions
+                                                                            .parseJsonValueToString(getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.setup_intolerancias''',
+                                                                        )) ==
+                                                                        'no') {
+                                                                      FFAppState()
+                                                                              .diarioIntoAnterior =
+                                                                          getJsonField(
+                                                                        FFAppState()
+                                                                            .userIndividual,
+                                                                        r'''$.id_diario_into_editar''',
+                                                                      );
+                                                                      FFAppState()
+                                                                              .intoCarnes =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoMarisco =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoPescado =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoLacteos =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoHuevos =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoCereales =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoFrutas =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoVerduras =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoLegumbres =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoFrutosSecos =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoSalsas =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .intoBebidas =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .editandoDiario =
+                                                                          'no';
 
-                                                                            context.pushNamed(
-                                                                              'setupInto',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Diario Inolerancias Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          } else {
-                                                                            _model.apiDiarioInto1Icon =
-                                                                                await DiarioIntoCreaCall.call(
-                                                                              authToken: FFAppState().authToken,
-                                                                            );
-
-                                                                            if ((_model.apiDiarioInto1Icon?.succeeded ??
-                                                                                true)) {
-                                                                              FFAppState().diarioIntoId = DiarioIntoCreaCall.id(
-                                                                                (_model.apiDiarioInto1Icon?.jsonBody ?? ''),
-                                                                              )!;
-                                                                              FFAppState().primerDiarioInto = 'si';
-                                                                              FFAppState().diarioIntoAnterior = UserIndividualCall.idIntoEditar(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              )!;
-                                                                              FFAppState().editandoDiario = 'no';
-                                                                              FFAppState().momento = 1;
-                                                                              FFAppState().intoCarnes = 'no';
-                                                                              FFAppState().intoMarisco = 'no';
-                                                                              FFAppState().intoPescado = 'no';
-                                                                              FFAppState().intoLacteos = 'no';
-                                                                              FFAppState().intoHuevos = 'no';
-                                                                              FFAppState().intoCereales = 'no';
-                                                                              FFAppState().intoFrutas = 'no';
-                                                                              FFAppState().intoVerduras = 'no';
-                                                                              FFAppState().intoLegumbres = 'no';
-                                                                              FFAppState().intoFrutosSecos = 'no';
-                                                                              FFAppState().intoSalsas = 'no';
-                                                                              FFAppState().intoBebidas = 'no';
-
-                                                                              context.pushNamed(
-                                                                                'diario_Into1',
-                                                                                queryParameters: {
-                                                                                  'primerIdario': serializeParam(
-                                                                                    'si',
-                                                                                    ParamType.String,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                                extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
-                                                                                    hasTransition: true,
-                                                                                    transitionType: PageTransitionType.fade,
-                                                                                  ),
-                                                                                },
-                                                                              );
-
-                                                                              unawaited(
-                                                                                () async {
-                                                                                  await UserLogActivityCall.call(
-                                                                                    authToken: FFAppState().authToken,
-                                                                                    seccion: 'Acceso Diario Inolerancias Home',
-                                                                                  );
-                                                                                }(),
-                                                                              );
-                                                                            } else {
-                                                                              ScaffoldMessenger.of(context).showSnackBar(
-                                                                                SnackBar(
-                                                                                  content: Text(
-                                                                                    'Ha ocurrido un error...',
-                                                                                    style: TextStyle(
-                                                                                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                    ),
-                                                                                  ),
-                                                                                  duration: Duration(milliseconds: 4000),
-                                                                                  backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                                ),
-                                                                              );
-                                                                            }
-                                                                          }
-                                                                        } else {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            'menu_intolerancias',
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.fade,
-                                                                              ),
-                                                                            },
-                                                                          );
-                                                                        }
-                                                                      } else {
-                                                                        await showModalBottomSheet(
-                                                                          isScrollControlled:
-                                                                              true,
-                                                                          backgroundColor:
-                                                                              Colors.transparent,
-                                                                          enableDrag:
-                                                                              false,
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
-                                                                              ),
-                                                                            );
-                                                                          },
-                                                                        ).then((value) =>
-                                                                            safeSetState(() {}));
-                                                                      }
-                                                                    } else {
                                                                       context
                                                                           .pushNamed(
-                                                                        'login',
+                                                                        'setupInto',
                                                                         extra: <String,
                                                                             dynamic>{
                                                                           kTransitionInfoKey:
@@ -2386,110 +2247,220 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 true,
                                                                             transitionType:
                                                                                 PageTransitionType.fade,
-                                                                            duration:
-                                                                                Duration(milliseconds: 0),
                                                                           ),
                                                                         },
                                                                       );
-                                                                    }
 
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  },
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/images/intolerancia.png',
-                                                                      width:
-                                                                          40.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
+                                                                      unawaited(
                                                                         () async {
-                                                                      await showModalBottomSheet(
-                                                                        isScrollControlled:
-                                                                            true,
-                                                                        backgroundColor:
-                                                                            Colors.transparent,
-                                                                        enableDrag:
-                                                                            false,
-                                                                        context:
-                                                                            context,
-                                                                        builder:
-                                                                            (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalInfoIntoWidget(),
-                                                                            ),
+                                                                          await UserLogActivityCall
+                                                                              .call(
+                                                                            authToken:
+                                                                                FFAppState().authToken,
+                                                                            seccion:
+                                                                                'Acceso Diario Inolerancias Home',
                                                                           );
-                                                                        },
-                                                                      ).then((value) =>
-                                                                          safeSetState(
-                                                                              () {}));
+                                                                        }(),
+                                                                      );
+                                                                    } else {
+                                                                      _model.apiDiarioInto1Titulo =
+                                                                          await DiarioIntoCreaCall
+                                                                              .call(
+                                                                        authToken:
+                                                                            FFAppState().authToken,
+                                                                      );
+
+                                                                      if ((_model
+                                                                              .apiDiarioInto1Titulo
+                                                                              ?.succeeded ??
+                                                                          true)) {
+                                                                        FFAppState().diarioIntoId =
+                                                                            DiarioIntoCreaCall.id(
+                                                                          (_model.apiDiarioInto1Titulo?.jsonBody ??
+                                                                              ''),
+                                                                        )!;
+                                                                        FFAppState().primerDiarioInto =
+                                                                            'si';
+                                                                        FFAppState().diarioIntoAnterior =
+                                                                            getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.id_diario_into_editar''',
+                                                                        );
+                                                                        FFAppState().editandoDiario =
+                                                                            'no';
+                                                                        FFAppState().mostrarAyer =
+                                                                            'no';
+                                                                        FFAppState().intoCarnes =
+                                                                            'no';
+                                                                        FFAppState().intoMarisco =
+                                                                            'no';
+                                                                        FFAppState().intoPescado =
+                                                                            'no';
+                                                                        FFAppState().intoLacteos =
+                                                                            'no';
+                                                                        FFAppState().intoHuevos =
+                                                                            'no';
+                                                                        FFAppState().intoCereales =
+                                                                            'no';
+                                                                        FFAppState().intoFrutas =
+                                                                            'no';
+                                                                        FFAppState().intoVerduras =
+                                                                            'no';
+                                                                        FFAppState().intoLegumbres =
+                                                                            'no';
+                                                                        FFAppState().intoFrutosSecos =
+                                                                            'no';
+                                                                        FFAppState().intoSalsas =
+                                                                            'no';
+                                                                        FFAppState().intoBebidas =
+                                                                            'no';
+
+                                                                        context
+                                                                            .pushNamed(
+                                                                          'diario_Into1',
+                                                                          queryParameters:
+                                                                              {
+                                                                            'primerIdario':
+                                                                                serializeParam(
+                                                                              'si',
+                                                                              ParamType.String,
+                                                                            ),
+                                                                          }.withoutNulls,
+                                                                          extra: <String,
+                                                                              dynamic>{
+                                                                            kTransitionInfoKey:
+                                                                                TransitionInfo(
+                                                                              hasTransition: true,
+                                                                              transitionType: PageTransitionType.fade,
+                                                                            ),
+                                                                          },
+                                                                        );
+
+                                                                        unawaited(
+                                                                          () async {
+                                                                            await UserLogActivityCall.call(
+                                                                              authToken: FFAppState().authToken,
+                                                                              seccion: 'Acceso Diario Inolerancias Home',
+                                                                            );
+                                                                          }(),
+                                                                        );
+                                                                      } else {
+                                                                        ScaffoldMessenger.of(context)
+                                                                            .showSnackBar(
+                                                                          SnackBar(
+                                                                            content:
+                                                                                Text(
+                                                                              'Ha ocurrido un error...',
+                                                                              style: TextStyle(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                            ),
+                                                                            duration:
+                                                                                Duration(milliseconds: 4000),
+                                                                            backgroundColor:
+                                                                                FlutterFlowTheme.of(context).error,
+                                                                          ),
+                                                                        );
+                                                                      }
+                                                                    }
+                                                                  } else {
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'menu_intolerancias',
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.fade,
+                                                                        ),
+                                                                      },
+                                                                    );
+                                                                  }
+                                                                } else {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalErrorCuentaWidget(),
+                                                                        ),
+                                                                      );
                                                                     },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .more_vert,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                }
+                                                              } else {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'login',
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .fade,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              0),
                                                                     ),
-                                                                  ),
-                                                                ),
+                                                                  },
+                                                                );
+                                                              }
+
+                                                              safeSetState(
+                                                                  () {});
+                                                            },
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '0mtreec3' /* Diario de 
+intolerancias */
+                                                                ,
                                                               ),
-                                                            ],
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .negroPerm,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              InkWell(
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
                                                                 focusColor: Colors
@@ -2512,19 +2483,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
                                                                         'si') {
-                                                                      if (UserIndividualCall
-                                                                              .primerInto(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
+                                                                      if (functions
+                                                                              .parseJsonValueToString(getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.primer_diario_into''',
+                                                                          )) ==
                                                                           'si') {
-                                                                        if (UserIndividualCall.finalizoIntolerancias(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) ==
+                                                                        if (functions.parseJsonValueToString(getJsonField(
+                                                                              FFAppState().userIndividual,
+                                                                              r'''$.setup_intolerancias''',
+                                                                            )) ==
                                                                             'no') {
                                                                           FFAppState().diarioIntoAnterior =
-                                                                              UserIndividualCall.idIntoEditar(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          )!;
+                                                                              getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.id_diario_into_editar''',
+                                                                          );
                                                                           FFAppState().intoCarnes =
                                                                               'no';
                                                                           FFAppState().intoMarisco =
@@ -2573,25 +2547,28 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             }(),
                                                                           );
                                                                         } else {
-                                                                          _model.apiDiarioInto4 =
+                                                                          _model.apiDiarioInto1 =
                                                                               await DiarioIntoCreaCall.call(
                                                                             authToken:
                                                                                 FFAppState().authToken,
                                                                           );
 
-                                                                          if ((_model.apiDiarioInto4?.succeeded ??
+                                                                          if ((_model.apiDiarioInto1?.succeeded ??
                                                                               true)) {
                                                                             FFAppState().diarioIntoId =
                                                                                 DiarioIntoCreaCall.id(
-                                                                              (_model.apiDiarioInto4?.jsonBody ?? ''),
+                                                                              (_model.apiDiarioInto1?.jsonBody ?? ''),
                                                                             )!;
                                                                             FFAppState().primerDiarioInto =
                                                                                 'si';
                                                                             FFAppState().diarioIntoAnterior =
-                                                                                UserIndividualCall.idIntoEditar(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            )!;
+                                                                                getJsonField(
+                                                                              FFAppState().userIndividual,
+                                                                              r'''$.id_diario_into_editar''',
+                                                                            );
                                                                             FFAppState().editandoDiario =
+                                                                                'no';
+                                                                            FFAppState().mostrarAyer =
                                                                                 'no';
                                                                             FFAppState().intoCarnes =
                                                                                 'no';
@@ -2719,465 +2696,104 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   safeSetState(
                                                                       () {});
                                                                 },
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '0mtreec3' /* Diario de 
-intolerancias */
-                                                                    ,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .negroPerm,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      if ((FFAppState().authToken != null &&
-                                                                              FFAppState().authToken !=
-                                                                                  '') &&
-                                                                          (FFAppState().email != null &&
-                                                                              FFAppState().email != '')) {
-                                                                        if (FFAppState().creadoOk ==
-                                                                            'si') {
-                                                                          if (UserIndividualCall.primerInto(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'si') {
-                                                                            if (UserIndividualCall.finalizoIntolerancias(
-                                                                                  homeUserIndividualResponse.jsonBody,
-                                                                                ) ==
-                                                                                'no') {
-                                                                              FFAppState().diarioIntoAnterior = UserIndividualCall.idIntoEditar(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              )!;
-                                                                              FFAppState().intoCarnes = 'no';
-                                                                              FFAppState().intoMarisco = 'no';
-                                                                              FFAppState().intoPescado = 'no';
-                                                                              FFAppState().intoLacteos = 'no';
-                                                                              FFAppState().intoHuevos = 'no';
-                                                                              FFAppState().intoCereales = 'no';
-                                                                              FFAppState().intoFrutas = 'no';
-                                                                              FFAppState().intoVerduras = 'no';
-                                                                              FFAppState().intoLegumbres = 'no';
-                                                                              FFAppState().intoFrutosSecos = 'no';
-                                                                              FFAppState().intoSalsas = 'no';
-                                                                              FFAppState().intoBebidas = 'no';
-                                                                              FFAppState().editandoDiario = 'no';
-
-                                                                              context.pushNamed(
-                                                                                'setupInto',
-                                                                                extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: TransitionInfo(
-                                                                                    hasTransition: true,
-                                                                                    transitionType: PageTransitionType.fade,
-                                                                                  ),
-                                                                                },
-                                                                              );
-
-                                                                              unawaited(
-                                                                                () async {
-                                                                                  await UserLogActivityCall.call(
-                                                                                    authToken: FFAppState().authToken,
-                                                                                    seccion: 'Acceso Diario Inolerancias Home',
-                                                                                  );
-                                                                                }(),
-                                                                              );
-                                                                            } else {
-                                                                              _model.apiDiarioInto1 = await DiarioIntoCreaCall.call(
-                                                                                authToken: FFAppState().authToken,
-                                                                              );
-
-                                                                              if ((_model.apiDiarioInto1?.succeeded ?? true)) {
-                                                                                FFAppState().diarioIntoId = DiarioIntoCreaCall.id(
-                                                                                  (_model.apiDiarioInto1?.jsonBody ?? ''),
-                                                                                )!;
-                                                                                FFAppState().primerDiarioInto = 'si';
-                                                                                FFAppState().diarioIntoAnterior = UserIndividualCall.idIntoEditar(
-                                                                                  homeUserIndividualResponse.jsonBody,
-                                                                                )!;
-                                                                                FFAppState().editandoDiario = 'no';
-                                                                                FFAppState().mostrarAyer = 'no';
-                                                                                FFAppState().intoCarnes = 'no';
-                                                                                FFAppState().intoMarisco = 'no';
-                                                                                FFAppState().intoPescado = 'no';
-                                                                                FFAppState().intoLacteos = 'no';
-                                                                                FFAppState().intoHuevos = 'no';
-                                                                                FFAppState().intoCereales = 'no';
-                                                                                FFAppState().intoFrutas = 'no';
-                                                                                FFAppState().intoVerduras = 'no';
-                                                                                FFAppState().intoLegumbres = 'no';
-                                                                                FFAppState().intoFrutosSecos = 'no';
-                                                                                FFAppState().intoSalsas = 'no';
-                                                                                FFAppState().intoBebidas = 'no';
-
-                                                                                context.pushNamed(
-                                                                                  'diario_Into1',
-                                                                                  queryParameters: {
-                                                                                    'primerIdario': serializeParam(
-                                                                                      'si',
-                                                                                      ParamType.String,
-                                                                                    ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
-                                                                                      hasTransition: true,
-                                                                                      transitionType: PageTransitionType.fade,
-                                                                                    ),
-                                                                                  },
-                                                                                );
-
-                                                                                unawaited(
-                                                                                  () async {
-                                                                                    await UserLogActivityCall.call(
-                                                                                      authToken: FFAppState().authToken,
-                                                                                      seccion: 'Acceso Diario Inolerancias Home',
-                                                                                    );
-                                                                                  }(),
-                                                                                );
-                                                                              } else {
-                                                                                ScaffoldMessenger.of(context).showSnackBar(
-                                                                                  SnackBar(
-                                                                                    content: Text(
-                                                                                      'Ha ocurrido un error...',
-                                                                                      style: TextStyle(
-                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      ),
-                                                                                    ),
-                                                                                    duration: Duration(milliseconds: 4000),
-                                                                                    backgroundColor: FlutterFlowTheme.of(context).error,
-                                                                                  ),
-                                                                                );
-                                                                              }
-                                                                            }
-                                                                          } else {
-                                                                            context.pushNamed(
-                                                                              'menu_intolerancias',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-                                                                          }
-                                                                        } else {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalErrorCuentaWidget(),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        }
-                                                                      } else {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'login',
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.fade,
-                                                                              duration: Duration(milliseconds: 0),
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      }
-
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .chevron_right_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .negroPerm,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          Flexible(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 0.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Container(
-                                                    width: 170.0,
-                                                    height: 100.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .lavanda,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Container(
-                                                                width: 40.0,
-                                                                height: 40.0,
-                                                                decoration:
-                                                                    BoxDecoration(
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .chevron_right_rounded,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .info,
-                                                                  shape: BoxShape
-                                                                      .circle,
-                                                                ),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    if ((FFAppState().authToken !=
-                                                                                null &&
-                                                                            FFAppState().authToken !=
-                                                                                '') &&
-                                                                        (FFAppState().email !=
-                                                                                null &&
-                                                                            FFAppState().email !=
-                                                                                '')) {
-                                                                      if (FFAppState()
-                                                                              .creadoOk ==
-                                                                          'si') {
-                                                                        if (UserIndividualCall.suenoHecho(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) ==
-                                                                            'si') {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalAvisoSuenoHechoWidget(),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        } else {
-                                                                          _model.apiCreaSuenoh2 =
-                                                                              await SuenoCreaDiarioCall.call(
-                                                                            authToken:
-                                                                                FFAppState().authToken,
-                                                                          );
-
-                                                                          FFAppState().diarioSuenoId =
-                                                                              SuenoCreaDiarioCall.id(
-                                                                            (_model.apiCreaSuenoh2?.jsonBody ??
-                                                                                ''),
-                                                                          )!;
-                                                                          FFAppState().diarioSuenoSup =
-                                                                              'no';
-                                                                          FFAppState().diarioSuenoMed =
-                                                                              'no';
-                                                                          FFAppState().diarioSuenoUltMed =
-                                                                              '';
-                                                                          FFAppState().diarioSuenoUltSup =
-                                                                              '';
-
-                                                                          context
-                                                                              .pushNamed(
-                                                                            'diario_sueno1',
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.fade,
-                                                                              ),
-                                                                            },
-                                                                          );
-
-                                                                          unawaited(
-                                                                            () async {
-                                                                              await UserLogActivityCall.call(
-                                                                                authToken: FFAppState().authToken,
-                                                                                seccion: 'Acceso Diario Sueño Home',
-                                                                              );
-                                                                            }(),
-                                                                          );
-                                                                        }
-                                                                      } else {
-                                                                        await showModalBottomSheet(
-                                                                          isScrollControlled:
-                                                                              true,
-                                                                          backgroundColor:
-                                                                              Colors.transparent,
-                                                                          enableDrag:
-                                                                              false,
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
-                                                                              ),
-                                                                            );
-                                                                          },
-                                                                        ).then((value) =>
-                                                                            safeSetState(() {}));
-                                                                      }
-                                                                    } else {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        'login',
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          kTransitionInfoKey:
-                                                                              TransitionInfo(
-                                                                            hasTransition:
-                                                                                true,
-                                                                            transitionType:
-                                                                                PageTransitionType.fade,
-                                                                            duration:
-                                                                                Duration(milliseconds: 0),
-                                                                          ),
-                                                                        },
-                                                                      );
-                                                                    }
-
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  },
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/images/bed.png',
-                                                                      width:
-                                                                          40.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                    ),
-                                                                  ),
+                                                                      .negroPerm,
+                                                                  size: 24.0,
                                                                 ),
                                                               ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 170.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .lavanda,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Container(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .info,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                var _shouldSetState =
+                                                                    false;
+                                                                if ((FFAppState().authToken !=
+                                                                            null &&
+                                                                        FFAppState().authToken !=
+                                                                            '') &&
+                                                                    (FFAppState().email !=
+                                                                            null &&
+                                                                        FFAppState().email !=
+                                                                            '')) {
+                                                                  if (FFAppState()
+                                                                          .creadoOk ==
+                                                                      'si') {
+                                                                    if (functions
+                                                                            .parseJsonValueToString(getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.diario_sueno_hecho''',
+                                                                        )) ==
+                                                                        'si') {
                                                                       await showModalBottomSheet(
                                                                         isScrollControlled:
                                                                             true,
@@ -3195,43 +2811,161 @@ intolerancias */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalInfoSuenoWidget(),
+                                                                              child: ModalAvisoSuenoHechoWidget(),
                                                                             ),
                                                                           );
                                                                         },
                                                                       ).then((value) =>
                                                                           safeSetState(
                                                                               () {}));
+
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    } else {
+                                                                      _model.apiCreaSuenoIcon =
+                                                                          await SuenoCreaDiarioCall
+                                                                              .call(
+                                                                        authToken:
+                                                                            FFAppState().authToken,
+                                                                      );
+
+                                                                      _shouldSetState =
+                                                                          true;
+                                                                      FFAppState()
+                                                                              .diarioSuenoId =
+                                                                          SuenoCreaDiarioCall
+                                                                              .id(
+                                                                        (_model.apiCreaSuenoIcon?.jsonBody ??
+                                                                            ''),
+                                                                      )!;
+                                                                      FFAppState()
+                                                                              .diarioSuenoSup =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .diarioSuenoMed =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                          .diarioSuenoUltMed = '';
+                                                                      FFAppState()
+                                                                          .diarioSuenoUltSup = '';
+
+                                                                      context
+                                                                          .pushNamed(
+                                                                        'diario_sueno1',
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          kTransitionInfoKey:
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.fade,
+                                                                          ),
+                                                                        },
+                                                                      );
+
+                                                                      unawaited(
+                                                                        () async {
+                                                                          await UserLogActivityCall
+                                                                              .call(
+                                                                            authToken:
+                                                                                FFAppState().authToken,
+                                                                            seccion:
+                                                                                'Acceso Diario Sueño Home',
+                                                                          );
+                                                                        }(),
+                                                                      );
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
+                                                                    }
+                                                                  } else {
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalErrorCuentaWidget(),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
+                                                                } else {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'login',
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      kTransitionInfoKey:
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                        duration:
+                                                                            Duration(milliseconds: 0),
+                                                                      ),
                                                                     },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .more_vert,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
+                                                                  );
+
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                }
+
+                                                                if (_shouldSetState)
+                                                                  safeSetState(
+                                                                      () {});
+                                                              },
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child:
+                                                                    Image.asset(
+                                                                  'assets/images/bed.png',
+                                                                  width: 40.0,
+                                                                  height: 40.0,
+                                                                  fit: BoxFit
+                                                                      .cover,
                                                                 ),
                                                               ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      15.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              InkWell(
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
                                                                 focusColor: Colors
@@ -3243,19 +2977,308 @@ intolerancias */
                                                                         .transparent,
                                                                 onTap:
                                                                     () async {
-                                                                  if (FFAppState()
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalInfoSuenoWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .more_vert,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  15.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              var _shouldSetState =
+                                                                  false;
+                                                              if ((FFAppState()
                                                                               .authToken !=
                                                                           null &&
                                                                       FFAppState()
                                                                               .authToken !=
-                                                                          '') {
+                                                                          '') &&
+                                                                  (FFAppState()
+                                                                              .email !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .email !=
+                                                                          '')) {
+                                                                if (FFAppState()
+                                                                        .creadoOk ==
+                                                                    'si') {
+                                                                  if (functions
+                                                                          .parseJsonValueToString(
+                                                                              getJsonField(
+                                                                        FFAppState()
+                                                                            .userIndividual,
+                                                                        r'''$.diario_sueno_hecho''',
+                                                                      )) ==
+                                                                      'si') {
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalAvisoSuenoHechoWidget(),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  } else {
+                                                                    _model.apiCreaSuenoTitulo =
+                                                                        await SuenoCreaDiarioCall
+                                                                            .call(
+                                                                      authToken:
+                                                                          FFAppState()
+                                                                              .authToken,
+                                                                    );
+
+                                                                    _shouldSetState =
+                                                                        true;
+                                                                    FFAppState()
+                                                                            .diarioSuenoId =
+                                                                        SuenoCreaDiarioCall
+                                                                            .id(
+                                                                      (_model.apiCreaSuenoTitulo
+                                                                              ?.jsonBody ??
+                                                                          ''),
+                                                                    )!;
+                                                                    FFAppState()
+                                                                            .diarioSuenoSup =
+                                                                        'no';
+                                                                    FFAppState()
+                                                                            .diarioSuenoMed =
+                                                                        'no';
+                                                                    FFAppState()
+                                                                        .diarioSuenoUltMed = '';
+                                                                    FFAppState()
+                                                                        .diarioSuenoUltSup = '';
+
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'diario_sueno1',
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.fade,
+                                                                        ),
+                                                                      },
+                                                                    );
+
+                                                                    unawaited(
+                                                                      () async {
+                                                                        await UserLogActivityCall
+                                                                            .call(
+                                                                          authToken:
+                                                                              FFAppState().authToken,
+                                                                          seccion:
+                                                                              'Acceso Diario Sueño Home',
+                                                                        );
+                                                                      }(),
+                                                                    );
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
+                                                                  }
+                                                                } else {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalErrorCuentaWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
+                                                                }
+                                                              } else {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'login',
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .fade,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              0),
+                                                                    ),
+                                                                  },
+                                                                );
+
+                                                                if (_shouldSetState)
+                                                                  safeSetState(
+                                                                      () {});
+                                                                return;
+                                                              }
+
+                                                              if (_shouldSetState)
+                                                                safeSetState(
+                                                                    () {});
+                                                            },
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'qfhcs0zs' /* Diario de Sueño */,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .negroPerm,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  var _shouldSetState =
+                                                                      false;
+                                                                  if ((FFAppState().authToken !=
+                                                                              null &&
+                                                                          FFAppState().authToken !=
+                                                                              '') &&
+                                                                      (FFAppState().email !=
+                                                                              null &&
+                                                                          FFAppState().email !=
+                                                                              '')) {
                                                                     if (FFAppState()
                                                                             .creadoOk ==
                                                                         'si') {
-                                                                      if (UserIndividualCall
-                                                                              .suenoHecho(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
+                                                                      if (functions
+                                                                              .parseJsonValueToString(getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.diario_sueno_hecho''',
+                                                                          )) ==
                                                                           'si') {
                                                                         await showModalBottomSheet(
                                                                           isScrollControlled:
@@ -3278,16 +3301,23 @@ intolerancias */
                                                                           },
                                                                         ).then((value) =>
                                                                             safeSetState(() {}));
+
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
                                                                       } else {
-                                                                        _model.apiCreaSuenoh3 =
+                                                                        _model.apiCreaSueno =
                                                                             await SuenoCreaDiarioCall.call(
                                                                           authToken:
                                                                               FFAppState().authToken,
                                                                         );
 
+                                                                        _shouldSetState =
+                                                                            true;
                                                                         FFAppState().diarioSuenoId =
                                                                             SuenoCreaDiarioCall.id(
-                                                                          (_model.apiCreaSuenoh3?.jsonBody ??
+                                                                          (_model.apiCreaSueno?.jsonBody ??
                                                                               ''),
                                                                         )!;
                                                                         FFAppState().diarioSuenoSup =
@@ -3320,6 +3350,10 @@ intolerancias */
                                                                             );
                                                                           }(),
                                                                         );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
                                                                       }
                                                                     } else {
                                                                       await showModalBottomSheet(
@@ -3346,6 +3380,11 @@ intolerancias */
                                                                       ).then((value) =>
                                                                           safeSetState(
                                                                               () {}));
+
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
                                                                     }
                                                                   } else {
                                                                     context
@@ -3364,402 +3403,123 @@ intolerancias */
                                                                         ),
                                                                       },
                                                                     );
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
                                                                   }
 
-                                                                  safeSetState(
-                                                                      () {});
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
                                                                 },
-                                                                child: Text(
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    'qfhcs0zs' /* Diario de Sueño */,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .negroPerm,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      var _shouldSetState =
-                                                                          false;
-                                                                      if ((FFAppState().authToken != null &&
-                                                                              FFAppState().authToken !=
-                                                                                  '') &&
-                                                                          (FFAppState().email != null &&
-                                                                              FFAppState().email != '')) {
-                                                                        if (FFAppState().creadoOk ==
-                                                                            'si') {
-                                                                          if (UserIndividualCall.suenoHecho(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'si') {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              enableDrag: false,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () => FocusScope.of(context).unfocus(),
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: ModalAvisoSuenoHechoWidget(),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-
-                                                                            if (_shouldSetState)
-                                                                              safeSetState(() {});
-                                                                            return;
-                                                                          } else {
-                                                                            _model.apiCreaSueno =
-                                                                                await SuenoCreaDiarioCall.call(
-                                                                              authToken: FFAppState().authToken,
-                                                                            );
-
-                                                                            _shouldSetState =
-                                                                                true;
-                                                                            FFAppState().diarioSuenoId =
-                                                                                SuenoCreaDiarioCall.id(
-                                                                              (_model.apiCreaSueno?.jsonBody ?? ''),
-                                                                            )!;
-                                                                            FFAppState().diarioSuenoSup =
-                                                                                'no';
-                                                                            FFAppState().diarioSuenoMed =
-                                                                                'no';
-                                                                            FFAppState().diarioSuenoUltMed =
-                                                                                '';
-                                                                            FFAppState().diarioSuenoUltSup =
-                                                                                '';
-
-                                                                            context.pushNamed(
-                                                                              'diario_sueno1',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Diario Sueño Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          }
-                                                                        } else {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalErrorCuentaWidget(),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        }
-                                                                      } else {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'login',
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.fade,
-                                                                              duration: Duration(milliseconds: 0),
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      }
-
-                                                                      if (_shouldSetState)
-                                                                        safeSetState(
-                                                                            () {});
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .chevron_right_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .negroPerm,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15.0, 5.0, 15.0, 10.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Flexible(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 10.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Container(
-                                                    width: 170.0,
-                                                    height: 100.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .sintomas,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Container(
-                                                                width: 40.0,
-                                                                height: 40.0,
-                                                                decoration:
-                                                                    BoxDecoration(
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .chevron_right_rounded,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .info,
-                                                                  shape: BoxShape
-                                                                      .circle,
-                                                                ),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    if ((FFAppState().authToken !=
-                                                                                null &&
-                                                                            FFAppState().authToken !=
-                                                                                '') &&
-                                                                        (FFAppState().email !=
-                                                                                null &&
-                                                                            FFAppState().email !=
-                                                                                '')) {
-                                                                      if (FFAppState()
-                                                                              .creadoOk ==
-                                                                          'si') {
-                                                                        if (UserIndividualCall.primerDiario(
-                                                                              homeUserIndividualResponse.jsonBody,
-                                                                            ) ==
-                                                                            'si') {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalSinDiarioWidget(),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        } else {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            'listado',
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              kTransitionInfoKey: TransitionInfo(
-                                                                                hasTransition: true,
-                                                                                transitionType: PageTransitionType.fade,
-                                                                              ),
-                                                                            },
-                                                                          );
-
-                                                                          unawaited(
-                                                                            () async {
-                                                                              await UserLogActivityCall.call(
-                                                                                authToken: FFAppState().authToken,
-                                                                                seccion: 'Acceso Resumen Diarios Home',
-                                                                              );
-                                                                            }(),
-                                                                          );
-                                                                        }
-                                                                      } else {
-                                                                        await showModalBottomSheet(
-                                                                          isScrollControlled:
-                                                                              true,
-                                                                          backgroundColor:
-                                                                              Colors.transparent,
-                                                                          enableDrag:
-                                                                              false,
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
-                                                                              ),
-                                                                            );
-                                                                          },
-                                                                        ).then((value) =>
-                                                                            safeSetState(() {}));
-                                                                      }
-                                                                    } else {
-                                                                      context
-                                                                          .pushNamed(
-                                                                        'login',
-                                                                        extra: <String,
-                                                                            dynamic>{
-                                                                          kTransitionInfoKey:
-                                                                              TransitionInfo(
-                                                                            hasTransition:
-                                                                                true,
-                                                                            transitionType:
-                                                                                PageTransitionType.fade,
-                                                                            duration:
-                                                                                Duration(milliseconds: 0),
-                                                                          ),
-                                                                        },
-                                                                      );
-                                                                    }
-                                                                  },
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/images/resumen.png',
-                                                                      width:
-                                                                          40.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                    ),
-                                                                  ),
+                                                                      .negroPerm,
+                                                                  size: 24.0,
                                                                 ),
                                                               ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 5.0, 15.0, 10.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 10.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 170.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .sintomas,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Container(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .info,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                if ((FFAppState().authToken !=
+                                                                            null &&
+                                                                        FFAppState().authToken !=
+                                                                            '') &&
+                                                                    (FFAppState().email !=
+                                                                            null &&
+                                                                        FFAppState().email !=
+                                                                            '')) {
+                                                                  if (FFAppState()
+                                                                          .creadoOk ==
+                                                                      'si') {
+                                                                    if (functions
+                                                                            .parseJsonValueToString(getJsonField(
+                                                                          FFAppState()
+                                                                              .userIndividual,
+                                                                          r'''$.primer_diario''',
+                                                                        )) ==
+                                                                        'si') {
                                                                       await showModalBottomSheet(
                                                                         isScrollControlled:
                                                                             true,
@@ -3777,43 +3537,353 @@ intolerancias */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalInfoResumenWidget(),
+                                                                              child: ModalSinDiarioWidget(),
                                                                             ),
                                                                           );
                                                                         },
                                                                       ).then((value) =>
                                                                           safeSetState(
                                                                               () {}));
+                                                                    } else {
+                                                                      context
+                                                                          .pushNamed(
+                                                                        'listado',
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          kTransitionInfoKey:
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.fade,
+                                                                          ),
+                                                                        },
+                                                                      );
+
+                                                                      unawaited(
+                                                                        () async {
+                                                                          await UserLogActivityCall
+                                                                              .call(
+                                                                            authToken:
+                                                                                FFAppState().authToken,
+                                                                            seccion:
+                                                                                'Acceso Resumen Diarios Home',
+                                                                          );
+                                                                        }(),
+                                                                      );
+                                                                      return;
+                                                                    }
+                                                                  } else {
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalErrorCuentaWidget(),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
+
+                                                                    return;
+                                                                  }
+                                                                } else {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'login',
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      kTransitionInfoKey:
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                        duration:
+                                                                            Duration(milliseconds: 0),
+                                                                      ),
                                                                     },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .more_vert,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
+                                                                  );
+
+                                                                  return;
+                                                                }
+                                                              },
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child:
+                                                                    Image.asset(
+                                                                  'assets/images/resumen.png',
+                                                                  width: 40.0,
+                                                                  height: 40.0,
+                                                                  fit: BoxFit
+                                                                      .cover,
                                                                 ),
                                                               ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              InkWell(
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalInfoResumenWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .more_vert,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              if ((FFAppState()
+                                                                              .authToken !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .authToken !=
+                                                                          '') &&
+                                                                  (FFAppState()
+                                                                              .email !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .email !=
+                                                                          '')) {
+                                                                if (FFAppState()
+                                                                        .creadoOk ==
+                                                                    'si') {
+                                                                  if (functions
+                                                                          .parseJsonValueToString(
+                                                                              getJsonField(
+                                                                        FFAppState()
+                                                                            .userIndividual,
+                                                                        r'''$.primer_diario''',
+                                                                      )) ==
+                                                                      'si') {
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalSinDiarioWidget(),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
+                                                                  } else {
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'listado',
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.fade,
+                                                                        ),
+                                                                      },
+                                                                    );
+
+                                                                    unawaited(
+                                                                      () async {
+                                                                        await UserLogActivityCall
+                                                                            .call(
+                                                                          authToken:
+                                                                              FFAppState().authToken,
+                                                                          seccion:
+                                                                              'Acceso Resumen Diarios Home',
+                                                                        );
+                                                                      }(),
+                                                                    );
+                                                                    return;
+                                                                  }
+                                                                } else {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalErrorCuentaWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+
+                                                                  return;
+                                                                }
+                                                              } else {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'login',
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .fade,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              0),
+                                                                    ),
+                                                                  },
+                                                                );
+
+                                                                return;
+                                                              }
+                                                            },
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                '04siahpf' /* Resumen de 
+Diarios */
+                                                                ,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .negroPerm,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
                                                                 focusColor: Colors
@@ -3836,10 +3906,11 @@ intolerancias */
                                                                     if (FFAppState()
                                                                             .creadoOk ==
                                                                         'si') {
-                                                                      if (UserIndividualCall
-                                                                              .primerDiario(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
+                                                                      if (functions
+                                                                              .parseJsonValueToString(getJsonField(
+                                                                            FFAppState().userIndividual,
+                                                                            r'''$.primer_diario''',
+                                                                          )) ==
                                                                           'si') {
                                                                         await showModalBottomSheet(
                                                                           isScrollControlled:
@@ -3884,6 +3955,7 @@ intolerancias */
                                                                             );
                                                                           }(),
                                                                         );
+                                                                        return;
                                                                       }
                                                                     } else {
                                                                       await showModalBottomSheet(
@@ -3910,6 +3982,8 @@ intolerancias */
                                                                       ).then((value) =>
                                                                           safeSetState(
                                                                               () {}));
+
+                                                                      return;
                                                                     }
                                                                   } else {
                                                                     context
@@ -3928,269 +4002,113 @@ intolerancias */
                                                                         ),
                                                                       },
                                                                     );
+
+                                                                    return;
                                                                   }
                                                                 },
-                                                                child: Text(
-                                                                  FFLocalizations.of(
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .chevron_right_rounded,
+                                                                  color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .getText(
-                                                                    '04siahpf' /* Resumen de 
-Diarios */
-                                                                    ,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .negroPerm,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
+                                                                      .negroPerm,
+                                                                  size: 24.0,
                                                                 ),
                                                               ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      if ((FFAppState().authToken != null &&
-                                                                              FFAppState().authToken !=
-                                                                                  '') &&
-                                                                          (FFAppState().email != null &&
-                                                                              FFAppState().email != '')) {
-                                                                        if (FFAppState().creadoOk ==
-                                                                            'si') {
-                                                                          if (UserIndividualCall.primerDiario(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'si') {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              enableDrag: false,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () => FocusScope.of(context).unfocus(),
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: ModalSinDiarioWidget(),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-                                                                          } else {
-                                                                            context.pushNamed(
-                                                                              'listado',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Resumen Diarios Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          }
-                                                                        } else {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalErrorCuentaWidget(),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        }
-                                                                      } else {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'login',
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.fade,
-                                                                              duration: Duration(milliseconds: 0),
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      }
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .chevron_right_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .negroPerm,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
-                                            ),
+                                            ],
                                           ),
-                                          Flexible(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      10.0, 0.0, 0.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Container(
-                                                    width: 170.0,
-                                                    height: 100.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .rojoHome,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  if ((FFAppState().authToken !=
-                                                                              null &&
-                                                                          FFAppState().authToken !=
-                                                                              '') &&
-                                                                      (FFAppState().email !=
-                                                                              null &&
-                                                                          FFAppState().email !=
-                                                                              '')) {
-                                                                    if (FFAppState()
-                                                                            .creadoOk ==
-                                                                        'si') {
-                                                                      if (UserIndividualCall
-                                                                              .primerDiario(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
-                                                                          'si') {
-                                                                        await showModalBottomSheet(
-                                                                          isScrollControlled:
-                                                                              true,
-                                                                          backgroundColor:
-                                                                              Colors.transparent,
-                                                                          enableDrag:
-                                                                              false,
-                                                                          context:
-                                                                              context,
-                                                                          builder:
-                                                                              (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalSinDiarioWidget(),
-                                                                              ),
-                                                                            );
-                                                                          },
-                                                                        ).then((value) =>
-                                                                            safeSetState(() {}));
-                                                                      } else {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'reporteSalud',
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.fade,
-                                                                            ),
-                                                                          },
-                                                                        );
-
-                                                                        unawaited(
-                                                                          () async {
-                                                                            await UserLogActivityCall.call(
-                                                                              authToken: FFAppState().authToken,
-                                                                              seccion: 'Acceso Carpeta de Salud Home',
-                                                                            );
-                                                                          }(),
-                                                                        );
-                                                                      }
-                                                                    } else {
+                                        ),
+                                      ),
+                                      Flexible(
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Container(
+                                                width: 170.0,
+                                                height: 100.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .rojoHome,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Container(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .info,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                if ((FFAppState().authToken !=
+                                                                            null &&
+                                                                        FFAppState().authToken !=
+                                                                            '') &&
+                                                                    (FFAppState().email !=
+                                                                            null &&
+                                                                        FFAppState().email !=
+                                                                            '')) {
+                                                                  if (FFAppState()
+                                                                          .creadoOk ==
+                                                                      'si') {
+                                                                    if ((functions
+                                                                                .parseJsonValueToInteger(getJsonField(
+                                                                                  FFAppState().userIndividual,
+                                                                                  r'''$._diario_cuenta''',
+                                                                                ))
+                                                                                .toString() ==
+                                                                            '0') ||
+                                                                        (functions
+                                                                                .parseJsonValueToInteger(getJsonField(
+                                                                                  FFAppState().userIndividual,
+                                                                                  r'''$._diario_cuenta''',
+                                                                                ))
+                                                                                .toString() ==
+                                                                            '1')) {
                                                                       await showModalBottomSheet(
                                                                         isScrollControlled:
                                                                             true,
@@ -4208,139 +4126,210 @@ Diarios */
                                                                             child:
                                                                                 Padding(
                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalErrorCuentaWidget(),
+                                                                              child: ModalSinDiarioWidget(),
                                                                             ),
                                                                           );
                                                                         },
                                                                       ).then((value) =>
                                                                           safeSetState(
                                                                               () {}));
+
+                                                                      return;
+                                                                    } else {
+                                                                      context
+                                                                          .pushNamed(
+                                                                        'reporteSalud',
+                                                                        extra: <String,
+                                                                            dynamic>{
+                                                                          kTransitionInfoKey:
+                                                                              TransitionInfo(
+                                                                            hasTransition:
+                                                                                true,
+                                                                            transitionType:
+                                                                                PageTransitionType.fade,
+                                                                          ),
+                                                                        },
+                                                                      );
+
+                                                                      unawaited(
+                                                                        () async {
+                                                                          await UserLogActivityCall
+                                                                              .call(
+                                                                            authToken:
+                                                                                FFAppState().authToken,
+                                                                            seccion:
+                                                                                'Acceso Carpeta de Salud Home',
+                                                                          );
+                                                                        }(),
+                                                                      );
+                                                                      return;
                                                                     }
                                                                   } else {
-                                                                    context
-                                                                        .pushNamed(
-                                                                      'login',
-                                                                      extra: <String,
-                                                                          dynamic>{
-                                                                        kTransitionInfoKey:
-                                                                            TransitionInfo(
-                                                                          hasTransition:
-                                                                              true,
-                                                                          transitionType:
-                                                                              PageTransitionType.fade,
-                                                                          duration:
-                                                                              Duration(milliseconds: 0),
-                                                                        ),
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalErrorCuentaWidget(),
+                                                                          ),
+                                                                        );
                                                                       },
-                                                                    );
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
+
+                                                                    return;
                                                                   }
-                                                                },
+                                                                } else {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'login',
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      kTransitionInfoKey:
+                                                                          TransitionInfo(
+                                                                        hasTransition:
+                                                                            true,
+                                                                        transitionType:
+                                                                            PageTransitionType.fade,
+                                                                        duration:
+                                                                            Duration(milliseconds: 0),
+                                                                      ),
+                                                                    },
+                                                                  );
+
+                                                                  return;
+                                                                }
+                                                              },
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
                                                                 child:
-                                                                    Container(
+                                                                    Image.asset(
+                                                                  'assets/images/salud.png',
                                                                   width: 40.0,
                                                                   height: 40.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                    shape: BoxShape
-                                                                        .circle,
-                                                                  ),
-                                                                  child:
-                                                                      ClipRRect(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
-                                                                    child: Image
-                                                                        .asset(
-                                                                      'assets/images/salud.png',
-                                                                      width:
-                                                                          40.0,
-                                                                      height:
-                                                                          40.0,
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                    ),
-                                                                  ),
+                                                                  fit: BoxFit
+                                                                      .cover,
                                                                 ),
                                                               ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      await showModalBottomSheet(
-                                                                        isScrollControlled:
-                                                                            true,
-                                                                        backgroundColor:
-                                                                            Colors.transparent,
-                                                                        enableDrag:
-                                                                            false,
-                                                                        context:
-                                                                            context,
-                                                                        builder:
-                                                                            (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalInfoSaludWidget(),
-                                                                            ),
-                                                                          );
-                                                                        },
-                                                                      ).then((value) =>
-                                                                          safeSetState(
-                                                                              () {}));
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .more_vert,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      5.0,
-                                                                      5.0,
-                                                                      0.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              InkWell(
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalInfoSaludWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .more_vert,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'u5dnxul1' /* Carpeta de 
+Salud */
+                                                              ,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .negroPerm,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                          Flexible(
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      1.0, 0.0),
+                                                              child: InkWell(
                                                                 splashColor: Colors
                                                                     .transparent,
                                                                 focusColor: Colors
@@ -4363,11 +4352,20 @@ Diarios */
                                                                     if (FFAppState()
                                                                             .creadoOk ==
                                                                         'si') {
-                                                                      if (UserIndividualCall
-                                                                              .primerDiario(
-                                                                            homeUserIndividualResponse.jsonBody,
-                                                                          ) ==
-                                                                          'si') {
+                                                                      if ((functions
+                                                                                  .parseJsonValueToInteger(getJsonField(
+                                                                                    FFAppState().userIndividual,
+                                                                                    r'''$._diario_cuenta''',
+                                                                                  ))
+                                                                                  .toString() ==
+                                                                              '0') ||
+                                                                          (functions
+                                                                                  .parseJsonValueToInteger(getJsonField(
+                                                                                    FFAppState().userIndividual,
+                                                                                    r'''$._diario_cuenta''',
+                                                                                  ))
+                                                                                  .toString() ==
+                                                                              '1')) {
                                                                         await showModalBottomSheet(
                                                                           isScrollControlled:
                                                                               true,
@@ -4389,6 +4387,8 @@ Diarios */
                                                                           },
                                                                         ).then((value) =>
                                                                             safeSetState(() {}));
+
+                                                                        return;
                                                                       } else {
                                                                         context
                                                                             .pushNamed(
@@ -4411,6 +4411,7 @@ Diarios */
                                                                             );
                                                                           }(),
                                                                         );
+                                                                        return;
                                                                       }
                                                                     } else {
                                                                       await showModalBottomSheet(
@@ -4437,6 +4438,8 @@ Diarios */
                                                                       ).then((value) =>
                                                                           safeSetState(
                                                                               () {}));
+
+                                                                      return;
                                                                     }
                                                                   } else {
                                                                     context
@@ -4455,409 +4458,281 @@ Diarios */
                                                                         ),
                                                                       },
                                                                     );
+
+                                                                    return;
                                                                   }
                                                                 },
-                                                                child: Text(
-                                                                  FFLocalizations.of(
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .chevron_right_rounded,
+                                                                  color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .getText(
-                                                                    'u5dnxul1' /* Carpeta de 
-Salud */
-                                                                    ,
-                                                                  ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .negroPerm,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
+                                                                      .negroPerm,
+                                                                  size: 24.0,
                                                                 ),
                                                               ),
-                                                              Flexible(
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          1.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      if ((FFAppState().authToken != null &&
-                                                                              FFAppState().authToken !=
-                                                                                  '') &&
-                                                                          (FFAppState().email != null &&
-                                                                              FFAppState().email != '')) {
-                                                                        if (FFAppState().creadoOk ==
-                                                                            'si') {
-                                                                          if (UserIndividualCall.primerDiario(
-                                                                                homeUserIndividualResponse.jsonBody,
-                                                                              ) ==
-                                                                              'si') {
-                                                                            await showModalBottomSheet(
-                                                                              isScrollControlled: true,
-                                                                              backgroundColor: Colors.transparent,
-                                                                              enableDrag: false,
-                                                                              context: context,
-                                                                              builder: (context) {
-                                                                                return GestureDetector(
-                                                                                  onTap: () => FocusScope.of(context).unfocus(),
-                                                                                  child: Padding(
-                                                                                    padding: MediaQuery.viewInsetsOf(context),
-                                                                                    child: ModalSinDiarioWidget(),
-                                                                                  ),
-                                                                                );
-                                                                              },
-                                                                            ).then((value) =>
-                                                                                safeSetState(() {}));
-                                                                          } else {
-                                                                            context.pushNamed(
-                                                                              'reporteSalud',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
-
-                                                                            unawaited(
-                                                                              () async {
-                                                                                await UserLogActivityCall.call(
-                                                                                  authToken: FFAppState().authToken,
-                                                                                  seccion: 'Acceso Carpeta de Salud Home',
-                                                                                );
-                                                                              }(),
-                                                                            );
-                                                                          }
-                                                                        } else {
-                                                                          await showModalBottomSheet(
-                                                                            isScrollControlled:
-                                                                                true,
-                                                                            backgroundColor:
-                                                                                Colors.transparent,
-                                                                            enableDrag:
-                                                                                false,
-                                                                            context:
-                                                                                context,
-                                                                            builder:
-                                                                                (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalErrorCuentaWidget(),
-                                                                                ),
-                                                                              );
-                                                                            },
-                                                                          ).then((value) =>
-                                                                              safeSetState(() {}));
-                                                                        }
-                                                                      } else {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'login',
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            kTransitionInfoKey:
-                                                                                TransitionInfo(
-                                                                              hasTransition: true,
-                                                                              transitionType: PageTransitionType.fade,
-                                                                              duration: Duration(milliseconds: 0),
-                                                                            ),
-                                                                          },
-                                                                        );
-                                                                      }
-                                                                    },
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .chevron_right_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .negroPerm,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 5.0, 15.0, 10.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      if ((FFAppState().authToken != null &&
+                                              FFAppState().authToken != '') &&
+                                          (FFAppState().email != null &&
+                                              FFAppState().email != '')) {
+                                        if (FFAppState().creadoOk == 'si') {
+                                          context.pushNamed(
+                                            'noticias',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                              ),
+                                            },
+                                          );
+
+                                          unawaited(
+                                            () async {
+                                              await UserLogActivityCall.call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                seccion:
+                                                    'Home Acceso a Noticias',
+                                              );
+                                            }(),
+                                          );
+                                          return;
+                                        } else {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalErrorCuentaWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+
+                                          return;
+                                        }
+                                      } else {
+                                        context.pushNamed(
+                                          'login',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
+
+                                        return;
+                                      }
+                                    },
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              FFLocalizations.of(context)
+                                                          .languageCode ==
+                                                      'en'
+                                                  ? getJsonField(
+                                                      FFAppState()
+                                                          .userIndividual,
+                                                      r'''$._banner_home.banner_news_en.url''',
+                                                    ).toString()
+                                                  : getJsonField(
+                                                      FFAppState()
+                                                          .userIndividual,
+                                                      r'''$._banner_home.banner_news_es.url''',
+                                                    ).toString(),
+                                              width: 360.0,
+                                              height: 100.0,
+                                              fit: BoxFit.fitWidth,
                                             ),
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15.0, 5.0, 15.0, 10.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          if ((FFAppState().authToken != null &&
-                                                  FFAppState().authToken !=
-                                                      '') &&
-                                              (FFAppState().email != null &&
-                                                  FFAppState().email != '')) {
-                                            if (FFAppState().creadoOk == 'si') {
-                                              context.pushNamed(
-                                                'noticias',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType.fade,
-                                                  ),
-                                                },
-                                              );
-
-                                              unawaited(
-                                                () async {
-                                                  await UserLogActivityCall
-                                                      .call(
-                                                    authToken:
-                                                        FFAppState().authToken,
-                                                    seccion:
-                                                        'Home Acceso a Noticias',
-                                                  );
-                                                }(),
-                                              );
-                                            } else {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                enableDrag: false,
-                                                context: context,
-                                                builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child:
-                                                          ModalErrorCuentaWidget(),
-                                                    ),
-                                                  );
-                                                },
-                                              ).then((value) =>
-                                                  safeSetState(() {}));
-                                            }
-                                          } else {
-                                            context.pushNamed(
-                                              'login',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                ),
-                                              },
-                                            );
-                                          }
-                                        },
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Flexible(
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  FFLocalizations.of(context)
-                                                              .languageCode ==
-                                                          'en'
-                                                      ? UserIndividualCall
-                                                          .newsEn(
-                                                          homeUserIndividualResponse
-                                                              .jsonBody,
-                                                        )!
-                                                      : UserIndividualCall
-                                                          .newsEs(
-                                                          homeUserIndividualResponse
-                                                              .jsonBody,
-                                                        )!,
-                                                  width: 360.0,
-                                                  height: 100.0,
-                                                  fit: BoxFit.fitWidth,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          15.0, 5.0, 15.0, 10.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          if ((FFAppState().authToken != null &&
-                                                  FFAppState().authToken !=
-                                                      '') &&
-                                              (FFAppState().email != null &&
-                                                  FFAppState().email != '')) {
-                                            if (FFAppState().creadoOk == 'si') {
-                                              context.pushNamed(
-                                                'invitarAmigo',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType.fade,
-                                                  ),
-                                                },
-                                              );
-
-                                              unawaited(
-                                                () async {
-                                                  await UserLogActivityCall
-                                                      .call(
-                                                    authToken:
-                                                        FFAppState().authToken,
-                                                    seccion:
-                                                        'Home Acceso a Invitar amigos',
-                                                  );
-                                                }(),
-                                              );
-                                            } else {
-                                              await showModalBottomSheet(
-                                                isScrollControlled: true,
-                                                backgroundColor:
-                                                    Colors.transparent,
-                                                enableDrag: false,
-                                                context: context,
-                                                builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () =>
-                                                        FocusScope.of(context)
-                                                            .unfocus(),
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child:
-                                                          ModalErrorCuentaWidget(),
-                                                    ),
-                                                  );
-                                                },
-                                              ).then((value) =>
-                                                  safeSetState(() {}));
-                                            }
-                                          } else {
-                                            context.pushNamed(
-                                              'login',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                ),
-                                              },
-                                            );
-                                          }
-                                        },
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Flexible(
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  FFLocalizations.of(context)
-                                                              .languageCode ==
-                                                          'en'
-                                                      ? UserIndividualCall
-                                                          .friendsEn(
-                                                          homeUserIndividualResponse
-                                                              .jsonBody,
-                                                        )!
-                                                      : UserIndividualCall
-                                                          .friendsEs(
-                                                          homeUserIndividualResponse
-                                                              .jsonBody,
-                                                        )!,
-                                                  width: 360.0,
-                                                  height: 100.0,
-                                                  fit: BoxFit.fitWidth,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ].addToEnd(SizedBox(height: 100.0)),
+                                  ),
                                 ),
-                              ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 5.0, 15.0, 10.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      if ((FFAppState().authToken != null &&
+                                              FFAppState().authToken != '') &&
+                                          (FFAppState().email != null &&
+                                              FFAppState().email != '')) {
+                                        if (FFAppState().creadoOk == 'si') {
+                                          context.pushNamed(
+                                            'invitarAmigo',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                              ),
+                                            },
+                                          );
+
+                                          unawaited(
+                                            () async {
+                                              await UserLogActivityCall.call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                seccion:
+                                                    'Home Acceso a Invitar amigos',
+                                              );
+                                            }(),
+                                          );
+                                          return;
+                                        } else {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalErrorCuentaWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+
+                                          return;
+                                        }
+                                      } else {
+                                        context.pushNamed(
+                                          'login',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
+
+                                        return;
+                                      }
+                                    },
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              FFLocalizations.of(context)
+                                                          .languageCode ==
+                                                      'en'
+                                                  ? getJsonField(
+                                                      FFAppState()
+                                                          .userIndividual,
+                                                      r'''$._banner_home.banner_friends_en.url''',
+                                                    ).toString()
+                                                  : getJsonField(
+                                                      FFAppState()
+                                                          .userIndividual,
+                                                      r'''$._banner_home.banner_friends_es.url''',
+                                                    ).toString(),
+                                              width: 360.0,
+                                              height: 100.0,
+                                              fit: BoxFit.fitWidth,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ].addToEnd(SizedBox(height: 100.0)),
                             ),
-                          ],
-                        ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
-                        child: wrapWithModel(
-                          model: _model.menuUsuarioModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: MenuUsuarioWidget(
-                            index: 1,
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 1.0),
+                    child: wrapWithModel(
+                      model: _model.menuUsuarioModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: MenuUsuarioWidget(
+                        index: 1,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        );
-      },
+          ],
+        ),
+      ),
     );
   }
 }

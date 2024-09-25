@@ -174,39 +174,49 @@ class _ModalPushWidgetState extends State<ModalPushWidget> {
                                 0.0, 0.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                var _shouldSetState = false;
                                 _model.apiResult7kl =
                                     await DiarioActivaPushCall.call(
                                   authToken: FFAppState().authToken,
                                   accion: 'activar',
                                 );
 
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Las notificaciones han sido activadas!',
-                                      style: TextStyle(
-                                        color:
-                                            FlutterFlowTheme.of(context).info,
+                                _shouldSetState = true;
+                                if ((_model.apiResult7kl?.succeeded ?? true)) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text(
+                                        'Las notificaciones han sido activadas!',
+                                        style: TextStyle(
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                        ),
                                       ),
+                                      duration: Duration(milliseconds: 4000),
+                                      backgroundColor:
+                                          FlutterFlowTheme.of(context).success,
                                     ),
-                                    duration: Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).success,
-                                  ),
-                                );
+                                  );
 
-                                context.pushNamed(
-                                  'Home',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                      duration: Duration(milliseconds: 0),
-                                    ),
-                                  },
-                                );
+                                  context.pushNamed(
+                                    'Home',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
 
-                                safeSetState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
+                                } else {
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
+                                }
+
+                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 'ofhpdm0m' /* SI, Activar */,

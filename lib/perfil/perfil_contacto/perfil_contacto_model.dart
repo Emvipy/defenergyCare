@@ -19,14 +19,9 @@ import 'package:provider/provider.dart';
 class PerfilContactoModel extends FlutterFlowModel<PerfilContactoWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField_cel widget.
-  FocusNode? textFieldCelFocusNode;
-  TextEditingController? textFieldCelTextController;
-  final textFieldCelMask = MaskTextInputFormatter(mask: '+## ## #### ####');
-  String? Function(BuildContext, String?)? textFieldCelTextControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  // State field(s) for DropDown_motivo widget.
+  String? dropDownMotivoValue;
+  FormFieldController<String>? dropDownMotivoValueController;
   // State field(s) for TextField_mensaje widget.
   FocusNode? textFieldMensajeFocusNode;
   TextEditingController? textFieldMensajeTextController;
@@ -35,6 +30,11 @@ class PerfilContactoModel extends FlutterFlowModel<PerfilContactoWidget> {
   // State field(s) for DropDown_modo widget.
   String? dropDownModoValue;
   FormFieldController<String>? dropDownModoValueController;
+  // State field(s) for TextField_cel widget.
+  FocusNode? textFieldCelFocusNode;
+  TextEditingController? textFieldCelTextController;
+  final textFieldCelMask = MaskTextInputFormatter(mask: '+## ## #### ####');
+  String? Function(BuildContext, String?)? textFieldCelTextControllerValidator;
   // Stores action output result for [Backend Call - API (peril contacto)] action in Button widget.
   ApiCallResponse? apiResultwle2;
   // Model for menu_usuario component.
@@ -47,11 +47,11 @@ class PerfilContactoModel extends FlutterFlowModel<PerfilContactoWidget> {
 
   @override
   void dispose() {
-    textFieldCelFocusNode?.dispose();
-    textFieldCelTextController?.dispose();
-
     textFieldMensajeFocusNode?.dispose();
     textFieldMensajeTextController?.dispose();
+
+    textFieldCelFocusNode?.dispose();
+    textFieldCelTextController?.dispose();
 
     menuUsuarioModel.dispose();
   }

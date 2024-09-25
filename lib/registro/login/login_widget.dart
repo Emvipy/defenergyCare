@@ -287,6 +287,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .rellenoCampos,
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .rellenoCampos,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
@@ -387,6 +390,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .rellenoCampos,
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .rellenoCampos,
                                             suffixIcon: InkWell(
                                               onTap: () => safeSetState(
                                                 () => _model
@@ -459,6 +465,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   return;
                                                 }
 
+                                                await actions.onesignalLogin(
+                                                  currentUserUid,
+                                                );
                                                 _model.passCopy =
                                                     await actions.encodeBase64(
                                                   _model
@@ -472,6 +481,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       .emailAddressTextController
                                                       .text,
                                                   password: _model.passCopy,
+                                                  firebase: currentUserUid,
                                                 );
 
                                                 _shouldSetState = true;

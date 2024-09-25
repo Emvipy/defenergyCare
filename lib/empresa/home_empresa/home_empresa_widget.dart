@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -109,64 +110,116 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      if (FFAppState().email ==
-                                          'enrique@emvipy.com') {
-                                        if ((FFAppState().authToken != null &&
-                                                FFAppState().authToken != '') &&
-                                            (FFAppState().email != null &&
-                                                FFAppState().email != '')) {
-                                          if (FFAppState().creadoOk == 'si') {
-                                            context.pushNamed(
-                                              'perfil',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                ),
-                                              },
-                                            );
-                                          } else {
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalErrorCuentaWidget(),
-                                                  ),
-                                                );
-                                              },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
-                                          }
-                                        } else {
+                                      if ((FFAppState().authToken != null &&
+                                              FFAppState().authToken != '') &&
+                                          (FFAppState().email != null &&
+                                              FFAppState().email != '')) {
+                                        if (FFAppState().creadoOk == 'si') {
                                           context.pushNamed(
-                                            'login',
+                                            'perfil',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
                                                   TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 0),
                                               ),
                                             },
                                           );
+                                        } else {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalErrorCuentaWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
                                         }
+                                      } else {
+                                        context.pushNamed(
+                                          'login',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                              duration:
+                                                  Duration(milliseconds: 0),
+                                            ),
+                                          },
+                                        );
                                       }
+                                    },
+                                    onLongPress: () async {
+                                      GoRouter.of(context).prepareAuthEvent();
+                                      await authManager.signOut();
+                                      GoRouter.of(context)
+                                          .clearRedirectLocation();
+
+                                      context.pushNamedAuth(
+                                        'welcome',
+                                        context.mounted,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
+
+                                      FFAppState().deleteAuthToken();
+                                      FFAppState().authToken = '';
+
+                                      FFAppState().deleteXUserId();
+                                      FFAppState().xUserId = 0;
+
+                                      FFAppState().deleteEmail();
+                                      FFAppState().email = '';
+
+                                      FFAppState().deleteNombre();
+                                      FFAppState().nombre = '';
+
+                                      FFAppState().deleteApellidos();
+                                      FFAppState().apellidos = '';
+
+                                      FFAppState().deleteAvatar();
+                                      FFAppState().avatar = '';
+
+                                      FFAppState().deletePerfil();
+                                      FFAppState().perfil = '';
+
+                                      FFAppState().deleteSessionId();
+                                      FFAppState().sessionId = 0;
+
+                                      FFAppState().deleteEnfermedadId();
+                                      FFAppState().enfermedadId = 0;
+
+                                      FFAppState().deleteEnfermedadTxt();
+                                      FFAppState().enfermedadTxt = '';
+
+                                      FFAppState().deletePerfilId();
+                                      FFAppState().perfilId = 0;
+
+                                      FFAppState().deleteCreadoOk();
+                                      FFAppState().creadoOk = '';
+
+                                      safeSetState(() {});
                                     },
                                     child: Container(
                                       width: 45.0,

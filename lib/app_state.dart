@@ -5,6 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -113,6 +114,16 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _diarioIntoId =
           await secureStorage.getInt('ff_diarioIntoId') ?? _diarioIntoId;
+    });
+    await _safeInitAsync(() async {
+      if (await secureStorage.read(key: 'ff_userIndividual') != null) {
+        try {
+          _userIndividual = jsonDecode(
+              await secureStorage.getString('ff_userIndividual') ?? '');
+        } catch (e) {
+          print("Can't decode persisted json. Error: $e.");
+        }
+      }
     });
   }
 
@@ -594,6 +605,46 @@ class FFAppState extends ChangeNotifier {
   String get tieneComidaCena => _tieneComidaCena;
   set tieneComidaCena(String value) {
     _tieneComidaCena = value;
+  }
+
+  dynamic _userIndividual;
+  dynamic get userIndividual => _userIndividual;
+  set userIndividual(dynamic value) {
+    _userIndividual = value;
+    secureStorage.setString('ff_userIndividual', jsonEncode(value));
+  }
+
+  void deleteUserIndividual() {
+    secureStorage.delete(key: 'ff_userIndividual');
+  }
+
+  List<dynamic> _misMedicamentos = [];
+  List<dynamic> get misMedicamentos => _misMedicamentos;
+  set misMedicamentos(List<dynamic> value) {
+    _misMedicamentos = value;
+  }
+
+  void addToMisMedicamentos(dynamic value) {
+    misMedicamentos.add(value);
+  }
+
+  void removeFromMisMedicamentos(dynamic value) {
+    misMedicamentos.remove(value);
+  }
+
+  void removeAtIndexFromMisMedicamentos(int index) {
+    misMedicamentos.removeAt(index);
+  }
+
+  void updateMisMedicamentosAtIndex(
+    int index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    misMedicamentos[index] = updateFn(_misMedicamentos[index]);
+  }
+
+  void insertAtIndexInMisMedicamentos(int index, dynamic value) {
+    misMedicamentos.insert(index, value);
   }
 }
 

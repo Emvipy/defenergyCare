@@ -564,6 +564,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'empresa_pdte_validacionCopy',
           path: '/empresaPdteValidacionCopy',
           builder: (context, params) => EmpresaPdteValidacionCopyWidget(),
+        ),
+        FFRoute(
+          name: 'comunidadCopy',
+          path: '/comunidadCopy',
+          builder: (context, params) => ComunidadCopyWidget(),
+        ),
+        FFRoute(
+          name: 'perfil_medicamentosCrea',
+          path: '/perfilMedicamentosCrea',
+          builder: (context, params) => PerfilMedicamentosCreaWidget(),
+        ),
+        FFRoute(
+          name: 'perfil_medicamentosEdita',
+          path: '/perfilMedicamentosEdita',
+          builder: (context, params) => PerfilMedicamentosEditaWidget(
+            medId: params.getParam(
+              'medId',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

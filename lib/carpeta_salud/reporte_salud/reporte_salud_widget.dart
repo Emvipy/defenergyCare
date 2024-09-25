@@ -2389,7 +2389,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
               model: _model.menuUsuarioModel,
               updateCallback: () => safeSetState(() {}),
               child: MenuUsuarioWidget(
-                index: 1,
+                index: 0,
               ),
             ),
           ],

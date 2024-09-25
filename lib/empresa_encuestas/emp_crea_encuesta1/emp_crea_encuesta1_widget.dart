@@ -1152,6 +1152,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                   (_model.contador < 1))
                               ? null
                               : () async {
+                                  var _shouldSetState = false;
                                   _model.apiCreaEncuesta =
                                       await EmpresaCreaEncuestaCall.call(
                                     authToken: FFAppState().authToken,
@@ -1171,6 +1172,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     enf9: _model.nueve,
                                   );
 
+                                  _shouldSetState = true;
                                   if ((_model.apiCreaEncuesta?.succeeded ??
                                       true)) {
                                     FFAppState().nuevaEncuestaId =
@@ -1189,9 +1191,12 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                         ),
                                       },
                                     );
+                                  } else {
+                                    if (_shouldSetState) safeSetState(() {});
+                                    return;
                                   }
 
-                                  safeSetState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
                                 },
                           text: FFLocalizations.of(context).getText(
                             'p7t0hphk' /* Continuar */,

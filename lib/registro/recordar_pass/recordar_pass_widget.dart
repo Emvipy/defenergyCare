@@ -316,7 +316,11 @@ class _RecordarPassWidgetState extends State<RecordarPassWidget>
                                                       .showSnackBar(
                                                     SnackBar(
                                                       content: Text(
-                                                        'Email required!',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '83aqh5aw' /* El email es obligatorio */,
+                                                        ),
                                                       ),
                                                     ),
                                                   );

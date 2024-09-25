@@ -1018,6 +1018,10 @@ class UserIndividualCall {
         response,
         r'''$.email_empresa''',
       ));
+  static int? diarioCuenta(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$._diario_cuenta''',
+      ));
 }
 
 class DiarioCreaCall {
@@ -8182,8 +8186,8 @@ class ReporteStdCall {
         response,
         r'''$.cant_dias_into''',
       ));
-  static int? porcentajeDiasInto(dynamic response) =>
-      castToType<int>(getJsonField(
+  static double? porcentajeDiasInto(dynamic response) =>
+      castToType<double>(getJsonField(
         response,
         r'''$.porcentaje_dias_into''',
       ));
@@ -8805,6 +8809,11 @@ class NoticiaIndividualCall {
   static int? creadorId(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.id_creador''',
+      ));
+  static String? ctrlImagen(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.ctrl_imagen''',
       ));
 }
 
@@ -10831,17 +10840,17 @@ class PerfilEliminaNotificacionCall {
 
 class PerfilMisMedicamentosCall {
   static Future<ApiCallResponse> call({
-    String? authToken = '',
+    int? userId,
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'perfil mis medicamentos',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/mis_medicamentos',
       callType: ApiCallType.GET,
-      headers: {
-        'Authorization': 'Bearer ${authToken}',
+      headers: {},
+      params: {
+        'user_id': userId,
       },
-      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -10892,15 +10901,25 @@ class PerfilMisMedicamentosCall {
 class PerfilCreaMedicamentoCall {
   static Future<ApiCallResponse> call({
     String? authToken = '',
+    String? nombre = '',
+    String? dosis = '',
+    String? poso = '',
   }) async {
+    final ffApiRequestBody = '''
+{
+  "nombre": "${nombre}",
+  "dosis": "${dosis}",
+  "poso": "${poso}"
+}''';
     return ApiManager.instance.makeApiCall(
       callName: 'perfil crea medicamento',
-      apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfi/crea_med',
+      apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/crea_med',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${authToken}',
       },
       params: {},
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -10910,11 +10929,6 @@ class PerfilCreaMedicamentoCall {
       alwaysAllowBody: false,
     );
   }
-
-  static int? id(dynamic response) => castToType<int>(getJsonField(
-        response,
-        r'''$.id''',
-      ));
 }
 
 class PerfilMedicamentoIndividualCall {
@@ -10960,7 +10974,6 @@ class PerfilMedicamentoIndividualCall {
 class PerfilEditaMedicamentoCall {
   static Future<ApiCallResponse> call({
     String? authToken = '',
-    String? accion = '',
     int? medId,
     String? nombre = '',
     String? dosis = '',
@@ -10968,7 +10981,6 @@ class PerfilEditaMedicamentoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "accion": "${accion}",
   "med_id": ${medId},
   "nombre": "${nombre}",
   "dosis": "${dosis}",
@@ -12514,6 +12526,36 @@ class UserLogActivityCall {
     return ApiManager.instance.makeApiCall(
       callName: 'user log activity',
       apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/logActivity',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class PerfilEliminaMedicamentCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? medId,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "med_id": ${medId}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'perfil elimina medicament',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/elimina_med',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${authToken}',

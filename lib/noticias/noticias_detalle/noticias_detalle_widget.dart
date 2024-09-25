@@ -130,57 +130,61 @@ class _NoticiasDetalleWidgetState extends State<NoticiasDetalleWidget> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  child: FlutterFlowExpandedImageView(
-                                    image: Image.network(
-                                      NoticiaIndividualCall.imagen(
+                        if (NoticiaIndividualCall.ctrlImagen(
+                              noticiasDetalleNoticiaIndividualResponse.jsonBody,
+                            ) ==
+                            'si')
+                          Align(
+                            alignment: AlignmentDirectional(0.0, -1.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    type: PageTransitionType.fade,
+                                    child: FlutterFlowExpandedImageView(
+                                      image: Image.network(
+                                        NoticiaIndividualCall.imagen(
+                                          noticiasDetalleNoticiaIndividualResponse
+                                              .jsonBody,
+                                        )!,
+                                        fit: BoxFit.contain,
+                                      ),
+                                      allowRotation: false,
+                                      tag: NoticiaIndividualCall.imagen(
                                         noticiasDetalleNoticiaIndividualResponse
                                             .jsonBody,
                                       )!,
-                                      fit: BoxFit.contain,
+                                      useHeroAnimation: true,
                                     ),
-                                    allowRotation: false,
-                                    tag: NoticiaIndividualCall.imagen(
+                                  ),
+                                );
+                              },
+                              child: Hero(
+                                tag: NoticiaIndividualCall.imagen(
+                                  noticiasDetalleNoticiaIndividualResponse
+                                      .jsonBody,
+                                )!,
+                                transitionOnUserGestures: true,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  child: Image.network(
+                                    NoticiaIndividualCall.imagen(
                                       noticiasDetalleNoticiaIndividualResponse
                                           .jsonBody,
                                     )!,
-                                    useHeroAnimation: true,
+                                    width: 343.0,
+                                    height: 185.0,
+                                    fit: BoxFit.cover,
                                   ),
-                                ),
-                              );
-                            },
-                            child: Hero(
-                              tag: NoticiaIndividualCall.imagen(
-                                noticiasDetalleNoticiaIndividualResponse
-                                    .jsonBody,
-                              )!,
-                              transitionOnUserGestures: true,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10.0),
-                                child: Image.network(
-                                  NoticiaIndividualCall.imagen(
-                                    noticiasDetalleNoticiaIndividualResponse
-                                        .jsonBody,
-                                  )!,
-                                  width: 343.0,
-                                  height: 185.0,
-                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ),
                           ),
-                        ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),

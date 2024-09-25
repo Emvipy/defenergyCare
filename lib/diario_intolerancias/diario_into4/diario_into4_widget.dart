@@ -1003,25 +1003,6 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                         contador: _model.contador,
                                       );
 
-                                      FFAppState().deleteDiarioIntoId();
-                                      FFAppState().diarioIntoId = 0;
-
-                                      FFAppState().primerDiarioInto = '';
-                                      FFAppState().diarioIntoAnterior = 0;
-                                      FFAppState().intoCarnes = 'no';
-                                      FFAppState().intoMarisco = 'no';
-                                      FFAppState().intoPescado = 'no';
-                                      FFAppState().intoLacteos = 'no';
-                                      FFAppState().intoHuevos = 'no';
-                                      FFAppState().intoCereales = 'no';
-                                      FFAppState().intoFrutas = 'no';
-                                      FFAppState().intoVerduras = 'no';
-                                      FFAppState().intoLegumbres = 'no';
-                                      FFAppState().intoFrutosSecos = 'no';
-                                      FFAppState().intoSalsas = 'no';
-                                      FFAppState().intoBebidas = 'no';
-                                      FFAppState().mostrarAyer = 'si';
-                                      FFAppState().momento = 1;
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
@@ -1051,6 +1032,26 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                           ),
                                         },
                                       );
+
+                                      FFAppState().deleteDiarioIntoId();
+                                      FFAppState().diarioIntoId = 0;
+
+                                      FFAppState().primerDiarioInto = '';
+                                      FFAppState().diarioIntoAnterior = 0;
+                                      FFAppState().intoCarnes = 'no';
+                                      FFAppState().intoMarisco = 'no';
+                                      FFAppState().intoPescado = 'no';
+                                      FFAppState().intoLacteos = 'no';
+                                      FFAppState().intoHuevos = 'no';
+                                      FFAppState().intoCereales = 'no';
+                                      FFAppState().intoFrutas = 'no';
+                                      FFAppState().intoVerduras = 'no';
+                                      FFAppState().intoLegumbres = 'no';
+                                      FFAppState().intoFrutosSecos = 'no';
+                                      FFAppState().intoSalsas = 'no';
+                                      FFAppState().intoBebidas = 'no';
+                                      FFAppState().mostrarAyer = 'si';
+                                      FFAppState().momento = 1;
 
                                       safeSetState(() {});
                                     },
@@ -1119,25 +1120,6 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                         contador: _model.contador,
                                       );
 
-                                      FFAppState().deleteDiarioIntoId();
-                                      FFAppState().diarioIntoId = 0;
-
-                                      FFAppState().primerDiarioInto = '';
-                                      FFAppState().diarioIntoAnterior = 0;
-                                      FFAppState().intoCarnes = 'no';
-                                      FFAppState().intoMarisco = 'no';
-                                      FFAppState().intoPescado = 'no';
-                                      FFAppState().intoLacteos = 'no';
-                                      FFAppState().intoHuevos = 'no';
-                                      FFAppState().intoCereales = 'no';
-                                      FFAppState().intoFrutas = 'no';
-                                      FFAppState().intoVerduras = 'no';
-                                      FFAppState().intoLegumbres = 'no';
-                                      FFAppState().intoFrutosSecos = 'no';
-                                      FFAppState().intoSalsas = 'no';
-                                      FFAppState().intoBebidas = 'no';
-                                      FFAppState().mostrarAyer = 'si';
-                                      FFAppState().momento = 1;
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
@@ -1167,6 +1149,26 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                           ),
                                         },
                                       );
+
+                                      FFAppState().deleteDiarioIntoId();
+                                      FFAppState().diarioIntoId = 0;
+
+                                      FFAppState().primerDiarioInto = '';
+                                      FFAppState().diarioIntoAnterior = 0;
+                                      FFAppState().intoCarnes = 'no';
+                                      FFAppState().intoMarisco = 'no';
+                                      FFAppState().intoPescado = 'no';
+                                      FFAppState().intoLacteos = 'no';
+                                      FFAppState().intoHuevos = 'no';
+                                      FFAppState().intoCereales = 'no';
+                                      FFAppState().intoFrutas = 'no';
+                                      FFAppState().intoVerduras = 'no';
+                                      FFAppState().intoLegumbres = 'no';
+                                      FFAppState().intoFrutosSecos = 'no';
+                                      FFAppState().intoSalsas = 'no';
+                                      FFAppState().intoBebidas = 'no';
+                                      FFAppState().mostrarAyer = 'si';
+                                      FFAppState().momento = 1;
 
                                       safeSetState(() {});
                                     },

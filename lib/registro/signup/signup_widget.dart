@@ -938,6 +938,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                                       return;
                                                     }
 
+                                                    await actions
+                                                        .onesignalLogin(
+                                                      currentUserUid,
+                                                    );
                                                     _model.pass = await actions
                                                         .encodeBase64(
                                                       _model

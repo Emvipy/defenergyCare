@@ -850,6 +850,21 @@ Medicamentos */
                                                         .success,
                                               ),
                                             );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
+
                                             FFAppState().deleteDiarioId();
                                             FFAppState().diarioId = 0;
 
@@ -884,20 +899,6 @@ Medicamentos */
                                             FFAppState()
                                                 .deleteDiarioUltimoSup3();
                                             FFAppState().diarioUltimoSup3 = '';
-
-                                            context.pushNamed(
-                                              'Home',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                ),
-                                              },
-                                            );
 
                                             safeSetState(() {});
                                           },
@@ -983,6 +984,21 @@ Medicamentos */
                                                         .success,
                                               ),
                                             );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
+
                                             FFAppState().deleteDiarioId();
                                             FFAppState().diarioId = 0;
 
@@ -1017,20 +1033,6 @@ Medicamentos */
                                             FFAppState()
                                                 .deleteDiarioUltimoSup3();
                                             FFAppState().diarioUltimoSup3 = '';
-
-                                            context.pushNamed(
-                                              'Home',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                ),
-                                              },
-                                            );
 
                                             safeSetState(() {});
                                           },

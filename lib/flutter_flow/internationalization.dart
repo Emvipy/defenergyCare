@@ -8086,9 +8086,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Comunicaciones Comerciales',
       'en': 'Commercial Communications',
     },
-    'jbsq3m3x': {
+    'n4lsuq2z': {
       'es': 'Cerrar Sesión',
-      'en': 'Close Session',
+      'en': 'Sign Out',
     },
     'nzvjk30k': {
       'es': 'Eliminar tu Cuenta',
@@ -8162,10 +8162,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Por favor completa los siguientes campos',
       'en': 'Please complete the following fields',
     },
-    'w43hukio': {
-      'es': 'Móvil',
-      'en': 'Mobile',
-    },
     'a06q2ta0': {
       'es': 'Consulta sobre servicios',
       'en': 'Inquiry about services',
@@ -8217,6 +8213,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'a8nbptkb': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'w43hukio': {
+      'es': 'Móvil',
+      'en': 'Mobile',
+    },
+    'bx9mgmli': {
+      'es': '+34 666 666 666',
+      'en': '',
     },
     'nu1bsix9': {
       'es': 'Contactar',
@@ -10512,17 +10516,270 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Cancelar',
       'en': 'Cancel',
     },
-    'lkzx4b2z': {
-      'es': 'Escribe aquí tus otras enfermedades',
-      'en': 'Write your other illnesses here',
-    },
-    'buube5ix': {
-      'es': '',
+    'nypajel1': {
+      'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': '',
     },
-    'pz7bsw9s': {
+    'tbp1xekh': {
+      'es': 'Si',
+      'en': '',
+    },
+    'mhyusxp8': {
+      'es': 'No',
+      'en': '',
+    },
+    'ftxmzhwa': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'zop49f10': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    '39bbzsfl': {
+      'es': '¿Cuánto tiempo llevas diagnosticado?',
+      'en': '',
+    },
+    '6g6lo4fc': {
+      'es': 'Menos de 1 año',
+      'en': '',
+    },
+    'aafpb1qu': {
+      'es': 'De 1 a 3 años',
+      'en': '',
+    },
+    'anw8e8hp': {
+      'es': 'De 3 a 5 años',
+      'en': '',
+    },
+    '07fsogqt': {
+      'es': 'Más de 5 años',
+      'en': '',
+    },
+    'ta5uncoj': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    '8svd6w1j': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'vb47bgb2': {
+      'es':
+          '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
+      'en': '',
+    },
+    '4rb65ojy': {
+      'es': 'Si',
+      'en': '',
+    },
+    'lewvcvgp': {
+      'es': 'No',
+      'en': '',
+    },
+    '7qmkl4ss': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'bvcm2egs': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    '0qlfhh2z': {
+      'es': 'Indica el grado familiar',
+      'en': '',
+    },
+    'uoe2tr4d': {
+      'es': 'Familiar de primer grado',
+      'en': '',
+    },
+    '7zdciint': {
+      'es': 'Familiar de segundo grado',
+      'en': '',
+    },
+    'fr6m4ved': {
+      'es': 'Familiar de tercer grado',
+      'en': '',
+    },
+    'bsc0krrm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'bhbcygai': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'om19psar': {
+      'es':
+          '1-¿Tienes alguna sensibilidad/intolerancia alimentaria diagnosticada? ',
+      'en': '',
+    },
+    'ku7ywr6j': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'dvh1y7rp': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'c7026zmw': {
+      'es': '¿Cuánto tiempo llevas diagnosticado?',
+      'en': '',
+    },
+    'eatte6ws': {
+      'es': 'Menos de 1 año',
+      'en': '',
+    },
+    'nrs2fa47': {
+      'es': 'De 1 a 3 años',
+      'en': '',
+    },
+    'g6y0qskl': {
+      'es': 'De 3 a 5 años',
+      'en': '',
+    },
+    'cj5obsk9': {
+      'es': 'Más de 5 años',
+      'en': '',
+    },
+    'il3gdewb': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'n81fpk6e': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    '1efw8j5d': {
+      'es':
+          '2-¿Tienes otra sensibilidad/intolerancia alimentaria diagnosticada? ',
+      'en': '',
+    },
+    '89a47ugf': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'vbqmueg4': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'xv2x4pcl': {
+      'es': '¿Cuánto tiempo llevas diagnosticado?',
+      'en': '',
+    },
+    '4u6ix6cc': {
+      'es': 'Menos de 1 año',
+      'en': '',
+    },
+    '8q38cx95': {
+      'es': 'De 1 a 3 años',
+      'en': '',
+    },
+    'htpgwamn': {
+      'es': 'De 3 a 5 años',
+      'en': '',
+    },
+    'z532yr6a': {
+      'es': 'Más de 5 años',
+      'en': '',
+    },
+    'ga445qdy': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'zfhbxati': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'fklgbeib': {
+      'es':
+          '3-¿Tienes otra sensibilidad/intolerancia alimentaria diagnosticada? ',
+      'en': '',
+    },
+    've77jur8': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'foxzndo1': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'ojs71i9z': {
+      'es': '¿Cuánto tiempo llevas diagnosticado?',
+      'en': '',
+    },
+    'kfqhdip2': {
+      'es': 'Menos de 1 año',
+      'en': '',
+    },
+    'i4ljq0lp': {
+      'es': 'De 1 a 3 años',
+      'en': '',
+    },
+    '2ox7f2a9': {
+      'es': 'De 3 a 5 años',
+      'en': '',
+    },
+    '98ytbqq1': {
+      'es': 'Más de 5 años',
+      'en': '',
+    },
+    'aqvy2sfh': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'llyww1bu': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'e0jrjxy8': {
+      'es':
+          '4-¿Tienes otra sensibilidad/intolerancia alimentaria diagnosticada? ',
+      'en': '',
+    },
+    'gdd8csr2': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'oenak06a': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'mnpjnnvd': {
+      'es': '¿Cuánto tiempo llevas diagnosticado?',
+      'en': '',
+    },
+    '8uawfdow': {
+      'es': 'Menos de 1 año',
+      'en': '',
+    },
+    'v9ddooez': {
+      'es': 'De 1 a 3 años',
+      'en': '',
+    },
+    'm4rp45yh': {
+      'es': 'De 3 a 5 años',
+      'en': '',
+    },
+    'hjx4sg3i': {
+      'es': 'Más de 5 años',
+      'en': '',
+    },
+    'r52qbcnj': {
+      'es': 'Selecciona tu respuesta...',
+      'en': '',
+    },
+    'uh8qisyu': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'rrtr44f9': {
       'es': 'Finalizar',
-      'en': 'Finish',
+      'en': '',
+    },
+    'krtaen2i': {
+      'es': 'Cancelar',
+      'en': '',
     },
     'n90qj2pp': {
       'es': '¿En qué año te infectaste con el SARS-CoV-2?',
@@ -13950,6 +14207,91 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // comunidadCopy
+  {
+    'nbg0vvi3': {
+      'es': 'Comunidad',
+      'en': '',
+    },
+    'omw4sf0z': {
+      'es': 'Reportar Publicación',
+      'en': '',
+    },
+    '5t4h1bhb': {
+      'es': 'Crear Publicación',
+      'en': '',
+    },
+    'sdhgv1je': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // perfil_medicamentosCrea
+  {
+    'u9ua67l1': {
+      'es': 'Mis medicamentos',
+      'en': '',
+    },
+    'qsyvxpzp': {
+      'es': 'Añadir nuevo Medicamento',
+      'en': '',
+    },
+    'ysfq5pyv': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    '39ey9b1x': {
+      'es': 'Dósis',
+      'en': '',
+    },
+    'dhr7qtvj': {
+      'es': 'Posología',
+      'en': '',
+    },
+    '4pp8sa4o': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    '7xfj1bt7': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // perfil_medicamentosEdita
+  {
+    'mi754k9z': {
+      'es': 'Mis medicamentos',
+      'en': '',
+    },
+    '6r8gy8x2': {
+      'es': 'Edita tu medicamento',
+      'en': '',
+    },
+    '431pf4lf': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    's2j8ftzj': {
+      'es': 'Dósis',
+      'en': '',
+    },
+    '4jfieora': {
+      'es': 'Posología',
+      'en': '',
+    },
+    '6bayd1sn': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'a0kwsmnn': {
+      'es': 'Eliminar',
+      'en': '',
+    },
+    '43d9osin': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
   // modal_cancela_sign
   {
     '9brglm8b': {
@@ -14294,7 +14636,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4uvsf8rp': {
       'es':
-          'Para acceder a esta información, debes tener al menos un diario creado',
+          'Para acceder a esta información, debes tener al menos dos ( 2 ) diarios creados.',
       'en': 'To access your journal summary, start by creating the first one.',
     },
     '74mz0pkh': {
@@ -14487,37 +14829,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Eliminate',
     },
   },
-  // modal_add_med
-  {
-    'vj4zi4bs': {
-      'es': 'Añadir nuevo Medicamento',
-      'en': 'Add new medication',
-    },
-    '21rc55h1': {
-      'es': 'Editar Medicamento',
-      'en': 'Edit Medication',
-    },
-    'beyt3ep3': {
-      'es': 'Nombre',
-      'en': 'Name',
-    },
-    'gxxlnsty': {
-      'es': 'Dósis',
-      'en': 'Dose',
-    },
-    'bpilsniy': {
-      'es': 'Posología',
-      'en': 'Posology',
-    },
-    'u6scla0t': {
-      'es': 'Eliminar',
-      'en': 'Eliminate',
-    },
-    'gz77pjmz': {
-      'es': 'Guardar',
-      'en': 'Keep',
-    },
-  },
   // modal_elimina_cuenta
   {
     'y4a4bz0f': {
@@ -14642,24 +14953,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // Miscellaneous
   {
     'kqz45rle': {
-      'es': '',
-      'en': '',
+      'es':
+          'Para poder tomar fotos o publicar imágenes la app te pedirá permiso para usar la cámara.',
+      'en':
+          'In order to take pictures or post images the app will ask for permission to use the camera.',
     },
     'iilnmmqq': {
-      'es': '',
-      'en': '',
+      'es':
+          'Para poder tomar fotos o publicar imágenes la app te pedirá permiso para acceder a tus imágenes.',
+      'en':
+          'In order to take pictures or post images the app will ask for permission to access your images.',
     },
     '0eyisszg': {
-      'es': '',
-      'en': '',
+      'es': 'Error. Tu usuario o contraseña son incorrectos',
+      'en': 'Error. Your username or password is incorrect',
     },
     'uves1ldh': {
-      'es': '',
-      'en': '',
+      'es': 'Se ha enviado un correo con las instrucciones.',
+      'en': 'An email with instructions has been sent.',
     },
     '83aqh5aw': {
-      'es': '',
-      'en': '',
+      'es': 'El email es obligatorio',
+      'en': 'Email required',
     },
     'pwwxdvc2': {
       'es': '',
@@ -14686,52 +15001,52 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'j1pu37wb': {
-      'es': '',
-      'en': '',
+      'es': 'Este email ya se encuentra en uso.',
+      'en': 'This email is already in use.',
     },
     'o6sch49e': {
-      'es': '',
-      'en': '',
+      'es': 'Error. Tu usuario o contraseña son incorrectos',
+      'en': 'Error. Your username or password is incorrect',
     },
     '8ykcpmof': {
-      'es': '',
-      'en': '',
+      'es': 'Formato de archivo incorrecto',
+      'en': 'Invalid file format',
     },
     'pry6ce3i': {
-      'es': '',
-      'en': '',
+      'es': 'Subiendo archivo...',
+      'en': 'Uploading file...',
     },
     'tgw7v4c8': {
-      'es': '',
-      'en': '',
+      'es': 'Subido!',
+      'en': 'Success!',
     },
     '13xddfp4': {
-      'es': '',
-      'en': '',
+      'es': 'Error al subir la info',
+      'en': 'Failed to upload data',
     },
     'onkkp0u6': {
       'es': '',
       'en': '',
     },
     '7uzuvmxl': {
-      'es': '',
-      'en': '',
+      'es': 'Selecciona el origen',
+      'en': 'Choose Source',
     },
     'ay06sts5': {
-      'es': '',
-      'en': '',
+      'es': 'Galería',
+      'en': 'Gallery',
     },
     'el72q7yt': {
-      'es': '',
-      'en': '',
+      'es': 'Galería de Fotos',
+      'en': 'Gallery (Photo)',
     },
     '83ow2df9': {
-      'es': '',
-      'en': '',
+      'es': 'Galería de Fotos',
+      'en': 'Gallery (Video)',
     },
     'yehfjdtx': {
-      'es': '',
-      'en': '',
+      'es': 'Cámara',
+      'en': 'Camera',
     },
     'pf0uxka5': {
       'es': '',

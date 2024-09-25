@@ -385,7 +385,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                 model: _model.menuUsuarioModel,
                 updateCallback: () => safeSetState(() {}),
                 child: MenuUsuarioWidget(
-                  index: 1,
+                  index: 0,
                 ),
               ),
             ),

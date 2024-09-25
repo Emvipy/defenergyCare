@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/perfil/modal_elimina_cuenta/modal_elimina_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'perfil_widget.dart' show PerfilWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -20,6 +21,8 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (user individual)] action in perfil widget.
+  ApiCallResponse? apiCargaUserPerfil;
   // State field(s) for Switch widget.
   bool? switchValue1;
   // State field(s) for Switch widget.
