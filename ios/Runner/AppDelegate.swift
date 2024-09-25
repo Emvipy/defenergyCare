@@ -1,7 +1,5 @@
 import UIKit
-
 import OneSignalFramework
-
 import Flutter
 
 @UIApplicationMain
