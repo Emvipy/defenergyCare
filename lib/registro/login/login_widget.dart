@@ -604,6 +604,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             .passwordTextController
                                                             ?.clear();
                                                       });
+                                                      if (_shouldSetState)
+                                                        safeSetState(() {});
+                                                      return;
                                                     } else {
                                                       if (LoginCall.validado(
                                                             (_model.apiloginCopy
@@ -638,6 +641,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .passwordTextController
                                                               ?.clear();
                                                         });
+                                                        if (_shouldSetState)
+                                                          safeSetState(() {});
+                                                        return;
                                                       } else {
                                                         context.goNamedAuth(
                                                           'empresa_pdte_validacionCopy',
@@ -685,6 +691,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));
+
+                                                    if (_shouldSetState)
+                                                      safeSetState(() {});
+                                                    return;
                                                   }
                                                 } else {
                                                   ScaffoldMessenger.of(context)
@@ -706,6 +716,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .error,
                                                     ),
                                                   );
+                                                  if (_shouldSetState)
+                                                    safeSetState(() {});
+                                                  return;
                                                 }
 
                                                 if (_shouldSetState)

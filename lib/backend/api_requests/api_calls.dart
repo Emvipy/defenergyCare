@@ -1022,6 +1022,21 @@ class UserIndividualCall {
         response,
         r'''$._diario_cuenta''',
       ));
+  static int? notificacionesCant(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$._notificaciones_cuenta''',
+      ));
+  static String? encuestasPendientes(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.encuestas_pendientes''',
+      ));
+  static String? chatsPendientes(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.chat_pendientes''',
+      ));
 }
 
 class DiarioCreaCall {
@@ -10806,6 +10821,24 @@ class PerfilNotificacionesCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static List<String>? tituloEn(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].titulo_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? mensajeEn(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].mensaje_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class PerfilEliminaNotificacionCall {
@@ -12560,6 +12593,63 @@ class PerfilEliminaMedicamentCall {
       headers: {
         'Authorization': 'Bearer ${authToken}',
       },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class UserGeneraReporteCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? year,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "year": ${year}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'user genera reporte',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/genera_reportes_pdf',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class PerfilMarcaNotificacionCall {
+  static Future<ApiCallResponse> call({
+    int? notifId,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "notificacion_id": ${notifId}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'perfil marca notificacion',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/marca_notificacion',
+      callType: ApiCallType.POST,
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,

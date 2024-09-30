@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import 'dart:async';
 import 'dart:math';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'menu_usuario_widget.dart' show MenuUsuarioWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';

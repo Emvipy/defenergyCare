@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import 'dart:async';
 import 'dart:math';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -167,7 +168,7 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
           child: Container(
             width: double.infinity,
-            height: 80.0,
+            height: 95.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).azulPerm,
               borderRadius: BorderRadius.only(
@@ -177,56 +178,48 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                 topRight: Radius.circular(0.0),
               ),
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Flexible(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Opacity(
-                        opacity: widget!.index == 1 ? 1.0 : 0.5,
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 20.0,
-                          borderWidth: 0.0,
-                          buttonSize: 55.0,
-                          icon: Icon(
-                            Icons.cottage_outlined,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 28.0,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Flexible(
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Opacity(
+                            opacity: 0.0,
+                            child: Container(
+                              width: 10.0,
+                              height: 10.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).azulPerm,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
                           ),
-                          onPressed: () async {
-                            if (FFAppState().perfilId == 1) {
-                              context.pushNamed(
-                                'Home',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                  ),
-                                },
-                              );
-
-                              unawaited(
-                                () async {
-                                  await UserLogActivityCall.call(
-                                    authToken: FFAppState().authToken,
-                                    seccion: 'Menú Home',
-                                  );
-                                }(),
-                              );
-                            } else {
-                              if (FFAppState().email == 'enrique@emvipy.com') {
-                                if ((FFAppState().perfilId == 2) ||
-                                    (FFAppState().perfilId == 3) ||
-                                    (FFAppState().perfilId == 4)) {
+                          Opacity(
+                            opacity: widget!.index == 1 ? 1.0 : 0.5,
+                            child: FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 20.0,
+                              borderWidth: 0.0,
+                              buttonSize: 45.0,
+                              icon: Icon(
+                                Icons.cottage_outlined,
+                                color: FlutterFlowTheme.of(context).info,
+                                size: 28.0,
+                              ),
+                              onPressed: () async {
+                                if (FFAppState().perfilId == 1) {
                                   context.pushNamed(
-                                    'Home_empresa',
+                                    'Home',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
@@ -240,94 +233,98 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                     () async {
                                       await UserLogActivityCall.call(
                                         authToken: FFAppState().authToken,
-                                        seccion: 'Menú Home Empresa',
-                                      );
-                                    }(),
-                                  );
-                                }
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'error ops',
-                                      style: TextStyle(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                      ),
-                                    ),
-                                    duration: Duration(milliseconds: 4000),
-                                    backgroundColor:
-                                        FlutterFlowTheme.of(context).error,
-                                  ),
-                                );
-                              }
-                            }
-                          },
-                        ),
-                      ),
-                      if (widget!.index == 1)
-                        SizedBox(
-                          width: 30.0,
-                          child: Divider(
-                            height: 2.0,
-                            thickness: 2.0,
-                            color: FlutterFlowTheme.of(context).info,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['dividerOnPageLoadAnimation1']!),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Opacity(
-                        opacity: widget!.index == 2 ? 1.0 : 0.5,
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 20.0,
-                          borderWidth: 0.0,
-                          buttonSize: 55.0,
-                          icon: Icon(
-                            Icons.check_box_outlined,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 28.0,
-                          ),
-                          onPressed: () async {
-                            if ((FFAppState().authToken != null &&
-                                    FFAppState().authToken != '') &&
-                                (FFAppState().email != null &&
-                                    FFAppState().email != '')) {
-                              if (FFAppState().creadoOk == 'si') {
-                                if (FFAppState().perfilId == 1) {
-                                  context.pushNamed(
-                                    'encuestas',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                      ),
-                                    },
-                                  );
-
-                                  unawaited(
-                                    () async {
-                                      await UserLogActivityCall.call(
-                                        authToken: FFAppState().authToken,
-                                        seccion: 'Menú Encuesta',
+                                        seccion: 'Menú Home',
                                       );
                                     }(),
                                   );
                                 } else {
-                                  if (FFAppState().email ==
-                                      'enrique@emvipy.com') {
-                                    if ((FFAppState().perfilId == 2) ||
-                                        (FFAppState().perfilId == 3) ||
-                                        (FFAppState().perfilId == 4)) {
+                                  if ((FFAppState().perfilId == 2) ||
+                                      (FFAppState().perfilId == 3) ||
+                                      (FFAppState().perfilId == 4)) {
+                                    context.pushNamed(
+                                      'Home_empresa',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
+
+                                    unawaited(
+                                      () async {
+                                        await UserLogActivityCall.call(
+                                          authToken: FFAppState().authToken,
+                                          seccion: 'Menú Home Empresa',
+                                        );
+                                      }(),
+                                    );
+                                  }
+                                }
+                              },
+                            ),
+                          ),
+                          if (widget!.index == 1)
+                            SizedBox(
+                              width: 30.0,
+                              child: Divider(
+                                height: 2.0,
+                                thickness: 2.0,
+                                color: FlutterFlowTheme.of(context).info,
+                              ),
+                            ).animateOnPageLoad(
+                                animationsMap['dividerOnPageLoadAnimation1']!),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 10.0,
+                            height: 10.0,
+                            decoration: BoxDecoration(
+                              color: (functions.parseJsonValueToString(
+                                              getJsonField(
+                                            FFAppState().userIndividual,
+                                            r'''$.encuestas_pendientes''',
+                                          )) ==
+                                          'si') &&
+                                      (FFAppState().perfilId == 1)
+                                  ? FlutterFlowTheme.of(context).secondary
+                                  : Color(0x0063A4DC),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          Opacity(
+                            opacity: widget!.index == 2 ? 1.0 : 0.5,
+                            child: FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 20.0,
+                              borderWidth: 0.0,
+                              buttonSize: 45.0,
+                              icon: Icon(
+                                Icons.check_box_outlined,
+                                color: FlutterFlowTheme.of(context).info,
+                                size: 28.0,
+                              ),
+                              onPressed: () async {
+                                if ((FFAppState().authToken != null &&
+                                        FFAppState().authToken != '') &&
+                                    (FFAppState().email != null &&
+                                        FFAppState().email != '')) {
+                                  if (FFAppState().creadoOk == 'si') {
+                                    if (FFAppState().perfilId == 1) {
                                       context.pushNamed(
-                                        'emp_encuestas',
+                                        'encuestas',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -341,306 +338,390 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                         () async {
                                           await UserLogActivityCall.call(
                                             authToken: FFAppState().authToken,
-                                            seccion: 'Menú Encuesta Empresa',
+                                            seccion: 'Menú Encuesta',
                                           );
                                         }(),
                                       );
+                                      return;
+                                    } else {
+                                      if ((FFAppState().perfilId == 2) ||
+                                          (FFAppState().perfilId == 3) ||
+                                          (FFAppState().perfilId == 4)) {
+                                        context.pushNamed(
+                                          'emp_encuestas',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                            ),
+                                          },
+                                        );
+
+                                        unawaited(
+                                          () async {
+                                            await UserLogActivityCall.call(
+                                              authToken: FFAppState().authToken,
+                                              seccion: 'Menú Encuesta Empresa',
+                                            );
+                                          }(),
+                                        );
+                                        return;
+                                      } else {
+                                        return;
+                                      }
                                     }
+                                  } else {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+
+                                    return;
                                   }
+                                } else {
+                                  context.pushNamed(
+                                    'login',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+
+                                  return;
+                                }
+                              },
+                            ),
+                          ),
+                          if (widget!.index == 2)
+                            SizedBox(
+                              width: 30.0,
+                              child: Divider(
+                                height: 2.0,
+                                thickness: 2.0,
+                                color: FlutterFlowTheme.of(context).info,
+                              ),
+                            ).animateOnPageLoad(
+                                animationsMap['dividerOnPageLoadAnimation2']!),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Opacity(
+                            opacity: 0.0,
+                            child: Container(
+                              width: 10.0,
+                              height: 10.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).azulPerm,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                          Opacity(
+                            opacity: widget!.index == 3 ? 1.0 : 0.5,
+                            child: FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 20.0,
+                              borderWidth: 0.0,
+                              buttonSize: 45.0,
+                              icon: Icon(
+                                Icons.shopping_cart_outlined,
+                                color: FlutterFlowTheme.of(context).info,
+                                size: 28.0,
+                              ),
+                              onPressed: () async {
+                                if ((FFAppState().authToken != null &&
+                                        FFAppState().authToken != '') &&
+                                    (FFAppState().email != null &&
+                                        FFAppState().email != '')) {
+                                  if (FFAppState().creadoOk == 'si') {
+                                    context.pushNamed(
+                                      'marketplace',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                        ),
+                                      },
+                                    );
+
+                                    unawaited(
+                                      () async {
+                                        await UserLogActivityCall.call(
+                                          authToken: FFAppState().authToken,
+                                          seccion: 'Menú Marketplace',
+                                        );
+                                      }(),
+                                    );
+                                  } else {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  }
+                                } else {
+                                  context.pushNamed(
+                                    'login',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+                                }
+                              },
+                            ),
+                          ),
+                          if (widget!.index == 3)
+                            SizedBox(
+                              width: 30.0,
+                              child: Divider(
+                                height: 2.0,
+                                thickness: 2.0,
+                                color: FlutterFlowTheme.of(context).info,
+                              ),
+                            ).animateOnPageLoad(
+                                animationsMap['dividerOnPageLoadAnimation3']!),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Opacity(
+                            opacity: 0.0,
+                            child: Container(
+                              width: 10.0,
+                              height: 10.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).azulPerm,
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                          Opacity(
+                            opacity: widget!.index == 6 ? 1.0 : 0.5,
+                            child: FlutterFlowIconButton(
+                              borderColor: Colors.transparent,
+                              borderRadius: 20.0,
+                              borderWidth: 0.0,
+                              buttonSize: 45.0,
+                              icon: Icon(
+                                Icons.post_add_rounded,
+                                color: FlutterFlowTheme.of(context).info,
+                                size: 28.0,
+                              ),
+                              onPressed: () async {
+                                if (FFAppState().email != null &&
+                                    FFAppState().email != '') {
+                                  if (FFAppState().creadoOk == 'si') {
+                                    context.pushNamed(
+                                      'comunidad',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                        ),
+                                      },
+                                    );
+
+                                    unawaited(
+                                      () async {
+                                        await UserLogActivityCall.call(
+                                          authToken: FFAppState().authToken,
+                                          seccion: 'Menú Comunidad',
+                                        );
+                                      }(),
+                                    );
+                                  } else {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  }
+                                } else {
+                                  context.pushNamed(
+                                    'login',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
+                                }
+                              },
+                            ),
+                          ),
+                          if (widget!.index == 6)
+                            SizedBox(
+                              width: 30.0,
+                              child: Divider(
+                                height: 2.0,
+                                thickness: 2.0,
+                                color: FlutterFlowTheme.of(context).info,
+                              ),
+                            ).animateOnPageLoad(
+                                animationsMap['dividerOnPageLoadAnimation4']!),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Flexible(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 10.0,
+                          height: 10.0,
+                          decoration: BoxDecoration(
+                            color:
+                                (functions.parseJsonValueToString(getJsonField(
+                                              FFAppState().userIndividual,
+                                              r'''$.chat_pendientes''',
+                                            )) ==
+                                            'si') &&
+                                        (FFAppState().perfilId == 1)
+                                    ? FlutterFlowTheme.of(context).secondary
+                                    : Color(0x0063A4DC),
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Opacity(
+                          opacity: widget!.index == 7 ? 1.0 : 0.5,
+                          child: FlutterFlowIconButton(
+                            borderColor: Colors.transparent,
+                            borderRadius: 20.0,
+                            borderWidth: 0.0,
+                            buttonSize: 45.0,
+                            icon: Icon(
+                              Icons.wechat_rounded,
+                              color: FlutterFlowTheme.of(context).info,
+                              size: 28.0,
+                            ),
+                            onPressed: () async {
+                              if ((FFAppState().authToken != null &&
+                                      FFAppState().authToken != '') &&
+                                  (FFAppState().email != null &&
+                                      FFAppState().email != '')) {
+                                if (FFAppState().creadoOk == 'si') {
+                                  context.pushNamed(
+                                    'chat_conversaciones',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                      ),
+                                    },
+                                  );
+
+                                  unawaited(
+                                    () async {
+                                      await UserLogActivityCall.call(
+                                        authToken: FFAppState().authToken,
+                                        seccion: 'Menú Chat',
+                                      );
+                                    }(),
+                                  );
+                                } else {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: ModalErrorCuentaWidget(),
+                                      );
+                                    },
+                                  ).then((value) => safeSetState(() {}));
                                 }
                               } else {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: ModalErrorCuentaWidget(),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
-                              }
-                            } else {
-                              context.pushNamed(
-                                'login',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                  ),
-                                },
-                              );
-                            }
-                          },
-                        ),
-                      ),
-                      if (widget!.index == 2)
-                        SizedBox(
-                          width: 30.0,
-                          child: Divider(
-                            height: 2.0,
-                            thickness: 2.0,
-                            color: FlutterFlowTheme.of(context).info,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['dividerOnPageLoadAnimation2']!),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Opacity(
-                        opacity: widget!.index == 3 ? 1.0 : 0.5,
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 20.0,
-                          borderWidth: 0.0,
-                          buttonSize: 55.0,
-                          icon: Icon(
-                            Icons.shopping_cart_outlined,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 28.0,
-                          ),
-                          onPressed: () async {
-                            if ((FFAppState().authToken != null &&
-                                    FFAppState().authToken != '') &&
-                                (FFAppState().email != null &&
-                                    FFAppState().email != '')) {
-                              if (FFAppState().creadoOk == 'si') {
                                 context.pushNamed(
-                                  'marketplace',
+                                  'login',
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
                                     ),
                                   },
                                 );
-
-                                unawaited(
-                                  () async {
-                                    await UserLogActivityCall.call(
-                                      authToken: FFAppState().authToken,
-                                      seccion: 'Menú Marketplace',
-                                    );
-                                  }(),
-                                );
-                              } else {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: ModalErrorCuentaWidget(),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
                               }
-                            } else {
-                              context.pushNamed(
-                                'login',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                  ),
-                                },
-                              );
-                            }
-                          },
+                            },
+                          ),
                         ),
-                      ),
-                      if (widget!.index == 3)
-                        SizedBox(
-                          width: 30.0,
-                          child: Divider(
-                            height: 2.0,
-                            thickness: 2.0,
-                            color: FlutterFlowTheme.of(context).info,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['dividerOnPageLoadAnimation3']!),
-                    ],
+                        if (widget!.index == 7)
+                          SizedBox(
+                            width: 30.0,
+                            child: Divider(
+                              height: 2.0,
+                              thickness: 2.0,
+                              color: FlutterFlowTheme.of(context).info,
+                            ),
+                          ).animateOnPageLoad(
+                              animationsMap['dividerOnPageLoadAnimation5']!),
+                      ],
+                    ),
                   ),
-                ),
-                Flexible(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Opacity(
-                        opacity: widget!.index == 6 ? 1.0 : 0.5,
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 20.0,
-                          borderWidth: 0.0,
-                          buttonSize: 55.0,
-                          icon: Icon(
-                            Icons.post_add_rounded,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 28.0,
-                          ),
-                          onPressed: () async {
-                            if (FFAppState().email != null &&
-                                FFAppState().email != '') {
-                              if (FFAppState().creadoOk == 'si') {
-                                context.pushNamed(
-                                  'comunidad',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                    ),
-                                  },
-                                );
-
-                                unawaited(
-                                  () async {
-                                    await UserLogActivityCall.call(
-                                      authToken: FFAppState().authToken,
-                                      seccion: 'Menú Comunidad',
-                                    );
-                                  }(),
-                                );
-                              } else {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: ModalErrorCuentaWidget(),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
-                              }
-                            } else {
-                              context.pushNamed(
-                                'login',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                  ),
-                                },
-                              );
-                            }
-                          },
-                        ),
-                      ),
-                      if (widget!.index == 6)
-                        SizedBox(
-                          width: 30.0,
-                          child: Divider(
-                            height: 2.0,
-                            thickness: 2.0,
-                            color: FlutterFlowTheme.of(context).info,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['dividerOnPageLoadAnimation4']!),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Opacity(
-                        opacity: widget!.index == 7 ? 1.0 : 0.5,
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 20.0,
-                          borderWidth: 0.0,
-                          buttonSize: 55.0,
-                          icon: Icon(
-                            Icons.wechat_rounded,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 28.0,
-                          ),
-                          onPressed: () async {
-                            if ((FFAppState().authToken != null &&
-                                    FFAppState().authToken != '') &&
-                                (FFAppState().email != null &&
-                                    FFAppState().email != '')) {
-                              if (FFAppState().creadoOk == 'si') {
-                                context.pushNamed(
-                                  'chat_conversaciones',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType: PageTransitionType.fade,
-                                    ),
-                                  },
-                                );
-
-                                unawaited(
-                                  () async {
-                                    await UserLogActivityCall.call(
-                                      authToken: FFAppState().authToken,
-                                      seccion: 'Menú Chat',
-                                    );
-                                  }(),
-                                );
-                              } else {
-                                await showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  backgroundColor: Colors.transparent,
-                                  enableDrag: false,
-                                  context: context,
-                                  builder: (context) {
-                                    return Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: ModalErrorCuentaWidget(),
-                                    );
-                                  },
-                                ).then((value) => safeSetState(() {}));
-                              }
-                            } else {
-                              context.pushNamed(
-                                'login',
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                    duration: Duration(milliseconds: 0),
-                                  ),
-                                },
-                              );
-                            }
-                          },
-                        ),
-                      ),
-                      if (widget!.index == 7)
-                        SizedBox(
-                          width: 30.0,
-                          child: Divider(
-                            height: 2.0,
-                            thickness: 2.0,
-                            color: FlutterFlowTheme.of(context).info,
-                          ),
-                        ).animateOnPageLoad(
-                            animationsMap['dividerOnPageLoadAnimation5']!),
-                    ],
-                  ),
-                ),
-              ]
-                  .divide(SizedBox(width: 16.0))
-                  .addToStart(SizedBox(width: 16.0))
-                  .addToEnd(SizedBox(width: 16.0)),
+                ]
+                    .divide(SizedBox(width: 16.0))
+                    .addToStart(SizedBox(width: 16.0))
+                    .addToEnd(SizedBox(width: 16.0)),
+              ),
             ),
           ),
         ),

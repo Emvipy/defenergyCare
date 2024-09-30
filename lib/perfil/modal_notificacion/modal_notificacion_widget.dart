@@ -176,43 +176,32 @@ class _ModalNotificacionWidgetState extends State<ModalNotificacionWidget> {
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 5.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  if (widget!.seccion != null &&
-                                      widget!.seccion != '')
-                                    Align(
-                                      alignment: AlignmentDirectional(0.0, 1.0),
-                                      child: FFButtonWidget(
-                                        onPressed: () async {
-                                          if (widget!.seccion == 'noticias') {
-                                            context.pushNamed(
-                                              'noticias',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                ),
-                                              },
-                                            );
-                                          } else {
-                                            if (widget!.seccion == 'encuesta') {
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 10.0, 10.0, 5.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    if (widget!.seccion != null &&
+                                        widget!.seccion != '')
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 1.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            if (widget!.seccion == 'noticias') {
                                               context.pushNamed(
-                                                'encuestas',
+                                                'noticias',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -224,77 +213,190 @@ class _ModalNotificacionWidgetState extends State<ModalNotificacionWidget> {
                                                   ),
                                                 },
                                               );
+                                            } else {
+                                              if (widget!.seccion ==
+                                                  'encuesta') {
+                                                context.pushNamed(
+                                                  'encuestas',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
+                                              } else {
+                                                if (widget!.seccion ==
+                                                    'comunidad') {
+                                                  context.pushNamed(
+                                                    'comunidad',
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
+                                                }
+                                              }
                                             }
-                                          }
-                                        },
-                                        text:
-                                            FFLocalizations.of(context).getText(
-                                          '626nwm24' /* Ver  */,
-                                        ),
-                                        options: FFButtonOptions(
-                                          width: 300.0,
-                                          height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  24.0, 0.0, 24.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: Colors.white,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                          elevation: 3.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1.0,
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '626nwm24' /* Ver  */,
                                           ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                          options: FFButtonOptions(
+                                            width: 300.0,
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 5.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  if (widget!.chat == 'si')
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 10.0, 10.0, 5.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    if (widget!.chat == 'si')
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 1.0),
+                                        child: FFButtonWidget(
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'chat_conversaciones',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'ia3acudt' /* Ver invitaciones */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            width: 300.0,
+                                            height: 40.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                      letterSpacing: 0.0,
+                                                    ),
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 1.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 10.0, 10.0, 5.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
                                     Align(
                                       alignment: AlignmentDirectional(0.0, 1.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          context.pushNamed(
-                                            'chat_conversaciones',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 0),
-                                              ),
-                                            },
+                                          _model.apiResultolh =
+                                              await PerfilEliminaNotificacionCall
+                                                  .call(
+                                            authToken: FFAppState().authToken,
+                                            notificacionId:
+                                                widget!.notificacionId,
                                           );
+
+                                          if ((_model.apiResultolh?.succeeded ??
+                                              true)) {
+                                            context.pushNamed(
+                                              'perfil_notificaciones',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
+                                          }
+
+                                          safeSetState(() {});
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
-                                          'ia3acudt' /* Ver invitaciones */,
+                                          'g0kh2dju' /* Eliminar */,
                                         ),
                                         options: FFButtonOptions(
                                           width: 300.0,
@@ -306,7 +408,7 @@ class _ModalNotificacionWidgetState extends State<ModalNotificacionWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                              .secondary,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
@@ -325,85 +427,12 @@ class _ModalNotificacionWidgetState extends State<ModalNotificacionWidget> {
                                         ),
                                       ),
                                     ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 1.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 10.0, 10.0, 5.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 1.0),
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        _model.apiResultolh =
-                                            await PerfilEliminaNotificacionCall
-                                                .call(
-                                          authToken: FFAppState().authToken,
-                                          notificacionId:
-                                              widget!.notificacionId,
-                                        );
-
-                                        if ((_model.apiResultolh?.succeeded ??
-                                            true)) {
-                                          context.pushNamed(
-                                            'perfil_notificaciones',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 0),
-                                              ),
-                                            },
-                                          );
-                                        }
-
-                                        safeSetState(() {});
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        'g0kh2dju' /* Eliminar */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        width: 300.0,
-                                        height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                              letterSpacing: 0.0,
-                                            ),
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

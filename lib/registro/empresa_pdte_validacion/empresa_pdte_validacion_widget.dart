@@ -36,6 +36,51 @@ class _EmpresaPdteValidacionWidgetState
     super.initState();
     _model = createModel(context, () => EmpresaPdteValidacionModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      GoRouter.of(context).prepareAuthEvent();
+      await authManager.signOut();
+      GoRouter.of(context).clearRedirectLocation();
+
+      FFAppState().deleteAuthToken();
+      FFAppState().authToken = '';
+
+      FFAppState().deleteXUserId();
+      FFAppState().xUserId = 0;
+
+      FFAppState().deleteEmail();
+      FFAppState().email = '';
+
+      FFAppState().deleteNombre();
+      FFAppState().nombre = '';
+
+      FFAppState().deleteApellidos();
+      FFAppState().apellidos = '';
+
+      FFAppState().deleteAvatar();
+      FFAppState().avatar = '';
+
+      FFAppState().deletePerfil();
+      FFAppState().perfil = '';
+
+      FFAppState().deleteSessionId();
+      FFAppState().sessionId = 0;
+
+      FFAppState().deleteEnfermedadId();
+      FFAppState().enfermedadId = 0;
+
+      FFAppState().deleteEnfermedadTxt();
+      FFAppState().enfermedadTxt = '';
+
+      FFAppState().deletePerfilId();
+      FFAppState().perfilId = 0;
+
+      FFAppState().deleteCreadoOk();
+      FFAppState().creadoOk = '';
+
+      safeSetState(() {});
+    });
+
     animationsMap.addAll({
       'containerOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,

@@ -125,6 +125,10 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    await _safeInitAsync(() async {
+      _avisoIdiomas =
+          await secureStorage.getString('ff_avisoIdiomas') ?? _avisoIdiomas;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -645,6 +649,17 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInMisMedicamentos(int index, dynamic value) {
     misMedicamentos.insert(index, value);
+  }
+
+  String _avisoIdiomas = 'si';
+  String get avisoIdiomas => _avisoIdiomas;
+  set avisoIdiomas(String value) {
+    _avisoIdiomas = value;
+    secureStorage.setString('ff_avisoIdiomas', value);
+  }
+
+  void deleteAvisoIdiomas() {
+    secureStorage.delete(key: 'ff_avisoIdiomas');
   }
 }
 

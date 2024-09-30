@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/empresa_encuestas/modal_aviso_idioma/modal_aviso_idioma_widget.dart';
 import '/empresa_encuestas/modal_noticia_creada/modal_noticia_creada_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,6 +10,7 @@ import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -41,6 +43,31 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => NoticiasCreaModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().avisoIdiomas == 'si') {
+        await showModalBottomSheet(
+          isScrollControlled: true,
+          backgroundColor: Colors.transparent,
+          enableDrag: false,
+          context: context,
+          builder: (context) {
+            return GestureDetector(
+              onTap: () => FocusScope.of(context).unfocus(),
+              child: Padding(
+                padding: MediaQuery.viewInsetsOf(context),
+                child: ModalAvisoIdiomaWidget(),
+              ),
+            );
+          },
+        ).then((value) => safeSetState(() {}));
+
+        return;
+      } else {
+        return;
+      }
+    });
 
     if (!isWeb) {
       _keyboardVisibilitySubscription =

@@ -312,6 +312,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: functions
+                                                    .parseJsonValueToInteger(
+                                                        getJsonField(
+                                                      FFAppState()
+                                                          .userIndividual,
+                                                      r'''$._notificaciones_cuenta''',
+                                                    ))
+                                                    .toString() ==
+                                                '0'
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondaryBackground
+                                            : FlutterFlowTheme.of(context)
+                                                .secondary,
+                                        width: 2.0,
+                                      ),
                                     ),
                                     child: Align(
                                       alignment: AlignmentDirectional(0.0, 0.0),
@@ -335,8 +351,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                         },
                                         child: Icon(
                                           Icons.notifications_none,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                          color: functions
+                                                      .parseJsonValueToInteger(
+                                                          getJsonField(
+                                                        FFAppState()
+                                                            .userIndividual,
+                                                        r'''$._notificaciones_cuenta''',
+                                                      ))
+                                                      .toString() ==
+                                                  '0'
+                                              ? FlutterFlowTheme.of(context)
+                                                  .secondaryText
+                                              : FlutterFlowTheme.of(context)
+                                                  .secondary,
                                           size: 26.0,
                                         ),
                                       ),
