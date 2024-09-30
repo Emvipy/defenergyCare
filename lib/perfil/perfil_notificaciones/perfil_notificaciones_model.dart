@@ -25,6 +25,8 @@ class PerfilNotificacionesModel
   // Stores action output result for [Backend Call - API (perfil activa push)] action in Switch widget.
   ApiCallResponse? apiResultm8yCopy;
   Completer<ApiCallResponse>? apiRequestCompleter;
+  // Stores action output result for [Backend Call - API (perfil marca notificacion)] action in Text widget.
+  ApiCallResponse? apiResultvof;
   // Stores action output result for [Backend Call - API (perfil elimina notificacion)] action in Icon widget.
   ApiCallResponse? apiResult2sz;
   // Model for menu_usuario component.

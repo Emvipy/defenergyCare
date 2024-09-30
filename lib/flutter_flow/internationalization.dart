@@ -5340,8 +5340,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sleep Diary',
     },
     'mjw5o3t5': {
-      'es': '¡Gracias por completar tus datos de Sueño!\n',
+      'es': '¡Gracias por completar tu Diario!',
       'en': 'Thank you for completing your Dream details!',
+    },
+    'uf0f9sdv': {
+      'es':
+          'Tus datos nos ayudarán a identificar qué suplementos o tratamientos mejoran tu descanso. ¡Nos vemos mañana!',
+      'en': '',
     },
     '1ewyyzaw': {
       'es': 'Finalizar',
@@ -14188,108 +14193,108 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '92jx22q7': {
       'es': '50%',
-      'en': '',
+      'en': '50%',
     },
     'xzewre61': {
       'es': 'Tu cuenta aún no ha sido validada por el Administrador',
-      'en': '',
+      'en': 'Your account has not yet been validated by the Administrator',
     },
     '98by5gvu': {
       'es': 'Te avisaremos por email en cuanto esté todo listo. ',
-      'en': '',
+      'en': 'We will notify you by email as soon as everything is ready.',
     },
     '0xwyifpz': {
       'es': 'Entendido',
-      'en': '',
+      'en': 'Understood',
     },
     'bng3gmva': {
       'es': 'Home',
-      'en': '',
+      'en': 'Home',
     },
   },
   // comunidadCopy
   {
     'nbg0vvi3': {
       'es': 'Comunidad',
-      'en': '',
+      'en': 'Community',
     },
     'omw4sf0z': {
       'es': 'Reportar Publicación',
-      'en': '',
+      'en': 'Report Post',
     },
     '5t4h1bhb': {
       'es': 'Crear Publicación',
-      'en': '',
+      'en': 'Create Post',
     },
     'sdhgv1je': {
       'es': 'Home',
-      'en': '',
+      'en': 'Home',
     },
   },
   // perfil_medicamentosCrea
   {
     'u9ua67l1': {
       'es': 'Mis medicamentos',
-      'en': '',
+      'en': 'My medications',
     },
     'qsyvxpzp': {
       'es': 'Añadir nuevo Medicamento',
-      'en': '',
+      'en': 'Add new medication',
     },
     'ysfq5pyv': {
       'es': 'Nombre',
-      'en': '',
+      'en': 'Name',
     },
     '39ey9b1x': {
       'es': 'Dósis',
-      'en': '',
+      'en': 'Dose',
     },
     'dhr7qtvj': {
       'es': 'Posología',
-      'en': '',
+      'en': 'Posology',
     },
     '4pp8sa4o': {
       'es': 'Guardar',
-      'en': '',
+      'en': 'Keep',
     },
     '7xfj1bt7': {
       'es': 'Home',
-      'en': '',
+      'en': 'Home',
     },
   },
   // perfil_medicamentosEdita
   {
     'mi754k9z': {
       'es': 'Mis medicamentos',
-      'en': '',
+      'en': 'My medications',
     },
     '6r8gy8x2': {
       'es': 'Edita tu medicamento',
-      'en': '',
+      'en': 'Edit your medication',
     },
     '431pf4lf': {
       'es': 'Nombre',
-      'en': '',
+      'en': 'Name',
     },
     's2j8ftzj': {
       'es': 'Dósis',
-      'en': '',
+      'en': 'Dose',
     },
     '4jfieora': {
       'es': 'Posología',
-      'en': '',
+      'en': 'Posology',
     },
     '6bayd1sn': {
       'es': 'Guardar',
-      'en': '',
+      'en': 'Keep',
     },
     'a0kwsmnn': {
       'es': 'Eliminar',
-      'en': '',
+      'en': 'Eliminate',
     },
     '43d9osin': {
       'es': 'Home',
-      'en': '',
+      'en': 'Home',
     },
   },
   // modal_cancela_sign
@@ -14647,12 +14652,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // modal_PDF
   {
     '5y81sprg': {
-      'es': 'El reporte PDF lo haremos al final',
-      'en': 'We will do the PDF report at the end',
+      'es':
+          'Indica el año del que deseas generar el reporte y pulsa el botón “Generar Reportes”',
+      'en':
+          'Indicate the year for which you want to generate the report and press the “Generate Reports” button.',
+    },
+    'bo1d05jk': {
+      'es': '2024',
+      'en': '2024',
+    },
+    'l8ugz2z9': {
+      'es': 'Selecciona el año...',
+      'en': 'Select the year...',
+    },
+    'fzkkk8lt': {
+      'es': 'Buscar...',
+      'en': 'Search...',
+    },
+    'pdbiwk8h': {
+      'es':
+          'Pasados unos minutos, recibirás dos emails, uno con el informe de tu Dario de Síntomas y otro con los datos de tu Diario de Sueño.',
+      'en':
+          'After a few minutes, you will receive two emails, one with your Symptom Diary report and another with your Sleep Diary data.',
+    },
+    'e589x5py': {
+      'es':
+          '(El tiempo puede variar en función de la cantidad de personas que hayan solicitado el reporte)',
+      'en':
+          '(Time may vary depending on the number of people who have requested the report)',
+    },
+    '9h59e8mg': {
+      'es':
+          'Si no recibes el correo, revisa tu carpeta de SPAM o correo no deseado.',
+      'en':
+          'If you do not receive the email, check your SPAM or junk mail folder.',
     },
     'wilj2hka': {
-      'es': 'Entendido',
-      'en': 'Understood',
+      'es': 'Generar Reportes',
+      'en': 'Generate Reports',
     },
   },
   // modal_crea_comentario
@@ -14948,6 +14985,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'sh37broz': {
       'es': 'Entendido',
       'en': 'Understood',
+    },
+  },
+  // modal_aviso_idioma
+  {
+    'x9ngtpyw': {
+      'es': 'Ten en cuenta los idiomas',
+      'en': '',
+    },
+    'uf7qfeva': {
+      'es':
+          'En Defenergy tenemos usuarios que solo hablan en inglés, por lo que es necesario que tus publicaciones estén en ambos idiomas.',
+      'en': '',
+    },
+    'l3go3537': {
+      'es': 'No volver a mostrar',
+      'en': '',
+    },
+    'bs573c1s': {
+      'es': 'Entendido',
+      'en': '',
     },
   },
   // Miscellaneous

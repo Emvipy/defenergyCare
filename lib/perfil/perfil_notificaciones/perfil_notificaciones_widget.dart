@@ -350,240 +350,296 @@ class _PerfilNotificacionesWidgetState
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        await showModalBottomSheet(
-                                                          isScrollControlled:
-                                                              true,
-                                                          backgroundColor:
-                                                              Colors
+                                                    Expanded(
+                                                      flex: 85,
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: InkWell(
+                                                              splashColor: Colors
                                                                   .transparent,
-                                                          enableDrag: false,
-                                                          context: context,
-                                                          builder: (context) {
-                                                            return GestureDetector(
-                                                              onTap: () =>
-                                                                  FocusScope.of(
-                                                                          context)
-                                                                      .unfocus(),
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    ModalNotificacionWidget(
-                                                                  notificacionId:
-                                                                      getJsonField(
-                                                                    childNotificacionesItem,
-                                                                    r'''$.id''',
-                                                                  ),
-                                                                  titulo:
-                                                                      getJsonField(
-                                                                    childNotificacionesItem,
-                                                                    r'''$.titulo''',
-                                                                  ).toString(),
-                                                                  mensaje:
-                                                                      getJsonField(
-                                                                    childNotificacionesItem,
-                                                                    r'''$.mensaje''',
-                                                                  ).toString(),
-                                                                  seccion:
-                                                                      getJsonField(
-                                                                    childNotificacionesItem,
-                                                                    r'''$.seccion''',
-                                                                  ).toString(),
-                                                                  chat:
-                                                                      getJsonField(
-                                                                    childNotificacionesItem,
-                                                                    r'''$.chat''',
-                                                                  ).toString(),
-                                                                ),
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                unawaited(
+                                                                  () async {
+                                                                    _model.apiResultvof =
+                                                                        await PerfilMarcaNotificacionCall
+                                                                            .call(
+                                                                      notifId:
+                                                                          getJsonField(
+                                                                        childNotificacionesItem,
+                                                                        r'''$.id''',
+                                                                      ),
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return GestureDetector(
+                                                                      onTap: () =>
+                                                                          FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ModalNotificacionWidget(
+                                                                          notificacionId:
+                                                                              getJsonField(
+                                                                            childNotificacionesItem,
+                                                                            r'''$.id''',
+                                                                          ),
+                                                                          titulo:
+                                                                              getJsonField(
+                                                                            childNotificacionesItem,
+                                                                            r'''$.titulo''',
+                                                                          ).toString(),
+                                                                          mensaje:
+                                                                              getJsonField(
+                                                                            childNotificacionesItem,
+                                                                            r'''$.mensaje''',
+                                                                          ).toString(),
+                                                                          seccion:
+                                                                              getJsonField(
+                                                                            childNotificacionesItem,
+                                                                            r'''$.seccion''',
+                                                                          ).toString(),
+                                                                          chat:
+                                                                              getJsonField(
+                                                                            childNotificacionesItem,
+                                                                            r'''$.chat''',
+                                                                          ).toString(),
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+
+                                                                safeSetState(
+                                                                    () {});
+                                                              },
+                                                              child: Text(
+                                                                FFLocalizations.of(context)
+                                                                            .languageCode ==
+                                                                        'en'
+                                                                    ? getJsonField(
+                                                                        childNotificacionesItem,
+                                                                        r'''$.titulo_en''',
+                                                                      ).toString()
+                                                                    : getJsonField(
+                                                                        childNotificacionesItem,
+                                                                        r'''$.titulo''',
+                                                                      ).toString(),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
                                                               ),
-                                                            );
-                                                          },
-                                                        ).then((value) =>
-                                                            safeSetState(
-                                                                () {}));
-                                                      },
-                                                      child: Text(
-                                                        getJsonField(
-                                                          childNotificacionesItem,
-                                                          r'''$.titulo''',
-                                                        ).toString(),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                    Flexible(
-                                                      child: Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                1.0, 0.0),
-                                                        child: Container(
-                                                          width: 100.0,
-                                                          height: 28.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                          ),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .end,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
+                                                    Expanded(
+                                                      flex: 20,
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Align(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    1.0, 0.0),
+                                                            child: Container(
+                                                              width: 100.0,
+                                                              height: 30.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                              ),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .end,
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             15.0,
                                                                             0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    await showModalBottomSheet(
-                                                                      isScrollControlled:
-                                                                          true,
-                                                                      backgroundColor:
+                                                                    child:
+                                                                        InkWell(
+                                                                      splashColor:
                                                                           Colors
                                                                               .transparent,
-                                                                      enableDrag:
-                                                                          false,
-                                                                      context:
-                                                                          context,
-                                                                      builder:
-                                                                          (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
-                                                                          child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
-                                                                            child:
-                                                                                ModalNotificacionWidget(
-                                                                              notificacionId: getJsonField(
-                                                                                childNotificacionesItem,
-                                                                                r'''$.id''',
+                                                                      focusColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      hoverColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      highlightColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      onTap:
+                                                                          () async {
+                                                                        await showModalBottomSheet(
+                                                                          isScrollControlled:
+                                                                              true,
+                                                                          backgroundColor:
+                                                                              Colors.transparent,
+                                                                          enableDrag:
+                                                                              false,
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (context) {
+                                                                            return GestureDetector(
+                                                                              onTap: () => FocusScope.of(context).unfocus(),
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalNotificacionWidget(
+                                                                                  notificacionId: getJsonField(
+                                                                                    childNotificacionesItem,
+                                                                                    r'''$.id''',
+                                                                                  ),
+                                                                                  titulo: FFLocalizations.of(context).languageCode == 'en'
+                                                                                      ? getJsonField(
+                                                                                          childNotificacionesItem,
+                                                                                          r'''$.titulo_en''',
+                                                                                        ).toString()
+                                                                                      : getJsonField(
+                                                                                          childNotificacionesItem,
+                                                                                          r'''$.titulo''',
+                                                                                        ).toString(),
+                                                                                  mensaje: FFLocalizations.of(context).languageCode == 'en'
+                                                                                      ? getJsonField(
+                                                                                          childNotificacionesItem,
+                                                                                          r'''$.mensaje_en''',
+                                                                                        ).toString()
+                                                                                      : getJsonField(
+                                                                                          childNotificacionesItem,
+                                                                                          r'''$.mensaje''',
+                                                                                        ).toString(),
+                                                                                  seccion: getJsonField(
+                                                                                    childNotificacionesItem,
+                                                                                    r'''$.seccion''',
+                                                                                  ).toString(),
+                                                                                  chat: getJsonField(
+                                                                                    childNotificacionesItem,
+                                                                                    r'''$.chat''',
+                                                                                  ).toString(),
+                                                                                ),
                                                                               ),
-                                                                              titulo: getJsonField(
-                                                                                childNotificacionesItem,
-                                                                                r'''$.titulo''',
-                                                                              ).toString(),
-                                                                              mensaje: getJsonField(
-                                                                                childNotificacionesItem,
-                                                                                r'''$.mensaje''',
-                                                                              ).toString(),
-                                                                              seccion: getJsonField(
-                                                                                childNotificacionesItem,
-                                                                                r'''$.seccion''',
-                                                                              ).toString(),
-                                                                              chat: getJsonField(
-                                                                                childNotificacionesItem,
-                                                                                r'''$.chat''',
-                                                                              ).toString(),
-                                                                            ),
-                                                                          ),
-                                                                        );
+                                                                            );
+                                                                          },
+                                                                        ).then((value) =>
+                                                                            safeSetState(() {}));
                                                                       },
-                                                                    ).then((value) =>
-                                                                        safeSetState(
-                                                                            () {}));
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .visibility_outlined,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 24.0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              InkWell(
-                                                                splashColor: Colors
-                                                                    .transparent,
-                                                                focusColor: Colors
-                                                                    .transparent,
-                                                                hoverColor: Colors
-                                                                    .transparent,
-                                                                highlightColor:
-                                                                    Colors
-                                                                        .transparent,
-                                                                onTap:
-                                                                    () async {
-                                                                  _model.apiResult2sz =
-                                                                      await PerfilEliminaNotificacionCall
-                                                                          .call(
-                                                                    authToken:
-                                                                        FFAppState()
-                                                                            .authToken,
-                                                                    notificacionId:
-                                                                        getJsonField(
-                                                                      childNotificacionesItem,
-                                                                      r'''$.id''',
+                                                                      child:
+                                                                          Icon(
+                                                                        Icons
+                                                                            .visibility_outlined,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        size:
+                                                                            24.0,
+                                                                      ),
                                                                     ),
-                                                                  );
+                                                                  ),
+                                                                  InkWell(
+                                                                    splashColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    focusColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    hoverColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    highlightColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    onTap:
+                                                                        () async {
+                                                                      _model.apiResult2sz =
+                                                                          await PerfilEliminaNotificacionCall
+                                                                              .call(
+                                                                        authToken:
+                                                                            FFAppState().authToken,
+                                                                        notificacionId:
+                                                                            getJsonField(
+                                                                          childNotificacionesItem,
+                                                                          r'''$.id''',
+                                                                        ),
+                                                                      );
 
-                                                                  safeSetState(() =>
-                                                                      _model.apiRequestCompleter =
-                                                                          null);
-                                                                  await _model
-                                                                      .waitForApiRequestCompleted();
+                                                                      safeSetState(() =>
+                                                                          _model.apiRequestCompleter =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForApiRequestCompleted();
 
-                                                                  safeSetState(
-                                                                      () {});
-                                                                },
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .delete_forever_rounded,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
-                                                                  size: 24.0,
-                                                                ),
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .delete_forever_rounded,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                      size:
+                                                                          24.0,
+                                                                    ),
+                                                                  ),
+                                                                ],
                                                               ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ],
