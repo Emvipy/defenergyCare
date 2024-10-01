@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import '/usuario/modal_cierre_sesion/modal_cierre_sesion_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'home_empresa_widget.dart' show HomeEmpresaWidget;
 import 'package:flutter/material.dart';
@@ -16,6 +17,8 @@ import 'package:provider/provider.dart';
 class HomeEmpresaModel extends FlutterFlowModel<HomeEmpresaWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (user check session)] action in Home_empresa widget.
+  ApiCallResponse? apiCheckToken2;
   // Stores action output result for [Backend Call - API (user individual)] action in Home_empresa widget.
   ApiCallResponse? apiCargaEmp;
   // Model for menu_usuario component.
