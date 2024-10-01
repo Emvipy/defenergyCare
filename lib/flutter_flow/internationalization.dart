@@ -15007,6 +15007,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // modal_cierre_sesion
+  {
+    '2y12ka2g': {
+      'es': '¡Seguridad a la orden del día!',
+      'en': '',
+    },
+    'xuh9zl1q': {
+      'es':
+          'Hace aproximadamente 7 días que accediste a Defenergy con tu contraseña, así que para cuidar la seguridad de tus datos, te vamos pedir que inicies sesión nuevamente.',
+      'en': '',
+    },
+    'gtz050of': {
+      'es': 'Entendido',
+      'en': '',
+    },
+  },
+  // modal_update
+  {
+    '04s037l5': {
+      'es': 'Es hora de actualizar Defenergy...',
+      'en': '',
+    },
+    '2d4nqs5w': {
+      'es':
+          'Hemos detectado que tienes una versión antigua de la aplicación y ya es hora de actualizar para que todo funcione correctamente.',
+      'en': '',
+    },
+    'gfsub4gz': {
+      'es': 'Entendido',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
     'kqz45rle': {

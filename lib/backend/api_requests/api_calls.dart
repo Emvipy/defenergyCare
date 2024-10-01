@@ -708,12 +708,16 @@ class LoginCall {
     String? email = '',
     String? password = '',
     String? firebase = '',
+    int? version,
+    String? so = '',
   }) async {
     final ffApiRequestBody = '''
 {
   "email": "${email}",
   "password": "${password}",
-  "firebase": "${firebase}"
+  "firebase": "${firebase}",
+  "version": ${version},
+  "so": "${so}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'login',
@@ -785,6 +789,14 @@ class LoginCall {
   static String? validado(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.user1.user_empresa_validado''',
+      ));
+  static int? verAcual(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.user1.ver_actual''',
+      ));
+  static int? verNueva(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.user1.ver_nueva''',
       ));
 }
 
@@ -12661,6 +12673,34 @@ class PerfilMarcaNotificacionCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class UserCheckSessionCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'user check session',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/check_session',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? code(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.code''',
+      ));
 }
 
 class ApiPagingParams {

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import '/usuario/modal_cierre_sesion/modal_cierre_sesion_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -33,16 +34,44 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiCargaEmp = await UserIndividualCall.call(
+      _model.apiCheckToken2 = await UserCheckSessionCall.call(
         authToken: FFAppState().authToken,
       );
 
-      if ((_model.apiCargaEmp?.succeeded ?? true)) {
-        FFAppState().userIndividual = getJsonField(
-          (_model.apiCargaEmp?.jsonBody ?? ''),
-          r'''$''',
+      if ((_model.apiCheckToken2?.succeeded ?? true)) {
+        _model.apiCargaEmp = await UserIndividualCall.call(
+          authToken: FFAppState().authToken,
         );
-        safeSetState(() {});
+
+        if ((_model.apiCargaEmp?.succeeded ?? true)) {
+          FFAppState().userIndividual = getJsonField(
+            (_model.apiCargaEmp?.jsonBody ?? ''),
+            r'''$''',
+          );
+          safeSetState(() {});
+          return;
+        } else {
+          return;
+        }
+      } else {
+        await showModalBottomSheet(
+          isScrollControlled: true,
+          backgroundColor: Colors.transparent,
+          isDismissible: false,
+          enableDrag: false,
+          context: context,
+          builder: (context) {
+            return GestureDetector(
+              onTap: () => FocusScope.of(context).unfocus(),
+              child: Padding(
+                padding: MediaQuery.viewInsetsOf(context),
+                child: ModalCierreSesionWidget(),
+              ),
+            );
+          },
+        ).then((value) => safeSetState(() {}));
+
+        return;
       }
     });
   }

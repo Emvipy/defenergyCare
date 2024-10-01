@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
+import '/registro/modal_update/modal_update_widget.dart';
 import 'dart:async';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
@@ -482,6 +483,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       .text,
                                                   password: _model.passCopy,
                                                   firebase: currentUserUid,
+                                                  version: 1,
+                                                  so: isAndroid == true
+                                                      ? 'Android'
+                                                      : 'iOS',
                                                 );
 
                                                 _shouldSetState = true;
@@ -561,61 +566,35 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           ''),
                                                     )!;
                                                     safeSetState(() {});
-                                                    unawaited(
-                                                      () async {
-                                                        await UserLogActivityCall
-                                                            .call(
-                                                          authToken:
-                                                              FFAppState()
-                                                                  .authToken,
-                                                          seccion: 'Login',
-                                                        );
-                                                      }(),
-                                                    );
-                                                    if (LoginCall.perfilId(
+                                                    if (LoginCall.verAcual(
                                                           (_model.apiloginCopy
                                                                   ?.jsonBody ??
                                                               ''),
                                                         ) ==
-                                                        1) {
-                                                      context.pushNamedAuth(
-                                                        'Home',
-                                                        context.mounted,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          kTransitionInfoKey:
-                                                              TransitionInfo(
-                                                            hasTransition: true,
-                                                            transitionType:
-                                                                PageTransitionType
-                                                                    .fade,
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    0),
-                                                          ),
-                                                        },
+                                                        LoginCall.verNueva(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )) {
+                                                      unawaited(
+                                                        () async {
+                                                          await UserLogActivityCall
+                                                              .call(
+                                                            authToken:
+                                                                FFAppState()
+                                                                    .authToken,
+                                                            seccion: 'Login',
+                                                          );
+                                                        }(),
                                                       );
-
-                                                      safeSetState(() {
-                                                        _model
-                                                            .emailAddressTextController
-                                                            ?.clear();
-                                                        _model
-                                                            .passwordTextController
-                                                            ?.clear();
-                                                      });
-                                                      if (_shouldSetState)
-                                                        safeSetState(() {});
-                                                      return;
-                                                    } else {
-                                                      if (LoginCall.validado(
+                                                      if (LoginCall.perfilId(
                                                             (_model.apiloginCopy
                                                                     ?.jsonBody ??
                                                                 ''),
                                                           ) ==
-                                                          'si') {
+                                                          1) {
                                                         context.pushNamedAuth(
-                                                          'Home_empresa',
+                                                          'Home',
                                                           context.mounted,
                                                           extra: <String,
                                                               dynamic>{
@@ -645,26 +624,94 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           safeSetState(() {});
                                                         return;
                                                       } else {
-                                                        context.goNamedAuth(
-                                                          'empresa_pdte_validacionCopy',
-                                                          context.mounted,
-                                                          extra: <String,
-                                                              dynamic>{
-                                                            kTransitionInfoKey:
-                                                                TransitionInfo(
-                                                              hasTransition:
-                                                                  true,
-                                                              transitionType:
-                                                                  PageTransitionType
-                                                                      .fade,
-                                                            ),
-                                                          },
-                                                        );
+                                                        if (LoginCall.validado(
+                                                              (_model.apiloginCopy
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            ) ==
+                                                            'si') {
+                                                          context.pushNamedAuth(
+                                                            'Home_empresa',
+                                                            context.mounted,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                              ),
+                                                            },
+                                                          );
 
-                                                        if (_shouldSetState)
-                                                          safeSetState(() {});
-                                                        return;
+                                                          safeSetState(() {
+                                                            _model
+                                                                .emailAddressTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .passwordTextController
+                                                                ?.clear();
+                                                          });
+                                                          if (_shouldSetState)
+                                                            safeSetState(() {});
+                                                          return;
+                                                        } else {
+                                                          context.goNamedAuth(
+                                                            'empresa_pdte_validacionCopy',
+                                                            context.mounted,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                              ),
+                                                            },
+                                                          );
+
+                                                          if (_shouldSetState)
+                                                            safeSetState(() {});
+                                                          return;
+                                                        }
                                                       }
+                                                    } else {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        isDismissible: false,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () =>
+                                                                FocusScope.of(
+                                                                        context)
+                                                                    .unfocus(),
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  ModalUpdateWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+
+                                                      if (_shouldSetState)
+                                                        safeSetState(() {});
+                                                      return;
                                                     }
                                                   } else {
                                                     await showModalBottomSheet(

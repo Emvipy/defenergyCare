@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/resumen_diarios/modal_sin_diario/modal_sin_diario_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import '/usuario/modal_cierre_sesion/modal_cierre_sesion_widget.dart';
 import '/usuario/modal_info_into/modal_info_into_widget.dart';
 import '/usuario/modal_info_resumen/modal_info_resumen_widget.dart';
 import '/usuario/modal_info_salud/modal_info_salud_widget.dart';
@@ -23,6 +24,8 @@ import 'package:provider/provider.dart';
 class HomeModel extends FlutterFlowModel<HomeWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // Stores action output result for [Backend Call - API (user check session)] action in Home widget.
+  ApiCallResponse? apiCheck;
   // Stores action output result for [Backend Call - API (user individual)] action in Home widget.
   ApiCallResponse? apiCargaUser;
   // Stores action output result for [Backend Call - API (diario Crea)] action in Container widget.

@@ -964,16 +964,10 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           .dropDownPerfilValue,
                                                       fecha: _model.fecha
                                                           ?.toString(),
-                                                      dispositivo: () {
-                                                        if (isiOS != null) {
-                                                          return 'iOS';
-                                                        } else if (isAndroid !=
-                                                            null) {
-                                                          return 'Android';
-                                                        } else {
-                                                          return 'Web';
-                                                        }
-                                                      }(),
+                                                      dispositivo:
+                                                          isAndroid == true
+                                                              ? 'Android'
+                                                              : 'iOS',
                                                     );
 
                                                     if ((_model.apiSignUp
