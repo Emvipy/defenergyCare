@@ -10035,6 +10035,15 @@ class ComunidadComentariosCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static List<String>? insigniaUrl(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.insignia.url''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class ComunidadEliminaComentarioCall {

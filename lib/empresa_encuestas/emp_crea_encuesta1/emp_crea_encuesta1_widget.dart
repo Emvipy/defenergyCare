@@ -496,7 +496,9 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     Flexible(
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          't6uxf5h0' /* Covid Persistente (+Intoleranc... */,
+                                          't6uxf5h0' /* Covid Persistente 
+(+Intoleran... */
+                                          ,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
@@ -573,7 +575,9 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     Flexible(
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'iwzex9xx' /* Fibromialgia (+Intolerancias y... */,
+                                          'iwzex9xx' /* Fibromialgia
+(+Intolerancias y... */
+                                          ,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
@@ -650,7 +654,9 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     Flexible(
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          '4fvt51re' /* Encefalomielitis M. (+Intolera... */,
+                                          '4fvt51re' /* Encefalomielitis M. 
+(+Intoler... */
+                                          ,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
@@ -727,7 +733,7 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     Flexible(
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'liwjf8g6' /* Otras Autoinmunes (+Intoleranc... */,
+                                          'liwjf8g6' /* Enfermedades Autoinmunes (+Int... */,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
@@ -958,7 +964,9 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     Flexible(
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'b61fv1xj' /* Fibromialgia + EM.  (+Intolera... */,
+                                          'b61fv1xj' /* Fibromialgia + EM.  
+(+Intoler... */
+                                          ,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
@@ -1035,7 +1043,9 @@ class _EmpCreaEncuesta1WidgetState extends State<EmpCreaEncuesta1Widget> {
                                     Flexible(
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          'gg66mp06' /* Covid P. + Fibromialgia  (+Int... */,
+                                          'gg66mp06' /* Covid P. + Fibromialgia  
+(+In... */
+                                          ,
                                         ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)

@@ -664,7 +664,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                               safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
-                              '1v5seaqm' /* Crear Nueva Publicación */,
+                              '1v5seaqm' /* Crear Nueva Noticia */,
                             ),
                             options: FFButtonOptions(
                               width: 300.0,

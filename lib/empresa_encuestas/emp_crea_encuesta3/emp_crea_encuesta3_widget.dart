@@ -979,7 +979,7 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                 _model.pregEsTextController.text != '') &&
                             (_model.pregEnTextController.text != null &&
                                 _model.pregEnTextController.text != '') &&
-                            (FFAppState().contadorOpcionesEncuestas >= 1))
+                            (FFAppState().contadorOpcionesEncuestas != 0))
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 15.0, 0.0, 0.0),
@@ -1001,6 +1001,8 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                       tipoRespuesta: _model.tipo,
                                     );
 
+                                    await Future.delayed(
+                                        const Duration(milliseconds: 1000));
                                     if ((_model.apiResulta09?.succeeded ??
                                         true)) {
                                       ScaffoldMessenger.of(context)
@@ -1022,6 +1024,8 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                         ),
                                       );
                                       FFAppState().nuevaPreguntaId = 0;
+                                      FFAppState().contadorOpcionesEncuestas =
+                                          0;
                                       safeSetState(() {});
 
                                       context.pushNamed(
@@ -1090,6 +1094,8 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                       tipoRespuesta: _model.tipo,
                                     );
 
+                                    await Future.delayed(
+                                        const Duration(milliseconds: 1000));
                                     if ((_model.apiResulta092?.succeeded ??
                                         true)) {
                                       ScaffoldMessenger.of(context)

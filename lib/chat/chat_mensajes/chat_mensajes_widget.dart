@@ -48,11 +48,15 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
         duration: Duration(milliseconds: 100),
         curve: Curves.ease,
       );
-      _model.instantTimer = InstantTimer.periodic(
+      _model.instantTimerChat = InstantTimer.periodic(
         duration: Duration(milliseconds: 10000),
         callback: (timer) async {
-          safeSetState(() => _model.apiRequestCompleter = null);
-          await _model.waitForApiRequestCompleted();
+          if (FFAppState().activarCargaChat == 'si') {
+            safeSetState(() => _model.apiRequestCompleter = null);
+            await _model.waitForApiRequestCompleted();
+          } else {
+            _model.instantTimerChat?.cancel();
+          }
         },
         startImmediately: true,
       );
@@ -101,6 +105,9 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
                   ),
                 },
               );
+
+              FFAppState().activarCargaChat = 'no';
+              safeSetState(() {});
             },
           ),
           title: Text(

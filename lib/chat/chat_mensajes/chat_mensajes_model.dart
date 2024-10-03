@@ -18,7 +18,7 @@ import 'package:provider/provider.dart';
 class ChatMensajesModel extends FlutterFlowModel<ChatMensajesWidget> {
   ///  State fields for stateful widgets in this page.
 
-  InstantTimer? instantTimer;
+  InstantTimer? instantTimerChat;
   Completer<ApiCallResponse>? apiRequestCompleter;
   // State field(s) for Column widget.
   ScrollController? columnController;
@@ -39,7 +39,7 @@ class ChatMensajesModel extends FlutterFlowModel<ChatMensajesWidget> {
 
   @override
   void dispose() {
-    instantTimer?.cancel();
+    instantTimerChat?.cancel();
     columnController?.dispose();
     listViewController?.dispose();
     textFieldFocusNode?.dispose();

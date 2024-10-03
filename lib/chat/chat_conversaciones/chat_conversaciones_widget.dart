@@ -757,6 +757,12 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                     },
                                                                   );
 
+                                                                  FFAppState()
+                                                                          .activarCargaChat =
+                                                                      'si';
+                                                                  safeSetState(
+                                                                      () {});
+
                                                                   safeSetState(
                                                                       () {});
                                                                 },
@@ -874,6 +880,12 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                     ),
                                                                   },
                                                                 );
+
+                                                                FFAppState()
+                                                                        .activarCargaChat =
+                                                                    'si';
+                                                                safeSetState(
+                                                                    () {});
 
                                                                 safeSetState(
                                                                     () {});

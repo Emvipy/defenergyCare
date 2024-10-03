@@ -4,10 +4,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,6 +35,34 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => EmpCreaEncuesta2Model());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.instantTimer = InstantTimer.periodic(
+        duration: Duration(milliseconds: 5000),
+        callback: (timer) async {
+          if (FFAppState().nuevaEncuestaId != 0) {
+            _model.apiCargaPreguntas =
+                await EmpresaListadoPreguntasEncuestaCall.call(
+              encuestaId: FFAppState().nuevaEncuestaId,
+              authToken: FFAppState().authToken,
+            );
+
+            FFAppState().listadoPreguntasEncuestas = getJsonField(
+              (_model.apiCargaPreguntas?.jsonBody ?? ''),
+              r'''$''',
+              true,
+            )!
+                .toList()
+                .cast<dynamic>();
+            safeSetState(() {});
+          } else {
+            _model.instantTimer?.cancel();
+          }
+        },
+        startImmediately: true,
+      );
+    });
 
     if (!isWeb) {
       _keyboardVisibilitySubscription =
@@ -156,143 +186,76 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              FutureBuilder<ApiCallResponse>(
-                                future:
-                                    EmpresaListadoPreguntasEncuestaCall.call(
-                                  encuestaId: FFAppState().nuevaEncuestaId,
-                                  authToken: FFAppState().authToken,
-                                ),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        child: SpinKitCircle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 50.0,
-                                        ),
-                                      ),
+                              Builder(
+                                builder: (context) {
+                                  final childPreguntas = FFAppState()
+                                      .listadoPreguntasEncuestas
+                                      .map((e) => getJsonField(
+                                            e,
+                                            r'''$''',
+                                          ))
+                                      .toList();
+                                  if (childPreguntas.isEmpty) {
+                                    return Image.asset(
+                                      'assets/images/empty.png',
                                     );
                                   }
-                                  final listViewEmpresaListadoPreguntasEncuestaResponse =
-                                      snapshot.data!;
 
-                                  return Builder(
-                                    builder: (context) {
-                                      final childPreguntas = getJsonField(
-                                        listViewEmpresaListadoPreguntasEncuestaResponse
-                                            .jsonBody,
-                                        r'''$''',
-                                      ).toList();
-                                      if (childPreguntas.isEmpty) {
-                                        return Image.asset(
-                                          'assets/images/empty.png',
-                                        );
-                                      }
-
-                                      return ListView.separated(
-                                        padding: EdgeInsets.fromLTRB(
-                                          0,
-                                          0,
-                                          0,
-                                          10.0,
-                                        ),
-                                        shrinkWrap: true,
-                                        scrollDirection: Axis.vertical,
-                                        itemCount: childPreguntas.length,
-                                        separatorBuilder: (_, __) =>
-                                            SizedBox(height: 15.0),
-                                        itemBuilder:
-                                            (context, childPreguntasIndex) {
-                                          final childPreguntasItem =
-                                              childPreguntas[
-                                                  childPreguntasIndex];
-                                          return Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Container(
-                                              width: 350.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(10.0),
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Container(
-                                                          width: 35.0,
-                                                          height: 35.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
+                                  return ListView.separated(
+                                    padding: EdgeInsets.fromLTRB(
+                                      0,
+                                      0,
+                                      0,
+                                      10.0,
+                                    ),
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount: childPreguntas.length,
+                                    separatorBuilder: (_, __) =>
+                                        SizedBox(height: 15.0),
+                                    itemBuilder:
+                                        (context, childPreguntasIndex) {
+                                      final childPreguntasItem =
+                                          childPreguntas[childPreguntasIndex];
+                                      return Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Container(
+                                          width: 350.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.all(5.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Container(
+                                                      width: 35.0,
+                                                      height: 35.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .primary,
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Text(
-                                                              getJsonField(
-                                                                childPreguntasItem,
-                                                                r'''$.num_pregunta''',
-                                                              ).toString(),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .info,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Text(
-                                                          FFLocalizations.of(
-                                                                          context)
-                                                                      .languageCode ==
-                                                                  'en'
-                                                              ? getJsonField(
-                                                                  childPreguntasItem,
-                                                                  r'''$.pregunta_en''',
-                                                                ).toString()
-                                                              : getJsonField(
-                                                                  childPreguntasItem,
-                                                                  r'''$.pregunta''',
-                                                                ).toString(),
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Text(
+                                                          getJsonField(
+                                                            childPreguntasItem,
+                                                            r'''$.num_pregunta''',
+                                                          ).toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -301,72 +264,108 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                                                     'Poppins',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primary,
+                                                                    .info,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w500,
+                                                                        .w600,
                                                               ),
                                                         ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.all(5.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        RichText(
-                                                          textScaler:
-                                                              MediaQuery.of(
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(5.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Text(
+                                                      FFLocalizations.of(
                                                                       context)
-                                                                  .textScaler,
-                                                          text: TextSpan(
-                                                            children: [
-                                                              TextSpan(
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'jjszup9b' /* Tipo de respuesta:  */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                              TextSpan(
-                                                                text:
-                                                                    getJsonField(
-                                                                  childPreguntasItem,
-                                                                  r'''$.tipo_respuesta_txt''',
-                                                                ).toString(),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                    ),
-                                                              )
-                                                            ],
+                                                                  .languageCode ==
+                                                              'en'
+                                                          ? getJsonField(
+                                                              childPreguntasItem,
+                                                              r'''$.pregunta_en''',
+                                                            ).toString()
+                                                          : getJsonField(
+                                                              childPreguntasItem,
+                                                              r'''$.pregunta''',
+                                                            ).toString(),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(5.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    RichText(
+                                                      textScaler:
+                                                          MediaQuery.of(context)
+                                                              .textScaler,
+                                                      text: TextSpan(
+                                                        children: [
+                                                          TextSpan(
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'jjszup9b' /* Tipo de respuesta:  */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                          TextSpan(
+                                                            text: getJsonField(
+                                                              childPreguntasItem,
+                                                              r'''$.tipo_respuesta_txt''',
+                                                            ).toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                          )
+                                                        ],
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
@@ -377,85 +376,79 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                                                       FontWeight
                                                                           .w500,
                                                                 ),
-                                                          ),
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  ),
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Flexible(
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  1.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0,
-                                                                        5.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                FFAppState()
-                                                                        .nuevaPreguntaId =
-                                                                    getJsonField(
-                                                                  childPreguntasItem,
-                                                                  r'''$.id''',
-                                                                );
-                                                                safeSetState(
-                                                                    () {});
+                                                  ],
+                                                ),
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    10.0,
+                                                                    5.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            FFAppState()
+                                                                    .nuevaPreguntaId =
+                                                                getJsonField(
+                                                              childPreguntasItem,
+                                                              r'''$.id''',
+                                                            );
+                                                            safeSetState(() {});
 
-                                                                context
-                                                                    .pushNamed(
-                                                                  'emp_crea_edita_pregunta',
-                                                                  extra: <String,
-                                                                      dynamic>{
-                                                                    kTransitionInfoKey:
-                                                                        TransitionInfo(
-                                                                      hasTransition:
-                                                                          true,
-                                                                      transitionType:
-                                                                          PageTransitionType
-                                                                              .fade,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              0),
-                                                                    ),
-                                                                  },
-                                                                );
+                                                            context.pushNamed(
+                                                              'emp_crea_edita_pregunta',
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                                ),
                                                               },
-                                                              child: Icon(
-                                                                Icons.edit_note,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondary,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
+                                                            );
+                                                          },
+                                                          child: Icon(
+                                                            Icons.edit_note,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondary,
+                                                            size: 24.0,
                                                           ),
                                                         ),
                                                       ),
-                                                    ],
+                                                    ),
                                                   ),
                                                 ],
                                               ),
-                                            ),
-                                          );
-                                        },
+                                            ],
+                                          ),
+                                        ),
                                       );
                                     },
                                   );
@@ -490,6 +483,8 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                       );
 
                                       _shouldSetState = true;
+                                      await Future.delayed(
+                                          const Duration(milliseconds: 1000));
                                       if ((_model.apiCreaPreguntaEncuesta
                                               ?.succeeded ??
                                           true)) {
@@ -499,6 +494,8 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                                   ?.jsonBody ??
                                               ''),
                                         )!;
+                                        FFAppState().contadorOpcionesEncuestas =
+                                            0;
                                         safeSetState(() {});
 
                                         context.pushNamed(
