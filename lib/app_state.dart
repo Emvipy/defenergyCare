@@ -661,6 +661,42 @@ class FFAppState extends ChangeNotifier {
   void deleteAvisoIdiomas() {
     secureStorage.delete(key: 'ff_avisoIdiomas');
   }
+
+  List<dynamic> _listadoPreguntasEncuestas = [];
+  List<dynamic> get listadoPreguntasEncuestas => _listadoPreguntasEncuestas;
+  set listadoPreguntasEncuestas(List<dynamic> value) {
+    _listadoPreguntasEncuestas = value;
+  }
+
+  void addToListadoPreguntasEncuestas(dynamic value) {
+    listadoPreguntasEncuestas.add(value);
+  }
+
+  void removeFromListadoPreguntasEncuestas(dynamic value) {
+    listadoPreguntasEncuestas.remove(value);
+  }
+
+  void removeAtIndexFromListadoPreguntasEncuestas(int index) {
+    listadoPreguntasEncuestas.removeAt(index);
+  }
+
+  void updateListadoPreguntasEncuestasAtIndex(
+    int index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    listadoPreguntasEncuestas[index] =
+        updateFn(_listadoPreguntasEncuestas[index]);
+  }
+
+  void insertAtIndexInListadoPreguntasEncuestas(int index, dynamic value) {
+    listadoPreguntasEncuestas.insert(index, value);
+  }
+
+  String _activarCargaChat = 'no';
+  String get activarCargaChat => _activarCargaChat;
+  set activarCargaChat(String value) {
+    _activarCargaChat = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

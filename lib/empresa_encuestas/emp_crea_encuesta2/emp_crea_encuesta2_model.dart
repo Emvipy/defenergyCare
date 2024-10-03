@@ -4,11 +4,13 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'emp_crea_encuesta2_widget.dart' show EmpCreaEncuesta2Widget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,6 +63,9 @@ class EmpCreaEncuesta2Model extends FlutterFlowModel<EmpCreaEncuesta2Widget> {
 
   ///  State fields for stateful widgets in this page.
 
+  InstantTimer? instantTimer;
+  // Stores action output result for [Backend Call - API (empresa listado preguntas encuesta)] action in emp_crea_encuesta2 widget.
+  ApiCallResponse? apiCargaPreguntas;
   // Stores action output result for [Backend Call - API (empresa crea pregunta)] action in Button widget.
   ApiCallResponse? apiCreaPreguntaEncuesta;
   // Stores action output result for [Backend Call - API (empresa finaliza encuesta)] action in Button widget.
@@ -75,6 +80,7 @@ class EmpCreaEncuesta2Model extends FlutterFlowModel<EmpCreaEncuesta2Widget> {
 
   @override
   void dispose() {
+    instantTimer?.cancel();
     menuUsuarioModel.dispose();
   }
 }

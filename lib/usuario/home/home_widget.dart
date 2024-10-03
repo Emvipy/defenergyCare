@@ -596,6 +596,8 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                                         FFAppState().editandoDiario =
                                                                             'no';
+                                                                        FFAppState().activarCargaChat =
+                                                                            'no';
 
                                                                         context
                                                                             .pushNamed(
@@ -713,6 +715,9 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                                       FFAppState()
                                                                               .editandoDiario =
+                                                                          'no';
+                                                                      FFAppState()
+                                                                              .activarCargaChat =
                                                                           'no';
 
                                                                       context
@@ -1010,6 +1015,8 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                                           FFAppState().editandoDiario =
                                                                               'no';
+                                                                          FFAppState().activarCargaChat =
+                                                                              'no';
 
                                                                           context
                                                                               .pushNamed(
@@ -1115,6 +1122,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             .tmpCantidadSuplementos = 0;
 
                                                                         FFAppState().editandoDiario =
+                                                                            'no';
+                                                                        FFAppState().activarCargaChat =
                                                                             'no';
 
                                                                         context
@@ -1481,6 +1490,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     FFAppState()
                                                                             .editandoDiario =
                                                                         'no';
+                                                                    FFAppState()
+                                                                            .activarCargaChat =
+                                                                        'no';
 
                                                                     context
                                                                         .pushNamed(
@@ -1607,6 +1619,9 @@ class _HomeWidgetState extends State<HomeWidget> {
 
                                                                   FFAppState()
                                                                           .editandoDiario =
+                                                                      'no';
+                                                                  FFAppState()
+                                                                          .activarCargaChat =
                                                                       'no';
 
                                                                   context

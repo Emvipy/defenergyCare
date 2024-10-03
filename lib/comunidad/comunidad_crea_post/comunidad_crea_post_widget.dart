@@ -280,8 +280,6 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                           final selectedMedia =
                                               await selectMediaWithSourceBottomSheet(
                                             context: context,
-                                            maxWidth: 900.00,
-                                            maxHeight: 200.00,
                                             allowPhoto: true,
                                           );
                                           if (selectedMedia != null &&
@@ -401,7 +399,6 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         final selectedMedia =
                                             await selectMediaWithSourceBottomSheet(
                                           context: context,
-                                          imageQuality: 100,
                                           allowPhoto: true,
                                         );
                                         if (selectedMedia != null &&

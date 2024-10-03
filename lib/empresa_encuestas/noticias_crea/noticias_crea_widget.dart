@@ -777,7 +777,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'ao4pg7oz' /* COVID Fibromialgia Otras */,
+                                  'ao4pg7oz' /* COVID Fibromialgia Enfermedade... */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium

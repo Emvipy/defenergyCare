@@ -1,5 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
+import '/empresa/modal_info_comunidad_e/modal_info_comunidad_e_widget.dart';
+import '/empresa/modal_info_encuesta/modal_info_encuesta_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -445,19 +447,24 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                     width: 45.0,
                                     height: 45.0,
                                     decoration: BoxDecoration(
-                                      color: functions
-                                                  .parseJsonValueToInteger(
-                                                      getJsonField(
-                                                    FFAppState().userIndividual,
-                                                    r'''$._notificaciones_cuenta''',
-                                                  ))
-                                                  .toString() ==
-                                              '0'
-                                          ? FlutterFlowTheme.of(context)
-                                              .secondaryBackground
-                                          : FlutterFlowTheme.of(context)
-                                              .secondary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
                                       shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: functions
+                                                    .parseJsonValueToInteger(
+                                                        getJsonField(
+                                                      FFAppState()
+                                                          .userIndividual,
+                                                      r'''$._notificaciones_cuenta''',
+                                                    ))
+                                                    .toString() ==
+                                                '0'
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondaryBackground
+                                            : FlutterFlowTheme.of(context)
+                                                .secondary,
+                                      ),
                                     ),
                                     child: Align(
                                       alignment: AlignmentDirectional(0.0, 0.0),
@@ -564,45 +571,22 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         if (FFAppState()
                                                                 .creadoOk ==
                                                             'si') {
-                                                          if (FFAppState()
-                                                                  .perfilId ==
-                                                              1) {
-                                                            context.pushNamed(
-                                                              'encuestas',
-                                                              extra: <String,
-                                                                  dynamic>{
-                                                                kTransitionInfoKey:
-                                                                    TransitionInfo(
-                                                                  hasTransition:
-                                                                      true,
-                                                                  transitionType:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                ),
-                                                              },
-                                                            );
-                                                          } else {
-                                                            if (FFAppState()
-                                                                    .perfilId ==
-                                                                2) {
-                                                              context.pushNamed(
-                                                                'emp_encuestas',
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .fade,
-                                                                  ),
-                                                                },
-                                                              );
-                                                            } else {
-                                                              return;
-                                                            }
-                                                          }
+                                                          context.pushNamed(
+                                                            'emp_encuestas',
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                              ),
+                                                            },
+                                                          );
+
+                                                          return;
                                                         } else {
                                                           await showModalBottomSheet(
                                                             isScrollControlled:
@@ -630,6 +614,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           ).then((value) =>
                                                               safeSetState(
                                                                   () {}));
+
+                                                          return;
                                                         }
                                                       } else {
                                                         context.pushNamed(
@@ -649,6 +635,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             ),
                                                           },
                                                         );
+
+                                                        return;
                                                       }
                                                     },
                                                     child: Icon(
@@ -689,45 +677,22 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         if (FFAppState()
                                                                 .creadoOk ==
                                                             'si') {
-                                                          if (FFAppState()
-                                                                  .perfilId ==
-                                                              1) {
-                                                            context.pushNamed(
-                                                              'encuestas',
-                                                              extra: <String,
-                                                                  dynamic>{
-                                                                kTransitionInfoKey:
-                                                                    TransitionInfo(
-                                                                  hasTransition:
-                                                                      true,
-                                                                  transitionType:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                ),
-                                                              },
-                                                            );
-                                                          } else {
-                                                            if (FFAppState()
-                                                                    .perfilId ==
-                                                                2) {
-                                                              context.pushNamed(
-                                                                'emp_encuestas',
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .fade,
-                                                                  ),
-                                                                },
-                                                              );
-                                                            } else {
-                                                              return;
-                                                            }
-                                                          }
+                                                          context.pushNamed(
+                                                            'emp_encuestas',
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                              ),
+                                                            },
+                                                          );
+
+                                                          return;
                                                         } else {
                                                           await showModalBottomSheet(
                                                             isScrollControlled:
@@ -755,6 +720,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           ).then((value) =>
                                                               safeSetState(
                                                                   () {}));
+
+                                                          return;
                                                         }
                                                       } else {
                                                         context.pushNamed(
@@ -774,6 +741,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             ),
                                                           },
                                                         );
+
+                                                        return;
                                                       }
                                                     },
                                                     child: Text(
@@ -813,7 +782,34 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           Colors.transparent,
                                                       highlightColor:
                                                           Colors.transparent,
-                                                      onTap: () async {},
+                                                      onTap: () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () =>
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus(),
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    ModalInfoEncuestaWidget(),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
                                                       child: Icon(
                                                         Icons.more_vert,
                                                         color:
@@ -865,45 +861,22 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         if (FFAppState()
                                                                 .creadoOk ==
                                                             'si') {
-                                                          if (FFAppState()
-                                                                  .perfilId ==
-                                                              1) {
-                                                            context.pushNamed(
-                                                              'encuestas',
-                                                              extra: <String,
-                                                                  dynamic>{
-                                                                kTransitionInfoKey:
-                                                                    TransitionInfo(
-                                                                  hasTransition:
-                                                                      true,
-                                                                  transitionType:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                ),
-                                                              },
-                                                            );
-                                                          } else {
-                                                            if (FFAppState()
-                                                                    .perfilId ==
-                                                                2) {
-                                                              context.pushNamed(
-                                                                'emp_encuestas',
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .fade,
-                                                                  ),
-                                                                },
-                                                              );
-                                                            } else {
-                                                              return;
-                                                            }
-                                                          }
+                                                          context.pushNamed(
+                                                            'emp_encuestas',
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                              ),
+                                                            },
+                                                          );
+
+                                                          return;
                                                         } else {
                                                           await showModalBottomSheet(
                                                             isScrollControlled:
@@ -931,6 +904,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           ).then((value) =>
                                                               safeSetState(
                                                                   () {}));
+
+                                                          return;
                                                         }
                                                       } else {
                                                         context.pushNamed(
@@ -950,6 +925,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             ),
                                                           },
                                                         );
+
+                                                        return;
                                                       }
                                                     },
                                                     child: Text(
@@ -958,14 +935,19 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           .getText(
                                                         'y16nx01w' /* Revisa y crea tus encuestas */,
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            letterSpacing: 0.0,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .negroPerm,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                     ),
                                                   ),
                                                 ),
@@ -999,46 +981,22 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           if (FFAppState()
                                                                   .creadoOk ==
                                                               'si') {
-                                                            if (FFAppState()
-                                                                    .perfilId ==
-                                                                1) {
-                                                              context.pushNamed(
-                                                                'encuestas',
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .fade,
-                                                                  ),
-                                                                },
-                                                              );
-                                                            } else {
-                                                              if (FFAppState()
-                                                                      .perfilId ==
-                                                                  2) {
-                                                                context
-                                                                    .pushNamed(
-                                                                  'emp_encuestas',
-                                                                  extra: <String,
-                                                                      dynamic>{
-                                                                    kTransitionInfoKey:
-                                                                        TransitionInfo(
-                                                                      hasTransition:
-                                                                          true,
-                                                                      transitionType:
-                                                                          PageTransitionType
-                                                                              .fade,
-                                                                    ),
-                                                                  },
-                                                                );
-                                                              } else {
-                                                                return;
-                                                              }
-                                                            }
+                                                            context.pushNamed(
+                                                              'emp_encuestas',
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                ),
+                                                              },
+                                                            );
+
+                                                            return;
                                                           } else {
                                                             await showModalBottomSheet(
                                                               isScrollControlled:
@@ -1068,6 +1026,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             ).then((value) =>
                                                                 safeSetState(
                                                                     () {}));
+
+                                                            return;
                                                           }
                                                         } else {
                                                           context.pushNamed(
@@ -1087,6 +1047,8 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               ),
                                                             },
                                                           );
+
+                                                          return;
                                                         }
                                                       },
                                                       child: Icon(
@@ -1376,7 +1338,34 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           Colors.transparent,
                                                       highlightColor:
                                                           Colors.transparent,
-                                                      onTap: () async {},
+                                                      onTap: () async {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return GestureDetector(
+                                                              onTap: () =>
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus(),
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    ModalInfoComunidadEWidget(),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+                                                      },
                                                       child: Icon(
                                                         Icons.more_vert,
                                                         color:
@@ -1495,6 +1484,9 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .negroPerm,
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -1626,53 +1618,50 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              if (FFAppState().email == 'enrique@emvipy.com') {
-                                if ((FFAppState().authToken != null &&
-                                        FFAppState().authToken != '') &&
-                                    (FFAppState().email != null &&
-                                        FFAppState().email != '')) {
-                                  if (FFAppState().creadoOk == 'si') {
-                                    context.pushNamed(
-                                      'noticias',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.fade,
-                                        ),
-                                      },
-                                    );
-                                  } else {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      enableDrag: false,
-                                      context: context,
-                                      builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(context).unfocus(),
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: ModalErrorCuentaWidget(),
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  }
-                                } else {
+                              if ((FFAppState().authToken != null &&
+                                      FFAppState().authToken != '') &&
+                                  (FFAppState().email != null &&
+                                      FFAppState().email != '')) {
+                                if (FFAppState().creadoOk == 'si') {
                                   context.pushNamed(
-                                    'login',
+                                    'noticias',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 0),
                                       ),
                                     },
                                   );
+                                } else {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return GestureDetector(
+                                        onTap: () =>
+                                            FocusScope.of(context).unfocus(),
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => safeSetState(() {}));
                                 }
+                              } else {
+                                context.pushNamed(
+                                  'login',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
                               }
                             },
                             child: Row(
@@ -1713,53 +1702,50 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              if (FFAppState().email == 'enrique@emvipy.com') {
-                                if ((FFAppState().authToken != null &&
-                                        FFAppState().authToken != '') &&
-                                    (FFAppState().email != null &&
-                                        FFAppState().email != '')) {
-                                  if (FFAppState().creadoOk == 'si') {
-                                    context.pushNamed(
-                                      'invitarAmigo',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.fade,
-                                        ),
-                                      },
-                                    );
-                                  } else {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      enableDrag: false,
-                                      context: context,
-                                      builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(context).unfocus(),
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: ModalErrorCuentaWidget(),
-                                          ),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  }
-                                } else {
+                              if ((FFAppState().authToken != null &&
+                                      FFAppState().authToken != '') &&
+                                  (FFAppState().email != null &&
+                                      FFAppState().email != '')) {
+                                if (FFAppState().creadoOk == 'si') {
                                   context.pushNamed(
-                                    'login',
+                                    'invitarAmigo',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 0),
                                       ),
                                     },
                                   );
+                                } else {
+                                  await showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    backgroundColor: Colors.transparent,
+                                    enableDrag: false,
+                                    context: context,
+                                    builder: (context) {
+                                      return GestureDetector(
+                                        onTap: () =>
+                                            FocusScope.of(context).unfocus(),
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => safeSetState(() {}));
                                 }
+                              } else {
+                                context.pushNamed(
+                                  'login',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
                               }
                             },
                             child: Row(

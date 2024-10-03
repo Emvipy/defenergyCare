@@ -101,210 +101,265 @@ class _ComunidadComentariosWidgetState
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                  child: FutureBuilder<ApiCallResponse>(
-                    future: (_model.apiRequestCompleter ??=
-                            Completer<ApiCallResponse>()
-                              ..complete(ComunidadComentariosCall.call(
-                                postId: widget!.postId,
-                              )))
-                        .future,
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: SpinKitCircle(
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 50.0,
-                            ),
-                          ),
-                        );
-                      }
-                      final listViewComunidadComentariosResponse =
-                          snapshot.data!;
-
-                      return Builder(
-                        builder: (context) {
-                          final childComentarios = getJsonField(
-                            listViewComunidadComentariosResponse.jsonBody,
-                            r'''$''',
-                          ).toList();
-                          if (childComentarios.isEmpty) {
-                            return Image.asset(
-                              'assets/images/empty.png',
+            Expanded(
+              flex: 100,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: FutureBuilder<ApiCallResponse>(
+                        future: (_model.apiRequestCompleter ??=
+                                Completer<ApiCallResponse>()
+                                  ..complete(ComunidadComentariosCall.call(
+                                    postId: widget!.postId,
+                                  )))
+                            .future,
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: SpinKitCircle(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 50.0,
+                                ),
+                              ),
                             );
                           }
+                          final listViewComunidadComentariosResponse =
+                              snapshot.data!;
 
-                          return RefreshIndicator(
-                            onRefresh: () async {
-                              safeSetState(
-                                  () => _model.apiRequestCompleter = null);
-                              await _model.waitForApiRequestCompleted();
-                            },
-                            child: ListView.separated(
-                              padding: EdgeInsets.fromLTRB(
-                                0,
-                                0,
-                                0,
-                                50.0,
-                              ),
-                              primary: false,
-                              shrinkWrap: true,
-                              scrollDirection: Axis.vertical,
-                              itemCount: childComentarios.length,
-                              separatorBuilder: (_, __) =>
-                                  SizedBox(height: 15.0),
-                              itemBuilder: (context, childComentariosIndex) {
-                                final childComentariosItem =
-                                    childComentarios[childComentariosIndex];
-                                return Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0x4163A4DC),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Row(
+                          return Builder(
+                            builder: (context) {
+                              final childComentarios = getJsonField(
+                                listViewComunidadComentariosResponse.jsonBody,
+                                r'''$''',
+                              ).toList();
+                              if (childComentarios.isEmpty) {
+                                return Image.asset(
+                                  'assets/images/empty.png',
+                                );
+                              }
+
+                              return RefreshIndicator(
+                                onRefresh: () async {
+                                  safeSetState(
+                                      () => _model.apiRequestCompleter = null);
+                                  await _model.waitForApiRequestCompleted();
+                                },
+                                child: ListView.separated(
+                                  padding: EdgeInsets.fromLTRB(
+                                    0,
+                                    0,
+                                    0,
+                                    5.0,
+                                  ),
+                                  primary: false,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: childComentarios.length,
+                                  separatorBuilder: (_, __) =>
+                                      SizedBox(height: 15.0),
+                                  itemBuilder:
+                                      (context, childComentariosIndex) {
+                                    final childComentariosItem =
+                                        childComentarios[childComentariosIndex];
+                                    return Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Container(
+                                        width: 350.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x4163A4DC),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Container(
-                                              width: 350.0,
-                                              decoration: BoxDecoration(
-                                                color: Color(0x7F63A4DC),
-                                                borderRadius: BorderRadius.only(
-                                                  bottomLeft:
-                                                      Radius.circular(0.0),
-                                                  bottomRight:
-                                                      Radius.circular(0.0),
-                                                  topLeft:
-                                                      Radius.circular(10.0),
-                                                  topRight:
-                                                      Radius.circular(10.0),
-                                                ),
-                                              ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        3.0, 3.0, 3.0, 3.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Align(
-                                                      alignment:
-                                                          AlignmentDirectional(
-                                                              -1.0, 0.0),
-                                                      child: Container(
-                                                        width: 38.0,
-                                                        height: 38.0,
-                                                        clipBehavior:
-                                                            Clip.antiAlias,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          shape:
-                                                              BoxShape.circle,
-                                                        ),
-                                                        child: Image.network(
-                                                          getJsonField(
-                                                            childComentariosItem,
-                                                            r'''$._user.avatar.url''',
-                                                          ).toString(),
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Container(
+                                                  width: 350.0,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0x7F63A4DC),
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                      bottomLeft:
+                                                          Radius.circular(0.0),
+                                                      bottomRight:
+                                                          Radius.circular(0.0),
+                                                      topLeft:
+                                                          Radius.circular(10.0),
+                                                      topRight:
+                                                          Radius.circular(10.0),
                                                     ),
-                                                    Flexible(
-                                                      child: Padding(
+                                                  ),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    5.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          '${getJsonField(
-                                                            childComentariosItem,
-                                                            r'''$._user.nombre''',
-                                                          ).toString()} ${getJsonField(
-                                                            childComentariosItem,
-                                                            r'''$._user.apellidos''',
-                                                          ).toString()}',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                                fontSize: 15.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                    3.0,
+                                                                    3.0,
+                                                                    3.0,
+                                                                    3.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.0,
+                                                                      0.0),
+                                                              child: Container(
+                                                                width: 38.0,
+                                                                height: 38.0,
+                                                                clipBehavior: Clip
+                                                                    .antiAlias,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  shape: BoxShape
+                                                                      .circle,
+                                                                ),
+                                                                child: Image
+                                                                    .network(
+                                                                  getJsonField(
+                                                                    childComentariosItem,
+                                                                    r'''$._user.avatar.url''',
+                                                                  ).toString(),
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
                                                               ),
+                                                            ),
+                                                            Flexible(
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  '${getJsonField(
+                                                                    childComentariosItem,
+                                                                    r'''$._user.nombre''',
+                                                                  ).toString()} ${getJsonField(
+                                                                    childComentariosItem,
+                                                                    r'''$._user.apellidos''',
+                                                                  ).toString()}',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                        fontSize:
+                                                                            15.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                      if (getJsonField(
+                                                            childComentariosItem,
+                                                            r'''$._user.insignia.url''',
+                                                          ) !=
+                                                          null)
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          7.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  getJsonField(
+                                                                    childComentariosItem,
+                                                                    r'''$._user.insignia.url''',
+                                                                  ).toString(),
+                                                                  width: 30.0,
+                                                                  height: 18.0,
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                    ],
+                                                  ),
                                                 ),
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 5.0, 5.0, 5.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Flexible(
+                                                    child: Text(
+                                                      getJsonField(
+                                                        childComentariosItem,
+                                                        r'''$.comentario''',
+                                                      ).toString(),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 5.0, 5.0, 5.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Flexible(
-                                                child: Text(
-                                                  getJsonField(
-                                                    childComentariosItem,
-                                                    r'''$.comentario''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 5.0, 5.0, 5.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                getJsonField(
-                                                  childComentariosItem,
-                                                  r'''$.fecha_txt''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 5.0, 5.0, 5.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    getJsonField(
+                                                      childComentariosItem,
+                                                      r'''$.fecha_txt''',
+                                                    ).toString(),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Poppins',
@@ -314,164 +369,172 @@ class _ComunidadComentariosWidgetState
                                                           fontSize: 10.0,
                                                           letterSpacing: 0.0,
                                                         ),
-                                              ),
-                                              if (FFAppState().xUserId !=
-                                                  functions
-                                                      .parseJsonValueToInteger(
-                                                          getJsonField(
-                                                    childComentariosItem,
-                                                    r'''$.user_id''',
-                                                  )))
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        await showModalBottomSheet(
-                                                          isScrollControlled:
-                                                              true,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          enableDrag: false,
-                                                          context: context,
-                                                          builder: (context) {
-                                                            return GestureDetector(
-                                                              onTap: () =>
-                                                                  FocusScope.of(
-                                                                          context)
-                                                                      .unfocus(),
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    ModalReportaPostWidget(
-                                                                  postId: widget!
-                                                                      .postId!,
-                                                                ),
-                                                              ),
-                                                            );
-                                                          },
-                                                        ).then((value) =>
-                                                            safeSetState(
-                                                                () {}));
-                                                      },
-                                                      child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'kmc0p86m' /* Reportar */,
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                            ),
-                                                      ),
-                                                    ),
                                                   ),
-                                                ),
-                                              if (FFAppState().xUserId ==
-                                                  functions
-                                                      .parseJsonValueToInteger(
-                                                          getJsonField(
-                                                    childComentariosItem,
-                                                    r'''$.user_id''',
-                                                  )))
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        _model.apiResult1nk =
-                                                            await ComunidadEliminaComentarioCall
-                                                                .call(
-                                                          comentariosPostId:
+                                                  if (FFAppState().xUserId !=
+                                                      functions
+                                                          .parseJsonValueToInteger(
                                                               getJsonField(
-                                                            childComentariosItem,
-                                                            r'''$.id''',
-                                                          ),
-                                                          authToken:
-                                                              FFAppState()
-                                                                  .authToken,
-                                                        );
-
-                                                        if ((_model.apiResult1nk
-                                                                ?.succeeded ??
-                                                            true)) {
-                                                          safeSetState(() =>
-                                                              _model.apiRequestCompleter =
-                                                                  null);
-                                                          await _model
-                                                              .waitForApiRequestCompleted();
-                                                        }
-
-                                                        safeSetState(() {});
-                                                      },
-                                                      child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          '0rd2n0oi' /* Eliminar */,
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 10.0,
-                                                              letterSpacing:
-                                                                  0.0,
+                                                        childComentariosItem,
+                                                        r'''$.user_id''',
+                                                      )))
+                                                    Flexible(
+                                                      child: Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, 0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            await showModalBottomSheet(
+                                                              isScrollControlled:
+                                                                  true,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              enableDrag: false,
+                                                              context: context,
+                                                              builder:
+                                                                  (context) {
+                                                                return GestureDetector(
+                                                                  onTap: () =>
+                                                                      FocusScope.of(
+                                                                              context)
+                                                                          .unfocus(),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        ModalReportaPostWidget(
+                                                                      postId: widget!
+                                                                          .postId!,
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ).then((value) =>
+                                                                safeSetState(
+                                                                    () {}));
+                                                          },
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'kmc0p86m' /* Reportar */,
                                                             ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                ),
-                                            ],
-                                          ),
+                                                  if (FFAppState().xUserId ==
+                                                      functions
+                                                          .parseJsonValueToInteger(
+                                                              getJsonField(
+                                                        childComentariosItem,
+                                                        r'''$.user_id''',
+                                                      )))
+                                                    Flexible(
+                                                      child: Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, 0.0),
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            _model.apiResult1nk =
+                                                                await ComunidadEliminaComentarioCall
+                                                                    .call(
+                                                              comentariosPostId:
+                                                                  getJsonField(
+                                                                childComentariosItem,
+                                                                r'''$.id''',
+                                                              ),
+                                                              authToken:
+                                                                  FFAppState()
+                                                                      .authToken,
+                                                            );
+
+                                                            if ((_model
+                                                                    .apiResult1nk
+                                                                    ?.succeeded ??
+                                                                true)) {
+                                                              safeSetState(() =>
+                                                                  _model.apiRequestCompleter =
+                                                                      null);
+                                                              await _model
+                                                                  .waitForApiRequestCompleted();
+                                                            }
+
+                                                            safeSetState(() {});
+                                                          },
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              '0rd2n0oi' /* Eliminar */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              );
+                            },
                           );
                         },
-                      );
-                    },
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-            Flexible(
+            Expanded(
+              flex: 20,
               child: Align(
                 alignment: AlignmentDirectional(0.0, 1.0),
                 child: Row(
@@ -610,6 +673,13 @@ class _ComunidadComentariosWidgetState
                                               .apiRequestCompleter = null);
                                           await _model
                                               .waitForApiRequestCompleted();
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
+                                          return;
+                                        } else {
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
+                                          return;
                                         }
                                       } else {
                                         if (_shouldSetState)

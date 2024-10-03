@@ -764,7 +764,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'y6t8v16g': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'denaqaju': {
       'es': 'No',
@@ -784,7 +784,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'w19ce6zz': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'rz2t6hum': {
       'es': 'No',
@@ -941,7 +941,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3q38fn4t': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'zqhhlyus': {
       'es': 'No',
@@ -1038,7 +1038,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8dh15ee4': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '4xrqsvkn': {
       'es': 'No',
@@ -1195,7 +1195,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'v37rm1hx': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'zdvn7txm': {
       'es': 'No',
@@ -1340,7 +1340,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cdj1gjoo': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '1a0sbr89': {
       'es': 'No',
@@ -1464,7 +1464,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4pvgn93t': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'ko2k45if': {
       'es': 'No',
@@ -1484,7 +1484,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'va3simti': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'grm67jnq': {
       'es': 'No',
@@ -1629,7 +1629,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q66yp0rz': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'gv9ayit9': {
       'es': 'No',
@@ -1774,7 +1774,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3pyk3tbf': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     't2gjnb93': {
       'es': 'No',
@@ -1886,7 +1886,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'py0c03eu': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'ooc3j0ak': {
       'es': 'No',
@@ -1906,7 +1906,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '80vwmqeu': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'hnd2j57b': {
       'es': 'No',
@@ -2051,7 +2051,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm0fw9ejy': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '55h5sv7r': {
       'es': 'No',
@@ -2163,7 +2163,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xwdyi2ac': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'x2ubaad6': {
       'es': 'No',
@@ -2183,7 +2183,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j6kha0n2': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '8m8ooh4y': {
       'es': 'No',
@@ -2328,7 +2328,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'st8pmkcc': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'ark3gzi4': {
       'es': 'No',
@@ -2716,7 +2716,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h9nglgw2': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'xnpzm3s9': {
       'es': 'Home',
@@ -2748,7 +2748,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qq5aoojz': {
       'es': 'Finalizar el último diario',
-      'en': 'End the last diary',
+      'en': 'Finish the last diary',
     },
     'gjihg8om': {
       'es': 'Diario de Síntomas',
@@ -2775,7 +2775,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't0jekzrv': {
       'es': 'Dolores',
-      'en': 'Dolores',
+      'en': 'Pain',
     },
     'gje8gbhb': {
       'es': 'Migraña',
@@ -2843,7 +2843,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wdsetc19': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'xde45m39': {
       'es': 'Home',
@@ -2918,7 +2918,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jtp7lqny': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'knt5yxct': {
       'es': 'Home',
@@ -2961,7 +2961,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ykuv4s8q': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     '2tamxn6b': {
       'es': 'Home',
@@ -3892,7 +3892,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'olr6mcz5': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     '0mfh89jd': {
       'es': 'Home',
@@ -3959,7 +3959,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nswpuh9p': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'lof6wf6h': {
       'es': 'Home',
@@ -3994,7 +3994,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dbkfs1rn': {
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
-      'en': '',
+      'en': 'Remember to use accents in names that use them.',
     },
     'jwfdco79': {
       'es': 'O usar el del último diario realizado:',
@@ -4014,123 +4014,123 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7xdpvr3o': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'e4gwd7fj': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'fzlikk1s': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     '9aahy66s': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '97nn4st5': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     '9coehomg': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     '5pymbygx': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '47afbshm': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'fdt33sxu': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     '8bntfzt0': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'gsg97477': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     't4cmkdhj': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     '1f6hzuh3': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '7zahf2gj': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     '4d8r3olj': {
       'es': 'Por favor indica los síntomas que han empeorado:',
-      'en': '',
+      'en': 'Please indicate the symptoms that have worsened:',
     },
     'zxjfr3ku': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     'ij4evcym': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'z5f95j8t': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     '6xcnfbxv': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     '0jk3yqig': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '3sxpi8q5': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     '951rhugu': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     'lebhnlxx': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '91p9ocsb': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'deae9450': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     'etqp4xba': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'j30go8fb': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'dbcicu97': {
       'es': 'Option 1',
-      'en': '',
+      'en': 'Option 1',
     },
     'vu9qh4fp': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'r3xdf6je': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'j7gui6qg': {
       'es': 'Notas',
@@ -4150,7 +4150,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0qazp26p': {
       'es': 'Finalizar más tarde',
-      'en': 'End later',
+      'en': 'Finish later',
     },
     'i89h1ua5': {
       'es': 'Home',
@@ -4301,7 +4301,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kcxs535m': {
       'es': 'Finalizar más tarde',
-      'en': 'End later',
+      'en': 'Finish later',
     },
     '10jp1iaq': {
       'es': 'Home',
@@ -4464,7 +4464,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xlgv8edm': {
       'es': 'Finalizar más tarde',
-      'en': 'End later',
+      'en': 'Finish later',
     },
     '53fl8k3p': {
       'es': 'Home',
@@ -4521,7 +4521,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rhf7qree': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'yywexbl1': {
       'es': 'No',
@@ -4627,7 +4627,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'x9d596we': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'w3rfxree': {
       'es': 'No',
@@ -5464,7 +5464,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vxya7ckq': {
       'es': 'De 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'From 3 to 5 years',
     },
     '0okt0h1v': {
       'es': 'Más de 5 años',
@@ -5551,7 +5551,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'byornku8': {
       'es': 'De 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'From 3 to 5 years',
     },
     'wwgysml0': {
       'es': 'Más de 5 años',
@@ -5592,7 +5592,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4pffflas': {
       'es': 'De 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'From 3 to 5 years',
     },
     'kk6k9ncl': {
       'es': 'Más de 5 años',
@@ -5633,7 +5633,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'b9dylf4r': {
       'es': 'De 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'From 3 to 5 years',
     },
     '1qzj9g0q': {
       'es': 'Más de 5 años',
@@ -5650,43 +5650,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'v8ihp1x1': {
       'es':
           '¿Tienes otra sensibilidad/intolerancia alimentaria diagnosticada? ',
-      'en': '',
+      'en': 'Do you have any other diagnosed food sensitivity/intolerance?',
     },
     'gtwmofi4': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'bu2dfx26': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'ih4hdu5g': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
-      'en': '',
+      'en': 'How long have you been diagnosed?',
     },
     'bcl9x731': {
       'es': 'Menos de 1 año',
-      'en': '',
+      'en': 'Less than 1 year',
     },
     'nkkqz2su': {
       'es': 'De 1 a 3 años',
-      'en': '',
+      'en': 'From 1 to 3 years',
     },
     'yq1s2bxo': {
       'es': 'De 3 a 5 años',
-      'en': '',
+      'en': 'From 3 to 5 years',
     },
     'b9wizgmg': {
       'es': 'Más de 5 años',
-      'en': '',
+      'en': 'More than 5 years',
     },
     'u0emwhko': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '3h0bjj65': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'x6177gzs': {
       'es': 'Finalizar',
@@ -5721,7 +5721,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7c3im5j9': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     '13erp0g4': {
       'es': 'Carnes',
@@ -5781,7 +5781,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'p9spofzb': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'j1phw7ga': {
       'es': 'Home',
@@ -5817,7 +5817,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'akzl9oix': {
       'es': 'Home',
-      'en': 'home',
+      'en': 'Home',
     },
   },
   // diario_Into2
@@ -6516,15 +6516,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     's0m52i7f': {
       'es': 'Finalizar más tarde',
-      'en': 'End later',
+      'en': 'Finish later',
     },
     'uo3mce4k': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     '07ir6oqh': {
       'es': 'Home',
-      'en': 'home',
+      'en': 'Home',
     },
   },
   // diarioIntoFin
@@ -7248,11 +7248,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rsg699pj': {
       'es': 'Finalizar más tarde',
-      'en': 'End later',
+      'en': 'Finish later',
     },
     '6qgp71t1': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'gjrzyi1l': {
       'es': 'Home',
@@ -7313,11 +7313,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xebjsduh': {
       'es': 'Finalizar más tarde',
-      'en': 'End later',
+      'en': 'Finish later',
     },
     'j5jusmzg': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'laf8tt3e': {
       'es': 'Home',
@@ -7762,7 +7762,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search for an item...',
     },
     '1v5seaqm': {
-      'es': 'Crear Nueva Publicación',
+      'es': 'Crear Nueva Noticia',
       'en': 'Create New News',
     },
     'l9hvpo75': {
@@ -7961,7 +7961,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4ldcdw5g': {
       'es': 'Publicar',
-      'en': 'Post',
+      'en': 'Publish',
     },
     'n3ro1v4g': {
       'es': 'Cancelar',
@@ -8387,7 +8387,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'd4a9urq0': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'pkvdm3fz': {
       'es': '¿eres fumador?',
@@ -8427,63 +8427,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'frlcwg4t': {
       'es': 'Selecciona tu profesión',
-      'en': '',
+      'en': 'Select your profession',
     },
     'sf102dyd': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '4wcvmmf9': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'jnl5ml2r': {
       'es': 'Número de Colegiado (Opcional)',
-      'en': '',
+      'en': 'Membership Number (Optional)',
     },
     'y2ng2er0': {
       'es': 'NIF',
-      'en': '',
+      'en': 'NIF',
     },
     '1gtyxn8j': {
       'es': 'Dirección',
-      'en': '',
+      'en': 'Address',
     },
     'wcw332o9': {
       'es': 'Ciudad',
-      'en': '',
+      'en': 'City',
     },
     '613ct66e': {
       'es': 'Código Postal',
-      'en': '',
+      'en': 'Zip code',
     },
     'jwltkajf': {
       'es': 'Guardar',
-      'en': '',
+      'en': 'Keep',
     },
     'd3ezdsi1': {
       'es': 'CIF',
-      'en': '',
+      'en': 'CIF',
     },
     'a0j7p5yk': {
       'es': 'Dirección',
-      'en': '',
+      'en': 'Address',
     },
     '9nwi1p8l': {
       'es': 'Ciudad',
-      'en': '',
+      'en': 'City',
     },
     'bdslbvd6': {
       'es': 'Código Postal',
-      'en': '',
+      'en': 'Zip code',
     },
     'axs0qr92': {
       'es': 'Email corporativo',
-      'en': '',
+      'en': 'Corporate email',
     },
     'z2k9wda9': {
       'es': 'Guardar',
-      'en': '',
+      'en': 'Save',
     },
     'oy8th9d3': {
       'es': 'Home',
@@ -8508,7 +8508,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4q1nmvb5': {
       'es': '¿En qué año te infectaste con el SARS-CoV-2?',
-      'en': 'In what year did you get infected with SARS-CoV-2?',
+      'en': 'What year did you get infected with SARS-CoV-2?',
     },
     '3ccxgfp7': {
       'es': '2020',
@@ -8601,7 +8601,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'awp8ga0g': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '63i86vwt': {
       'es': 'No',
@@ -8653,7 +8653,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '39nhr29k': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'nm442z9v': {
       'es': 'No',
@@ -8669,7 +8669,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'o15zudum': {
       'es': '¿Cuál?',
-      'en': 'Which?',
+      'en': 'Which one?',
     },
     '11ij0idn': {
       'es': 'Selecciona tu respuesta...',
@@ -8715,7 +8715,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qksze73p': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'w2g2l3kn': {
       'es': 'No',
@@ -8759,7 +8759,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1ef0rjss': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'fh2w13b8': {
       'es': 'No',
@@ -8809,7 +8809,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0j2re4b4': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'kkx17vt3': {
       'es': 'No',
@@ -9093,7 +9093,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4v95haqg': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'j2w56vdz': {
       'es': 'No',
@@ -9113,7 +9113,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'e3u6z3ui': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '2nirf1sg': {
       'es': 'No',
@@ -9165,7 +9165,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8ddz0y0m': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'oz70eqw6': {
       'es': 'No',
@@ -9227,7 +9227,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'tjxgffxp': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'e674acbw': {
       'es': 'No',
@@ -9271,7 +9271,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'epwn3alw': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'w6dsmedv': {
       'es': 'No',
@@ -9321,7 +9321,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4rn9he2n': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'urcmhm2z': {
       'es': 'No',
@@ -9638,7 +9638,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8o3qjctf': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'ko7lcb8e': {
       'es': 'No',
@@ -9690,7 +9690,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ar0s1dba': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'z558e5gj': {
       'es': 'No',
@@ -9706,7 +9706,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rbitsp8h': {
       'es': '¿Cuál?',
-      'en': 'Which?',
+      'en': 'Which one?',
     },
     'k8ednb48': {
       'es': 'Selecciona tu respuesta...',
@@ -9752,7 +9752,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9d4kpyfu': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'n6iachga': {
       'es': 'No',
@@ -9796,7 +9796,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q7sz8dhb': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'e27vie5x': {
       'es': 'No',
@@ -9846,7 +9846,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ozvivxno': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'pnxtdnup': {
       'es': 'No',
@@ -10103,7 +10103,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ok3f1adx': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '0gbvjlp4': {
       'es': 'No',
@@ -10155,7 +10155,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't795dvqb': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'ppqfm5om': {
       'es': 'No',
@@ -10171,7 +10171,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bm5njpgv': {
       'es': '¿Cuál?',
-      'en': 'Which?',
+      'en': 'Which one?',
     },
     '0wg7owwk': {
       'es': 'Selecciona tu respuesta...',
@@ -10217,7 +10217,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5ra3vuze': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'q5x04mou': {
       'es': 'No',
@@ -10261,7 +10261,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ewrgam11': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'm2lm2h9m': {
       'es': 'No',
@@ -10311,7 +10311,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3hy24s25': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '8q4til39': {
       'es': 'No',
@@ -10523,268 +10523,269 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nypajel1': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
-      'en': '',
+      'en': 'Have you been diagnosed with irritable bowel syndrome?',
     },
     'tbp1xekh': {
       'es': 'Si',
-      'en': '',
+      'en': 'Yes',
     },
     'mhyusxp8': {
       'es': 'No',
-      'en': '',
+      'en': 'No',
     },
     'ftxmzhwa': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'zop49f10': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     '39bbzsfl': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
-      'en': '',
+      'en': 'How long have you been diagnosed?',
     },
     '6g6lo4fc': {
       'es': 'Menos de 1 año',
-      'en': '',
+      'en': 'Less than 1 year',
     },
     'aafpb1qu': {
       'es': 'De 1 a 3 años',
-      'en': '',
+      'en': 'From 1 to 3 years',
     },
     'anw8e8hp': {
       'es': 'De 3 a 5 años',
-      'en': '',
+      'en': 'From 3 to 5 years',
     },
     '07fsogqt': {
       'es': 'Más de 5 años',
-      'en': '',
+      'en': 'More than 5 years',
     },
     'ta5uncoj': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     '8svd6w1j': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'vb47bgb2': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
-      'en': '',
+      'en':
+          'Do you have any immediate family members who have a food intolerance?',
     },
     '4rb65ojy': {
       'es': 'Si',
-      'en': '',
+      'en': 'Yes',
     },
     'lewvcvgp': {
       'es': 'No',
-      'en': '',
+      'en': 'No',
     },
     '7qmkl4ss': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'bvcm2egs': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     '0qlfhh2z': {
       'es': 'Indica el grado familiar',
-      'en': '',
+      'en': 'Indicates the family degree',
     },
     'uoe2tr4d': {
       'es': 'Familiar de primer grado',
-      'en': '',
+      'en': 'First degree relative',
     },
     '7zdciint': {
       'es': 'Familiar de segundo grado',
-      'en': '',
+      'en': 'Second degree relative',
     },
     'fr6m4ved': {
       'es': 'Familiar de tercer grado',
-      'en': '',
+      'en': 'Third degree relative',
     },
     'bsc0krrm': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'bhbcygai': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'om19psar': {
       'es':
           '1-¿Tienes alguna sensibilidad/intolerancia alimentaria diagnosticada? ',
-      'en': '',
+      'en': '1-Do you have any diagnosed food sensitivity/intolerance?',
     },
     'ku7ywr6j': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'dvh1y7rp': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'c7026zmw': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
-      'en': '',
+      'en': 'How long have you been diagnosed?',
     },
     'eatte6ws': {
       'es': 'Menos de 1 año',
-      'en': '',
+      'en': 'Less than 1 year',
     },
     'nrs2fa47': {
       'es': 'De 1 a 3 años',
-      'en': '',
+      'en': 'From 1 to 3 years',
     },
     'g6y0qskl': {
       'es': 'De 3 a 5 años',
-      'en': '',
+      'en': 'From 3 to 5 years',
     },
     'cj5obsk9': {
       'es': 'Más de 5 años',
-      'en': '',
+      'en': 'More than 5 years',
     },
     'il3gdewb': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'n81fpk6e': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     '1efw8j5d': {
       'es':
           '2-¿Tienes otra sensibilidad/intolerancia alimentaria diagnosticada? ',
-      'en': '',
+      'en': '2-Do you have any other diagnosed food sensitivity/intolerance?',
     },
     '89a47ugf': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'vbqmueg4': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'xv2x4pcl': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
-      'en': '',
+      'en': 'How long have you been diagnosed?',
     },
     '4u6ix6cc': {
       'es': 'Menos de 1 año',
-      'en': '',
+      'en': 'Less than 1 year',
     },
     '8q38cx95': {
       'es': 'De 1 a 3 años',
-      'en': '',
+      'en': 'From 1 to 3 years',
     },
     'htpgwamn': {
       'es': 'De 3 a 5 años',
-      'en': '',
+      'en': 'From 3 to 5 years',
     },
     'z532yr6a': {
       'es': 'Más de 5 años',
-      'en': '',
+      'en': 'More than 5 years',
     },
     'ga445qdy': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'zfhbxati': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'fklgbeib': {
       'es':
           '3-¿Tienes otra sensibilidad/intolerancia alimentaria diagnosticada? ',
-      'en': '',
+      'en': '3-Do you have any other diagnosed food sensitivity/intolerance?',
     },
     've77jur8': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'foxzndo1': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'ojs71i9z': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
-      'en': '',
+      'en': 'How long have you been diagnosed?',
     },
     'kfqhdip2': {
       'es': 'Menos de 1 año',
-      'en': '',
+      'en': 'Less than 1 year',
     },
     'i4ljq0lp': {
       'es': 'De 1 a 3 años',
-      'en': '',
+      'en': 'From 1 to 3 years',
     },
     '2ox7f2a9': {
       'es': 'De 3 a 5 años',
-      'en': '',
+      'en': 'From 3 to 5 years',
     },
     '98ytbqq1': {
       'es': 'Más de 5 años',
-      'en': '',
+      'en': 'More than 5 years',
     },
     'aqvy2sfh': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'llyww1bu': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'e0jrjxy8': {
       'es':
           '4-¿Tienes otra sensibilidad/intolerancia alimentaria diagnosticada? ',
-      'en': '',
+      'en': '4-Do you have any other diagnosed food sensitivity/intolerance?',
     },
     'gdd8csr2': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'oenak06a': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'mnpjnnvd': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
-      'en': '',
+      'en': 'How long have you been diagnosed?',
     },
     '8uawfdow': {
       'es': 'Menos de 1 año',
-      'en': '',
+      'en': 'Less than 1 year',
     },
     'v9ddooez': {
       'es': 'De 1 a 3 años',
-      'en': '',
+      'en': 'From 1 to 3 years',
     },
     'm4rp45yh': {
       'es': 'De 3 a 5 años',
-      'en': '',
+      'en': 'From 3 to 5 years',
     },
     'hjx4sg3i': {
       'es': 'Más de 5 años',
-      'en': '',
+      'en': 'More than 5 years',
     },
     'r52qbcnj': {
       'es': 'Selecciona tu respuesta...',
-      'en': '',
+      'en': 'Select your answer...',
     },
     'uh8qisyu': {
       'es': 'Search for an item...',
-      'en': '',
+      'en': 'Search for an item...',
     },
     'rrtr44f9': {
       'es': 'Finalizar',
-      'en': '',
+      'en': 'Finish',
     },
     'krtaen2i': {
       'es': 'Cancelar',
-      'en': '',
+      'en': 'Cancel',
     },
     'n90qj2pp': {
       'es': '¿En qué año te infectaste con el SARS-CoV-2?',
@@ -10881,7 +10882,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fi6jno00': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'prxh1wqi': {
       'es': 'No',
@@ -11026,7 +11027,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hjbcyirh': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'glcguai1': {
       'es': 'No',
@@ -11078,7 +11079,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ucmrbum9': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'wcnwmc3w': {
       'es': 'No',
@@ -11094,7 +11095,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6eaco1ui': {
       'es': '¿Cuál?',
-      'en': 'Which?',
+      'en': 'Which one?',
     },
     't91g83tl': {
       'es': 'Selecciona tu respuesta...',
@@ -11140,7 +11141,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'std95ee4': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'gtzdcgf9': {
       'es': 'No',
@@ -11184,7 +11185,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jofn303s': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'e2l70jpp': {
       'es': 'No',
@@ -11234,7 +11235,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fcil6wcg': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'xn48oxlm': {
       'es': 'No',
@@ -11518,7 +11519,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qwc9ggyh': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '3nncrk2f': {
       'es': 'No',
@@ -11538,7 +11539,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3db2noi9': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'wl5apkhh': {
       'es': 'No',
@@ -11683,7 +11684,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3osmv47a': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'x62iu883': {
       'es': 'No',
@@ -11735,7 +11736,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bkmf6pxl': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'ajwxaqp9': {
       'es': 'No',
@@ -11797,7 +11798,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'd3cqvz5b': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'qtqcgzxx': {
       'es': 'No',
@@ -11841,7 +11842,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ladz24nd': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'rf3yadwk': {
       'es': 'No',
@@ -11891,7 +11892,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9922vz7h': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'wbtowrpm': {
       'es': 'No',
@@ -12196,7 +12197,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kryrwmil': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'uuza1cob': {
       'es': 'No',
@@ -12328,7 +12329,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'anqkdpd4': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'asmwoate': {
       'es': 'No',
@@ -12380,7 +12381,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0yzgwkcv': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'x9u5dw2j': {
       'es': 'No',
@@ -12396,7 +12397,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'c45k7np3': {
       'es': '¿Cuál?',
-      'en': 'Which?',
+      'en': 'Which one?',
     },
     't9thawvs': {
       'es': 'Selecciona tu respuesta...',
@@ -12442,7 +12443,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nuymcy9t': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'zc7rmejx': {
       'es': 'No',
@@ -12486,7 +12487,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ux864b3k': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '3rdx4hn3': {
       'es': 'No',
@@ -12536,7 +12537,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hcuh2ud7': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'mw92xvdg': {
       'es': 'No',
@@ -12841,7 +12842,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mfj46d2h': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '3ytvpyjk': {
       'es': 'No',
@@ -12973,7 +12974,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'go16zhsf': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'bz4ei8ma': {
       'es': 'No',
@@ -13118,7 +13119,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '26bn7nyt': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'kasp1jqm': {
       'es': 'No',
@@ -13170,7 +13171,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xq1sji4w': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '7c799p09': {
       'es': 'No',
@@ -13232,7 +13233,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'a52w3d91': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     '4d96jy95': {
       'es': 'No',
@@ -13276,7 +13277,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pq4d18n5': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     't7djq342': {
       'es': 'No',
@@ -13326,7 +13327,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '712wb8ls': {
       'es': 'Si',
-      'en': 'Yeah',
+      'en': 'Yes',
     },
     'dq1qro17': {
       'es': 'No',
@@ -13802,40 +13803,41 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'All diseases',
     },
     't6uxf5h0': {
-      'es': 'Covid Persistente (+Intolerancias y Otras)',
-      'en': 'Long Covid (+Intolerances and Others)',
+      'es': 'Covid Persistente \n(+Intolerancias y Enf.Autoinmunes)',
+      'en': 'Long Covid \n(+Intolerances and Autoimmune Diseases)',
     },
     'iwzex9xx': {
-      'es': 'Fibromialgia (+Intolerancias y Otras)',
-      'en': 'Fibromyalgia (+Intolerances and Others)',
+      'es': 'Fibromialgia\n(+Intolerancias y Enf.Autoinmunes)',
+      'en': 'Fibromyalgia\n(+Intolerances and Autoimmune Diseases)',
     },
     '4fvt51re': {
-      'es': 'Encefalomielitis M. (+Intolerancias y Otras)',
-      'en': 'Encephalomyelitis M. (+Intolerances and Others)',
+      'es': 'Encefalomielitis M. \n(+Intolerancias y Enf.Autoinmunes)',
+      'en': 'Encephalomyelitis M. \n(+Intolerances and Autoimmune Diseases)',
     },
     'liwjf8g6': {
-      'es': 'Otras Autoinmunes (+Intolerancias)',
-      'en': 'Other Autoimmune Diseases (+Intolerances)',
+      'es': 'Enfermedades Autoinmunes (+Intolerancias)',
+      'en': 'Autoimmune Diseases (+Intolerances)',
     },
     'fj1fcf1t': {
       'es': 'Intolerancias Alimentarias',
       'en': 'Food Intolerances',
     },
     '1b6obo9j': {
-      'es': 'Covid P. + EM.  (+Intolerancias y Otras)',
-      'en': 'Covid P. + EM. (+Intolerances and Others)',
+      'es': 'Covid P. + EM.  (+Intolerancias y Autoinmunes)',
+      'en': 'Covid P. + EM. (+Intolerances and Autoimmune)',
     },
     'b61fv1xj': {
-      'es': 'Fibromialgia + EM.  (+Intolerancias y Otras)',
-      'en': 'Fibromyalgia + MS. (+Intolerances and Others)',
+      'es': 'Fibromialgia + EM.  \n(+Intolerancias y Enf.Autoinmunes)',
+      'en': 'Fibromyalgia + MS. \n(+Intolerances and Autoimmune Diseases)',
     },
     'gg66mp06': {
-      'es': 'Covid P. + Fibromialgia  (+Intolerancias y Otras)',
-      'en': 'Covid P. + Fibromyalgia (+Intolerances and Others)',
+      'es': 'Covid P. + Fibromialgia  \n(+Intolerancias y Enf.Autoinmunes)',
+      'en': 'Covid P. + Fibromyalgia \n(+Intolerances and Autoimmune Diseases)',
     },
     'myt8ht5b': {
-      'es': 'Covid P. + Fibromialgia  + EM  (+Intolerancias y Otras)',
-      'en': 'Covid P. + Fibromyalgia + MS (+Intolerances and Others)',
+      'es': 'Covid P. + Fibromialgia  + EM  (+Intolerancias y Enf.Autoinmunes)',
+      'en':
+          'Covid P. + Fibromyalgia + MS (+Intolerances and Autoimmune Diseases)',
     },
     'p7t0hphk': {
       'es': 'Continuar',
@@ -13941,11 +13943,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vyve3lxd': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     '3y23tdvq': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'b5mnlsed': {
       'es': 'Home',
@@ -14024,11 +14026,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'y24dbx4b': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'hh0fkh45': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'ygp8pppa': {
       'es': 'Home',
@@ -14071,11 +14073,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fwcfawob': {
       'es': 'Siguiente',
-      'en': 'Following',
+      'en': 'Next',
     },
     'm3h7nro2': {
       'es': 'Siguiente',
-      'en': 'Following',
+      'en': 'Next',
     },
     'hcfojpmt': {
       'es': 'Cancelar',
@@ -14153,7 +14155,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Tags diseases',
     },
     'ao4pg7oz': {
-      'es': 'COVID Fibromialgia Otras',
+      'es': 'COVID Fibromialgia Enfermedades Autoinmunes Intolerancias ',
       'en': 'COVID Fibromyalgia Others',
     },
     'ch165qk8': {
@@ -14182,7 +14184,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'tr9hfsi3': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'gpf28lpf': {
       'es': 'Home',
@@ -14286,11 +14288,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6bayd1sn': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
     'a0kwsmnn': {
       'es': 'Eliminar',
-      'en': 'Eliminate',
+      'en': 'Delete',
     },
     '43d9osin': {
       'es': 'Home',
@@ -14863,7 +14865,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g0kh2dju': {
       'es': 'Eliminar',
-      'en': 'Eliminate',
+      'en': 'Delete',
     },
   },
   // modal_elimina_cuenta
@@ -14950,7 +14952,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yhnhjw0o': {
       'es': 'Guardar',
-      'en': 'Keep',
+      'en': 'Save',
     },
   },
   // modal_fin_encuesta
@@ -14991,50 +14993,85 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'x9ngtpyw': {
       'es': 'Ten en cuenta los idiomas',
-      'en': '',
+      'en': 'Keep in mind the languages',
     },
     'uf7qfeva': {
       'es':
           'En Defenergy tenemos usuarios que solo hablan en inglés, por lo que es necesario que tus publicaciones estén en ambos idiomas.',
-      'en': '',
+      'en':
+          'At Defenergy we have users who only speak English, so it is necessary that your posts are in both languages.',
     },
     'l3go3537': {
       'es': 'No volver a mostrar',
-      'en': '',
+      'en': 'Don\'t show again',
     },
     'bs573c1s': {
       'es': 'Entendido',
-      'en': '',
+      'en': 'Understood',
     },
   },
   // modal_cierre_sesion
   {
     '2y12ka2g': {
       'es': '¡Seguridad a la orden del día!',
-      'en': '',
+      'en': 'Security is the order of the day!',
     },
     'xuh9zl1q': {
       'es':
           'Hace aproximadamente 7 días que accediste a Defenergy con tu contraseña, así que para cuidar la seguridad de tus datos, te vamos pedir que inicies sesión nuevamente.',
-      'en': '',
+      'en':
+          'It\'s been approximately 7 days since you accessed Defenergy with your password, so to protect the security of your data, we will ask you to log in again.',
     },
     'gtz050of': {
       'es': 'Entendido',
-      'en': '',
+      'en': 'Understood',
     },
   },
   // modal_update
   {
     '04s037l5': {
       'es': 'Es hora de actualizar Defenergy...',
-      'en': '',
+      'en': 'It\'s time to update Defenergy...',
     },
     '2d4nqs5w': {
       'es':
           'Hemos detectado que tienes una versión antigua de la aplicación y ya es hora de actualizar para que todo funcione correctamente.',
-      'en': '',
+      'en':
+          'We have detected that you have an old version of the application and it is time to update so that everything works correctly.',
     },
     'gfsub4gz': {
+      'es': 'Entendido',
+      'en': 'Understood',
+    },
+  },
+  // modal_info_encuesta
+  {
+    'rkjbhxmw': {
+      'es': 'Encuestas',
+      'en': '',
+    },
+    '88t3ez0s': {
+      'es':
+          'En esta sección, podrás diseñar encuestas personalizadas según la enfermedad de los pacientes. Esto te permitirá recopilar información valiosa sobre sus experiencias y necesidades, contribuyendo a la mejora de tratamientos y recursos específicos para su atención.',
+      'en': '',
+    },
+    'zvnfte39': {
+      'es': 'Entendido',
+      'en': '',
+    },
+  },
+  // modal_info_comunidad_e
+  {
+    'wgem86l6': {
+      'es': 'Comunidad',
+      'en': '',
+    },
+    '62srbuzg': {
+      'es':
+          'En este espacio, tendrás la oportunidad de interactuar directamente con los pacientes. Podrás participar en conversaciones, plantear preguntas y acceder a información relevante, promoviendo un ambiente de empatía que beneficiará a todos.',
+      'en': '',
+    },
+    'g8u1baro': {
       'es': 'Entendido',
       'en': '',
     },
