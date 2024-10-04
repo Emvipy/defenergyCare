@@ -201,7 +201,7 @@
     },
     {
       "name": "file_selector_macos",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.4+1",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.4+2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -687,7 +687,7 @@
     },
     {
       "name": "onesignal_flutter",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/onesignal_flutter-5.2.5",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/onesignal_flutter-5.2.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -1083,9 +1083,9 @@
     },
     {
       "name": "xdg_directories",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/xdg_directories-1.0.4",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/xdg_directories-1.1.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "xml",
@@ -1106,7 +1106,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-10-03T14:24:57.407685Z",
+  "generated": "2024-10-04T19:48:35.645206Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",
