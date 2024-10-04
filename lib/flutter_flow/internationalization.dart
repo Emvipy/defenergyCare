@@ -14997,7 +14997,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'uf7qfeva': {
       'es':
-          'En Defenergy tenemos usuarios que solo hablan en inglés, por lo que es necesario que tus publicaciones estén en ambos idiomas.',
+          'En Defenergy tenemos usuarios que solo hablan en inglés, por lo que es necesario que tus publicaciones estén en ambos idiomas.\n\nImportante: NO uses comillas dobles \nen tus textos \"',
       'en':
           'At Defenergy we have users who only speak English, so it is necessary that your posts are in both languages.',
     },

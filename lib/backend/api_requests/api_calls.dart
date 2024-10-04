@@ -18,6 +18,7 @@ class SignUpCall {
     int? perfilId,
     String? fecha = '',
     String? dispositivo = '',
+    String? firebase = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -27,7 +28,8 @@ class SignUpCall {
   "apellidos": "${apellidos}",
   "perfil": ${perfilId},
   "date": "${fecha}",
-  "dispositivo": "${dispositivo}"
+  "dispositivo": "${dispositivo}",
+  "firebase": "${firebase}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signUp',
@@ -9701,6 +9703,24 @@ class ComunidadMuroCall {
           .map((x) => castToType<bool>(x))
           .withoutNulls
           .toList();
+  static List<int>? perfilId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.perfil_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? nombreEmpresa(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.nombre_empresa''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class ComunidadLikesCall {
@@ -11923,7 +11943,6 @@ class EmpresaListadoPreguntasEncuestaCall {
 
 class EmpresaCreaPreguntaCall {
   static Future<ApiCallResponse> call({
-    String? authToken = '',
     int? encuestaId,
   }) async {
     final ffApiRequestBody = '''
@@ -11935,9 +11954,7 @@ class EmpresaCreaPreguntaCall {
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/crea_preguntas123',
       callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer ${authToken}',
-      },
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
@@ -11994,13 +12011,64 @@ class EmpresaCreaOpcionDesplegableCall {
 
 class EmpresaListadoOpcionesCall {
   static Future<ApiCallResponse> call({
-    int? preguntaId,
     int? encuestaId,
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'empresa listado opciones',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/listado_opciones',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'encuesta_id': encuestaId,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? textoEs(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].texto''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? textoEn(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].texto_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class EmpresaListadoOpcionesEditaCall {
+  static Future<ApiCallResponse> call({
+    int? preguntaId,
+    int? encuestaId,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'empresa listado opciones edita',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/listado_opciones_edita',
       callType: ApiCallType.GET,
       headers: {},
       params: {
@@ -12710,6 +12778,41 @@ class UserCheckSessionCall {
         response,
         r'''$.code''',
       ));
+}
+
+class EmpresaCreaNewPreguntaEncuestaCall {
+  static Future<ApiCallResponse> call({
+    String? preguntaEs = '',
+    String? preguntaEn = '',
+    FFUploadedFile? img,
+    int? tipoRespuesta,
+    int? encuestaId,
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'empresa crea new pregunta encuesta',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa/crea_new_pregunta',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'pregunta_es': preguntaEs,
+        'pregunta_en': preguntaEn,
+        'img': img,
+        'tipo_respuesta': tipoRespuesta,
+        'encuesta_id': encuestaId,
+      },
+      bodyType: BodyType.MULTIPART,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 class ApiPagingParams {

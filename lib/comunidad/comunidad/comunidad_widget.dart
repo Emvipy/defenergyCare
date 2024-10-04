@@ -189,13 +189,25 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Text(
-                                                '${getJsonField(
-                                                  childPostsItem,
-                                                  r'''$._user.nombre''',
-                                                ).toString()} ${getJsonField(
-                                                  childPostsItem,
-                                                  r'''$._user.apellidos''',
-                                                ).toString()}',
+                                                functions
+                                                            .parseJsonValueToInteger(
+                                                                getJsonField(
+                                                              childPostsItem,
+                                                              r'''$._user.perfil_id''',
+                                                            ))
+                                                            .toString() ==
+                                                        '1'
+                                                    ? '${getJsonField(
+                                                        childPostsItem,
+                                                        r'''$._user.nombre''',
+                                                      ).toString()} ${getJsonField(
+                                                        childPostsItem,
+                                                        r'''$._user.apellidos''',
+                                                      ).toString()}'
+                                                    : getJsonField(
+                                                        childPostsItem,
+                                                        r'''$._user.nombre_empresa''',
+                                                      ).toString(),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

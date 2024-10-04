@@ -560,7 +560,7 @@ class _EmpCreaEditaPreguntaWidgetState
                                       future: (_model.apiRequestCompleter ??=
                                               Completer<ApiCallResponse>()
                                                 ..complete(
-                                                    EmpresaListadoOpcionesCall
+                                                    EmpresaListadoOpcionesEditaCall
                                                         .call(
                                                   preguntaId: FFAppState()
                                                       .nuevaPreguntaId,
@@ -584,13 +584,13 @@ class _EmpCreaEditaPreguntaWidgetState
                                             ),
                                           );
                                         }
-                                        final listViewEmpresaListadoOpcionesResponse =
+                                        final listViewEmpresaListadoOpcionesEditaResponse =
                                             snapshot.data!;
 
                                         return Builder(
                                           builder: (context) {
                                             final childOpciones = getJsonField(
-                                              listViewEmpresaListadoOpcionesResponse
+                                              listViewEmpresaListadoOpcionesEditaResponse
                                                   .jsonBody,
                                               r'''$''',
                                             ).toList();
@@ -763,14 +763,7 @@ class _EmpCreaEditaPreguntaWidgetState
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          ModalAddOpcionWidget(
-                                                        numPreg:
-                                                            EmpresaImagenPreguntaCall
-                                                                .numPregunta(
-                                                          empCreaEditaPreguntaEmpresaImagenPreguntaResponse
-                                                              .jsonBody,
-                                                        )!,
-                                                      ),
+                                                          ModalAddOpcionWidget(),
                                                     ),
                                                   );
                                                 },
