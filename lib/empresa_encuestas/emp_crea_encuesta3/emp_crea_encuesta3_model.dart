@@ -6,14 +6,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/upload_data.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'emp_crea_encuesta3_widget.dart' show EmpCreaEncuesta3Widget;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,8 +35,6 @@ class EmpCreaEncuesta3Model extends FlutterFlowModel<EmpCreaEncuesta3Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  InstantTimer? instantTimer;
-  Completer<ApiCallResponse>? apiRequestCompleter1;
   // State field(s) for preg_es widget.
   FocusNode? pregEsFocusNode;
   TextEditingController? pregEsTextController;
@@ -51,19 +48,15 @@ class EmpCreaEncuesta3Model extends FlutterFlowModel<EmpCreaEncuesta3Widget> {
   FormFieldController<int>? dropDownValueController;
   // Stores action output result for [Backend Call - API (empresa borra opcion encuesta)] action in Icon widget.
   ApiCallResponse? apiResultt7e;
+  Completer<ApiCallResponse>? apiRequestCompleter;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  // Stores action output result for [Backend Call - API (empresasube foto encuesta)] action in Icon widget.
-  ApiCallResponse? apiResultg9x;
-  Completer<ApiCallResponse>? apiRequestCompleter2;
-  // Stores action output result for [Backend Call - API (empresa borra imagen encuesta)] action in Icon widget.
-  ApiCallResponse? apiResultwhi;
-  // Stores action output result for [Backend Call - API (empresa edita pregunta)] action in Button widget.
+  // Stores action output result for [Backend Call - API (empresa crea new pregunta encuesta)] action in Button widget.
   ApiCallResponse? apiResulta09;
-  // Stores action output result for [Backend Call - API (empresa edita pregunta)] action in Button widget.
-  ApiCallResponse? apiResulta092;
+  // Stores action output result for [Backend Call - API (empresa crea new pregunta encuesta)] action in Button widget.
+  ApiCallResponse? apiResulta09Copy;
   // Model for menu_usuario component.
   late MenuUsuarioModel menuUsuarioModel;
 
@@ -74,7 +67,6 @@ class EmpCreaEncuesta3Model extends FlutterFlowModel<EmpCreaEncuesta3Widget> {
 
   @override
   void dispose() {
-    instantTimer?.cancel();
     pregEsFocusNode?.dispose();
     pregEsTextController?.dispose();
 
@@ -85,7 +77,7 @@ class EmpCreaEncuesta3Model extends FlutterFlowModel<EmpCreaEncuesta3Widget> {
   }
 
   /// Additional helper methods.
-  Future waitForApiRequestCompleted1({
+  Future waitForApiRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
@@ -93,22 +85,7 @@ class EmpCreaEncuesta3Model extends FlutterFlowModel<EmpCreaEncuesta3Widget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = apiRequestCompleter1?.isCompleted ?? false;
-      if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
-        break;
-      }
-    }
-  }
-
-  Future waitForApiRequestCompleted2({
-    double minWait = 0,
-    double maxWait = double.infinity,
-  }) async {
-    final stopwatch = Stopwatch()..start();
-    while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
-      final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = apiRequestCompleter2?.isCompleted ?? false;
+      final requestComplete = apiRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

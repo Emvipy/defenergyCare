@@ -11,12 +11,7 @@ import 'modal_add_opcion_model.dart';
 export 'modal_add_opcion_model.dart';
 
 class ModalAddOpcionWidget extends StatefulWidget {
-  const ModalAddOpcionWidget({
-    super.key,
-    required this.numPreg,
-  });
-
-  final int? numPreg;
+  const ModalAddOpcionWidget({super.key});
 
   @override
   State<ModalAddOpcionWidget> createState() => _ModalAddOpcionWidgetState();
@@ -333,7 +328,6 @@ class _ModalAddOpcionWidgetState extends State<ModalAddOpcionWidget> {
                                         await EmpresaCreaOpcionDesplegableCall
                                             .call(
                                       authToken: FFAppState().authToken,
-                                      preguntaId: widget!.numPreg,
                                       encuestaId: FFAppState().nuevaEncuestaId,
                                       opcion:
                                           _model.nombreEsTextController.text,

@@ -49,7 +49,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
         curve: Curves.ease,
       );
       _model.instantTimerChat = InstantTimer.periodic(
-        duration: Duration(milliseconds: 10000),
+        duration: Duration(milliseconds: 30000),
         callback: (timer) async {
           if (FFAppState().activarCargaChat == 'si') {
             safeSetState(() => _model.apiRequestCompleter = null);
@@ -108,6 +108,7 @@ class _ChatMensajesWidgetState extends State<ChatMensajesWidget> {
 
               FFAppState().activarCargaChat = 'no';
               safeSetState(() {});
+              _model.instantTimerChat?.cancel();
             },
           ),
           title: Text(

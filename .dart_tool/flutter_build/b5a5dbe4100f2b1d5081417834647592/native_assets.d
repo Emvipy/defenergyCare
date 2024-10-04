@@ -1,0 +1,1 @@
+ /Users/zacheo/development/projects/defenergyCare/.dart_tool/flutter_build/b5a5dbe4100f2b1d5081417834647592/native_assets.yaml: 

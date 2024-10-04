@@ -49,3 +49,25 @@ String? parseJsonValueToString(dynamic value) {
   if (value is String) return value;
   return value.toString();
 }
+
+String? base64String(FFUploadedFile? file) {
+  if (file == null || file.bytes == null) {
+    return null;
+  }
+
+  String base64String = base64Encode(file.bytes!);
+
+  return base64String;
+}
+
+FFUploadedFile? base64ToImage(String? base64Image) {
+// convert the base64 image "base64Image" to an UploadedFile
+  if (base64Image == null) {
+    return null;
+  }
+
+  final bytes = base64.decode(base64Image);
+  final fileName = '${DateTime.now().millisecondsSinceEpoch}.jpg';
+
+  return FFUploadedFile(bytes: bytes, name: fileName);
+}

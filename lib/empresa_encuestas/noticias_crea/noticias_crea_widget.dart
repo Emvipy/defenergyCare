@@ -824,7 +824,6 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                     fontFamily: 'Poppins',
                                     letterSpacing: 0.0,
                                   ),
-                              maxLines: null,
                               minLines: 1,
                               cursorColor:
                                   FlutterFlowTheme.of(context).primaryText,
@@ -1319,7 +1318,9 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                             .formatTextwithLineBreaksToXano(
                                                 _model.textoEnTextController
                                                     .text),
-                                        tag: _model.tagTextController.text,
+                                        tag: functions
+                                            .formatTextwithLineBreaksToXano(
+                                                _model.tagTextController.text),
                                         url: _model.urlTextController.text !=
                                                     null &&
                                                 _model.urlTextController.text !=

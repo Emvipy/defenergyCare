@@ -697,6 +697,47 @@ class FFAppState extends ChangeNotifier {
   set activarCargaChat(String value) {
     _activarCargaChat = value;
   }
+
+  String _permiteFinalizarEncuesta = 'no';
+  String get permiteFinalizarEncuesta => _permiteFinalizarEncuesta;
+  set permiteFinalizarEncuesta(String value) {
+    _permiteFinalizarEncuesta = value;
+  }
+
+  String _botonEncuesta = 'no';
+  String get botonEncuesta => _botonEncuesta;
+  set botonEncuesta(String value) {
+    _botonEncuesta = value;
+  }
+
+  List<String> _imagenPreguntaEncuesta = [];
+  List<String> get imagenPreguntaEncuesta => _imagenPreguntaEncuesta;
+  set imagenPreguntaEncuesta(List<String> value) {
+    _imagenPreguntaEncuesta = value;
+  }
+
+  void addToImagenPreguntaEncuesta(String value) {
+    imagenPreguntaEncuesta.add(value);
+  }
+
+  void removeFromImagenPreguntaEncuesta(String value) {
+    imagenPreguntaEncuesta.remove(value);
+  }
+
+  void removeAtIndexFromImagenPreguntaEncuesta(int index) {
+    imagenPreguntaEncuesta.removeAt(index);
+  }
+
+  void updateImagenPreguntaEncuestaAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    imagenPreguntaEncuesta[index] = updateFn(_imagenPreguntaEncuesta[index]);
+  }
+
+  void insertAtIndexInImagenPreguntaEncuesta(int index, String value) {
+    imagenPreguntaEncuesta.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

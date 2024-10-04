@@ -968,6 +968,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           isAndroid == true
                                                               ? 'Android'
                                                               : 'iOS',
+                                                      firebase: currentUserUid,
                                                     );
 
                                                     if ((_model.apiSignUp

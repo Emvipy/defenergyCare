@@ -50,7 +50,7 @@ class _ModalAvisoIdiomaWidgetState extends State<ModalAvisoIdiomaWidget> {
         alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
-          height: 312.0,
+          height: 409.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
