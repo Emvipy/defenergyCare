@@ -15076,6 +15076,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // modal_comillas
+  {
+    'uuu622gw': {
+      'es': 'Debes revisar el texto',
+      'en': '',
+    },
+    'zv7uj4pn': {
+      'es': 'Revisa el texto y asegúrate que no contiene comillas dobles \"',
+      'en': '',
+    },
+    '5aacyqxq': {
+      'es': 'Entendido',
+      'en': '',
+    },
+  },
   // Miscellaneous
   {
     'kqz45rle': {

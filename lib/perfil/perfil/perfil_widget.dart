@@ -263,8 +263,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 10.0, 5.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(
+                          15.0, 15.0, 10.0, 15.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -306,7 +306,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                     if (FFAppState().perfilId == 1)
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            15.0, 15.0, 10.0, 5.0),
+                            15.0, 0.0, 10.0, 5.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [

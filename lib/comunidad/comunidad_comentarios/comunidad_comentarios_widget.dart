@@ -252,13 +252,31 @@ class _ComunidadComentariosWidgetState
                                                                             0.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  '${getJsonField(
-                                                                    childComentariosItem,
-                                                                    r'''$._user.nombre''',
-                                                                  ).toString()} ${getJsonField(
-                                                                    childComentariosItem,
-                                                                    r'''$._user.apellidos''',
-                                                                  ).toString()}',
+                                                                  (functions
+                                                                                  .parseJsonValueToInteger(getJsonField(
+                                                                                    childComentariosItem,
+                                                                                    r'''$._user.perfil_id''',
+                                                                                  ))
+                                                                                  .toString() ==
+                                                                              '1') ||
+                                                                          (functions
+                                                                                  .parseJsonValueToInteger(getJsonField(
+                                                                                    childComentariosItem,
+                                                                                    r'''$._user.perfil_id''',
+                                                                                  ))
+                                                                                  .toString() ==
+                                                                              '2')
+                                                                      ? '${getJsonField(
+                                                                          childComentariosItem,
+                                                                          r'''$._user.nombre''',
+                                                                        ).toString()} ${getJsonField(
+                                                                          childComentariosItem,
+                                                                          r'''$._user.apellidos''',
+                                                                        ).toString()}'
+                                                                      : getJsonField(
+                                                                          childComentariosItem,
+                                                                          r'''$._user.nombre_empresa''',
+                                                                        ).toString(),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMedium

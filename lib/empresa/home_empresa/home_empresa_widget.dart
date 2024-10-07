@@ -334,7 +334,9 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                           }
                                         },
                                         child: Text(
-                                          'Hola ${FFAppState().authToken != null && FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
+                                          FFAppState().perfilId == 2
+                                              ? FFAppState().nombre
+                                              : FFAppState().nombreEmpresa,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -474,13 +476,17 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          if (FFLocalizations.of(context)
-                                                  .languageCode ==
-                                              'en') {
-                                            setAppLanguage(context, 'es');
-                                          } else {
-                                            setAppLanguage(context, 'en');
-                                          }
+                                          context.pushNamed(
+                                            'perfil_notificaciones',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                              ),
+                                            },
+                                          );
                                         },
                                         child: Icon(
                                           Icons.notifications_none,

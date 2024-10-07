@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/empresa_encuestas/modal_aviso_idioma/modal_aviso_idioma_widget.dart';
+import '/empresa_encuestas/modal_comillas/modal_comillas_widget.dart';
 import '/empresa_encuestas/modal_noticia_creada/modal_noticia_creada_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -1290,6 +1291,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                               ''))
                                   ? null
                                   : () async {
+                                      var _shouldSetState = false;
                                       _model.apiResultitk =
                                           await EmpresaEditaNewsCall.call(
                                         authToken: FFAppState().authToken,
@@ -1333,6 +1335,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                             _model.botonEnTextController.text,
                                       );
 
+                                      _shouldSetState = true;
                                       if ((_model.apiResultitk?.succeeded ??
                                           true)) {
                                         await showModalBottomSheet(
@@ -1356,9 +1359,37 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                             );
                                           },
                                         ).then((value) => safeSetState(() {}));
+
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
+                                        return;
+                                      } else {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
+                                          context: context,
+                                          builder: (context) {
+                                            return GestureDetector(
+                                              onTap: () =>
+                                                  FocusScope.of(context)
+                                                      .unfocus(),
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: ModalComillasWidget(),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => safeSetState(() {}));
+
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
+                                        return;
                                       }
 
-                                      safeSetState(() {});
+                                      if (_shouldSetState) safeSetState(() {});
                                     },
                               text: FFLocalizations.of(context).getText(
                                 'tr9hfsi3' /* Guardar */,
