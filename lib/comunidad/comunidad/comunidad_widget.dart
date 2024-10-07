@@ -564,36 +564,36 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                                                 child:
                                                     FlutterFlowExpandedImageView(
                                                   image: Image.network(
-                                                    getJsonField(
+                                                    '${getJsonField(
                                                       childPostsItem,
                                                       r'''$.imagen.url''',
-                                                    ).toString(),
+                                                    ).toString()}?tpl=med:',
                                                     fit: BoxFit.contain,
                                                   ),
                                                   allowRotation: false,
-                                                  tag: getJsonField(
+                                                  tag: '${getJsonField(
                                                     childPostsItem,
                                                     r'''$.imagen.url''',
-                                                  ).toString(),
+                                                  ).toString()}?tpl=med:',
                                                   useHeroAnimation: true,
                                                 ),
                                               ),
                                             );
                                           },
                                           child: Hero(
-                                            tag: getJsonField(
+                                            tag: '${getJsonField(
                                               childPostsItem,
                                               r'''$.imagen.url''',
-                                            ).toString(),
+                                            ).toString()}?tpl=med:',
                                             transitionOnUserGestures: true,
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: Image.network(
-                                                getJsonField(
+                                                '${getJsonField(
                                                   childPostsItem,
                                                   r'''$.imagen.url''',
-                                                ).toString(),
+                                                ).toString()}?tpl=med:',
                                                 width: 300.0,
                                                 height: 200.0,
                                                 fit: BoxFit.cover,
