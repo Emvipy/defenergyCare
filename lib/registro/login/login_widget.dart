@@ -565,6 +565,12 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               ?.jsonBody ??
                                                           ''),
                                                     )!;
+                                                    FFAppState().nombreEmpresa =
+                                                        LoginCall.nombreEmpresa(
+                                                      (_model.apiloginCopy
+                                                              ?.jsonBody ??
+                                                          ''),
+                                                    )!;
                                                     safeSetState(() {});
                                                     if (LoginCall.verAcual(
                                                           (_model.apiloginCopy

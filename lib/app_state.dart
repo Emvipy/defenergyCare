@@ -129,6 +129,10 @@ class FFAppState extends ChangeNotifier {
       _avisoIdiomas =
           await secureStorage.getString('ff_avisoIdiomas') ?? _avisoIdiomas;
     });
+    await _safeInitAsync(() async {
+      _nombreEmpresa =
+          await secureStorage.getString('ff_nombreEmpresa') ?? _nombreEmpresa;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -737,6 +741,17 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInImagenPreguntaEncuesta(int index, String value) {
     imagenPreguntaEncuesta.insert(index, value);
+  }
+
+  String _nombreEmpresa = '';
+  String get nombreEmpresa => _nombreEmpresa;
+  set nombreEmpresa(String value) {
+    _nombreEmpresa = value;
+    secureStorage.setString('ff_nombreEmpresa', value);
+  }
+
+  void deleteNombreEmpresa() {
+    secureStorage.delete(key: 'ff_nombreEmpresa');
   }
 }
 

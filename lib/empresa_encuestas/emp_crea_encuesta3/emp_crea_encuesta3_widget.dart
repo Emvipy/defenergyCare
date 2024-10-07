@@ -932,6 +932,7 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                   );
                                   FFAppState().contadorOpcionesEncuestas = 0;
                                   FFAppState().permiteFinalizarEncuesta = 'si';
+                                  FFAppState().imagenPreguntaEncuesta = [];
                                   safeSetState(() {});
 
                                   context.pushNamed(
@@ -1038,6 +1039,7 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                   );
                                   FFAppState().contadorOpcionesEncuestas = 0;
                                   FFAppState().permiteFinalizarEncuesta = 'si';
+                                  FFAppState().imagenPreguntaEncuesta = [];
                                   safeSetState(() {});
 
                                   context.pushNamed(

@@ -536,31 +536,67 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Flexible(
-                                                        child: Text(
-                                                          FFLocalizations.of(
+                                                        child: InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            context.pushNamed(
+                                                              'noticiasDetalle',
+                                                              queryParameters: {
+                                                                'noticiasId':
+                                                                    serializeParam(
+                                                                  getJsonField(
+                                                                    childNoticiasItem,
+                                                                    r'''$.id''',
+                                                                  ),
+                                                                  ParamType.int,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                ),
+                                                              },
+                                                            );
+                                                          },
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                            context)
+                                                                        .languageCode ==
+                                                                    'en'
+                                                                ? getJsonField(
+                                                                    childNoticiasItem,
+                                                                    r'''$.descripcion_en''',
+                                                                  ).toString()
+                                                                : getJsonField(
+                                                                    childNoticiasItem,
+                                                                    r'''$.descripcion''',
+                                                                  ).toString(),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .languageCode ==
-                                                                  'en'
-                                                              ? getJsonField(
-                                                                  childNoticiasItem,
-                                                                  r'''$.descripcion_en''',
-                                                                ).toString()
-                                                              : getJsonField(
-                                                                  childNoticiasItem,
-                                                                  r'''$.descripcion''',
-                                                                ).toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .negroPerm,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                                      .negroPerm,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ],

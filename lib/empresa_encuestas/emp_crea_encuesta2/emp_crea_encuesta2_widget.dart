@@ -190,7 +190,7 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                   0,
                                   0,
                                   0,
-                                  10.0,
+                                  90.0,
                                 ),
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
@@ -426,7 +426,7 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                               );
                             },
                           ),
-                        ],
+                        ].addToEnd(SizedBox(height: 150.0)),
                       ),
                     ),
                   ),
@@ -468,6 +468,8 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                           )!;
                                           FFAppState()
                                               .contadorOpcionesEncuestas = 0;
+                                          FFAppState().imagenPreguntaEncuesta =
+                                              [];
                                           safeSetState(() {});
 
                                           context.pushNamed(

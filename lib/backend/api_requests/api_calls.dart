@@ -800,6 +800,11 @@ class LoginCall {
         response,
         r'''$.user1.ver_nueva''',
       ));
+  static String? nombreEmpresa(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.user1.nombre_empresa''',
+      ));
 }
 
 class UserIndividualCall {
@@ -10058,6 +10063,24 @@ class ComunidadComentariosCall {
   static List<String>? insigniaUrl(dynamic response) => (getJsonField(
         response,
         r'''$[:]._user.insignia.url''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? perfilId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.perfil_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? nombreEmpresa(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.nombre_empresa''',
         true,
       ) as List?)
           ?.withoutNulls

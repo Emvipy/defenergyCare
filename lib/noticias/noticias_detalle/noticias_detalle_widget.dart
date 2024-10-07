@@ -1101,13 +1101,14 @@ class _NoticiasDetalleWidgetState extends State<NoticiasDetalleWidget> {
                                 ),
                               );
                             }
-                            final listViewComentariosNoticiasResponse =
+                            final listViewComentariosComentariosNoticiasResponse =
                                 snapshot.data!;
 
                             return Builder(
                               builder: (context) {
                                 final childComentarios = getJsonField(
-                                  listViewComentariosNoticiasResponse.jsonBody,
+                                  listViewComentariosComentariosNoticiasResponse
+                                      .jsonBody,
                                   r'''$''',
                                 ).toList();
 

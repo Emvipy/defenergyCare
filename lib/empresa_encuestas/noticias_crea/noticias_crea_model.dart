@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/empresa_encuestas/modal_aviso_idioma/modal_aviso_idioma_widget.dart';
+import '/empresa_encuestas/modal_comillas/modal_comillas_widget.dart';
 import '/empresa_encuestas/modal_noticia_creada/modal_noticia_creada_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
