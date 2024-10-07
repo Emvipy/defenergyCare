@@ -67,7 +67,15 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.pushNamed(
+                'Home',
+                extra: <String, dynamic>{
+                  kTransitionInfoKey: TransitionInfo(
+                    hasTransition: true,
+                    transitionType: PageTransitionType.fade,
+                  ),
+                },
+              );
             },
           ),
           title: Text(
