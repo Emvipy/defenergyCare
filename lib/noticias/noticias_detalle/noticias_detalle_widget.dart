@@ -872,6 +872,31 @@ class _NoticiasDetalleWidgetState extends State<NoticiasDetalleWidget> {
                               ],
                             ),
                           ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 15.0, 10.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  '${FFLocalizations.of(context).languageCode == 'en' ? 'Author: ' : 'Autor: '}${NoticiaIndividualCall.autor(
+                                    noticiasDetalleNoticiaIndividualResponse
+                                        .jsonBody,
+                                  )}',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         if (NoticiaIndividualCall.botonEs(
                                   noticiasDetalleNoticiaIndividualResponse
                                       .jsonBody,
