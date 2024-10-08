@@ -280,7 +280,6 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                           final selectedMedia =
                                               await selectMediaWithSourceBottomSheet(
                                             context: context,
-                                            maxWidth: 600.00,
                                             maxHeight: 400.00,
                                             allowPhoto: true,
                                           );
@@ -401,7 +400,6 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         final selectedMedia =
                                             await selectMediaWithSourceBottomSheet(
                                           context: context,
-                                          maxWidth: 600.00,
                                           maxHeight: 400.00,
                                           allowPhoto: true,
                                         );

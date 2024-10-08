@@ -81,7 +81,29 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              if (FFAppState().perfilId == 1) {
+                context.pushNamed(
+                  'Home',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
+              } else {
+                context.pushNamed(
+                  'Home_empresa',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
+              }
             },
           ),
           title: Text(

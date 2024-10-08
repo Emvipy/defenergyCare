@@ -1172,7 +1172,6 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                           final selectedMedia =
                                               await selectMediaWithSourceBottomSheet(
                                             context: context,
-                                            maxWidth: 600.00,
                                             maxHeight: 400.00,
                                             allowPhoto: true,
                                           );
