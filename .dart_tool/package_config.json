@@ -903,7 +903,7 @@
     },
     {
       "name": "sqflite_common",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/sqflite_common-2.5.4+4",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/sqflite_common-2.5.4+5",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -1106,7 +1106,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-10-07T19:00:37.757737Z",
+  "generated": "2024-10-08T00:53:32.413705Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",

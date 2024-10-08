@@ -132,7 +132,26 @@ class _ModalUserWidgetState extends State<ModalUserWidget> {
                     Align(
                       alignment: AlignmentDirectional(0.0, 1.0),
                       child: FFButtonWidget(
-                        onPressed: () async {},
+                        onPressed: () async {
+                          Navigator.pop(context);
+
+                          context.pushNamed(
+                            'comunidad_crea_post',
+                            queryParameters: {
+                              'postId': serializeParam(
+                                widget!.postId,
+                                ParamType.int,
+                              ),
+                            }.withoutNulls,
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
+                        },
                         text: FFLocalizations.of(context).getText(
                           '24tfq72e' /* Editar Publicación */,
                         ),

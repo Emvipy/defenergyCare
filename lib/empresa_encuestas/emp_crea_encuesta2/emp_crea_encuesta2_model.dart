@@ -64,8 +64,6 @@ class EmpCreaEncuesta2Model extends FlutterFlowModel<EmpCreaEncuesta2Widget> {
 
   // Stores action output result for [Backend Call - API (empresa listado preguntas encuesta)] action in emp_crea_encuesta2 widget.
   ApiCallResponse? apiCargaPreguntas;
-  // Stores action output result for [Backend Call - API (empresa crea pregunta)] action in Button widget.
-  ApiCallResponse? apiCreaPreguntaEncuesta;
   // Stores action output result for [Backend Call - API (empresa finaliza encuesta)] action in Button widget.
   ApiCallResponse? apiResultlyn;
   // Model for menu_usuario component.
