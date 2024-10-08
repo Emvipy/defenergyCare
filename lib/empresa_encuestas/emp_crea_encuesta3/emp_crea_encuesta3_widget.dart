@@ -808,6 +808,8 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                         final selectedMedia =
                                             await selectMediaWithSourceBottomSheet(
                                           context: context,
+                                          maxWidth: 600.00,
+                                          maxHeight: 400.00,
                                           allowPhoto: true,
                                         );
                                         if (selectedMedia != null &&

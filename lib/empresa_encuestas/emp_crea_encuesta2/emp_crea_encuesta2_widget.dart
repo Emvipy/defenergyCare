@@ -190,8 +190,9 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                   0,
                                   0,
                                   0,
-                                  90.0,
+                                  200.0,
                                 ),
+                                primary: false,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
                                 itemCount: childPreguntas.length,
@@ -426,7 +427,7 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                               );
                             },
                           ),
-                        ].addToEnd(SizedBox(height: 150.0)),
+                        ].addToEnd(SizedBox(height: 100.0)),
                       ),
                     ),
                   ),
@@ -448,67 +449,16 @@ class _EmpCreaEncuesta2WidgetState extends State<EmpCreaEncuesta2Widget> {
                                 onPressed: (FFAppState().botonEncuesta == 'no')
                                     ? null
                                     : () async {
-                                        var _shouldSetState = false;
-                                        _model.apiCreaPreguntaEncuesta =
-                                            await EmpresaCreaPreguntaCall.call(
-                                          encuestaId:
-                                              FFAppState().nuevaEncuestaId,
-                                        );
-
-                                        _shouldSetState = true;
-                                        if ((_model.apiCreaPreguntaEncuesta
-                                                ?.succeeded ??
-                                            true)) {
-                                          FFAppState().nuevaPreguntaId =
-                                              EmpresaCreaPreguntaCall
-                                                  .preguntaId(
-                                            (_model.apiCreaPreguntaEncuesta
-                                                    ?.jsonBody ??
-                                                ''),
-                                          )!;
-                                          FFAppState()
-                                              .contadorOpcionesEncuestas = 0;
-                                          FFAppState().imagenPreguntaEncuesta =
-                                              [];
-                                          safeSetState(() {});
-
-                                          context.pushNamed(
-                                            'emp_crea_encuesta3',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                              ),
-                                            },
-                                          );
-                                        } else {
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Ha ocurrido un error...',
-                                                style: TextStyle(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
-                                              ),
-                                              duration:
-                                                  Duration(milliseconds: 4000),
-                                              backgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .error,
+                                        context.pushNamed(
+                                          'emp_crea_encuesta3',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
                                             ),
-                                          );
-                                          if (_shouldSetState)
-                                            safeSetState(() {});
-                                          return;
-                                        }
-
-                                        if (_shouldSetState)
-                                          safeSetState(() {});
+                                          },
+                                        );
                                       },
                                 text: FFLocalizations.of(context).getText(
                                   '2nu0onup' /* Agregar Pregunta */,

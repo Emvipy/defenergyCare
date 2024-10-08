@@ -10,6 +10,7 @@ import '/flutter_flow/upload_data.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -247,6 +248,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                               ),
                             ),
                             focusNode: _model.tituloEsFocusNode,
+                            onChanged: (_) => EasyDebounce.debounce(
+                              '_model.tituloEsTextController',
+                              Duration(milliseconds: 100),
+                              () => safeSetState(() {}),
+                            ),
                             autofocus: false,
                             obscureText: false,
                             decoration: InputDecoration(
@@ -331,6 +337,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                 ),
                               ),
                               focusNode: _model.tituloEnFocusNode,
+                              onChanged: (_) => EasyDebounce.debounce(
+                                '_model.tituloEnTextController',
+                                Duration(milliseconds: 100),
+                                () => safeSetState(() {}),
+                              ),
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -416,6 +427,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                 ),
                               ),
                               focusNode: _model.descEsFocusNode,
+                              onChanged: (_) => EasyDebounce.debounce(
+                                '_model.descEsTextController',
+                                Duration(milliseconds: 100),
+                                () => safeSetState(() {}),
+                              ),
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -590,6 +606,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                 ),
                               ),
                               focusNode: _model.textoEsFocusNode,
+                              onChanged: (_) => EasyDebounce.debounce(
+                                '_model.textoEsTextController',
+                                Duration(milliseconds: 100),
+                                () => safeSetState(() {}),
+                              ),
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -677,6 +698,11 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                 ),
                               ),
                               focusNode: _model.textoEnFocusNode,
+                              onChanged: (_) => EasyDebounce.debounce(
+                                '_model.textoEnTextController',
+                                Duration(milliseconds: 100),
+                                () => safeSetState(() {}),
+                              ),
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -1146,6 +1172,8 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                           final selectedMedia =
                                               await selectMediaWithSourceBottomSheet(
                                             context: context,
+                                            maxWidth: 600.00,
+                                            maxHeight: 400.00,
                                             allowPhoto: true,
                                           );
                                           if (selectedMedia != null &&
