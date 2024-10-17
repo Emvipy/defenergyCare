@@ -282,6 +282,36 @@ class _Diario8WidgetState extends State<Diario8Widget> {
                             ],
                           ),
                         ),
+                      if (_model.nombreMed == null || _model.nombreMed == '')
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 5.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'cgaq3piu' /* Recuerda poner el nombre en es... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 13.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       if (_model.nombreMed != null && _model.nombreMed != '')
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(

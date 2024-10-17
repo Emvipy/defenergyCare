@@ -104,6 +104,34 @@ class _EncuestasFinWidgetState extends State<EncuestasFinWidget> {
                         ),
                       ),
                       Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            10.0, 10.0, 10.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'v0vm7m9a' /* Apreciamos tu tiempo y tus res... */,
+                                ),
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                         child: ClipRRect(

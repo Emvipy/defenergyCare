@@ -1037,6 +1037,10 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
         );
         _model.contenido = 'si';
         safeSetState(() {});
+        return;
+      } else {
+        context.safePop();
+        return;
       }
     });
   }

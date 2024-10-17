@@ -4373,26 +4373,179 @@ Diarios */
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Text(
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .getText(
-                                                              'u5dnxul1' /* Carpeta de 
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              if ((FFAppState()
+                                                                              .authToken !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .authToken !=
+                                                                          '') &&
+                                                                  (FFAppState()
+                                                                              .email !=
+                                                                          null &&
+                                                                      FFAppState()
+                                                                              .email !=
+                                                                          '')) {
+                                                                if (FFAppState()
+                                                                        .creadoOk ==
+                                                                    'si') {
+                                                                  if ((functions
+                                                                              .parseJsonValueToInteger(getJsonField(
+                                                                                FFAppState().userIndividual,
+                                                                                r'''$._diario_cuenta''',
+                                                                              ))
+                                                                              .toString() ==
+                                                                          '0') ||
+                                                                      (functions
+                                                                              .parseJsonValueToInteger(getJsonField(
+                                                                                FFAppState().userIndividual,
+                                                                                r'''$._diario_cuenta''',
+                                                                              ))
+                                                                              .toString() ==
+                                                                          '1')) {
+                                                                    await showModalBottomSheet(
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      backgroundColor:
+                                                                          Colors
+                                                                              .transparent,
+                                                                      enableDrag:
+                                                                          false,
+                                                                      context:
+                                                                          context,
+                                                                      builder:
+                                                                          (context) {
+                                                                        return GestureDetector(
+                                                                          onTap: () =>
+                                                                              FocusScope.of(context).unfocus(),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalSinDiarioWidget(),
+                                                                          ),
+                                                                        );
+                                                                      },
+                                                                    ).then((value) =>
+                                                                        safeSetState(
+                                                                            () {}));
+
+                                                                    return;
+                                                                  } else {
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'reporteSalud',
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        kTransitionInfoKey:
+                                                                            TransitionInfo(
+                                                                          hasTransition:
+                                                                              true,
+                                                                          transitionType:
+                                                                              PageTransitionType.fade,
+                                                                        ),
+                                                                      },
+                                                                    );
+
+                                                                    unawaited(
+                                                                      () async {
+                                                                        await UserLogActivityCall
+                                                                            .call(
+                                                                          authToken:
+                                                                              FFAppState().authToken,
+                                                                          seccion:
+                                                                              'Acceso Carpeta de Salud Home',
+                                                                        );
+                                                                      }(),
+                                                                    );
+                                                                    return;
+                                                                  }
+                                                                } else {
+                                                                  await showModalBottomSheet(
+                                                                    isScrollControlled:
+                                                                        true,
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .transparent,
+                                                                    enableDrag:
+                                                                        false,
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (context) {
+                                                                      return GestureDetector(
+                                                                        onTap: () =>
+                                                                            FocusScope.of(context).unfocus(),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding:
+                                                                              MediaQuery.viewInsetsOf(context),
+                                                                          child:
+                                                                              ModalErrorCuentaWidget(),
+                                                                        ),
+                                                                      );
+                                                                    },
+                                                                  ).then((value) =>
+                                                                      safeSetState(
+                                                                          () {}));
+
+                                                                  return;
+                                                                }
+                                                              } else {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'login',
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .fade,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              0),
+                                                                    ),
+                                                                  },
+                                                                );
+
+                                                                return;
+                                                              }
+                                                            },
+                                                            child: Text(
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                                'u5dnxul1' /* Carpeta de 
 Salud */
-                                                              ,
+                                                                ,
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .negroPerm,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .negroPerm,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
                                                           ),
                                                           Flexible(
                                                             child: Align(

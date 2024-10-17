@@ -584,6 +584,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'marketplaceCopy',
+          path: '/marketplaceCopy',
+          builder: (context, params) => MarketplaceCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

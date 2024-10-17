@@ -1367,7 +1367,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                 child: Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Lottie.asset(
-                                    'assets/lottie_animations/Animation_-_1724191873865.json',
+                                    'assets/jsons/Animation_-_1724191873865.json',
                                     width: 240.0,
                                     height: 219.0,
                                     fit: BoxFit.contain,

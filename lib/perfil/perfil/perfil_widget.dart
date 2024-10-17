@@ -1636,9 +1636,6 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               FFAppState().deleteXUserId();
                               FFAppState().xUserId = 0;
 
-                              FFAppState().deleteEmail();
-                              FFAppState().email = '';
-
                               FFAppState().deleteNombre();
                               FFAppState().nombre = '';
 

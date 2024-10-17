@@ -31,6 +31,26 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.cefalea = 0;
+      _model.abdominal = 0;
+      _model.nauseas = 0;
+      _model.vomitos = 0;
+      _model.diarrea = 0;
+      _model.respirar = 0;
+      _model.niebla = 0;
+      _model.vision = 0;
+      _model.debilidad = 0;
+      _model.palpitaciones = 0;
+      _model.picor = 0;
+      _model.sudor = 0;
+      _model.hinchazon = 0;
+      _model.gases = 0;
+      _model.ardor = 0;
+      _model.reflujo = 0;
+      _model.digestion = 0;
+      _model.calambres = 0;
+      _model.mareos = 0;
+      safeSetState(() {});
       _model.apiP3Carga = await DiarioIntoleranciasTresCargaCall.call(
         diarioId: FFAppState().diarioIntoId,
       );

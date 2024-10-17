@@ -2562,11 +2562,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'syx5rcwt': {
       'es': 'Entrar',
-      'en': 'Login',
+      'en': 'Enter',
     },
     'su470gta': {
       'es': 'He olvidado mi contraseña',
       'en': 'I forgot my password',
+    },
+    'l0z7b69x': {
+      'es': 'Accede a Defenergy',
+      'en': 'Access Defenergy',
     },
     '8dd3rmos': {
       'es': '¿Aún no tienes cuenta?  ',
@@ -2655,8 +2659,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'At what time of day did you have',
     },
     '5v2tctar': {
-      'es': 'menos energía?',
-      'en': 'less energy?',
+      'es': ' menos energía?',
+      'en': ' less energy?',
     },
     'm181k934': {
       'es': 'Mañana',
@@ -3980,6 +3984,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Que medicamento has tomado para el dolor?',
       'en': 'What medicine have you taken for pain?',
     },
+    'pjvqhbrc': {
+      'es': 'Recuerda poner el nombre en español',
+      'en': '',
+    },
     'u49x9h9l': {
       'es': '¿Este medicamento alivió tus síntomas?',
       'en': 'Did this medicine relieve your symptoms?',
@@ -4171,6 +4179,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Que otro medicamento has tomado?',
       'en': 'What other medications have you taken?',
     },
+    'cgaq3piu': {
+      'es': 'Recuerda poner el nombre en español.',
+      'en': '',
+    },
     'okccl25e': {
       'es': '¿Este medicamento alivió tus síntomas?',
       'en': 'Did this medicine relieve your symptoms?',
@@ -4321,6 +4333,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '87xvf9u4': {
       'es': '¿Que suplemento has tomado?',
       'en': 'What supplement have you taken?',
+    },
+    'l8ddsiyr': {
+      'es': 'Recuerda poner el nombre en español.',
+      'en': '',
     },
     'un6snfpo': {
       'es': '¿Este suplemento alivió tus síntomas?',
@@ -5284,6 +5300,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Que medicamento has tomado para dormir?',
       'en': 'What medicine have you taken to sleep?',
     },
+    'e2ygt0iu': {
+      'es': 'Recuerda poner el nombre en español.',
+      'en': '',
+    },
     'odfq1nim': {
       'es': '¿Este medicamento ha mejorado el sueño?',
       'en': 'Has this medication improved your sleep?',
@@ -5370,6 +5390,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'li3cb89z': {
       'es': '¿Que suplemento has tomado?',
       'en': 'What supplement have you taken?',
+    },
+    'haoz43gf': {
+      'es': 'Recuerda poner el nombre en español.',
+      'en': '',
     },
     '2rbpvh2x': {
       'es': '¿Este suplemento te ayudó a dormir?',
@@ -6534,10 +6558,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Diary of Intolerances',
     },
     '2p3i74vc': {
+      'es': '¡Gracias por tu contribución! ',
+      'en': 'Thank you for your contribution!',
+    },
+    'c3tq7kwj': {
       'es':
-          '¡Gracias por tu contribución! Estamos un paso más cerca de encontrar soluciones para tu enfermedad.',
+          'Tu contribución es clave para avanzar hacia soluciones personalizadas y mejorar tu calidad de vida.',
       'en':
-          'Thank you for your contribution! We are one step closer to finding solutions for your disease.',
+          'Your contribution is key to moving towards personalized solutions and improving your quality of life.',
     },
     '03qmwjq4': {
       'es': 'Finalizar',
@@ -6545,7 +6573,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fe99u9os': {
       'es': 'Home',
-      'en': 'home',
+      'en': 'Home',
     },
   },
   // diario_Into3
@@ -7861,10 +7889,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Surveys',
     },
     'j978r36k': {
+      'es': '¡Gracias por completar la encuesta! ',
+      'en': 'Thank you for completing the survey!',
+    },
+    'v0vm7m9a': {
       'es':
-          '¡Gracias por completar la encuesta! \nApreciamos tu tiempo y tus respuestas. Tu participación ayudará a mejorar la investigación.',
+          'Apreciamos tu tiempo y tus respuestas. Tu participación ayudará a mejorar la investigación.',
       'en':
-          'Thank you for completing the survey! \nWe appreciate your time and responses. Your participation will help improve the research.',
+          'We appreciate your time and responses. Your participation will help improve the research.',
     },
     'wtgqux4a': {
       'es': 'Finalizar',
@@ -14299,6 +14331,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
+  // marketplaceCopy
+  {
+    'oy2ghmpc': {
+      'es': 'Tienda',
+      'en': '',
+    },
+    'nqmi7ylx': {
+      'es': 'Marketplace Próximamente Disponible',
+      'en': '',
+    },
+    'cnurnkqi': {
+      'es':
+          'Estamos preparando una selección de productos personalizados para tu enfermedad. ¡Pronto podrás acceder a ellos en nuestro marketplace!',
+      'en': '',
+    },
+    'vw0sc67j': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
   // modal_cancela_sign
   {
     '9brglm8b': {
@@ -15048,47 +15100,76 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'rkjbhxmw': {
       'es': 'Encuestas',
-      'en': '',
+      'en': 'Surveys',
     },
     '88t3ez0s': {
       'es':
           'En esta sección, podrás diseñar encuestas personalizadas según la enfermedad de los pacientes. Esto te permitirá recopilar información valiosa sobre sus experiencias y necesidades, contribuyendo a la mejora de tratamientos y recursos específicos para su atención.',
-      'en': '',
+      'en':
+          'In this section, you will be able to design customized surveys based on the patients\' illness. This will allow you to gather valuable information about their experiences and needs, contributing to the improvement of specific treatments and resources for their care.',
     },
     'zvnfte39': {
       'es': 'Entendido',
-      'en': '',
+      'en': 'Understood',
     },
   },
   // modal_info_comunidad_e
   {
     'wgem86l6': {
       'es': 'Comunidad',
-      'en': '',
+      'en': 'Community',
     },
     '62srbuzg': {
       'es':
           'En este espacio, tendrás la oportunidad de interactuar directamente con los pacientes. Podrás participar en conversaciones, plantear preguntas y acceder a información relevante, promoviendo un ambiente de empatía que beneficiará a todos.',
-      'en': '',
+      'en':
+          'In this space, you will have the opportunity to interact directly with patients. You will be able to participate in conversations, ask questions and access relevant information, promoting an environment of empathy that will benefit everyone.',
     },
     'g8u1baro': {
       'es': 'Entendido',
-      'en': '',
+      'en': 'Understood',
     },
   },
   // modal_comillas
   {
     'uuu622gw': {
       'es': 'Debes revisar el texto',
-      'en': '',
+      'en': 'You must review the text',
     },
     'zv7uj4pn': {
       'es': 'Revisa el texto y asegúrate que no contiene comillas dobles \"',
-      'en': '',
+      'en': 'Check the text and make sure it does not contain double quotes \"',
     },
     '5aacyqxq': {
       'es': 'Entendido',
-      'en': '',
+      'en': 'Understood',
+    },
+  },
+  // modal_push_noticia
+  {
+    'vsjomw0f': {
+      'es': 'Noticia creada correctamente',
+      'en': 'News created successfully',
+    },
+    'dkesktvv': {
+      'es':
+          'La publicación se ha creado correctamente pero no se verá hasta que el Administrador la apruebe.',
+      'en':
+          'The post has been created successfully but will not be visible until the Administrator approves it.',
+    },
+    'hjuqf95a': {
+      'es':
+          'Activa las notificaciones para estar al día de todo lo que ocurre en Defenergy',
+      'en':
+          'Activate notifications to stay up to date with everything that happens at Defenergy',
+    },
+    'bu91f8ms': {
+      'es': 'SI, Activar',
+      'en': 'YES, Activate',
+    },
+    'jp3wve0a': {
+      'es': 'No volver a mostrar este mensaje',
+      'en': 'Do not show this message again',
     },
   },
   // Miscellaneous
@@ -15104,6 +15185,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Para poder tomar fotos o publicar imágenes la app te pedirá permiso para acceder a tus imágenes.',
       'en':
           'In order to take pictures or post images the app will ask for permission to access your images.',
+    },
+    '3b16l1mp': {
+      'es': 'Accede a Defenergy con autenticación biométrica',
+      'en': 'Access Defenergy with biometric authentication',
     },
     '0eyisszg': {
       'es': 'Error. Tu usuario o contraseña son incorrectos',

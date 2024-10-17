@@ -8849,6 +8849,11 @@ class NoticiaIndividualCall {
         response,
         r'''$.ctrl_imagen''',
       ));
+  static String? mensajePush(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$._user.mensaje_notificaciones_diarios''',
+      ));
 }
 
 class ComentariosNoticiasCall {
@@ -12437,13 +12442,16 @@ class EmpresaCreaNoticiaCall {
 class EmpresaNoticiaIndividualCall {
   static Future<ApiCallResponse> call({
     int? noticiaId,
+    String? authToken = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'empresa noticia individual',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/empresa_news/noticia_individual',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
       params: {
         'noticia_id': noticiaId,
       },
@@ -12503,6 +12511,11 @@ class EmpresaNoticiaIndividualCall {
   static String? botonEn(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.nombre_boton_en''',
+      ));
+  static String? mensajePush(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$._user.mensaje_notificaciones_diarios''',
       ));
 }
 

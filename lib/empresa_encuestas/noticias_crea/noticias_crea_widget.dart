@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/empresa_encuestas/modal_aviso_idioma/modal_aviso_idioma_widget.dart';
 import '/empresa_encuestas/modal_comillas/modal_comillas_widget.dart';
 import '/empresa_encuestas/modal_noticia_creada/modal_noticia_creada_widget.dart';
+import '/empresa_encuestas/modal_push_noticia/modal_push_noticia_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -119,6 +120,7 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
       future: (_model.apiRequestCompleter ??= Completer<ApiCallResponse>()
             ..complete(EmpresaNoticiaIndividualCall.call(
               noticiaId: widget!.noticiaId,
+              authToken: FFAppState().authToken,
             )))
           .future,
       builder: (context, snapshot) {
@@ -1365,31 +1367,65 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                       _shouldSetState = true;
                                       if ((_model.apiResultitk?.succeeded ??
                                           true)) {
-                                        await showModalBottomSheet(
-                                          isScrollControlled: true,
-                                          backgroundColor: Colors.transparent,
-                                          isDismissible: false,
-                                          enableDrag: false,
-                                          context: context,
-                                          builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () =>
-                                                  FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child:
-                                                    ModalNoticiaCreadaWidget(),
-                                              ),
-                                            );
-                                          },
-                                        ).then((value) => safeSetState(() {}));
+                                        if (EmpresaNoticiaIndividualCall
+                                                .mensajePush(
+                                              noticiasCreaEmpresaNoticiaIndividualResponse
+                                                  .jsonBody,
+                                            ) ==
+                                            'si') {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalPushNoticiaWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
 
-                                        if (_shouldSetState)
-                                          safeSetState(() {});
-                                        return;
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
+                                          return;
+                                        } else {
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor: Colors.transparent,
+                                            isDismissible: false,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () =>
+                                                    FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalNoticiaCreadaWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
+
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
+                                          return;
+                                        }
                                       } else {
                                         await showModalBottomSheet(
                                           isScrollControlled: true,
