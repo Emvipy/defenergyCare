@@ -21,6 +21,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
+
   await initFirebase();
 
   // Start initial custom actions code
@@ -28,6 +29,8 @@ void main() async {
   // End initial custom actions code
 
   await FlutterFlowTheme.initialize();
+
+  await FFLocalizations.initialize();
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
@@ -48,7 +51,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale? _locale;
+  Locale? _locale = FFLocalizations.getStoredLocale();
 
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
@@ -76,6 +79,7 @@ class _MyAppState extends State<MyApp> {
 
   void setLocale(String language) {
     safeSetState(() => _locale = createLocale(language));
+    FFLocalizations.storeLocale(language);
   }
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {

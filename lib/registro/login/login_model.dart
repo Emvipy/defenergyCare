@@ -14,9 +14,11 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 
 class LoginModel extends FlutterFlowModel<LoginWidget> {
@@ -35,6 +37,11 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? passCopy;
   // Stores action output result for [Backend Call - API (login)] action in Button widget.
   ApiCallResponse? apiloginCopy;
+  bool verificacion = false;
+  // Stores action output result for [Custom Action - encodeBase64] action in Image widget.
+  String? passCopyBio;
+  // Stores action output result for [Backend Call - API (login)] action in Image widget.
+  ApiCallResponse? apiloginBio;
 
   @override
   void initState(BuildContext context) {

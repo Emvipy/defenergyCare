@@ -301,7 +301,7 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                   ),
                                   TextSpan(
                                     text: FFLocalizations.of(context).getText(
-                                      '5v2tctar' /* menos energía? */,
+                                      '5v2tctar' /*  menos energía? */,
                                     ),
                                     style: TextStyle(
                                       color:

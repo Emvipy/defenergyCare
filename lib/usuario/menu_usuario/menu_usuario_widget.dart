@@ -457,7 +457,7 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                         FFAppState().email != '')) {
                                   if (FFAppState().creadoOk == 'si') {
                                     context.pushNamed(
-                                      'marketplace',
+                                      'marketplaceCopy',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

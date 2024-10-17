@@ -126,3 +126,5 @@ export '/perfil/perfil_medicamentos_crea/perfil_medicamentos_crea_widget.dart'
     show PerfilMedicamentosCreaWidget;
 export '/perfil/perfil_medicamentos_edita/perfil_medicamentos_edita_widget.dart'
     show PerfilMedicamentosEditaWidget;
+export '/marketplace/marketplace_copy/marketplace_copy_widget.dart'
+    show MarketplaceCopyWidget;

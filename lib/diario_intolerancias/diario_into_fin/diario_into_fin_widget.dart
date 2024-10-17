@@ -70,7 +70,7 @@ class _DiarioIntoFinWidgetState extends State<DiarioIntoFinWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: Container(
                   width: 397.0,
-                  height: 293.0,
+                  height: 383.0,
                   decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -81,7 +81,27 @@ class _DiarioIntoFinWidgetState extends State<DiarioIntoFinWidget> {
                               15.0, 10.0, 15.0, 10.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '2p3i74vc' /* ¡Gracias por tu contribución! ... */,
+                              '2p3i74vc' /* ¡Gracias por tu contribución!  */,
+                            ),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              15.0, 2.0, 15.0, 10.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'c3tq7kwj' /* Tu contribución es clave para ... */,
                             ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)

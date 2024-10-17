@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
-import 'backend/api_requests/api_manager.dart';
+import '/backend/api_requests/api_manager.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';
@@ -132,6 +132,9 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _nombreEmpresa =
           await secureStorage.getString('ff_nombreEmpresa') ?? _nombreEmpresa;
+    });
+    await _safeInitAsync(() async {
+      _password = await secureStorage.getString('ff_password') ?? _password;
     });
   }
 
@@ -752,6 +755,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteNombreEmpresa() {
     secureStorage.delete(key: 'ff_nombreEmpresa');
+  }
+
+  String _password = '';
+  String get password => _password;
+  set password(String value) {
+    _password = value;
+    secureStorage.setString('ff_password', value);
+  }
+
+  void deletePassword() {
+    secureStorage.delete(key: 'ff_password');
   }
 }
 

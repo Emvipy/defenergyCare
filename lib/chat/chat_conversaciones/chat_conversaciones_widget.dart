@@ -8,6 +8,7 @@ import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,6 +35,9 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ChatConversacionesModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
 
     if (!isWeb) {
       _keyboardVisibilitySubscription =
