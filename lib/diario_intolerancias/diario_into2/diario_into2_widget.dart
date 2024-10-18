@@ -466,6 +466,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
         );
         _model.contenido = 'si';
         safeSetState(() {});
+        return;
       }
       if (FFAppState().momento == 2) {
         _model.apiCargaComida = await DiarioIntoleranciaDosCargaCall.call(
@@ -753,6 +754,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
         );
         _model.contenido = 'si';
         safeSetState(() {});
+        return;
       }
       if (FFAppState().momento == 3) {
         _model.apiCargaCena = await DiarioIntoleranciaDosCargaCall.call(
