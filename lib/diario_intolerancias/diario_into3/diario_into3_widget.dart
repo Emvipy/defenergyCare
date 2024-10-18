@@ -115,6 +115,7 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
           (_model.apiP3Carga?.jsonBody ?? ''),
         )!;
         safeSetState(() {});
+        return;
       } else {
         if (FFAppState().momento == 2) {
           _model.cefalea = DiarioIntoleranciasTresCargaCall.comidaCefalea(
@@ -176,6 +177,7 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
             (_model.apiP3Carga?.jsonBody ?? ''),
           )!;
           safeSetState(() {});
+          return;
         } else {
           if (FFAppState().momento == 3) {
             _model.cefalea = DiarioIntoleranciasTresCargaCall.cenaCefalea(
@@ -237,6 +239,9 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
               (_model.apiP3Carga?.jsonBody ?? ''),
             )!;
             safeSetState(() {});
+            return;
+          } else {
+            return;
           }
         }
       }
@@ -9468,6 +9473,7 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
+                              var _shouldSetState = false;
                               _model.apiP3 =
                                   await DiarioIntoleranciasTresCall.call(
                                 authToken: FFAppState().authToken,
@@ -9495,6 +9501,7 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                 editando: FFAppState().editandoDiario,
                               );
 
+                              _shouldSetState = true;
                               if (_model.abdominal >= 1) {
                                 context.pushNamed(
                                   'diario_Into4',
@@ -9505,10 +9512,53 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                     ),
                                   },
                                 );
+
+                                _model.cefalea = 0;
+                                _model.abdominal = 0;
+                                _model.nauseas = 0;
+                                _model.vomitos = 0;
+                                _model.diarrea = 0;
+                                _model.respirar = 0;
+                                _model.niebla = 0;
+                                _model.vision = 0;
+                                _model.debilidad = 0;
+                                _model.palpitaciones = 0;
+                                _model.sudor = 0;
+                                _model.picor = 0;
+                                _model.hinchazon = 0;
+                                _model.gases = 0;
+                                _model.ardor = 0;
+                                _model.reflujo = 0;
+                                _model.digestion = 0;
+                                _model.calambres = 0;
+                                _model.mareos = 0;
+                                safeSetState(() {});
+                                if (_shouldSetState) safeSetState(() {});
+                                return;
                               } else {
                                 if (FFAppState().momento < 3) {
                                   FFAppState().momento =
                                       FFAppState().momento + 1;
+                                  safeSetState(() {});
+                                  _model.cefalea = 0;
+                                  _model.abdominal = 0;
+                                  _model.nauseas = 0;
+                                  _model.vomitos = 0;
+                                  _model.diarrea = 0;
+                                  _model.respirar = 0;
+                                  _model.niebla = 0;
+                                  _model.vision = 0;
+                                  _model.debilidad = 0;
+                                  _model.palpitaciones = 0;
+                                  _model.sudor = 0;
+                                  _model.picor = 0;
+                                  _model.hinchazon = 0;
+                                  _model.gases = 0;
+                                  _model.ardor = 0;
+                                  _model.reflujo = 0;
+                                  _model.digestion = 0;
+                                  _model.calambres = 0;
+                                  _model.mareos = 0;
                                   safeSetState(() {});
 
                                   context.pushNamed(
@@ -9527,6 +9577,8 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                     diarioId: FFAppState().diarioIntoId,
                                   );
 
+                                  _shouldSetState = true;
+
                                   context.goNamed(
                                     'diarioIntoFin',
                                     extra: <String, dynamic>{
@@ -9536,10 +9588,33 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                       ),
                                     },
                                   );
+
+                                  _model.cefalea = 0;
+                                  _model.abdominal = 0;
+                                  _model.nauseas = 0;
+                                  _model.vomitos = 0;
+                                  _model.diarrea = 0;
+                                  _model.respirar = 0;
+                                  _model.niebla = 0;
+                                  _model.vision = 0;
+                                  _model.debilidad = 0;
+                                  _model.palpitaciones = 0;
+                                  _model.sudor = 0;
+                                  _model.picor = 0;
+                                  _model.hinchazon = 0;
+                                  _model.gases = 0;
+                                  _model.ardor = 0;
+                                  _model.reflujo = 0;
+                                  _model.digestion = 0;
+                                  _model.calambres = 0;
+                                  _model.mareos = 0;
+                                  safeSetState(() {});
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
                                 }
                               }
 
-                              safeSetState(() {});
+                              if (_shouldSetState) safeSetState(() {});
                             },
                             text: FFLocalizations.of(context).getText(
                               '2rzsftge' /* Continuar */,

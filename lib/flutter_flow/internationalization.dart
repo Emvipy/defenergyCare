@@ -2568,10 +2568,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'He olvidado mi contraseña',
       'en': 'I forgot my password',
     },
-    'l0z7b69x': {
-      'es': 'Accede a Defenergy',
-      'en': 'Access Defenergy',
-    },
     '8dd3rmos': {
       'es': '¿Aún no tienes cuenta?  ',
       'en': 'Don\'t have an account yet?',
@@ -2882,7 +2878,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '12gvsql7': {
       'es': 'Tareas del\nHogar',
-      'en': 'Homework',
+      'en': 'Household\nTasks',
     },
     '2c0jkwki': {
       'es': 'Socializar',
@@ -2910,7 +2906,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cubr0ze1': {
       'es': 'Ninguna',
-      'en': '',
+      'en': 'None',
     },
     '3p65jwe9': {
       'es': 'Continuar',
@@ -2926,7 +2922,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'knt5yxct': {
       'es': 'Home',
-      'en': 'home',
+      'en': 'Home',
     },
   },
   // diario3
@@ -3986,7 +3982,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pjvqhbrc': {
       'es': 'Recuerda poner el nombre en español',
-      'en': '',
+      'en': 'Remember to put the name in Spanish',
     },
     'u49x9h9l': {
       'es': '¿Este medicamento alivió tus síntomas?',
@@ -4006,7 +4002,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jwfdco79': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last journal made:',
+      'en': 'Or use the one from the last diary made:',
     },
     '71xalx9c': {
       'es': 'Si alivió mis\nsíntomas',
@@ -4181,7 +4177,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cgaq3piu': {
       'es': 'Recuerda poner el nombre en español.',
-      'en': '',
+      'en': 'Remember to put the name in Spanish.',
     },
     'okccl25e': {
       'es': '¿Este medicamento alivió tus síntomas?',
@@ -4197,11 +4193,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'glsm8r9c': {
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
-      'en': '',
+      'en': 'Remember to use accents in names that use them.',
     },
     '4t4jpebj': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last journal made:',
+      'en': 'Or use the one from the last diary made:',
     },
     '83shmgxa': {
       'es': 'Si alivió mis\nsíntomas',
@@ -4336,7 +4332,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'l8ddsiyr': {
       'es': 'Recuerda poner el nombre en español.',
-      'en': '',
+      'en': 'Remember to put the name in Spanish.',
     },
     'un6snfpo': {
       'es': '¿Este suplemento alivió tus síntomas?',
@@ -4352,19 +4348,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'b0cabrkh': {
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
-      'en': '',
+      'en': 'Remember to use accents in names that use them.',
     },
     'yr9exkff': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last journal made:',
+      'en': 'Or use the one from the last diary made:',
     },
     '26wb8vcb': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last journal made:',
+      'en': 'Or use the one from the last diary made:',
     },
     'tcb9lgch': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last journal made:',
+      'en': 'Or use the one from the last diary made:',
     },
     'gdg7u00w': {
       'es': 'Si alivió mis\nsíntomas',
@@ -5302,7 +5298,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'e2ygt0iu': {
       'es': 'Recuerda poner el nombre en español.',
-      'en': '',
+      'en': 'Remember to put the name in Spanish.',
     },
     'odfq1nim': {
       'es': '¿Este medicamento ha mejorado el sueño?',
@@ -5361,12 +5357,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mjw5o3t5': {
       'es': '¡Gracias por completar tu Diario!',
-      'en': 'Thank you for completing your Dream details!',
+      'en': 'Thank you for completing your Journal!',
     },
     'uf0f9sdv': {
       'es':
           'Tus datos nos ayudarán a identificar qué suplementos o tratamientos mejoran tu descanso. ¡Nos vemos mañana!',
-      'en': '',
+      'en':
+          'Your data will help us identify which supplements or treatments improve your rest. See you tomorrow!',
     },
     '1ewyyzaw': {
       'es': 'Finalizar',
@@ -5385,7 +5382,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dwyn9nng': {
       'es': '99%',
-      'en': '97%',
+      'en': '99%',
     },
     'li3cb89z': {
       'es': '¿Que suplemento has tomado?',
@@ -5393,7 +5390,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'haoz43gf': {
       'es': 'Recuerda poner el nombre en español.',
-      'en': '',
+      'en': 'Remember to put the name in Spanish.',
     },
     '2rbpvh2x': {
       'es': '¿Este suplemento te ayudó a dormir?',
@@ -8257,7 +8254,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bx9mgmli': {
       'es': '+34 666 666 666',
-      'en': '',
+      'en': '+34 666 666 666',
     },
     'nu1bsix9': {
       'es': 'Contactar',
@@ -14335,20 +14332,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'oy2ghmpc': {
       'es': 'Tienda',
-      'en': '',
+      'en': 'Store',
     },
     'nqmi7ylx': {
       'es': 'Marketplace Próximamente Disponible',
-      'en': '',
+      'en': 'Marketplace Coming Soon',
     },
     'cnurnkqi': {
       'es':
           'Estamos preparando una selección de productos personalizados para tu enfermedad. ¡Pronto podrás acceder a ellos en nuestro marketplace!',
-      'en': '',
+      'en':
+          'We are preparing a selection of personalized products for your disease. You will soon be able to access them in our marketplace!',
     },
     'vw0sc67j': {
       'es': 'Home',
-      'en': '',
+      'en': 'Home',
     },
   },
   // modal_cancela_sign

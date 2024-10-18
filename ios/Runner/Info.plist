@@ -54,8 +54,6 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para usar la cámara.</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Accede a Defenergy con autenticación biométrica</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para acceder a tus imágenes.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
