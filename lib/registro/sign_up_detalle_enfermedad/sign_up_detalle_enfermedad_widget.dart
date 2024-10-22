@@ -247,7 +247,7 @@ class _SignUpDetalleEnfermedadWidgetState
                         borderWidth: 2.0,
                         borderRadius: 12.0,
                         margin: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 4.0, 16.0, 4.0),
+                            16.0, 0.0, 16.0, 0.0),
                         hidesUnderline: true,
                         isOverButton: true,
                         isSearchable: false,
@@ -295,7 +295,7 @@ class _SignUpDetalleEnfermedadWidgetState
                         borderWidth: 2.0,
                         borderRadius: 12.0,
                         margin: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 4.0, 16.0, 4.0),
+                            16.0, 0.0, 16.0, 0.0),
                         hidesUnderline: true,
                         isOverButton: true,
                         isSearchable: false,
@@ -346,7 +346,7 @@ class _SignUpDetalleEnfermedadWidgetState
                         borderWidth: 2.0,
                         borderRadius: 12.0,
                         margin: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 4.0, 16.0, 4.0),
+                            16.0, 0.0, 16.0, 0.0),
                         hidesUnderline: true,
                         isOverButton: true,
                         isSearchable: false,
@@ -414,7 +414,7 @@ class _SignUpDetalleEnfermedadWidgetState
                             borderWidth: 2.0,
                             borderRadius: 12.0,
                             margin: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 4.0),
+                                16.0, 0.0, 16.0, 0.0),
                             hidesUnderline: true,
                             isOverButton: true,
                             isSearchable: false,
@@ -485,7 +485,7 @@ class _SignUpDetalleEnfermedadWidgetState
                             borderWidth: 2.0,
                             borderRadius: 12.0,
                             margin: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 4.0),
+                                16.0, 0.0, 16.0, 0.0),
                             hidesUnderline: true,
                             isOverButton: true,
                             isSearchable: false,
@@ -574,7 +574,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -672,7 +672,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -743,7 +743,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -819,7 +819,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -1133,7 +1133,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -1210,7 +1210,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -1281,7 +1281,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -1352,7 +1352,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -1428,7 +1428,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -1733,7 +1733,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -1809,7 +1809,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -1894,7 +1894,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -1965,7 +1965,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -2040,7 +2040,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -2376,7 +2376,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           borderRadius: 12.0,
                                           margin:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 4.0, 16.0, 4.0),
+                                                  16.0, 0.0, 16.0, 0.0),
                                           hidesUnderline: true,
                                           isOverButton: true,
                                           isSearchable: false,
@@ -2455,7 +2455,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -2526,7 +2526,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -2602,7 +2602,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -3116,7 +3116,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -3214,7 +3214,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -3285,7 +3285,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -3361,7 +3361,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -3441,7 +3441,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -3517,7 +3517,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -3602,7 +3602,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -3673,7 +3673,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -3748,7 +3748,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -4070,7 +4070,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -4147,7 +4147,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -4218,7 +4218,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -4289,7 +4289,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -4365,7 +4365,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
                                         isSearchable: false,
@@ -4445,7 +4445,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -4521,7 +4521,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -4606,7 +4606,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -4677,7 +4677,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -4752,7 +4752,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: false,
                                         isSearchable: false,
@@ -5071,7 +5071,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -5169,7 +5169,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -5240,7 +5240,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -5316,7 +5316,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -5402,7 +5402,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -5479,7 +5479,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -5550,7 +5550,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -5621,7 +5621,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -5697,7 +5697,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -6013,7 +6013,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6111,7 +6111,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6182,7 +6182,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6258,7 +6258,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -6344,7 +6344,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6421,7 +6421,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6492,7 +6492,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6563,7 +6563,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6639,7 +6639,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,
@@ -6719,7 +6719,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6795,7 +6795,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6880,7 +6880,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -6951,7 +6951,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                       borderWidth: 2.0,
                                       borderRadius: 12.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 16.0, 4.0),
+                                          16.0, 0.0, 16.0, 0.0),
                                       hidesUnderline: true,
                                       isOverButton: true,
                                       isSearchable: false,
@@ -7026,7 +7026,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                         borderWidth: 2.0,
                                         borderRadius: 12.0,
                                         margin: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 4.0, 16.0, 4.0),
+                                            16.0, 0.0, 16.0, 0.0),
                                         hidesUnderline: true,
                                         isOverButton: true,
                                         isSearchable: false,

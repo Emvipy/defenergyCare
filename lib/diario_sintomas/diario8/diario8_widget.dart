@@ -876,7 +876,7 @@ class _Diario8WidgetState extends State<Diario8Widget> {
                                     });
                                   },
                                   child: Container(
-                                    width: 120.0,
+                                    width: 135.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
                                       color: _model.alivioSintomas == 'si'
@@ -895,7 +895,7 @@ class _Diario8WidgetState extends State<Diario8Widget> {
                                           Icons.check_circle_outline_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          size: 50.0,
+                                          size: 35.0,
                                         ),
                                         Flexible(
                                           child: Text(
@@ -912,6 +912,7 @@ síntomas */
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
+                                                  fontSize: 13.0,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -956,7 +957,7 @@ síntomas */
                                     });
                                   },
                                   child: Container(
-                                    width: 120.0,
+                                    width: 135.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
                                       color: _model.alivioSintomas == 'no'
@@ -975,7 +976,7 @@ síntomas */
                                           Icons.close_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          size: 50.0,
+                                          size: 35.0,
                                         ),
                                         Flexible(
                                           child: Text(
@@ -992,6 +993,7 @@ síntomas */
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
+                                                  fontSize: 13.0,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -1037,14 +1039,25 @@ síntomas */
                                       controller: _model
                                               .dropDownMejora1P2ValueController ??=
                                           FormFieldController<String>(null),
-                                      options: _model.mejoraSintomas
-                                          .map((e) => getJsonField(
-                                                e,
-                                                r'''$.mejora''',
-                                              ))
-                                          .toList()
-                                          .map((e) => e.toString())
-                                          .toList(),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
                                       onChanged: (val) async {
                                         safeSetState(() => _model
                                             .dropDownMejora1P2Value = val);
@@ -1098,14 +1111,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownMejora2P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownMejora2P2Value = val);
@@ -1159,14 +1183,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownMejora3P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownMejora3P2Value = val);
@@ -1220,14 +1255,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownMejora4P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownMejora4P2Value = val);
@@ -1281,14 +1327,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownMejora5P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.mejoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownMejora5P2Value = val);
@@ -1367,14 +1424,25 @@ síntomas */
                                       controller: _model
                                               .dropDownEmpeora1P2ValueController ??=
                                           FormFieldController<String>(null),
-                                      options: _model.empeoraSintomas
-                                          .map((e) => getJsonField(
-                                                e,
-                                                r'''$.mejora''',
-                                              ))
-                                          .toList()
-                                          .map((e) => e.toString())
-                                          .toList(),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
                                       onChanged: (val) async {
                                         safeSetState(() => _model
                                             .dropDownEmpeora1P2Value = val);
@@ -1428,14 +1496,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownEmpeora2P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownEmpeora2P2Value = val);
@@ -1489,14 +1568,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownEmpeora3P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownEmpeora3P2Value = val);
@@ -1550,14 +1640,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownEmpeora4P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownEmpeora4P2Value = val);
@@ -1611,14 +1712,25 @@ síntomas */
                                         controller: _model
                                                 .dropDownEmpeora5P2ValueController ??=
                                             FormFieldController<String>(null),
-                                        options: _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
+                                        options: FFLocalizations.of(context)
+                                                    .languageCode ==
+                                                'es'
+                                            ? _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList()
+                                            : _model.empeoraSintomas
+                                                .map((e) => getJsonField(
+                                                      e,
+                                                      r'''$.mejora_en''',
+                                                    ))
+                                                .toList()
+                                                .map((e) => e.toString())
+                                                .toList(),
                                         onChanged: (val) async {
                                           safeSetState(() => _model
                                               .dropDownEmpeora5P2Value = val);

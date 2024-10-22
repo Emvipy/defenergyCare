@@ -4330,10 +4330,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Que suplemento has tomado?',
       'en': 'What supplement have you taken?',
     },
-    'l8ddsiyr': {
-      'es': 'Recuerda poner el nombre en español.',
-      'en': 'Remember to put the name in Spanish.',
-    },
     'un6snfpo': {
       'es': '¿Este suplemento alivió tus síntomas?',
       'en': 'Did this supplement relieve your symptoms?',
@@ -5387,10 +5383,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'li3cb89z': {
       'es': '¿Que suplemento has tomado?',
       'en': 'What supplement have you taken?',
-    },
-    'haoz43gf': {
-      'es': 'Recuerda poner el nombre en español.',
-      'en': 'Remember to put the name in Spanish.',
     },
     '2rbpvh2x': {
       'es': '¿Este suplemento te ayudó a dormir?',

@@ -211,36 +211,6 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                             ],
                           ),
                         ),
-                      if (_model.nombreMed == null || _model.nombreMed == '')
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 10.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Flexible(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 5.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'haoz43gf' /* Recuerda poner el nombre en es... */,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 13.0,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
                       if (_model.nombreMed != null && _model.nombreMed != '')
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
