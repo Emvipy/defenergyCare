@@ -2152,6 +2152,15 @@ class DespMejoraSintomasCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static List<String>? mejoraEn(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].mejora_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 class DespEmpeoraSintomasCall {
@@ -2184,6 +2193,15 @@ class DespEmpeoraSintomasCall {
   static List<String>? empeora(dynamic response) => (getJsonField(
         response,
         r'''$[:].mejora''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? mejoraEn(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].mejora_en''',
         true,
       ) as List?)
           ?.withoutNulls

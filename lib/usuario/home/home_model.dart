@@ -28,6 +28,10 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
   ApiCallResponse? apiCheck;
   // Stores action output result for [Backend Call - API (user individual)] action in Home widget.
   ApiCallResponse? apiCargaUser;
+  // Stores action output result for [Backend Call - API (user check session)] action in Home widget.
+  ApiCallResponse? apiCheck2;
+  // Stores action output result for [Backend Call - API (user individual)] action in Home widget.
+  ApiCallResponse? apiCargaUser2;
   // Stores action output result for [Backend Call - API (diario Crea)] action in Container widget.
   ApiCallResponse? apiDiarioCreaicon;
   // Stores action output result for [Backend Call - API (diario Crea)] action in Container widget.

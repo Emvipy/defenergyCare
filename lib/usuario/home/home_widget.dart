@@ -61,21 +61,42 @@ class _HomeWidgetState extends State<HomeWidget> {
           return;
         }
       } else {
-        await showModalBottomSheet(
-          isScrollControlled: true,
-          backgroundColor: Colors.transparent,
-          enableDrag: false,
-          context: context,
-          builder: (context) {
-            return GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
-              child: Padding(
-                padding: MediaQuery.viewInsetsOf(context),
-                child: ModalCierreSesionWidget(),
-              ),
+        _model.apiCheck2 = await UserCheckSessionCall.call(
+          authToken: FFAppState().authToken,
+        );
+
+        if ((_model.apiCheck2?.succeeded ?? true)) {
+          _model.apiCargaUser2 = await UserIndividualCall.call(
+            authToken: FFAppState().authToken,
+          );
+
+          if ((_model.apiCargaUser2?.succeeded ?? true)) {
+            FFAppState().userIndividual = getJsonField(
+              (_model.apiCargaUser2?.jsonBody ?? ''),
+              r'''$''',
             );
-          },
-        ).then((value) => safeSetState(() {}));
+            safeSetState(() {});
+            return;
+          } else {
+            return;
+          }
+        } else {
+          await showModalBottomSheet(
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            enableDrag: false,
+            context: context,
+            builder: (context) {
+              return GestureDetector(
+                onTap: () => FocusScope.of(context).unfocus(),
+                child: Padding(
+                  padding: MediaQuery.viewInsetsOf(context),
+                  child: ModalCierreSesionWidget(),
+                ),
+              );
+            },
+          ).then((value) => safeSetState(() {}));
+        }
 
         return;
       }

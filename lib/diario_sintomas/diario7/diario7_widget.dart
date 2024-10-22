@@ -851,7 +851,7 @@ class _Diario7WidgetState extends State<Diario7Widget> {
                                     });
                                   },
                                   child: Container(
-                                    width: 120.0,
+                                    width: 135.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
                                       color: _model.alivioSintomas == 'si'
@@ -870,7 +870,7 @@ class _Diario7WidgetState extends State<Diario7Widget> {
                                           Icons.check_circle_outline_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          size: 50.0,
+                                          size: 35.0,
                                         ),
                                         Flexible(
                                           child: Text(
@@ -887,6 +887,7 @@ síntomas */
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
+                                                  fontSize: 13.0,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -927,7 +928,7 @@ síntomas */
                                     });
                                   },
                                   child: Container(
-                                    width: 120.0,
+                                    width: 135.0,
                                     height: 100.0,
                                     decoration: BoxDecoration(
                                       color: _model.alivioSintomas == 'no'
@@ -946,7 +947,7 @@ síntomas */
                                           Icons.close_rounded,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
-                                          size: 50.0,
+                                          size: 35.0,
                                         ),
                                         Flexible(
                                           child: Text(
@@ -963,6 +964,7 @@ síntomas */
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
+                                                  fontSize: 13.0,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -1003,14 +1005,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropN1P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.mejoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropN1P1Value = val);
@@ -1057,14 +1070,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropN2P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.mejoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropN2P1Value = val);
@@ -1112,14 +1136,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropN3P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.mejoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropN3P1Value = val);
@@ -1167,14 +1202,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropN4P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.mejoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropN4P1Value = val);
@@ -1222,14 +1268,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropn5P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.mejoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.mejoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropn5P1Value = val);
@@ -1294,14 +1351,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropn6P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.empeoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropn6P1Value = val);
@@ -1347,14 +1415,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropn7P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.empeoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropn7P1Value = val);
@@ -1400,14 +1479,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropn8P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.empeoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropn8P1Value = val);
@@ -1453,14 +1543,25 @@ síntomas */
                                 child: FlutterFlowDropDown<String>(
                                   controller: _model.dropn9P1ValueController ??=
                                       FormFieldController<String>(null),
-                                  options: _model.empeoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropn9P1Value = val);
@@ -1507,14 +1608,25 @@ síntomas */
                                   controller:
                                       _model.dropn10P1ValueController ??=
                                           FormFieldController<String>(null),
-                                  options: _model.empeoraSintomas
-                                      .map((e) => getJsonField(
-                                            e,
-                                            r'''$.mejora''',
-                                          ))
-                                      .toList()
-                                      .map((e) => e.toString())
-                                      .toList(),
+                                  options: FFLocalizations.of(context)
+                                              .languageCode ==
+                                          'es'
+                                      ? _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList()
+                                      : _model.empeoraSintomas
+                                          .map((e) => getJsonField(
+                                                e,
+                                                r'''$.mejora_en''',
+                                              ))
+                                          .toList()
+                                          .map((e) => e.toString())
+                                          .toList(),
                                   onChanged: (val) async {
                                     safeSetState(
                                         () => _model.dropn10P1Value = val);
