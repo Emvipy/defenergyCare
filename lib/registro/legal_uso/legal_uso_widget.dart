@@ -108,7 +108,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                               labelColor:
                                   FlutterFlowTheme.of(context).primaryText,
                               unselectedLabelColor:
-                                  FlutterFlowTheme.of(context).secondaryText,
+                                  FlutterFlowTheme.of(context).primaryText,
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
@@ -565,7 +565,7 @@ class _LegalUsoWidgetState extends State<LegalUsoWidget>
                                           .primaryText,
                                       unselectedLabelColor:
                                           FlutterFlowTheme.of(context)
-                                              .secondaryText,
+                                              .primaryText,
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(

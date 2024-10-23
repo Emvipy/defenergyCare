@@ -171,10 +171,18 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                                                     initialExpanded: false,
                                                     child: ExpandablePanel(
                                                       header: Text(
-                                                        getJsonField(
-                                                          childFaqsItem,
-                                                          r'''$.pregunta''',
-                                                        ).toString(),
+                                                        FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode ==
+                                                                'es'
+                                                            ? getJsonField(
+                                                                childFaqsItem,
+                                                                r'''$.pregunta''',
+                                                              ).toString()
+                                                            : getJsonField(
+                                                                childFaqsItem,
+                                                                r'''$.pregunta_en''',
+                                                              ).toString(),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -208,10 +216,18 @@ class _PerfilFaqsWidgetState extends State<PerfilFaqsWidget> {
                                                               MainAxisSize.max,
                                                           children: [
                                                             Text(
-                                                              getJsonField(
-                                                                childFaqsItem,
-                                                                r'''$.respuesta''',
-                                                              ).toString(),
+                                                              FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode ==
+                                                                      'es'
+                                                                  ? getJsonField(
+                                                                      childFaqsItem,
+                                                                      r'''$.respuesta''',
+                                                                    ).toString()
+                                                                  : getJsonField(
+                                                                      childFaqsItem,
+                                                                      r'''$.respuesta_en''',
+                                                                    ).toString(),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
