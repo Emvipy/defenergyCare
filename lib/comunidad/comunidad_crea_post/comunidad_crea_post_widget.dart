@@ -245,6 +245,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 maxLines: 5,
+                                keyboardType: TextInputType.multiline,
                                 validator: _model.textControllerValidator
                                     .asValidator(context),
                               ),

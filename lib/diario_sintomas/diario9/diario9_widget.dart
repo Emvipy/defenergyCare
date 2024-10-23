@@ -525,7 +525,9 @@ class _Diario9WidgetState extends State<Diario9Widget> {
                             ),
                           ),
                         ),
-                      if (_model.nombreMed == null || _model.nombreMed == '')
+                      if ((_model.nombreMed == null ||
+                              _model.nombreMed == '') &&
+                          (FFLocalizations.of(context).languageCode == 'es'))
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 10.0),

@@ -663,6 +663,8 @@ class _ComunidadComentariosWidgetState
                                           letterSpacing: 0.0,
                                         ),
                                     maxLines: null,
+                                    minLines: 1,
+                                    keyboardType: TextInputType.multiline,
                                     validator: _model.textControllerValidator
                                         .asValidator(context),
                                   ),

@@ -156,7 +156,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0mtreec3': {
       'es': 'Diario de \nintolerancias',
-      'en': 'Diary of \nintolerances',
+      'en': 'Intolerences Diary',
     },
     'qfhcs0zs': {
       'es': 'Diario de Sueño',
@@ -287,7 +287,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sw6d1a35': {
       'es': 'Acepto los ',
-      'en': 'I accept the',
+      'en': 'I accept the ',
     },
     'pc4tv1sc': {
       'es': 'Términos y Condiciones de Uso ',
@@ -295,7 +295,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zzophick': {
       'es': 'y la ',
-      'en': 'and the',
+      'en': 'and the ',
     },
     'umbqylyz': {
       'es': 'Política de Privacidad',
@@ -303,7 +303,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1c4opab8': {
       'es': 'Acepto los ',
-      'en': 'I accept the',
+      'en': 'I accept the ',
     },
     'fq456wte': {
       'es': 'Política de Investigación',
@@ -376,11 +376,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cl4mxfnc': {
       'es': 'Por favor selecciona tus enfermedades:',
-      'en': 'Please select your diseases:',
+      'en': 'Please select your disease:',
     },
     'veot76fd': {
       'es': 'COVID Persistente',
-      'en': 'Persistent Covid',
+      'en': 'Long Covid',
     },
     'hqzj5pd1': {
       'es': 'Encefalomielitis Miálgica',
@@ -675,7 +675,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'axfrptsc': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
-          'Do you have any immediate family members who have long-term COVID?',
+          'Do you have any immediate family members who have or have had long-term COVID?',
     },
     '65vs9c8a': {
       'es': 'Si',
@@ -2492,7 +2492,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'Únete a nuestra comunidad y mejora tu bienestar con nuestras innovadoras herramientas.',
       'en':
-          'Join our community and improve your wellbeing with our innovative tools.',
+          'Join our community and improve your life quality with our innovative tools.',
     },
     'zgocsc1g': {
       'es': 'Saltar introducción',
@@ -2504,7 +2504,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ozmycynd': {
       'es': 'Diario Digital de Síntomas, de Intolerancias y de Sueño',
-      'en': 'Digital Journal of Symptoms, Intolerances and Sleep',
+      'en': 'Symptoms, Intolerances, and Sleep Digital Journal',
     },
     'dj6jwe5l': {
       'es': 'Registra y monitorea tu salud diaria para un seguimiento preciso.',
@@ -2512,7 +2512,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7kkvmvzu': {
       'es': ' Análisis de Datos con Inteliencia Artificial',
-      'en': 'Data Analysis with Artificial Intelligence',
+      'en': 'Artificial Intelligence Data Analysis',
     },
     '2tan5m1e': {
       'es':
@@ -2522,7 +2522,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zr1vx2wk': {
       'es': 'Apoyo a las Enfermedades Crónicas',
-      'en': 'Support for Chronic Diseases',
+      'en': 'Chronic Diseases Research Support',
     },
     'm48wfmii': {
       'es': 'Encuentra información y recursos específicos para tu enfermedad.',
@@ -2538,15 +2538,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pbbjt0cu': {
       'es': 'Accede a las últimas Noticias sobre tu enfermedad',
-      'en': 'Get the latest news about your disease',
+      'en': 'Diseases Latest Press Releases',
     },
     '3i69nccy': {
       'es': 'Mantente informado con las últimas novedades sobre tu enfermedad',
-      'en': 'Stay informed with the latest news about your disease',
+      'en': 'Stay informed with the latest news about your disease.',
     },
     'g4pogr5c': {
       'es': 'Acceso a la mejor oferta de Suplementos Específicos',
-      'en': 'Access to the best offer of Specific Supplements',
+      'en': 'Vitamin Supplements Best Offers',
     },
     'k5ok27xf': {
       'es':
@@ -2555,12 +2555,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Recommended by other patients and healthcare professionals for your condition.',
     },
     'hayiedex': {
-      'es': 'Acceso 100% Gratuito y para siempre',
-      'en': '100% Free Access and Forever',
+      'es': 'Acceso 100% Gratuito ',
+      'en': '100% Free Access',
     },
     'jc8fvap7': {
-      'es': 'Disfruta de todos nuestros servicios sin costo.',
-      'en': 'Enjoy all our services free of charge.',
+      'es': 'Disfruta de nuestros servicios sin costo.',
+      'en': 'Enjoy  our services free of charge.',
     },
     '2epqdwxs': {
       'es': 'Saltar introducción',
@@ -2569,8 +2569,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'sd9vkrbn': {
       'es':
           'Cada vez que usas la app, ayudas a avanzar continuamente en la investigación de tu enfermedad.',
-      'en':
-          'Every time you use the app, you help to continually advance research into your disease.',
+      'en': 'Every time you use THIS app, you support your disease research',
     },
     'rc1wsm1b': {
       'es': 'Empecemos!',
@@ -2699,11 +2698,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm181k934': {
       'es': 'Mañana',
-      'en': 'Tomorrow',
+      'en': 'Morning',
     },
     '84tx7wzn': {
       'es': 'Tarde',
-      'en': 'Late',
+      'en': 'Afternoon',
     },
     '1zyyle56': {
       'es': 'Noche',
@@ -2711,7 +2710,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1y87wpcj': {
       'es': '¿En qué medida ha afectado la fatiga a tus tareas diarias? ',
-      'en': 'To what extent has fatigue affected your daily tasks?',
+      'en': 'How has fatigue affected your daily tasks?',
     },
     'gqkyaps6': {
       'es': '0',
@@ -2838,7 +2837,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm7efkj2d': {
       'es': '¿En qué medida ha afectado el dolor en tus tareas diarias? ',
-      'en': 'To what extent has pain affected your daily tasks?',
+      'en': 'How has pain affected your daily tasks?',
     },
     'ct69h74l': {
       'es': '0',
@@ -3950,7 +3949,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8r9mynpc': {
       'es': '¿Cuál crees que fue el desencadenante?',
-      'en': 'What do you think was the trigger?',
+      'en': 'What do you thing that was the trigger of your symptoms today?',
     },
     '2dt1li0h': {
       'es': 'Selecciona tu respuesta',
@@ -4525,10 +4524,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Symptom Diary',
     },
     'qmqu3sky': {
+      'es': '¡Gracias por tu contribución! ',
+      'en': 'Thank you for your contribution! ',
+    },
+    'tiqirqmr': {
       'es':
-          '¡Gracias por tu contribución! Estamos un paso más cerca de encontrar soluciones para tu enfermedad.',
-      'en':
-          'Thank you for your contribution! We are one step closer to finding solutions for your disease.',
+          'Estamos un paso más cerca de encontrar soluciones para tu enfermedad.',
+      'en': ' We are one step closer to finding solutions for your disease.',
     },
     'lw4xfulm': {
       'es':
@@ -4626,7 +4628,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
-          'Do you have any immediate family members who have an autoimmune disease?',
+          'Do you have any immediate family members who have or have had an autoimmune disease?',
     },
     'm2b0hv2u': {
       'es': 'Si',
@@ -5213,7 +5215,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yqdqjgdq': {
       'es': '¿Has tardado en conciliar el sueño?',
-      'en': 'Did you take a while to fall asleep?',
+      'en': 'Did it take you a while to fall asleep?',
     },
     'qwwzzwxl': {
       'es': 'SI',
@@ -5534,7 +5536,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
-          'Do you have any immediate family members who have a food intolerance?',
+          'Do you have any immediate family members who have or have had a food intolerance?',
     },
     '30w8m94m': {
       'es': 'Si',

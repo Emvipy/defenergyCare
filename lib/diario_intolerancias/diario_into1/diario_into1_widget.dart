@@ -734,7 +734,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Text(
-                                              'What did you eat for${() {
+                                              'What did you eat for ${() {
                                                 if (FFAppState().momento == 1) {
                                                   return 'breakfast?';
                                                 } else if (FFAppState()
@@ -742,7 +742,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                     2) {
                                                   return 'for lunch?';
                                                 } else {
-                                                  return 'dinner?';
+                                                  return ' dinner?';
                                                 }
                                               }()}',
                                               textAlign: TextAlign.center,

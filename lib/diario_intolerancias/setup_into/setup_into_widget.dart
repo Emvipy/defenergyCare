@@ -114,7 +114,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 10.0, 15.0, 5.0),
                             child: Text(
-                              '${FFAppState().nombre} necesitamos que respondas a las siguientes cuestiones, para terminar de configurar tu Diario de Intolerancias',
+                              '${FFAppState().nombre}${FFLocalizations.of(context).languageCode == 'es' ? ' necesitamos que respondas a las siguientes cuestiones, para terminar de configurar tu Diario de Intolerancias' : ' we need you to answer the following questions, in order to finish setting up your Intolerance Diary'}',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
