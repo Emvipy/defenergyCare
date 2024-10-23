@@ -280,7 +280,7 @@ class _ListadoWidgetState extends State<ListadoWidget> {
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Diario del ${getJsonField(
+                                                    '${FFLocalizations.of(context).languageCode == 'es' ? 'Diario del ' : 'Diary of the day'}${getJsonField(
                                                       childDiariosItem,
                                                       r'''$.fecha_txt''',
                                                     ).toString()}',
