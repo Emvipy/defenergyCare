@@ -1232,7 +1232,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                               children: [
                                 Flexible(
                                   child: Text(
-                                    'What did you eat for${() {
+                                    'What did you eat for ${() {
                                       if (FFAppState().momento == 1) {
                                         return 'breakfast?';
                                       } else if (FFAppState().momento == 2) {

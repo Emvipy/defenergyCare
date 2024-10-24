@@ -103,7 +103,7 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                       child: Container(
                         width: 397.0,
-                        height: 293.0,
+                        height: 370.0,
                         decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -114,7 +114,29 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                                     15.0, 10.0, 15.0, 10.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'qmqu3sky' /* ¡Gracias por tu contribución! ... */,
+                                    'qmqu3sky' /* ¡Gracias por tu contribución!  */,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontSize: 16.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    15.0, 10.0, 15.0, 10.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'tiqirqmr' /* Estamos un paso más cerca de e... */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)

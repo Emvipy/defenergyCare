@@ -1131,7 +1131,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'hayiedex' /* Acceso 100% Gratuito y para si... */,
+                                                      'hayiedex' /* Acceso 100% Gratuito  */,
                                                     ),
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
@@ -1168,7 +1168,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'jc8fvap7' /* Disfruta de todos nuestros ser... */,
+                                                      'jc8fvap7' /* Disfruta de nuestros servicios... */,
                                                     ),
                                                     textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(

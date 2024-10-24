@@ -105,7 +105,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 15.0, 10.0, 15.0, 5.0),
                             child: Text(
-                              '${FFAppState().nombre} necesitamos que respondas a las siguientes cuestiones, para terminar de configurar tu Diario de Síntomas.',
+                              '${FFAppState().nombre}${FFLocalizations.of(context).languageCode == 'es' ? ' necesitamos que respondas a las siguientes cuestiones, para terminar de configurar tu Diario de Síntomas.' : ' we need you to answer the following questions to finish setting up your Symptom Diary.'}',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
