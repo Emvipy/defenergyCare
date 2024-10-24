@@ -1029,27 +1029,27 @@
     },
     {
       "name": "video_player",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player-2.9.1",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player-2.9.2",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "video_player_android",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player_android-2.7.3",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player_android-2.7.13",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
     {
       "name": "video_player_avfoundation",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.6.1",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player_avfoundation-2.6.2",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.3"
     },
     {
       "name": "video_player_platform_interface",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player_platform_interface-6.2.2",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/video_player_platform_interface-6.2.3",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.3"
     },
     {
       "name": "video_player_web",
@@ -1100,7 +1100,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-10-23T00:54:03.313103Z",
+  "generated": "2024-10-24T00:18:29.873426Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",
