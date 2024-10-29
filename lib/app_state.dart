@@ -767,6 +767,12 @@ class FFAppState extends ChangeNotifier {
   void deletePassword() {
     secureStorage.delete(key: 'ff_password');
   }
+
+  String _enfemedadTxtEn = '';
+  String get enfemedadTxtEn => _enfemedadTxtEn;
+  set enfemedadTxtEn(String value) {
+    _enfemedadTxtEn = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

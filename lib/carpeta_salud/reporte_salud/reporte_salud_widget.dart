@@ -1231,6 +1231,7 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                         _model.actividades,
                                         '-',
                                       ),
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

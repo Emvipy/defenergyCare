@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -983,18 +984,22 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         0.0, 15.0, 0.0, 30.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        _model.apiP1F1 =
-                                            await DiarioUnoCall.call(
-                                          diarioId: FFAppState().diarioId,
-                                          nivelEnergia: _model.porcent,
-                                          manana: _model.manana,
-                                          tarde: _model.tarde,
-                                          noche: _model.noche,
-                                          fatiga: _model.fatiga,
-                                          authToken: FFAppState().authToken,
-                                          editando: FFAppState().editandoDiario,
+                                        unawaited(
+                                          () async {
+                                            _model.apiP1F1 =
+                                                await DiarioUnoCall.call(
+                                              diarioId: FFAppState().diarioId,
+                                              nivelEnergia: _model.porcent,
+                                              manana: _model.manana,
+                                              tarde: _model.tarde,
+                                              noche: _model.noche,
+                                              fatiga: _model.fatiga,
+                                              authToken: FFAppState().authToken,
+                                              editando:
+                                                  FFAppState().editandoDiario,
+                                            );
+                                          }(),
                                         );
-
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
@@ -1079,18 +1084,22 @@ class _Diario1WidgetState extends State<Diario1Widget> {
                                         0.0, 15.0, 0.0, 30.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        _model.apiP1F =
-                                            await DiarioUnoCall.call(
-                                          diarioId: FFAppState().diarioId,
-                                          nivelEnergia: _model.porcent,
-                                          manana: _model.manana,
-                                          tarde: _model.tarde,
-                                          noche: _model.noche,
-                                          fatiga: _model.fatiga,
-                                          authToken: FFAppState().authToken,
-                                          editando: FFAppState().editandoDiario,
+                                        unawaited(
+                                          () async {
+                                            _model.apiP1F =
+                                                await DiarioUnoCall.call(
+                                              diarioId: FFAppState().diarioId,
+                                              nivelEnergia: _model.porcent,
+                                              manana: _model.manana,
+                                              tarde: _model.tarde,
+                                              noche: _model.noche,
+                                              fatiga: _model.fatiga,
+                                              authToken: FFAppState().authToken,
+                                              editando:
+                                                  FFAppState().editandoDiario,
+                                            );
+                                          }(),
                                         );
-
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(

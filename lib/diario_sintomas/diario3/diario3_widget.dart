@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -2690,37 +2691,41 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                 onPressed: (_model.contador < 1)
                                     ? null
                                     : () async {
-                                        _model.apiDiario3DolorF =
-                                            await DiarioTresCall.call(
-                                          authToken: FFAppState().authToken,
-                                          diarioId: FFAppState().diarioId,
-                                          cefalea: _model.cabeza,
-                                          garganta: _model.garganta,
-                                          hombroIzq: _model.hombroIzq,
-                                          hombroDer: _model.hombroDer,
-                                          pecho: _model.corazon,
-                                          codoIzq: _model.codoIzq,
-                                          codoDer: _model.codoDer,
-                                          abdomen: _model.abdomen,
-                                          munecaIzqF: _model.munecaIzq,
-                                          munecaDerF: _model.munecaDer,
-                                          musloIzq: _model.musloIzq,
-                                          musloDer: _model.musloDer,
-                                          rodillaIzq: _model.rodillaIzq,
-                                          rodillaDer: _model.rodillaDer,
-                                          tobilloIzq: _model.tobilloIzq,
-                                          tobilloDer: _model.tobilloDer,
-                                          cervical: _model.cervical,
-                                          espalda: _model.espalda,
-                                          lumbar: _model.lumbar,
-                                          munecaIzqB: _model.munIz,
-                                          munecaDerB: _model.munDer,
-                                          gluteoIzq: _model.gluteoIzq,
-                                          gluteoDer: _model.gluteoDer,
-                                          contador: _model.contador,
-                                          editando: FFAppState().editandoDiario,
+                                        unawaited(
+                                          () async {
+                                            _model.apiDiario3DolorF =
+                                                await DiarioTresCall.call(
+                                              authToken: FFAppState().authToken,
+                                              diarioId: FFAppState().diarioId,
+                                              cefalea: _model.cabeza,
+                                              garganta: _model.garganta,
+                                              hombroIzq: _model.hombroIzq,
+                                              hombroDer: _model.hombroDer,
+                                              pecho: _model.corazon,
+                                              codoIzq: _model.codoIzq,
+                                              codoDer: _model.codoDer,
+                                              abdomen: _model.abdomen,
+                                              munecaIzqF: _model.munecaIzq,
+                                              munecaDerF: _model.munecaDer,
+                                              musloIzq: _model.musloIzq,
+                                              musloDer: _model.musloDer,
+                                              rodillaIzq: _model.rodillaIzq,
+                                              rodillaDer: _model.rodillaDer,
+                                              tobilloIzq: _model.tobilloIzq,
+                                              tobilloDer: _model.tobilloDer,
+                                              cervical: _model.cervical,
+                                              espalda: _model.espalda,
+                                              lumbar: _model.lumbar,
+                                              munecaIzqB: _model.munIz,
+                                              munecaDerB: _model.munDer,
+                                              gluteoIzq: _model.gluteoIzq,
+                                              gluteoDer: _model.gluteoDer,
+                                              contador: _model.contador,
+                                              editando:
+                                                  FFAppState().editandoDiario,
+                                            );
+                                          }(),
                                         );
-
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
@@ -2804,37 +2809,41 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                 onPressed: (_model.contador < 1)
                                     ? null
                                     : () async {
-                                        _model.apiDiario3DolorF2 =
-                                            await DiarioTresCall.call(
-                                          authToken: FFAppState().authToken,
-                                          diarioId: FFAppState().diarioId,
-                                          cefalea: _model.cabeza,
-                                          garganta: _model.garganta,
-                                          hombroIzq: _model.hombroIzq,
-                                          hombroDer: _model.hombroDer,
-                                          pecho: _model.corazon,
-                                          codoIzq: _model.codoIzq,
-                                          codoDer: _model.codoDer,
-                                          abdomen: _model.abdomen,
-                                          munecaIzqF: _model.munecaIzq,
-                                          munecaDerF: _model.munecaDer,
-                                          musloIzq: _model.musloIzq,
-                                          musloDer: _model.musloDer,
-                                          rodillaIzq: _model.rodillaIzq,
-                                          rodillaDer: _model.rodillaDer,
-                                          tobilloIzq: _model.tobilloIzq,
-                                          tobilloDer: _model.tobilloDer,
-                                          cervical: _model.cervical,
-                                          espalda: _model.espalda,
-                                          lumbar: _model.lumbar,
-                                          munecaIzqB: _model.munIz,
-                                          munecaDerB: _model.munDer,
-                                          gluteoIzq: _model.gluteoIzq,
-                                          gluteoDer: _model.gluteoDer,
-                                          contador: _model.contador,
-                                          editando: FFAppState().editandoDiario,
+                                        unawaited(
+                                          () async {
+                                            _model.apiDiario3DolorF2 =
+                                                await DiarioTresCall.call(
+                                              authToken: FFAppState().authToken,
+                                              diarioId: FFAppState().diarioId,
+                                              cefalea: _model.cabeza,
+                                              garganta: _model.garganta,
+                                              hombroIzq: _model.hombroIzq,
+                                              hombroDer: _model.hombroDer,
+                                              pecho: _model.corazon,
+                                              codoIzq: _model.codoIzq,
+                                              codoDer: _model.codoDer,
+                                              abdomen: _model.abdomen,
+                                              munecaIzqF: _model.munecaIzq,
+                                              munecaDerF: _model.munecaDer,
+                                              musloIzq: _model.musloIzq,
+                                              musloDer: _model.musloDer,
+                                              rodillaIzq: _model.rodillaIzq,
+                                              rodillaDer: _model.rodillaDer,
+                                              tobilloIzq: _model.tobilloIzq,
+                                              tobilloDer: _model.tobilloDer,
+                                              cervical: _model.cervical,
+                                              espalda: _model.espalda,
+                                              lumbar: _model.lumbar,
+                                              munecaIzqB: _model.munIz,
+                                              munecaDerB: _model.munDer,
+                                              gluteoIzq: _model.gluteoIzq,
+                                              gluteoDer: _model.gluteoDer,
+                                              contador: _model.contador,
+                                              editando:
+                                                  FFAppState().editandoDiario,
+                                            );
+                                          }(),
                                         );
-
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(

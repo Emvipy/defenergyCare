@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -1259,15 +1260,18 @@ dolor */
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  _model.apiP2F1 = await DiarioDosCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioId,
-                                    dolor: _model.intensidadDolor,
-                                    migrana: _model.intensidadMigrana,
-                                    afectacion: _model.afectaDolor,
-                                    editando: FFAppState().editandoDiario,
+                                  unawaited(
+                                    () async {
+                                      _model.apiP2F1 = await DiarioDosCall.call(
+                                        authToken: FFAppState().authToken,
+                                        diarioId: FFAppState().diarioId,
+                                        dolor: _model.intensidadDolor,
+                                        migrana: _model.intensidadMigrana,
+                                        afectacion: _model.afectaDolor,
+                                        editando: FFAppState().editandoDiario,
+                                      );
+                                    }(),
                                   );
-
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
@@ -1339,15 +1343,18 @@ dolor */
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  _model.apiP2F = await DiarioDosCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioId,
-                                    dolor: _model.intensidadDolor,
-                                    migrana: _model.intensidadMigrana,
-                                    afectacion: _model.afectaDolor,
-                                    editando: FFAppState().editandoDiario,
+                                  unawaited(
+                                    () async {
+                                      _model.apiP2F = await DiarioDosCall.call(
+                                        authToken: FFAppState().authToken,
+                                        diarioId: FFAppState().diarioId,
+                                        dolor: _model.intensidadDolor,
+                                        migrana: _model.intensidadMigrana,
+                                        afectacion: _model.afectaDolor,
+                                        editando: FFAppState().editandoDiario,
+                                      );
+                                    }(),
                                   );
-
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(

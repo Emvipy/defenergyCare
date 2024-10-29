@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -820,21 +821,26 @@ Medicamentos */
                                     onPressed: (_model.contador < 2)
                                         ? null
                                         : () async {
-                                            _model.apiP6F =
-                                                await DiarioSeisCall.call(
-                                              authToken: FFAppState().authToken,
-                                              diarioId: FFAppState().diarioId,
-                                              desencadenante:
-                                                  _model.desencadenante,
-                                              solucion: _model.solucion,
-                                              med1: FFAppState().diarioMed1,
-                                              med2: FFAppState().diarioMed2,
-                                              vit: FFAppState().diarioVit,
-                                              contador: _model.contador,
-                                              editando:
-                                                  FFAppState().editandoDiario,
+                                            unawaited(
+                                              () async {
+                                                _model.apiP6F =
+                                                    await DiarioSeisCall.call(
+                                                  authToken:
+                                                      FFAppState().authToken,
+                                                  diarioId:
+                                                      FFAppState().diarioId,
+                                                  desencadenante:
+                                                      _model.desencadenante,
+                                                  solucion: _model.solucion,
+                                                  med1: FFAppState().diarioMed1,
+                                                  med2: FFAppState().diarioMed2,
+                                                  vit: FFAppState().diarioVit,
+                                                  contador: _model.contador,
+                                                  editando: FFAppState()
+                                                      .editandoDiario,
+                                                );
+                                              }(),
                                             );
-
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(
@@ -954,21 +960,26 @@ Medicamentos */
                                     onPressed: (_model.contador < 2)
                                         ? null
                                         : () async {
-                                            _model.apiP6F2 =
-                                                await DiarioSeisCall.call(
-                                              authToken: FFAppState().authToken,
-                                              diarioId: FFAppState().diarioId,
-                                              desencadenante:
-                                                  _model.desencadenante,
-                                              solucion: _model.solucion,
-                                              med1: FFAppState().diarioMed1,
-                                              med2: FFAppState().diarioMed2,
-                                              vit: FFAppState().diarioVit,
-                                              contador: _model.contador,
-                                              editando:
-                                                  FFAppState().editandoDiario,
+                                            unawaited(
+                                              () async {
+                                                _model.apiP6F2 =
+                                                    await DiarioSeisCall.call(
+                                                  authToken:
+                                                      FFAppState().authToken,
+                                                  diarioId:
+                                                      FFAppState().diarioId,
+                                                  desencadenante:
+                                                      _model.desencadenante,
+                                                  solucion: _model.solucion,
+                                                  med1: FFAppState().diarioMed1,
+                                                  med2: FFAppState().diarioMed2,
+                                                  vit: FFAppState().diarioVit,
+                                                  contador: _model.contador,
+                                                  editando: FFAppState()
+                                                      .editandoDiario,
+                                                );
+                                              }(),
                                             );
-
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
                                               SnackBar(

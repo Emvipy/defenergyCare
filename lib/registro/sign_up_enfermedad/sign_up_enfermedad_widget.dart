@@ -588,6 +588,13 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                       ''),
                                                 )!;
                                                 FFAppState().creadoOk = 'no';
+                                                FFAppState().enfemedadTxtEn =
+                                                    SignUpCreaEnfermedadCall
+                                                        .enfermedadEn(
+                                                  (_model.apiCreaEnfermedadCopy
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                )!;
                                                 if (FFAppState().enfermedadId !=
                                                     null) {
                                                   context.pushNamed(

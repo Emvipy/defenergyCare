@@ -175,32 +175,30 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            Text(
+                              valueOrDefault<String>(
+                                DiarioPantallaFinalCall.ranking(
+                                  diarioFinDiarioPantallaFinalResponse.jsonBody,
+                                ),
+                                '0',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                            ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 0.0, 15.0, 1.0),
+                                  15.0, 5.0, 15.0, 1.0),
                               child: RichText(
                                 textScaler: MediaQuery.of(context).textScaler,
                                 text: TextSpan(
                                   children: [
-                                    TextSpan(
-                                      text: valueOrDefault<String>(
-                                        DiarioPantallaFinalCall.ranking(
-                                          diarioFinDiarioPantallaFinalResponse
-                                              .jsonBody,
-                                        ),
-                                        '0',
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
                                     TextSpan(
                                       text: FFLocalizations.of(context).getText(
                                         'lw4xfulm' /* 

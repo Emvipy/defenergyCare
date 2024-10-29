@@ -280,7 +280,7 @@ class _PerfilContactoWidgetState extends State<PerfilContactoWidget> {
                                         fontFamily: 'Poppins',
                                         letterSpacing: 0.0,
                                       ),
-                                  maxLines: null,
+                                  maxLines: 5,
                                   minLines: 1,
                                   validator: _model
                                       .textFieldMensajeTextControllerValidator

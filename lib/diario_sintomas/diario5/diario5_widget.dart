@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -10807,38 +10808,41 @@ class _Diario5WidgetState extends State<Diario5Widget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  _model.apiDiario5F =
-                                      await DiarioCincoCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioId,
-                                    insomnio: _model.insomnio,
-                                    nauseas: _model.nauseas,
-                                    vomitos: _model.vomitos,
-                                    diarrea: _model.diarrea,
-                                    fiebre: _model.fiebre,
-                                    frio: _model.frio,
-                                    tos: _model.tos,
-                                    difRespirar: _model.respirar,
-                                    luz: _model.luz,
-                                    ruido: _model.ruido,
-                                    olores: _model.olores,
-                                    cognitiva: _model.cognitiva,
-                                    nieblaMental: _model.mental,
-                                    visionBorrosa: _model.borrosa,
-                                    debMuscular: _model.muscular,
-                                    espasmosMusc: _model.espasmo,
-                                    ortostatica: _model.ortostatica,
-                                    postEsfuerzo: _model.postesfuerzo,
-                                    palpitaciones: _model.palpitaciones,
-                                    olfato: _model.olfato,
-                                    gusto: _model.gusto,
-                                    tristeza: _model.tristez,
-                                    ansiedad: _model.ansiedad,
-                                    cefalea: _model.cabeza,
-                                    articular: _model.articular,
-                                    editando: FFAppState().editandoDiario,
+                                  unawaited(
+                                    () async {
+                                      _model.apiDiario5F =
+                                          await DiarioCincoCall.call(
+                                        authToken: FFAppState().authToken,
+                                        diarioId: FFAppState().diarioId,
+                                        insomnio: _model.insomnio,
+                                        nauseas: _model.nauseas,
+                                        vomitos: _model.vomitos,
+                                        diarrea: _model.diarrea,
+                                        fiebre: _model.fiebre,
+                                        frio: _model.frio,
+                                        tos: _model.tos,
+                                        difRespirar: _model.respirar,
+                                        luz: _model.luz,
+                                        ruido: _model.ruido,
+                                        olores: _model.olores,
+                                        cognitiva: _model.cognitiva,
+                                        nieblaMental: _model.mental,
+                                        visionBorrosa: _model.borrosa,
+                                        debMuscular: _model.muscular,
+                                        espasmosMusc: _model.espasmo,
+                                        ortostatica: _model.ortostatica,
+                                        postEsfuerzo: _model.postesfuerzo,
+                                        palpitaciones: _model.palpitaciones,
+                                        olfato: _model.olfato,
+                                        gusto: _model.gusto,
+                                        tristeza: _model.tristez,
+                                        ansiedad: _model.ansiedad,
+                                        cefalea: _model.cabeza,
+                                        articular: _model.articular,
+                                        editando: FFAppState().editandoDiario,
+                                      );
+                                    }(),
                                   );
-
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
@@ -10910,38 +10914,41 @@ class _Diario5WidgetState extends State<Diario5Widget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  _model.apiDiario5F2 =
-                                      await DiarioCincoCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioId,
-                                    insomnio: _model.insomnio,
-                                    nauseas: _model.nauseas,
-                                    vomitos: _model.vomitos,
-                                    diarrea: _model.diarrea,
-                                    fiebre: _model.fiebre,
-                                    frio: _model.frio,
-                                    tos: _model.tos,
-                                    difRespirar: _model.respirar,
-                                    luz: _model.luz,
-                                    ruido: _model.ruido,
-                                    olores: _model.olores,
-                                    cognitiva: _model.cognitiva,
-                                    nieblaMental: _model.mental,
-                                    visionBorrosa: _model.borrosa,
-                                    debMuscular: _model.muscular,
-                                    espasmosMusc: _model.espasmo,
-                                    ortostatica: _model.ortostatica,
-                                    postEsfuerzo: _model.postesfuerzo,
-                                    palpitaciones: _model.palpitaciones,
-                                    olfato: _model.olfato,
-                                    gusto: _model.gusto,
-                                    tristeza: _model.tristez,
-                                    ansiedad: _model.ansiedad,
-                                    cefalea: _model.cabeza,
-                                    articular: _model.articular,
-                                    editando: FFAppState().editandoDiario,
+                                  unawaited(
+                                    () async {
+                                      _model.apiDiario5F2 =
+                                          await DiarioCincoCall.call(
+                                        authToken: FFAppState().authToken,
+                                        diarioId: FFAppState().diarioId,
+                                        insomnio: _model.insomnio,
+                                        nauseas: _model.nauseas,
+                                        vomitos: _model.vomitos,
+                                        diarrea: _model.diarrea,
+                                        fiebre: _model.fiebre,
+                                        frio: _model.frio,
+                                        tos: _model.tos,
+                                        difRespirar: _model.respirar,
+                                        luz: _model.luz,
+                                        ruido: _model.ruido,
+                                        olores: _model.olores,
+                                        cognitiva: _model.cognitiva,
+                                        nieblaMental: _model.mental,
+                                        visionBorrosa: _model.borrosa,
+                                        debMuscular: _model.muscular,
+                                        espasmosMusc: _model.espasmo,
+                                        ortostatica: _model.ortostatica,
+                                        postEsfuerzo: _model.postesfuerzo,
+                                        palpitaciones: _model.palpitaciones,
+                                        olfato: _model.olfato,
+                                        gusto: _model.gusto,
+                                        tristeza: _model.tristez,
+                                        ansiedad: _model.ansiedad,
+                                        cefalea: _model.cabeza,
+                                        articular: _model.articular,
+                                        editando: FFAppState().editandoDiario,
+                                      );
+                                    }(),
                                   );
-
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(

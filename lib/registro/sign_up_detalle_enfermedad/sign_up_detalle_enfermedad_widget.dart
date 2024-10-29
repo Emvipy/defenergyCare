@@ -132,7 +132,9 @@ class _SignUpDetalleEnfermedadWidgetState
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Text(
-                        FFAppState().enfermedadTxt,
+                        FFLocalizations.of(context).languageCode == 'es'
+                            ? FFAppState().enfermedadTxt
+                            : FFAppState().enfemedadTxtEn,
                         textAlign: TextAlign.center,
                         style:
                             FlutterFlowTheme.of(context).labelMedium.override(
