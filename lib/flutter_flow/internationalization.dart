@@ -14390,6 +14390,734 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
+  // diario_Into2Copy
+  {
+    'trtfnpy3': {
+      'es': 'Diario de Intolerancias',
+      'en': 'Diary of Intolerances',
+    },
+    'i318ld00': {
+      'es': '¿Qué tipo de carnes has comido?',
+      'en': 'What kind of meats have you eaten?',
+    },
+    '052ly6we': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'hybbvcsf': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'h4tfj5mr': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '4t215hf2': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'aiuw7pux': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'iz3tv6l8': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'xl3sqjc6': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'z1i5v8ye': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ljox0mjc': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '7p93k1ef': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7jimx4gd': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'txnsdj6b': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'pvk7jot6': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'h34abqum': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'dvgas4ks': {
+      'es': '¿Qué tipo de pescados has comido?',
+      'en': 'What kind of fish have you eaten?',
+    },
+    'avwh2387': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'fve2orcd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '5y5t3myx': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '7a33wply': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'xxrclebe': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'wukcovxf': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'bq5hyi1x': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '823c6bh9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    's8smkw4c': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'xvi6mufk': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '02v9413d': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'wrff3hzx': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'wyov5e37': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'y4l2tyxs': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'k002e7tz': {
+      'es': '¿Qué tipo de mariscos has comido?',
+      'en': 'What kind of seafood have you eaten?',
+    },
+    'zmf1e0o1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'f63n6kqd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '631efrwc': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2fvmmdpo': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ir6osxxw': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'nmdunmli': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'wza4qslg': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'mbepqya8': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'lr807g30': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'l1rctrh4': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'f65gl8yn': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'f7efqckg': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ypayjb5t': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '03gc4qq7': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rvkqmgga': {
+      'es': '¿Qué tipo de lácteos has comido?',
+      'en': 'What kind of dairy have you eaten?',
+    },
+    'i79qv1e8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'hdcs0wk6': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'i7ofgxfx': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '8crll048': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'aeqas5l2': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'qtpspnp5': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'w11dgc7q': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '0gran9sr': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '5la9uphd': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tgkbkbov': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'tuf6elzu': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '9dwzd9d9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7x38kj9i': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '41ohgv61': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'j3kzk0mt': {
+      'es': '¿Cómo has comido los huevos?',
+      'en': 'How did you eat the eggs?',
+    },
+    'tnzgujgn': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'gl3kup8d': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
+    'o67529ff': {
+      'es': '¿Qué tipo de cereales has comido?',
+      'en': 'What kind of cereal have you eaten?',
+    },
+    'k7fof68c': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'sj2nd8ub': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '1ysffixs': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '95san905': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'u5mw54eg': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'zv20ckz6': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'mrueup9w': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'pmhgatil': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '1t0q6bl5': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'egompgmo': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '0ylvn8iq': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '8pz4d3t1': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'pxeqpbxa': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'jwic2zt1': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '28ehlki5': {
+      'es': '¿Qué tipo de frutas has comido?',
+      'en': 'What kind of fruits have you eaten?',
+    },
+    'z58mgpfy': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2r4vm2c9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '9ql9z5z1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '09awvqjd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'qj0gieps': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ssbg86q7': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    's1z92ugl': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'o4lxsisb': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '8zh7td5v': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ra9ofvlh': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ssfawxem': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'k233nd9e': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'n1qi39ml': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'h9fj4ktc': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'qfkrtq4p': {
+      'es': '¿Qué verduras/hortalizas has comido?',
+      'en': 'What kind of vegetables have you eaten?',
+    },
+    '438urofq': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '8vo5ezbl': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'oiebzqzq': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'x516k0fp': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'uhmasbz8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '313y38tj': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '8enbv38n': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'jhjpys7u': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'bxw9nock': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '1h9adwpj': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7knbu37a': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'oyoaadte': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'jlhoymf5': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'mp01ul8m': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'dqoyjx6e': {
+      'es': '¿Qué legumbres has comido?',
+      'en': 'What legumes have you eaten?',
+    },
+    'hp2ytj71': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'h9kd7onq': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'simt5jpf': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'oel6zlln': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'iu1l2e62': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'e80e24kp': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rixy8mwa': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '436k6mvn': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'lz7x2xtj': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'rsccoj66': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'mshhy3uo': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'rwzg3m7p': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'z0ji5bux': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'qyp4j23p': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '12a7rtoy': {
+      'es': '¿Qué frutos secos has comido?',
+      'en': 'What nuts have you eaten?',
+    },
+    'ccwb46fs': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ilrksaac': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'pw2pl0qg': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tdbu0h4h': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '3jwo1p7l': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'gy8231cs': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '4octwyof': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'vt8jr7g2': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'lyfjlk67': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ulab4vxd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'euh7dty1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2k78vgn3': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'z6sbqs6i': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'nvanqokt': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '4r9gf02b': {
+      'es': '¿Qué salsas y condimentos has comido?',
+      'en': 'What condiments have you eaten?',
+    },
+    'sp9rd0nh': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'fdmsihvy': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'fhpw1qhs': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tfx9ylfv': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ykua2bsf': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'xt45w6hx': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '5drdn2kh': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'm6vvub7x': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '72odima7': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '99i93zoj': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rx3j5nkr': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '4pgjl0wg': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'dr995rq8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'cq5kh9p3': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'k81y4ox6': {
+      'es': '¿Qué bebidas has tomado?',
+      'en': 'What drinks have you had?',
+    },
+    '53kljm5f': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'hjgpiv9c': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'uj3xn096': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'gxv3468g': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '9yirp31y': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'eetpkglp': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'tqrykk5s': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '0h1k5tu9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '43ypohc6': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '90tdezth': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'lml3efux': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '3m91sa6d': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    's2000gjy': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'hepfd6eh': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    '6yj6ukxk': {
+      'es': '¿Has tenido algún síntoma tras su ingesta?',
+      'en': 'Have you had any symptoms after taking it?',
+    },
+    'osxkd8w9': {
+      'es': 'SI',
+      'en': 'YES',
+    },
+    'me4wi3yk': {
+      'es': 'NO',
+      'en': 'NO',
+    },
+    'w0kday8j': {
+      'es': 'Continuar',
+      'en': 'Continue',
+    },
+    '1vr0ap7c': {
+      'es': 'Finalizar más tarde',
+      'en': 'Finish later',
+    },
+    'kb3fj1g4': {
+      'es': 'Guardar',
+      'en': 'Save',
+    },
+    '27ltnox2': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // diarioIntoCargaDesplegables
+  {
+    'b2t0e52t': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // diarioIntoCargaDesplegablesEdita
+  {
+    '5f0hcxbo': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // diarioIntoHubFinaliza
+  {
+    'ywvo38az': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
   // modal_cancela_sign
   {
     '9brglm8b': {

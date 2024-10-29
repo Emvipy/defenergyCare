@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -33,150 +34,6 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().intoPescado == 'si') {
-        _model.apiPescado = await DespComidaPescadoCall.call();
-
-        _model.despPescados = getJsonField(
-          (_model.apiPescado?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoCarnes == 'si') {
-        _model.apiDespCarne = await DespComidaCarneCall.call();
-
-        _model.despCarnes = getJsonField(
-          (_model.apiDespCarne?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoMarisco == 'si') {
-        _model.apiDespMarisco = await DespComidaMariscosCall.call();
-
-        _model.despMariscos = getJsonField(
-          (_model.apiDespMarisco?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoLacteos == 'si') {
-        _model.apiLacteos = await DespComidaLacteosCall.call();
-
-        _model.despLacteos = getJsonField(
-          (_model.apiLacteos?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoHuevos == 'si') {
-        _model.apiHuevos = await DespComidaHuevosCall.call();
-
-        _model.despHuevos = getJsonField(
-          (_model.apiHuevos?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoCereales == 'si') {
-        _model.apiCereales = await DespComidaCerealesCall.call();
-
-        _model.despCereales = getJsonField(
-          (_model.apiCereales?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoFrutas == 'si') {
-        _model.apiFrutas = await DespComidaFrutasCall.call();
-
-        _model.despFrutas = getJsonField(
-          (_model.apiFrutas?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoVerduras == 'si') {
-        _model.apiVerduras = await DespComidaVerdurasCall.call();
-
-        _model.despVerduras = getJsonField(
-          (_model.apiVerduras?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoLegumbres == 'si') {
-        _model.apiLegumbres = await DespComidaLegumbresCall.call();
-
-        _model.despLegumbres = getJsonField(
-          (_model.apiLegumbres?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoFrutosSecos == 'si') {
-        _model.apiSecos = await DespComidaFrutosSecosCall.call();
-
-        _model.despSecos = getJsonField(
-          (_model.apiSecos?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoSalsas == 'si') {
-        _model.apiSalsas = await DespComidasCondimentosCall.call();
-
-        _model.despSalsas = getJsonField(
-          (_model.apiSalsas?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
-      if (FFAppState().intoBebidas == 'si') {
-        _model.apiBebidas = await DespComidaBebidasCall.call();
-
-        _model.despBebidas = getJsonField(
-          (_model.apiBebidas?.jsonBody ?? ''),
-          r'''$''',
-          true,
-        )!
-            .toList()
-            .cast<dynamic>();
-        safeSetState(() {});
-      }
       if (FFAppState().momento == 1) {
         _model.apiCargaDesayuno = await DiarioIntoleranciaDosCargaCall.call(
           diarioId: FFAppState().diarioIntoId,
@@ -1509,7 +1366,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despCarnes
+                                                        ? FFAppState()
+                                                            .despCarne
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -1519,7 +1377,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despCarnes
+                                                        : FFAppState()
+                                                            .despCarne
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -1631,7 +1490,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCarnes
+                                                          ? FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1641,7 +1501,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCarnes
+                                                          : FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1759,7 +1620,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCarnes
+                                                          ? FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1769,7 +1631,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCarnes
+                                                          : FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1887,7 +1750,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCarnes
+                                                          ? FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1897,7 +1761,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCarnes
+                                                          : FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2015,7 +1880,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCarnes
+                                                          ? FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2025,7 +1891,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCarnes
+                                                          : FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2143,7 +2010,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCarnes
+                                                          ? FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2153,7 +2021,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCarnes
+                                                          : FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2271,7 +2140,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCarnes
+                                                          ? FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2281,7 +2151,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCarnes
+                                                          : FFAppState()
+                                                              .despCarne
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2614,7 +2485,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despPescados
+                                                        ? FFAppState()
+                                                            .despPescado
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -2624,7 +2496,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despPescados
+                                                        : FFAppState()
+                                                            .despPescado
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -2736,7 +2609,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despPescados
+                                                          ? FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2746,7 +2620,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despPescados
+                                                          : FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2864,7 +2739,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despPescados
+                                                          ? FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2874,7 +2750,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despPescados
+                                                          : FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2992,7 +2869,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despPescados
+                                                          ? FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3002,7 +2880,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despPescados
+                                                          : FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3120,7 +2999,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despPescados
+                                                          ? FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3130,7 +3010,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despPescados
+                                                          : FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3248,7 +3129,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despPescados
+                                                          ? FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3258,7 +3140,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despPescados
+                                                          : FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3376,7 +3259,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despPescados
+                                                          ? FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3386,7 +3270,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despPescados
+                                                          : FFAppState()
+                                                              .despPescado
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3719,7 +3604,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despMariscos
+                                                        ? FFAppState()
+                                                            .despMariscos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -3729,7 +3615,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despMariscos
+                                                        : FFAppState()
+                                                            .despMariscos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -3841,7 +3728,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despMariscos
+                                                          ? FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3851,7 +3739,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despMariscos
+                                                          : FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3969,7 +3858,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despMariscos
+                                                          ? FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3979,7 +3869,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despMariscos
+                                                          : FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4097,7 +3988,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despMariscos
+                                                          ? FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4107,7 +3999,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despMariscos
+                                                          : FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4225,7 +4118,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despMariscos
+                                                          ? FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4235,7 +4129,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despMariscos
+                                                          : FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4353,7 +4248,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despMariscos
+                                                          ? FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4363,7 +4259,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despMariscos
+                                                          : FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4481,7 +4378,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despMariscos
+                                                          ? FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4491,7 +4389,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despMariscos
+                                                          : FFAppState()
+                                                              .despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4824,7 +4723,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despLacteos
+                                                        ? FFAppState()
+                                                            .despLacteos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -4834,7 +4734,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despLacteos
+                                                        : FFAppState()
+                                                            .despLacteos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -4946,7 +4847,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLacteos
+                                                          ? FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4956,7 +4858,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLacteos
+                                                          : FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5074,7 +4977,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLacteos
+                                                          ? FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5084,7 +4988,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLacteos
+                                                          : FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5202,7 +5107,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLacteos
+                                                          ? FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5212,7 +5118,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLacteos
+                                                          : FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5330,7 +5237,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLacteos
+                                                          ? FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5340,7 +5248,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLacteos
+                                                          : FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5458,7 +5367,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLacteos
+                                                          ? FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5468,7 +5378,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLacteos
+                                                          : FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5586,7 +5497,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLacteos
+                                                          ? FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5596,7 +5508,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLacteos
+                                                          : FFAppState()
+                                                              .despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5929,7 +5842,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despHuevos
+                                                        ? FFAppState()
+                                                            .despHuevos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -5939,7 +5853,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despHuevos
+                                                        : FFAppState()
+                                                            .despHuevos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -6240,7 +6155,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despCereales
+                                                        ? FFAppState()
+                                                            .despCereales
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -6250,7 +6166,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despCereales
+                                                        : FFAppState()
+                                                            .despCereales
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -6362,7 +6279,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCereales
+                                                          ? FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6372,7 +6290,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCereales
+                                                          : FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6490,7 +6409,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCereales
+                                                          ? FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6500,7 +6420,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCereales
+                                                          : FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6618,7 +6539,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCereales
+                                                          ? FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6628,7 +6550,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCereales
+                                                          : FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6746,7 +6669,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCereales
+                                                          ? FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6756,7 +6680,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCereales
+                                                          : FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6874,7 +6799,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCereales
+                                                          ? FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6884,7 +6810,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCereales
+                                                          : FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7002,7 +6929,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despCereales
+                                                          ? FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7012,7 +6940,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despCereales
+                                                          : FFAppState()
+                                                              .despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7345,7 +7274,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despFrutas
+                                                        ? FFAppState()
+                                                            .despFrutas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -7355,7 +7285,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despFrutas
+                                                        : FFAppState()
+                                                            .despFrutas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -7467,7 +7398,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despFrutas
+                                                          ? FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7477,7 +7409,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despFrutas
+                                                          : FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7595,7 +7528,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despFrutas
+                                                          ? FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7605,7 +7539,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despFrutas
+                                                          : FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7723,7 +7658,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despFrutas
+                                                          ? FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7733,7 +7669,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despFrutas
+                                                          : FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7851,7 +7788,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despFrutas
+                                                          ? FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7861,7 +7799,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despFrutas
+                                                          : FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7979,7 +7918,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despFrutas
+                                                          ? FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7989,7 +7929,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despFrutas
+                                                          : FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8107,7 +8048,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despFrutas
+                                                          ? FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8117,7 +8059,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despFrutas
+                                                          : FFAppState()
+                                                              .despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8450,7 +8393,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despVerduras
+                                                        ? FFAppState()
+                                                            .despVerduras
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -8460,7 +8404,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despVerduras
+                                                        : FFAppState()
+                                                            .despVerduras
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -8572,7 +8517,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despVerduras
+                                                          ? FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8582,7 +8528,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despVerduras
+                                                          : FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8700,7 +8647,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despVerduras
+                                                          ? FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8710,7 +8658,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despVerduras
+                                                          : FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8828,7 +8777,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despVerduras
+                                                          ? FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8838,7 +8788,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despVerduras
+                                                          : FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8956,7 +8907,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despVerduras
+                                                          ? FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8966,7 +8918,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despVerduras
+                                                          : FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9084,7 +9037,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despVerduras
+                                                          ? FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9094,7 +9048,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despVerduras
+                                                          : FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9212,7 +9167,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despVerduras
+                                                          ? FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9222,7 +9178,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despVerduras
+                                                          : FFAppState()
+                                                              .despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9556,7 +9513,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despLegumbres
+                                                        ? FFAppState()
+                                                            .despLegumbres
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -9566,7 +9524,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despLegumbres
+                                                        : FFAppState()
+                                                            .despLegumbres
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -9678,7 +9637,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLegumbres
+                                                          ? FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9688,7 +9648,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLegumbres
+                                                          : FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9806,7 +9767,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLegumbres
+                                                          ? FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9816,7 +9778,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLegumbres
+                                                          : FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9934,7 +9897,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLegumbres
+                                                          ? FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9944,7 +9908,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLegumbres
+                                                          : FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10062,7 +10027,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLegumbres
+                                                          ? FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10072,7 +10038,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLegumbres
+                                                          : FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10190,7 +10157,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLegumbres
+                                                          ? FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10200,7 +10168,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLegumbres
+                                                          : FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10318,7 +10287,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despLegumbres
+                                                          ? FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10328,7 +10298,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despLegumbres
+                                                          : FFAppState()
+                                                              .despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10659,7 +10630,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despSecos
+                                                        ? FFAppState()
+                                                            .despSecos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -10669,7 +10641,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despSecos
+                                                        : FFAppState()
+                                                            .despSecos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -10781,7 +10754,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSecos
+                                                          ? FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10791,7 +10765,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSecos
+                                                          : FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10909,7 +10884,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSecos
+                                                          ? FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10919,7 +10895,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSecos
+                                                          : FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11037,7 +11014,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSecos
+                                                          ? FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11047,7 +11025,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSecos
+                                                          : FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11165,7 +11144,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSecos
+                                                          ? FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11175,7 +11155,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSecos
+                                                          : FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11293,7 +11274,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSecos
+                                                          ? FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11303,7 +11285,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSecos
+                                                          : FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11421,7 +11404,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSecos
+                                                          ? FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11431,7 +11415,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSecos
+                                                          : FFAppState()
+                                                              .despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11764,7 +11749,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despSalsas
+                                                        ? FFAppState()
+                                                            .despSalsas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -11774,7 +11760,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despSalsas
+                                                        : FFAppState()
+                                                            .despSalsas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -11886,7 +11873,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSalsas
+                                                          ? FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11896,7 +11884,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSalsas
+                                                          : FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12014,7 +12003,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSalsas
+                                                          ? FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12024,7 +12014,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSalsas
+                                                          : FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12142,7 +12133,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSalsas
+                                                          ? FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12152,7 +12144,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSalsas
+                                                          : FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12270,7 +12263,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSalsas
+                                                          ? FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12280,7 +12274,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSalsas
+                                                          : FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12398,7 +12393,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSalsas
+                                                          ? FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12408,7 +12404,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSalsas
+                                                          : FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12526,7 +12523,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? _model.despSalsas
+                                                          ? FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12536,7 +12534,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : _model.despSalsas
+                                                          : FFAppState()
+                                                              .despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12869,7 +12868,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? _model.despBebidas
+                                                        ? FFAppState()
+                                                            .despBebidas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -12879,7 +12879,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : _model.despBebidas
+                                                        : FFAppState()
+                                                            .despBebidas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -14068,95 +14069,100 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                           _model.sintoma == '')
                                       ? null
                                       : () async {
-                                          _model.apiInto2Copy =
-                                              await DiarioIntoleranciaDosCall
-                                                  .call(
-                                            authToken: FFAppState().authToken,
-                                            diarioId: FFAppState().diarioIntoId,
-                                            momento: FFAppState().momento,
-                                            carne1: _model.carne1,
-                                            carne2: _model.carne2,
-                                            carne3: _model.carne3,
-                                            carne4: _model.carne4,
-                                            carne5: _model.carne5,
-                                            carne6: _model.carne6,
-                                            carne7: _model.carne7,
-                                            pescado1: _model.pescado1,
-                                            pescado2: _model.pescado2,
-                                            pescado3: _model.pescado3,
-                                            pescado4: _model.pescado4,
-                                            pescado5: _model.pescado5,
-                                            pescado6: _model.pescado6,
-                                            pescado7: _model.pescado7,
-                                            marisco1: _model.marisco1,
-                                            marisco2: _model.marisco2,
-                                            marisco3: _model.marisco3,
-                                            marisco4: _model.marisco4,
-                                            marisco5: _model.marisco5,
-                                            marisco6: _model.marisco6,
-                                            marisco7: _model.marisco7,
-                                            lacteos1: _model.lacteos1,
-                                            lacteos2: _model.lacteos2,
-                                            lacteos3: _model.lacteos3,
-                                            lacteos4: _model.lacteos4,
-                                            lacteos5: _model.lacteos5,
-                                            lacteos6: _model.lacteos6,
-                                            lacteos7: _model.lacteos7,
-                                            huevos1: _model.huevos1,
-                                            cereales1: _model.cereales1,
-                                            cereales2: _model.cereales2,
-                                            cereales3: _model.cereales3,
-                                            cereales4: _model.cereales4,
-                                            cereales5: _model.cereales5,
-                                            cereales6: _model.cereales6,
-                                            cereales7: _model.cereales7,
-                                            frutas1: _model.frutas1,
-                                            frutas2: _model.frutas2,
-                                            frutas3: _model.frutas3,
-                                            frutas4: _model.frutas4,
-                                            frutas5: _model.frutas5,
-                                            frutas6: _model.frutas6,
-                                            frutas7: _model.frutas7,
-                                            verduras1: _model.verduras1,
-                                            verduras2: _model.verduras2,
-                                            verduras3: _model.verduras3,
-                                            verduras4: _model.verduras4,
-                                            verduras5: _model.verduras5,
-                                            verduras6: _model.verduras6,
-                                            verduras7: _model.verduras7,
-                                            legumbres1: _model.legumbres1,
-                                            legumbres2: _model.legumbres2,
-                                            legumbres3: _model.legumbres3,
-                                            legumbres4: _model.legumbres4,
-                                            legumbres5: _model.legumbres5,
-                                            legumbres6: _model.legumbres6,
-                                            legumbres7: _model.legumbres7,
-                                            secos1: _model.secos1,
-                                            secos2: _model.secos2,
-                                            secos3: _model.secos3,
-                                            secos4: _model.secos4,
-                                            secos5: _model.secos5,
-                                            secos6: _model.secos6,
-                                            secos7: _model.secos7,
-                                            salsas1: _model.salsas1,
-                                            salsas2: _model.salsas2,
-                                            salsas3: _model.salsas3,
-                                            salsas4: _model.salsas4,
-                                            salsas5: _model.salsas5,
-                                            salsas6: _model.salsas6,
-                                            salsas7: _model.salsas7,
-                                            bebidas1: _model.bebida1,
-                                            bebidas2: _model.bebida2,
-                                            bebidas3: _model.bebida3,
-                                            bebidas4: _model.bebida4,
-                                            bebidas5: _model.bebida5,
-                                            bebidas6: _model.bebida6,
-                                            bebidas7: _model.bebida7,
-                                            sintoma: _model.sintoma,
-                                            editandoDiario:
-                                                FFAppState().editandoDiario,
+                                          unawaited(
+                                            () async {
+                                              _model.apiInto2Copy =
+                                                  await DiarioIntoleranciaDosCall
+                                                      .call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                diarioId:
+                                                    FFAppState().diarioIntoId,
+                                                momento: FFAppState().momento,
+                                                carne1: _model.carne1,
+                                                carne2: _model.carne2,
+                                                carne3: _model.carne3,
+                                                carne4: _model.carne4,
+                                                carne5: _model.carne5,
+                                                carne6: _model.carne6,
+                                                carne7: _model.carne7,
+                                                pescado1: _model.pescado1,
+                                                pescado2: _model.pescado2,
+                                                pescado3: _model.pescado3,
+                                                pescado4: _model.pescado4,
+                                                pescado5: _model.pescado5,
+                                                pescado6: _model.pescado6,
+                                                pescado7: _model.pescado7,
+                                                marisco1: _model.marisco1,
+                                                marisco2: _model.marisco2,
+                                                marisco3: _model.marisco3,
+                                                marisco4: _model.marisco4,
+                                                marisco5: _model.marisco5,
+                                                marisco6: _model.marisco6,
+                                                marisco7: _model.marisco7,
+                                                lacteos1: _model.lacteos1,
+                                                lacteos2: _model.lacteos2,
+                                                lacteos3: _model.lacteos3,
+                                                lacteos4: _model.lacteos4,
+                                                lacteos5: _model.lacteos5,
+                                                lacteos6: _model.lacteos6,
+                                                lacteos7: _model.lacteos7,
+                                                huevos1: _model.huevos1,
+                                                cereales1: _model.cereales1,
+                                                cereales2: _model.cereales2,
+                                                cereales3: _model.cereales3,
+                                                cereales4: _model.cereales4,
+                                                cereales5: _model.cereales5,
+                                                cereales6: _model.cereales6,
+                                                cereales7: _model.cereales7,
+                                                frutas1: _model.frutas1,
+                                                frutas2: _model.frutas2,
+                                                frutas3: _model.frutas3,
+                                                frutas4: _model.frutas4,
+                                                frutas5: _model.frutas5,
+                                                frutas6: _model.frutas6,
+                                                frutas7: _model.frutas7,
+                                                verduras1: _model.verduras1,
+                                                verduras2: _model.verduras2,
+                                                verduras3: _model.verduras3,
+                                                verduras4: _model.verduras4,
+                                                verduras5: _model.verduras5,
+                                                verduras6: _model.verduras6,
+                                                verduras7: _model.verduras7,
+                                                legumbres1: _model.legumbres1,
+                                                legumbres2: _model.legumbres2,
+                                                legumbres3: _model.legumbres3,
+                                                legumbres4: _model.legumbres4,
+                                                legumbres5: _model.legumbres5,
+                                                legumbres6: _model.legumbres6,
+                                                legumbres7: _model.legumbres7,
+                                                secos1: _model.secos1,
+                                                secos2: _model.secos2,
+                                                secos3: _model.secos3,
+                                                secos4: _model.secos4,
+                                                secos5: _model.secos5,
+                                                secos6: _model.secos6,
+                                                secos7: _model.secos7,
+                                                salsas1: _model.salsas1,
+                                                salsas2: _model.salsas2,
+                                                salsas3: _model.salsas3,
+                                                salsas4: _model.salsas4,
+                                                salsas5: _model.salsas5,
+                                                salsas6: _model.salsas6,
+                                                salsas7: _model.salsas7,
+                                                bebidas1: _model.bebida1,
+                                                bebidas2: _model.bebida2,
+                                                bebidas3: _model.bebida3,
+                                                bebidas4: _model.bebida4,
+                                                bebidas5: _model.bebida5,
+                                                bebidas6: _model.bebida6,
+                                                bebidas7: _model.bebida7,
+                                                sintoma: _model.sintoma,
+                                                editandoDiario:
+                                                    FFAppState().editandoDiario,
+                                              );
+                                            }(),
                                           );
-
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(
@@ -14238,95 +14244,100 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                           _model.sintoma == '')
                                       ? null
                                       : () async {
-                                          _model.apiInto2CopyCopy =
-                                              await DiarioIntoleranciaDosCall
-                                                  .call(
-                                            authToken: FFAppState().authToken,
-                                            diarioId: FFAppState().diarioIntoId,
-                                            momento: FFAppState().momento,
-                                            carne1: _model.carne1,
-                                            carne2: _model.carne2,
-                                            carne3: _model.carne3,
-                                            carne4: _model.carne4,
-                                            carne5: _model.carne5,
-                                            carne6: _model.carne6,
-                                            carne7: _model.carne7,
-                                            pescado1: _model.pescado1,
-                                            pescado2: _model.pescado2,
-                                            pescado3: _model.pescado3,
-                                            pescado4: _model.pescado4,
-                                            pescado5: _model.pescado5,
-                                            pescado6: _model.pescado6,
-                                            pescado7: _model.pescado7,
-                                            marisco1: _model.marisco1,
-                                            marisco2: _model.marisco2,
-                                            marisco3: _model.marisco3,
-                                            marisco4: _model.marisco4,
-                                            marisco5: _model.marisco5,
-                                            marisco6: _model.marisco6,
-                                            marisco7: _model.marisco7,
-                                            lacteos1: _model.lacteos1,
-                                            lacteos2: _model.lacteos2,
-                                            lacteos3: _model.lacteos3,
-                                            lacteos4: _model.lacteos4,
-                                            lacteos5: _model.lacteos5,
-                                            lacteos6: _model.lacteos6,
-                                            lacteos7: _model.lacteos7,
-                                            huevos1: _model.huevos1,
-                                            cereales1: _model.cereales1,
-                                            cereales2: _model.cereales2,
-                                            cereales3: _model.cereales3,
-                                            cereales4: _model.cereales4,
-                                            cereales5: _model.cereales5,
-                                            cereales6: _model.cereales6,
-                                            cereales7: _model.cereales7,
-                                            frutas1: _model.frutas1,
-                                            frutas2: _model.frutas2,
-                                            frutas3: _model.frutas3,
-                                            frutas4: _model.frutas4,
-                                            frutas5: _model.frutas5,
-                                            frutas6: _model.frutas6,
-                                            frutas7: _model.frutas7,
-                                            verduras1: _model.verduras1,
-                                            verduras2: _model.verduras2,
-                                            verduras3: _model.verduras3,
-                                            verduras4: _model.verduras4,
-                                            verduras5: _model.verduras5,
-                                            verduras6: _model.verduras6,
-                                            verduras7: _model.verduras7,
-                                            legumbres1: _model.legumbres1,
-                                            legumbres2: _model.legumbres2,
-                                            legumbres3: _model.legumbres3,
-                                            legumbres4: _model.legumbres4,
-                                            legumbres5: _model.legumbres5,
-                                            legumbres6: _model.legumbres6,
-                                            legumbres7: _model.legumbres7,
-                                            secos1: _model.secos1,
-                                            secos2: _model.secos2,
-                                            secos3: _model.secos3,
-                                            secos4: _model.secos4,
-                                            secos5: _model.secos5,
-                                            secos6: _model.secos6,
-                                            secos7: _model.secos7,
-                                            salsas1: _model.salsas1,
-                                            salsas2: _model.salsas2,
-                                            salsas3: _model.salsas3,
-                                            salsas4: _model.salsas4,
-                                            salsas5: _model.salsas5,
-                                            salsas6: _model.salsas6,
-                                            salsas7: _model.salsas7,
-                                            bebidas1: _model.bebida1,
-                                            bebidas2: _model.bebida2,
-                                            bebidas3: _model.bebida3,
-                                            bebidas4: _model.bebida4,
-                                            bebidas5: _model.bebida5,
-                                            bebidas6: _model.bebida6,
-                                            bebidas7: _model.bebida7,
-                                            sintoma: _model.sintoma,
-                                            editandoDiario:
-                                                FFAppState().editandoDiario,
+                                          unawaited(
+                                            () async {
+                                              _model.apiInto2CopyCopy =
+                                                  await DiarioIntoleranciaDosCall
+                                                      .call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                diarioId:
+                                                    FFAppState().diarioIntoId,
+                                                momento: FFAppState().momento,
+                                                carne1: _model.carne1,
+                                                carne2: _model.carne2,
+                                                carne3: _model.carne3,
+                                                carne4: _model.carne4,
+                                                carne5: _model.carne5,
+                                                carne6: _model.carne6,
+                                                carne7: _model.carne7,
+                                                pescado1: _model.pescado1,
+                                                pescado2: _model.pescado2,
+                                                pescado3: _model.pescado3,
+                                                pescado4: _model.pescado4,
+                                                pescado5: _model.pescado5,
+                                                pescado6: _model.pescado6,
+                                                pescado7: _model.pescado7,
+                                                marisco1: _model.marisco1,
+                                                marisco2: _model.marisco2,
+                                                marisco3: _model.marisco3,
+                                                marisco4: _model.marisco4,
+                                                marisco5: _model.marisco5,
+                                                marisco6: _model.marisco6,
+                                                marisco7: _model.marisco7,
+                                                lacteos1: _model.lacteos1,
+                                                lacteos2: _model.lacteos2,
+                                                lacteos3: _model.lacteos3,
+                                                lacteos4: _model.lacteos4,
+                                                lacteos5: _model.lacteos5,
+                                                lacteos6: _model.lacteos6,
+                                                lacteos7: _model.lacteos7,
+                                                huevos1: _model.huevos1,
+                                                cereales1: _model.cereales1,
+                                                cereales2: _model.cereales2,
+                                                cereales3: _model.cereales3,
+                                                cereales4: _model.cereales4,
+                                                cereales5: _model.cereales5,
+                                                cereales6: _model.cereales6,
+                                                cereales7: _model.cereales7,
+                                                frutas1: _model.frutas1,
+                                                frutas2: _model.frutas2,
+                                                frutas3: _model.frutas3,
+                                                frutas4: _model.frutas4,
+                                                frutas5: _model.frutas5,
+                                                frutas6: _model.frutas6,
+                                                frutas7: _model.frutas7,
+                                                verduras1: _model.verduras1,
+                                                verduras2: _model.verduras2,
+                                                verduras3: _model.verduras3,
+                                                verduras4: _model.verduras4,
+                                                verduras5: _model.verduras5,
+                                                verduras6: _model.verduras6,
+                                                verduras7: _model.verduras7,
+                                                legumbres1: _model.legumbres1,
+                                                legumbres2: _model.legumbres2,
+                                                legumbres3: _model.legumbres3,
+                                                legumbres4: _model.legumbres4,
+                                                legumbres5: _model.legumbres5,
+                                                legumbres6: _model.legumbres6,
+                                                legumbres7: _model.legumbres7,
+                                                secos1: _model.secos1,
+                                                secos2: _model.secos2,
+                                                secos3: _model.secos3,
+                                                secos4: _model.secos4,
+                                                secos5: _model.secos5,
+                                                secos6: _model.secos6,
+                                                secos7: _model.secos7,
+                                                salsas1: _model.salsas1,
+                                                salsas2: _model.salsas2,
+                                                salsas3: _model.salsas3,
+                                                salsas4: _model.salsas4,
+                                                salsas5: _model.salsas5,
+                                                salsas6: _model.salsas6,
+                                                salsas7: _model.salsas7,
+                                                bebidas1: _model.bebida1,
+                                                bebidas2: _model.bebida2,
+                                                bebidas3: _model.bebida3,
+                                                bebidas4: _model.bebida4,
+                                                bebidas5: _model.bebida5,
+                                                bebidas6: _model.bebida6,
+                                                bebidas7: _model.bebida7,
+                                                sintoma: _model.sintoma,
+                                                editandoDiario:
+                                                    FFAppState().editandoDiario,
+                                              );
+                                            }(),
                                           );
-
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(

@@ -308,7 +308,13 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                         safeSetState(() {});
 
                                         context.goNamed(
-                                          'diario_Into1',
+                                          'diarioIntoCargaDesplegables',
+                                          queryParameters: {
+                                            'primerDiario': serializeParam(
+                                              'no',
+                                              ParamType.String,
+                                            ),
+                                          }.withoutNulls,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
@@ -508,9 +514,9 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                         FFAppState().momento = 1;
 
                                         context.pushNamed(
-                                          'diario_Into1',
+                                          'diarioIntoCargaDesplegables',
                                           queryParameters: {
-                                            'primerIdario': serializeParam(
+                                            'primerDiario': serializeParam(
                                               'no',
                                               ParamType.String,
                                             ),
@@ -685,139 +691,15 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      if (DiarioInfoSelectorCall.intoFinalizar(
-                                            menuIntoleranciasDiarioInfoSelectorResponse
-                                                .jsonBody,
-                                          ) ==
-                                          'si') {
-                                        FFAppState().editandoDiario = 'no';
-                                        FFAppState().diarioIntoId =
-                                            DiarioInfoSelectorCall
-                                                .idIntoFinalizar(
-                                          menuIntoleranciasDiarioInfoSelectorResponse
-                                              .jsonBody,
-                                        )!;
-                                        FFAppState().momento =
-                                            DiarioInfoSelectorCall
-                                                .momentoIntoFinalizar(
-                                          menuIntoleranciasDiarioInfoSelectorResponse
-                                              .jsonBody,
-                                        )!;
-                                        FFAppState().mostrarAyer = 'no';
-                                        safeSetState(() {});
-                                        unawaited(
-                                          () async {
-                                            await UserLogActivityCall.call(
-                                              authToken: FFAppState().authToken,
-                                              seccion:
-                                                  'Acceso Finalizar Diario Intolerancias desde Menú Diario',
-                                            );
-                                          }(),
-                                        );
-                                        if (DiarioInfoSelectorCall
-                                                .pantallIntoFinalizar(
-                                              menuIntoleranciasDiarioInfoSelectorResponse
-                                                  .jsonBody,
-                                            ) ==
-                                            'p1') {
-                                          context.goNamed(
-                                            'diario_Into1',
-                                            queryParameters: {
-                                              'primerIdario': serializeParam(
-                                                'no',
-                                                ParamType.String,
-                                              ),
-                                            }.withoutNulls,
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                              ),
-                                            },
-                                          );
-                                        } else {
-                                          if (DiarioInfoSelectorCall
-                                                  .pantallIntoFinalizar(
-                                                menuIntoleranciasDiarioInfoSelectorResponse
-                                                    .jsonBody,
-                                              ) ==
-                                              'p2') {
-                                            context.goNamed(
-                                              'diario_Into2',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                ),
-                                              },
-                                            );
-                                          } else {
-                                            if (DiarioInfoSelectorCall
-                                                    .pantallIntoFinalizar(
-                                                  menuIntoleranciasDiarioInfoSelectorResponse
-                                                      .jsonBody,
-                                                ) ==
-                                                'p3') {
-                                              context.goNamed(
-                                                'diario_Into3',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType.fade,
-                                                  ),
-                                                },
-                                              );
-                                            } else {
-                                              if (DiarioInfoSelectorCall
-                                                      .pantallIntoFinalizar(
-                                                    menuIntoleranciasDiarioInfoSelectorResponse
-                                                        .jsonBody,
-                                                  ) ==
-                                                  'p4') {
-                                                context.goNamed(
-                                                  'diario_Into4',
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .fade,
-                                                    ),
-                                                  },
-                                                );
-                                              } else {
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                      'Error última página...',
-                                                      style: TextStyle(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
-                                                      ),
-                                                    ),
-                                                    duration: Duration(
-                                                        milliseconds: 4000),
-                                                    backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .error,
-                                                  ),
-                                                );
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
+                                      context.pushNamed(
+                                        'diarioIntoCargaDesplegablesEdita',
+                                        queryParameters: {
+                                          'primerDiario': serializeParam(
+                                            'no',
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
+                                      );
                                     },
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,

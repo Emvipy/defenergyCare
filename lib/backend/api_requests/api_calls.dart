@@ -12874,6 +12874,242 @@ class EmpresaCreaNewPreguntaEncuestaCall {
   }
 }
 
+class DesplegablesIntoCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'desplegablesInto',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/desplegables/into2',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? bebidasEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.bebidas[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? bebidasEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.bebidas[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? carneEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.carne[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? carneEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.carne[:].comida_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? cerealesEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.cereales[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? cerealesEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.cereales[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? condimentosEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.condimentos[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? condimentosEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.condimentos[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? frutasEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.frutas[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? frutasEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.frutas[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? secosEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.secos[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? secosEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.secos[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? huevosEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.huevos[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? huevosEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.huevos[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? lacteosEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.lacteos[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? lacteosEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.lacteos[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? legumbresEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.legumbres[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? legumbresEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.legumbres[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? mariscosEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.mariscos[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? mariscosEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.mariscos[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? pescadoEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.pescado[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? pescadoEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.pescado[:].comida_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? verduraEs(dynamic response) => (getJsonField(
+        response,
+        r'''$.verduras[:].comida''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? verduraEn(dynamic response) => (getJsonField(
+        response,
+        r'''$.verduras[:].en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

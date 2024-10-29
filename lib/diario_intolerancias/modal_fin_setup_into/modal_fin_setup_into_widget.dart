@@ -175,11 +175,13 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                                 0.0, 0.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                var _shouldSetState = false;
                                 _model.apiDiarioInto2 =
                                     await DiarioIntoCreaCall.call(
                                   authToken: FFAppState().authToken,
                                 );
 
+                                _shouldSetState = true;
                                 if ((_model.apiDiarioInto2?.succeeded ??
                                     true)) {
                                   FFAppState().diarioIntoId =
@@ -202,9 +204,9 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                                   FFAppState().momento = 1;
 
                                   context.pushNamed(
-                                    'diario_Into1',
+                                    'diarioIntoCargaDesplegables',
                                     queryParameters: {
-                                      'primerIdario': serializeParam(
+                                      'primerDiario': serializeParam(
                                         'si',
                                         ParamType.String,
                                       ),
@@ -231,9 +233,11 @@ class _ModalFinSetupIntoWidgetState extends State<ModalFinSetupIntoWidget> {
                                           FlutterFlowTheme.of(context).error,
                                     ),
                                   );
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
                                 }
 
-                                safeSetState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 'yg5kbesv' /* Empezar Diario */,

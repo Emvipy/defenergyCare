@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -9655,33 +9656,36 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
-                                _model.apiP3b =
-                                    await DiarioIntoleranciasTresCall.call(
-                                  authToken: FFAppState().authToken,
-                                  diarioId: FFAppState().diarioIntoId,
-                                  momento: FFAppState().momento,
-                                  cefalea: _model.cefalea,
-                                  abdominal: _model.abdominal,
-                                  nauseas: _model.nauseas,
-                                  vomitos: _model.vomitos,
-                                  diarrea: _model.diarrea,
-                                  respirar: _model.respirar,
-                                  niebla: _model.niebla,
-                                  vision: _model.vision,
-                                  debilidad: _model.debilidad,
-                                  palpitaciones: _model.palpitaciones,
-                                  sudor: _model.sudor,
-                                  picor: _model.picor,
-                                  hinchazon: _model.hinchazon,
-                                  gases: _model.gases,
-                                  ardor: _model.ardor,
-                                  reflujo: _model.reflujo,
-                                  digestion: _model.digestion,
-                                  calambres: _model.calambres,
-                                  mareos: _model.mareos,
-                                  editando: FFAppState().editandoDiario,
+                                unawaited(
+                                  () async {
+                                    _model.apiP3b =
+                                        await DiarioIntoleranciasTresCall.call(
+                                      authToken: FFAppState().authToken,
+                                      diarioId: FFAppState().diarioIntoId,
+                                      momento: FFAppState().momento,
+                                      cefalea: _model.cefalea,
+                                      abdominal: _model.abdominal,
+                                      nauseas: _model.nauseas,
+                                      vomitos: _model.vomitos,
+                                      diarrea: _model.diarrea,
+                                      respirar: _model.respirar,
+                                      niebla: _model.niebla,
+                                      vision: _model.vision,
+                                      debilidad: _model.debilidad,
+                                      palpitaciones: _model.palpitaciones,
+                                      sudor: _model.sudor,
+                                      picor: _model.picor,
+                                      hinchazon: _model.hinchazon,
+                                      gases: _model.gases,
+                                      ardor: _model.ardor,
+                                      reflujo: _model.reflujo,
+                                      digestion: _model.digestion,
+                                      calambres: _model.calambres,
+                                      mareos: _model.mareos,
+                                      editando: FFAppState().editandoDiario,
+                                    );
+                                  }(),
                                 );
-
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
@@ -9768,33 +9772,36 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
-                                _model.apiP3b2 =
-                                    await DiarioIntoleranciasTresCall.call(
-                                  authToken: FFAppState().authToken,
-                                  diarioId: FFAppState().diarioIntoId,
-                                  momento: FFAppState().momento,
-                                  cefalea: _model.cefalea,
-                                  abdominal: _model.abdominal,
-                                  nauseas: _model.nauseas,
-                                  vomitos: _model.vomitos,
-                                  diarrea: _model.diarrea,
-                                  respirar: _model.respirar,
-                                  niebla: _model.niebla,
-                                  vision: _model.vision,
-                                  debilidad: _model.debilidad,
-                                  palpitaciones: _model.palpitaciones,
-                                  sudor: _model.sudor,
-                                  picor: _model.picor,
-                                  hinchazon: _model.hinchazon,
-                                  gases: _model.gases,
-                                  ardor: _model.ardor,
-                                  reflujo: _model.reflujo,
-                                  digestion: _model.digestion,
-                                  calambres: _model.calambres,
-                                  mareos: _model.mareos,
-                                  editando: FFAppState().editandoDiario,
+                                unawaited(
+                                  () async {
+                                    _model.apiP3b2 =
+                                        await DiarioIntoleranciasTresCall.call(
+                                      authToken: FFAppState().authToken,
+                                      diarioId: FFAppState().diarioIntoId,
+                                      momento: FFAppState().momento,
+                                      cefalea: _model.cefalea,
+                                      abdominal: _model.abdominal,
+                                      nauseas: _model.nauseas,
+                                      vomitos: _model.vomitos,
+                                      diarrea: _model.diarrea,
+                                      respirar: _model.respirar,
+                                      niebla: _model.niebla,
+                                      vision: _model.vision,
+                                      debilidad: _model.debilidad,
+                                      palpitaciones: _model.palpitaciones,
+                                      sudor: _model.sudor,
+                                      picor: _model.picor,
+                                      hinchazon: _model.hinchazon,
+                                      gases: _model.gases,
+                                      ardor: _model.ardor,
+                                      reflujo: _model.reflujo,
+                                      digestion: _model.digestion,
+                                      calambres: _model.calambres,
+                                      mareos: _model.mareos,
+                                      editando: FFAppState().editandoDiario,
+                                    );
+                                  }(),
                                 );
-
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(

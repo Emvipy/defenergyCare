@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:async';
 import 'diario_into2_widget.dart' show DiarioInto2Widget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -311,30 +312,6 @@ class DiarioInto2Model extends FlutterFlowModel<DiarioInto2Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (desp comida pescado)] action in diario_Into2 widget.
-  ApiCallResponse? apiPescado;
-  // Stores action output result for [Backend Call - API (desp comida carne)] action in diario_Into2 widget.
-  ApiCallResponse? apiDespCarne;
-  // Stores action output result for [Backend Call - API (desp comida mariscos)] action in diario_Into2 widget.
-  ApiCallResponse? apiDespMarisco;
-  // Stores action output result for [Backend Call - API (desp comida lacteos)] action in diario_Into2 widget.
-  ApiCallResponse? apiLacteos;
-  // Stores action output result for [Backend Call - API (desp comida huevos)] action in diario_Into2 widget.
-  ApiCallResponse? apiHuevos;
-  // Stores action output result for [Backend Call - API (desp comida cereales)] action in diario_Into2 widget.
-  ApiCallResponse? apiCereales;
-  // Stores action output result for [Backend Call - API (desp comida frutas)] action in diario_Into2 widget.
-  ApiCallResponse? apiFrutas;
-  // Stores action output result for [Backend Call - API (desp comida verduras)] action in diario_Into2 widget.
-  ApiCallResponse? apiVerduras;
-  // Stores action output result for [Backend Call - API (desp comida legumbres)] action in diario_Into2 widget.
-  ApiCallResponse? apiLegumbres;
-  // Stores action output result for [Backend Call - API (desp comida frutos secos)] action in diario_Into2 widget.
-  ApiCallResponse? apiSecos;
-  // Stores action output result for [Backend Call - API (desp comidas  condimentos)] action in diario_Into2 widget.
-  ApiCallResponse? apiSalsas;
-  // Stores action output result for [Backend Call - API (desp comida bebidas)] action in diario_Into2 widget.
-  ApiCallResponse? apiBebidas;
   // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.
   ApiCallResponse? apiCargaDesayuno;
   // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.

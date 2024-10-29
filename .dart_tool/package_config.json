@@ -69,9 +69,9 @@
     },
     {
       "name": "cli_util",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/cli_util-0.4.1",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/cli_util-0.4.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "clock",
@@ -1100,7 +1100,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-10-29T02:36:35.740141Z",
+  "generated": "2024-10-29T18:29:20.194826Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",

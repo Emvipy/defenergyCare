@@ -589,6 +589,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'marketplaceCopy',
           path: '/marketplaceCopy',
           builder: (context, params) => MarketplaceCopyWidget(),
+        ),
+        FFRoute(
+          name: 'diario_Into2Copy',
+          path: '/diario_Into2Copy',
+          builder: (context, params) => DiarioInto2CopyWidget(),
+        ),
+        FFRoute(
+          name: 'diarioIntoCargaDesplegables',
+          path: '/diarioIntoCargaDesplegables',
+          builder: (context, params) => DiarioIntoCargaDesplegablesWidget(
+            primerDiario: params.getParam(
+              'primerDiario',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'diarioIntoCargaDesplegablesEdita',
+          path: '/diarioIntoCargaDesplegablesEdita',
+          builder: (context, params) => DiarioIntoCargaDesplegablesEditaWidget(
+            primerDiario: params.getParam(
+              'primerDiario',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'diarioIntoHubFinaliza',
+          path: '/diarioIntoHubFinaliza',
+          builder: (context, params) => DiarioIntoHubFinalizaWidget(
+            primerDiario: params.getParam(
+              'primerDiario',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
