@@ -215,6 +215,11 @@ class SignUpCreaEnfermedadCall {
         response,
         r'''$.id_enfermedad''',
       ));
+  static String? enfermedadEn(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.enfermedad_en''',
+      ));
 }
 
 class SignUpCreaMixEnfermedadCall {

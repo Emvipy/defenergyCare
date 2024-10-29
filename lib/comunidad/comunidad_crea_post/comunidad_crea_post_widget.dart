@@ -186,7 +186,6 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                   () => safeSetState(() {}),
                                 ),
                                 autofocus: false,
-                                textInputAction: TextInputAction.done,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelStyle: FlutterFlowTheme.of(context)

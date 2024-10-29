@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -539,6 +540,33 @@ class _Diario9WidgetState extends State<Diario9Widget> {
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'b0cabrkh' /* Recuerda utilizar las tíldes e... */,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      if ((_model.nombreMed == null ||
+                              _model.nombreMed == '') &&
+                          (FFLocalizations.of(context).languageCode == 'en'))
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 10.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '8pkxuyzg' /* Remember to put the name in En... */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -2425,61 +2453,66 @@ síntomas */
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  _model.apiP7F = await DiarioSieteCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioId,
-                                    med1: _model.nombreMed,
-                                    conAlivio: _model.alivioSintomas,
-                                    sinAlivio: 'n/a',
-                                    mejora1: _model.mejora1 != null &&
-                                            _model.mejora1 != ''
-                                        ? _model.mejora1
-                                        : 'n/a',
-                                    mejora2: _model.mejora2 != null &&
-                                            _model.mejora2 != ''
-                                        ? _model.mejora2
-                                        : 'n/a',
-                                    mejora3: _model.mejora3 != null &&
-                                            _model.mejora3 != ''
-                                        ? _model.mejora3
-                                        : 'n/a',
-                                    mejora4: _model.mejora4 != null &&
-                                            _model.mejora4 != ''
-                                        ? _model.mejora4
-                                        : 'n/a',
-                                    mejora5: _model.mejora5 != null &&
-                                            _model.mejora5 != ''
-                                        ? _model.mejora5
-                                        : 'n/a',
-                                    empeora1:
-                                        _model.emp1 != null && _model.emp1 != ''
+                                  unawaited(
+                                    () async {
+                                      _model.apiP7F =
+                                          await DiarioSieteCall.call(
+                                        authToken: FFAppState().authToken,
+                                        diarioId: FFAppState().diarioId,
+                                        med1: _model.nombreMed,
+                                        conAlivio: _model.alivioSintomas,
+                                        sinAlivio: 'n/a',
+                                        mejora1: _model.mejora1 != null &&
+                                                _model.mejora1 != ''
+                                            ? _model.mejora1
+                                            : 'n/a',
+                                        mejora2: _model.mejora2 != null &&
+                                                _model.mejora2 != ''
+                                            ? _model.mejora2
+                                            : 'n/a',
+                                        mejora3: _model.mejora3 != null &&
+                                                _model.mejora3 != ''
+                                            ? _model.mejora3
+                                            : 'n/a',
+                                        mejora4: _model.mejora4 != null &&
+                                                _model.mejora4 != ''
+                                            ? _model.mejora4
+                                            : 'n/a',
+                                        mejora5: _model.mejora5 != null &&
+                                                _model.mejora5 != ''
+                                            ? _model.mejora5
+                                            : 'n/a',
+                                        empeora1: _model.emp1 != null &&
+                                                _model.emp1 != ''
                                             ? _model.emp1
                                             : 'n/a',
-                                    empeora2:
-                                        _model.emp2 != null && _model.emp2 != ''
+                                        empeora2: _model.emp2 != null &&
+                                                _model.emp2 != ''
                                             ? _model.emp2
                                             : 'n/a',
-                                    empeora3:
-                                        _model.emp3 != null && _model.emp3 != ''
+                                        empeora3: _model.emp3 != null &&
+                                                _model.emp3 != ''
                                             ? _model.emp3
                                             : 'n/a',
-                                    empeora4:
-                                        _model.emp4 != null && _model.emp4 != ''
+                                        empeora4: _model.emp4 != null &&
+                                                _model.emp4 != ''
                                             ? _model.emp4
                                             : 'n/a',
-                                    empeora5:
-                                        _model.emp5 != null && _model.emp5 != ''
+                                        empeora5: _model.emp5 != null &&
+                                                _model.emp5 != ''
                                             ? _model.emp5
                                             : 'n/a',
-                                    notas: _model.textController2.text !=
-                                                null &&
-                                            _model.textController2.text != ''
-                                        ? functions
-                                            .formatTextwithLineBreaksToXano(
-                                                _model.textController2.text)
-                                        : 'n/a',
+                                        notas: _model.textController2.text !=
+                                                    null &&
+                                                _model.textController2.text !=
+                                                    ''
+                                            ? functions
+                                                .formatTextwithLineBreaksToXano(
+                                                    _model.textController2.text)
+                                            : 'n/a',
+                                      );
+                                    }(),
                                   );
-
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(

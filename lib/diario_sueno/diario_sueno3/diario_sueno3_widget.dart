@@ -439,7 +439,9 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                             ),
                           ),
                         ),
-                      if (_model.nombreMed == null || _model.nombreMed == '')
+                      if ((_model.nombreMed == null ||
+                              _model.nombreMed == '') &&
+                          (FFLocalizations.of(context).languageCode == 'es'))
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 10.0),
@@ -451,6 +453,33 @@ class _DiarioSueno3WidgetState extends State<DiarioSueno3Widget> {
                                 child: Text(
                                   FFLocalizations.of(context).getText(
                                     'wvimkmtj' /* Recuerda utilizar las tíldes e... */,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      if ((_model.nombreMed == null ||
+                              _model.nombreMed == '') &&
+                          (FFLocalizations.of(context).languageCode == 'en'))
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 20.0, 10.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'zwveas8d' /* Remember to put the name in En... */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)

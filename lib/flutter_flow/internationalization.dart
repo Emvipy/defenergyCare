@@ -392,11 +392,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vvhdyg30': {
       'es': 'Enfermedad Autoinmune',
-      'en': 'Other Autoimmune Diseases',
+      'en': 'Autoimmune Disease',
     },
     'ix9jgks1': {
       'es': 'Intolerancias alimentarias',
-      'en': 'Only food intolerances',
+      'en': 'Food intolerances',
     },
     '5568d4fv': {
       'es': 'Continuar',
@@ -4384,6 +4384,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
       'en': 'Remember to use accents in names that use them.',
     },
+    '8pkxuyzg': {
+      'es': 'Remember to put the name in English',
+      'en': 'Remember to use accents in names that use them.',
+    },
     'yr9exkff': {
       'es': 'O usar el del último diario realizado:',
       'en': 'Or use the one from the last diary made:',
@@ -5439,6 +5443,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wvimkmtj': {
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
+      'en': 'Remember to use accents in names that use them.',
+    },
+    'zwveas8d': {
+      'es': 'Remember to put the name in English',
       'en': 'Remember to use accents in names that use them.',
     },
     '4lz4aex9': {

@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -1404,25 +1405,29 @@ Higiene Pers. */
                                 onPressed: (_model.contador < 1)
                                     ? null
                                     : () async {
-                                        _model.apiP3F =
-                                            await DiarioCuatroCall.call(
-                                          diarioId: FFAppState().diarioId,
-                                          authToken: FFAppState().authToken,
-                                          trabajo: _model.trabajo,
-                                          estudios: _model.estudios,
-                                          familia: _model.familia,
-                                          hogar: _model.hogar,
-                                          social: _model.social,
-                                          ejercicio: _model.ejercicio,
-                                          caminar: _model.caminar,
-                                          leer: _model.leer,
-                                          higiene: _model.higiene,
-                                          otros: _model.otros,
-                                          contador: _model.contador,
-                                          editando: FFAppState().editandoDiario,
-                                          cama: _model.cama,
+                                        unawaited(
+                                          () async {
+                                            _model.apiP3F =
+                                                await DiarioCuatroCall.call(
+                                              diarioId: FFAppState().diarioId,
+                                              authToken: FFAppState().authToken,
+                                              trabajo: _model.trabajo,
+                                              estudios: _model.estudios,
+                                              familia: _model.familia,
+                                              hogar: _model.hogar,
+                                              social: _model.social,
+                                              ejercicio: _model.ejercicio,
+                                              caminar: _model.caminar,
+                                              leer: _model.leer,
+                                              higiene: _model.higiene,
+                                              otros: _model.otros,
+                                              contador: _model.contador,
+                                              editando:
+                                                  FFAppState().editandoDiario,
+                                              cama: _model.cama,
+                                            );
+                                          }(),
                                         );
-
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
@@ -1506,25 +1511,29 @@ Higiene Pers. */
                                 onPressed: (_model.contador < 1)
                                     ? null
                                     : () async {
-                                        _model.apiP3F2 =
-                                            await DiarioCuatroCall.call(
-                                          diarioId: FFAppState().diarioId,
-                                          authToken: FFAppState().authToken,
-                                          trabajo: _model.trabajo,
-                                          estudios: _model.estudios,
-                                          familia: _model.familia,
-                                          hogar: _model.hogar,
-                                          social: _model.social,
-                                          ejercicio: _model.ejercicio,
-                                          caminar: _model.caminar,
-                                          leer: _model.leer,
-                                          higiene: _model.higiene,
-                                          otros: _model.otros,
-                                          contador: _model.contador,
-                                          editando: FFAppState().editandoDiario,
-                                          cama: _model.cama,
+                                        unawaited(
+                                          () async {
+                                            _model.apiP3F2 =
+                                                await DiarioCuatroCall.call(
+                                              diarioId: FFAppState().diarioId,
+                                              authToken: FFAppState().authToken,
+                                              trabajo: _model.trabajo,
+                                              estudios: _model.estudios,
+                                              familia: _model.familia,
+                                              hogar: _model.hogar,
+                                              social: _model.social,
+                                              ejercicio: _model.ejercicio,
+                                              caminar: _model.caminar,
+                                              leer: _model.leer,
+                                              higiene: _model.higiene,
+                                              otros: _model.otros,
+                                              contador: _model.contador,
+                                              editando:
+                                                  FFAppState().editandoDiario,
+                                              cama: _model.cama,
+                                            );
+                                          }(),
                                         );
-
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
