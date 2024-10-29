@@ -1,907 +1,37 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'diario_into2_model.dart';
-export 'diario_into2_model.dart';
+import 'diario_into2_copy_model.dart';
+export 'diario_into2_copy_model.dart';
 
-class DiarioInto2Widget extends StatefulWidget {
-  const DiarioInto2Widget({super.key});
+class DiarioInto2CopyWidget extends StatefulWidget {
+  const DiarioInto2CopyWidget({super.key});
 
   @override
-  State<DiarioInto2Widget> createState() => _DiarioInto2WidgetState();
+  State<DiarioInto2CopyWidget> createState() => _DiarioInto2CopyWidgetState();
 }
 
-class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
-  late DiarioInto2Model _model;
+class _DiarioInto2CopyWidgetState extends State<DiarioInto2CopyWidget> {
+  late DiarioInto2CopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DiarioInto2Model());
+    _model = createModel(context, () => DiarioInto2CopyModel());
 
     // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().momento == 1) {
-        _model.apiCargaDesayuno = await DiarioIntoleranciaDosCargaCall.call(
-          diarioId: FFAppState().diarioIntoId,
-          momento: 1,
-        );
-
-        FFAppState().intoCarnes = DiarioIntoleranciaDosCargaCall.carneDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoMarisco =
-            DiarioIntoleranciaDosCargaCall.mariscoDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoPescado =
-            DiarioIntoleranciaDosCargaCall.pescadoDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoLacteos =
-            DiarioIntoleranciaDosCargaCall.lacteoDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoHuevos = DiarioIntoleranciaDosCargaCall.huevosDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoCereales =
-            DiarioIntoleranciaDosCargaCall.cerealesDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoFrutas = DiarioIntoleranciaDosCargaCall.frutasDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoVerduras =
-            DiarioIntoleranciaDosCargaCall.verdurasDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoLegumbres =
-            DiarioIntoleranciaDosCargaCall.legumbresDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoFrutosSecos =
-            DiarioIntoleranciaDosCargaCall.secosDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoSalsas = DiarioIntoleranciaDosCargaCall.secosDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoBebidas = DiarioIntoleranciaDosCargaCall.bebidas(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        safeSetState(() {});
-        _model.carne1 = DiarioIntoleranciaDosCargaCall.carneDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.carne2 = DiarioIntoleranciaDosCargaCall.carneDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.carne3 = DiarioIntoleranciaDosCargaCall.carneDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.carne4 = DiarioIntoleranciaDosCargaCall.carneDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.carne5 = DiarioIntoleranciaDosCargaCall.carneDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.carne6 = DiarioIntoleranciaDosCargaCall.carneDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.carne7 = DiarioIntoleranciaDosCargaCall.carneDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.pescado1 = DiarioIntoleranciaDosCargaCall.pescadoDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.pescado2 = DiarioIntoleranciaDosCargaCall.pescadoDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.pescado3 = DiarioIntoleranciaDosCargaCall.pescadoDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.pescado4 = DiarioIntoleranciaDosCargaCall.pescadoDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.pescado5 = DiarioIntoleranciaDosCargaCall.pescadoDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.pescado6 = DiarioIntoleranciaDosCargaCall.pescadoDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.pescado7 = DiarioIntoleranciaDosCargaCall.pescadoDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.marisco1 = DiarioIntoleranciaDosCargaCall.mariscoDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.marisco2 = DiarioIntoleranciaDosCargaCall.mariscoDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.marisco3 = DiarioIntoleranciaDosCargaCall.mariscoDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.marisco4 = DiarioIntoleranciaDosCargaCall.mariscoDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.marisco5 = DiarioIntoleranciaDosCargaCall.mariscoDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.marisco6 = DiarioIntoleranciaDosCargaCall.mariscoDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.marisco7 = DiarioIntoleranciaDosCargaCall.mariscoDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.lacteos1 = DiarioIntoleranciaDosCargaCall.lacteoDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.lacteos2 = DiarioIntoleranciaDosCargaCall.lacteoDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.lacteos3 = DiarioIntoleranciaDosCargaCall.lacteoDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.lacteos4 = DiarioIntoleranciaDosCargaCall.lacteoDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.lacteos5 = DiarioIntoleranciaDosCargaCall.lacteoDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.lacteos6 = DiarioIntoleranciaDosCargaCall.lacteoDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.lacteos7 = DiarioIntoleranciaDosCargaCall.lacteoDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.huevos1 = DiarioIntoleranciaDosCargaCall.huevosDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        )!;
-        _model.cereales1 = DiarioIntoleranciaDosCargaCall.cerealesDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.cereales2 = DiarioIntoleranciaDosCargaCall.cerealesDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.cereales3 = DiarioIntoleranciaDosCargaCall.cerealesDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.cereales4 = DiarioIntoleranciaDosCargaCall.cerealesDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.cereales5 = DiarioIntoleranciaDosCargaCall.cerealesDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.cereales6 = DiarioIntoleranciaDosCargaCall.cerealesDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.cereales7 = DiarioIntoleranciaDosCargaCall.cerealesDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.frutas1 = DiarioIntoleranciaDosCargaCall.frutasDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.frutas2 = DiarioIntoleranciaDosCargaCall.frutasDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.frutas3 = DiarioIntoleranciaDosCargaCall.frutasDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.frutas4 = DiarioIntoleranciaDosCargaCall.frutasDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.frutas5 = DiarioIntoleranciaDosCargaCall.frutasDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.frutas6 = DiarioIntoleranciaDosCargaCall.frutasDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.frutas7 = DiarioIntoleranciaDosCargaCall.frutasDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.verduras1 = DiarioIntoleranciaDosCargaCall.verdurasDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.verduras2 = DiarioIntoleranciaDosCargaCall.verdurasDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.verduras3 = DiarioIntoleranciaDosCargaCall.verdurasDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.verduras4 = DiarioIntoleranciaDosCargaCall.verdurasDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.verduras5 = DiarioIntoleranciaDosCargaCall.verdurasDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.verduras6 = DiarioIntoleranciaDosCargaCall.verdurasDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.verduras7 = DiarioIntoleranciaDosCargaCall.verdurasDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.legumbres1 = DiarioIntoleranciaDosCargaCall.legumbresDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.legumbres2 = DiarioIntoleranciaDosCargaCall.legumbresDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.legumbres3 = DiarioIntoleranciaDosCargaCall.legumbresDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.legumbres4 = DiarioIntoleranciaDosCargaCall.legumbresDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.legumbres5 = DiarioIntoleranciaDosCargaCall.legumbresDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.legumbres6 = DiarioIntoleranciaDosCargaCall.legumbresDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.legumbres7 = DiarioIntoleranciaDosCargaCall.legumbresDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.secos1 = DiarioIntoleranciaDosCargaCall.secosDesayuno1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.secos2 = DiarioIntoleranciaDosCargaCall.secosDesayuno2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.secos3 = DiarioIntoleranciaDosCargaCall.secosDesayuno3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.secos4 = DiarioIntoleranciaDosCargaCall.secosDesayuno4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.secos5 = DiarioIntoleranciaDosCargaCall.secosDesayuno5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.secos6 = DiarioIntoleranciaDosCargaCall.secosDesayuno6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.secos7 = DiarioIntoleranciaDosCargaCall.secosDesayuno7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.salsas1 = DiarioIntoleranciaDosCargaCall.salsas1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.salsas2 = DiarioIntoleranciaDosCargaCall.salsas2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.salsas3 = DiarioIntoleranciaDosCargaCall.salsas3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.salsas4 = DiarioIntoleranciaDosCargaCall.salsas4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.salsas5 = DiarioIntoleranciaDosCargaCall.salsas5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.salsas6 = DiarioIntoleranciaDosCargaCall.salsas6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.salsas7 = DiarioIntoleranciaDosCargaCall.salsas7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.bebida1 = DiarioIntoleranciaDosCargaCall.bebidas1(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.bebida2 = DiarioIntoleranciaDosCargaCall.bebidas2(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.bebida3 = DiarioIntoleranciaDosCargaCall.bebidas3(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.bebida4 = DiarioIntoleranciaDosCargaCall.bebidas4(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.bebida5 = DiarioIntoleranciaDosCargaCall.bebidas5(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.bebida6 = DiarioIntoleranciaDosCargaCall.bebidas6(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.bebida7 = DiarioIntoleranciaDosCargaCall.bebidas7(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.sintoma = DiarioIntoleranciaDosCargaCall.sintomaDesayuno(
-          (_model.apiCargaDesayuno?.jsonBody ?? ''),
-        );
-        _model.contenido = 'si';
-        safeSetState(() {});
-        return;
-      }
-      if (FFAppState().momento == 2) {
-        _model.apiCargaComida = await DiarioIntoleranciaDosCargaCall.call(
-          diarioId: FFAppState().diarioIntoId,
-          momento: 2,
-        );
-
-        FFAppState().intoCarnes = DiarioIntoleranciaDosCargaCall.carneComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoMarisco = DiarioIntoleranciaDosCargaCall.mariscoComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoPescado = DiarioIntoleranciaDosCargaCall.pescadoComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoLacteos = DiarioIntoleranciaDosCargaCall.lacteoComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoHuevos = DiarioIntoleranciaDosCargaCall.huevosComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoCereales =
-            DiarioIntoleranciaDosCargaCall.cerealesComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoFrutas = DiarioIntoleranciaDosCargaCall.frutasComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoVerduras =
-            DiarioIntoleranciaDosCargaCall.verdurasComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoLegumbres =
-            DiarioIntoleranciaDosCargaCall.legumbresComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoFrutosSecos =
-            DiarioIntoleranciaDosCargaCall.secosComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoSalsas = DiarioIntoleranciaDosCargaCall.salsasComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoBebidas = DiarioIntoleranciaDosCargaCall.bebidasComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        safeSetState(() {});
-        _model.carne1 = DiarioIntoleranciaDosCargaCall.carneComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.carne2 = DiarioIntoleranciaDosCargaCall.carneComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.carne3 = DiarioIntoleranciaDosCargaCall.carneComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.carne4 = DiarioIntoleranciaDosCargaCall.carneComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.carne5 = DiarioIntoleranciaDosCargaCall.carneComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.carne6 = DiarioIntoleranciaDosCargaCall.carneComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.carne7 = DiarioIntoleranciaDosCargaCall.carneComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.pescado1 = DiarioIntoleranciaDosCargaCall.pescadoComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.pescado2 = DiarioIntoleranciaDosCargaCall.pescadoComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.pescado3 = DiarioIntoleranciaDosCargaCall.pescadoComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.pescado4 = DiarioIntoleranciaDosCargaCall.pescadoComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.pescado5 = DiarioIntoleranciaDosCargaCall.pescadoComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.pescado6 = DiarioIntoleranciaDosCargaCall.pescadoComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.pescado7 = DiarioIntoleranciaDosCargaCall.pescadoComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.marisco1 = DiarioIntoleranciaDosCargaCall.mariscoComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.marisco2 = DiarioIntoleranciaDosCargaCall.mariscoComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.marisco3 = DiarioIntoleranciaDosCargaCall.mariscoComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.marisco4 = DiarioIntoleranciaDosCargaCall.mariscoComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.marisco5 = DiarioIntoleranciaDosCargaCall.mariscoComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.marisco6 = DiarioIntoleranciaDosCargaCall.mariscoComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.marisco7 = DiarioIntoleranciaDosCargaCall.mariscoComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.lacteos1 = DiarioIntoleranciaDosCargaCall.lacteoComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.lacteos2 = DiarioIntoleranciaDosCargaCall.lacteoComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.lacteos3 = DiarioIntoleranciaDosCargaCall.lacteoComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.lacteos4 = DiarioIntoleranciaDosCargaCall.lacteoComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.lacteos5 = DiarioIntoleranciaDosCargaCall.lacteoComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.lacteos6 = DiarioIntoleranciaDosCargaCall.lacteoComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.lacteos7 = DiarioIntoleranciaDosCargaCall.lacteoComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.huevos1 = DiarioIntoleranciaDosCargaCall.huevosComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        )!;
-        _model.cereales1 = DiarioIntoleranciaDosCargaCall.cerealesComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.cereales2 = DiarioIntoleranciaDosCargaCall.cerealesComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.cereales3 = DiarioIntoleranciaDosCargaCall.cerealesComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.cereales4 = DiarioIntoleranciaDosCargaCall.cerealesComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.cereales5 = DiarioIntoleranciaDosCargaCall.cerealesComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.cereales6 = DiarioIntoleranciaDosCargaCall.cerealesComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.cereales7 = DiarioIntoleranciaDosCargaCall.cerealesComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.frutas1 = DiarioIntoleranciaDosCargaCall.frutasComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.frutas2 = DiarioIntoleranciaDosCargaCall.frutasComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.frutas3 = DiarioIntoleranciaDosCargaCall.frutasComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.frutas4 = DiarioIntoleranciaDosCargaCall.frutasComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.frutas5 = DiarioIntoleranciaDosCargaCall.frutasComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.frutas6 = DiarioIntoleranciaDosCargaCall.frutasComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.frutas7 = DiarioIntoleranciaDosCargaCall.frutasComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.verduras1 = DiarioIntoleranciaDosCargaCall.verdurasComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.verduras2 = DiarioIntoleranciaDosCargaCall.verdurasComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.verduras3 = DiarioIntoleranciaDosCargaCall.verdurasComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.verduras4 = DiarioIntoleranciaDosCargaCall.verdurasComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.verduras5 = DiarioIntoleranciaDosCargaCall.verdurasComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.verduras6 = DiarioIntoleranciaDosCargaCall.verdurasComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.verduras7 = DiarioIntoleranciaDosCargaCall.verdurasComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.legumbres1 = DiarioIntoleranciaDosCargaCall.legumbresComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.legumbres2 = DiarioIntoleranciaDosCargaCall.legumbresComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.legumbres3 = DiarioIntoleranciaDosCargaCall.legumbresComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.legumbres4 = DiarioIntoleranciaDosCargaCall.legumbresComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.legumbres5 = DiarioIntoleranciaDosCargaCall.legumbresComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.legumbres6 = DiarioIntoleranciaDosCargaCall.legumbresComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.legumbres7 = DiarioIntoleranciaDosCargaCall.legumbresComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.secos1 = DiarioIntoleranciaDosCargaCall.secosComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.secos2 = DiarioIntoleranciaDosCargaCall.secosComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.secos3 = DiarioIntoleranciaDosCargaCall.secosComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.secos4 = DiarioIntoleranciaDosCargaCall.secosComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.secos5 = DiarioIntoleranciaDosCargaCall.secosComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.secos6 = DiarioIntoleranciaDosCargaCall.secosComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.secos7 = DiarioIntoleranciaDosCargaCall.secosComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.salsas1 = DiarioIntoleranciaDosCargaCall.salsasComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.salsas2 = DiarioIntoleranciaDosCargaCall.salsasComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.salsas3 = DiarioIntoleranciaDosCargaCall.salsasComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.salsas4 = DiarioIntoleranciaDosCargaCall.salsasComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.salsas5 = DiarioIntoleranciaDosCargaCall.salsasComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.salsas6 = DiarioIntoleranciaDosCargaCall.salsasComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.salsas7 = DiarioIntoleranciaDosCargaCall.salsasComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.bebida1 = DiarioIntoleranciaDosCargaCall.bebidasComida1(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.bebida2 = DiarioIntoleranciaDosCargaCall.bebidasComida2(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.bebida3 = DiarioIntoleranciaDosCargaCall.bebidasComida3(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.bebida4 = DiarioIntoleranciaDosCargaCall.bebidasComida4(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.bebida5 = DiarioIntoleranciaDosCargaCall.bebidasComida5(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.bebida6 = DiarioIntoleranciaDosCargaCall.bebidasComida6(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.bebida7 = DiarioIntoleranciaDosCargaCall.bebidasComida7(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.sintoma = DiarioIntoleranciaDosCargaCall.sintomasComida(
-          (_model.apiCargaComida?.jsonBody ?? ''),
-        );
-        _model.contenido = 'si';
-        safeSetState(() {});
-        return;
-      }
-      if (FFAppState().momento == 3) {
-        _model.apiCargaCena = await DiarioIntoleranciaDosCargaCall.call(
-          diarioId: FFAppState().diarioIntoId,
-          momento: 3,
-        );
-
-        FFAppState().intoCarnes = DiarioIntoleranciaDosCargaCall.carneCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoMarisco = DiarioIntoleranciaDosCargaCall.mariscoCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoPescado = DiarioIntoleranciaDosCargaCall.pescadoCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoLacteos = DiarioIntoleranciaDosCargaCall.lacteoCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoHuevos = DiarioIntoleranciaDosCargaCall.huevosCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoCereales = DiarioIntoleranciaDosCargaCall.cerealesCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoFrutas = DiarioIntoleranciaDosCargaCall.frutasCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoVerduras = DiarioIntoleranciaDosCargaCall.verdurasCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoLegumbres =
-            DiarioIntoleranciaDosCargaCall.legumbresCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoFrutosSecos = DiarioIntoleranciaDosCargaCall.secosCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoSalsas = DiarioIntoleranciaDosCargaCall.salsasCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        FFAppState().intoBebidas = DiarioIntoleranciaDosCargaCall.bebidasCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        safeSetState(() {});
-        _model.carne1 = DiarioIntoleranciaDosCargaCall.carneCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.carne2 = DiarioIntoleranciaDosCargaCall.carneCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.carne3 = DiarioIntoleranciaDosCargaCall.carneCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.carne4 = DiarioIntoleranciaDosCargaCall.carneCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.carne5 = DiarioIntoleranciaDosCargaCall.carneCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.carne6 = DiarioIntoleranciaDosCargaCall.carneCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.carne7 = DiarioIntoleranciaDosCargaCall.carneCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.pescado1 = DiarioIntoleranciaDosCargaCall.pescadoCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.pescado2 = DiarioIntoleranciaDosCargaCall.pescadoCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.pescado3 = DiarioIntoleranciaDosCargaCall.pescadoCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.pescado4 = DiarioIntoleranciaDosCargaCall.pescadoCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.pescado5 = DiarioIntoleranciaDosCargaCall.pescadoCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.pescado6 = DiarioIntoleranciaDosCargaCall.pescadoCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.pescado7 = DiarioIntoleranciaDosCargaCall.pescadoCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.marisco1 = DiarioIntoleranciaDosCargaCall.mariscoCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.marisco2 = DiarioIntoleranciaDosCargaCall.mariscoCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.marisco3 = DiarioIntoleranciaDosCargaCall.mariscoCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.marisco4 = DiarioIntoleranciaDosCargaCall.mariscoCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.marisco5 = DiarioIntoleranciaDosCargaCall.mariscoCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.marisco6 = DiarioIntoleranciaDosCargaCall.mariscoCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.marisco7 = DiarioIntoleranciaDosCargaCall.mariscoCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.lacteos1 = DiarioIntoleranciaDosCargaCall.lacteoCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.lacteos2 = DiarioIntoleranciaDosCargaCall.lacteoCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.lacteos3 = DiarioIntoleranciaDosCargaCall.lacteoCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.lacteos4 = DiarioIntoleranciaDosCargaCall.lacteoCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.lacteos5 = DiarioIntoleranciaDosCargaCall.lacteoCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.lacteos6 = DiarioIntoleranciaDosCargaCall.lacteoCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.lacteos7 = DiarioIntoleranciaDosCargaCall.lacteoCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.huevos1 = DiarioIntoleranciaDosCargaCall.huevosCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        )!;
-        _model.cereales1 = DiarioIntoleranciaDosCargaCall.cerealesCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.cereales2 = DiarioIntoleranciaDosCargaCall.cerealesCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.cereales3 = DiarioIntoleranciaDosCargaCall.cerealesCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.cereales4 = DiarioIntoleranciaDosCargaCall.cerealesCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.cereales5 = DiarioIntoleranciaDosCargaCall.cerealesCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.cereales6 = DiarioIntoleranciaDosCargaCall.cerealesCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.cereales7 = DiarioIntoleranciaDosCargaCall.cerealesCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.frutas1 = DiarioIntoleranciaDosCargaCall.frutasCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.frutas2 = DiarioIntoleranciaDosCargaCall.frutasCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.frutas3 = DiarioIntoleranciaDosCargaCall.frutasCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.frutas4 = DiarioIntoleranciaDosCargaCall.frutasCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.frutas5 = DiarioIntoleranciaDosCargaCall.frutasCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.frutas6 = DiarioIntoleranciaDosCargaCall.frutasCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.frutas7 = DiarioIntoleranciaDosCargaCall.frutasCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.verduras1 = DiarioIntoleranciaDosCargaCall.verdurasCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.verduras2 = DiarioIntoleranciaDosCargaCall.verdurasCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.verduras3 = DiarioIntoleranciaDosCargaCall.verdurasCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.verduras4 = DiarioIntoleranciaDosCargaCall.verdurasCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.verduras5 = DiarioIntoleranciaDosCargaCall.verdurasCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.verduras6 = DiarioIntoleranciaDosCargaCall.verdurasCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.verduras7 = DiarioIntoleranciaDosCargaCall.verdurasCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.legumbres1 = DiarioIntoleranciaDosCargaCall.legumbresCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.legumbres2 = DiarioIntoleranciaDosCargaCall.legumbresCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.legumbres3 = DiarioIntoleranciaDosCargaCall.legumbresCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.legumbres4 = DiarioIntoleranciaDosCargaCall.legumbresCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.legumbres5 = DiarioIntoleranciaDosCargaCall.legumbresCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.legumbres6 = DiarioIntoleranciaDosCargaCall.legumbresCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.legumbres7 = DiarioIntoleranciaDosCargaCall.legumbresCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.secos1 = DiarioIntoleranciaDosCargaCall.secosCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.secos2 = DiarioIntoleranciaDosCargaCall.secosCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.secos3 = DiarioIntoleranciaDosCargaCall.secosCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.secos4 = DiarioIntoleranciaDosCargaCall.secosCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.secos5 = DiarioIntoleranciaDosCargaCall.secosCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.secos6 = DiarioIntoleranciaDosCargaCall.secosCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.secos7 = DiarioIntoleranciaDosCargaCall.secosCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.salsas1 = DiarioIntoleranciaDosCargaCall.salsasCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.salsas2 = DiarioIntoleranciaDosCargaCall.salsasCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.salsas3 = DiarioIntoleranciaDosCargaCall.salsasCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.salsas4 = DiarioIntoleranciaDosCargaCall.salsasCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.salsas5 = DiarioIntoleranciaDosCargaCall.salsasCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.salsas6 = DiarioIntoleranciaDosCargaCall.salsasCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.salsas7 = DiarioIntoleranciaDosCargaCall.salsasCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.bebida1 = DiarioIntoleranciaDosCargaCall.bebidasCena1(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.bebida2 = DiarioIntoleranciaDosCargaCall.bebidasCena2(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.bebida3 = DiarioIntoleranciaDosCargaCall.bebidasCena3(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.bebida4 = DiarioIntoleranciaDosCargaCall.bebidasCena4(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.bebida5 = DiarioIntoleranciaDosCargaCall.bebidasCena5(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.bebida6 = DiarioIntoleranciaDosCargaCall.bebidasCena6(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.bebida7 = DiarioIntoleranciaDosCargaCall.bebidasCena7(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.sintoma = DiarioIntoleranciaDosCargaCall.sintomasCena(
-          (_model.apiCargaCena?.jsonBody ?? ''),
-        );
-        _model.contenido = 'si';
-        safeSetState(() {});
-        return;
-      } else {
-        context.safePop();
-        return;
-      }
-    });
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
   }
 
   @override
@@ -949,7 +79,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
             alignment: AlignmentDirectional(-1.0, 0.0),
             child: Text(
               FFLocalizations.of(context).getText(
-                'rbtby12n' /* Diario de Intolerancias */,
+                'trtfnpy3' /* Diario de Intolerancias */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Open Sans',
@@ -1175,7 +305,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '1czwkjyj' /* ¿Qué tipo de carnes has comido... */,
+                                                  'i318ld00' /* ¿Qué tipo de carnes has comido... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -1366,8 +496,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despCarne
+                                                        ? _model.despCarnes
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -1377,8 +506,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despCarne
+                                                        : _model.despCarnes
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -1429,13 +557,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'rjbkm2vw' /* Selecciona tu respuesta */,
+                                                      '052ly6we' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      '71yx0io0' /* Buscador... */,
+                                                      'hybbvcsf' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -1490,8 +618,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCarne
+                                                          ? _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1501,8 +628,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCarne
+                                                          : _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1556,13 +682,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'zczpzyhk' /* Selecciona tu respuesta */,
+                                                        'h4tfj5mr' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '9um4n9pk' /* Buscador... */,
+                                                        '4t215hf2' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -1620,8 +746,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCarne
+                                                          ? _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1631,8 +756,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCarne
+                                                          : _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1686,13 +810,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ogpbeao5' /* Selecciona tu respuesta */,
+                                                        'aiuw7pux' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '3tce3ijv' /* Buscador... */,
+                                                        'iz3tv6l8' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -1750,8 +874,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCarne
+                                                          ? _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1761,8 +884,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCarne
+                                                          : _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1816,13 +938,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'qsyn1684' /* Selecciona tu respuesta */,
+                                                        'xl3sqjc6' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'imp64fu5' /* Buscador... */,
+                                                        'z1i5v8ye' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -1880,8 +1002,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCarne
+                                                          ? _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1891,8 +1012,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCarne
+                                                          : _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -1946,13 +1066,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'bi2zc769' /* Selecciona tu respuesta */,
+                                                        'ljox0mjc' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'kdm8vngr' /* Buscador... */,
+                                                        '7p93k1ef' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -2010,8 +1130,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCarne
+                                                          ? _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2021,8 +1140,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCarne
+                                                          : _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2076,13 +1194,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '6ihq9zt6' /* Selecciona tu respuesta */,
+                                                        '7jimx4gd' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'efjamwuz' /* Buscador... */,
+                                                        'txnsdj6b' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -2140,8 +1258,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCarne
+                                                          ? _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2151,8 +1268,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCarne
+                                                          : _model.despCarnes
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2206,13 +1322,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'fank41mx' /* Selecciona tu respuesta */,
+                                                        'pvk7jot6' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'wdwfd560' /* Buscador... */,
+                                                        'h34abqum' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -2316,7 +1432,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'hly54eux' /* ¿Qué tipo de pescados has comi... */,
+                                                  'dvgas4ks' /* ¿Qué tipo de pescados has comi... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -2485,8 +1601,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despPescado
+                                                        ? _model.despPescados
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -2496,8 +1611,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despPescado
+                                                        : _model.despPescados
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -2548,13 +1662,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'q3mx4cam' /* Selecciona tu respuesta */,
+                                                      'avwh2387' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'g0ajw7ml' /* Buscador... */,
+                                                      'fve2orcd' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -2609,8 +1723,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despPescado
+                                                          ? _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2620,8 +1733,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despPescado
+                                                          : _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2675,13 +1787,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'hynubel4' /* Selecciona tu respuesta */,
+                                                        '5y5t3myx' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'xxdv6ood' /* Buscador... */,
+                                                        '7a33wply' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -2739,8 +1851,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despPescado
+                                                          ? _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2750,8 +1861,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despPescado
+                                                          : _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2805,13 +1915,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'p1j8lsiv' /* Selecciona tu respuesta */,
+                                                        'xxrclebe' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'g4lqblkl' /* Buscador... */,
+                                                        'wukcovxf' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -2869,8 +1979,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despPescado
+                                                          ? _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2880,8 +1989,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despPescado
+                                                          : _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -2935,13 +2043,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'i1jiduhu' /* Selecciona tu respuesta */,
+                                                        'bq5hyi1x' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'venql3se' /* Buscador... */,
+                                                        '823c6bh9' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -2999,8 +2107,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despPescado
+                                                          ? _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3010,8 +2117,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despPescado
+                                                          : _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3065,13 +2171,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '1wz5epvt' /* Selecciona tu respuesta */,
+                                                        's8smkw4c' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'm008o1rw' /* Buscador... */,
+                                                        'xvi6mufk' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -3129,8 +2235,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despPescado
+                                                          ? _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3140,8 +2245,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despPescado
+                                                          : _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3195,13 +2299,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '4mf6f7ta' /* Selecciona tu respuesta */,
+                                                        '02v9413d' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'yimmuq53' /* Buscador... */,
+                                                        'wrff3hzx' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -3259,8 +2363,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despPescado
+                                                          ? _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3270,8 +2373,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despPescado
+                                                          : _model.despPescados
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3325,13 +2427,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        's9o5fzea' /* Selecciona tu respuesta */,
+                                                        'wyov5e37' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'i6aho9o4' /* Buscador... */,
+                                                        'y4l2tyxs' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -3435,7 +2537,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'g88mjqp6' /* ¿Qué tipo de mariscos has comi... */,
+                                                  'k002e7tz' /* ¿Qué tipo de mariscos has comi... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -3604,8 +2706,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despMariscos
+                                                        ? _model.despMariscos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -3615,8 +2716,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despMariscos
+                                                        : _model.despMariscos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -3667,13 +2767,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      '57sricz4' /* Selecciona tu respuesta */,
+                                                      'zmf1e0o1' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'y5j45cq8' /* Buscador... */,
+                                                      'f63n6kqd' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -3728,8 +2828,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despMariscos
+                                                          ? _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3739,8 +2838,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despMariscos
+                                                          : _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3794,13 +2892,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'e4aiut7x' /* Selecciona tu respuesta */,
+                                                        '631efrwc' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'kzedaa4r' /* Buscador... */,
+                                                        '2fvmmdpo' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -3858,8 +2956,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despMariscos
+                                                          ? _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3869,8 +2966,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despMariscos
+                                                          : _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3924,13 +3020,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'n07w786j' /* Selecciona tu respuesta */,
+                                                        'ir6osxxw' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'r5mu117f' /* Buscador... */,
+                                                        'nmdunmli' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -3988,8 +3084,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despMariscos
+                                                          ? _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -3999,8 +3094,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despMariscos
+                                                          : _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4054,13 +3148,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '18sequy0' /* Selecciona tu respuesta */,
+                                                        'wza4qslg' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '7109iqix' /* Buscador... */,
+                                                        'mbepqya8' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -4118,8 +3212,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despMariscos
+                                                          ? _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4129,8 +3222,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despMariscos
+                                                          : _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4184,13 +3276,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'zrnustmn' /* Selecciona tu respuesta */,
+                                                        'lr807g30' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '8bebsva2' /* Buscador... */,
+                                                        'l1rctrh4' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -4248,8 +3340,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despMariscos
+                                                          ? _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4259,8 +3350,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despMariscos
+                                                          : _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4314,13 +3404,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'mzgp6nqm' /* Selecciona tu respuesta */,
+                                                        'f65gl8yn' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'pwz64djh' /* Buscador... */,
+                                                        'f7efqckg' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -4378,8 +3468,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despMariscos
+                                                          ? _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4389,8 +3478,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despMariscos
+                                                          : _model.despMariscos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4444,13 +3532,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'kjhars72' /* Selecciona tu respuesta */,
+                                                        'ypayjb5t' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ndrmlza8' /* Buscador... */,
+                                                        '03gc4qq7' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -4554,7 +3642,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'drtjhj3a' /* ¿Qué tipo de lácteos has comid... */,
+                                                  'rvkqmgga' /* ¿Qué tipo de lácteos has comid... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -4723,8 +3811,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despLacteos
+                                                        ? _model.despLacteos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -4734,8 +3821,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despLacteos
+                                                        : _model.despLacteos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -4786,13 +3872,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'x23lxkse' /* Selecciona tu respuesta */,
+                                                      'i79qv1e8' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      '5adtarkx' /* Buscador... */,
+                                                      'hdcs0wk6' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -4847,8 +3933,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLacteos
+                                                          ? _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4858,8 +3943,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLacteos
+                                                          : _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4913,13 +3997,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'blu2j4o4' /* Selecciona tu respuesta */,
+                                                        'i7ofgxfx' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '8ysxnciv' /* Buscador... */,
+                                                        '8crll048' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -4977,8 +4061,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLacteos
+                                                          ? _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -4988,8 +4071,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLacteos
+                                                          : _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5043,13 +4125,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'c4nkqkqa' /* Selecciona tu respuesta */,
+                                                        'aeqas5l2' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'rd5xh998' /* Buscador... */,
+                                                        'qtpspnp5' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -5107,8 +4189,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLacteos
+                                                          ? _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5118,8 +4199,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLacteos
+                                                          : _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5173,13 +4253,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '3fcaxrhp' /* Selecciona tu respuesta */,
+                                                        'w11dgc7q' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '01uwqeeo' /* Buscador... */,
+                                                        '0gran9sr' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -5237,8 +4317,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLacteos
+                                                          ? _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5248,8 +4327,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLacteos
+                                                          : _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5303,13 +4381,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'rjeuoijm' /* Selecciona tu respuesta */,
+                                                        '5la9uphd' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'dyx1yw0y' /* Buscador... */,
+                                                        'tgkbkbov' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -5367,8 +4445,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLacteos
+                                                          ? _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5378,8 +4455,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLacteos
+                                                          : _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5433,13 +4509,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'k1wnaiej' /* Selecciona tu respuesta */,
+                                                        'tuf6elzu' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '843do1l5' /* Buscador... */,
+                                                        '9dwzd9d9' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -5497,8 +4573,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLacteos
+                                                          ? _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5508,8 +4583,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLacteos
+                                                          : _model.despLacteos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -5563,13 +4637,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '4ha525uo' /* Selecciona tu respuesta */,
+                                                        '7x38kj9i' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ur862fae' /* Buscador... */,
+                                                        '41ohgv61' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -5673,7 +4747,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'r4e9pdxi' /* ¿Cómo has comido los huevos? */,
+                                                  'j3kzk0mt' /* ¿Cómo has comido los huevos? */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -5842,8 +4916,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despHuevos
+                                                        ? _model.despHuevos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -5853,8 +4926,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despHuevos
+                                                        : _model.despHuevos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -5885,7 +4957,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'p0zmcxo9' /* Selecciona tu respuesta */,
+                                                      'tnzgujgn' /* Selecciona tu respuesta */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -5986,7 +5058,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'mv2pcgxq' /* ¿Qué tipo de cereales has comi... */,
+                                                  'o67529ff' /* ¿Qué tipo de cereales has comi... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -6155,8 +5227,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despCereales
+                                                        ? _model.despCereales
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -6166,8 +5237,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despCereales
+                                                        : _model.despCereales
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -6218,13 +5288,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'dbubytzz' /* Selecciona tu respuesta */,
+                                                      'k7fof68c' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'r9dp32cs' /* Buscador... */,
+                                                      'sj2nd8ub' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -6279,8 +5349,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCereales
+                                                          ? _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6290,8 +5359,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCereales
+                                                          : _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6345,13 +5413,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '0kljqp93' /* Selecciona tu respuesta */,
+                                                        '1ysffixs' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'jsltxz9l' /* Buscador... */,
+                                                        '95san905' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -6409,8 +5477,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCereales
+                                                          ? _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6420,8 +5487,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCereales
+                                                          : _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6475,13 +5541,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'yftxlsnb' /* Selecciona tu respuesta */,
+                                                        'u5mw54eg' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'u847ds86' /* Buscador... */,
+                                                        'zv20ckz6' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -6539,8 +5605,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCereales
+                                                          ? _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6550,8 +5615,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCereales
+                                                          : _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6605,13 +5669,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'vok4dk7q' /* Selecciona tu respuesta */,
+                                                        'mrueup9w' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'lcmbs05x' /* Buscador... */,
+                                                        'pmhgatil' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -6669,8 +5733,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCereales
+                                                          ? _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6680,8 +5743,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCereales
+                                                          : _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6735,13 +5797,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'r0asxvyt' /* Selecciona tu respuesta */,
+                                                        '1t0q6bl5' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'on2gmh15' /* Buscador... */,
+                                                        'egompgmo' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -6799,8 +5861,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCereales
+                                                          ? _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6810,8 +5871,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCereales
+                                                          : _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6865,13 +5925,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'a0wy87th' /* Selecciona tu respuesta */,
+                                                        '0ylvn8iq' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'bsssq5an' /* Buscador... */,
+                                                        '8pz4d3t1' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -6929,8 +5989,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despCereales
+                                                          ? _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6940,8 +5999,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despCereales
+                                                          : _model.despCereales
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -6995,13 +6053,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '0e1ib0wq' /* Selecciona tu respuesta */,
+                                                        'pxeqpbxa' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'henkfqhh' /* Buscador... */,
+                                                        'jwic2zt1' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -7105,7 +6163,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '5r809od9' /* ¿Qué tipo de frutas has comido... */,
+                                                  '28ehlki5' /* ¿Qué tipo de frutas has comido... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -7274,8 +6332,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despFrutas
+                                                        ? _model.despFrutas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -7285,8 +6342,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despFrutas
+                                                        : _model.despFrutas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -7337,13 +6393,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      '3urmylag' /* Selecciona tu respuesta */,
+                                                      'z58mgpfy' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'zd4n996w' /* Buscador... */,
+                                                      '2r4vm2c9' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -7398,8 +6454,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despFrutas
+                                                          ? _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7409,8 +6464,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despFrutas
+                                                          : _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7464,13 +6518,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '6vsu0tja' /* Selecciona tu respuesta */,
+                                                        '9ql9z5z1' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'l6dhv7gz' /* Buscador... */,
+                                                        '09awvqjd' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -7528,8 +6582,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despFrutas
+                                                          ? _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7539,8 +6592,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despFrutas
+                                                          : _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7594,13 +6646,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'hey5uly7' /* Selecciona tu respuesta */,
+                                                        'qj0gieps' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'pe0nqbpj' /* Buscador... */,
+                                                        'ssbg86q7' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -7658,8 +6710,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despFrutas
+                                                          ? _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7669,8 +6720,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despFrutas
+                                                          : _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7724,13 +6774,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'wugi5zfj' /* Selecciona tu respuesta */,
+                                                        's1z92ugl' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'p2p3eglp' /* Buscador... */,
+                                                        'o4lxsisb' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -7788,8 +6838,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despFrutas
+                                                          ? _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7799,8 +6848,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despFrutas
+                                                          : _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7854,13 +6902,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '077h0r97' /* Selecciona tu respuesta */,
+                                                        '8zh7td5v' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ytfhpri2' /* Buscador... */,
+                                                        'ra9ofvlh' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -7918,8 +6966,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despFrutas
+                                                          ? _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7929,8 +6976,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despFrutas
+                                                          : _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -7984,13 +7030,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '5qfaawzo' /* Selecciona tu respuesta */,
+                                                        'ssfawxem' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'dx74edxi' /* Buscador... */,
+                                                        'k233nd9e' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -8048,8 +7094,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despFrutas
+                                                          ? _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8059,8 +7104,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despFrutas
+                                                          : _model.despFrutas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8114,13 +7158,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '5ukz3ukm' /* Selecciona tu respuesta */,
+                                                        'n1qi39ml' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'nw5ppbky' /* Buscador... */,
+                                                        'h9fj4ktc' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -8224,7 +7268,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '1kfl4zsg' /* ¿Qué verduras/hortalizas has c... */,
+                                                  'qfkrtq4p' /* ¿Qué verduras/hortalizas has c... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -8393,8 +7437,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despVerduras
+                                                        ? _model.despVerduras
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -8404,8 +7447,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despVerduras
+                                                        : _model.despVerduras
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -8456,13 +7498,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'd94bo54d' /* Selecciona tu respuesta */,
+                                                      '438urofq' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      '6bf8yr9s' /* Buscador... */,
+                                                      '8vo5ezbl' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -8517,8 +7559,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despVerduras
+                                                          ? _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8528,8 +7569,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despVerduras
+                                                          : _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8583,13 +7623,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'shr77jrd' /* Selecciona tu respuesta */,
+                                                        'oiebzqzq' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '6xtpbu4v' /* Buscador... */,
+                                                        'x516k0fp' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -8647,8 +7687,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despVerduras
+                                                          ? _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8658,8 +7697,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despVerduras
+                                                          : _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8713,13 +7751,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '7rhgau2s' /* Selecciona tu respuesta */,
+                                                        'uhmasbz8' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '02zi87ff' /* Buscador... */,
+                                                        '313y38tj' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -8777,8 +7815,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despVerduras
+                                                          ? _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8788,8 +7825,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despVerduras
+                                                          : _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8843,13 +7879,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'pafssseg' /* Selecciona tu respuesta */,
+                                                        '8enbv38n' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'a8iu6trq' /* Buscador... */,
+                                                        'jhjpys7u' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -8907,8 +7943,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despVerduras
+                                                          ? _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8918,8 +7953,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despVerduras
+                                                          : _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -8973,13 +8007,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'b9u9jgwe' /* Selecciona tu respuesta */,
+                                                        'bxw9nock' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'qt52fz0h' /* Buscador... */,
+                                                        '1h9adwpj' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -9037,8 +8071,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despVerduras
+                                                          ? _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9048,8 +8081,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despVerduras
+                                                          : _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9103,13 +8135,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'u1s144yn' /* Selecciona tu respuesta */,
+                                                        '7knbu37a' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'xeqwrlr6' /* Buscador... */,
+                                                        'oyoaadte' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -9167,8 +8199,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despVerduras
+                                                          ? _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9178,8 +8209,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despVerduras
+                                                          : _model.despVerduras
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9233,13 +8263,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'k93cydq1' /* Selecciona tu respuesta */,
+                                                        'jlhoymf5' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'dw8b2z2c' /* Buscador... */,
+                                                        'mp01ul8m' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -9344,7 +8374,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'fy7s1ds2' /* ¿Qué legumbres has comido? */,
+                                                  'dqoyjx6e' /* ¿Qué legumbres has comido? */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -9513,8 +8543,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despLegumbres
+                                                        ? _model.despLegumbres
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -9524,8 +8553,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despLegumbres
+                                                        : _model.despLegumbres
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -9576,13 +8604,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'io0i9ggq' /* Selecciona tu respuesta */,
+                                                      'hp2ytj71' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'hai9hcxp' /* Buscador... */,
+                                                      'h9kd7onq' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -9637,8 +8665,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLegumbres
+                                                          ? _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9648,8 +8675,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLegumbres
+                                                          : _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9703,13 +8729,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '3ozcne86' /* Selecciona tu respuesta */,
+                                                        'simt5jpf' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'mfwws1ep' /* Buscador... */,
+                                                        'oel6zlln' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -9767,8 +8793,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLegumbres
+                                                          ? _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9778,8 +8803,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLegumbres
+                                                          : _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9833,13 +8857,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'fd63rcwp' /* Selecciona tu respuesta */,
+                                                        'iu1l2e62' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'rsbncbq5' /* Buscador... */,
+                                                        'e80e24kp' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -9897,8 +8921,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLegumbres
+                                                          ? _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9908,8 +8931,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLegumbres
+                                                          : _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -9963,13 +8985,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'm6z9m5kh' /* Selecciona tu respuesta */,
+                                                        'rixy8mwa' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '359izuc0' /* Buscador... */,
+                                                        '436k6mvn' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -10027,8 +9049,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLegumbres
+                                                          ? _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10038,8 +9059,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLegumbres
+                                                          : _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10093,13 +9113,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'hdrwlt8e' /* Selecciona tu respuesta */,
+                                                        'lz7x2xtj' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '6tqyb6ha' /* Buscador... */,
+                                                        'rsccoj66' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -10157,8 +9177,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLegumbres
+                                                          ? _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10168,8 +9187,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLegumbres
+                                                          : _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10223,13 +9241,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '3p8ndl0r' /* Selecciona tu respuesta */,
+                                                        'mshhy3uo' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'i4afuhd0' /* Buscador... */,
+                                                        'rwzg3m7p' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -10287,8 +9305,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despLegumbres
+                                                          ? _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10298,8 +9315,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despLegumbres
+                                                          : _model.despLegumbres
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10353,13 +9369,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'hbfpyrb2' /* Selecciona tu respuesta */,
+                                                        'z0ji5bux' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ejcesvjq' /* Buscador... */,
+                                                        'qyp4j23p' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -10463,7 +9479,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'q3va3mv5' /* ¿Qué frutos secos has comido? */,
+                                                  '12a7rtoy' /* ¿Qué frutos secos has comido? */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -10630,8 +9646,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despSecos
+                                                        ? _model.despSecos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -10641,8 +9656,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despSecos
+                                                        : _model.despSecos
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -10693,13 +9707,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'vlip7uub' /* Selecciona tu respuesta */,
+                                                      'ccwb46fs' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'aryv0xci' /* Buscador... */,
+                                                      'ilrksaac' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -10754,8 +9768,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSecos
+                                                          ? _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10765,8 +9778,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSecos
+                                                          : _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10820,13 +9832,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '1xu2cits' /* Selecciona tu respuesta */,
+                                                        'pw2pl0qg' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'aaynakbe' /* Buscador... */,
+                                                        'tdbu0h4h' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -10884,8 +9896,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSecos
+                                                          ? _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10895,8 +9906,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSecos
+                                                          : _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -10950,13 +9960,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'dcbiv7vh' /* Selecciona tu respuesta */,
+                                                        '3jwo1p7l' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'rvz6zc6c' /* Buscador... */,
+                                                        'gy8231cs' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -11014,8 +10024,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSecos
+                                                          ? _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11025,8 +10034,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSecos
+                                                          : _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11080,13 +10088,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '2qqa4t3b' /* Selecciona tu respuesta */,
+                                                        '4octwyof' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ghshedap' /* Buscador... */,
+                                                        'vt8jr7g2' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -11144,8 +10152,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSecos
+                                                          ? _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11155,8 +10162,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSecos
+                                                          : _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11210,13 +10216,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '3yl0ao9g' /* Selecciona tu respuesta */,
+                                                        'lyfjlk67' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'vmjrepi5' /* Buscador... */,
+                                                        'ulab4vxd' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -11274,8 +10280,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSecos
+                                                          ? _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11285,8 +10290,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSecos
+                                                          : _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11340,13 +10344,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ppff24du' /* Selecciona tu respuesta */,
+                                                        'euh7dty1' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '7zl9gyhm' /* Buscador... */,
+                                                        '2k78vgn3' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -11404,8 +10408,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSecos
+                                                          ? _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11415,8 +10418,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSecos
+                                                          : _model.despSecos
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11470,13 +10472,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'oz5wp46q' /* Selecciona tu respuesta */,
+                                                        'z6sbqs6i' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '2xmimb1t' /* Buscador... */,
+                                                        'nvanqokt' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -11580,7 +10582,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '17632ful' /* ¿Qué salsas y condimentos has ... */,
+                                                  '4r9gf02b' /* ¿Qué salsas y condimentos has ... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -11749,8 +10751,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despSalsas
+                                                        ? _model.despSalsas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -11760,8 +10761,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despSalsas
+                                                        : _model.despSalsas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -11812,13 +10812,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'mqlm9cqi' /* Selecciona tu respuesta */,
+                                                      'sp9rd0nh' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'c963ude9' /* Buscador... */,
+                                                      'fdmsihvy' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -11873,8 +10873,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSalsas
+                                                          ? _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11884,8 +10883,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSalsas
+                                                          : _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -11939,13 +10937,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'gphiegl0' /* Selecciona tu respuesta */,
+                                                        'fhpw1qhs' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'qr5n1jkr' /* Buscador... */,
+                                                        'tfx9ylfv' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -12003,8 +11001,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSalsas
+                                                          ? _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12014,8 +11011,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSalsas
+                                                          : _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12069,13 +11065,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '62nzebjp' /* Selecciona tu respuesta */,
+                                                        'ykua2bsf' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'gx70b59u' /* Buscador... */,
+                                                        'xt45w6hx' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -12133,8 +11129,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSalsas
+                                                          ? _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12144,8 +11139,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSalsas
+                                                          : _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12199,13 +11193,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '3rv29ap0' /* Selecciona tu respuesta */,
+                                                        '5drdn2kh' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '4hxs3j92' /* Buscador... */,
+                                                        'm6vvub7x' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -12263,8 +11257,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSalsas
+                                                          ? _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12274,8 +11267,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSalsas
+                                                          : _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12329,13 +11321,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ti23r9zo' /* Selecciona tu respuesta */,
+                                                        '72odima7' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '4arnkuxs' /* Buscador... */,
+                                                        '99i93zoj' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -12393,8 +11385,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSalsas
+                                                          ? _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12404,8 +11395,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSalsas
+                                                          : _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12459,13 +11449,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'aa7rqugw' /* Selecciona tu respuesta */,
+                                                        'rx3j5nkr' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'c86ky7tk' /* Buscador... */,
+                                                        '4pgjl0wg' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -12523,8 +11513,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                       context)
                                                                   .languageCode ==
                                                               'es'
-                                                          ? FFAppState()
-                                                              .despSalsas
+                                                          ? _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12534,8 +11523,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                               .map((e) =>
                                                                   e.toString())
                                                               .toList()
-                                                          : FFAppState()
-                                                              .despSalsas
+                                                          : _model.despSalsas
                                                               .map((e) =>
                                                                   getJsonField(
                                                                     e,
@@ -12589,13 +11577,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'j2ugmyi8' /* Selecciona tu respuesta */,
+                                                        'dr995rq8' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'caltw04z' /* Buscador... */,
+                                                        'cq5kh9p3' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -12699,7 +11687,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'x8uivwl8' /* ¿Qué bebidas has tomado? */,
+                                                  'k81y4ox6' /* ¿Qué bebidas has tomado? */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -12868,8 +11856,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                     context)
                                                                 .languageCode ==
                                                             'es'
-                                                        ? FFAppState()
-                                                            .despBebidas
+                                                        ? _model.despBebidas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -12879,8 +11866,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                             .map((e) =>
                                                                 e.toString())
                                                             .toList()
-                                                        : FFAppState()
-                                                            .despBebidas
+                                                        : _model.despBebidas
                                                             .map((e) =>
                                                                 getJsonField(
                                                                   e,
@@ -12931,13 +11917,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      '6dgvjhgg' /* Selecciona tu respuesta */,
+                                                      '53kljm5f' /* Selecciona tu respuesta */,
                                                     ),
                                                     searchHintText:
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                      'muia0es1' /* Buscador... */,
+                                                      'hjgpiv9c' /* Buscador... */,
                                                     ),
                                                     icon: Icon(
                                                       Icons
@@ -13056,13 +12042,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'dj49whjv' /* Selecciona tu respuesta */,
+                                                        'uj3xn096' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'jcf6y6bs' /* Buscador... */,
+                                                        'gxv3468g' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -13184,13 +12170,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'dznuu866' /* Selecciona tu respuesta */,
+                                                        '9yirp31y' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'j0436z31' /* Buscador... */,
+                                                        'eetpkglp' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -13312,13 +12298,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ky6kespw' /* Selecciona tu respuesta */,
+                                                        'tqrykk5s' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'njn6aec5' /* Buscador... */,
+                                                        '0h1k5tu9' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -13440,13 +12426,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '4370v8z0' /* Selecciona tu respuesta */,
+                                                        '43ypohc6' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '8gfx3xdq' /* Buscador... */,
+                                                        '90tdezth' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -13568,13 +12554,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'ddax5gwg' /* Selecciona tu respuesta */,
+                                                        'lml3efux' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'a4axxis9' /* Buscador... */,
+                                                        '3m91sa6d' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -13696,13 +12682,13 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'pxyol338' /* Selecciona tu respuesta */,
+                                                        's2000gjy' /* Selecciona tu respuesta */,
                                                       ),
                                                       searchHintText:
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'fokefjae' /* Buscador... */,
+                                                        'hepfd6eh' /* Buscador... */,
                                                       ),
                                                       icon: Icon(
                                                         Icons
@@ -13754,7 +12740,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                               Flexible(
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'xp7y1k2z' /* ¿Has tenido algún síntoma tras... */,
+                                    '6yj6ukxk' /* ¿Has tenido algún síntoma tras... */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -13800,7 +12786,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                       Flexible(
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'sw6vfobm' /* SI */,
+                                            'osxkd8w9' /* SI */,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -13845,7 +12831,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                       Flexible(
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'airhza1k' /* NO */,
+                                            'me4wi3yk' /* NO */,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -13879,152 +12865,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                 onPressed: (_model.sintoma == null ||
                                         _model.sintoma == '')
                                     ? null
-                                    : () async {
-                                        _model.apiInto2 =
-                                            await DiarioIntoleranciaDosCall
-                                                .call(
-                                          authToken: FFAppState().authToken,
-                                          diarioId: FFAppState().diarioIntoId,
-                                          momento: FFAppState().momento,
-                                          carne1: _model.carne1,
-                                          carne2: _model.carne2,
-                                          carne3: _model.carne3,
-                                          carne4: _model.carne4,
-                                          carne5: _model.carne5,
-                                          carne6: _model.carne6,
-                                          carne7: _model.carne7,
-                                          pescado1: _model.pescado1,
-                                          pescado2: _model.pescado2,
-                                          pescado3: _model.pescado3,
-                                          pescado4: _model.pescado4,
-                                          pescado5: _model.pescado5,
-                                          pescado6: _model.pescado6,
-                                          pescado7: _model.pescado7,
-                                          marisco1: _model.marisco1,
-                                          marisco2: _model.marisco2,
-                                          marisco3: _model.marisco3,
-                                          marisco4: _model.marisco4,
-                                          marisco5: _model.marisco5,
-                                          marisco6: _model.marisco6,
-                                          marisco7: _model.marisco7,
-                                          lacteos1: _model.lacteos1,
-                                          lacteos2: _model.lacteos2,
-                                          lacteos3: _model.lacteos3,
-                                          lacteos4: _model.lacteos4,
-                                          lacteos5: _model.lacteos5,
-                                          lacteos6: _model.lacteos6,
-                                          lacteos7: _model.lacteos7,
-                                          huevos1: _model.huevos1,
-                                          cereales1: _model.cereales1,
-                                          cereales2: _model.cereales2,
-                                          cereales3: _model.cereales3,
-                                          cereales4: _model.cereales4,
-                                          cereales5: _model.cereales5,
-                                          cereales6: _model.cereales6,
-                                          cereales7: _model.cereales7,
-                                          frutas1: _model.frutas1,
-                                          frutas2: _model.frutas2,
-                                          frutas3: _model.frutas3,
-                                          frutas4: _model.frutas4,
-                                          frutas5: _model.frutas5,
-                                          frutas6: _model.frutas6,
-                                          frutas7: _model.frutas7,
-                                          verduras1: _model.verduras1,
-                                          verduras2: _model.verduras2,
-                                          verduras3: _model.verduras3,
-                                          verduras4: _model.verduras4,
-                                          verduras5: _model.verduras5,
-                                          verduras6: _model.verduras6,
-                                          verduras7: _model.verduras7,
-                                          legumbres1: _model.legumbres1,
-                                          legumbres2: _model.legumbres2,
-                                          legumbres3: _model.legumbres3,
-                                          legumbres4: _model.legumbres4,
-                                          legumbres5: _model.legumbres5,
-                                          legumbres6: _model.legumbres6,
-                                          legumbres7: _model.legumbres7,
-                                          secos1: _model.secos1,
-                                          secos2: _model.secos2,
-                                          secos3: _model.secos3,
-                                          secos4: _model.secos4,
-                                          secos5: _model.secos5,
-                                          secos6: _model.secos6,
-                                          secos7: _model.secos7,
-                                          salsas1: _model.salsas1,
-                                          salsas2: _model.salsas2,
-                                          salsas3: _model.salsas3,
-                                          salsas4: _model.salsas4,
-                                          salsas5: _model.salsas5,
-                                          salsas6: _model.salsas6,
-                                          salsas7: _model.salsas7,
-                                          bebidas1: _model.bebida1,
-                                          bebidas2: _model.bebida2,
-                                          bebidas3: _model.bebida3,
-                                          bebidas4: _model.bebida4,
-                                          bebidas5: _model.bebida5,
-                                          bebidas6: _model.bebida6,
-                                          bebidas7: _model.bebida7,
-                                          sintoma: _model.sintoma,
-                                          editandoDiario:
-                                              FFAppState().editandoDiario,
-                                        );
-
-                                        if (_model.sintoma == 'si') {
-                                          context.pushNamed(
-                                            'diario_Into3',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                              ),
-                                            },
-                                          );
-                                        } else {
-                                          if (FFAppState().momento < 3) {
-                                            FFAppState().momento =
-                                                FFAppState().momento + 1;
-                                            safeSetState(() {});
-
-                                            context.pushNamed(
-                                              'diario_Into1',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                ),
-                                              },
-                                            );
-                                          } else {
-                                            _model.apiFin1 =
-                                                await IntoleranciaFinalizaDiarioCall
-                                                    .call(
-                                              authToken: FFAppState().authToken,
-                                              diarioId:
-                                                  FFAppState().diarioIntoId,
-                                            );
-
-                                            context.goNamed(
-                                              'diarioIntoFin',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                ),
-                                              },
-                                            );
-                                          }
-                                        }
-
-                                        safeSetState(() {});
-                                      },
+                                    : () async {},
                                 text: FFLocalizations.of(context).getText(
-                                  'mou0litv' /* Continuar */,
+                                  'w0kday8j' /* Continuar */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 300.0,
@@ -14069,119 +12912,6 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                           _model.sintoma == '')
                                       ? null
                                       : () async {
-                                          unawaited(
-                                            () async {
-                                              _model.apiInto2Copy =
-                                                  await DiarioIntoleranciaDosCall
-                                                      .call(
-                                                authToken:
-                                                    FFAppState().authToken,
-                                                diarioId:
-                                                    FFAppState().diarioIntoId,
-                                                momento: FFAppState().momento,
-                                                carne1: _model.carne1,
-                                                carne2: _model.carne2,
-                                                carne3: _model.carne3,
-                                                carne4: _model.carne4,
-                                                carne5: _model.carne5,
-                                                carne6: _model.carne6,
-                                                carne7: _model.carne7,
-                                                pescado1: _model.pescado1,
-                                                pescado2: _model.pescado2,
-                                                pescado3: _model.pescado3,
-                                                pescado4: _model.pescado4,
-                                                pescado5: _model.pescado5,
-                                                pescado6: _model.pescado6,
-                                                pescado7: _model.pescado7,
-                                                marisco1: _model.marisco1,
-                                                marisco2: _model.marisco2,
-                                                marisco3: _model.marisco3,
-                                                marisco4: _model.marisco4,
-                                                marisco5: _model.marisco5,
-                                                marisco6: _model.marisco6,
-                                                marisco7: _model.marisco7,
-                                                lacteos1: _model.lacteos1,
-                                                lacteos2: _model.lacteos2,
-                                                lacteos3: _model.lacteos3,
-                                                lacteos4: _model.lacteos4,
-                                                lacteos5: _model.lacteos5,
-                                                lacteos6: _model.lacteos6,
-                                                lacteos7: _model.lacteos7,
-                                                huevos1: _model.huevos1,
-                                                cereales1: _model.cereales1,
-                                                cereales2: _model.cereales2,
-                                                cereales3: _model.cereales3,
-                                                cereales4: _model.cereales4,
-                                                cereales5: _model.cereales5,
-                                                cereales6: _model.cereales6,
-                                                cereales7: _model.cereales7,
-                                                frutas1: _model.frutas1,
-                                                frutas2: _model.frutas2,
-                                                frutas3: _model.frutas3,
-                                                frutas4: _model.frutas4,
-                                                frutas5: _model.frutas5,
-                                                frutas6: _model.frutas6,
-                                                frutas7: _model.frutas7,
-                                                verduras1: _model.verduras1,
-                                                verduras2: _model.verduras2,
-                                                verduras3: _model.verduras3,
-                                                verduras4: _model.verduras4,
-                                                verduras5: _model.verduras5,
-                                                verduras6: _model.verduras6,
-                                                verduras7: _model.verduras7,
-                                                legumbres1: _model.legumbres1,
-                                                legumbres2: _model.legumbres2,
-                                                legumbres3: _model.legumbres3,
-                                                legumbres4: _model.legumbres4,
-                                                legumbres5: _model.legumbres5,
-                                                legumbres6: _model.legumbres6,
-                                                legumbres7: _model.legumbres7,
-                                                secos1: _model.secos1,
-                                                secos2: _model.secos2,
-                                                secos3: _model.secos3,
-                                                secos4: _model.secos4,
-                                                secos5: _model.secos5,
-                                                secos6: _model.secos6,
-                                                secos7: _model.secos7,
-                                                salsas1: _model.salsas1,
-                                                salsas2: _model.salsas2,
-                                                salsas3: _model.salsas3,
-                                                salsas4: _model.salsas4,
-                                                salsas5: _model.salsas5,
-                                                salsas6: _model.salsas6,
-                                                salsas7: _model.salsas7,
-                                                bebidas1: _model.bebida1,
-                                                bebidas2: _model.bebida2,
-                                                bebidas3: _model.bebida3,
-                                                bebidas4: _model.bebida4,
-                                                bebidas5: _model.bebida5,
-                                                bebidas6: _model.bebida6,
-                                                bebidas7: _model.bebida7,
-                                                sintoma: _model.sintoma,
-                                                editandoDiario:
-                                                    FFAppState().editandoDiario,
-                                              );
-                                            }(),
-                                          );
-                                          ScaffoldMessenger.of(context)
-                                              .showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                'Diario guardado!',
-                                                style: TextStyle(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
-                                              ),
-                                              duration:
-                                                  Duration(milliseconds: 4000),
-                                              backgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .success,
-                                            ),
-                                          );
-
                                           context.goNamed(
                                             'Home',
                                             extra: <String, dynamic>{
@@ -14193,11 +12923,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               ),
                                             },
                                           );
-
-                                          safeSetState(() {});
                                         },
                                   text: FFLocalizations.of(context).getText(
-                                    's0m52i7f' /* Finalizar más tarde */,
+                                    '1vr0ap7c' /* Finalizar más tarde */,
                                   ),
                                   options: FFButtonOptions(
                                     width: 300.0,
@@ -14244,100 +12972,6 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                           _model.sintoma == '')
                                       ? null
                                       : () async {
-                                          unawaited(
-                                            () async {
-                                              _model.apiInto2CopyCopy =
-                                                  await DiarioIntoleranciaDosCall
-                                                      .call(
-                                                authToken:
-                                                    FFAppState().authToken,
-                                                diarioId:
-                                                    FFAppState().diarioIntoId,
-                                                momento: FFAppState().momento,
-                                                carne1: _model.carne1,
-                                                carne2: _model.carne2,
-                                                carne3: _model.carne3,
-                                                carne4: _model.carne4,
-                                                carne5: _model.carne5,
-                                                carne6: _model.carne6,
-                                                carne7: _model.carne7,
-                                                pescado1: _model.pescado1,
-                                                pescado2: _model.pescado2,
-                                                pescado3: _model.pescado3,
-                                                pescado4: _model.pescado4,
-                                                pescado5: _model.pescado5,
-                                                pescado6: _model.pescado6,
-                                                pescado7: _model.pescado7,
-                                                marisco1: _model.marisco1,
-                                                marisco2: _model.marisco2,
-                                                marisco3: _model.marisco3,
-                                                marisco4: _model.marisco4,
-                                                marisco5: _model.marisco5,
-                                                marisco6: _model.marisco6,
-                                                marisco7: _model.marisco7,
-                                                lacteos1: _model.lacteos1,
-                                                lacteos2: _model.lacteos2,
-                                                lacteos3: _model.lacteos3,
-                                                lacteos4: _model.lacteos4,
-                                                lacteos5: _model.lacteos5,
-                                                lacteos6: _model.lacteos6,
-                                                lacteos7: _model.lacteos7,
-                                                huevos1: _model.huevos1,
-                                                cereales1: _model.cereales1,
-                                                cereales2: _model.cereales2,
-                                                cereales3: _model.cereales3,
-                                                cereales4: _model.cereales4,
-                                                cereales5: _model.cereales5,
-                                                cereales6: _model.cereales6,
-                                                cereales7: _model.cereales7,
-                                                frutas1: _model.frutas1,
-                                                frutas2: _model.frutas2,
-                                                frutas3: _model.frutas3,
-                                                frutas4: _model.frutas4,
-                                                frutas5: _model.frutas5,
-                                                frutas6: _model.frutas6,
-                                                frutas7: _model.frutas7,
-                                                verduras1: _model.verduras1,
-                                                verduras2: _model.verduras2,
-                                                verduras3: _model.verduras3,
-                                                verduras4: _model.verduras4,
-                                                verduras5: _model.verduras5,
-                                                verduras6: _model.verduras6,
-                                                verduras7: _model.verduras7,
-                                                legumbres1: _model.legumbres1,
-                                                legumbres2: _model.legumbres2,
-                                                legumbres3: _model.legumbres3,
-                                                legumbres4: _model.legumbres4,
-                                                legumbres5: _model.legumbres5,
-                                                legumbres6: _model.legumbres6,
-                                                legumbres7: _model.legumbres7,
-                                                secos1: _model.secos1,
-                                                secos2: _model.secos2,
-                                                secos3: _model.secos3,
-                                                secos4: _model.secos4,
-                                                secos5: _model.secos5,
-                                                secos6: _model.secos6,
-                                                secos7: _model.secos7,
-                                                salsas1: _model.salsas1,
-                                                salsas2: _model.salsas2,
-                                                salsas3: _model.salsas3,
-                                                salsas4: _model.salsas4,
-                                                salsas5: _model.salsas5,
-                                                salsas6: _model.salsas6,
-                                                salsas7: _model.salsas7,
-                                                bebidas1: _model.bebida1,
-                                                bebidas2: _model.bebida2,
-                                                bebidas3: _model.bebida3,
-                                                bebidas4: _model.bebida4,
-                                                bebidas5: _model.bebida5,
-                                                bebidas6: _model.bebida6,
-                                                bebidas7: _model.bebida7,
-                                                sintoma: _model.sintoma,
-                                                editandoDiario:
-                                                    FFAppState().editandoDiario,
-                                              );
-                                            }(),
-                                          );
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(
@@ -14368,11 +13002,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               ),
                                             },
                                           );
-
-                                          safeSetState(() {});
                                         },
                                   text: FFLocalizations.of(context).getText(
-                                    'uo3mce4k' /* Guardar */,
+                                    'kb3fj1g4' /* Guardar */,
                                   ),
                                   options: FFButtonOptions(
                                     width: 300.0,

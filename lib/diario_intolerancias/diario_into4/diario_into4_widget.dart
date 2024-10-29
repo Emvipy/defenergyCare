@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -984,25 +985,29 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                               onPressed: (_model.contador == 0)
                                   ? null
                                   : () async {
-                                      _model.apiResultdl3 =
-                                          await DiarioIntoleranciasCuatroCall
-                                              .call(
-                                        authToken: FFAppState().authToken,
-                                        diarioId: FFAppState().diarioIntoId,
-                                        momento: FFAppState().momento,
-                                        dolor1: _model.dolor1,
-                                        dolor2: _model.dolor2,
-                                        dolor3: _model.dolor3,
-                                        dolor4: _model.dolor4,
-                                        dolor5: _model.dolor5,
-                                        dolor6: _model.dolor6,
-                                        dolor7: _model.dolor7,
-                                        dolor8: _model.dolor8,
-                                        dolor9: _model.dolor9,
-                                        editando: FFAppState().editandoDiario,
-                                        contador: _model.contador,
+                                      unawaited(
+                                        () async {
+                                          _model.apiResultdl3 =
+                                              await DiarioIntoleranciasCuatroCall
+                                                  .call(
+                                            authToken: FFAppState().authToken,
+                                            diarioId: FFAppState().diarioIntoId,
+                                            momento: FFAppState().momento,
+                                            dolor1: _model.dolor1,
+                                            dolor2: _model.dolor2,
+                                            dolor3: _model.dolor3,
+                                            dolor4: _model.dolor4,
+                                            dolor5: _model.dolor5,
+                                            dolor6: _model.dolor6,
+                                            dolor7: _model.dolor7,
+                                            dolor8: _model.dolor8,
+                                            dolor9: _model.dolor9,
+                                            editando:
+                                                FFAppState().editandoDiario,
+                                            contador: _model.contador,
+                                          );
+                                        }(),
                                       );
-
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
@@ -1101,25 +1106,29 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                               onPressed: (_model.contador == 0)
                                   ? null
                                   : () async {
-                                      _model.apiResultdl4 =
-                                          await DiarioIntoleranciasCuatroCall
-                                              .call(
-                                        authToken: FFAppState().authToken,
-                                        diarioId: FFAppState().diarioIntoId,
-                                        momento: FFAppState().momento,
-                                        dolor1: _model.dolor1,
-                                        dolor2: _model.dolor2,
-                                        dolor3: _model.dolor3,
-                                        dolor4: _model.dolor4,
-                                        dolor5: _model.dolor5,
-                                        dolor6: _model.dolor6,
-                                        dolor7: _model.dolor7,
-                                        dolor8: _model.dolor8,
-                                        dolor9: _model.dolor9,
-                                        editando: FFAppState().editandoDiario,
-                                        contador: _model.contador,
+                                      unawaited(
+                                        () async {
+                                          _model.apiResultdl4 =
+                                              await DiarioIntoleranciasCuatroCall
+                                                  .call(
+                                            authToken: FFAppState().authToken,
+                                            diarioId: FFAppState().diarioIntoId,
+                                            momento: FFAppState().momento,
+                                            dolor1: _model.dolor1,
+                                            dolor2: _model.dolor2,
+                                            dolor3: _model.dolor3,
+                                            dolor4: _model.dolor4,
+                                            dolor5: _model.dolor5,
+                                            dolor6: _model.dolor6,
+                                            dolor7: _model.dolor7,
+                                            dolor8: _model.dolor8,
+                                            dolor9: _model.dolor9,
+                                            editando:
+                                                FFAppState().editandoDiario,
+                                            contador: _model.contador,
+                                          );
+                                        }(),
                                       );
-
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(

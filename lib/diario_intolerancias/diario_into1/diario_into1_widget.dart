@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -2161,26 +2162,30 @@ y Hortalizas */
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  _model.apiIntoP1F =
-                                      await DiarioIntoleranciaUnoCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioIntoId,
-                                    momento: FFAppState().momento,
-                                    contadorComida: _model.contadorComida,
-                                    carne: FFAppState().intoCarnes,
-                                    pescado: FFAppState().intoPescado,
-                                    marisco: FFAppState().intoMarisco,
-                                    lacteos: FFAppState().intoLacteos,
-                                    huevos: FFAppState().intoLacteos,
-                                    cereales: FFAppState().intoCereales,
-                                    frutas: FFAppState().intoFrutas,
-                                    verduras: FFAppState().intoVerduras,
-                                    legumbres: FFAppState().intoLegumbres,
-                                    frutoSecos: FFAppState().intoFrutosSecos,
-                                    salsas: FFAppState().intoSalsas,
-                                    bebidas: FFAppState().intoBebidas,
+                                  unawaited(
+                                    () async {
+                                      _model.apiIntoP1F =
+                                          await DiarioIntoleranciaUnoCall.call(
+                                        authToken: FFAppState().authToken,
+                                        diarioId: FFAppState().diarioIntoId,
+                                        momento: FFAppState().momento,
+                                        contadorComida: _model.contadorComida,
+                                        carne: FFAppState().intoCarnes,
+                                        pescado: FFAppState().intoPescado,
+                                        marisco: FFAppState().intoMarisco,
+                                        lacteos: FFAppState().intoLacteos,
+                                        huevos: FFAppState().intoLacteos,
+                                        cereales: FFAppState().intoCereales,
+                                        frutas: FFAppState().intoFrutas,
+                                        verduras: FFAppState().intoVerduras,
+                                        legumbres: FFAppState().intoLegumbres,
+                                        frutoSecos:
+                                            FFAppState().intoFrutosSecos,
+                                        salsas: FFAppState().intoSalsas,
+                                        bebidas: FFAppState().intoBebidas,
+                                      );
+                                    }(),
                                   );
-
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
@@ -2250,26 +2255,30 @@ y Hortalizas */
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  _model.apiIntoP1FCopy =
-                                      await DiarioIntoleranciaUnoCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioIntoId,
-                                    momento: FFAppState().momento,
-                                    contadorComida: _model.contadorComida,
-                                    carne: FFAppState().intoCarnes,
-                                    pescado: FFAppState().intoPescado,
-                                    marisco: FFAppState().intoMarisco,
-                                    lacteos: FFAppState().intoLacteos,
-                                    huevos: FFAppState().intoLacteos,
-                                    cereales: FFAppState().intoCereales,
-                                    frutas: FFAppState().intoFrutas,
-                                    verduras: FFAppState().intoVerduras,
-                                    legumbres: FFAppState().intoLegumbres,
-                                    frutoSecos: FFAppState().intoFrutosSecos,
-                                    salsas: FFAppState().intoSalsas,
-                                    bebidas: FFAppState().intoBebidas,
+                                  unawaited(
+                                    () async {
+                                      _model.apiIntoP1FCopy =
+                                          await DiarioIntoleranciaUnoCall.call(
+                                        authToken: FFAppState().authToken,
+                                        diarioId: FFAppState().diarioIntoId,
+                                        momento: FFAppState().momento,
+                                        contadorComida: _model.contadorComida,
+                                        carne: FFAppState().intoCarnes,
+                                        pescado: FFAppState().intoPescado,
+                                        marisco: FFAppState().intoMarisco,
+                                        lacteos: FFAppState().intoLacteos,
+                                        huevos: FFAppState().intoLacteos,
+                                        cereales: FFAppState().intoCereales,
+                                        frutas: FFAppState().intoFrutas,
+                                        verduras: FFAppState().intoVerduras,
+                                        legumbres: FFAppState().intoLegumbres,
+                                        frutoSecos:
+                                            FFAppState().intoFrutosSecos,
+                                        salsas: FFAppState().intoSalsas,
+                                        bebidas: FFAppState().intoBebidas,
+                                      );
+                                    }(),
                                   );
-
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(

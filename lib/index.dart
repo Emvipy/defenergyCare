@@ -128,3 +128,11 @@ export '/perfil/perfil_medicamentos_edita/perfil_medicamentos_edita_widget.dart'
     show PerfilMedicamentosEditaWidget;
 export '/marketplace/marketplace_copy/marketplace_copy_widget.dart'
     show MarketplaceCopyWidget;
+export '/diario_intolerancias/diario_into2_copy/diario_into2_copy_widget.dart'
+    show DiarioInto2CopyWidget;
+export '/diario_intolerancias/diario_into_carga_desplegables/diario_into_carga_desplegables_widget.dart'
+    show DiarioIntoCargaDesplegablesWidget;
+export '/diario_intolerancias/diario_into_carga_desplegables_edita/diario_into_carga_desplegables_edita_widget.dart'
+    show DiarioIntoCargaDesplegablesEditaWidget;
+export '/diario_intolerancias/diario_into_hub_finaliza/diario_into_hub_finaliza_widget.dart'
+    show DiarioIntoHubFinalizaWidget;

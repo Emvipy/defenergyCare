@@ -1,12 +1,10 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'dart:async';
-import 'diario_into2_widget.dart' show DiarioInto2Widget;
+import 'diario_into2_copy_widget.dart' show DiarioInto2CopyWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -14,7 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 
-class DiarioInto2Model extends FlutterFlowModel<DiarioInto2Widget> {
+class DiarioInto2CopyModel extends FlutterFlowModel<DiarioInto2CopyWidget> {
   ///  Local state fields for this page.
 
   String? carne1;
@@ -312,12 +310,6 @@ class DiarioInto2Model extends FlutterFlowModel<DiarioInto2Widget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.
-  ApiCallResponse? apiCargaDesayuno;
-  // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.
-  ApiCallResponse? apiCargaComida;
-  // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.
-  ApiCallResponse? apiCargaCena;
   // State field(s) for Drop_carne1 widget.
   String? dropCarne1Value;
   FormFieldController<String>? dropCarne1ValueController;
@@ -552,14 +544,6 @@ class DiarioInto2Model extends FlutterFlowModel<DiarioInto2Widget> {
   // State field(s) for Drop_bebidas7 widget.
   String? dropBebidas7Value;
   FormFieldController<String>? dropBebidas7ValueController;
-  // Stores action output result for [Backend Call - API (diario intolerancia Dos)] action in Button widget.
-  ApiCallResponse? apiInto2;
-  // Stores action output result for [Backend Call - API (intolerancia finaliza diario)] action in Button widget.
-  ApiCallResponse? apiFin1;
-  // Stores action output result for [Backend Call - API (diario intolerancia Dos)] action in Button widget.
-  ApiCallResponse? apiInto2Copy;
-  // Stores action output result for [Backend Call - API (diario intolerancia Dos)] action in Button widget.
-  ApiCallResponse? apiInto2CopyCopy;
 
   @override
   void initState(BuildContext context) {}

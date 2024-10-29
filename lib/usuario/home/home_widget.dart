@@ -1914,6 +1914,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   Colors
                                                                       .transparent,
                                                               onTap: () async {
+                                                                var _shouldSetState =
+                                                                    false;
                                                                 if ((FFAppState().authToken !=
                                                                             null &&
                                                                         FFAppState().authToken !=
@@ -1992,6 +1994,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             );
                                                                           }(),
                                                                         );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
                                                                       } else {
                                                                         _model.apiDiarioInto1Icon =
                                                                             await DiarioIntoCreaCall.call(
@@ -1999,6 +2005,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               FFAppState().authToken,
                                                                         );
 
+                                                                        _shouldSetState =
+                                                                            true;
                                                                         if ((_model.apiDiarioInto1Icon?.succeeded ??
                                                                             true)) {
                                                                           FFAppState().diarioIntoId =
@@ -2069,6 +2077,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               );
                                                                             }(),
                                                                           );
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
                                                                         } else {
                                                                           ScaffoldMessenger.of(context)
                                                                               .showSnackBar(
@@ -2083,6 +2094,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               backgroundColor: FlutterFlowTheme.of(context).error,
                                                                             ),
                                                                           );
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
                                                                         }
                                                                       }
                                                                     } else {
@@ -2100,6 +2114,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           ),
                                                                         },
                                                                       );
+
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
                                                                     }
                                                                   } else {
                                                                     await showModalBottomSheet(
@@ -2129,6 +2148,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     ).then((value) =>
                                                                         safeSetState(
                                                                             () {}));
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
                                                                   }
                                                                 } else {
                                                                   context
@@ -2147,10 +2171,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       ),
                                                                     },
                                                                   );
+
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
                                                                 }
 
-                                                                safeSetState(
-                                                                    () {});
+                                                                if (_shouldSetState)
+                                                                  safeSetState(
+                                                                      () {});
                                                               },
                                                               child: ClipRRect(
                                                                 borderRadius:
