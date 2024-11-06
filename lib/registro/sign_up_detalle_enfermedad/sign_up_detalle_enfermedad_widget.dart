@@ -15,7 +15,12 @@ import 'sign_up_detalle_enfermedad_model.dart';
 export 'sign_up_detalle_enfermedad_model.dart';
 
 class SignUpDetalleEnfermedadWidget extends StatefulWidget {
-  const SignUpDetalleEnfermedadWidget({super.key});
+  const SignUpDetalleEnfermedadWidget({
+    super.key,
+    required this.editando,
+  });
+
+  final String? editando;
 
   @override
   State<SignUpDetalleEnfermedadWidget> createState() =>
@@ -95,7 +100,7 @@ class _SignUpDetalleEnfermedadWidgetState
                 'signUpEnfermedad',
                 queryParameters: {
                   'editando': serializeParam(
-                    'modificado',
+                    widget!.editando,
                     ParamType.String,
                   ),
                 }.withoutNulls,

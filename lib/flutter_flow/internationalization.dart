@@ -2773,20 +2773,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Options will only be available if you can use them.',
     },
     'mm2i90zh': {
-      'es': 'Crear el diario de hoy',
-      'en': 'Create today\'s diary',
+      'es': 'Crear el Diario de hoy',
+      'en': 'Create today\'s Diary',
     },
     '0m10o1re': {
-      'es': 'Replicar el último diario',
-      'en': 'Replicate the latest diary',
+      'es': 'Replicar el último Diario',
+      'en': 'Replicate the latest Diary',
     },
     'fy8r68df': {
-      'es': 'Editar el último diario',
-      'en': 'Edit the last diary',
+      'es': 'Editar el último Diario',
+      'en': 'Edit the last Diary',
     },
     'qq5aoojz': {
-      'es': 'Finalizar el último diario',
-      'en': 'Finish the last diary',
+      'es': 'Finalizar el último Diario',
+      'en': 'Finish the last Diary',
     },
     'gjihg8om': {
       'es': 'Diario de Síntomas',
@@ -3947,9 +3947,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '90%',
       'en': '90%',
     },
-    '8r9mynpc': {
+    '0otul0o2': {
       'es': '¿Cuál crees que fue el desencadenante?',
-      'en': 'What do you thing that was the trigger of your symptoms today?',
+      'en': 'What do you think that was the trigger of your symptoms today?',
     },
     '2dt1li0h': {
       'es': 'Selecciona tu respuesta',
@@ -4386,7 +4386,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8pkxuyzg': {
       'es': 'Remember to put the name in English',
-      'en': 'Remember to use accents in names that use them.',
+      'en': 'Remember to put the name in English',
     },
     'yr9exkff': {
       'es': 'O usar el del último diario realizado:',
@@ -5404,7 +5404,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'Tus datos nos ayudarán a identificar qué suplementos o tratamientos mejoran tu descanso. ¡Nos vemos mañana!',
       'en':
-          'Your data will help us identify which supplements or treatments improve your rest. See you tomorrow!',
+          'Your data will help us identify which supplements or treatments that could improve your rest. See you tomorrow!',
     },
     '1ewyyzaw': {
       'es': 'Finalizar',
@@ -5447,7 +5447,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zwveas8d': {
       'es': 'Remember to put the name in English',
-      'en': 'Remember to use accents in names that use them.',
+      'en': 'Remember to put the name in English',
     },
     '4lz4aex9': {
       'es': 'O usar el del último diario realizado:',
@@ -5767,7 +5767,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'b2h0bs3c': {
       'es': '¿Te ha sentado mal algo de lo que comiste ayer?',
-      'en': 'Did something you ate yesterday upset your stomach?',
+      'en': 'Did something you eat yesterday upset your stomach?',
     },
     'vwfkzwrc': {
       'es': 'SI',
@@ -5863,19 +5863,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4v23bzg2': {
       'es':
           'Las opciones solo estarán disponibles si puedes hacer uso de ellas.',
-      'en': 'Options will only be available if you can use them.',
+      'en': 'Options will only be available once can use them.',
     },
     'qg7vv2bp': {
-      'es': 'Crear el diario de hoy',
-      'en': 'Create today\'s diary',
+      'es': 'Crear el Diario de hoy',
+      'en': 'Create today\'s Diary',
     },
     'x03o45de': {
-      'es': 'Editar el último diario',
-      'en': 'Edit the last diary',
+      'es': 'Editar el último Diario',
+      'en': 'Edit the last Diary',
     },
     'hqo4dmnh': {
-      'es': 'Finalizar el último diario',
-      'en': 'End the last diary',
+      'es': 'Finalizar el último Diario',
+      'en': 'End the last Diary',
     },
     'akzl9oix': {
       'es': 'Home',
@@ -6603,7 +6603,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'Tu contribución es clave para avanzar hacia soluciones personalizadas y mejorar tu calidad de vida.',
       'en':
-          'Your contribution is key to moving towards personalized solutions and improving your quality of life.',
+          'It is key to move  towards personalized solutions and to improve your quality of life.',
     },
     '03qmwjq4': {
       'es': 'Finalizar',
@@ -7868,7 +7868,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '1d16x5ud': {
       'es': 'Simplemente envíales un mensaje y comparte el enlace de descarga:',
       'en':
-          'Inviting your friends is easy. Just send them a message and share the download link.',
+          'You can either share download link directly or send them a message typing email below:',
     },
     '5j19cl7r': {
       'es': 'A través de WhatsApp ',
@@ -14381,9 +14381,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cnurnkqi': {
       'es':
-          'Estamos preparando una selección de productos personalizados para tu enfermedad. ¡Pronto podrás acceder a ellos en nuestro marketplace!',
+          'Estamos preparando una selección de productos personalizados para tu enfermedad. \n¡Pronto podrás acceder a ellos en nuestro marketplace!',
       'en':
-          'We are preparing a selection of personalized products for your disease. You will soon be able to access them in our marketplace!',
+          'We are preparing a selection of personalized products for your diseases. \nYou will soon be able to access them in our marketplace!',
     },
     'vw0sc67j': {
       'es': 'Home',

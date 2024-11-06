@@ -599,6 +599,13 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                     null) {
                                                   context.pushNamed(
                                                     'signUp_detalle_enfermedad',
+                                                    queryParameters: {
+                                                      'editando':
+                                                          serializeParam(
+                                                        widget!.editando,
+                                                        ParamType.String,
+                                                      ),
+                                                    }.withoutNulls,
                                                     extra: <String, dynamic>{
                                                       kTransitionInfoKey:
                                                           TransitionInfo(

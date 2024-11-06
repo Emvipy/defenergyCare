@@ -343,10 +343,17 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 10.0),
                                     child: Text(
-                                      getJsonField(
-                                        FFAppState().userIndividual,
-                                        r'''$.ranking''',
-                                      ).toString(),
+                                      FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'en'
+                                          ? getJsonField(
+                                              FFAppState().userIndividual,
+                                              r'''$.ranking_en''',
+                                            ).toString()
+                                          : getJsonField(
+                                              FFAppState().userIndividual,
+                                              r'''$.ranking''',
+                                            ).toString(),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium

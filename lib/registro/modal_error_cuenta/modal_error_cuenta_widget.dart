@@ -388,6 +388,19 @@ class _ModalErrorCuentaWidgetState extends State<ModalErrorCuentaWidget> {
                                     } else {
                                       _model.mensajePass = 'si';
                                       safeSetState(() {});
+
+                                      context.pushNamedAuth(
+                                        'signup',
+                                        context.mounted,
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                            duration: Duration(milliseconds: 0),
+                                          ),
+                                        },
+                                      );
                                     }
 
                                     safeSetState(() {});

@@ -211,23 +211,21 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                               ),
                             ),
                           ),
-                          Flexible(
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  '8r9mynpc' /* ¿Cuál crees que fue el desenca... */,
-                                ),
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 16.0,
-                                      letterSpacing: 0.0,
-                                    ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 0.0, 15.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                '0otul0o2' /* ¿Cuál crees que fue el desenca... */,
                               ),
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 16.0,
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -315,11 +313,12 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
+                                15.0, 20.0, 15.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'xcib687s' /* ¿Qué solución crees que te ha ... */,
                               ),
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -413,11 +412,12 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
+                                15.0, 20.0, 15.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 'wcrc1vlq' /* Indica si hoy has tomado: */,
                               ),
+                              textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

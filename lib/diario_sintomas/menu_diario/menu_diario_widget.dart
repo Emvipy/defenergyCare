@@ -354,7 +354,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'mm2i90zh' /* Crear el diario de hoy */,
+                                              'mm2i90zh' /* Crear el Diario de hoy */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -374,7 +374,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                               'si')
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText
+                                                          .negroPerm
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
@@ -588,7 +588,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              '0m10o1re' /* Replicar el último diario */,
+                                              '0m10o1re' /* Replicar el último Diario */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -608,7 +608,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                               'si')
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText
+                                                          .negroPerm
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
@@ -779,7 +779,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'fy8r68df' /* Editar el último diario */,
+                                              'fy8r68df' /* Editar el último Diario */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -793,7 +793,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                           'si'
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText
+                                                          .negroPerm
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
@@ -1089,7 +1089,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'qq5aoojz' /* Finalizar el último diario */,
+                                              'qq5aoojz' /* Finalizar el último Diario */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1103,7 +1103,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                           'si'
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText
+                                                          .negroPerm
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
