@@ -176,12 +176,21 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
-                              valueOrDefault<String>(
-                                DiarioPantallaFinalCall.ranking(
-                                  diarioFinDiarioPantallaFinalResponse.jsonBody,
-                                ),
-                                '0',
-                              ),
+                              FFLocalizations.of(context).languageCode == 'es'
+                                  ? valueOrDefault<String>(
+                                      DiarioPantallaFinalCall.ranking(
+                                        diarioFinDiarioPantallaFinalResponse
+                                            .jsonBody,
+                                      ),
+                                      '0',
+                                    )
+                                  : valueOrDefault<String>(
+                                      DiarioPantallaFinalCall.rankingEn(
+                                        diarioFinDiarioPantallaFinalResponse
+                                            .jsonBody,
+                                      ),
+                                      '0',
+                                    ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

@@ -131,7 +131,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'signUp_detalle_enfermedad',
           path: '/signUpDetalleEnfermedad',
-          builder: (context, params) => SignUpDetalleEnfermedadWidget(),
+          builder: (context, params) => SignUpDetalleEnfermedadWidget(
+            editando: params.getParam(
+              'editando',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'Home_empresa',

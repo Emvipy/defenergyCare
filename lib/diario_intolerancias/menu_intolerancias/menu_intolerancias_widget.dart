@@ -379,7 +379,7 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'qg7vv2bp' /* Crear el diario de hoy */,
+                                              'qg7vv2bp' /* Crear el Diario de hoy */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -399,7 +399,7 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                                               'si')
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText
+                                                          .negroPerm
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
@@ -577,7 +577,7 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'x03o45de' /* Editar el último diario */,
+                                              'x03o45de' /* Editar el último Diario */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -591,7 +591,7 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                                           'si'
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText
+                                                          .negroPerm
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
@@ -737,7 +737,7 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'hqo4dmnh' /* Finalizar el último diario */,
+                                              'hqo4dmnh' /* Finalizar el último Diario */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -751,7 +751,7 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                                           'si'
                                                       ? FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText
+                                                          .negroPerm
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,

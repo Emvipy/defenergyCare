@@ -1061,6 +1061,10 @@ class UserIndividualCall {
         response,
         r'''$.chat_pendientes''',
       ));
+  static String? rankingEn(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.ranking_en''',
+      ));
 }
 
 class DiarioCreaCall {
@@ -2501,6 +2505,10 @@ class DiarioPantallaFinalCall {
       castToType<String>(getJsonField(
         response,
         r'''$.mensaje_notificaciones_diarios''',
+      ));
+  static String? rankingEn(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.ranking_en''',
       ));
 }
 

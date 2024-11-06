@@ -687,7 +687,7 @@
     },
     {
       "name": "onesignal_flutter",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/onesignal_flutter-5.2.6",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/onesignal_flutter-5.2.7",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -1100,7 +1100,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-10-29T18:29:20.194826Z",
+  "generated": "2024-11-06T02:12:01.664952Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",
