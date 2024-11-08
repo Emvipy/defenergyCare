@@ -459,9 +459,9 @@
     },
     {
       "name": "google_identity_services_web",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/google_identity_services_web-0.3.1+4",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/google_identity_services_web-0.3.1+5",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.4"
     },
     {
       "name": "google_sign_in",
@@ -1100,7 +1100,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-11-06T02:12:01.664952Z",
+  "generated": "2024-11-08T02:15:56.409676Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",
