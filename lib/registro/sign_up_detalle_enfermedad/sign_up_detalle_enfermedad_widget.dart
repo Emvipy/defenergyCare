@@ -998,6 +998,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -1604,6 +1605,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -2226,6 +2228,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -2782,6 +2785,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -2988,6 +2992,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -3935,6 +3940,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -4943,6 +4949,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -5885,6 +5892,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',
@@ -7225,6 +7233,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                           );
 
                                           FFAppState().creadoOk = 'si';
+                                          FFAppState().tmpPwd = '';
 
                                           context.goNamed(
                                             'Home',

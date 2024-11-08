@@ -157,10 +157,25 @@ class _ModalCancelaSignWidgetState extends State<ModalCancelaSignWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () async {
+                        GoRouter.of(context).prepareAuthEvent();
+
+                        final user = await authManager.signInWithEmail(
+                          context,
+                          FFAppState().email,
+                          FFAppState().tmpPwd,
+                        );
+                        if (user == null) {
+                          return;
+                        }
+
                         await authManager.deleteUser(context);
                         GoRouter.of(context).prepareAuthEvent();
                         await authManager.signOut();
                         GoRouter.of(context).clearRedirectLocation();
+
+                        _model.apiResultq0n = await SignUpCancelaAltaCall.call(
+                          authToken: FFAppState().authToken,
+                        );
 
                         context.pushNamedAuth(
                           'welcome',
@@ -172,10 +187,6 @@ class _ModalCancelaSignWidgetState extends State<ModalCancelaSignWidget> {
                               duration: Duration(milliseconds: 0),
                             ),
                           },
-                        );
-
-                        _model.apiResultq0n = await SignUpCancelaAltaCall.call(
-                          authToken: FFAppState().authToken,
                         );
 
                         FFAppState().deleteAuthToken();

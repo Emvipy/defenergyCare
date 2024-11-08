@@ -1121,6 +1121,12 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInDespVerduras(int index, dynamic value) {
     despVerduras.insert(index, value);
   }
+
+  String _tmpPwd = '';
+  String get tmpPwd => _tmpPwd;
+  set tmpPwd(String value) {
+    _tmpPwd = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

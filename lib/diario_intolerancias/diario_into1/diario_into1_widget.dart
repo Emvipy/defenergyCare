@@ -616,6 +616,8 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                 respuesta: _model.malestarAyer,
                                                 diarioAnterior: FFAppState()
                                                     .diarioIntoAnterior,
+                                                diarioIdActual:
+                                                    FFAppState().diarioId,
                                               );
 
                                               FFAppState().mostrarAyer = 'no';

@@ -12,7 +12,12 @@ import 'modal_p_d_f_model.dart';
 export 'modal_p_d_f_model.dart';
 
 class ModalPDFWidget extends StatefulWidget {
-  const ModalPDFWidget({super.key});
+  const ModalPDFWidget({
+    super.key,
+    required this.reporte,
+  });
+
+  final String? reporte;
 
   @override
   State<ModalPDFWidget> createState() => _ModalPDFWidgetState();
@@ -257,31 +262,29 @@ class _ModalPDFWidgetState extends State<ModalPDFWidget> {
                             onPressed: (_model.dropDownValue == null)
                                 ? null
                                 : () async {
+                                    var _shouldSetState = false;
                                     _model.apiResultjt2 =
                                         await UserGeneraReporteCall.call(
                                       authToken: FFAppState().authToken,
                                       year: _model.dropDownValue,
+                                      reporte: widget!.reporte,
                                     );
 
+                                    _shouldSetState = true;
                                     if ((_model.apiResultjt2?.succeeded ??
                                         true)) {
-                                      context.pushNamed(
-                                        'reporteSalud',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.fade,
-                                            duration: Duration(milliseconds: 0),
-                                          ),
-                                        },
-                                      );
+                                      Navigator.pop(context);
+                                      if (_shouldSetState) safeSetState(() {});
+                                      return;
+                                    } else {
+                                      if (_shouldSetState) safeSetState(() {});
+                                      return;
                                     }
 
-                                    safeSetState(() {});
+                                    if (_shouldSetState) safeSetState(() {});
                                   },
                             text: FFLocalizations.of(context).getText(
-                              'wilj2hka' /* Generar Reportes */,
+                              'wilj2hka' /* Generar Reporte */,
                             ),
                             options: FFButtonOptions(
                               width: 300.0,

@@ -698,6 +698,8 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                               },
                                             ).then(
                                                 (value) => safeSetState(() {}));
+
+                                            return;
                                           } else {
                                             if (widget!.editando ==
                                                 'modificado') {
@@ -723,8 +725,11 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                 },
                                               ).then((value) =>
                                                   safeSetState(() {}));
+
+                                              return;
                                             } else {
                                               context.pop();
+                                              return;
                                             }
                                           }
                                         },

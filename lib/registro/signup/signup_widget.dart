@@ -1019,6 +1019,9 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           .dropDownPerfilValue!;
                                                       FFAppState().creadoOk =
                                                           'no';
+                                                      FFAppState().tmpPwd = _model
+                                                          .passwordTextController
+                                                          .text;
                                                       safeSetState(() {});
 
                                                       context.goNamedAuth(

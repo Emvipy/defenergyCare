@@ -6603,7 +6603,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'Tu contribución es clave para avanzar hacia soluciones personalizadas y mejorar tu calidad de vida.',
       'en':
-          'It is key to move  towards personalized solutions and to improve your quality of life.',
+          'It is key to move towards personalized solutions and to improve your quality of life.',
     },
     '03qmwjq4': {
       'es': 'Finalizar',
@@ -7704,7 +7704,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'See intolerance report',
     },
     '4qfabyts': {
-      'es': 'Generar Reporte PDF',
+      'es': 'Generar Reporte Síntomas PDF',
+      'en': 'Generate PDF Report',
+    },
+    '36dbsfrr': {
+      'es': 'Generar Reporte Sueño PDF',
       'en': 'Generate PDF Report',
     },
     'oi2f1c9x': {
@@ -7775,6 +7779,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'zboy0mlw': {
       'es': 'Cena',
       'en': 'Dinner',
+    },
+    '2qygolpa': {
+      'es': 'Generar Reporte Intolerancias PDF',
+      'en': 'Generate PDF Report',
     },
     'apfuphut': {
       'es': 'Home',
@@ -15492,7 +15500,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pdbiwk8h': {
       'es':
-          'Pasados unos minutos, recibirás dos emails, uno con el informe de tu Dario de Síntomas y otro con los datos de tu Diario de Sueño.',
+          'Pasados unos minutos, recibirás un email con el reporte solicitado.',
       'en':
           'After a few minutes, you will receive two emails, one with your Symptom Diary report and another with your Sleep Diary data.',
     },
@@ -15509,7 +15517,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'If you do not receive the email, check your SPAM or junk mail folder.',
     },
     'wilj2hka': {
-      'es': 'Generar Reportes',
+      'es': 'Generar Reporte',
       'en': 'Generate Reports',
     },
   },
