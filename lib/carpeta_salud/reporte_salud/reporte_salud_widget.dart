@@ -2357,14 +2357,72 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                   onTap: () => FocusScope.of(context).unfocus(),
                                   child: Padding(
                                     padding: MediaQuery.viewInsetsOf(context),
-                                    child: ModalPDFWidget(),
+                                    child: ModalPDFWidget(
+                                      reporte: 'sintomas',
+                                    ),
                                   ),
                                 );
                               },
                             ).then((value) => safeSetState(() {}));
                           },
                           text: FFLocalizations.of(context).getText(
-                            '4qfabyts' /* Generar Reporte PDF */,
+                            '4qfabyts' /* Generar Reporte Síntomas PDF */,
+                          ),
+                          options: FFButtonOptions(
+                            width: 300.0,
+                            height: 40.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 0.0, 24.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).secondary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 3.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 10.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FFButtonWidget(
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return GestureDetector(
+                                  onTap: () => FocusScope.of(context).unfocus(),
+                                  child: Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: ModalPDFWidget(
+                                      reporte: 'sueno',
+                                    ),
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            '36dbsfrr' /* Generar Reporte Sueño PDF */,
                           ),
                           options: FFButtonOptions(
                             width: 300.0,

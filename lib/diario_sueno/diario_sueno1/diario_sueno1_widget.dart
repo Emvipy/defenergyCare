@@ -192,7 +192,7 @@ class _DiarioSueno1WidgetState extends State<DiarioSueno1Widget> {
                                   child: Align(
                                     alignment: AlignmentDirectional(0.0, -1.0),
                                     child: Text(
-                                      '${_model.horas.toString()}${FFLocalizations.of(context).languageCode == 'es' ? 'horas' : 'hours'}',
+                                      '${_model.horas > 0.0 ? _model.horas.toString() : '0'}${FFLocalizations.of(context).languageCode == 'es' ? ' horas' : ' hours'}',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

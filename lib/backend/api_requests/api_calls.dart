@@ -77,7 +77,7 @@ class SignUpCancelaAltaCall {
     return ApiManager.instance.makeApiCall(
       callName: 'signUp cancela alta',
       apiUrl:
-          'https://x7sh-lgcd-5iob.f2.xano.io/api:1KdJYapv/user/cancela_alta',
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/cancela_alta',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${authToken}',
@@ -3210,11 +3210,13 @@ class DiarioIntoAyerCall {
     String? authToken = '',
     String? respuesta = '',
     int? diarioAnterior,
+    int? diarioIdActual,
   }) async {
     final ffApiRequestBody = '''
 {
   "respuesta": "${respuesta}",
-  "diario_anterior": ${diarioAnterior}
+  "diario_anterior": ${diarioAnterior},
+  "diario_id_actual": "${diarioIdActual}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario into ayer',
@@ -12766,10 +12768,12 @@ class UserGeneraReporteCall {
   static Future<ApiCallResponse> call({
     String? authToken = '',
     int? year,
+    String? reporte = '',
   }) async {
     final ffApiRequestBody = '''
 {
-  "year": ${year}
+  "year": ${year},
+  "reporte": "${reporte}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'user genera reporte',

@@ -308,7 +308,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           }
                                         },
                                         child: Text(
-                                          '${FFLocalizations.of(context).languageCode == 'es' ? 'Hola' : 'Hello'}${FFAppState().authToken != null && FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
+                                          '${FFLocalizations.of(context).languageCode == 'es' ? 'Hola ' : 'Hello '}${FFAppState().authToken != null && FFAppState().authToken != '' ? FFAppState().nombre : ' '}',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
