@@ -7705,11 +7705,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4qfabyts': {
       'es': 'Generar Reporte Síntomas PDF',
-      'en': 'Generate PDF Report',
+      'en': 'Generate PDF Symptom Report',
     },
     '36dbsfrr': {
       'es': 'Generar Reporte Sueño PDF',
-      'en': 'Generate PDF Report',
+      'en': 'Generate PDF Sleep Report',
     },
     'oi2f1c9x': {
       'es': 'Home',
@@ -7782,7 +7782,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2qygolpa': {
       'es': 'Generar Reporte Intolerancias PDF',
-      'en': 'Generate PDF Report',
+      'en': 'Generate Intolerance Report PDF',
     },
     'apfuphut': {
       'es': 'Home',
