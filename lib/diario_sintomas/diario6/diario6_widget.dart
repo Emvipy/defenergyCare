@@ -216,7 +216,7 @@ class _Diario6WidgetState extends State<Diario6Widget> {
                                 15.0, 0.0, 15.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '0otul0o2' /* ¿Cuál crees que fue el desenca... */,
+                                '0otul0o2' /* ¿Cuál crees que fue el princip... */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)

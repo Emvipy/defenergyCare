@@ -1772,7 +1772,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            'Version: 1.0.1',
+                            'Version: 1.0.50 +81 (test)',
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

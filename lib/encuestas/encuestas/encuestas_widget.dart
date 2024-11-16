@@ -259,7 +259,6 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Container(
                                               width: 350.0,
-                                              height: 100.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -380,7 +379,7 @@ class _EncuestasWidgetState extends State<EncuestasWidget> {
                                                                       5.0,
                                                                       0.0,
                                                                       5.0,
-                                                                      5.0),
+                                                                      10.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize

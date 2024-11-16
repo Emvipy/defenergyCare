@@ -3948,8 +3948,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '90%',
     },
     '0otul0o2': {
-      'es': '¿Cuál crees que fue el desencadenante?',
-      'en': 'What do you think that was the trigger of your symptoms today?',
+      'es':
+          '¿Cuál crees que fue el principal desencadenante de tus síntomas hoy?',
+      'en': 'What do you think was the main trigger for your symptoms today?',
     },
     '2dt1li0h': {
       'es': 'Selecciona tu respuesta',
@@ -5281,14 +5282,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'hgbb68yo': {
       'es': 'Cenar ligero',
       'en': 'Eat light',
-    },
-    'swtxn3x5': {
-      'es': 'Medicación',
-      'en': 'Medication',
-    },
-    'o89pl8d8': {
-      'es': 'Suplementos',
-      'en': 'Supplements',
     },
     '1jgqld5p': {
       'es': 'Otras',

@@ -143,6 +143,19 @@ class _MarketplaceCopyWidgetState extends State<MarketplaceCopyWidget> {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/images/work-in-progress.png',
+                          width: 200.0,
+                          height: 200.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
                   ].addToEnd(SizedBox(height: 100.0)),
                 ),
               ),

@@ -71,3 +71,22 @@ FFUploadedFile? base64ToImage(String? base64Image) {
 
   return FFUploadedFile(bytes: bytes, name: fileName);
 }
+
+String? textToLowercase(String? text) {
+  // parse email address to lowercase
+  // parse email address to lowercase
+  if (text == null) {
+    return null;
+  }
+
+  return text.toLowerCase();
+}
+
+String? removeDoubleQuotationMarksFromText(String? text) {
+  // remove double quotation marks from text
+  if (text == null) {
+    return null;
+  }
+
+  return text.replaceAll('"', '');
+}
