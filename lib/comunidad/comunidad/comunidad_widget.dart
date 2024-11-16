@@ -189,7 +189,12 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                               await _model.waitForApiRequestCompleted();
                             },
                             child: ListView.separated(
-                              padding: EdgeInsets.zero,
+                              padding: EdgeInsets.fromLTRB(
+                                0,
+                                0,
+                                0,
+                                50.0,
+                              ),
                               primary: false,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,
@@ -1055,7 +1060,7 @@ class _ComunidadWidgetState extends State<ComunidadWidget> {
                       );
                     },
                   ),
-                ].addToEnd(SizedBox(height: 50.0)),
+                ].addToEnd(SizedBox(height: 150.0)),
               ),
             ),
             Align(

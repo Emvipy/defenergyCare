@@ -142,7 +142,7 @@ class _ComunidadComentariosWidgetState
                               ).toList();
                               if (childComentarios.isEmpty) {
                                 return Image.asset(
-                                  'assets/images/empty.png',
+                                  'assets/images/empty_comentarios.png',
                                 );
                               }
 
@@ -690,7 +690,10 @@ class _ComunidadComentariosWidgetState
                                           authToken: FFAppState().authToken,
                                           comentario: functions
                                               .formatTextwithLineBreaksToXano(
-                                                  _model.textController.text),
+                                                  functions
+                                                      .removeDoubleQuotationMarksFromText(
+                                                          _model.textController
+                                                              .text)),
                                           postId: widget!.postId,
                                           userId: FFAppState().xUserId,
                                         );

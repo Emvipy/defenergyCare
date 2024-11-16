@@ -280,7 +280,8 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                           final selectedMedia =
                                               await selectMediaWithSourceBottomSheet(
                                             context: context,
-                                            maxHeight: 400.00,
+                                            maxWidth: 450.00,
+                                            maxHeight: 300.00,
                                             allowPhoto: true,
                                           );
                                           if (selectedMedia != null &&
@@ -400,7 +401,8 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         final selectedMedia =
                                             await selectMediaWithSourceBottomSheet(
                                           context: context,
-                                          maxHeight: 400.00,
+                                          maxWidth: 450.00,
+                                          maxHeight: 300.00,
                                           allowPhoto: true,
                                         );
                                         if (selectedMedia != null &&
@@ -544,7 +546,10 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                           postId: widget!.postId,
                                           texto: functions
                                               .formatTextwithLineBreaksToXano(
-                                                  _model.textController.text),
+                                                  functions
+                                                      .removeDoubleQuotationMarksFromText(
+                                                          _model.textController
+                                                              .text)),
                                         );
 
                                         if ((_model.apiResultf6y?.succeeded ??
