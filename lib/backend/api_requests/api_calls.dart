@@ -1065,6 +1065,11 @@ class UserIndividualCall {
         response,
         r'''$.ranking_en''',
       ));
+  static String? cerrarSesion(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cerrar_sesion''',
+      ));
 }
 
 class DiarioCreaCall {

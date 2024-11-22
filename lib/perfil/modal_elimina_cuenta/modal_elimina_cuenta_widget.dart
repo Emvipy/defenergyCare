@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -253,11 +252,11 @@ class _ModalEliminaCuentaWidgetState extends State<ModalEliminaCuentaWidget> {
                         FFButtonWidget(
                           onPressed: () async {
                             await actions.onesignalLogout();
-                            GoRouter.of(context).prepareAuthEvent(true);
+                            GoRouter.of(context).prepareAuthEvent();
                             await authManager.signOut();
                             GoRouter.of(context).clearRedirectLocation();
 
-                            GoRouter.of(context).prepareAuthEvent(true);
+                            GoRouter.of(context).prepareAuthEvent();
 
                             final user = await authManager.signInWithEmail(
                               context,
@@ -269,55 +268,12 @@ class _ModalEliminaCuentaWidgetState extends State<ModalEliminaCuentaWidget> {
                             }
 
                             await authManager.deleteUser(context);
-                            GoRouter.of(context).prepareAuthEvent(true);
+                            GoRouter.of(context).prepareAuthEvent();
                             await authManager.signOut();
                             GoRouter.of(context).clearRedirectLocation();
 
-                            _model.apiResultq0n =
-                                await UserEliminaCuentaCall.call(
-                              authToken: FFAppState().authToken,
-                            );
-
-                            FFAppState().deleteAuthToken();
-                            FFAppState().authToken = '';
-
-                            FFAppState().deleteXUserId();
-                            FFAppState().xUserId = 0;
-
-                            FFAppState().deleteEmail();
-                            FFAppState().email = '';
-
-                            FFAppState().deleteNombre();
-                            FFAppState().nombre = '';
-
-                            FFAppState().deleteApellidos();
-                            FFAppState().apellidos = '';
-
-                            FFAppState().deleteAvatar();
-                            FFAppState().avatar = '';
-
-                            FFAppState().deletePerfil();
-                            FFAppState().perfil = '';
-
-                            FFAppState().deleteSessionId();
-                            FFAppState().sessionId = 0;
-
-                            FFAppState().deleteEnfermedadId();
-                            FFAppState().enfermedadId = 0;
-
-                            FFAppState().deleteEnfermedadTxt();
-                            FFAppState().enfermedadTxt = '';
-
-                            FFAppState().deletePerfilId();
-                            FFAppState().perfilId = 0;
-
-                            FFAppState().deleteCreadoOk();
-                            FFAppState().creadoOk = '';
-
-                            safeSetState(() {});
-
-                            context.goNamedAuth(
-                              'welcome',
+                            context.pushNamedAuth(
+                              'elimina_usuer',
                               context.mounted,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
@@ -326,10 +282,7 @@ class _ModalEliminaCuentaWidgetState extends State<ModalEliminaCuentaWidget> {
                                   duration: Duration(milliseconds: 0),
                                 ),
                               },
-                              ignoreRedirect: true,
                             );
-
-                            safeSetState(() {});
                           },
                           text: FFLocalizations.of(context).getText(
                             'l3d748rc' /* Eliminar Cuenta */,
