@@ -65,280 +65,289 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
 
         return GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Scaffold(
-            key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).background,
-              automaticallyImplyLeading: false,
-              title: Align(
-                alignment: AlignmentDirectional(-1.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'xvg4soab' /* Diario de Síntomas */,
+          child: WillPopScope(
+            onWillPop: () async => false,
+            child: Scaffold(
+              key: scaffoldKey,
+              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+              appBar: AppBar(
+                backgroundColor: FlutterFlowTheme.of(context).background,
+                automaticallyImplyLeading: false,
+                title: Align(
+                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  child: Text(
+                    FFLocalizations.of(context).getText(
+                      'xvg4soab' /* Diario de Síntomas */,
+                    ),
+                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+                          fontFamily: 'Open Sans',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          fontSize: 22.0,
+                          letterSpacing: 0.0,
+                        ),
                   ),
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Open Sans',
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        fontSize: 22.0,
-                        letterSpacing: 0.0,
-                      ),
                 ),
+                actions: [],
+                centerTitle: true,
+                elevation: 2.0,
               ),
-              actions: [],
-              centerTitle: true,
-              elevation: 2.0,
-            ),
-            body: SafeArea(
-              top: true,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  if (DiarioPantallaFinalCall.ranking(
-                        diarioFinDiarioPantallaFinalResponse.jsonBody,
-                      ) ==
-                      'Crea tu primer diario para participar')
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                      child: Container(
-                        width: 397.0,
-                        height: 370.0,
-                        decoration: BoxDecoration(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Flexible(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 10.0, 15.0, 10.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'qmqu3sky' /* ¡Gracias por tu contribución!  */,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 10.0, 15.0, 10.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'tiqirqmr' /* Estamos un paso más cerca de e... */,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 16.0,
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ),
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.asset(
-                                'assets/images/gracias.png',
-                                width: 300.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  if (DiarioPantallaFinalCall.ranking(
-                        diarioFinDiarioPantallaFinalResponse.jsonBody,
-                      ) !=
-                      'Crea tu primer diario para participar')
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                      child: Container(
-                        width: 397.0,
-                        decoration: BoxDecoration(),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).languageCode == 'es'
-                                  ? valueOrDefault<String>(
-                                      DiarioPantallaFinalCall.ranking(
-                                        diarioFinDiarioPantallaFinalResponse
-                                            .jsonBody,
-                                      ),
-                                      '0',
-                                    )
-                                  : valueOrDefault<String>(
-                                      DiarioPantallaFinalCall.rankingEn(
-                                        diarioFinDiarioPantallaFinalResponse
-                                            .jsonBody,
-                                      ),
-                                      '0',
-                                    ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  15.0, 5.0, 15.0, 1.0),
-                              child: RichText(
-                                textScaler: MediaQuery.of(context).textScaler,
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: FFLocalizations.of(context).getText(
-                                        'lw4xfulm' /* 
- Es tu posición en el ranking... */
-                                        ,
-                                      ),
-                                      style: TextStyle(
-                                        fontSize: 16.0,
-                                      ),
-                                    )
-                                  ],
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.asset(
-                                'assets/images/ranking.png',
-                                width: 300.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        if (DiarioPantallaFinalCall.mensajePush(
-                              diarioFinDiarioPantallaFinalResponse.jsonBody,
-                            ) ==
-                            'si') {
-                          await showModalBottomSheet(
-                            isScrollControlled: true,
-                            backgroundColor: Colors.transparent,
-                            isDismissible: false,
-                            enableDrag: false,
-                            context: context,
-                            builder: (context) {
-                              return GestureDetector(
-                                onTap: () => FocusScope.of(context).unfocus(),
+              body: SafeArea(
+                top: true,
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    if (DiarioPantallaFinalCall.ranking(
+                          diarioFinDiarioPantallaFinalResponse.jsonBody,
+                        ) ==
+                        'Crea tu primer diario para participar')
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                        child: Container(
+                          width: 397.0,
+                          height: 370.0,
+                          decoration: BoxDecoration(),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Flexible(
                                 child: Padding(
-                                  padding: MediaQuery.viewInsetsOf(context),
-                                  child: ModalPushWidget(),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 10.0, 15.0, 10.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'qmqu3sky' /* ¡Gracias por tu contribución!  */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                  ),
                                 ),
-                              );
-                            },
-                          ).then((value) => safeSetState(() {}));
-                        } else {
-                          context.goNamed(
-                            'Home',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
                               ),
-                            },
-                          );
-                        }
-
-                        FFAppState().deleteDiarioId();
-                        FFAppState().diarioId = 0;
-
-                        FFAppState().deleteDiarioDolor();
-                        FFAppState().diarioDolor = 'no';
-
-                        FFAppState().deleteDiarioMed1();
-                        FFAppState().diarioMed1 = 'no';
-
-                        FFAppState().deleteDiarioMed2();
-                        FFAppState().diarioMed2 = 'no';
-
-                        FFAppState().deleteDiarioVit();
-                        FFAppState().diarioVit = 'no';
-
-                        FFAppState().deleteDiarioUltimoMed1();
-                        FFAppState().diarioUltimoMed1 = '';
-
-                        FFAppState().deleteDiarioUltimoMed2();
-                        FFAppState().diarioUltimoMed2 = '';
-
-                        FFAppState().deleteDiarioUltimoSup1();
-                        FFAppState().diarioUltimoSup1 = '';
-
-                        FFAppState().deleteDiarioUltimoSup2();
-                        FFAppState().diarioUltimoSup2 = '';
-
-                        FFAppState().deleteDiarioUltimoSup3();
-                        FFAppState().diarioUltimoSup3 = '';
-
-                        FFAppState().deleteTmpCantidadSuplementos();
-                        FFAppState().tmpCantidadSuplementos = 0;
-                      },
-                      text: FFLocalizations.of(context).getText(
-                        '5iux48nb' /* Finalizar */,
-                      ),
-                      options: FFButtonOptions(
-                        width: 300.0,
-                        height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
+                              Flexible(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 10.0, 15.0, 10.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'tiqirqmr' /* Estamos un paso más cerca de e... */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
                                 ),
-                        elevation: 3.0,
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
-                          width: 1.0,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/gracias.png',
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    if (DiarioPantallaFinalCall.ranking(
+                          diarioFinDiarioPantallaFinalResponse.jsonBody,
+                        ) !=
+                        'Crea tu primer diario para participar')
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                        child: Container(
+                          width: 397.0,
+                          decoration: BoxDecoration(),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).languageCode == 'es'
+                                    ? valueOrDefault<String>(
+                                        DiarioPantallaFinalCall.ranking(
+                                          diarioFinDiarioPantallaFinalResponse
+                                              .jsonBody,
+                                        ),
+                                        '0',
+                                      )
+                                    : valueOrDefault<String>(
+                                        DiarioPantallaFinalCall.rankingEn(
+                                          diarioFinDiarioPantallaFinalResponse
+                                              .jsonBody,
+                                        ),
+                                        '0',
+                                      ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 16.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    15.0, 5.0, 15.0, 1.0),
+                                child: RichText(
+                                  textScaler: MediaQuery.of(context).textScaler,
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'lw4xfulm' /* 
+ Es tu posición en el ranking... */
+                                          ,
+                                        ),
+                                        style: TextStyle(
+                                          fontSize: 16.0,
+                                        ),
+                                      )
+                                    ],
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/ranking.png',
+                                  width: 300.0,
+                                  height: 200.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          FFAppState().deleteDiarioId();
+                          FFAppState().diarioId = 0;
+
+                          FFAppState().deleteDiarioDolor();
+                          FFAppState().diarioDolor = 'no';
+
+                          FFAppState().deleteDiarioMed1();
+                          FFAppState().diarioMed1 = 'no';
+
+                          FFAppState().deleteDiarioMed2();
+                          FFAppState().diarioMed2 = 'no';
+
+                          FFAppState().deleteDiarioVit();
+                          FFAppState().diarioVit = 'no';
+
+                          FFAppState().deleteDiarioUltimoMed1();
+                          FFAppState().diarioUltimoMed1 = '';
+
+                          FFAppState().deleteDiarioUltimoMed2();
+                          FFAppState().diarioUltimoMed2 = '';
+
+                          FFAppState().deleteDiarioUltimoSup1();
+                          FFAppState().diarioUltimoSup1 = '';
+
+                          FFAppState().deleteDiarioUltimoSup2();
+                          FFAppState().diarioUltimoSup2 = '';
+
+                          FFAppState().deleteDiarioUltimoSup3();
+                          FFAppState().diarioUltimoSup3 = '';
+
+                          FFAppState().deleteTmpCantidadSuplementos();
+                          FFAppState().tmpCantidadSuplementos = 0;
+
+                          if (DiarioPantallaFinalCall.mensajePush(
+                                diarioFinDiarioPantallaFinalResponse.jsonBody,
+                              ) ==
+                              'no') {
+                            await showModalBottomSheet(
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              isDismissible: false,
+                              enableDrag: false,
+                              context: context,
+                              builder: (context) {
+                                return GestureDetector(
+                                  onTap: () => FocusScope.of(context).unfocus(),
+                                  child: Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: ModalPushWidget(),
+                                  ),
+                                );
+                              },
+                            ).then((value) => safeSetState(() {}));
+
+                            return;
+                          } else {
+                            context.goNamed(
+                              'Home',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                ),
+                              },
+                            );
+
+                            return;
+                          }
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          '5iux48nb' /* Finalizar */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 300.0,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

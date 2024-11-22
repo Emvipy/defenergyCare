@@ -125,175 +125,178 @@ class _Diario3WidgetState extends State<Diario3Widget> {
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).background,
-          automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).secondaryText,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pushNamed(
-                'diario2',
-                extra: <String, dynamic>{
-                  kTransitionInfoKey: TransitionInfo(
-                    hasTransition: true,
-                    transitionType: PageTransitionType.fade,
-                    duration: Duration(milliseconds: 0),
-                  ),
-                },
-              );
-            },
-          ),
-          title: Align(
-            alignment: AlignmentDirectional(-1.0, 0.0),
-            child: Text(
-              FFLocalizations.of(context).getText(
-                'fr8voisn' /* Diario de Síntomas */,
+      child: WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          appBar: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).background,
+            automaticallyImplyLeading: false,
+            leading: FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 30.0,
+              borderWidth: 1.0,
+              buttonSize: 60.0,
+              icon: Icon(
+                Icons.arrow_back_rounded,
+                color: FlutterFlowTheme.of(context).secondaryText,
+                size: 30.0,
               ),
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Open Sans',
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 22.0,
-                    letterSpacing: 0.0,
-                  ),
+              onPressed: () async {
+                context.pushNamed(
+                  'diario2',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
+              },
             ),
+            title: Align(
+              alignment: AlignmentDirectional(-1.0, 0.0),
+              child: Text(
+                FFLocalizations.of(context).getText(
+                  'fr8voisn' /* Diario de Síntomas */,
+                ),
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Open Sans',
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      fontSize: 22.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
+            ),
+            actions: [],
+            centerTitle: true,
+            elevation: 2.0,
           ),
-          actions: [],
-          centerTitle: true,
-          elevation: 2.0,
-        ),
-        body: SafeArea(
-          top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Flexible(
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 10.0),
-                          child: Container(
-                            width: double.infinity,
-                            height: 24.0,
-                            decoration: BoxDecoration(),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
-                                      child: LinearPercentIndicator(
-                                        percent: 0.45,
-                                        width: 300.0,
-                                        lineHeight: 20.0,
-                                        animation: true,
-                                        animateFromLastPercent: true,
-                                        progressColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                        center: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '66drwakq' /* 45% */,
+          body: SafeArea(
+            top: true,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Flexible(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Align(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 10.0),
+                            child: Container(
+                              width: double.infinity,
+                              height: 24.0,
+                              decoration: BoxDecoration(),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-1.0, 0.0),
+                                        child: LinearPercentIndicator(
+                                          percent: 0.45,
+                                          width: 300.0,
+                                          lineHeight: 20.0,
+                                          animation: true,
+                                          animateFromLastPercent: true,
+                                          progressColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          center: Text(
+                                            FFLocalizations.of(context).getText(
+                                              '66drwakq' /* 45% */,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily: 'Open Sans',
+                                                  fontSize: 15.0,
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
-                                          textAlign: TextAlign.center,
-                                          style: FlutterFlowTheme.of(context)
-                                              .headlineSmall
-                                              .override(
-                                                fontFamily: 'Open Sans',
-                                                fontSize: 15.0,
-                                                letterSpacing: 0.0,
-                                              ),
+                                          barRadius: Radius.circular(10.0),
+                                          padding: EdgeInsets.zero,
                                         ),
-                                        barRadius: Radius.circular(10.0),
-                                        padding: EdgeInsets.zero,
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 15.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'tf1rlpr1' /* ¿Dónde te duele? */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 16.0,
+                                  letterSpacing: 0.0,
                                 ),
-                              ],
-                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 10.0, 0.0, 15.0),
-                        child: Text(
-                          FFLocalizations.of(context).getText(
-                            'tf1rlpr1' /* ¿Dónde te duele? */,
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              60.0, 0.0, 60.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  'emk0j50h' /* Frente */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 18.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                              ),
+                              Text(
+                                FFLocalizations.of(context).getText(
+                                  '0rbyxyph' /* Espalda */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      fontSize: 18.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                              ),
+                            ],
                           ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                  ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            60.0, 0.0, 60.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                'emk0j50h' /* Frente */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                            ),
-                            Text(
-                              FFLocalizations.of(context).getText(
-                                '0rbyxyph' /* Espalda */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    fontSize: 18.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
-                        child: Container(
+                        Container(
+                          width: 350.0,
                           height: 501.0,
                           decoration: BoxDecoration(
                             image: DecorationImage(
@@ -317,7 +320,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         children: [
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.12, -0.95),
+                                                -0.32, -0.95),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -414,7 +417,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.12, -0.75),
+                                                -0.32, -0.75),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -511,7 +514,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.06, -0.57),
+                                                -0.04, -0.57),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -608,7 +611,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.8, -0.65),
+                                                -1.0, -0.65),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -707,7 +710,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.6, -0.65),
+                                                0.4, -0.65),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -806,7 +809,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.6, -0.3),
+                                                AlignmentDirectional(0.5, -0.3),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -903,7 +906,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.13, -0.33),
+                                                -0.33, -0.33),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1000,7 +1003,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.85, -0.3),
+                                                -1.15, -0.3),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1097,7 +1100,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.9, -0.1),
+                                                -1.2, -0.1),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1195,8 +1198,8 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                             ),
                                           ),
                                           Align(
-                                            alignment:
-                                                AlignmentDirectional(0.7, -0.1),
+                                            alignment: AlignmentDirectional(
+                                                0.65, -0.1),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1295,7 +1298,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.55, 0.15),
+                                                -0.95, 0.15),
                                             child: Container(
                                               width: 74.0,
                                               height: 30.0,
@@ -1392,7 +1395,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.24, 0.15),
+                                                0.14, 0.15),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1489,7 +1492,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.25, 0.4),
+                                                AlignmentDirectional(0.15, 0.4),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1588,7 +1591,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(-0.5, 0.4),
+                                                AlignmentDirectional(-0.7, 0.4),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1689,7 +1692,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.5, 0.75),
+                                                -0.75, 0.75),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1788,7 +1791,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.25, 0.75),
+                                                0.15, 0.75),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -1903,7 +1906,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                         children: [
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.08, -0.73),
+                                                0.28, -0.73),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -2000,7 +2003,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.08, -0.53),
+                                                0.28, -0.53),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -2097,7 +2100,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.08, -0.27),
+                                                0.28, -0.27),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -2194,7 +2197,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.8, -0.03),
+                                                -0.7, -0.03),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -2289,7 +2292,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                0.9, -0.03),
+                                                1.2, -0.03),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -2386,7 +2389,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.4, 0.0),
+                                                AlignmentDirectional(0.65, 0.0),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -2485,7 +2488,7 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                           ),
                                           Align(
                                             alignment: AlignmentDirectional(
-                                                -0.23, 0.0),
+                                                -0.08, 0.0),
                                             child: Container(
                                               width: 50.0,
                                               height: 30.0,
@@ -2591,63 +2594,148 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                             ],
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            if (_model.contador == 0)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              if (_model.contador == 0)
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    _model.apiDiario3DolorOtro =
+                                        await DiarioTresCall.call(
+                                      authToken: FFAppState().authToken,
+                                      diarioId: FFAppState().diarioId,
+                                      cefalea: _model.cabeza,
+                                      garganta: _model.garganta,
+                                      hombroIzq: _model.hombroIzq,
+                                      hombroDer: _model.hombroDer,
+                                      pecho: _model.corazon,
+                                      codoIzq: _model.codoIzq,
+                                      codoDer: _model.codoDer,
+                                      abdomen: _model.abdomen,
+                                      munecaIzqF: _model.munecaIzq,
+                                      munecaDerF: _model.munecaDer,
+                                      musloIzq: _model.musloIzq,
+                                      musloDer: _model.musloDer,
+                                      rodillaIzq: _model.rodillaIzq,
+                                      rodillaDer: _model.rodillaDer,
+                                      tobilloIzq: _model.tobilloIzq,
+                                      tobilloDer: _model.tobilloDer,
+                                      cervical: _model.cervical,
+                                      espalda: _model.espalda,
+                                      lumbar: _model.lumbar,
+                                      munecaIzqB: _model.munIz,
+                                      munecaDerB: _model.munDer,
+                                      gluteoIzq: _model.gluteoIzq,
+                                      gluteoDer: _model.gluteoDer,
+                                      contador: _model.contador,
+                                      editando: FFAppState().editandoDiario,
+                                      otro: 'si',
+                                    );
+
+                                    context.pushNamed(
+                                      'diario4',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                        ),
+                                      },
+                                    );
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    '2ngkktn1' /* El dolor no está en esta image... */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
                               FFButtonWidget(
-                                onPressed: () async {
-                                  _model.apiDiario3DolorOtro =
-                                      await DiarioTresCall.call(
-                                    authToken: FFAppState().authToken,
-                                    diarioId: FFAppState().diarioId,
-                                    cefalea: _model.cabeza,
-                                    garganta: _model.garganta,
-                                    hombroIzq: _model.hombroIzq,
-                                    hombroDer: _model.hombroDer,
-                                    pecho: _model.corazon,
-                                    codoIzq: _model.codoIzq,
-                                    codoDer: _model.codoDer,
-                                    abdomen: _model.abdomen,
-                                    munecaIzqF: _model.munecaIzq,
-                                    munecaDerF: _model.munecaDer,
-                                    musloIzq: _model.musloIzq,
-                                    musloDer: _model.musloDer,
-                                    rodillaIzq: _model.rodillaIzq,
-                                    rodillaDer: _model.rodillaDer,
-                                    tobilloIzq: _model.tobilloIzq,
-                                    tobilloDer: _model.tobilloDer,
-                                    cervical: _model.cervical,
-                                    espalda: _model.espalda,
-                                    lumbar: _model.lumbar,
-                                    munecaIzqB: _model.munIz,
-                                    munecaDerB: _model.munDer,
-                                    gluteoIzq: _model.gluteoIzq,
-                                    gluteoDer: _model.gluteoDer,
-                                    contador: _model.contador,
-                                    editando: FFAppState().editandoDiario,
-                                    otro: 'si',
-                                  );
+                                onPressed: (_model.contador < 1)
+                                    ? null
+                                    : () async {
+                                        _model.apiDiario3Dolor =
+                                            await DiarioTresCall.call(
+                                          authToken: FFAppState().authToken,
+                                          diarioId: FFAppState().diarioId,
+                                          cefalea: _model.cabeza,
+                                          garganta: _model.garganta,
+                                          hombroIzq: _model.hombroIzq,
+                                          hombroDer: _model.hombroDer,
+                                          pecho: _model.corazon,
+                                          codoIzq: _model.codoIzq,
+                                          codoDer: _model.codoDer,
+                                          abdomen: _model.abdomen,
+                                          munecaIzqF: _model.munecaIzq,
+                                          munecaDerF: _model.munecaDer,
+                                          musloIzq: _model.musloIzq,
+                                          musloDer: _model.musloDer,
+                                          rodillaIzq: _model.rodillaIzq,
+                                          rodillaDer: _model.rodillaDer,
+                                          tobilloIzq: _model.tobilloIzq,
+                                          tobilloDer: _model.tobilloDer,
+                                          cervical: _model.cervical,
+                                          espalda: _model.espalda,
+                                          lumbar: _model.lumbar,
+                                          munecaIzqB: _model.munIz,
+                                          munecaDerB: _model.munDer,
+                                          gluteoIzq: _model.gluteoIzq,
+                                          gluteoDer: _model.gluteoDer,
+                                          contador: _model.contador,
+                                          editando: FFAppState().editandoDiario,
+                                          otro: 'no',
+                                        );
 
-                                  context.pushNamed(
-                                    'diario4',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                      ),
-                                    },
-                                  );
+                                        context.pushNamed(
+                                          'diario4',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                            ),
+                                          },
+                                        );
 
-                                  safeSetState(() {});
-                                },
+                                        safeSetState(() {});
+                                      },
                                 text: FFLocalizations.of(context).getText(
-                                  '2ngkktn1' /* El dolor no está en esta image... */,
+                                  '9ty477bd' /* Continuar */,
                                 ),
                                 options: FFButtonOptions(
                                   width: 300.0,
@@ -2670,341 +2758,261 @@ class _Diario3WidgetState extends State<Diario3Widget> {
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
+                                  disabledColor: FlutterFlowTheme.of(context)
+                                      .botonDesactivado,
+                                  disabledTextColor:
+                                      FlutterFlowTheme.of(context).accent4,
                                 ),
                               ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FFButtonWidget(
-                              onPressed: (_model.contador < 1)
-                                  ? null
-                                  : () async {
-                                      _model.apiDiario3Dolor =
-                                          await DiarioTresCall.call(
-                                        authToken: FFAppState().authToken,
-                                        diarioId: FFAppState().diarioId,
-                                        cefalea: _model.cabeza,
-                                        garganta: _model.garganta,
-                                        hombroIzq: _model.hombroIzq,
-                                        hombroDer: _model.hombroDer,
-                                        pecho: _model.corazon,
-                                        codoIzq: _model.codoIzq,
-                                        codoDer: _model.codoDer,
-                                        abdomen: _model.abdomen,
-                                        munecaIzqF: _model.munecaIzq,
-                                        munecaDerF: _model.munecaDer,
-                                        musloIzq: _model.musloIzq,
-                                        musloDer: _model.musloDer,
-                                        rodillaIzq: _model.rodillaIzq,
-                                        rodillaDer: _model.rodillaDer,
-                                        tobilloIzq: _model.tobilloIzq,
-                                        tobilloDer: _model.tobilloDer,
-                                        cervical: _model.cervical,
-                                        espalda: _model.espalda,
-                                        lumbar: _model.lumbar,
-                                        munecaIzqB: _model.munIz,
-                                        munecaDerB: _model.munDer,
-                                        gluteoIzq: _model.gluteoIzq,
-                                        gluteoDer: _model.gluteoDer,
-                                        contador: _model.contador,
-                                        editando: FFAppState().editandoDiario,
-                                        otro: 'no',
-                                      );
+                        if (FFAppState().editandoDiario == 'no')
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 30.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: (_model.contador < 1)
+                                      ? null
+                                      : () async {
+                                          unawaited(
+                                            () async {
+                                              _model.apiDiario3DolorF =
+                                                  await DiarioTresCall.call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                diarioId: FFAppState().diarioId,
+                                                cefalea: _model.cabeza,
+                                                garganta: _model.garganta,
+                                                hombroIzq: _model.hombroIzq,
+                                                hombroDer: _model.hombroDer,
+                                                pecho: _model.corazon,
+                                                codoIzq: _model.codoIzq,
+                                                codoDer: _model.codoDer,
+                                                abdomen: _model.abdomen,
+                                                munecaIzqF: _model.munecaIzq,
+                                                munecaDerF: _model.munecaDer,
+                                                musloIzq: _model.musloIzq,
+                                                musloDer: _model.musloDer,
+                                                rodillaIzq: _model.rodillaIzq,
+                                                rodillaDer: _model.rodillaDer,
+                                                tobilloIzq: _model.tobilloIzq,
+                                                tobilloDer: _model.tobilloDer,
+                                                cervical: _model.cervical,
+                                                espalda: _model.espalda,
+                                                lumbar: _model.lumbar,
+                                                munecaIzqB: _model.munIz,
+                                                munecaDerB: _model.munDer,
+                                                gluteoIzq: _model.gluteoIzq,
+                                                gluteoDer: _model.gluteoDer,
+                                                contador: _model.contador,
+                                                editando:
+                                                    FFAppState().editandoDiario,
+                                              );
+                                            }(),
+                                          );
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Diario guardado!',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
+                                            ),
+                                          );
+                                          FFAppState().deleteDiarioId();
+                                          FFAppState().diarioId = 0;
 
-                                      context.pushNamed(
-                                        'diario4',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.fade,
-                                          ),
+                                          context.pushNamed(
+                                            'Home',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
+
+                                          safeSetState(() {});
                                         },
-                                      );
-
-                                      safeSetState(() {});
-                                    },
-                              text: FFLocalizations.of(context).getText(
-                                '9ty477bd' /* Continuar */,
-                              ),
-                              options: FFButtonOptions(
-                                width: 300.0,
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
+                                  text: FFLocalizations.of(context).getText(
+                                    'la52hzk8' /* Finalizar más tarde */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Color(0x0063A4DC),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      width: 1.0,
                                     ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    disabledColor: FlutterFlowTheme.of(context)
+                                        .botonDesactivado,
+                                    disabledTextColor:
+                                        FlutterFlowTheme.of(context).accent4,
+                                  ),
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
-                                disabledColor: FlutterFlowTheme.of(context)
-                                    .botonDesactivado,
-                                disabledTextColor:
-                                    FlutterFlowTheme.of(context).accent4,
-                              ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
-                      if (FFAppState().editandoDiario == 'no')
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 15.0, 0.0, 30.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FFButtonWidget(
-                                onPressed: (_model.contador < 1)
-                                    ? null
-                                    : () async {
-                                        unawaited(
-                                          () async {
-                                            _model.apiDiario3DolorF =
-                                                await DiarioTresCall.call(
-                                              authToken: FFAppState().authToken,
-                                              diarioId: FFAppState().diarioId,
-                                              cefalea: _model.cabeza,
-                                              garganta: _model.garganta,
-                                              hombroIzq: _model.hombroIzq,
-                                              hombroDer: _model.hombroDer,
-                                              pecho: _model.corazon,
-                                              codoIzq: _model.codoIzq,
-                                              codoDer: _model.codoDer,
-                                              abdomen: _model.abdomen,
-                                              munecaIzqF: _model.munecaIzq,
-                                              munecaDerF: _model.munecaDer,
-                                              musloIzq: _model.musloIzq,
-                                              musloDer: _model.musloDer,
-                                              rodillaIzq: _model.rodillaIzq,
-                                              rodillaDer: _model.rodillaDer,
-                                              tobilloIzq: _model.tobilloIzq,
-                                              tobilloDer: _model.tobilloDer,
-                                              cervical: _model.cervical,
-                                              espalda: _model.espalda,
-                                              lumbar: _model.lumbar,
-                                              munecaIzqB: _model.munIz,
-                                              munecaDerB: _model.munDer,
-                                              gluteoIzq: _model.gluteoIzq,
-                                              gluteoDer: _model.gluteoDer,
-                                              contador: _model.contador,
-                                              editando:
-                                                  FFAppState().editandoDiario,
-                                            );
-                                          }(),
-                                        );
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Diario guardado!',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                              ),
-                                            ),
-                                            duration:
-                                                Duration(milliseconds: 4000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .success,
-                                          ),
-                                        );
-                                        FFAppState().deleteDiarioId();
-                                        FFAppState().diarioId = 0;
-
-                                        context.pushNamed(
-                                          'Home',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType:
-                                                  PageTransitionType.fade,
-                                              duration:
-                                                  Duration(milliseconds: 0),
-                                            ),
-                                          },
-                                        );
-
-                                        safeSetState(() {});
-                                      },
-                                text: FFLocalizations.of(context).getText(
-                                  'la52hzk8' /* Finalizar más tarde */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: 300.0,
-                                  height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x0063A4DC),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 0.0,
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  disabledColor: FlutterFlowTheme.of(context)
-                                      .botonDesactivado,
-                                  disabledTextColor:
-                                      FlutterFlowTheme.of(context).accent4,
-                                ),
-                              ),
-                            ],
                           ),
-                        ),
-                      if (FFAppState().editandoDiario == 'si')
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 15.0, 0.0, 30.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              FFButtonWidget(
-                                onPressed: (_model.contador < 1)
-                                    ? null
-                                    : () async {
-                                        unawaited(
-                                          () async {
-                                            _model.apiDiario3DolorF2 =
-                                                await DiarioTresCall.call(
-                                              authToken: FFAppState().authToken,
-                                              diarioId: FFAppState().diarioId,
-                                              cefalea: _model.cabeza,
-                                              garganta: _model.garganta,
-                                              hombroIzq: _model.hombroIzq,
-                                              hombroDer: _model.hombroDer,
-                                              pecho: _model.corazon,
-                                              codoIzq: _model.codoIzq,
-                                              codoDer: _model.codoDer,
-                                              abdomen: _model.abdomen,
-                                              munecaIzqF: _model.munecaIzq,
-                                              munecaDerF: _model.munecaDer,
-                                              musloIzq: _model.musloIzq,
-                                              musloDer: _model.musloDer,
-                                              rodillaIzq: _model.rodillaIzq,
-                                              rodillaDer: _model.rodillaDer,
-                                              tobilloIzq: _model.tobilloIzq,
-                                              tobilloDer: _model.tobilloDer,
-                                              cervical: _model.cervical,
-                                              espalda: _model.espalda,
-                                              lumbar: _model.lumbar,
-                                              munecaIzqB: _model.munIz,
-                                              munecaDerB: _model.munDer,
-                                              gluteoIzq: _model.gluteoIzq,
-                                              gluteoDer: _model.gluteoDer,
-                                              contador: _model.contador,
-                                              editando:
-                                                  FFAppState().editandoDiario,
-                                            );
-                                          }(),
-                                        );
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Diario guardado!',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                        if (FFAppState().editandoDiario == 'si')
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 30.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: (_model.contador < 1)
+                                      ? null
+                                      : () async {
+                                          unawaited(
+                                            () async {
+                                              _model.apiDiario3DolorF2 =
+                                                  await DiarioTresCall.call(
+                                                authToken:
+                                                    FFAppState().authToken,
+                                                diarioId: FFAppState().diarioId,
+                                                cefalea: _model.cabeza,
+                                                garganta: _model.garganta,
+                                                hombroIzq: _model.hombroIzq,
+                                                hombroDer: _model.hombroDer,
+                                                pecho: _model.corazon,
+                                                codoIzq: _model.codoIzq,
+                                                codoDer: _model.codoDer,
+                                                abdomen: _model.abdomen,
+                                                munecaIzqF: _model.munecaIzq,
+                                                munecaDerF: _model.munecaDer,
+                                                musloIzq: _model.musloIzq,
+                                                musloDer: _model.musloDer,
+                                                rodillaIzq: _model.rodillaIzq,
+                                                rodillaDer: _model.rodillaDer,
+                                                tobilloIzq: _model.tobilloIzq,
+                                                tobilloDer: _model.tobilloDer,
+                                                cervical: _model.cervical,
+                                                espalda: _model.espalda,
+                                                lumbar: _model.lumbar,
+                                                munecaIzqB: _model.munIz,
+                                                munecaDerB: _model.munDer,
+                                                gluteoIzq: _model.gluteoIzq,
+                                                gluteoDer: _model.gluteoDer,
+                                                contador: _model.contador,
+                                                editando:
+                                                    FFAppState().editandoDiario,
+                                              );
+                                            }(),
+                                          );
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Diario guardado!',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
                                               ),
-                                            ),
-                                            duration:
-                                                Duration(milliseconds: 4000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .success,
-                                          ),
-                                        );
-                                        FFAppState().deleteDiarioId();
-                                        FFAppState().diarioId = 0;
-
-                                        context.pushNamed(
-                                          'Home',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType:
-                                                  PageTransitionType.fade,
                                               duration:
-                                                  Duration(milliseconds: 0),
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .success,
                                             ),
-                                          },
-                                        );
+                                          );
+                                          FFAppState().deleteDiarioId();
+                                          FFAppState().diarioId = 0;
 
-                                        safeSetState(() {});
-                                      },
-                                text: FFLocalizations.of(context).getText(
-                                  'ykuv4s8q' /* Guardar */,
-                                ),
-                                options: FFButtonOptions(
-                                  width: 300.0,
-                                  height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0x0063A4DC),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 0.0,
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    width: 1.0,
+                                          context.pushNamed(
+                                            'Home',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
+
+                                          safeSetState(() {});
+                                        },
+                                  text: FFLocalizations.of(context).getText(
+                                    'ykuv4s8q' /* Guardar */,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  disabledColor: FlutterFlowTheme.of(context)
-                                      .botonDesactivado,
-                                  disabledTextColor:
-                                      FlutterFlowTheme.of(context).accent4,
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Color(0x0063A4DC),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondary,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    disabledColor: FlutterFlowTheme.of(context)
+                                        .botonDesactivado,
+                                    disabledTextColor:
+                                        FlutterFlowTheme.of(context).accent4,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

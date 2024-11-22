@@ -136,3 +136,5 @@ export '/diario_intolerancias/diario_into_carga_desplegables_edita/diario_into_c
     show DiarioIntoCargaDesplegablesEditaWidget;
 export '/diario_intolerancias/diario_into_hub_finaliza/diario_into_hub_finaliza_widget.dart'
     show DiarioIntoHubFinalizaWidget;
+export '/perfil/elimina_usuer/elimina_usuer_widget.dart'
+    show EliminaUsuerWidget;

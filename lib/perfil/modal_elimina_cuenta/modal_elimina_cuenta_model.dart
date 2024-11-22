@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -19,8 +18,6 @@ class ModalEliminaCuentaModel
   TextEditingController? textFieldPassTextController;
   late bool textFieldPassVisibility;
   String? Function(BuildContext, String?)? textFieldPassTextControllerValidator;
-  // Stores action output result for [Backend Call - API (user elimina cuenta)] action in Button widget.
-  ApiCallResponse? apiResultq0n;
 
   @override
   void initState(BuildContext context) {

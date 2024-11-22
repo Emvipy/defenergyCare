@@ -585,7 +585,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search for an item...',
     },
     '501vjygi': {
-      'es': '¿En qué año te infectaste con el SARS-CoV-2?',
+      'es':
+          '¿En qué año te infectaste con el SARS-CoV-2 y desarrollaste COVID persistente?',
       'en': 'What year did you get infected with SARS-CoV-2?',
     },
     '846kfcjg': {
@@ -1140,7 +1141,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Finish',
     },
     'fk707no3': {
-      'es': '¿En qué año te infectaste con el SARS-CoV-2?',
+      'es':
+          '¿En qué año te infectaste con el SARS-CoV-2 y desarrollaste COVID persistente?',
       'en': 'What year did you get infected with SARS-CoV-2?',
     },
     'kf6zmpit': {
@@ -1719,7 +1721,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Finish',
     },
     '9reppoj3': {
-      'es': '¿En qué año te infectaste con el SARS-CoV-2?',
+      'es':
+          '¿En qué año te infectaste con el SARS-CoV-2 y desarrollaste COVID persistente?',
       'en': 'What year did you get infected with SARS-CoV-2?',
     },
     'lhxweo8i': {
@@ -1996,7 +1999,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Finish',
     },
     'cmmrbjz6': {
-      'es': '¿En qué año te infectaste con el SARS-CoV-2?',
+      'es':
+          '¿En qué año te infectaste con el SARS-CoV-2 y desarrollaste COVID persistente?',
       'en': 'What year did you get infected with SARS-CoV-2?',
     },
     '3o9pi4wc': {
@@ -2685,7 +2689,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '15%',
     },
     'no8oilvp': {
-      'es': '¿Cuál ha sido tu nivel de enería hoy?',
+      'es': '¿Cuál ha sido tu nivel de energía hoy?',
       'en': 'What has been your energy level today?',
     },
     's58sz8kd': {
@@ -4039,6 +4043,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
       'en': 'Remember to use accents in names that use them.',
     },
+    '9kdsnokc': {
+      'es': 'Debes añadir los medicamentos de uno en uno.',
+      'en': 'You must add the medications one at a time.',
+    },
     'jwfdco79': {
       'es': 'O usar el del último diario realizado:',
       'en': 'Or use the one from the last diary made:',
@@ -4234,6 +4242,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
       'en': 'Remember to use accents in names that use them.',
     },
+    'wkhduqyo': {
+      'es': 'Debes añadir los medicamentos de uno en uno.',
+      'en': 'You must add the medications one at a time.',
+    },
     '4t4jpebj': {
       'es': 'O usar el del último diario realizado:',
       'en': 'Or use the one from the last diary made:',
@@ -4384,6 +4396,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'b0cabrkh': {
       'es': 'Recuerda utilizar las tíldes en los nombres que las usen',
       'en': 'Remember to use accents in names that use them.',
+    },
+    'eyne9g4g': {
+      'es': 'Debes añadir los suplementos de uno en uno.',
+      'en': 'You must add the supplements one at a time.',
     },
     '8pkxuyzg': {
       'es': 'Remember to put the name in English',
@@ -15119,6 +15135,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // elimina_usuer
+  {
+    'pf2osywb': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
   // modal_cancela_sign
   {
     '9brglm8b': {
@@ -15938,6 +15961,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'jp3wve0a': {
       'es': 'No volver a mostrar este mensaje',
       'en': 'Do not show this message again',
+    },
+  },
+  // modal_zoom
+  {
+    'zrpzw3bb': {
+      'es': 'Aviso importante',
+      'en': 'Important notice',
+    },
+    'e9021a5x': {
+      'es':
+          'Para disfrutar de una mejor experiencia al usar la app, te recomendamos desactivar el zoom en los ajustes de tu móvil. Esto asegurará que todos los textos y elementos se visualicen correctamente.',
+      'en':
+          'For a better experience when using the app, we recommend disabling zoom in your mobile settings. This will ensure that all texts and elements are displayed correctly.',
+    },
+    '9ovcmw1p': {
+      'es': 'Entendido',
+      'en': 'Understood',
     },
   },
   // Miscellaneous

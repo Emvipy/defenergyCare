@@ -735,9 +735,9 @@
     },
     {
       "name": "path_provider_windows",
-      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.2"
     },
     {
       "name": "percent_indicator",
@@ -1100,7 +1100,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-11-16T02:20:57.674342Z",
+  "generated": "2024-11-22T20:36:15.973757Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",

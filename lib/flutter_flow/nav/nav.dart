@@ -629,6 +629,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'elimina_usuer',
+          path: '/eliminaUsuer',
+          builder: (context, params) => EliminaUsuerWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

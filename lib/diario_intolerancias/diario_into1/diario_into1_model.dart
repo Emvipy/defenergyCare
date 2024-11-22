@@ -22,6 +22,8 @@ class DiarioInto1Model extends FlutterFlowModel<DiarioInto1Widget> {
 
   int contadorComida = 0;
 
+  String mostrarContenido = 'no';
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - API (diario intolerancia Uno Carga)] action in diario_Into1 widget.
