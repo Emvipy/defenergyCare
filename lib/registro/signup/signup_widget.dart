@@ -951,6 +951,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   (_model.fecha == null))
                                               ? null
                                               : () async {
+                                                  var _shouldSetState = false;
                                                   GoRouter.of(context)
                                                       .prepareAuthEvent();
 
@@ -977,6 +978,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                         .emailAddressTextController
                                                         .text,
                                                   );
+                                                  _shouldSetState = true;
                                                   _model.apiSignUp =
                                                       await SignUpCall.call(
                                                     email: _model
@@ -1000,6 +1002,7 @@ class _SignupWidgetState extends State<SignupWidget>
                                                     firebase: currentUserUid,
                                                   );
 
+                                                  _shouldSetState = true;
                                                   if ((_model.apiSignUp
                                                           ?.succeeded ??
                                                       true)) {
@@ -1062,9 +1065,15 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           transitionType:
                                                               PageTransitionType
                                                                   .fade,
+                                                          duration: Duration(
+                                                              milliseconds: 0),
                                                         ),
                                                       },
                                                     );
+
+                                                    if (_shouldSetState)
+                                                      safeSetState(() {});
+                                                    return;
                                                   } else {
                                                     await authManager
                                                         .deleteUser(context);
@@ -1105,9 +1114,13 @@ class _SignupWidgetState extends State<SignupWidget>
                                                           .apellidosTextController
                                                           ?.clear();
                                                     });
+                                                    if (_shouldSetState)
+                                                      safeSetState(() {});
+                                                    return;
                                                   }
 
-                                                  safeSetState(() {});
+                                                  if (_shouldSetState)
+                                                    safeSetState(() {});
                                                 },
                                           text: FFLocalizations.of(context)
                                               .getText(

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
 import '/registro/modal_info_spam/modal_info_spam_widget.dart';
+import '/registro/modal_zoom/modal_zoom_widget.dart';
 import 'dart:math';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'valida_email_widget.dart' show ValidaEmailWidget;

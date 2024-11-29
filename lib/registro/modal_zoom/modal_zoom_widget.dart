@@ -39,6 +39,8 @@ class _ModalZoomWidgetState extends State<ModalZoomWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Visibility(
       visible: responsiveVisibility(
         context: context,
@@ -85,13 +87,12 @@ class _ModalZoomWidgetState extends State<ModalZoomWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        context.pushNamed(
-                          'Home',
+                        context.goNamed(
+                          'valida_email',
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
                             ),
                           },
                         );
@@ -166,16 +167,35 @@ class _ModalZoomWidgetState extends State<ModalZoomWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(
-                            'Home',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
-                          );
+                          if (FFAppState().perfilId == 1) {
+                            context.goNamed(
+                              'signUpEnfermedad',
+                              queryParameters: {
+                                'editando': serializeParam(
+                                  'no',
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          } else {
+                            context.goNamed(
+                              'signUpEmpresa',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
+                                ),
+                              },
+                            );
+                          }
                         },
                         text: FFLocalizations.of(context).getText(
                           '9ovcmw1p' /* Entendido */,

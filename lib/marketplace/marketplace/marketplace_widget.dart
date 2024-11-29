@@ -4,10 +4,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
-import '/usuario/modal_cierre_sesion/modal_cierre_sesion_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -30,35 +28,6 @@ class _MarketplaceWidgetState extends State<MarketplaceWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MarketplaceModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiCheck = await UserCheckSessionCall.call(
-        authToken: FFAppState().authToken,
-      );
-
-      if ((_model.apiCheck?.succeeded ?? true)) {
-        return;
-      }
-
-      await showModalBottomSheet(
-        isScrollControlled: true,
-        backgroundColor: Colors.transparent,
-        enableDrag: false,
-        context: context,
-        builder: (context) {
-          return GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Padding(
-              padding: MediaQuery.viewInsetsOf(context),
-              child: ModalCierreSesionWidget(),
-            ),
-          );
-        },
-      ).then((value) => safeSetState(() {}));
-
-      return;
-    });
   }
 
   @override
@@ -70,8 +39,6 @@ class _MarketplaceWidgetState extends State<MarketplaceWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(

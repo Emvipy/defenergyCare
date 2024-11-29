@@ -237,6 +237,7 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       );
                                     }(),
                                   );
+                                  return;
                                 } else {
                                   if ((FFAppState().perfilId == 2) ||
                                       (FFAppState().perfilId == 3) ||
@@ -261,6 +262,9 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                         );
                                       }(),
                                     );
+                                    return;
+                                  } else {
+                                    return;
                                   }
                                 }
                               },
@@ -475,6 +479,7 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                         );
                                       }(),
                                     );
+                                    return;
                                   } else {
                                     await showModalBottomSheet(
                                       isScrollControlled: true,
@@ -489,6 +494,8 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                         );
                                       },
                                     ).then((value) => safeSetState(() {}));
+
+                                    return;
                                   }
                                 } else {
                                   context.pushNamed(
@@ -501,6 +508,8 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       ),
                                     },
                                   );
+
+                                  return;
                                 }
                               },
                             ),
@@ -573,6 +582,7 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                         );
                                       }(),
                                     );
+                                    return;
                                   } else {
                                     await showModalBottomSheet(
                                       isScrollControlled: true,
@@ -587,6 +597,8 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                         );
                                       },
                                     ).then((value) => safeSetState(() {}));
+
+                                    return;
                                   }
                                 } else {
                                   context.pushNamed(
@@ -599,6 +611,8 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       ),
                                     },
                                   );
+
+                                  return;
                                 }
                               },
                             ),
@@ -674,6 +688,7 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       );
                                     }(),
                                   );
+                                  return;
                                 } else {
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
@@ -688,6 +703,8 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));
+
+                                  return;
                                 }
                               } else {
                                 context.pushNamed(
@@ -700,6 +717,8 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                     ),
                                   },
                                 );
+
+                                return;
                               }
                             },
                           ),

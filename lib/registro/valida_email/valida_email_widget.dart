@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
 import '/registro/modal_info_spam/modal_info_spam_widget.dart';
+import '/registro/modal_zoom/modal_zoom_widget.dart';
 import 'dart:math';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/gestures.dart';
@@ -872,45 +873,29 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                     _model.pinCodeController
                                                         ?.clear();
                                                   });
-                                                  if (FFAppState().perfilId ==
-                                                      1) {
-                                                    context.goNamed(
-                                                      'signUpEnfermedad',
-                                                      queryParameters: {
-                                                        'editando':
-                                                            serializeParam(
-                                                          'no',
-                                                          ParamType.String,
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return GestureDetector(
+                                                        onTap: () =>
+                                                            FocusScope.of(
+                                                                    context)
+                                                                .unfocus(),
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalZoomWidget(),
                                                         ),
-                                                      }.withoutNulls,
-                                                      extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
-                                                            TransitionInfo(
-                                                          hasTransition: true,
-                                                          transitionType:
-                                                              PageTransitionType
-                                                                  .fade,
-                                                          duration: Duration(
-                                                              milliseconds: 0),
-                                                        ),
-                                                      },
-                                                    );
-                                                  } else {
-                                                    context.goNamed(
-                                                      'signUpEmpresa',
-                                                      extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
-                                                            TransitionInfo(
-                                                          hasTransition: true,
-                                                          transitionType:
-                                                              PageTransitionType
-                                                                  .fade,
-                                                          duration: Duration(
-                                                              milliseconds: 0),
-                                                        ),
-                                                      },
-                                                    );
-                                                  }
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() {}));
                                                 },
                                           text: FFLocalizations.of(context)
                                               .getText(

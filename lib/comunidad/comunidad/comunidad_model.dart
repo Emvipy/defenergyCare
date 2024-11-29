@@ -9,12 +9,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
-import '/usuario/modal_cierre_sesion/modal_cierre_sesion_widget.dart';
 import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'comunidad_widget.dart' show ComunidadWidget;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -23,8 +21,6 @@ import 'package:provider/provider.dart';
 class ComunidadModel extends FlutterFlowModel<ComunidadWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (user check session)] action in comunidad widget.
-  ApiCallResponse? apiCheck;
   Completer<ApiCallResponse>? apiRequestCompleter;
   // Stores action output result for [Backend Call - API (comunidad likes)] action in Icon_like widget.
   ApiCallResponse? apiLikes;
