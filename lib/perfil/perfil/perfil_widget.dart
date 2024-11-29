@@ -44,6 +44,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
           r'''$''',
         );
         safeSetState(() {});
+        return;
+      } else {
+        return;
       }
     });
 
@@ -1809,7 +1812,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'Version: 1.0.52 +83 (test)',
+                              'Version: 1.0.53 +84 (test)',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

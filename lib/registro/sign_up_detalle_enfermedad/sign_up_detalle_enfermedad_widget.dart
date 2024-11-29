@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
-import '/registro/modal_zoom/modal_zoom_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -1028,28 +1027,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -1661,28 +1650,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -2228,34 +2207,22 @@ class _SignUpDetalleEnfermedadWidgetState
                                     onPressed: ((_model.dropDownGeneroValue == null ||
                                                 _model.dropDownGeneroValue ==
                                                     '') ||
-                                            (_model
-                                                        .dropDownFumadorValue ==
-                                                    null ||
-                                                _model
-                                                        .dropDownFumadorValue ==
+                                            (_model.dropDownFumadorValue == null ||
+                                                _model.dropDownFumadorValue ==
                                                     '') ||
-                                            (_model
-                                                        .dropDownAlcoholValue ==
-                                                    null ||
-                                                _model
-                                                        .dropDownAlcoholValue ==
+                                            (_model.dropDownAlcoholValue == null ||
+                                                _model.dropDownAlcoholValue ==
                                                     '') ||
-                                            (_model
-                                                    .dropDownPesoValue ==
+                                            (_model.dropDownPesoValue ==
                                                 null) ||
-                                            (_model
-                                                    .dropDownAlturaValue ==
+                                            (_model.dropDownAlturaValue ==
                                                 null) ||
-                                            (_model
-                                                        .dropDownCriteriosEm3Value ==
-                                                    null ||
+                                            (_model.dropDownCriteriosEm3Value == null ||
                                                 _model.dropDownCriteriosEm3Value ==
                                                     '') ||
-                                            (_model
-                                                        .dropDownTiempoEm3Value ==
+                                            (_model.dropDownTiempoEm3Value ==
                                                     null ||
-                                                _model
-                                                        .dropDownTiempoEm3Value ==
+                                                _model.dropDownTiempoEm3Value ==
                                                     '') ||
                                             (_model.dropDownFamiliarEm3Value ==
                                                     null ||
@@ -2314,28 +2281,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -2893,28 +2850,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -3119,28 +3066,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -4041,8 +3978,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             (_model.dropDownCriteriosEm6Value == null ||
                                                 _model.dropDownCriteriosEm6Value ==
                                                     '') ||
-                                            (_model.dropDownTiempoEm6Value ==
-                                                    null ||
+                                            (_model.dropDownTiempoEm6Value == null ||
                                                 _model.dropDownTiempoEm6Value ==
                                                     '') ||
                                             (_model.dropDownEventoEm6Value ==
@@ -4106,28 +4042,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -5090,8 +5016,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             (_model.dropDownTiempoEm7Value == null ||
                                                 _model.dropDownTiempoEm7Value ==
                                                     '') ||
-                                            (_model.dropDownEventoEm7Value ==
-                                                    null ||
+                                            (_model.dropDownEventoEm7Value == null ||
                                                 _model.dropDownEventoEm7Value ==
                                                     '') ||
                                             (_model.dropDownFamiliarEm7Value ==
@@ -5152,28 +5077,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -6055,8 +5970,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             (_model.dropDownYearCovid8Value == null ||
                                                 _model.dropDownYearCovid8Value ==
                                                     '') ||
-                                            (_model.dropDownVecesCovid8Value ==
-                                                    null ||
+                                            (_model.dropDownVecesCovid8Value == null ||
                                                 _model.dropDownVecesCovid8Value ==
                                                     '') ||
                                             (_model.dropDownFamiliarCovid8Value == null ||
@@ -6129,28 +6043,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },
@@ -7446,8 +7350,7 @@ class _SignUpDetalleEnfermedadWidgetState
                                             (_model.dropDownFamiliarFibro9Value == null ||
                                                 _model.dropDownFamiliarFibro9Value ==
                                                     '') ||
-                                            (_model.dropDownCriteriosEm9Value ==
-                                                    null ||
+                                            (_model.dropDownCriteriosEm9Value == null ||
                                                 _model.dropDownCriteriosEm9Value ==
                                                     '') ||
                                             (_model.dropDownTiempoEm9Value == null ||
@@ -7514,28 +7417,18 @@ class _SignUpDetalleEnfermedadWidgetState
 
                                             FFAppState().creadoOk = 'si';
                                             FFAppState().tmpPwd = '';
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              isDismissible: false,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
-                                                      FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child: ModalZoomWidget(),
-                                                  ),
-                                                );
+
+                                            context.pushNamed(
+                                              'Home',
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                ),
                                               },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            );
 
                                             safeSetState(() {});
                                           },

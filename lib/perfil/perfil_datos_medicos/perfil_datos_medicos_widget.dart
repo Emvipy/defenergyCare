@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -86,7 +87,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: PerfilEnfermedadIndividualCall.call(
-        authToken: FFAppState().authToken,
+        authToken: currentJwtToken,
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.

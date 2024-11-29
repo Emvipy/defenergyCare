@@ -45,7 +45,6 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
         momento: FFAppState().momento,
       );
 
-      await Future.delayed(const Duration(milliseconds: 500));
       if (FFAppState().momento == 1) {
         _model.malestarAyer = null;
         _model.comidaId = 0;
