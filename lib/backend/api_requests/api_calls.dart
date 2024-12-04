@@ -11395,6 +11395,11 @@ class PerfilEnfermedadIndividualCall {
         response,
         r'''$.tiempo_into4''',
       ));
+  static String? otrasEnfermedades(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.otras_enfermedades''',
+      ));
 }
 
 class PerfilMisAsociacionesCall {

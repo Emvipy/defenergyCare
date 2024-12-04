@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -11,6 +10,7 @@ import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'perfil_datos_medicos_widget.dart' show PerfilDatosMedicosWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +21,8 @@ class PerfilDatosMedicosModel
   ///  Local state fields for this page.
 
   DateTime? fecha;
+
+  dynamic datos;
 
   ///  State fields for stateful widgets in this page.
 

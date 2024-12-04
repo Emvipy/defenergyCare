@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -10,6 +9,7 @@ import '/perfil/modal_modifica_enfermedad/modal_modifica_enfermedad_widget.dart'
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,6 +37,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
     super.initState();
     _model = createModel(context, () => PerfilDatosMedicosModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {});
+
     if (!isWeb) {
       _keyboardVisibilitySubscription =
           KeyboardVisibilityController().onChange.listen((bool visible) {
@@ -46,7 +49,6 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
       });
     }
 
-    _model.textFieldOtrasCovid1TextController ??= TextEditingController();
     _model.textFieldOtrasCovid1FocusNode ??= FocusNode();
 
     _model.textFieldOtrasCovid2TextController ??= TextEditingController();
@@ -87,7 +89,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
 
     return FutureBuilder<ApiCallResponse>(
       future: PerfilEnfermedadIndividualCall.call(
-        authToken: currentJwtToken,
+        authToken: FFAppState().authToken,
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -687,111 +689,109 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                             ),
                                           ],
                                         ),
-                                      if (FFAppState().authToken == '1')
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '717kt5ff' /* Escribe aquí tus otras enferme... */,
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              '717kt5ff' /* Escribe aquí tus otras enferme... */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                          TextFormField(
+                                            controller: _model
+                                                    .textFieldOtrasCovid1TextController ??=
+                                                TextEditingController(
+                                              text:
+                                                  PerfilEnfermedadIndividualCall
+                                                      .otrasEnfermedades(
+                                                perfilDatosMedicosPerfilEnfermedadIndividualResponse
+                                                    .jsonBody,
                                               ),
-                                              style:
+                                            ),
+                                            focusNode: _model
+                                                .textFieldOtrasCovid1FocusNode,
+                                            autofocus: false,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .labelMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         letterSpacing: 0.0,
                                                       ),
-                                            ),
-                                            TextFormField(
-                                              controller: _model
-                                                  .textFieldOtrasCovid1TextController,
-                                              focusNode: _model
-                                                  .textFieldOtrasCovid1FocusNode,
-                                              autofocus: false,
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                focusedErrorBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                                filled: true,
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .rellenoCampo2,
-                                              ),
-                                              style:
+                                              hintStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .labelMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         letterSpacing: 0.0,
                                                       ),
-                                              maxLines: null,
-                                              validator: _model
-                                                  .textFieldOtrasCovid1TextControllerValidator
-                                                  .asValidator(context),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .rellenoCampo2,
                                             ),
-                                          ],
-                                        ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            maxLines: null,
+                                            validator: _model
+                                                .textFieldOtrasCovid1TextControllerValidator
+                                                .asValidator(context),
+                                          ),
+                                        ],
+                                      ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
@@ -2924,6 +2924,9 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                     familiarEm: 'n/a',
                                                     gradoEm: 'n/a',
                                                     eventoEm: 'n/a',
+                                                    otrasEnfermedades: _model
+                                                        .textFieldOtrasCovid1TextController
+                                                        .text,
                                                   );
 
                                                   context.pushNamed(
