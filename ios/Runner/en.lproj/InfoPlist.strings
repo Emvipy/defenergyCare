@@ -1,2 +1,2 @@
-NSCameraUsageDescription = "In order to take pictures or post images the app will ask for permission to use the camera.";
-NSPhotoLibraryUsageDescription = "In order to take pictures or post images the app will ask for permission to access your images.";
+NSCameraUsageDescription = "In order to take photos or post images, the app will ask you for permission to use the camera.";
+NSPhotoLibraryUsageDescription = "In order to take photos or publish images, the app will ask you for permission to access your images.";

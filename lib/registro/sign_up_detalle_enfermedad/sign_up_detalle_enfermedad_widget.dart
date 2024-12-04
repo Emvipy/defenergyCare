@@ -2207,22 +2207,32 @@ class _SignUpDetalleEnfermedadWidgetState
                                     onPressed: ((_model.dropDownGeneroValue == null ||
                                                 _model.dropDownGeneroValue ==
                                                     '') ||
-                                            (_model.dropDownFumadorValue == null ||
-                                                _model.dropDownFumadorValue ==
+                                            (_model
+                                                        .dropDownFumadorValue ==
+                                                    null ||
+                                                _model
+                                                        .dropDownFumadorValue ==
                                                     '') ||
-                                            (_model.dropDownAlcoholValue == null ||
-                                                _model.dropDownAlcoholValue ==
+                                            (_model
+                                                        .dropDownAlcoholValue ==
+                                                    null ||
+                                                _model
+                                                        .dropDownAlcoholValue ==
                                                     '') ||
-                                            (_model.dropDownPesoValue ==
+                                            (_model
+                                                    .dropDownPesoValue ==
                                                 null) ||
-                                            (_model.dropDownAlturaValue ==
+                                            (_model
+                                                    .dropDownAlturaValue ==
                                                 null) ||
                                             (_model.dropDownCriteriosEm3Value == null ||
                                                 _model.dropDownCriteriosEm3Value ==
                                                     '') ||
-                                            (_model.dropDownTiempoEm3Value ==
+                                            (_model
+                                                        .dropDownTiempoEm3Value ==
                                                     null ||
-                                                _model.dropDownTiempoEm3Value ==
+                                                _model
+                                                        .dropDownTiempoEm3Value ==
                                                     '') ||
                                             (_model.dropDownFamiliarEm3Value ==
                                                     null ||
@@ -2265,8 +2275,8 @@ class _SignUpDetalleEnfermedadWidgetState
                                               gradoFibro: 'n/a',
                                               tiempoEm:
                                                   _model.dropDownTiempoEm3Value,
-                                              criteriosEm:
-                                                  _model.dropDownTiempoEm3Value,
+                                              criteriosEm: _model
+                                                  .dropDownCriteriosEm3Value,
                                               familiarEm: _model
                                                   .dropDownFamiliarEm3Value,
                                               gradoEm:
