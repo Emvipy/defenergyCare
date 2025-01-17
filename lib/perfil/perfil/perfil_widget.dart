@@ -6,12 +6,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/perfil/modal_elimina_cuenta/modal_elimina_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'perfil_model.dart';
 export 'perfil_model.dart';
 
@@ -65,7 +68,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -85,7 +91,37 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pop();
+                if (FFAppState().perfilId == 1) {
+                  context.pushNamed(
+                    'Home',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.fade,
+                      ),
+                    },
+                  );
+
+                  return;
+                } else {
+                  if ((FFAppState().perfilId == 2) ||
+                      (FFAppState().perfilId == 3) ||
+                      (FFAppState().perfilId == 4)) {
+                    context.pushNamed(
+                      'Home_empresa',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                        ),
+                      },
+                    );
+
+                    return;
+                  } else {
+                    return;
+                  }
+                }
               },
             ),
             title: Text(
@@ -149,8 +185,11 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Image.network(
-                                    getJsonField(
+                                  child: CachedNetworkImage(
+                                    fadeInDuration: Duration(milliseconds: 500),
+                                    fadeOutDuration:
+                                        Duration(milliseconds: 500),
+                                    imageUrl: getJsonField(
                                       FFAppState().userIndividual,
                                       r'''$.avatar.url''',
                                     ).toString(),
@@ -875,20 +914,36 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           ],
                         ),
                       ),
-                      if (FFAppState().authToken == '1')
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 5.0, 15.0, 5.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Expanded(
-                                flex: 80,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            15.0, 5.0, 15.0, 5.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              flex: 80,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'perfil_biometrico',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
@@ -896,7 +951,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: Icon(
-                                            Icons.translate_sharp,
+                                            Icons.fingerprint_sharp,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             size: 24.0,
@@ -908,7 +963,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   5.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'f8nfskso' /* Idiomas  */,
+                                              'x8acx4qf' /* Acceso Biométrico */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -924,58 +979,186 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                         ),
                                       ],
                                     ),
-                                    Divider(
-                                      thickness: 1.0,
-                                      color: Color(0x6863A4DC),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                  Divider(
+                                    thickness: 1.0,
+                                    color: Color(0x6863A4DC),
+                                  ),
+                                ],
                               ),
-                              Expanded(
-                                flex: 20,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 5.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'perfil_idiomas',
-                                              extra: <String, dynamic>{
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                ),
-                                              },
-                                            );
-                                          },
-                                          child: Icon(
-                                            Icons.chevron_right_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 24.0,
-                                          ),
+                            ),
+                            Expanded(
+                              flex: 20,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Align(
+                                    alignment: AlignmentDirectional(1.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 5.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'perfil_biometrico',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: Icon(
+                                          Icons.chevron_right_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 24.0,
                                         ),
                                       ),
                                     ),
-                                    Divider(
-                                      thickness: 1.0,
-                                      color: Color(0x6563A4DC),
-                                    ),
-                                  ],
-                                ),
+                                  ),
+                                  Divider(
+                                    thickness: 1.0,
+                                    color: Color(0x6563A4DC),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      if (FFAppState().perfilId == 4)
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              15.0, 5.0, 15.0, 5.0),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                'perfil_users_aso',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  flex: 80,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: Icon(
+                                              Icons.group,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 24.0,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    5.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'f8nfskso' /* Usuarios Vinculados a la Asoci... */,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Divider(
+                                        thickness: 1.0,
+                                        color: Color(0x6863A4DC),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 20,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(1.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 5.0, 0.0),
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                'perfil_idiomas',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                  ),
+                                                },
+                                              );
+                                            },
+                                            child: Icon(
+                                              Icons.chevron_right_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 24.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Divider(
+                                        thickness: 1.0,
+                                        color: Color(0x6563A4DC),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       Padding(
@@ -1716,6 +1899,9 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                 FFAppState().deleteUserIndividual();
                                 FFAppState().userIndividual = null;
 
+                                FFAppState().deleteUserAsoId();
+                                FFAppState().userAsoId = 0;
+
                                 safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
@@ -1762,13 +1948,18 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
-                                    return GestureDetector(
-                                      onTap: () =>
-                                          FocusScope.of(context).unfocus(),
-                                      child: Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: ModalEliminaCuentaWidget(),
+                                    return WebViewAware(
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          FocusScope.of(context).unfocus();
+                                          FocusManager.instance.primaryFocus
+                                              ?.unfocus();
+                                        },
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalEliminaCuentaWidget(),
+                                        ),
                                       ),
                                     );
                                   },
@@ -1812,7 +2003,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'Version: 1.0.53 +84 (test)',
+                              'Version: 1.0.55 +87 (test)',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

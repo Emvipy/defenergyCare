@@ -90,3 +90,12 @@ String? removeDoubleQuotationMarksFromText(String? text) {
 
   return text.replaceAll('"', '');
 }
+
+String? encodePlainTextToHtml(String? text) {
+  // encode plain text to html with font arial 14 black
+  if (text == null) {
+    return null;
+  }
+
+  return '<html><body><p style="font-family: Arial; font-size: 14px; color: black;">$text</p></body></html>';
+}

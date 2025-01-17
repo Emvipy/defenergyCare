@@ -8,12 +8,14 @@ import '/flutter_flow/form_field_controller.dart';
 import '/perfil/modal_modifica_enfermedad/modal_modifica_enfermedad_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'perfil_datos_medicos_model.dart';
 export 'perfil_datos_medicos_model.dart';
 
@@ -112,7 +114,10 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
             snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -132,7 +137,16 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                     size: 30.0,
                   ),
                   onPressed: () async {
-                    context.pop();
+                    context.pushNamed(
+                      'perfil',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
+                    );
                   },
                 ),
                 title: Text(
@@ -221,14 +235,19 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(context).unfocus(),
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child:
-                                                ModalModificaEnfermedadWidget(),
+                                        return WebViewAware(
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child:
+                                                  ModalModificaEnfermedadWidget(),
+                                            ),
                                           ),
                                         );
                                       },
@@ -1837,7 +1856,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'zmc6lraa' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    'zmc6lraa' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -2092,7 +2111,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '8dermrb0' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    '8dermrb0' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -2351,7 +2370,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'cc2v35nv' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    'cc2v35nv' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -2610,7 +2629,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'dnqakazb' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    'dnqakazb' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -4691,7 +4710,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'haee8lwl' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    'haee8lwl' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -4946,7 +4965,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'eg1uifu5' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    'eg1uifu5' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -5205,7 +5224,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ue4gs5lt' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    'ue4gs5lt' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -5464,7 +5483,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '8ibq27hz' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    '8ibq27hz' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -7555,7 +7574,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'wj5mybmk' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    'wj5mybmk' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -7810,7 +7829,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'w9o2chvv' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    'w9o2chvv' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -8069,7 +8088,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '3i6z2xd1' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    '3i6z2xd1' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -8328,7 +8347,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    't755osj1' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    't755osj1' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -10352,7 +10371,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ht4a3cgu' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    'ht4a3cgu' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -10607,7 +10626,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'f1mnu5q4' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    'f1mnu5q4' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -10866,7 +10885,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ww96l3h2' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    'ww96l3h2' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -11125,7 +11144,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '53umnrj1' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    '53umnrj1' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -11977,7 +11996,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'om19psar' /* 1-¿Tienes alguna sensibilidad... */,
+                                                  'om19psar' /* 1-¿Tienes alguna sensibilidad/... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -12222,7 +12241,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '1efw8j5d' /* 2-¿Tienes otra sensibilidadin... */,
+                                                  '1efw8j5d' /* 2-¿Tienes otra sensibilidad/in... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -12470,7 +12489,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'fklgbeib' /* 3-¿Tienes otra sensibilidadin... */,
+                                                  'fklgbeib' /* 3-¿Tienes otra sensibilidad/in... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -12718,7 +12737,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'e0jrjxy8' /* 4-¿Tienes otra sensibilidadin... */,
+                                                  'e0jrjxy8' /* 4-¿Tienes otra sensibilidad/in... */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -15200,7 +15219,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '3hkszbln' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    '3hkszbln' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -15455,7 +15474,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'w7zzb433' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    'w7zzb433' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -15714,7 +15733,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'bakxjug1' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    'bakxjug1' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -15973,7 +15992,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ure321m1' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    'ure321m1' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -18556,7 +18575,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '18tmzjpr' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    '18tmzjpr' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -18811,7 +18830,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ag846xoj' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    'ag846xoj' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -19070,7 +19089,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'z2wqmrvz' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    'z2wqmrvz' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -19329,7 +19348,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'vbjq1f6m' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    'vbjq1f6m' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -21831,7 +21850,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'nealmepg' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    'nealmepg' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -22086,7 +22105,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'a6ix2al4' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    'a6ix2al4' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -22345,7 +22364,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'uzebiau7' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    'uzebiau7' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -22604,7 +22623,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '223nauum' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    '223nauum' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -25605,7 +25624,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'gnf38yuf' /* 1-¿Tienes alguna sensibilidad... */,
+                                                    'gnf38yuf' /* 1-¿Tienes alguna sensibilidad/... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -25860,7 +25879,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'a1bqyrm0' /* 2-¿Tienes otra sensibilidadin... */,
+                                                    'a1bqyrm0' /* 2-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -26119,7 +26138,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'imcxck7y' /* 3-¿Tienes otra sensibilidadin... */,
+                                                    'imcxck7y' /* 3-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -26378,7 +26397,7 @@ class _PerfilDatosMedicosWidgetState extends State<PerfilDatosMedicosWidget> {
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'zky8pus6' /* 4-¿Tienes otra sensibilidadin... */,
+                                                    'zky8pus6' /* 4-¿Tienes otra sensibilidad/in... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)

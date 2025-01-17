@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'perfil_medicamentos_edita_widget.dart'
     show PerfilMedicamentosEditaWidget;
 import 'package:easy_debounce/easy_debounce.dart';

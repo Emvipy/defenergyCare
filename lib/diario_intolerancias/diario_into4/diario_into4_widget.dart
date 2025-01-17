@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -152,7 +153,10 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -908,6 +912,7 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                               onPressed: (_model.contador == 0)
                                   ? null
                                   : () async {
+                                      var _shouldSetState = false;
                                       _model.apiResultdl2 =
                                           await DiarioIntoleranciasCuatroCall
                                               .call(
@@ -927,9 +932,12 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                         contador: _model.contador,
                                       );
 
-                                      if (FFAppState().momento < 3) {
+                                      _shouldSetState = true;
+                                      if (FFAppState().momento < 4) {
                                         FFAppState().momento =
                                             FFAppState().momento + 1;
+                                        FFAppState().intoPlatoId = 0;
+                                        FFAppState().intoBebidaId = 0;
                                         safeSetState(() {});
 
                                         context.pushNamed(
@@ -942,6 +950,10 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                             ),
                                           },
                                         );
+
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
+                                        return;
                                       } else {
                                         _model.apiFIn3 =
                                             await IntoleranciaFinalizaDiarioCall
@@ -949,6 +961,8 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                           authToken: FFAppState().authToken,
                                           diarioId: FFAppState().diarioIntoId,
                                         );
+
+                                        _shouldSetState = true;
 
                                         context.pushNamed(
                                           'diarioIntoFin',
@@ -960,9 +974,13 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                             ),
                                           },
                                         );
+
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
+                                        return;
                                       }
 
-                                      safeSetState(() {});
+                                      if (_shouldSetState) safeSetState(() {});
                                     },
                               text: FFLocalizations.of(context).getText(
                                 'apbocexa' /* Continuar */,
@@ -1082,6 +1100,8 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                         FFAppState().intoBebidas = 'no';
                                         FFAppState().mostrarAyer = 'si';
                                         FFAppState().momento = 1;
+                                        FFAppState().intoPlatoId = 0;
+                                        FFAppState().intoBebidaId = 0;
 
                                         safeSetState(() {});
                                       },
@@ -1205,6 +1225,8 @@ class _DiarioInto4WidgetState extends State<DiarioInto4Widget> {
                                         FFAppState().intoBebidas = 'no';
                                         FFAppState().mostrarAyer = 'si';
                                         FFAppState().momento = 1;
+                                        FFAppState().intoBebidaId = 0;
+                                        FFAppState().intoPlatoId = 0;
 
                                         safeSetState(() {});
                                       },

@@ -810,6 +810,10 @@ class LoginCall {
         response,
         r'''$.user1.nombre_empresa''',
       ));
+  static int? asoId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.user1.aso_id''',
+      ));
 }
 
 class UserIndividualCall {
@@ -1084,6 +1088,41 @@ class DiarioCreaCall {
         'Authorization': 'Bearer ${authToken}',
       },
       params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? diarioId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.id''',
+      ));
+}
+
+class DiarioCreaAnteriorCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    String? fecha = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "fecha": "${fecha}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'diario Crea anterior',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diario/crea_anterior',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -2890,6 +2929,41 @@ class SuenoCreaDiarioCall {
       ));
 }
 
+class SuenoCreaDiarioAnteriorCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    String? fecha = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "fecha": "${fecha}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'sueno crea diario anterior',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioSueno/crea_anterior',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? id(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.sueno.id''',
+      ));
+}
+
 class DiarioSuenoUnoCall {
   static Future<ApiCallResponse> call({
     String? authToken = '',
@@ -3194,6 +3268,41 @@ class DiarioIntoCreaCall {
         'Authorization': 'Bearer ${authToken}',
       },
       params: {},
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? id(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.id''',
+      ));
+}
+
+class DiarioIntoCreaAnteriorCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    String? fecha = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "fecha": "${fecha}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'diario into crea anterior',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/crea_anterior',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -3546,6 +3655,40 @@ class DiarioIntoleranciaUnoCargaCall {
   static int? contadorCena(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.contador_cena''',
+      ));
+  static int? platoIdDesayuno(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.plato_id_desayuno''',
+      ));
+  static int? bebidaIdDesayuno(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$.bebida_id_desayuno''',
+      ));
+  static int? platoIdComida(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.plato_id_comida''',
+      ));
+  static int? bebidaIdComida(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.bebida_id_comida''',
+      ));
+  static int? platoIdMerienda(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.plato_id_merienda''',
+      ));
+  static int? bebidaIdMerienda(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$.bebida_id_merienda''',
+      ));
+  static int? platoIdCena(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.plato_id_cena''',
+      ));
+  static int? bebidaIdCena(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.bebida_id_cena''',
       ));
 }
 
@@ -6324,6 +6467,96 @@ class ResumenListadoDiariosCalendarCall {
           .toList();
 }
 
+class ResumenListadoDiariosSuenioCalendarCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    String? fecha = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'resumen listado diarios suenio calendar',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/resumen/listado_diarios_sueno_date',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'fecha': fecha,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? fecha(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].fecha_txt''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class ResumenListadoDiariosIntoCalendarCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    String? fecha = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'resumen listado diarios into calendar',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/resumen/listado_diarios_into_date',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'fecha': fecha,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? fecha(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].fecha_txt''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
 class ResumenVariableMesCall {
   static Future<ApiCallResponse> call() async {
     return ApiManager.instance.makeApiCall(
@@ -8535,6 +8768,18 @@ class ReporteIntoStdCargaCall {
         response,
         r'''$.dias''',
       ));
+  static String? mer1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.alimento1_merienda''',
+      ));
+  static String? mer2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.alimento2_merienda''',
+      ));
+  static String? mer3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.alimento3_merienda''',
+      ));
 }
 
 class ReporteIntoCusCreaCall {
@@ -8635,6 +8880,7 @@ class NoticiasCall {
   static Future<ApiCallResponse> call({
     String? enfermedad = '',
     String? palabra = '',
+    String? autor = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'noticias',
@@ -8645,6 +8891,7 @@ class NoticiasCall {
         'palabra': palabra,
         'enfermedad': enfermedad,
         'visible': "si",
+        'autor': autor,
       },
       returnBody: true,
       encodeBodyUtf8: false,
@@ -8712,6 +8959,118 @@ class NoticiasCall {
   static List<int>? likes(dynamic response) => (getJsonField(
         response,
         r'''$[:]._likes_noticias_of_noticias''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? cantComentarios(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._comentarios_noticias_of_noticias''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+}
+
+class NoticiasPrivadasCall {
+  static Future<ApiCallResponse> call({
+    String? enfermedad = '',
+    String? palabra = '',
+    String? autor = '',
+    int? id,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'noticias privadas',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/privadas',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'palabra': palabra,
+        'enfermedad': enfermedad,
+        'visible': "si",
+        'autor': autor,
+        'id': id,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? titulo(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].titulo''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? descripcion(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].descripcion''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? imagen(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].imagen.url''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? tituloEn(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].titulo_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? descripcionEn(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].descripcion_en''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? likes(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._likes_noticias_of_noticias''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? cantComentarios(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._comentarios_noticias_of_noticias''',
         true,
       ) as List?)
           ?.withoutNulls
@@ -8892,20 +9251,38 @@ class NoticiaIndividualCall {
         response,
         r'''$._user.mensaje_notificaciones_diarios''',
       ));
+  static String? urlYoutube(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.url_youtube''',
+      ));
+  static String? privado(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.privado''',
+      ));
+  static int? asoId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.aso_id''',
+      ));
 }
 
 class ComentariosNoticiasCall {
   static Future<ApiCallResponse> call({
     int? idNoticia,
+    String? authToken = '',
+    int? userId,
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'comentarios noticias',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:WxH3nXRh/comentarios_noticias',
       callType: ApiCallType.GET,
-      headers: {},
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
       params: {
         'id_noticia': idNoticia,
+        'user_id': userId,
       },
       returnBody: true,
       encodeBodyUtf8: false,
@@ -8961,6 +9338,24 @@ class ComentariosNoticiasCall {
           .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
+  static List<int>? likesComentarios(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._likes_comentarios_news''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? likesUser(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._likes_comentarios_user''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
 }
 
 class ComentarioNoticiaBorraCall {
@@ -9001,6 +9396,38 @@ class NoticiasLikeCall {
       callName: 'noticias like',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/crea_like',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class NoticiasLikeComentarioCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? comentarioId,
+    String? accion = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "comentario_id": ${comentarioId},
+  "accion": "${accion}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'noticias like comentario',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/crea_like_comentario',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${authToken}',
@@ -9771,6 +10198,205 @@ class ComunidadMuroCall {
           .toList();
 }
 
+class ComunidadMuroNewCall {
+  static Future<ApiCallResponse> call({
+    int? userId,
+    int? grupo,
+    String? ordenados = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'comunidad muro new',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/posts_new',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'user_id': userId,
+        'grupo': grupo,
+        'ordenados': ordenados,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? texto(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].texto''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? tipoUsuario(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].tipo_usuario''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? comentariosPost(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._comentarios_post_of_posts''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? imagenPost(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].imagen.url''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? nombre(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.nombre''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? apellidos(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.apellidos''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? avatar(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.avatar.url''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? insignia(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.insignia.url''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<bool>? likeUser(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._likes_post_of_posts_of_user''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<bool>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? likesPost(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._likes_post''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? creadorUser(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].creador''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? userTipoUser(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.tipo_usuario''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? placeholder(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].img_placeholder''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<bool>? conectado(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._conectado''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<bool>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? perfilId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.perfil_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? nombreEmpresa(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._user.nombre_empresa''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? youtube(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].url_youtube''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? link(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].url_link''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
 class ComunidadLikesCall {
   static Future<ApiCallResponse> call({
     String? authToken = '',
@@ -9930,6 +10556,71 @@ class ComunidadPostIndividualCall {
         response,
         r'''$.imagen.url''',
       ));
+  static int? grupo(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.group''',
+      ));
+  static String? urlYoutube(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.url_youtube''',
+      ));
+  static String? urlLink(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.url_link''',
+      ));
+  static String? nombre(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$._user.nombre''',
+      ));
+  static String? apellidos(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$._user.apellidos''',
+      ));
+  static String? avatarUser(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$._user.avatar.url''',
+      ));
+  static int? likes(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$._likes_post''',
+      ));
+  static int? perfilId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$._user.perfil_id''',
+      ));
+  static String? empresa(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$._user.nombre_empresa''',
+      ));
+  static int? creadorId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.creador''',
+      ));
+  static bool? conectado(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$._conectado''',
+      ));
+  static String? imgPlaceholder(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.img_placeholder''',
+      ));
+  static bool? likesBool(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$._likes_post_of_posts_of_user''',
+      ));
+  static String? tipoUsuario(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.tipo_usuario''',
+      ));
+  static String? insigniaEmpresa(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$._user.insignia.url''',
+      ));
 }
 
 class ComunidadSubeImagenCall {
@@ -9976,6 +10667,44 @@ class CamunidadGuardaDatosCall {
       callName: 'camunidad guarda datos',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/guarda_post',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ComunidadGuardaDatosNewCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? postId,
+    String? texto = '',
+    String? urlYoutube = '',
+    String? urlLink = '',
+    int? grupo,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "post_id": ${postId},
+  "texto": "${texto}",
+  "url_youtube": "${urlYoutube}",
+  "url_link": "${urlLink}",
+  "grupo": ${grupo}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'comunidad guarda datos new',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/guarda_post_new',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${authToken}',
@@ -10130,6 +10859,22 @@ class ComunidadComentariosCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static bool? conectado(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:]._conectado''',
+      ));
+  static String? audio(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].audio.url''',
+      ));
+  static String? file(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].file.url''',
+      ));
+  static String? image(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].imagen.url''',
+      ));
 }
 
 class ComunidadEliminaComentarioCall {
@@ -10410,6 +11155,25 @@ class ChatMisConversacionesCall {
           .map((x) => castToType<int>(x))
           .withoutNulls
           .toList();
+  static String? insigniaCreador(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$[:]._user_creador.insignia.url''',
+      ));
+  static String? insigniaReceptor(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$[:]._user_receptor.insignia.url''',
+      ));
+  static int? pefilIdCreador(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:]._user_creador.perfil_id''',
+      ));
+  static int? perfilIdReceptor(dynamic response) =>
+      castToType<int>(getJsonField(
+        response,
+        r'''$[:]._user_receptor.perfil_id''',
+      ));
 }
 
 class ChatEliminaConversacionCall {
@@ -10511,6 +11275,44 @@ class ChatMensajesCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static List<int>? userPefilId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._userchat.perfil_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List? insignia(dynamic response) => getJsonField(
+        response,
+        r'''$[:]._userchat.insignia''',
+        true,
+      ) as List?;
+  static List<String>? empresa(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._userchat.nombre_empresa''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List? imagen(dynamic response) => getJsonField(
+        response,
+        r'''$[:].imagen''',
+        true,
+      ) as List?;
+  static List? file(dynamic response) => getJsonField(
+        response,
+        r'''$[:].file''',
+        true,
+      ) as List?;
+  static List? audio(dynamic response) => getJsonField(
+        response,
+        r'''$[:].audio''',
+        true,
+      ) as List?;
 }
 
 class ChatCreaMensajeCall {
@@ -11405,11 +12207,82 @@ class PerfilEnfermedadIndividualCall {
 class PerfilMisAsociacionesCall {
   static Future<ApiCallResponse> call({
     String? authToken = '',
+    String? buscador = '',
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'perfil mis asociaciones',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/mis_asociaciones',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'buscador': buscador,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? nombre(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].nombre''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? asoId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].aso_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? asociado(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].asociado''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static bool? vinculado(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:]._mis_asociaciones_of_user''',
+      ));
+  static bool? porValidar(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:]._sin_aprobar''',
+      ));
+}
+
+class PerfilMisAsociacionesComunidadCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'perfil mis asociaciones comunidad',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/user/mis_asociaciones_comunidad',
       callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer ${authToken}',
@@ -11460,6 +12333,14 @@ class PerfilMisAsociacionesCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+  static bool? vinculado(dynamic response) => castToType<bool>(getJsonField(
+        response,
+        r'''$[:]._mis_asociaciones_of_user''',
+      ));
+  static int? comunidadId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].comunidad_id''',
+      ));
 }
 
 class PerfilGestionAsoCall {
@@ -12560,6 +13441,19 @@ class EmpresaNoticiaIndividualCall {
         response,
         r'''$._user.mensaje_notificaciones_diarios''',
       ));
+  static String? urlYoutube(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.url_youtube''',
+      ));
+  static String? privado(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.privado''',
+      ));
+  static int? asoId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.aso_id''',
+      ));
 }
 
 class EmpresaNoticiaSubeImagenCall {
@@ -12635,6 +13529,8 @@ class EmpresaEditaNewsCall {
     String? url = '',
     String? botonEs = '',
     String? botonEn = '',
+    String? urlYoutube = '',
+    String? privada = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -12648,7 +13544,9 @@ class EmpresaEditaNewsCall {
   "tag": "${tag}",
   "url": "${url}",
   "boton_es": "${botonEs}",
-  "boton_en": "${botonEn}"
+  "boton_en": "${botonEn}",
+  "url_youtube": "${urlYoutube}",
+  "privada": "${privada}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa edita news',
@@ -13132,6 +14030,1259 @@ class DesplegablesIntoCall {
           .toList();
 }
 
+class IntoleranciasPlatosCall {
+  static Future<ApiCallResponse> call({
+    String? accion = '',
+    int? id,
+    String? nombre = '',
+    String? tipoTxt = '',
+    int? tipoId,
+    String? carne = '',
+    String? carne1 = '',
+    String? carne2 = '',
+    String? carne3 = '',
+    String? carne4 = '',
+    String? carne5 = '',
+    String? carne6 = '',
+    String? carne7 = '',
+    String? pescado = '',
+    String? pescado1 = '',
+    String? pescado2 = '',
+    String? pescado3 = '',
+    String? pescado4 = '',
+    String? pescado5 = '',
+    String? pescado6 = '',
+    String? pescado7 = '',
+    String? marisco = '',
+    String? marisco1 = '',
+    String? marisco2 = '',
+    String? marisco3 = '',
+    String? marisco4 = '',
+    String? marisco5 = '',
+    String? marisco6 = '',
+    String? marisco7 = '',
+    String? lacteos = '',
+    String? lacteos1 = '',
+    String? lacteos2 = '',
+    String? lacteos3 = '',
+    String? lacteos4 = '',
+    String? lacteos5 = '',
+    String? lacteos6 = '',
+    String? lacteos7 = '',
+    String? huevos = '',
+    String? huevos1 = '',
+    String? cereales = '',
+    String? cereales1 = '',
+    String? cereales2 = '',
+    String? cereales3 = '',
+    String? cereales4 = '',
+    String? cereales5 = '',
+    String? cereales6 = '',
+    String? cereales7 = '',
+    String? frutas = '',
+    String? frutas1 = '',
+    String? frutas2 = '',
+    String? frutas3 = '',
+    String? frutas4 = '',
+    String? frutas5 = '',
+    String? frutas6 = '',
+    String? frutas7 = '',
+    String? verduras = '',
+    String? verduras1 = '',
+    String? verduras2 = '',
+    String? verduras3 = '',
+    String? verduras4 = '',
+    String? verduras5 = '',
+    String? verduras6 = '',
+    String? verduras7 = '',
+    String? legumbres = '',
+    String? legumbres1 = '',
+    String? legumbres2 = '',
+    String? legumbres3 = '',
+    String? legumbres4 = '',
+    String? legumbres5 = '',
+    String? legumbres6 = '',
+    String? legumbres7 = '',
+    String? secos = '',
+    String? secos1 = '',
+    String? secos2 = '',
+    String? secos3 = '',
+    String? secos4 = '',
+    String? secos5 = '',
+    String? secos6 = '',
+    String? secos7 = '',
+    String? salsas = '',
+    String? salsas1 = '',
+    String? salsas2 = '',
+    String? salsas3 = '',
+    String? salsas4 = '',
+    String? salsas5 = '',
+    String? salsas6 = '',
+    String? salsas7 = '',
+    String? bebidas = '',
+    String? bebidas1 = '',
+    String? bebidas2 = '',
+    String? bebidas3 = '',
+    String? bebidas4 = '',
+    String? bebidas5 = '',
+    String? bebidas6 = '',
+    String? bebidas7 = '',
+    String? authToken = '',
+    int? contador,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "accion": "${escapeStringForJson(accion)}",
+  "id": ${id},
+  "nombre": "${escapeStringForJson(nombre)}",
+  "tipo_txt": "${escapeStringForJson(tipoTxt)}",
+  "tipo_id": ${tipoId},
+  "carne": "${escapeStringForJson(carne)}",
+  "carne1": "${escapeStringForJson(carne1)}",
+  "carne2": "${escapeStringForJson(carne2)}",
+  "carne3": "${escapeStringForJson(carne3)}",
+  "carne4": "${escapeStringForJson(carne4)}",
+  "carne5": "${escapeStringForJson(carne5)}",
+  "carne6": "${escapeStringForJson(carne6)}",
+  "carne7": "${escapeStringForJson(carne7)}",
+  "pescado": "${escapeStringForJson(pescado)}",
+  "pescado1": "${escapeStringForJson(pescado1)}",
+  "pescado2": "${escapeStringForJson(pescado2)}",
+  "pescado3": "${escapeStringForJson(pescado3)}",
+  "pescado4": "${escapeStringForJson(pescado4)}",
+  "pescado5": "${escapeStringForJson(pescado5)}",
+  "pescado6": "${escapeStringForJson(pescado6)}",
+  "pescado7": "${escapeStringForJson(pescado7)}",
+  "marisco": "${escapeStringForJson(marisco)}",
+  "marisco1": "${escapeStringForJson(marisco1)}",
+  "marisco2": "${escapeStringForJson(marisco2)}",
+  "marisco3": "${escapeStringForJson(marisco3)}",
+  "marisco4": "${escapeStringForJson(marisco4)}",
+  "marisco5": "${escapeStringForJson(marisco5)}",
+  "marisco6": "${escapeStringForJson(marisco6)}",
+  "marisco7": "${escapeStringForJson(marisco7)}",
+  "lacteos": "${escapeStringForJson(lacteos)}",
+  "lacteos1": "${escapeStringForJson(lacteos1)}",
+  "lacteos2": "${escapeStringForJson(lacteos2)}",
+  "lacteos3": "${escapeStringForJson(lacteos3)}",
+  "lacteos4": "${escapeStringForJson(lacteos4)}",
+  "lacteos5": "${escapeStringForJson(lacteos5)}",
+  "lacteos6": "${escapeStringForJson(lacteos6)}",
+  "lacteos7": "${escapeStringForJson(lacteos7)}",
+  "huevos": "${escapeStringForJson(huevos)}",
+  "huevos1": "${escapeStringForJson(huevos1)}",
+  "cereales": "${escapeStringForJson(cereales)}",
+  "cereales1": "${escapeStringForJson(cereales1)}",
+  "cereales2": "${escapeStringForJson(cereales2)}",
+  "cereales3": "${escapeStringForJson(cereales3)}",
+  "cereales4": "${escapeStringForJson(cereales4)}",
+  "cereales5": "${escapeStringForJson(cereales5)}",
+  "cereales6": "${escapeStringForJson(cereales6)}",
+  "cereales7": "${escapeStringForJson(cereales7)}",
+  "frutas": "${escapeStringForJson(frutas)}",
+  "frutas1": "${escapeStringForJson(frutas1)}",
+  "frutas2": "${escapeStringForJson(frutas2)}",
+  "frutas3": "${escapeStringForJson(frutas3)}",
+  "frutas4": "${escapeStringForJson(frutas4)}",
+  "frutas5": "${escapeStringForJson(frutas5)}",
+  "frutas6": "${escapeStringForJson(frutas6)}",
+  "frutas7": "${escapeStringForJson(frutas7)}",
+  "verduras": "${escapeStringForJson(verduras)}",
+  "verduras1": "${escapeStringForJson(verduras1)}",
+  "verduras2": "${escapeStringForJson(verduras2)}",
+  "verduras3": "${escapeStringForJson(verduras3)}",
+  "verduras4": "${escapeStringForJson(verduras4)}",
+  "verduras5": "${escapeStringForJson(verduras5)}",
+  "verduras6": "${escapeStringForJson(verduras6)}",
+  "verduras7": "${escapeStringForJson(verduras7)}",
+  "legumbres": "${escapeStringForJson(legumbres)}",
+  "legumbres1": "${escapeStringForJson(legumbres1)}",
+  "legumbres2": "${escapeStringForJson(legumbres2)}",
+  "legumbres3": "${escapeStringForJson(legumbres3)}",
+  "legumbres4": "${escapeStringForJson(legumbres4)}",
+  "legumbres5": "${escapeStringForJson(legumbres5)}",
+  "legumbres6": "${escapeStringForJson(legumbres6)}",
+  "legumbres7": "${escapeStringForJson(legumbres7)}",
+  "secos": "${escapeStringForJson(secos)}",
+  "secos1": "${escapeStringForJson(secos1)}",
+  "secos2": "${escapeStringForJson(secos2)}",
+  "secos3": "${escapeStringForJson(secos3)}",
+  "secos4": "${escapeStringForJson(secos4)}",
+  "secos5": "${escapeStringForJson(secos5)}",
+  "secos6": "${escapeStringForJson(secos6)}",
+  "secos7": "${escapeStringForJson(secos7)}",
+  "salsas": "${escapeStringForJson(salsas)}",
+  "salsas1": "${escapeStringForJson(salsas1)}",
+  "salsas2": "${escapeStringForJson(salsas2)}",
+  "salsas3": "${escapeStringForJson(salsas3)}",
+  "salsas4": "${escapeStringForJson(salsas4)}",
+  "salsas5": "${escapeStringForJson(salsas5)}",
+  "salsas6": "${escapeStringForJson(salsas6)}",
+  "salsas7": "${escapeStringForJson(salsas7)}",
+  "bebidas": "${escapeStringForJson(bebidas)}",
+  "bebidas1": "${escapeStringForJson(bebidas1)}",
+  "bebidas2": "${escapeStringForJson(bebidas2)}",
+  "bebidas3": "${escapeStringForJson(bebidas3)}",
+  "bebidas4": "${escapeStringForJson(bebidas4)}",
+  "bebidas5": "${escapeStringForJson(bebidas5)}",
+  "bebidas6": "${escapeStringForJson(bebidas6)}",
+  "bebidas7": "${escapeStringForJson(bebidas7)}",
+  "contador": ${contador}
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'intolerancias platos',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/crea_plato',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class IntoleranciasListadoPlatosCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    String? buscador = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'intolerancias listado platos',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/listado_platos',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'buscador': buscador,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? id(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].id''',
+      ));
+  static String? nombre(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].nombre''',
+      ));
+  static String? tipoTxt(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].tipo_txt''',
+      ));
+  static int? tipoId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].tipo_id''',
+      ));
+}
+
+class IntoleranciasListadoBebidasCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'intolerancias listado bebidas',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/listado_bebidas',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? id(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].id''',
+      ));
+  static String? nombre(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].nombre''',
+      ));
+  static String? tipoTxt(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].tipo_txt''',
+      ));
+  static int? tipoId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].tipo_id''',
+      ));
+}
+
+class IntoleranciaCargaPlatoIndividualCall {
+  static Future<ApiCallResponse> call({
+    int? id,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'intolerancia carga plato individual',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/carga_plato_individual',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'id': id,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? id(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.id''',
+      ));
+  static String? nombre(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.nombre''',
+      ));
+  static String? tipoTxt(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.tipo_txt''',
+      ));
+  static int? tipoId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.tipo_id''',
+      ));
+  static String? carne(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne''',
+      ));
+  static String? carne1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne1''',
+      ));
+  static String? carne2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne2''',
+      ));
+  static String? carne3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne3''',
+      ));
+  static String? carne4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne4''',
+      ));
+  static String? carne5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne5''',
+      ));
+  static String? carne6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne6''',
+      ));
+  static String? carne7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.carne7''',
+      ));
+  static String? pescado(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado''',
+      ));
+  static String? pescado1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado1''',
+      ));
+  static String? pescado2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado2''',
+      ));
+  static String? pescado3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado3''',
+      ));
+  static String? pescado4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado4''',
+      ));
+  static String? pescado5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado5''',
+      ));
+  static String? pescado6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado6''',
+      ));
+  static String? pescado7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.pescado7''',
+      ));
+  static String? mariscos(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos''',
+      ));
+  static String? mariscos1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos1''',
+      ));
+  static String? mariscos2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos2''',
+      ));
+  static String? mariscos3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos3''',
+      ));
+  static String? mariscos4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos4''',
+      ));
+  static String? mariscos5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos5''',
+      ));
+  static String? mariscos6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos6''',
+      ));
+  static String? mariscos7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos7''',
+      ));
+  static String? lacteos(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos''',
+      ));
+  static String? lacteos1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos1''',
+      ));
+  static String? lacteos2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos2''',
+      ));
+  static String? lacteos3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos3''',
+      ));
+  static String? lacteos4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos4''',
+      ));
+  static String? lacteos5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos5''',
+      ));
+  static String? lacteos6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos6''',
+      ));
+  static String? lacteos7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos7''',
+      ));
+  static String? huevos(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.huevos''',
+      ));
+  static String? huevos1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.huevos1''',
+      ));
+  static String? cereales(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales''',
+      ));
+  static String? cereales1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales1''',
+      ));
+  static String? cereales2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales2''',
+      ));
+  static String? cereales3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales3''',
+      ));
+  static String? cereales4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales4''',
+      ));
+  static String? cereales5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales5''',
+      ));
+  static String? cereales6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales6''',
+      ));
+  static String? cereales7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.cereales7''',
+      ));
+  static String? frutas(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas''',
+      ));
+  static String? frutas1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas1''',
+      ));
+  static String? frutas2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas2''',
+      ));
+  static String? frutas3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas3''',
+      ));
+  static String? frutas4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas4''',
+      ));
+  static String? frutas5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas5''',
+      ));
+  static String? frutas6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas6''',
+      ));
+  static String? frutas7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.frutas7''',
+      ));
+  static String? verduras(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras''',
+      ));
+  static String? verduras1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras1''',
+      ));
+  static String? verduras2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras2''',
+      ));
+  static String? verduras3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras3''',
+      ));
+  static String? verduras4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras4''',
+      ));
+  static String? verduras5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras5''',
+      ));
+  static String? verduras6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras6''',
+      ));
+  static String? verduras7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.verduras7''',
+      ));
+  static String? legumbres(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres''',
+      ));
+  static String? legumbres1(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres1''',
+      ));
+  static String? legumbres2(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres2''',
+      ));
+  static String? legumbres3(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres3''',
+      ));
+  static String? legumbres4(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres4''',
+      ));
+  static String? legumbres5(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres5''',
+      ));
+  static String? legumbres6(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres6''',
+      ));
+  static String? legumbres7(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres7''',
+      ));
+  static String? secos(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos''',
+      ));
+  static String? secos1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos1''',
+      ));
+  static String? secos2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos2''',
+      ));
+  static String? secos3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos3''',
+      ));
+  static String? secos4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos4''',
+      ));
+  static String? secos5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos5''',
+      ));
+  static String? secos6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos6''',
+      ));
+  static String? secos7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.secos7''',
+      ));
+  static String? salsas(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas''',
+      ));
+  static String? salsas1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas1''',
+      ));
+  static String? salsas2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas2''',
+      ));
+  static String? salsas3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas3''',
+      ));
+  static String? salsas4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas4''',
+      ));
+  static String? salsas5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas5''',
+      ));
+  static String? salsas6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas6''',
+      ));
+  static String? salsas7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.salsas7''',
+      ));
+  static String? bebidas(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas''',
+      ));
+  static String? bebidas1(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas1''',
+      ));
+  static String? bebidas2(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas2''',
+      ));
+  static String? bebidas3(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas3''',
+      ));
+  static String? bebidas4(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas4''',
+      ));
+  static String? bebidas5(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas5''',
+      ));
+  static String? bebidas6(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas6''',
+      ));
+  static String? bebidas7(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.bebidas7''',
+      ));
+  static int? contador(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.contador''',
+      ));
+}
+
+class IntoleranciasUnoNewCall {
+  static Future<ApiCallResponse> call({
+    int? diarioId,
+    int? momento,
+    int? contadorComida,
+    String? editandoDiario = '',
+    int? platoId,
+    int? bebidaId,
+    String? sintomas = '',
+    String? authToken = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "diario_id": ${diarioId},
+  "momento": ${momento},
+  "contador_comida": ${contadorComida},
+  "editandoDiario": "${escapeStringForJson(editandoDiario)}",
+  "plato_id": ${platoId},
+  "bebida_id": ${bebidaId},
+  "sintomas": "${escapeStringForJson(sintomas)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'intolerancias Uno New',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/diarioIntolerancias/p1_new',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ComunidadAdjuntoComentarioCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? tipo,
+    FFUploadedFile? urlImagen,
+    FFUploadedFile? urlAudio,
+    FFUploadedFile? urlFile,
+    String? text = '',
+    int? postId,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'comunidad adjunto comentario',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/comunidad/adjuntos_comentario',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'authToken': authToken,
+        'tipo': tipo,
+        'url_imagen': urlImagen,
+        'url_audios': urlAudio,
+        'url_file': urlFile,
+        'text': text,
+        'post_id': postId,
+      },
+      bodyType: BodyType.MULTIPART,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ChatAdjuntosCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? tipo,
+    FFUploadedFile? urlImagen,
+    FFUploadedFile? urlAudio,
+    FFUploadedFile? urlFile,
+    String? text = '',
+    int? conversacionId,
+    String? nombre = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'chat adjuntos',
+      apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/chat/adjuntos',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'authToken': authToken,
+        'tipo': tipo,
+        'url_imagen': urlImagen,
+        'url_audios': urlAudio,
+        'url_file': urlFile,
+        'text': text,
+        'conversacion_id': conversacionId,
+        'nombre': nombre,
+      },
+      bodyType: BodyType.MULTIPART,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DespComunidadesAdminCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'desp comunidades admin',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:WJtB67gH/comunidad/desp_comunidades',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? nombre(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].nombre''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? comunidadId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].comunidad_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+}
+
+class UsuariosAsoCall {
+  static Future<ApiCallResponse> call({
+    String? buscador = '',
+    int? tipo,
+    int? asoId,
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'usuarios Aso',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/usuarios_aso',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'buscador': buscador,
+        'tipo': tipo,
+        'aso_id': asoId,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? id(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].id''',
+      ));
+  static String? nombreAso(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].nombre''',
+      ));
+  static int? userId(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$[:].user_id''',
+      ));
+  static String? nombre(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$[:].nombre_user''',
+      ));
+}
+
+class AsoGestionaUserCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? solicitudId,
+    String? accion = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "solicitud_id": ${solicitudId},
+  "accion": "${escapeStringForJson(accion)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'aso gestiona user',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/perfil/gestiona_user_aso',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class DespAutorNoticiasCall {
+  static Future<ApiCallResponse> call() async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'desp autor noticias',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/desp_autor',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? autor(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].noticias_autor''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class NoticiaCargaTextoCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+    int? noticiaId,
+    String? texto = '',
+    String? idioma = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "noticia_id": ${noticiaId},
+  "idioma": "${escapeStringForJson(idioma)}",
+  "texto": "${escapeStringForJson(texto)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'noticia carga texto',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/carga_texto',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class AsociacionesNoticiasCall {
+  static Future<ApiCallResponse> call({
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'asociaciones noticias',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/asociaciones',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<String>? nombre(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].nombre''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? publicaciones(dynamic response) => (getJsonField(
+        response,
+        r'''$[:]._noticias_of_asociaciones''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? asoId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].asociaciones_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+}
+
+class ResumenListadoDiariosNewCall {
+  static Future<ApiCallResponse> call({
+    String? fecha = '',
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'resumen listado diarios new',
+      apiUrl:
+          'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/resumen/lista_diarios_new',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'fecha': fecha,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static List<int>? id(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? tipoId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].tipo_id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  static List<String>? fecha(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].fecha_txt''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  static List<int>? diarioId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id_int''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+}
+
+class ResumenSuenoCall {
+  static Future<ApiCallResponse> call({
+    int? id,
+    String? authToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'resumen sueno',
+      apiUrl: 'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/resumen/sueno',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${authToken}',
+      },
+      params: {
+        'id': id,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? id(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.id''',
+      ));
+  static int? horasSueno(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.horas_sueno''',
+      ));
+  static String? calidad(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.calidad_sueno_txt''',
+      ));
+  static String? estCuartoOscuro(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.est_descanso_cuarto_oscuro''',
+      ));
+  static String? estAntifaz(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.est_antifaz''',
+      ));
+  static String? estTapones(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.est_tapones''',
+      ));
+  static String? estMovil(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.est_no_movil''',
+      ));
+  static String? estCane(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.est_no_cena''',
+      ));
+  static String? estMedicacion(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.est_medicacion''',
+      ));
+  static String? estSuplementos(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.est_suplementos''',
+      ));
+  static String? estOtras(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.est_otras''',
+      ));
+  static String? estSin(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.est_sin_prueba''',
+      ));
+  static String? medDormir(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.med_para_dormir''',
+      ));
+  static String? nombreMed(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.nombre_med''',
+      ));
+  static String? supDormir(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.sup_para_dormir''',
+      ));
+  static String? nombreSup(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.nombre_suplemento''',
+      ));
+  static String? mejoraMedicamento(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mejora_medicamento''',
+      ));
+  static String? mejoraSup(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.mejora_suplemento''',
+      ));
+  static String? caraUrl(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$._caras_sueno.cara.url''',
+      ));
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
@@ -13177,4 +15328,15 @@ String _serializeJson(dynamic jsonVar, [bool isList = false]) {
     }
     return isList ? '[]' : '{}';
   }
+}
+
+String? escapeStringForJson(String? input) {
+  if (input == null) {
+    return null;
+  }
+  return input
+      .replaceAll('\\', '\\\\')
+      .replaceAll('"', '\\"')
+      .replaceAll('\n', '\\n')
+      .replaceAll('\t', '\\t');
 }

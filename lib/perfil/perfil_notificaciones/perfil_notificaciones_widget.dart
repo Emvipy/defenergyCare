@@ -6,12 +6,14 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/perfil/modal_notificacion/modal_notificacion_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'perfil_notificaciones_model.dart';
 export 'perfil_notificaciones_model.dart';
 
@@ -84,7 +86,10 @@ class _PerfilNotificacionesWidgetState
         final perfilNotificacionesUserIndividualResponse = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -104,7 +109,16 @@ class _PerfilNotificacionesWidgetState
                     size: 30.0,
                   ),
                   onPressed: () async {
-                    context.pop();
+                    context.pushNamed(
+                      'perfil',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
+                    );
                   },
                 ),
                 title: Text(
@@ -408,40 +422,41 @@ class _PerfilNotificacionesWidgetState
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return GestureDetector(
-                                                                        onTap: () =>
-                                                                            FocusScope.of(context).unfocus(),
+                                                                      return WebViewAware(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
-                                                                              ModalNotificacionWidget(
-                                                                            notificacionId:
-                                                                                getJsonField(
-                                                                              childNotificacionesItem,
-                                                                              r'''$.id''',
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalNotificacionWidget(
+                                                                              notificacionId: getJsonField(
+                                                                                childNotificacionesItem,
+                                                                                r'''$.id''',
+                                                                              ),
+                                                                              titulo: getJsonField(
+                                                                                childNotificacionesItem,
+                                                                                r'''$.titulo''',
+                                                                              ).toString(),
+                                                                              mensaje: getJsonField(
+                                                                                childNotificacionesItem,
+                                                                                r'''$.mensaje''',
+                                                                              ).toString(),
+                                                                              seccion: getJsonField(
+                                                                                childNotificacionesItem,
+                                                                                r'''$.seccion''',
+                                                                              ).toString(),
+                                                                              chat: getJsonField(
+                                                                                childNotificacionesItem,
+                                                                                r'''$.chat''',
+                                                                              ).toString(),
                                                                             ),
-                                                                            titulo:
-                                                                                getJsonField(
-                                                                              childNotificacionesItem,
-                                                                              r'''$.titulo''',
-                                                                            ).toString(),
-                                                                            mensaje:
-                                                                                getJsonField(
-                                                                              childNotificacionesItem,
-                                                                              r'''$.mensaje''',
-                                                                            ).toString(),
-                                                                            seccion:
-                                                                                getJsonField(
-                                                                              childNotificacionesItem,
-                                                                              r'''$.seccion''',
-                                                                            ).toString(),
-                                                                            chat:
-                                                                                getJsonField(
-                                                                              childNotificacionesItem,
-                                                                              r'''$.chat''',
-                                                                            ).toString(),
                                                                           ),
                                                                         ),
                                                                       );
@@ -540,41 +555,46 @@ class _PerfilNotificacionesWidgetState
                                                                                 context,
                                                                             builder:
                                                                                 (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalNotificacionWidget(
-                                                                                    notificacionId: getJsonField(
-                                                                                      childNotificacionesItem,
-                                                                                      r'''$.id''',
+                                                                              return WebViewAware(
+                                                                                child: GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: ModalNotificacionWidget(
+                                                                                      notificacionId: getJsonField(
+                                                                                        childNotificacionesItem,
+                                                                                        r'''$.id''',
+                                                                                      ),
+                                                                                      titulo: FFLocalizations.of(context).languageCode == 'en'
+                                                                                          ? getJsonField(
+                                                                                              childNotificacionesItem,
+                                                                                              r'''$.titulo_en''',
+                                                                                            ).toString()
+                                                                                          : getJsonField(
+                                                                                              childNotificacionesItem,
+                                                                                              r'''$.titulo''',
+                                                                                            ).toString(),
+                                                                                      mensaje: FFLocalizations.of(context).languageCode == 'en'
+                                                                                          ? getJsonField(
+                                                                                              childNotificacionesItem,
+                                                                                              r'''$.mensaje_en''',
+                                                                                            ).toString()
+                                                                                          : getJsonField(
+                                                                                              childNotificacionesItem,
+                                                                                              r'''$.mensaje''',
+                                                                                            ).toString(),
+                                                                                      seccion: getJsonField(
+                                                                                        childNotificacionesItem,
+                                                                                        r'''$.seccion''',
+                                                                                      ).toString(),
+                                                                                      chat: getJsonField(
+                                                                                        childNotificacionesItem,
+                                                                                        r'''$.chat''',
+                                                                                      ).toString(),
                                                                                     ),
-                                                                                    titulo: FFLocalizations.of(context).languageCode == 'en'
-                                                                                        ? getJsonField(
-                                                                                            childNotificacionesItem,
-                                                                                            r'''$.titulo_en''',
-                                                                                          ).toString()
-                                                                                        : getJsonField(
-                                                                                            childNotificacionesItem,
-                                                                                            r'''$.titulo''',
-                                                                                          ).toString(),
-                                                                                    mensaje: FFLocalizations.of(context).languageCode == 'en'
-                                                                                        ? getJsonField(
-                                                                                            childNotificacionesItem,
-                                                                                            r'''$.mensaje_en''',
-                                                                                          ).toString()
-                                                                                        : getJsonField(
-                                                                                            childNotificacionesItem,
-                                                                                            r'''$.mensaje''',
-                                                                                          ).toString(),
-                                                                                    seccion: getJsonField(
-                                                                                      childNotificacionesItem,
-                                                                                      r'''$.seccion''',
-                                                                                    ).toString(),
-                                                                                    chat: getJsonField(
-                                                                                      childNotificacionesItem,
-                                                                                      r'''$.chat''',
-                                                                                    ).toString(),
                                                                                   ),
                                                                                 ),
                                                                               );

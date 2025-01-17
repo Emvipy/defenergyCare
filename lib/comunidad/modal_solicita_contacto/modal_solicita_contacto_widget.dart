@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,11 +17,15 @@ class ModalSolicitaContactoWidget extends StatefulWidget {
     required this.contactoId,
     required this.nombreContacto,
     required this.apellidosContacto,
+    required this.grupo,
+    required this.nombre,
   });
 
   final int? contactoId;
   final String? nombreContacto;
   final String? apellidosContacto;
+  final int? grupo;
+  final String? nombre;
 
   @override
   State<ModalSolicitaContactoWidget> createState() =>
@@ -249,6 +254,16 @@ class _ModalSolicitaContactoWidgetState
 
                                 context.pushNamed(
                                   'comunidad',
+                                  queryParameters: {
+                                    'grupo': serializeParam(
+                                      widget!.grupo,
+                                      ParamType.int,
+                                    ),
+                                    'nombre': serializeParam(
+                                      widget!.grupo?.toString(),
+                                      ParamType.String,
+                                    ),
+                                  }.withoutNulls,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,

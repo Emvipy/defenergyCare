@@ -136,6 +136,12 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _password = await secureStorage.getString('ff_password') ?? _password;
     });
+    await _safeInitAsync(() async {
+      _userAsoId = await secureStorage.getInt('ff_userAsoId') ?? _userAsoId;
+    });
+    await _safeInitAsync(() async {
+      _biopwd = await secureStorage.getString('ff_biopwd') ?? _biopwd;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -1126,6 +1132,70 @@ class FFAppState extends ChangeNotifier {
   String get tmpPwd => _tmpPwd;
   set tmpPwd(String value) {
     _tmpPwd = value;
+  }
+
+  String _html = '';
+  String get html => _html;
+  set html(String value) {
+    _html = value;
+  }
+
+  String _HTMLMessage = '';
+  String get HTMLMessage => _HTMLMessage;
+  set HTMLMessage(String value) {
+    _HTMLMessage = value;
+  }
+
+  int _intoPlatoId = 0;
+  int get intoPlatoId => _intoPlatoId;
+  set intoPlatoId(int value) {
+    _intoPlatoId = value;
+  }
+
+  int _intoBebidaId = 0;
+  int get intoBebidaId => _intoBebidaId;
+  set intoBebidaId(int value) {
+    _intoBebidaId = value;
+  }
+
+  int _userAsoId = 0;
+  int get userAsoId => _userAsoId;
+  set userAsoId(int value) {
+    _userAsoId = value;
+    secureStorage.setInt('ff_userAsoId', value);
+  }
+
+  void deleteUserAsoId() {
+    secureStorage.delete(key: 'ff_userAsoId');
+  }
+
+  String _biopwd = '';
+  String get biopwd => _biopwd;
+  set biopwd(String value) {
+    _biopwd = value;
+    secureStorage.setString('ff_biopwd', value);
+  }
+
+  void deleteBiopwd() {
+    secureStorage.delete(key: 'ff_biopwd');
+  }
+
+  int _noticiaId = 0;
+  int get noticiaId => _noticiaId;
+  set noticiaId(int value) {
+    _noticiaId = value;
+  }
+
+  String _textES = '';
+  String get textES => _textES;
+  set textES(String value) {
+    _textES = value;
+  }
+
+  String _textEN = '';
+  String get textEN => _textEN;
+  set textEN(String value) {
+    _textEN = value;
   }
 }
 

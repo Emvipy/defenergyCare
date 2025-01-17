@@ -22,6 +22,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -79,6 +81,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
           appStateNotifier.loggedIn ? HubLoginWidget() : WelcomeWidget(),
       routes: [
@@ -299,9 +302,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ListadoWidget(),
         ),
         FFRoute(
-          name: 'resumen',
-          path: '/resumen',
-          builder: (context, params) => ResumenWidget(
+          name: 'resumen_sintomas',
+          path: '/resumenSintomas',
+          builder: (context, params) => ResumenSintomasWidget(
             diarioId: params.getParam(
               'diarioId',
               ParamType.int,
@@ -389,7 +392,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'comunidad',
           path: '/comunidad',
-          builder: (context, params) => ComunidadWidget(),
+          builder: (context, params) => ComunidadWidget(
+            grupo: params.getParam(
+              'grupo',
+              ParamType.int,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'comunidad_crea_post',
@@ -398,6 +410,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             postId: params.getParam(
               'postId',
               ParamType.int,
+            ),
+            grupo: params.getParam(
+              'grupo',
+              ParamType.int,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
             ),
           ),
         ),
@@ -408,6 +428,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             postId: params.getParam(
               'postId',
               ParamType.int,
+            ),
+            grupo: params.getParam(
+              'grupo',
+              ParamType.int,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
             ),
           ),
         ),
@@ -571,11 +599,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EmpresaPdteValidacionCopyWidget(),
         ),
         FFRoute(
-          name: 'comunidadCopy',
-          path: '/comunidadCopy',
-          builder: (context, params) => ComunidadCopyWidget(),
-        ),
-        FFRoute(
           name: 'perfil_medicamentosCrea',
           path: '/perfilMedicamentosCrea',
           builder: (context, params) => PerfilMedicamentosCreaWidget(),
@@ -634,8 +657,217 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'elimina_usuer',
           path: '/eliminaUsuer',
           builder: (context, params) => EliminaUsuerWidget(),
+        ),
+        FFRoute(
+          name: 'diario_Into1Copy',
+          path: '/diario_Into1_copy',
+          builder: (context, params) => DiarioInto1CopyWidget(
+            primerIdario: params.getParam(
+              'primerIdario',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'diario_Into_crea_plato',
+          path: '/diario_Into_crea_plato',
+          builder: (context, params) => DiarioIntoCreaPlatoWidget(),
+        ),
+        FFRoute(
+          name: 'diario_Into_crea_bebida',
+          path: '/diario_Into_crea_bebida',
+          builder: (context, params) => DiarioIntoCreaBebidaWidget(),
+        ),
+        FFRoute(
+          name: 'diario_Into_edita_plato',
+          path: '/diario_Into_edita_plato',
+          builder: (context, params) => DiarioIntoEditaPlatoWidget(
+            id: params.getParam(
+              'id',
+              ParamType.int,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'diario_Into_edita_bebida',
+          path: '/diario_Into_edita_bebida',
+          builder: (context, params) => DiarioIntoEditaBebidaWidget(
+            id: params.getParam(
+              'id',
+              ParamType.int,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'hubComunidad',
+          path: '/hubComunidad',
+          builder: (context, params) => HubComunidadWidget(),
+        ),
+        FFRoute(
+          name: 'youtube',
+          path: '/youtube',
+          builder: (context, params) => YoutubeWidget(
+            link: params.getParam(
+              'link',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'perfil_users_aso',
+          path: '/perfilUsersAso',
+          builder: (context, params) => PerfilUsersAsoWidget(),
+        ),
+        FFRoute(
+          name: 'noticiasDetalleNew',
+          path: '/noticiasDetalleNew',
+          builder: (context, params) => NoticiasDetalleNewWidget(
+            noticiasId: params.getParam(
+              'noticiasId',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'noticiasCreaNew',
+          path: '/noticiasCreaNew',
+          builder: (context, params) => NoticiasCreaNewWidget(
+            noticiaId: params.getParam(
+              'noticiaId',
+              ParamType.int,
+            ),
+            edita: params.getParam(
+              'edita',
+              ParamType.String,
+            ),
+            recargar: params.getParam(
+              'recargar',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'noticiasTexto',
+          path: '/noticiasTexto',
+          builder: (context, params) => NoticiasTextoWidget(
+            noticiaId: params.getParam(
+              'noticiaId',
+              ParamType.int,
+            ),
+            edita: params.getParam(
+              'edita',
+              ParamType.String,
+            ),
+            idioma: params.getParam(
+              'idioma',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'noticiasPrivadas',
+          path: '/noticiasPrivadas',
+          builder: (context, params) => NoticiasPrivadasWidget(
+            nombreAso: params.getParam(
+              'nombreAso',
+              ParamType.String,
+            ),
+            id: params.getParam(
+              'id',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'perfil_biometrico',
+          path: '/perfilBiometrico',
+          builder: (context, params) => PerfilBiometricoWidget(),
+        ),
+        FFRoute(
+          name: 'comunidadRelevancia',
+          path: '/comunidadRelevancia',
+          builder: (context, params) => ComunidadRelevanciaWidget(
+            grupo: params.getParam(
+              'grupo',
+              ParamType.int,
+            ),
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'noticiasAso',
+          path: '/noticiasAso',
+          builder: (context, params) => NoticiasAsoWidget(),
+        ),
+        FFRoute(
+          name: 'chat_mensajesCopy',
+          path: '/chatMensajesCopy',
+          builder: (context, params) => ChatMensajesCopyWidget(
+            nombre: params.getParam(
+              'nombre',
+              ParamType.String,
+            ),
+            conversacionId: params.getParam(
+              'conversacionId',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'resumen_sueno',
+          path: '/resumenSueno',
+          builder: (context, params) => ResumenSuenoWidget(
+            diarioId: params.getParam(
+              'diarioId',
+              ParamType.int,
+            ),
+            fechaTxt: params.getParam(
+              'fechaTxt',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'resumen_into',
+          path: '/resumenInto',
+          builder: (context, params) => ResumenIntoWidget(
+            diarioId: params.getParam(
+              'diarioId',
+              ParamType.int,
+            ),
+            fechaTxt: params.getParam(
+              'fechaTxt',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'resumen_sintomasBackUp',
+          path: '/resumenSintomasBackUp',
+          builder: (context, params) => ResumenSintomasBackUpWidget(
+            diarioId: params.getParam(
+              'diarioId',
+              ParamType.int,
+            ),
+            fechaTxt: params.getParam(
+              'fechaTxt',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

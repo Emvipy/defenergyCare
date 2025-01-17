@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +21,13 @@ class ComunidadCreaPostWidget extends StatefulWidget {
   const ComunidadCreaPostWidget({
     super.key,
     required this.postId,
+    required this.grupo,
+    required this.nombre,
   });
 
   final int? postId;
+  final int? grupo;
+  final String? nombre;
 
   @override
   State<ComunidadCreaPostWidget> createState() =>
@@ -51,6 +56,10 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
     }
 
     _model.textFieldFocusNode ??= FocusNode();
+
+    _model.textFieldLinkFocusNode1 ??= FocusNode();
+
+    _model.textFieldLinkFocusNode2 ??= FocusNode();
   }
 
   @override
@@ -93,7 +102,10 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
         final comunidadCreaPostComunidadPostIndividualResponse = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -142,16 +154,14 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                10.0, 10.0, 10.0, 15.0),
+                                10.0, 10.0, 10.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Flexible(
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'rkcl89sn' /* ¿Qué vamos a compartir hoy? */,
-                                    ),
+                                    'Comunidad ${widget!.nombre}',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -168,6 +178,34 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                               ],
                             ),
                           ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 10.0, 10.0, 15.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'tkgj71ir' /* ¿Qué vamos a compartir hoy? */,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                           Container(
                             width: 350.0,
                             child: Align(
@@ -175,7 +213,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                               child: Container(
                                 width: 350.0,
                                 child: TextFormField(
-                                  controller: _model.textController ??=
+                                  controller: _model.textController1 ??=
                                       TextEditingController(
                                     text: ComunidadPostIndividualCall.texto(
                                       comunidadCreaPostComunidadPostIndividualResponse
@@ -184,7 +222,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                   ),
                                   focusNode: _model.textFieldFocusNode,
                                   onChanged: (_) => EasyDebounce.debounce(
-                                    '_model.textController',
+                                    '_model.textController1',
                                     Duration(milliseconds: 100),
                                     () => safeSetState(() {}),
                                   ),
@@ -251,10 +289,171 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                       ),
                                   maxLines: 5,
                                   keyboardType: TextInputType.multiline,
-                                  validator: _model.textControllerValidator
+                                  validator: _model.textController1Validator
                                       .asValidator(context),
                                 ),
                               ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      child: TextFormField(
+                                        controller: _model
+                                                .textFieldLinkTextController1 ??=
+                                            TextEditingController(
+                                          text: ComunidadPostIndividualCall
+                                                          .urlLink(
+                                                        comunidadCreaPostComunidadPostIndividualResponse
+                                                            .jsonBody,
+                                                      ) !=
+                                                      null &&
+                                                  ComunidadPostIndividualCall
+                                                          .urlLink(
+                                                        comunidadCreaPostComunidadPostIndividualResponse
+                                                            .jsonBody,
+                                                      ) !=
+                                                      ''
+                                              ? ComunidadPostIndividualCall
+                                                  .urlLink(
+                                                  comunidadCreaPostComunidadPostIndividualResponse
+                                                      .jsonBody,
+                                                )
+                                              : '',
+                                        ),
+                                        focusNode:
+                                            _model.textFieldLinkFocusNode1,
+                                        autofocus: false,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          isDense: true,
+                                          labelText: FFLocalizations.of(context)
+                                              .getText(
+                                            'q90a70o1' /* Link */,
+                                          ),
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'xx00cqly' /* Añade aquí tu link... */,
+                                          ),
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        cursorColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                        validator: _model
+                                            .textFieldLinkTextController1Validator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 1.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 2.0, 0.0, 0.0),
+                                  child: Container(
+                                    width: 350.0,
+                                    height: 25.0,
+                                    decoration: BoxDecoration(),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          3.0, 0.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          '51j7th5a' /* Debes escribir la URL con http... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 12.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           if (_model.cargador == 'no')
@@ -284,6 +483,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
+                                            var _shouldSetState = false;
                                             final selectedMedia =
                                                 await selectMediaWithSourceBottomSheet(
                                               context: context,
@@ -352,6 +552,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                     FFAppState().authToken,
                                               );
 
+                                              _shouldSetState = true;
                                               if ((_model.apiResult93tCopy
                                                       ?.succeeded ??
                                                   true)) {
@@ -360,6 +561,10 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                         null);
                                                 await _model
                                                     .waitForApiRequestCompleted();
+                                              } else {
+                                                if (_shouldSetState)
+                                                  safeSetState(() {});
+                                                return;
                                               }
                                             } else {
                                               ScaffoldMessenger.of(context)
@@ -381,9 +586,13 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                           .error,
                                                 ),
                                               );
+                                              if (_shouldSetState)
+                                                safeSetState(() {});
+                                              return;
                                             }
 
-                                            safeSetState(() {});
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
                                           },
                                           child: ClipRRect(
                                             borderRadius:
@@ -411,6 +620,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          var _shouldSetState = false;
                                           final selectedMedia =
                                               await selectMediaWithSourceBottomSheet(
                                             context: context,
@@ -478,6 +688,7 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                               authToken: FFAppState().authToken,
                                             );
 
+                                            _shouldSetState = true;
                                             if ((_model
                                                     .apiResult93t?.succeeded ??
                                                 true)) {
@@ -487,6 +698,13 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                   .waitForApiRequestCompleted();
                                               _model.cargador = 'no';
                                               safeSetState(() {});
+                                              if (_shouldSetState)
+                                                safeSetState(() {});
+                                              return;
+                                            } else {
+                                              if (_shouldSetState)
+                                                safeSetState(() {});
+                                              return;
                                             }
                                           } else {
                                             ScaffoldMessenger.of(context)
@@ -507,9 +725,13 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                         .error,
                                               ),
                                             );
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
                                           }
 
-                                          safeSetState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                         },
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -532,6 +754,129 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                 ),
                               ),
                             ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Expanded(
+                                  child: Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      child: TextFormField(
+                                        controller: _model
+                                                .textFieldLinkTextController2 ??=
+                                            TextEditingController(
+                                          text: ComunidadPostIndividualCall
+                                                          .urlYoutube(
+                                                        comunidadCreaPostComunidadPostIndividualResponse
+                                                            .jsonBody,
+                                                      ) !=
+                                                      null &&
+                                                  ComunidadPostIndividualCall
+                                                          .urlYoutube(
+                                                        comunidadCreaPostComunidadPostIndividualResponse
+                                                            .jsonBody,
+                                                      ) !=
+                                                      ''
+                                              ? ComunidadPostIndividualCall
+                                                  .urlYoutube(
+                                                  comunidadCreaPostComunidadPostIndividualResponse
+                                                      .jsonBody,
+                                                )
+                                              : '',
+                                        ),
+                                        focusNode:
+                                            _model.textFieldLinkFocusNode2,
+                                        autofocus: false,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          isDense: true,
+                                          labelText: FFLocalizations.of(context)
+                                              .getText(
+                                            '7l4k5zmk' /* Link Youtube */,
+                                          ),
+                                          labelStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'p53cykie' /* Añade aquí tu vídeo de Youtube... */,
+                                          ),
+                                          hintStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          focusedErrorBorder:
+                                              OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          filled: true,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        cursorColor:
+                                            FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                        validator: _model
+                                            .textFieldLinkTextController2Validator
+                                            .asValidator(context),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                           if (_model.cargador == 'si')
                             Row(
                               mainAxisSize: MainAxisSize.max,
@@ -556,13 +901,14 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 FFButtonWidget(
-                                  onPressed: (_model.textController.text ==
+                                  onPressed: (_model.textController1.text ==
                                               null ||
-                                          _model.textController.text == '')
+                                          _model.textController1.text == '')
                                       ? null
                                       : () async {
-                                          _model.apiResultf6y =
-                                              await CamunidadGuardaDatosCall
+                                          var _shouldSetState = false;
+                                          _model.guardaPostNew =
+                                              await ComunidadGuardaDatosNewCall
                                                   .call(
                                             authToken: FFAppState().authToken,
                                             postId: widget!.postId,
@@ -571,14 +917,33 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                     functions
                                                         .removeDoubleQuotationMarksFromText(
                                                             _model
-                                                                .textController
+                                                                .textController1
                                                                 .text)),
+                                            urlYoutube: _model
+                                                .textFieldLinkTextController2
+                                                .text,
+                                            urlLink: _model
+                                                .textFieldLinkTextController1
+                                                .text,
+                                            grupo: widget!.grupo,
                                           );
 
-                                          if ((_model.apiResultf6y?.succeeded ??
+                                          _shouldSetState = true;
+                                          if ((_model
+                                                  .guardaPostNew?.succeeded ??
                                               true)) {
                                             context.pushNamed(
                                               'comunidad',
+                                              queryParameters: {
+                                                'grupo': serializeParam(
+                                                  widget!.grupo,
+                                                  ParamType.int,
+                                                ),
+                                                'nombre': serializeParam(
+                                                  widget!.nombre,
+                                                  ParamType.String,
+                                                ),
+                                              }.withoutNulls,
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
@@ -590,6 +955,10 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                 ),
                                               },
                                             );
+
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
                                           } else {
                                             ScaffoldMessenger.of(context)
                                                 .showSnackBar(
@@ -609,9 +978,13 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                                         .error,
                                               ),
                                             );
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
                                           }
 
-                                          safeSetState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                         },
                                   text: FFLocalizations.of(context).getText(
                                     '4ldcdw5g' /* Publicar */,
@@ -655,6 +1028,16 @@ class _ComunidadCreaPostWidgetState extends State<ComunidadCreaPostWidget> {
                                   onPressed: () async {
                                     context.pushNamed(
                                       'comunidad',
+                                      queryParameters: {
+                                        'grupo': serializeParam(
+                                          widget!.grupo,
+                                          ParamType.int,
+                                        ),
+                                        'nombre': serializeParam(
+                                          widget!.nombre,
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

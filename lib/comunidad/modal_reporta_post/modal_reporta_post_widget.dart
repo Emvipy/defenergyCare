@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,9 +15,13 @@ class ModalReportaPostWidget extends StatefulWidget {
   const ModalReportaPostWidget({
     super.key,
     required this.postId,
+    required this.grupo,
+    required this.nombre,
   });
 
   final int? postId;
+  final int? grupo;
+  final String? nombre;
 
   @override
   State<ModalReportaPostWidget> createState() => _ModalReportaPostWidgetState();
@@ -221,6 +226,16 @@ class _ModalReportaPostWidgetState extends State<ModalReportaPostWidget> {
 
                                 context.goNamed(
                                   'comunidad',
+                                  queryParameters: {
+                                    'grupo': serializeParam(
+                                      widget!.grupo,
+                                      ParamType.int,
+                                    ),
+                                    'nombre': serializeParam(
+                                      widget!.nombre,
+                                      ParamType.String,
+                                    ),
+                                  }.withoutNulls,
                                   extra: <String, dynamic>{
                                     kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,

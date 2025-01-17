@@ -8,12 +8,15 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import '/usuario/modal_cierre_sesion/modal_cierre_sesion_widget.dart';
+import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_empresa_model.dart';
 export 'home_empresa_model.dart';
 
@@ -63,11 +66,16 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
           enableDrag: false,
           context: context,
           builder: (context) {
-            return GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
-              child: Padding(
-                padding: MediaQuery.viewInsetsOf(context),
-                child: ModalCierreSesionWidget(),
+            return WebViewAware(
+              child: GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+                child: Padding(
+                  padding: MediaQuery.viewInsetsOf(context),
+                  child: ModalCierreSesionWidget(),
+                ),
               ),
             );
           },
@@ -90,7 +98,10 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -109,16 +120,6 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
               Flexible(
                 child: Stack(
                   children: [
-                    Align(
-                      alignment: AlignmentDirectional(0.0, 1.0),
-                      child: wrapWithModel(
-                        model: _model.menuUsuarioModel,
-                        updateCallback: () => safeSetState(() {}),
-                        child: MenuUsuarioWidget(
-                          index: 1,
-                        ),
-                      ),
-                    ),
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
@@ -159,15 +160,22 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                           enableDrag: false,
                                           context: context,
                                           builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () =>
+                                            return WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () {
                                                   FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: ModalErrorCuentaWidget(),
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalErrorCuentaWidget(),
+                                                ),
                                               ),
                                             );
                                           },
@@ -308,17 +316,24 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     enableDrag: false,
                                                     context: context,
                                                     builder: (context) {
-                                                      return GestureDetector(
-                                                        onTap: () =>
+                                                      return WebViewAware(
+                                                        child: GestureDetector(
+                                                          onTap: () {
                                                             FocusScope.of(
                                                                     context)
-                                                                .unfocus(),
-                                                        child: Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              ModalErrorCuentaWidget(),
+                                                                .unfocus();
+                                                            FocusManager
+                                                                .instance
+                                                                .primaryFocus
+                                                                ?.unfocus();
+                                                          },
+                                                          child: Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                ModalErrorCuentaWidget(),
+                                                          ),
                                                         ),
                                                       );
                                                     },
@@ -400,17 +415,24 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                     enableDrag: false,
                                                     context: context,
                                                     builder: (context) {
-                                                      return GestureDetector(
-                                                        onTap: () =>
+                                                      return WebViewAware(
+                                                        child: GestureDetector(
+                                                          onTap: () {
                                                             FocusScope.of(
                                                                     context)
-                                                                .unfocus(),
-                                                        child: Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              ModalErrorCuentaWidget(),
+                                                                .unfocus();
+                                                            FocusManager
+                                                                .instance
+                                                                .primaryFocus
+                                                                ?.unfocus();
+                                                          },
+                                                          child: Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                ModalErrorCuentaWidget(),
+                                                          ),
                                                         ),
                                                       );
                                                     },
@@ -619,18 +641,26 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () =>
+                                                                return WebViewAware(
+                                                                  child:
+                                                                      GestureDetector(
+                                                                    onTap: () {
                                                                       FocusScope.of(
                                                                               context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        ModalErrorCuentaWidget(),
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          ModalErrorCuentaWidget(),
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },
@@ -729,18 +759,26 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () =>
+                                                                return WebViewAware(
+                                                                  child:
+                                                                      GestureDetector(
+                                                                    onTap: () {
                                                                       FocusScope.of(
                                                                               context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        ModalErrorCuentaWidget(),
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          ModalErrorCuentaWidget(),
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },
@@ -823,17 +861,26 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             enableDrag: false,
                                                             context: context,
                                                             builder: (context) {
-                                                              return GestureDetector(
-                                                                onTap: () =>
+                                                              return WebViewAware(
+                                                                child:
+                                                                    GestureDetector(
+                                                                  onTap: () {
                                                                     FocusScope.of(
                                                                             context)
-                                                                        .unfocus(),
-                                                                child: Padding(
-                                                                  padding: MediaQuery
-                                                                      .viewInsetsOf(
-                                                                          context),
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
                                                                   child:
-                                                                      ModalInfoEncuestaWidget(),
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        ModalInfoEncuestaWidget(),
+                                                                  ),
                                                                 ),
                                                               );
                                                             },
@@ -918,18 +965,26 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () =>
+                                                                return WebViewAware(
+                                                                  child:
+                                                                      GestureDetector(
+                                                                    onTap: () {
                                                                       FocusScope.of(
                                                                               context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        ModalErrorCuentaWidget(),
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          ModalErrorCuentaWidget(),
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },
@@ -1042,17 +1097,25 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                     context,
                                                                 builder:
                                                                     (context) {
-                                                                  return GestureDetector(
-                                                                    onTap: () =>
-                                                                        FocusScope.of(context)
-                                                                            .unfocus(),
+                                                                  return WebViewAware(
                                                                     child:
-                                                                        Padding(
-                                                                      padding: MediaQuery
-                                                                          .viewInsetsOf(
-                                                                              context),
+                                                                        GestureDetector(
+                                                                      onTap:
+                                                                          () {
+                                                                        FocusScope.of(context)
+                                                                            .unfocus();
+                                                                        FocusManager
+                                                                            .instance
+                                                                            .primaryFocus
+                                                                            ?.unfocus();
+                                                                      },
                                                                       child:
-                                                                          ModalErrorCuentaWidget(),
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ModalErrorCuentaWidget(),
+                                                                      ),
                                                                     ),
                                                                   );
                                                                 },
@@ -1172,20 +1235,73 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           if (FFAppState()
                                                                   .creadoOk ==
                                                               'si') {
-                                                            context.pushNamed(
-                                                              'comunidad',
-                                                              extra: <String,
-                                                                  dynamic>{
-                                                                kTransitionInfoKey:
-                                                                    TransitionInfo(
-                                                                  hasTransition:
-                                                                      true,
-                                                                  transitionType:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                ),
-                                                              },
-                                                            );
+                                                            if (FFAppState()
+                                                                    .email ==
+                                                                'ops@emvipy.com') {
+                                                              context.pushNamed(
+                                                                'hubComunidad',
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
+                                                              );
+
+                                                              return;
+                                                            } else {
+                                                              context.pushNamed(
+                                                                'comunidad',
+                                                                queryParameters:
+                                                                    {
+                                                                  'grupo':
+                                                                      serializeParam(
+                                                                    1,
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                  'nombre':
+                                                                      serializeParam(
+                                                                    'General',
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                  ),
+                                                                },
+                                                              );
+
+                                                              unawaited(
+                                                                () async {
+                                                                  await UserLogActivityCall
+                                                                      .call(
+                                                                    authToken:
+                                                                        FFAppState()
+                                                                            .authToken,
+                                                                    seccion:
+                                                                        'Menú Comunidad Empresa',
+                                                                  );
+                                                                }(),
+                                                              );
+                                                              return;
+                                                            }
                                                           } else {
                                                             await showModalBottomSheet(
                                                               isScrollControlled:
@@ -1197,18 +1313,26 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () =>
+                                                                return WebViewAware(
+                                                                  child:
+                                                                      GestureDetector(
+                                                                    onTap: () {
                                                                       FocusScope.of(
                                                                               context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        ModalErrorCuentaWidget(),
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          ModalErrorCuentaWidget(),
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },
@@ -1276,20 +1400,73 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                           if (FFAppState()
                                                                   .creadoOk ==
                                                               'si') {
-                                                            context.pushNamed(
-                                                              'comunidad',
-                                                              extra: <String,
-                                                                  dynamic>{
-                                                                kTransitionInfoKey:
-                                                                    TransitionInfo(
-                                                                  hasTransition:
-                                                                      true,
-                                                                  transitionType:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                ),
-                                                              },
-                                                            );
+                                                            if (FFAppState()
+                                                                    .email ==
+                                                                'ops@emvipy.com') {
+                                                              context.pushNamed(
+                                                                'hubComunidad',
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
+                                                              );
+
+                                                              return;
+                                                            } else {
+                                                              context.pushNamed(
+                                                                'comunidad',
+                                                                queryParameters:
+                                                                    {
+                                                                  'grupo':
+                                                                      serializeParam(
+                                                                    1,
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                  'nombre':
+                                                                      serializeParam(
+                                                                    'General',
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                  ),
+                                                                },
+                                                              );
+
+                                                              unawaited(
+                                                                () async {
+                                                                  await UserLogActivityCall
+                                                                      .call(
+                                                                    authToken:
+                                                                        FFAppState()
+                                                                            .authToken,
+                                                                    seccion:
+                                                                        'Menú Comunidad Empresa',
+                                                                  );
+                                                                }(),
+                                                              );
+                                                              return;
+                                                            }
                                                           } else {
                                                             await showModalBottomSheet(
                                                               isScrollControlled:
@@ -1301,18 +1478,26 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                               context: context,
                                                               builder:
                                                                   (context) {
-                                                                return GestureDetector(
-                                                                  onTap: () =>
+                                                                return WebViewAware(
+                                                                  child:
+                                                                      GestureDetector(
+                                                                    onTap: () {
                                                                       FocusScope.of(
                                                                               context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: MediaQuery
-                                                                        .viewInsetsOf(
-                                                                            context),
+                                                                          .unfocus();
+                                                                      FocusManager
+                                                                          .instance
+                                                                          .primaryFocus
+                                                                          ?.unfocus();
+                                                                    },
                                                                     child:
-                                                                        ModalErrorCuentaWidget(),
+                                                                        Padding(
+                                                                      padding: MediaQuery
+                                                                          .viewInsetsOf(
+                                                                              context),
+                                                                      child:
+                                                                          ModalErrorCuentaWidget(),
+                                                                    ),
                                                                   ),
                                                                 );
                                                               },
@@ -1391,17 +1576,26 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             enableDrag: false,
                                                             context: context,
                                                             builder: (context) {
-                                                              return GestureDetector(
-                                                                onTap: () =>
+                                                              return WebViewAware(
+                                                                child:
+                                                                    GestureDetector(
+                                                                  onTap: () {
                                                                     FocusScope.of(
                                                                             context)
-                                                                        .unfocus(),
-                                                                child: Padding(
-                                                                  padding: MediaQuery
-                                                                      .viewInsetsOf(
-                                                                          context),
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
                                                                   child:
-                                                                      ModalInfoComunidadEWidget(),
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        ModalInfoComunidadEWidget(),
+                                                                  ),
                                                                 ),
                                                               );
                                                             },
@@ -1454,20 +1648,71 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                         if (FFAppState()
                                                                 .creadoOk ==
                                                             'si') {
-                                                          context.pushNamed(
-                                                            'comunidad',
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                              ),
-                                                            },
-                                                          );
+                                                          if (FFAppState()
+                                                                  .email ==
+                                                              'ops@emvipy.com') {
+                                                            context.pushNamed(
+                                                              'hubComunidad',
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                                ),
+                                                              },
+                                                            );
+
+                                                            return;
+                                                          } else {
+                                                            context.pushNamed(
+                                                              'comunidad',
+                                                              queryParameters: {
+                                                                'grupo':
+                                                                    serializeParam(
+                                                                  1,
+                                                                  ParamType.int,
+                                                                ),
+                                                                'nombre':
+                                                                    serializeParam(
+                                                                  'General',
+                                                                  ParamType
+                                                                      .String,
+                                                                ),
+                                                              }.withoutNulls,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                ),
+                                                              },
+                                                            );
+
+                                                            unawaited(
+                                                              () async {
+                                                                await UserLogActivityCall
+                                                                    .call(
+                                                                  authToken:
+                                                                      FFAppState()
+                                                                          .authToken,
+                                                                  seccion:
+                                                                      'Menú Comunidad Empresa',
+                                                                );
+                                                              }(),
+                                                            );
+                                                            return;
+                                                          }
                                                         } else {
                                                           await showModalBottomSheet(
                                                             isScrollControlled:
@@ -1478,23 +1723,34 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             enableDrag: false,
                                                             context: context,
                                                             builder: (context) {
-                                                              return GestureDetector(
-                                                                onTap: () =>
+                                                              return WebViewAware(
+                                                                child:
+                                                                    GestureDetector(
+                                                                  onTap: () {
                                                                     FocusScope.of(
                                                                             context)
-                                                                        .unfocus(),
-                                                                child: Padding(
-                                                                  padding: MediaQuery
-                                                                      .viewInsetsOf(
-                                                                          context),
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
                                                                   child:
-                                                                      ModalErrorCuentaWidget(),
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        ModalErrorCuentaWidget(),
+                                                                  ),
                                                                 ),
                                                               );
                                                             },
                                                           ).then((value) =>
                                                               safeSetState(
                                                                   () {}));
+
+                                                          return;
                                                         }
                                                       } else {
                                                         context.pushNamed(
@@ -1567,20 +1823,75 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                             if (FFAppState()
                                                                     .creadoOk ==
                                                                 'si') {
-                                                              context.pushNamed(
-                                                                'comunidad',
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .fade,
-                                                                  ),
-                                                                },
-                                                              );
+                                                              if (FFAppState()
+                                                                      .email ==
+                                                                  'ops@emvipy.com') {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'hubComunidad',
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .fade,
+                                                                      duration: Duration(
+                                                                          milliseconds:
+                                                                              0),
+                                                                    ),
+                                                                  },
+                                                                );
+
+                                                                return;
+                                                              } else {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'comunidad',
+                                                                  queryParameters:
+                                                                      {
+                                                                    'grupo':
+                                                                        serializeParam(
+                                                                      1,
+                                                                      ParamType
+                                                                          .int,
+                                                                    ),
+                                                                    'nombre':
+                                                                        serializeParam(
+                                                                      'General',
+                                                                      ParamType
+                                                                          .String,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    kTransitionInfoKey:
+                                                                        TransitionInfo(
+                                                                      hasTransition:
+                                                                          true,
+                                                                      transitionType:
+                                                                          PageTransitionType
+                                                                              .fade,
+                                                                    ),
+                                                                  },
+                                                                );
+
+                                                                unawaited(
+                                                                  () async {
+                                                                    await UserLogActivityCall
+                                                                        .call(
+                                                                      authToken:
+                                                                          FFAppState()
+                                                                              .authToken,
+                                                                      seccion:
+                                                                          'Menú Comunidad Empresa',
+                                                                    );
+                                                                  }(),
+                                                                );
+                                                                return;
+                                                              }
                                                             } else {
                                                               await showModalBottomSheet(
                                                                 isScrollControlled:
@@ -1594,23 +1905,33 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                                                     context,
                                                                 builder:
                                                                     (context) {
-                                                                  return GestureDetector(
-                                                                    onTap: () =>
-                                                                        FocusScope.of(context)
-                                                                            .unfocus(),
+                                                                  return WebViewAware(
                                                                     child:
-                                                                        Padding(
-                                                                      padding: MediaQuery
-                                                                          .viewInsetsOf(
-                                                                              context),
+                                                                        GestureDetector(
+                                                                      onTap:
+                                                                          () {
+                                                                        FocusScope.of(context)
+                                                                            .unfocus();
+                                                                        FocusManager
+                                                                            .instance
+                                                                            .primaryFocus
+                                                                            ?.unfocus();
+                                                                      },
                                                                       child:
-                                                                          ModalErrorCuentaWidget(),
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ModalErrorCuentaWidget(),
+                                                                      ),
                                                                     ),
                                                                   );
                                                                 },
                                                               ).then((value) =>
                                                                   safeSetState(
                                                                       () {}));
+
+                                                              return;
                                                             }
                                                           } else {
                                                             context.pushNamed(
@@ -1686,13 +2007,18 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(context).unfocus(),
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: ModalErrorCuentaWidget(),
+                                        return WebViewAware(
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: ModalErrorCuentaWidget(),
+                                            ),
                                           ),
                                         );
                                       },
@@ -1771,13 +2097,18 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return GestureDetector(
-                                          onTap: () =>
-                                              FocusScope.of(context).unfocus(),
-                                          child: Padding(
-                                            padding: MediaQuery.viewInsetsOf(
-                                                context),
-                                            child: ModalErrorCuentaWidget(),
+                                        return WebViewAware(
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(context).unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: ModalErrorCuentaWidget(),
+                                            ),
                                           ),
                                         );
                                       },
@@ -1826,6 +2157,16 @@ class _HomeEmpresaWidgetState extends State<HomeEmpresaWidget> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 1.0),
+                      child: wrapWithModel(
+                        model: _model.menuUsuarioModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: MenuUsuarioWidget(
+                          index: 1,
+                        ),
                       ),
                     ),
                   ],

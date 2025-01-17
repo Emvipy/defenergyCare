@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'diario8_widget.dart' show Diario8Widget;
 import 'package:easy_debounce/easy_debounce.dart';
@@ -130,6 +131,10 @@ class Diario8Model extends FlutterFlowModel<Diario8Widget> {
   ApiCallResponse? apiP8;
   // Stores action output result for [Backend Call - API (diario finaliza)] action in Button widget.
   ApiCallResponse? apiResultyly2;
+  // Stores action output result for [Backend Call - API (diario Ocho)] action in Button widget.
+  ApiCallResponse? apiP8sin;
+  // Stores action output result for [Backend Call - API (diario finaliza)] action in Button widget.
+  ApiCallResponse? apiResultyly2sin;
   // Stores action output result for [Backend Call - API (diario Ocho)] action in Button widget.
   ApiCallResponse? apiP8Back;
 

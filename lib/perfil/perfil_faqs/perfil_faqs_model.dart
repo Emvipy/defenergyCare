@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'perfil_faqs_widget.dart' show PerfilFaqsWidget;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';

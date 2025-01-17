@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'emp_crea_encuesta3_model.dart';
 export 'emp_crea_encuesta3_model.dart';
 
@@ -69,7 +71,10 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -693,16 +698,22 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
                                                       FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalAddOpcionWidget(),
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalAddOpcionWidget(),
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -781,7 +792,7 @@ class _EmpCreaEncuesta3WidgetState extends State<EmpCreaEncuesta3Widget> {
                                           functions
                                                   .base64ToImage(FFAppState()
                                                       .imagenPreguntaEncuesta
-                                                      .first)
+                                                      .firstOrNull)
                                                   ?.bytes ??
                                               Uint8List.fromList([]),
                                           width: 300.0,

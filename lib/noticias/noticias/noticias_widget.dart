@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -63,7 +64,10 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -94,6 +98,8 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                       ),
                     },
                   );
+
+                  return;
                 } else {
                   context.pushNamed(
                     'Home_empresa',
@@ -105,6 +111,8 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                       ),
                     },
                   );
+
+                  return;
                 }
               },
             ),
@@ -141,12 +149,13 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                   15.0, 0.0, 15.0, 20.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Expanded(
                                     child: Align(
                                       alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Container(
-                                        width: 350.0,
+                                        width: 300.0,
                                         child: TextFormField(
                                           controller: _model.textController,
                                           focusNode: _model.textFieldFocusNode,
@@ -292,14 +301,15 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                             if (_model.mostrarFiltro == 'si')
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 0.0, 15.0, 20.0),
+                                    15.0, 0.0, 15.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     FlutterFlowDropDown<String>(
-                                      controller:
-                                          _model.dropDownValueController ??=
-                                              FormFieldController<String>(null),
+                                      controller: _model
+                                              .dropDownEnfermedadValueController ??=
+                                          FormFieldController<String>(null),
                                       options: [
                                         FFLocalizations.of(context).getText(
                                           'to0vrvyf' /* COVID persistente */,
@@ -321,16 +331,17 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                         )
                                       ],
                                       onChanged: (val) async {
-                                        safeSetState(
-                                            () => _model.dropDownValue = val);
-                                        _model.filtro = _model.dropDownValue!;
+                                        safeSetState(() => _model
+                                            .dropDownEnfermedadValue = val);
+                                        _model.filtro =
+                                            _model.dropDownEnfermedadValue!;
                                         safeSetState(() {});
                                         safeSetState(() =>
                                             _model.apiRequestCompleter = null);
                                         await _model
                                             .waitForApiRequestCompleted();
                                       },
-                                      width: 350.0,
+                                      width: 345.0,
                                       height: 48.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -340,7 +351,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                           ),
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'urot6y3q' /* Selecciona una enfermedad... */,
+                                        'urot6y3q' /* Filtro por Enfermedad... */,
                                       ),
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
@@ -364,12 +375,145 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                   ],
                                 ),
                               ),
+                            if (_model.mostrarFiltro == 'si')
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    15.0, 0.0, 15.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FutureBuilder<ApiCallResponse>(
+                                      future: DespAutorNoticiasCall.call(),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitCircle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 50.0,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        final dropDownAutorDespAutorNoticiasResponse =
+                                            snapshot.data!;
+
+                                        return FlutterFlowDropDown<String>(
+                                          controller: _model
+                                                  .dropDownAutorValueController ??=
+                                              FormFieldController<String>(null),
+                                          options: DespAutorNoticiasCall.autor(
+                                            dropDownAutorDespAutorNoticiasResponse
+                                                .jsonBody,
+                                          )!,
+                                          onChanged: (val) async {
+                                            safeSetState(() => _model
+                                                .dropDownAutorValue = val);
+                                            safeSetState(() => _model
+                                                .apiRequestCompleter = null);
+                                            await _model
+                                                .waitForApiRequestCompleted();
+                                          },
+                                          width: 345.0,
+                                          height: 48.0,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            '7vvu8u5h' /* Filtro por Autor... */,
+                                          ),
+                                          icon: Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 24.0,
+                                          ),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          elevation: 2.0,
+                                          borderColor: Colors.transparent,
+                                          borderWidth: 2.0,
+                                          borderRadius: 10.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          hidesUnderline: true,
+                                          isOverButton: true,
+                                          isSearchable: false,
+                                          isMultiSelect: false,
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            if (_model.mostrarFiltro == 'no')
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 5.0, 0.0, 10.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    FFButtonWidget(
+                                      onPressed: () async {
+                                        context.pushNamed(
+                                          'noticiasAso',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                            ),
+                                          },
+                                        );
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        'z9qj97jm' /* Ver noticias de Asociaciones */,
+                                      ),
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.white,
+                                              letterSpacing: 0.0,
+                                            ),
+                                        elevation: 0.0,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             FutureBuilder<ApiCallResponse>(
                               future: (_model.apiRequestCompleter ??=
                                       Completer<ApiCallResponse>()
                                         ..complete(NoticiasCall.call(
                                           enfermedad: _model.filtro,
                                           palabra: _model.textController.text,
+                                          autor: _model.autor,
                                         )))
                                   .future,
                               builder: (context, snapshot) {
@@ -424,7 +568,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                   BorderRadius.circular(10.0),
                                             ),
                                             child: Container(
-                                              width: 350.0,
+                                              width: 345.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -446,7 +590,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'noticiasDetalle',
+                                                        'noticiasDetalleNew',
                                                         queryParameters: {
                                                           'noticiasId':
                                                               serializeParam(
@@ -582,7 +726,7 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                                     .transparent,
                                                             onTap: () async {
                                                               context.pushNamed(
-                                                                'noticiasDetalle',
+                                                                'noticiasDetalleNew',
                                                                 queryParameters:
                                                                     {
                                                                   'noticiasId':
@@ -647,6 +791,9 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                     child: Row(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
                                                       children: [
                                                         Padding(
                                                           padding:
@@ -661,6 +808,33 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                                               childNoticiasItem,
                                                               r'''$._likes_noticias_of_noticias''',
                                                             ).toString()} Me gusta',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      8.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            '${getJsonField(
+                                                              childNoticiasItem,
+                                                              r'''$._comentarios_noticias_of_noticias''',
+                                                            ).toString()} Comentarios',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -706,14 +880,24 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
+                                var _shouldSetState = false;
                                 _model.apiCreaNews =
                                     await EmpresaCreaNoticiaCall.call(
                                   authToken: FFAppState().authToken,
                                 );
 
+                                _shouldSetState = true;
                                 if ((_model.apiCreaNews?.succeeded ?? true)) {
+                                  FFAppState().noticiaId =
+                                      EmpresaCreaNoticiaCall.id(
+                                    (_model.apiCreaNews?.jsonBody ?? ''),
+                                  )!;
+                                  FFAppState().textES = '';
+                                  FFAppState().textEN = '';
+                                  safeSetState(() {});
+
                                   context.pushNamed(
-                                    'noticiasCrea',
+                                    'noticiasCreaNew',
                                     queryParameters: {
                                       'noticiaId': serializeParam(
                                         EmpresaCreaNoticiaCall.id(
@@ -725,6 +909,10 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                         'no',
                                         ParamType.String,
                                       ),
+                                      'recargar': serializeParam(
+                                        'no',
+                                        ParamType.String,
+                                      ),
                                     }.withoutNulls,
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: TransitionInfo(
@@ -733,9 +921,15 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                       ),
                                     },
                                   );
+
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
+                                } else {
+                                  if (_shouldSetState) safeSetState(() {});
+                                  return;
                                 }
 
-                                safeSetState(() {});
+                                if (_shouldSetState) safeSetState(() {});
                               },
                               text: FFLocalizations.of(context).getText(
                                 '1v5seaqm' /* Crear Nueva Noticia */,

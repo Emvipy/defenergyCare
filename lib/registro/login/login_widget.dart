@@ -8,15 +8,19 @@ import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/registro/modal_update/modal_update_widget.dart';
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -96,7 +100,10 @@ class _LoginWidgetState extends State<LoginWidget>
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -590,6 +597,12 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       FFAppState().password = _model
                                                           .passwordTextController
                                                           .text;
+                                                      FFAppState().userAsoId =
+                                                          LoginCall.asoId(
+                                                        (_model.apiloginCopy
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                      )!;
                                                       safeSetState(() {});
                                                       if (LoginCall.verAcual(
                                                             (_model.apiloginCopy
@@ -722,17 +735,25 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           enableDrag: false,
                                                           context: context,
                                                           builder: (context) {
-                                                            return GestureDetector(
-                                                              onTap: () =>
+                                                            return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
                                                                   FocusScope.of(
                                                                           context)
-                                                                      .unfocus(),
-                                                              child: Padding(
-                                                                padding: MediaQuery
-                                                                    .viewInsetsOf(
-                                                                        context),
-                                                                child:
-                                                                    ModalUpdateWidget(),
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      ModalUpdateWidget(),
+                                                                ),
                                                               ),
                                                             );
                                                           },
@@ -754,17 +775,25 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         enableDrag: false,
                                                         context: context,
                                                         builder: (context) {
-                                                          return GestureDetector(
-                                                            onTap: () =>
+                                                          return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
+                                                              onTap: () {
                                                                 FocusScope.of(
                                                                         context)
-                                                                    .unfocus(),
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  ModalErrorCuentaWidget(),
+                                                                    .unfocus();
+                                                                FocusManager
+                                                                    .instance
+                                                                    .primaryFocus
+                                                                    ?.unfocus();
+                                                              },
+                                                              child: Padding(
+                                                                padding: MediaQuery
+                                                                    .viewInsetsOf(
+                                                                        context),
+                                                                child:
+                                                                    ModalErrorCuentaWidget(),
+                                                              ),
                                                             ),
                                                           );
                                                         },
@@ -890,6 +919,470 @@ class _LoginWidgetState extends State<LoginWidget>
                                           ),
                                         ),
                                       ),
+                                      if ((FFAppState().email != null &&
+                                              FFAppState().email != '') &&
+                                          (FFAppState().biopwd != null &&
+                                              FFAppState().biopwd != '') &&
+                                          (isWeb == false))
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 15.0, 0.0, 15.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  var _shouldSetState = false;
+                                                  final _localAuth =
+                                                      LocalAuthentication();
+                                                  bool _isBiometricSupported =
+                                                      await _localAuth
+                                                          .isDeviceSupported();
+
+                                                  if (_isBiometricSupported) {
+                                                    try {
+                                                      _model.bioDef = await _localAuth
+                                                          .authenticate(
+                                                              localizedReason:
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                        '0avv2omr' /* Accede a Defenergy */,
+                                                      ));
+                                                    } on PlatformException {
+                                                      _model.bioDef = false;
+                                                    }
+                                                    safeSetState(() {});
+                                                  }
+
+                                                  _shouldSetState = true;
+                                                  if (_model.bioDef == true) {
+                                                    GoRouter.of(context)
+                                                        .prepareAuthEvent();
+
+                                                    final user =
+                                                        await authManager
+                                                            .signInWithEmail(
+                                                      context,
+                                                      FFAppState().email,
+                                                      FFAppState().biopwd,
+                                                    );
+                                                    if (user == null) {
+                                                      return;
+                                                    }
+
+                                                    await actions
+                                                        .onesignalLogin(
+                                                      currentUserUid,
+                                                    );
+                                                    _model.passCopy2 =
+                                                        await actions
+                                                            .encodeBase64(
+                                                      FFAppState().email,
+                                                    );
+                                                    _shouldSetState = true;
+                                                    _model.apiloginBio2 =
+                                                        await LoginCall.call(
+                                                      email: FFAppState().email,
+                                                      password:
+                                                          _model.passCopy2,
+                                                      firebase: currentUserUid,
+                                                      version: 1,
+                                                      so: isAndroid == true
+                                                          ? 'Android'
+                                                          : 'iOS',
+                                                    );
+
+                                                    _shouldSetState = true;
+                                                    if ((_model.apiloginBio2
+                                                            ?.succeeded ??
+                                                        true)) {
+                                                      if (LoginCall.creadoOk(
+                                                            (_model.apiloginCopy
+                                                                    ?.jsonBody ??
+                                                                ''),
+                                                          ) ==
+                                                          'si') {
+                                                        FFAppState().authToken =
+                                                            LoginCall.authToken(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().xUserId =
+                                                            LoginCall.id(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().nombre =
+                                                            LoginCall.nombre(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().apellidos =
+                                                            LoginCall.apellidos(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().avatar =
+                                                            LoginCall.avatar(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().perfil =
+                                                            LoginCall
+                                                                .tipoUsuario(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState()
+                                                                .enfermedadId =
+                                                            LoginCall
+                                                                .enfermedadId(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState()
+                                                                .enfermedadTxt =
+                                                            LoginCall
+                                                                .enfermedadTxt(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().perfilId =
+                                                            LoginCall.perfilId(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().creadoOk =
+                                                            LoginCall.creadoOk(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState()
+                                                                .nombreEmpresa =
+                                                            LoginCall
+                                                                .nombreEmpresa(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        FFAppState().password =
+                                                            _model
+                                                                .passwordTextController
+                                                                .text;
+                                                        FFAppState().userAsoId =
+                                                            LoginCall.asoId(
+                                                          (_model.apiloginCopy
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )!;
+                                                        safeSetState(() {});
+                                                        if (LoginCall.verAcual(
+                                                              (_model.apiloginCopy
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            ) ==
+                                                            LoginCall.verNueva(
+                                                              (_model.apiloginCopy
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            )) {
+                                                          unawaited(
+                                                            () async {
+                                                              await UserLogActivityCall
+                                                                  .call(
+                                                                authToken:
+                                                                    FFAppState()
+                                                                        .authToken,
+                                                                seccion:
+                                                                    'Login',
+                                                              );
+                                                            }(),
+                                                          );
+                                                          if (LoginCall
+                                                                  .perfilId(
+                                                                (_model.apiloginCopy
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                              ) ==
+                                                              1) {
+                                                            context
+                                                                .pushNamedAuth(
+                                                              'Home',
+                                                              context.mounted,
+                                                              extra: <String,
+                                                                  dynamic>{
+                                                                kTransitionInfoKey:
+                                                                    TransitionInfo(
+                                                                  hasTransition:
+                                                                      true,
+                                                                  transitionType:
+                                                                      PageTransitionType
+                                                                          .fade,
+                                                                  duration: Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                                ),
+                                                              },
+                                                            );
+
+                                                            safeSetState(() {
+                                                              _model
+                                                                  .emailAddressTextController
+                                                                  ?.clear();
+                                                              _model
+                                                                  .passwordTextController
+                                                                  ?.clear();
+                                                            });
+                                                            if (_shouldSetState)
+                                                              safeSetState(
+                                                                  () {});
+                                                            return;
+                                                          } else {
+                                                            if (LoginCall
+                                                                    .validado(
+                                                                  (_model.apiloginCopy
+                                                                          ?.jsonBody ??
+                                                                      ''),
+                                                                ) ==
+                                                                'si') {
+                                                              context
+                                                                  .pushNamedAuth(
+                                                                'Home_empresa',
+                                                                context.mounted,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
+                                                              );
+
+                                                              safeSetState(() {
+                                                                _model
+                                                                    .emailAddressTextController
+                                                                    ?.clear();
+                                                                _model
+                                                                    .passwordTextController
+                                                                    ?.clear();
+                                                              });
+                                                              if (_shouldSetState)
+                                                                safeSetState(
+                                                                    () {});
+                                                              return;
+                                                            } else {
+                                                              context
+                                                                  .goNamedAuth(
+                                                                'empresa_pdte_validacionCopy',
+                                                                context.mounted,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                  ),
+                                                                },
+                                                              );
+
+                                                              if (_shouldSetState)
+                                                                safeSetState(
+                                                                    () {});
+                                                              return;
+                                                            }
+                                                          }
+                                                        } else {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            isDismissible:
+                                                                false,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return WebViewAware(
+                                                                child:
+                                                                    GestureDetector(
+                                                                  onTap: () {
+                                                                    FocusScope.of(
+                                                                            context)
+                                                                        .unfocus();
+                                                                    FocusManager
+                                                                        .instance
+                                                                        .primaryFocus
+                                                                        ?.unfocus();
+                                                                  },
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
+                                                                    child:
+                                                                        ModalUpdateWidget(),
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              safeSetState(
+                                                                  () {}));
+
+                                                          if (_shouldSetState)
+                                                            safeSetState(() {});
+                                                          return;
+                                                        }
+                                                      } else {
+                                                        await showModalBottomSheet(
+                                                          isScrollControlled:
+                                                              true,
+                                                          backgroundColor:
+                                                              Colors
+                                                                  .transparent,
+                                                          isDismissible: false,
+                                                          enableDrag: false,
+                                                          context: context,
+                                                          builder: (context) {
+                                                            return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          context)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      ModalErrorCuentaWidget(),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        ).then((value) =>
+                                                            safeSetState(
+                                                                () {}));
+
+                                                        if (_shouldSetState)
+                                                          safeSetState(() {});
+                                                        return;
+                                                      }
+                                                    } else {
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'Ha ocurrido un error (X)',
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                            ),
+                                                          ),
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  4000),
+                                                          backgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .error,
+                                                        ),
+                                                      );
+                                                      if (_shouldSetState)
+                                                        safeSetState(() {});
+                                                      return;
+                                                    }
+                                                  } else {
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode ==
+                                                                  'es'
+                                                              ? 'Autenticación fallida...'
+                                                              : 'Authentication failed...',
+                                                          style: TextStyle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                          ),
+                                                        ),
+                                                        duration: Duration(
+                                                            milliseconds: 4000),
+                                                        backgroundColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                      ),
+                                                    );
+                                                    if (_shouldSetState)
+                                                      safeSetState(() {});
+                                                    return;
+                                                  }
+
+                                                  if (_shouldSetState)
+                                                    safeSetState(() {});
+                                                },
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    Theme.of(context)
+                                                                .brightness ==
+                                                            Brightness.dark
+                                                        ? 'assets/images/touch_dark.png'
+                                                        : 'assets/images/touch_light.png',
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
 
                                       // You will have to add an action on this rich text to go to your login page.
                                       if (FFLocalizations.of(context)

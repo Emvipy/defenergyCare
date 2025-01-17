@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/noticias/modal_crea_comentario/modal_crea_comentario_widget.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import 'dart:ui';
 import 'dart:async';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'noticias_detalle_model.dart';
 export 'noticias_detalle_model.dart';
 
@@ -77,7 +79,10 @@ class _NoticiasDetalleWidgetState extends State<NoticiasDetalleWidget> {
         final noticiasDetalleNoticiaIndividualResponse = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -1094,18 +1099,24 @@ class _NoticiasDetalleWidgetState extends State<NoticiasDetalleWidget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () =>
+                                              return WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () {
                                                     FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child:
-                                                      ModalCreaComentarioWidget(
-                                                    noticiaId:
-                                                        widget!.noticiasId!,
+                                                        .unfocus();
+                                                    FocusManager
+                                                        .instance.primaryFocus
+                                                        ?.unfocus();
+                                                  },
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        ModalCreaComentarioWidget(
+                                                      noticiaId:
+                                                          widget!.noticiasId!,
+                                                    ),
                                                   ),
                                                 ),
                                               );

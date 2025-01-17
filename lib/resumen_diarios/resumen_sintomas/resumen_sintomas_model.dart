@@ -4,13 +4,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
-import 'resumen_widget.dart' show ResumenWidget;
+import 'dart:ui';
+import 'resumen_sintomas_widget.dart' show ResumenSintomasWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class ResumenModel extends FlutterFlowModel<ResumenWidget> {
+class ResumenSintomasModel extends FlutterFlowModel<ResumenSintomasWidget> {
   ///  Local state fields for this page.
 
   String? manana;
@@ -233,12 +234,6 @@ class ResumenModel extends FlutterFlowModel<ResumenWidget> {
 
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - API (resumen carga alimentos)] action in Container_desayuno widget.
-  ApiCallResponse? apiDesayuno;
-  // Stores action output result for [Backend Call - API (resumen carga alimentos)] action in Container_comida widget.
-  ApiCallResponse? apiComida;
-  // Stores action output result for [Backend Call - API (resumen carga alimentos)] action in Container_cena widget.
-  ApiCallResponse? apiCena;
   // Model for menu_usuario component.
   late MenuUsuarioModel menuUsuarioModel;
 

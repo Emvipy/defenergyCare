@@ -4,15 +4,16 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'resumen_model.dart';
-export 'resumen_model.dart';
+import 'resumen_sintomas_back_up_model.dart';
+export 'resumen_sintomas_back_up_model.dart';
 
-class ResumenWidget extends StatefulWidget {
-  const ResumenWidget({
+class ResumenSintomasBackUpWidget extends StatefulWidget {
+  const ResumenSintomasBackUpWidget({
     super.key,
     required this.diarioId,
     required this.fechaTxt,
@@ -22,18 +23,20 @@ class ResumenWidget extends StatefulWidget {
   final String? fechaTxt;
 
   @override
-  State<ResumenWidget> createState() => _ResumenWidgetState();
+  State<ResumenSintomasBackUpWidget> createState() =>
+      _ResumenSintomasBackUpWidgetState();
 }
 
-class _ResumenWidgetState extends State<ResumenWidget> {
-  late ResumenModel _model;
+class _ResumenSintomasBackUpWidgetState
+    extends State<ResumenSintomasBackUpWidget> {
+  late ResumenSintomasBackUpModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ResumenModel());
+    _model = createModel(context, () => ResumenSintomasBackUpModel());
   }
 
   @override
@@ -69,10 +72,13 @@ class _ResumenWidgetState extends State<ResumenWidget> {
             ),
           );
         }
-        final resumenResumenDiarioResponse = snapshot.data!;
+        final resumenSintomasBackUpResumenDiarioResponse = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -98,7 +104,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                 title: Align(
                   alignment: AlignmentDirectional(-1.0, 0.0),
                   child: Text(
-                    'Resumen del ${widget!.fechaTxt}',
+                    FFLocalizations.of(context).getText(
+                      'nt31dzqj' /* Resumen de Síntomas */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Open Sans',
                           color: FlutterFlowTheme.of(context).secondaryText,
@@ -120,6 +128,24 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Datos del día ${widget!.fechaTxt}',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                              ),
+                            ],
+                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
@@ -158,7 +184,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               ),
                                               child: Image.network(
                                                 ResumenDiarioCall.imagenBateria(
-                                                  resumenResumenDiarioResponse
+                                                  resumenSintomasBackUpResumenDiarioResponse
                                                       .jsonBody,
                                                 )!,
                                                 width: 65.0,
@@ -180,7 +206,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'jn8et9oh' /* Tu nivel de energía ha sido de... */,
+                                                '9hdzocjb' /* Tu nivel de energía ha sido de... */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -192,7 +218,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                             Text(
                                               '${ResumenDiarioCall.nivelEnergia(
-                                                resumenResumenDiarioResponse
+                                                resumenSintomasBackUpResumenDiarioResponse
                                                     .jsonBody,
                                               )?.toString()}%',
                                               style: FlutterFlowTheme.of(
@@ -227,7 +253,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 Flexible(
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'p81q0u2g' /* Tuviste menos energía en la  */,
+                                      'xfs0417x' /* Tuviste menos energía en la  */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
@@ -256,7 +282,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     children: [
                                       Opacity(
                                         opacity: ResumenDiarioCall.manana(
-                                                  resumenResumenDiarioResponse
+                                                  resumenSintomasBackUpResumenDiarioResponse
                                                       .jsonBody,
                                                 ) ==
                                                 'si'
@@ -286,7 +312,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'qirrkun3' /* Mañana */,
+                                                  'gzq5dtyr' /* Mañana */,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -311,7 +337,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           height: 10.0,
                                           decoration: BoxDecoration(
                                             color: ResumenDiarioCall.manana(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ) ==
                                                     'si'
@@ -331,7 +357,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   children: [
                                     Opacity(
                                       opacity: ResumenDiarioCall.tarde(
-                                                resumenResumenDiarioResponse
+                                                resumenSintomasBackUpResumenDiarioResponse
                                                     .jsonBody,
                                               ) ==
                                               'si'
@@ -361,7 +387,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '4zmecmkp' /* Tarde */,
+                                                '7fsgma2o' /* Tarde */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -386,7 +412,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         height: 10.0,
                                         decoration: BoxDecoration(
                                           color: ResumenDiarioCall.tarde(
-                                                    resumenResumenDiarioResponse
+                                                    resumenSintomasBackUpResumenDiarioResponse
                                                         .jsonBody,
                                                   ) ==
                                                   'si'
@@ -405,7 +431,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   children: [
                                     Opacity(
                                       opacity: ResumenDiarioCall.noche(
-                                                resumenResumenDiarioResponse
+                                                resumenSintomasBackUpResumenDiarioResponse
                                                     .jsonBody,
                                               ) ==
                                               'si'
@@ -435,7 +461,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'acocreii' /* Noche */,
+                                                'olgg73k5' /* Noche */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -460,7 +486,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                         height: 10.0,
                                         decoration: BoxDecoration(
                                           color: ResumenDiarioCall.noche(
-                                                    resumenResumenDiarioResponse
+                                                    resumenSintomasBackUpResumenDiarioResponse
                                                         .jsonBody,
                                                   ) ==
                                                   'si'
@@ -477,14 +503,17 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ],
                             ),
                           ),
-                          if (ResumenDiarioCall.calidadSuenoTxt(
-                                    resumenResumenDiarioResponse.jsonBody,
-                                  ) !=
-                                  null &&
-                              ResumenDiarioCall.calidadSuenoTxt(
-                                    resumenResumenDiarioResponse.jsonBody,
-                                  ) !=
-                                  '')
+                          if ((ResumenDiarioCall.calidadSuenoTxt(
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
+                                      ) !=
+                                      null &&
+                                  ResumenDiarioCall.calidadSuenoTxt(
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
+                                      ) !=
+                                      '') &&
+                              (FFAppState().authToken == '1'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 15.0, 0.0, 3.0),
@@ -495,7 +524,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   Flexible(
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'jjkqzg44' /* Esta fue tu calidad de sueño */,
+                                        '6izyix9n' /* Esta fue tu calidad de sueño */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
@@ -511,14 +540,17 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ],
                               ),
                             ),
-                          if (ResumenDiarioCall.calidadSuenoTxt(
-                                    resumenResumenDiarioResponse.jsonBody,
-                                  ) !=
-                                  null &&
-                              ResumenDiarioCall.calidadSuenoTxt(
-                                    resumenResumenDiarioResponse.jsonBody,
-                                  ) !=
-                                  '')
+                          if ((ResumenDiarioCall.calidadSuenoTxt(
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
+                                      ) !=
+                                      null &&
+                                  ResumenDiarioCall.calidadSuenoTxt(
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
+                                      ) !=
+                                      '') &&
+                              (FFAppState().authToken == '1'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
@@ -530,7 +562,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.network(
                                       ResumenDiarioCall.imagenSueno(
-                                        resumenResumenDiarioResponse.jsonBody,
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
                                       )!,
                                       width: 80.0,
                                       height: 80.0,
@@ -540,14 +573,17 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ],
                               ),
                             ),
-                          if (ResumenDiarioCall.calidadSuenoTxt(
-                                    resumenResumenDiarioResponse.jsonBody,
-                                  ) !=
-                                  null &&
-                              ResumenDiarioCall.calidadSuenoTxt(
-                                    resumenResumenDiarioResponse.jsonBody,
-                                  ) !=
-                                  '')
+                          if ((ResumenDiarioCall.calidadSuenoTxt(
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
+                                      ) !=
+                                      null &&
+                                  ResumenDiarioCall.calidadSuenoTxt(
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
+                                      ) !=
+                                      '') &&
+                              (FFAppState().authToken == '1'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 0.0),
@@ -558,7 +594,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   Text(
                                     valueOrDefault<String>(
                                       ResumenDiarioCall.calidadSuenoTxt(
-                                        resumenResumenDiarioResponse.jsonBody,
+                                        resumenSintomasBackUpResumenDiarioResponse
+                                            .jsonBody,
                                       ),
                                       '-',
                                     ),
@@ -585,7 +622,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 Flexible(
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '6nd8nlqm' /* Estas son las actividades que ... */,
+                                      '2lvpn6c3' /* Estas son las actividades que ... */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
@@ -767,7 +804,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 Flexible(
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'z6rion20' /* Síntomas que más has experimen... */,
+                                      '0fz0l6c9' /* Síntomas que más has experimen... */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
@@ -946,7 +983,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 Flexible(
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'z1bvxjg8' /* Tu nivel de dolor ha sido de: */,
+                                      'kbplg9w3' /* Tu nivel de dolor ha sido de: */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
@@ -973,7 +1010,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                   child: Image.network(
                                     ResumenDiarioCall.imagenDolor(
-                                      resumenResumenDiarioResponse.jsonBody,
+                                      resumenSintomasBackUpResumenDiarioResponse
+                                          .jsonBody,
                                     )!,
                                     width: 80.0,
                                     height: 80.0,
@@ -993,7 +1031,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 Text(
                                   valueOrDefault<String>(
                                     ResumenDiarioCall.intensidadDolorTxt(
-                                      resumenResumenDiarioResponse.jsonBody,
+                                      resumenSintomasBackUpResumenDiarioResponse
+                                          .jsonBody,
                                     ),
                                     '-',
                                   ),
@@ -1026,7 +1065,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           10.0, 0.0, 10.0, 0.0),
                                       child: Text(
                                         FFLocalizations.of(context).getText(
-                                          '1sa6fdvl' /* Tomaste estos medicamentos  s... */,
+                                          'mxar2l3v' /* Tomaste estos medicamentos / s... */,
                                         ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
@@ -1045,23 +1084,28 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                             ),
                           ),
                           if ((ResumenDiarioCall.med1(
-                                    resumenResumenDiarioResponse.jsonBody,
+                                    resumenSintomasBackUpResumenDiarioResponse
+                                        .jsonBody,
                                   ) ==
                                   'no') &&
                               (ResumenDiarioCall.med2(
-                                    resumenResumenDiarioResponse.jsonBody,
+                                    resumenSintomasBackUpResumenDiarioResponse
+                                        .jsonBody,
                                   ) ==
                                   'no') &&
                               (ResumenDiarioCall.vit1(
-                                    resumenResumenDiarioResponse.jsonBody,
+                                    resumenSintomasBackUpResumenDiarioResponse
+                                        .jsonBody,
                                   ) ==
                                   'no') &&
                               (ResumenDiarioCall.vit2(
-                                    resumenResumenDiarioResponse.jsonBody,
+                                    resumenSintomasBackUpResumenDiarioResponse
+                                        .jsonBody,
                                   ) ==
                                   'no') &&
                               (ResumenDiarioCall.vit3(
-                                    resumenResumenDiarioResponse.jsonBody,
+                                    resumenSintomasBackUpResumenDiarioResponse
+                                        .jsonBody,
                                   ) ==
                                   'no'))
                             Padding(
@@ -1079,7 +1123,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'apc9vuet' /* No has registrado medicamentos... */,
+                                            'agnowgzn' /* No has registrado medicamentos... */,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -1101,7 +1145,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             ),
                           if (ResumenDiarioCall.med1(
-                                resumenResumenDiarioResponse.jsonBody,
+                                resumenSintomasBackUpResumenDiarioResponse
+                                    .jsonBody,
                               ) ==
                               'si')
                             Column(
@@ -1140,7 +1185,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                       valueOrDefault<String>(
                                                         ResumenDiarioCall
                                                             .nombreMed1(
-                                                          resumenResumenDiarioResponse
+                                                          resumenSintomasBackUpResumenDiarioResponse
                                                               .jsonBody,
                                                         ),
                                                         '-',
@@ -1177,7 +1222,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       if (ResumenDiarioCall.alivioSintomasMed1(
-                                            resumenResumenDiarioResponse
+                                            resumenSintomasBackUpResumenDiarioResponse
                                                 .jsonBody,
                                           ) ==
                                           'no')
@@ -1194,7 +1239,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'h18tujcs' /* Este medicamento no ha mejorad... */,
+                                                    'cw67f1zj' /* Este medicamento no ha mejorad... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1215,7 +1260,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         ),
                                       if (ResumenDiarioCall.alivioSintomasMed1(
-                                            resumenResumenDiarioResponse
+                                            resumenSintomasBackUpResumenDiarioResponse
                                                 .jsonBody,
                                           ) ==
                                           'si')
@@ -1232,7 +1277,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'fdz3lqnw' /* Este medicamento ha mejorado e... */,
+                                                    'z4bte4fy' /* Este medicamento ha mejorado e... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1253,7 +1298,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         ),
                                       if (ResumenDiarioCall.mejora1Med1(
-                                            resumenResumenDiarioResponse
+                                            resumenSintomasBackUpResumenDiarioResponse
                                                 .jsonBody,
                                           ) !=
                                           'n/a')
@@ -1269,7 +1314,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Text(
                                                 valueOrDefault<String>(
                                                   ResumenDiarioCall.mejora1Med1(
-                                                    resumenResumenDiarioResponse
+                                                    resumenSintomasBackUpResumenDiarioResponse
                                                         .jsonBody,
                                                   ),
                                                   '-',
@@ -1291,7 +1336,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         ),
                                       if (ResumenDiarioCall.mejora2Med1(
-                                            resumenResumenDiarioResponse
+                                            resumenSintomasBackUpResumenDiarioResponse
                                                 .jsonBody,
                                           ) !=
                                           'n/a')
@@ -1307,7 +1352,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Text(
                                                 valueOrDefault<String>(
                                                   ResumenDiarioCall.mejora2Med1(
-                                                    resumenResumenDiarioResponse
+                                                    resumenSintomasBackUpResumenDiarioResponse
                                                         .jsonBody,
                                                   ),
                                                   '-',
@@ -1329,7 +1374,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         ),
                                       if (ResumenDiarioCall.mejora3Med1(
-                                            resumenResumenDiarioResponse
+                                            resumenSintomasBackUpResumenDiarioResponse
                                                 .jsonBody,
                                           ) !=
                                           'n/a')
@@ -1345,7 +1390,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Text(
                                                 valueOrDefault<String>(
                                                   ResumenDiarioCall.mejora3Med1(
-                                                    resumenResumenDiarioResponse
+                                                    resumenSintomasBackUpResumenDiarioResponse
                                                         .jsonBody,
                                                   ),
                                                   '-',
@@ -1367,7 +1412,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         ),
                                       if (ResumenDiarioCall.mejora4Med1(
-                                            resumenResumenDiarioResponse
+                                            resumenSintomasBackUpResumenDiarioResponse
                                                 .jsonBody,
                                           ) !=
                                           'n/a')
@@ -1383,7 +1428,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Text(
                                                 valueOrDefault<String>(
                                                   ResumenDiarioCall.mejora4Med1(
-                                                    resumenResumenDiarioResponse
+                                                    resumenSintomasBackUpResumenDiarioResponse
                                                         .jsonBody,
                                                   ),
                                                   '-',
@@ -1405,7 +1450,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         ),
                                       if (ResumenDiarioCall.mejora5Med1(
-                                            resumenResumenDiarioResponse
+                                            resumenSintomasBackUpResumenDiarioResponse
                                                 .jsonBody,
                                           ) !=
                                           'n/a')
@@ -1421,7 +1466,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               Text(
                                                 valueOrDefault<String>(
                                                   ResumenDiarioCall.mejora5Med1(
-                                                    resumenResumenDiarioResponse
+                                                    resumenSintomasBackUpResumenDiarioResponse
                                                         .jsonBody,
                                                   ),
                                                   '-',
@@ -1448,7 +1493,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ],
                             ),
                           if (ResumenDiarioCall.med2(
-                                resumenResumenDiarioResponse.jsonBody,
+                                resumenSintomasBackUpResumenDiarioResponse
+                                    .jsonBody,
                               ) ==
                               'si')
                             Padding(
@@ -1495,7 +1541,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                         valueOrDefault<String>(
                                                           ResumenDiarioCall
                                                               .nombreMed2(
-                                                            resumenResumenDiarioResponse
+                                                            resumenSintomasBackUpResumenDiarioResponse
                                                                 .jsonBody,
                                                           ),
                                                           '-',
@@ -1537,7 +1583,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       children: [
                                         if (ResumenDiarioCall
                                                 .alivioSintomasMed2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'no')
@@ -1554,7 +1600,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '7p5v831o' /* Este medicamento no ha mejorad... */,
+                                                      'x8ip770q' /* Este medicamento no ha mejorad... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1575,7 +1621,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         if (ResumenDiarioCall
                                                 .alivioSintomasMed2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'si')
@@ -1592,7 +1638,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'k2wgz0mo' /* Este medicamento ha mejorado e... */,
+                                                      '4pd7n5vv' /* Este medicamento ha mejorado e... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1612,7 +1658,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora1Med2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -1629,7 +1675,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora1Med2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -1652,7 +1698,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora2Med2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -1669,7 +1715,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora2Med2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -1692,7 +1738,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora3Med2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -1709,7 +1755,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora3Med2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -1732,7 +1778,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora4Med2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -1749,7 +1795,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora4Med2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -1772,7 +1818,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora5Med2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -1789,7 +1835,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora5Med2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -1818,7 +1864,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             ),
                           if (ResumenDiarioCall.vit1(
-                                resumenResumenDiarioResponse.jsonBody,
+                                resumenSintomasBackUpResumenDiarioResponse
+                                    .jsonBody,
                               ) ==
                               'si')
                             Padding(
@@ -1865,7 +1912,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                         valueOrDefault<String>(
                                                           ResumenDiarioCall
                                                               .nombreVit1(
-                                                            resumenResumenDiarioResponse
+                                                            resumenSintomasBackUpResumenDiarioResponse
                                                                 .jsonBody,
                                                           ),
                                                           '-',
@@ -1907,7 +1954,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       children: [
                                         if (ResumenDiarioCall
                                                 .alivioSintomasVit1(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'no')
@@ -1924,7 +1971,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'r30vyzvb' /* Este medicamento no ha mejorad... */,
+                                                      '87vshqtg' /* Este medicamento no ha mejorad... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1945,7 +1992,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         if (ResumenDiarioCall
                                                 .alivioSintomasVit1(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'si')
@@ -1962,7 +2009,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'lk2b5bk5' /* Este suplemento ha mejorado es... */,
+                                                      'ql0jdigu' /* Este suplemento ha mejorado es... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -1982,7 +2029,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora1Vit1(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -1999,7 +2046,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora1Vit1(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2022,7 +2069,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora2Vit1(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2039,7 +2086,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora2Vit1(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2062,7 +2109,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora3Vit1(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2079,7 +2126,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora3Vit1(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2102,7 +2149,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora4Vit1(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2119,7 +2166,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora4Vit1(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2142,7 +2189,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora5Vit1(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2159,7 +2206,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora5Vit1(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2188,7 +2235,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             ),
                           if (ResumenDiarioCall.vit2(
-                                resumenResumenDiarioResponse.jsonBody,
+                                resumenSintomasBackUpResumenDiarioResponse
+                                    .jsonBody,
                               ) ==
                               'si')
                             Padding(
@@ -2235,7 +2283,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                         valueOrDefault<String>(
                                                           ResumenDiarioCall
                                                               .nombreVit2(
-                                                            resumenResumenDiarioResponse
+                                                            resumenSintomasBackUpResumenDiarioResponse
                                                                 .jsonBody,
                                                           ),
                                                           '-',
@@ -2277,7 +2325,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       children: [
                                         if (ResumenDiarioCall
                                                 .alivioSintomasVit2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'no')
@@ -2294,7 +2342,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'kc88tme0' /* Este medicamento no ha mejorad... */,
+                                                      'a0kpc54j' /* Este medicamento no ha mejorad... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2315,7 +2363,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         if (ResumenDiarioCall
                                                 .alivioSintomasVit2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'si')
@@ -2332,7 +2380,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '3jab9bn1' /* Este suplemento ha mejorado es... */,
+                                                      'ouy28lcf' /* Este suplemento ha mejorado es... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2352,7 +2400,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora1Vit2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2369,7 +2417,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora1Vit2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2392,7 +2440,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora2Vit2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2409,7 +2457,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora2Vit2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2432,7 +2480,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora3Vit2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2449,7 +2497,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora3Vit2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2472,7 +2520,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora4Vit2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2489,7 +2537,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora4Vit2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2512,7 +2560,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora5Vit2(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2529,7 +2577,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora5Vit2(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2558,7 +2606,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                               ),
                             ),
                           if (ResumenDiarioCall.vit3(
-                                resumenResumenDiarioResponse.jsonBody,
+                                resumenSintomasBackUpResumenDiarioResponse
+                                    .jsonBody,
                               ) ==
                               'si')
                             Padding(
@@ -2605,7 +2654,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                         valueOrDefault<String>(
                                                           ResumenDiarioCall
                                                               .nombreVit3(
-                                                            resumenResumenDiarioResponse
+                                                            resumenSintomasBackUpResumenDiarioResponse
                                                                 .jsonBody,
                                                           ),
                                                           '-',
@@ -2647,7 +2696,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                       children: [
                                         if (ResumenDiarioCall
                                                 .alivioSintomasVit3(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'no')
@@ -2664,7 +2713,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'awmoeqwy' /* Este medicamento no ha mejorad... */,
+                                                      'mju5t9o7' /* Este medicamento no ha mejorad... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2685,7 +2734,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                           ),
                                         if (ResumenDiarioCall
                                                 .alivioSintomasVit3(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) ==
                                             'si')
@@ -2702,7 +2751,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   child: Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'w65qtq31' /* Este suplemento ha mejorado es... */,
+                                                      'c8fymbcj' /* Este suplemento ha mejorado es... */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2722,7 +2771,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora1Vit3(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2739,7 +2788,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora1Vit3(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2762,7 +2811,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora2Vit3(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2779,7 +2828,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora2Vit3(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2802,7 +2851,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora3Vit3(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2819,7 +2868,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora3Vit3(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2842,7 +2891,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora4Vit3(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2859,7 +2908,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora4Vit3(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2882,7 +2931,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             ),
                                           ),
                                         if (ResumenDiarioCall.mejora5Vit3(
-                                              resumenResumenDiarioResponse
+                                              resumenSintomasBackUpResumenDiarioResponse
                                                   .jsonBody,
                                             ) !=
                                             'n/a')
@@ -2899,7 +2948,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                                   valueOrDefault<String>(
                                                     ResumenDiarioCall
                                                         .mejora5Vit3(
-                                                      resumenResumenDiarioResponse
+                                                      resumenSintomasBackUpResumenDiarioResponse
                                                           .jsonBody,
                                                     ),
                                                     '-',
@@ -2927,43 +2976,46 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ],
                               ),
                             ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 25.0, 0.0, 10.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Flexible(
-                                  child: Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 0.0, 10.0, 0.0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'mytkv53k' /* Resumen de Intolerancias */,
+                          if (FFAppState().authToken == '1')
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 25.0, 0.0, 10.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Flexible(
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 10.0, 0.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            '2m9cckne' /* Resumen de Intolerancias */,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 16.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                          if (ResumenDiarioCall.intoId(
-                                resumenResumenDiarioResponse.jsonBody,
-                              )! <
-                              1)
+                          if ((ResumenDiarioCall.intoId(
+                                    resumenSintomasBackUpResumenDiarioResponse
+                                        .jsonBody,
+                                  )! <
+                                  1) &&
+                              (FFAppState().authToken == '1'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 10.0),
@@ -2979,7 +3031,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'yxbttlka' /* No tienes hecho el diario de e... */,
+                                            'sxhn3a3b' /* No tienes hecho el diario de e... */,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -3000,10 +3052,12 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ],
                               ),
                             ),
-                          if (ResumenDiarioCall.intoId(
-                                resumenResumenDiarioResponse.jsonBody,
-                              )! >=
-                              1)
+                          if ((ResumenDiarioCall.intoId(
+                                    resumenSintomasBackUpResumenDiarioResponse
+                                        .jsonBody,
+                                  )! >=
+                                  1) &&
+                              (FFAppState().authToken == '1'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 10.0, 0.0, 10.0),
@@ -3491,7 +3545,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'an39xahx' /* Desayuno */,
+                                                  'wpakrof7' /* Desayuno */,
                                                 ),
                                                 textAlign: TextAlign.center,
                                                 style:
@@ -3988,7 +4042,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'l86c9dd2' /* Comida */,
+                                                  'gytkyijx' /* Comida */,
                                                 ),
                                                 textAlign: TextAlign.center,
                                                 style:
@@ -4478,7 +4532,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  '0tjdbymj' /* Cena */,
+                                                  'rpbfwtli' /* Cena */,
                                                 ),
                                                 textAlign: TextAlign.center,
                                                 style:
@@ -4502,7 +4556,8 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ],
                               ),
                             ),
-                          if (_model.momento != null)
+                          if ((_model.momento != null) &&
+                              (FFAppState().authToken == '1'))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
@@ -4518,7 +4573,7 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                             10.0, 0.0, 10.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'uzvpzvre' /* Estos son los alimentos que ha... */,
+                                            'gcet2hr0' /* Estos son los alimentos que ha... */,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -4536,3959 +4591,4086 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                 ],
                               ),
                             ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              if (_model.carnes == 'si')
-                                Container(
-                                  width: 350.0,
-                                  decoration: BoxDecoration(),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        width: 350.0,
-                                        height: 40.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
+                          if (FFAppState().authToken == '1')
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                if (_model.carnes == 'si')
+                                  Container(
+                                    width: 350.0,
+                                    decoration: BoxDecoration(),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 350.0,
+                                          height: 40.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 10.0, 0.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    if (_model.mostrarCarne ==
+                                                        'no') {
+                                                      _model.mostrarCarne =
+                                                          'si';
+                                                      safeSetState(() {});
+                                                    } else {
+                                                      _model.mostrarCarne =
+                                                          'no';
+                                                      safeSetState(() {});
+                                                    }
+                                                  },
+                                                  child: Text(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'e11bhvch' /* Carne */,
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .info,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  child: Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            1.0, 0.0),
+                                                    child: Container(
+                                                      width: 100.0,
+                                                      height: 32.0,
+                                                      decoration:
+                                                          BoxDecoration(),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          if (_model
+                                                                  .mostrarCarne ==
+                                                              'y')
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                if (_model
+                                                                        .mostrarCarne ==
+                                                                    'no') {
+                                                                  _model.mostrarCarne =
+                                                                      'si';
+                                                                  safeSetState(
+                                                                      () {});
+                                                                } else {
+                                                                  _model.mostrarCarne =
+                                                                      'no';
+                                                                  safeSetState(
+                                                                      () {});
+                                                                }
+                                                              },
+                                                              child: Icon(
+                                                                Icons
+                                                                    .keyboard_arrow_up_sharp,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
+                                                                size: 24.0,
+                                                              ),
+                                                            ),
+                                                          if (_model
+                                                                  .mostrarCarne ==
+                                                              'y')
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                if (_model
+                                                                        .mostrarCarne ==
+                                                                    'no') {
+                                                                  _model.mostrarCarne =
+                                                                      'si';
+                                                                  safeSetState(
+                                                                      () {});
+                                                                } else {
+                                                                  _model.mostrarCarne =
+                                                                      'no';
+                                                                  safeSetState(
+                                                                      () {});
+                                                                }
+                                                              },
+                                                              child: Icon(
+                                                                Icons
+                                                                    .keyboard_arrow_down_sharp,
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .info,
+                                                                size: 24.0,
+                                                              ),
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 0.0, 10.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  if (_model.mostrarCarne ==
-                                                      'no') {
-                                                    _model.mostrarCarne = 'si';
-                                                    safeSetState(() {});
-                                                  } else {
-                                                    _model.mostrarCarne = 'no';
-                                                    safeSetState(() {});
-                                                  }
-                                                },
+                                        if (_model.carne1 != null &&
+                                            _model.carne1 != '')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      3.0, 10.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.carne1,
+                                                  '-',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (_model.carne2 != null &&
+                                            _model.carne2 != '')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.carne2,
+                                                  '-',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (_model.carne3 != null &&
+                                            _model.carne3 != '')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.carne3,
+                                                  '-',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (_model.carne4 != null &&
+                                            _model.carne4 != '')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.carne4,
+                                                  '-',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (_model.carne5 != null &&
+                                            _model.carne5 != '')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.carne5,
+                                                  '-',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (_model.carne6 != null &&
+                                            _model.carne6 != '')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.carne6,
+                                                  '-',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        if (_model.carne7 != null &&
+                                            _model.carne7 != '')
+                                          Align(
+                                            alignment:
+                                                AlignmentDirectional(-1.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
+                                              child: Text(
+                                                valueOrDefault<String>(
+                                                  _model.carne7,
+                                                  '-',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
+                                if (_model.pescado == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarPescado ==
+                                                          'no') {
+                                                        _model.mostrarPescado =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarPescado =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'r3rhx4yc' /* Pescado */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarPescado ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarPescado ==
+                                                                      'no') {
+                                                                    _model.mostrarPescado =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarPescado =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarPescado ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarPescado ==
+                                                                      'no') {
+                                                                    _model.mostrarPescado =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarPescado =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.pescado1 != null &&
+                                              _model.pescado1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
                                                 child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'kr0q9yfo' /* Carne */,
+                                                  valueOrDefault<String>(
+                                                    _model.pescado1,
+                                                    '-',
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.pescado2 != null &&
+                                              _model.pescado2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.pescado2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.pescado3 != null &&
+                                              _model.pescado3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.pescado3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.pescado4 != null &&
+                                              _model.pescado4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.pescado4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.pescado5 != null &&
+                                              _model.pescado5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.pescado5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.pescado6 != null &&
+                                              _model.pescado6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.pescado6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.pescado7 != null &&
+                                              _model.pescado7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.pescado7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.marisco == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarMarisco ==
+                                                          'no') {
+                                                        _model.mostrarMarisco =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarMarisco =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'kwuiyefm' /* Mariscos */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .info,
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                ),
-                                              ),
-                                              Flexible(
-                                                child: Align(
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                          1.0, 0.0),
-                                                  child: Container(
-                                                    width: 100.0,
-                                                    height: 32.0,
-                                                    decoration: BoxDecoration(),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment.end,
-                                                      children: [
-                                                        if (_model
-                                                                .mostrarCarne ==
-                                                            'y')
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              if (_model
-                                                                      .mostrarCarne ==
-                                                                  'no') {
-                                                                _model.mostrarCarne =
-                                                                    'si';
-                                                                safeSetState(
-                                                                    () {});
-                                                              } else {
-                                                                _model.mostrarCarne =
-                                                                    'no';
-                                                                safeSetState(
-                                                                    () {});
-                                                              }
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .keyboard_arrow_up_sharp,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .info,
-                                                              size: 24.0,
-                                                            ),
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
                                                           ),
-                                                        if (_model
-                                                                .mostrarCarne ==
-                                                            'y')
-                                                          InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarMarisco ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
                                                                     .transparent,
-                                                            onTap: () async {
-                                                              if (_model
-                                                                      .mostrarCarne ==
-                                                                  'no') {
-                                                                _model.mostrarCarne =
-                                                                    'si';
-                                                                safeSetState(
-                                                                    () {});
-                                                              } else {
-                                                                _model.mostrarCarne =
-                                                                    'no';
-                                                                safeSetState(
-                                                                    () {});
-                                                              }
-                                                            },
-                                                            child: Icon(
-                                                              Icons
-                                                                  .keyboard_arrow_down_sharp,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .info,
-                                                              size: 24.0,
-                                                            ),
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarMarisco ==
+                                                                      'no') {
+                                                                    _model.mostrarMarisco =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarMarisco =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarMarisco ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarMarisco ==
+                                                                      'no') {
+                                                                    _model.mostrarMarisco =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarMarisco =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.marisco1 != null &&
+                                              _model.marisco1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.marisco1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.marisco2 != null &&
+                                              _model.marisco2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.marisco2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.marisco3 != null &&
+                                              _model.marisco3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.marisco3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.marisco4 != null &&
+                                              _model.marisco4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.marisco4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.marisco5 != null &&
+                                              _model.marisco5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.marisco5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.marisco6 != null &&
+                                              _model.marisco6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.marisco6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.marisco7 != null &&
+                                              _model.marisco7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.marisco7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.lacteos == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarLacteos ==
+                                                          'no') {
+                                                        _model.mostrarLacteos =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarLacteos =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'eewt13of' /* Lácteos */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
                                                           ),
-                                                      ],
                                                     ),
                                                   ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarLacteos ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarLacteos ==
+                                                                      'no') {
+                                                                    _model.mostrarLacteos =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarLacteos =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarLacteos ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarLacteos ==
+                                                                      'no') {
+                                                                    _model.mostrarLacteos =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarLacteos =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.lacteos1 != null &&
+                                              _model.lacteos1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.lacteos1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
-                                        ),
+                                            ),
+                                          if (_model.lacteos2 != null &&
+                                              _model.lacteos2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.lacteos2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.lacteos3 != null &&
+                                              _model.lacteos3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.lacteos3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.lacteos4 != null &&
+                                              _model.lacteos4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.lacteos4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.lacteos5 != null &&
+                                              _model.lacteos5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.lacteos5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.lacteos6 != null &&
+                                              _model.lacteos6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.lacteos6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.lacteos7 != null &&
+                                              _model.lacteos7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.lacteos7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
                                       ),
-                                      if (_model.carne1 != null &&
-                                          _model.carne1 != '')
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 10.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                _model.carne1,
-                                                '-',
-                                              ),
-                                              style:
+                                    ),
+                                  ),
+                                if (_model.huevos == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
                                                   FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarHuevos ==
+                                                          'no') {
+                                                        _model.mostrarHuevos =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarHuevos =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'hwn8epzv' /* Huevos */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarHuevos ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarHuevos ==
+                                                                      'no') {
+                                                                    _model.mostrarHuevos =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarHuevos =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarHuevos ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarHuevos ==
+                                                                      'no') {
+                                                                    _model.mostrarHuevos =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarHuevos =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.huevos1 != null &&
+                                              _model.huevos1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.huevos1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
                                                         letterSpacing: 0.0,
                                                       ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.carne2 != null &&
-                                          _model.carne2 != '')
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                _model.carne2,
-                                                '-',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.carne3 != null &&
-                                          _model.carne3 != '')
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                _model.carne3,
-                                                '-',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.carne4 != null &&
-                                          _model.carne4 != '')
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                _model.carne4,
-                                                '-',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.carne5 != null &&
-                                          _model.carne5 != '')
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                _model.carne5,
-                                                '-',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.carne6 != null &&
-                                          _model.carne6 != '')
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                _model.carne6,
-                                                '-',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                      if (_model.carne7 != null &&
-                                          _model.carne7 != '')
-                                        Align(
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    3.0, 5.0, 0.0, 0.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                _model.carne7,
-                                                '-',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                              if (_model.pescado == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarPescado ==
-                                                        'no') {
-                                                      _model.mostrarPescado =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarPescado =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '6sepautv' /* Pescado */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarPescado ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarPescado ==
-                                                                    'no') {
-                                                                  _model.mostrarPescado =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarPescado =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarPescado ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarPescado ==
-                                                                    'no') {
-                                                                  _model.mostrarPescado =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarPescado =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.pescado1 != null &&
-                                            _model.pescado1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.pescado1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.pescado2 != null &&
-                                            _model.pescado2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.pescado2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.pescado3 != null &&
-                                            _model.pescado3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.pescado3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.pescado4 != null &&
-                                            _model.pescado4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.pescado4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.pescado5 != null &&
-                                            _model.pescado5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.pescado5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.pescado6 != null &&
-                                            _model.pescado6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.pescado6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.pescado7 != null &&
-                                            _model.pescado7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.pescado7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.marisco == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarMarisco ==
-                                                        'no') {
-                                                      _model.mostrarMarisco =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarMarisco =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '8vmsj1sf' /* Mariscos */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarMarisco ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarMarisco ==
-                                                                    'no') {
-                                                                  _model.mostrarMarisco =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarMarisco =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarMarisco ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarMarisco ==
-                                                                    'no') {
-                                                                  _model.mostrarMarisco =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarMarisco =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.marisco1 != null &&
-                                            _model.marisco1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.marisco1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.marisco2 != null &&
-                                            _model.marisco2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.marisco2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.marisco3 != null &&
-                                            _model.marisco3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.marisco3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.marisco4 != null &&
-                                            _model.marisco4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.marisco4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.marisco5 != null &&
-                                            _model.marisco5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.marisco5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.marisco6 != null &&
-                                            _model.marisco6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.marisco6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.marisco7 != null &&
-                                            _model.marisco7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.marisco7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.lacteos == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarLacteos ==
-                                                        'no') {
-                                                      _model.mostrarLacteos =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarLacteos =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'ekahm2n1' /* Lácteos */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarLacteos ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarLacteos ==
-                                                                    'no') {
-                                                                  _model.mostrarLacteos =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarLacteos =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarLacteos ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarLacteos ==
-                                                                    'no') {
-                                                                  _model.mostrarLacteos =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarLacteos =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.lacteos1 != null &&
-                                            _model.lacteos1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.lacteos1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.lacteos2 != null &&
-                                            _model.lacteos2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.lacteos2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.lacteos3 != null &&
-                                            _model.lacteos3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.lacteos3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.lacteos4 != null &&
-                                            _model.lacteos4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.lacteos4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.lacteos5 != null &&
-                                            _model.lacteos5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.lacteos5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.lacteos6 != null &&
-                                            _model.lacteos6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.lacteos6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.lacteos7 != null &&
-                                            _model.lacteos7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.lacteos7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.huevos == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarHuevos ==
-                                                        'no') {
-                                                      _model.mostrarHuevos =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarHuevos =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '8koxnjxo' /* Huevos */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarHuevos ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarHuevos ==
-                                                                    'no') {
-                                                                  _model.mostrarHuevos =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarHuevos =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarHuevos ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarHuevos ==
-                                                                    'no') {
-                                                                  _model.mostrarHuevos =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarHuevos =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.huevos1 != null &&
-                                            _model.huevos1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.huevos1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.cereales == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model
-                                                            .mostrarCereales ==
-                                                        'no') {
-                                                      _model.mostrarCereales =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarCereales =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '8dmi5kmi' /* Cereales */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarCereales ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarCereales ==
-                                                                    'no') {
-                                                                  _model.mostrarCereales =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarCereales =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarCereales ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarCereales ==
-                                                                    'no') {
-                                                                  _model.mostrarCereales =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarCereales =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.cereales1 != null &&
-                                            _model.cereales1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.cereales1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.cereales2 != null &&
-                                            _model.cereales2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.cereales2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.cereales3 != null &&
-                                            _model.cereales3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.cereales3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.cereales4 != null &&
-                                            _model.cereales4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.cereales4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.cereales5 != null &&
-                                            _model.cereales5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.cereales5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.cereales6 != null &&
-                                            _model.cereales6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.cereales6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.cereales7 != null &&
-                                            _model.cereales7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.cereales7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.frutas == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarFrutas ==
-                                                        'no') {
-                                                      _model.mostrarFrutas =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarFrutas =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '3mc9gwd5' /* Frutas */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarFrutas ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarFrutas ==
-                                                                    'no') {
-                                                                  _model.mostrarFrutas =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarFrutas =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarFrutas ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarFrutas ==
-                                                                    'no') {
-                                                                  _model.mostrarFrutas =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarFrutas =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.frutas1 != null &&
-                                            _model.frutas1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.frutas1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.frutas2 != null &&
-                                            _model.frutas2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.frutas2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.frutas3 != null &&
-                                            _model.frutas3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.frutas3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.frutas4 != null &&
-                                            _model.frutas4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.frutas4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.frutas5 != null &&
-                                            _model.frutas5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.frutas5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.frutas6 != null &&
-                                            _model.frutas6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.frutas6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.frutas7 != null &&
-                                            _model.frutas7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.frutas7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.verduras == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model
-                                                            .mostrarVerduras ==
-                                                        'no') {
-                                                      _model.mostrarVerduras =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarVerduras =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '76baffwg' /* Verduras */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model.verduras ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarVerduras ==
-                                                                    'no') {
-                                                                  _model.mostrarVerduras =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarVerduras =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model.verduras ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarVerduras ==
-                                                                    'no') {
-                                                                  _model.mostrarVerduras =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarVerduras =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.verduras1 != null &&
-                                            _model.verduras1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.verduras1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.verduras2 != null &&
-                                            _model.verduras2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.verduras2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.verduras3 != null &&
-                                            _model.verduras3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.verduras3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.verduras4 != null &&
-                                            _model.verduras4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.verduras4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.verduras5 != null &&
-                                            _model.verduras5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.verduras5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.verduras6 != null &&
-                                            _model.verduras6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.verduras6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.verduras7 != null &&
-                                            _model.verduras7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.verduras7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.legumbres == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model
-                                                            .mostrarLegumbres ==
-                                                        'no') {
-                                                      _model.mostrarLegumbres =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarLegumbres =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'jcqxu66s' /* Legumbres */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarLegumbres ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarLegumbres ==
-                                                                    'no') {
-                                                                  _model.mostrarLegumbres =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarLegumbres =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarLegumbres ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarLegumbres ==
-                                                                    'no') {
-                                                                  _model.mostrarLegumbres =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarLegumbres =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.legumbres1 != null &&
-                                            _model.legumbres1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.legumbres1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.legumbres2 != null &&
-                                            _model.legumbres2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.legumbres2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.legumbres3 != null &&
-                                            _model.legumbres3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.legumbres3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.legumbres4 != null &&
-                                            _model.legumbres4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.legumbres4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.legumbres5 != null &&
-                                            _model.legumbres5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.legumbres5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.legumbres6 != null &&
-                                            _model.legumbres6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.legumbres6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.legumbres7 != null &&
-                                            _model.legumbres7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.legumbres7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.secos == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarSecos ==
-                                                        'no') {
-                                                      _model.mostrarSecos =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarSecos =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'ros8y461' /* Frutos Secos */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarSecos ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarSecos ==
-                                                                    'no') {
-                                                                  _model.mostrarSecos =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarSecos =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarSecos ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarSecos ==
-                                                                    'no') {
-                                                                  _model.mostrarSecos =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarSecos =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.secos1 != null &&
-                                            _model.secos1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.secos1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.secos2 != null &&
-                                            _model.secos2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.secos2,
-                                                  '-',
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.secos3 != null &&
-                                            _model.secos3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.secos3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.secos4 != null &&
-                                            _model.secos4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.secos4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.secos5 != null &&
-                                            _model.secos5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.secos5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.secos6 != null &&
-                                            _model.secos6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.secos6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.secos7 != null &&
-                                            _model.secos7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.secos7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.salsas == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarSalsas ==
-                                                        'no') {
-                                                      _model.mostrarSalsas =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarSalsas =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'fj4kcqqn' /* Condimentos y Salsas */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarSalsas ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarSalsas ==
-                                                                    'no') {
-                                                                  _model.mostrarSalsas =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarSalsas =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarSalsas ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarSalsas ==
-                                                                    'no') {
-                                                                  _model.mostrarSalsas =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarSalsas =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.salsa1 != null &&
-                                            _model.salsa1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.salsa1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.salsa2 != null &&
-                                            _model.salsa2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.salsa2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.salsa3 != null &&
-                                            _model.salsa3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.salsa3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.salsa4 != null &&
-                                            _model.salsa4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.salsa4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.salsa5 != null &&
-                                            _model.salsa5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.salsa5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.salsa6 != null &&
-                                            _model.salsa6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.salsa6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.salsa7 != null &&
-                                            _model.salsa7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.salsa7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (_model.bebidas == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    decoration: BoxDecoration(),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: 350.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    if (_model.mostrarBebidas ==
-                                                        'no') {
-                                                      _model.mostrarBebidas =
-                                                          'si';
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      _model.mostrarBebidas =
-                                                          'no';
-                                                      safeSetState(() {});
-                                                    }
-                                                  },
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      '6qu1blrw' /* Bebidas */,
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .info,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Container(
-                                                      width: 100.0,
-                                                      height: 32.0,
-                                                      decoration:
-                                                          BoxDecoration(),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        children: [
-                                                          if (_model
-                                                                  .mostrarBebidas ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarBebidas ==
-                                                                    'no') {
-                                                                  _model.mostrarBebidas =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarBebidas =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_up_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                          if (_model
-                                                                  .mostrarBebidas ==
-                                                              'y')
-                                                            InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                if (_model
-                                                                        .mostrarBebidas ==
-                                                                    'no') {
-                                                                  _model.mostrarBebidas =
-                                                                      'si';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                } else {
-                                                                  _model.mostrarBebidas =
-                                                                      'no';
-                                                                  safeSetState(
-                                                                      () {});
-                                                                }
-                                                              },
-                                                              child: Icon(
-                                                                Icons
-                                                                    .keyboard_arrow_down_sharp,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                size: 24.0,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        if (_model.bebidas1 != null &&
-                                            _model.bebidas1 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      3.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.bebidas1,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.bebidas2 != null &&
-                                            _model.bebidas2 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.bebidas2,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.bebidas3 != null &&
-                                            _model.bebidas3 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.bebidas3,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.bebidas4 != null &&
-                                            _model.bebidas4 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.bebidas4,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.bebidas5 != null &&
-                                            _model.bebidas5 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.bebidas5,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.bebidas6 != null &&
-                                            _model.bebidas6 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.bebidas6,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                        if (_model.bebidas7 != null &&
-                                            _model.bebidas7 != '')
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(-1.0, 0.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(3.0, 5.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  _model.bebidas7,
-                                                  '-',
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              if (ResumenDiarioCall.intoId(
-                                    resumenResumenDiarioResponse.jsonBody,
-                                  )! >=
-                                  1)
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 10.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Flexible(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '2hb1yf8k' /* Síntomas tras la ingesta */,
                                               ),
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
                                             ),
-                                          ),
-                                        ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              if ((_model.sintoma1 == null ||
-                                      _model.sintoma1 == '') &&
-                                  (_model.sintoma2 == null ||
-                                      _model.sintoma2 == '') &&
-                                  (_model.sintoma3 == null ||
-                                      _model.sintoma3 == '') &&
-                                  (ResumenDiarioCall.intoId(
-                                        resumenResumenDiarioResponse.jsonBody,
-                                      )! >=
-                                      1))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 10.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Flexible(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 10.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'czua5f79' /* No has registrado síntomas */,
-                                              ),
-                                              textAlign: TextAlign.center,
-                                              style:
+                                if (_model.cereales == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
                                                   FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarCereales ==
+                                                          'no') {
+                                                        _model.mostrarCereales =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarCereales =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'udjxxeoo' /* Cereales */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarCereales ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarCereales ==
+                                                                      'no') {
+                                                                    _model.mostrarCereales =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarCereales =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarCereales ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarCereales ==
+                                                                      'no') {
+                                                                    _model.mostrarCereales =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarCereales =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.cereales1 != null &&
+                                              _model.cereales1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.cereales1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                        fontSize: 14.0,
                                                         letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
                                                       ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.cereales2 != null &&
+                                              _model.cereales2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.cereales2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.cereales3 != null &&
+                                              _model.cereales3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.cereales3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.cereales4 != null &&
+                                              _model.cereales4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.cereales4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.cereales5 != null &&
+                                              _model.cereales5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.cereales5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.cereales6 != null &&
+                                              _model.cereales6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.cereales6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.cereales7 != null &&
+                                              _model.cereales7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.cereales7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.frutas == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarFrutas ==
+                                                          'no') {
+                                                        _model.mostrarFrutas =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarFrutas =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'hc3qxdto' /* Frutas */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarFrutas ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarFrutas ==
+                                                                      'no') {
+                                                                    _model.mostrarFrutas =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarFrutas =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarFrutas ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarFrutas ==
+                                                                      'no') {
+                                                                    _model.mostrarFrutas =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarFrutas =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.frutas1 != null &&
+                                              _model.frutas1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.frutas1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.frutas2 != null &&
+                                              _model.frutas2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.frutas2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.frutas3 != null &&
+                                              _model.frutas3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.frutas3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.frutas4 != null &&
+                                              _model.frutas4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.frutas4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.frutas5 != null &&
+                                              _model.frutas5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.frutas5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.frutas6 != null &&
+                                              _model.frutas6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.frutas6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.frutas7 != null &&
+                                              _model.frutas7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.frutas7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.verduras == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarVerduras ==
+                                                          'no') {
+                                                        _model.mostrarVerduras =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarVerduras =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'x3hmc6xb' /* Verduras */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .verduras ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarVerduras ==
+                                                                      'no') {
+                                                                    _model.mostrarVerduras =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarVerduras =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .verduras ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarVerduras ==
+                                                                      'no') {
+                                                                    _model.mostrarVerduras =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarVerduras =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.verduras1 != null &&
+                                              _model.verduras1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.verduras1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.verduras2 != null &&
+                                              _model.verduras2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.verduras2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.verduras3 != null &&
+                                              _model.verduras3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.verduras3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.verduras4 != null &&
+                                              _model.verduras4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.verduras4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.verduras5 != null &&
+                                              _model.verduras5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.verduras5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.verduras6 != null &&
+                                              _model.verduras6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.verduras6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.verduras7 != null &&
+                                              _model.verduras7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.verduras7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.legumbres == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarLegumbres ==
+                                                          'no') {
+                                                        _model.mostrarLegumbres =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarLegumbres =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'buoxplks' /* Legumbres */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarLegumbres ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarLegumbres ==
+                                                                      'no') {
+                                                                    _model.mostrarLegumbres =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarLegumbres =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarLegumbres ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarLegumbres ==
+                                                                      'no') {
+                                                                    _model.mostrarLegumbres =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarLegumbres =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.legumbres1 != null &&
+                                              _model.legumbres1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.legumbres1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.legumbres2 != null &&
+                                              _model.legumbres2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.legumbres2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.legumbres3 != null &&
+                                              _model.legumbres3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.legumbres3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.legumbres4 != null &&
+                                              _model.legumbres4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.legumbres4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.legumbres5 != null &&
+                                              _model.legumbres5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.legumbres5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.legumbres6 != null &&
+                                              _model.legumbres6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.legumbres6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.legumbres7 != null &&
+                                              _model.legumbres7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.legumbres7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.secos == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model.mostrarSecos ==
+                                                          'no') {
+                                                        _model.mostrarSecos =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarSecos =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'h6tbndr3' /* Frutos Secos */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarSecos ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarSecos ==
+                                                                      'no') {
+                                                                    _model.mostrarSecos =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarSecos =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarSecos ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarSecos ==
+                                                                      'no') {
+                                                                    _model.mostrarSecos =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarSecos =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.secos1 != null &&
+                                              _model.secos1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.secos1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.secos2 != null &&
+                                              _model.secos2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.secos2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.secos3 != null &&
+                                              _model.secos3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.secos3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.secos4 != null &&
+                                              _model.secos4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.secos4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.secos5 != null &&
+                                              _model.secos5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.secos5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.secos6 != null &&
+                                              _model.secos6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.secos6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.secos7 != null &&
+                                              _model.secos7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.secos7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.salsas == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarSalsas ==
+                                                          'no') {
+                                                        _model.mostrarSalsas =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarSalsas =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'nlllpko9' /* Condimentos y Salsas */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarSalsas ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarSalsas ==
+                                                                      'no') {
+                                                                    _model.mostrarSalsas =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarSalsas =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarSalsas ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarSalsas ==
+                                                                      'no') {
+                                                                    _model.mostrarSalsas =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarSalsas =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.salsa1 != null &&
+                                              _model.salsa1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.salsa1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.salsa2 != null &&
+                                              _model.salsa2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.salsa2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.salsa3 != null &&
+                                              _model.salsa3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.salsa3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.salsa4 != null &&
+                                              _model.salsa4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.salsa4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.salsa5 != null &&
+                                              _model.salsa5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.salsa5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.salsa6 != null &&
+                                              _model.salsa6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.salsa6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.salsa7 != null &&
+                                              _model.salsa7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.salsa7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (_model.bebidas == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 350.0,
+                                      decoration: BoxDecoration(),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Container(
+                                            width: 350.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.0),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      if (_model
+                                                              .mostrarBebidas ==
+                                                          'no') {
+                                                        _model.mostrarBebidas =
+                                                            'si';
+                                                        safeSetState(() {});
+                                                      } else {
+                                                        _model.mostrarBebidas =
+                                                            'no';
+                                                        safeSetState(() {});
+                                                      }
+                                                    },
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'rkr2uezs' /* Bebidas */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Flexible(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              1.0, 0.0),
+                                                      child: Container(
+                                                        width: 100.0,
+                                                        height: 32.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            if (_model
+                                                                    .mostrarBebidas ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarBebidas ==
+                                                                      'no') {
+                                                                    _model.mostrarBebidas =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarBebidas =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_up_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                            if (_model
+                                                                    .mostrarBebidas ==
+                                                                'y')
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (_model
+                                                                          .mostrarBebidas ==
+                                                                      'no') {
+                                                                    _model.mostrarBebidas =
+                                                                        'si';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  } else {
+                                                                    _model.mostrarBebidas =
+                                                                        'no';
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  }
+                                                                },
+                                                                child: Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_sharp,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .info,
+                                                                  size: 24.0,
+                                                                ),
+                                                              ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          if (_model.bebidas1 != null &&
+                                              _model.bebidas1 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 10.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.bebidas1,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.bebidas2 != null &&
+                                              _model.bebidas2 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.bebidas2,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.bebidas3 != null &&
+                                              _model.bebidas3 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.bebidas3,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.bebidas4 != null &&
+                                              _model.bebidas4 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.bebidas4,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.bebidas5 != null &&
+                                              _model.bebidas5 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.bebidas5,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.bebidas6 != null &&
+                                              _model.bebidas6 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.bebidas6,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          if (_model.bebidas7 != null &&
+                                              _model.bebidas7 != '')
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        3.0, 5.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    _model.bebidas7,
+                                                    '-',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                if (ResumenDiarioCall.intoId(
+                                      resumenSintomasBackUpResumenDiarioResponse
+                                          .jsonBody,
+                                    )! >=
+                                    1)
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 10.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'c5ehooff' /* Síntomas tras la ingesta */,
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              if (_model.bebidas == 'si')
+                                if ((_model.sintoma1 == null ||
+                                        _model.sintoma1 == '') &&
+                                    (_model.sintoma2 == null ||
+                                        _model.sintoma2 == '') &&
+                                    (_model.sintoma3 == null ||
+                                        _model.sintoma3 == '') &&
+                                    (ResumenDiarioCall.intoId(
+                                          resumenSintomasBackUpResumenDiarioResponse
+                                              .jsonBody,
+                                        )! >=
+                                        1))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 10.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '6zk2stve' /* No has registrado síntomas */,
+                                                ),
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 Container(
                                   width: 350.0,
                                   decoration: BoxDecoration(),
@@ -8570,9 +8752,9 @@ class _ResumenWidgetState extends State<ResumenWidget> {
                                     ],
                                   ),
                                 ),
-                            ],
-                          ),
-                        ].addToEnd(SizedBox(height: 150.0)),
+                              ],
+                            ),
+                        ].addToEnd(SizedBox(height: 200.0)),
                       ),
                     ),
                   ),

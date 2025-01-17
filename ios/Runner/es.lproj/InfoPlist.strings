@@ -1,2 +1,4 @@
 NSCameraUsageDescription = "Para poder tomar fotos o publicar imágenes la app te pedirá permiso para usar la cámara.";
 NSPhotoLibraryUsageDescription = "Para poder tomar fotos o publicar imágenes la app te pedirá permiso para acceder a tus imágenes.";
+NSFaceIDUsageDescription = "Accede a Defenergy con autenticación biométrica";
+NSMicrophoneUsageDescription = "Para grabar audios en el chat es necesario acceder a tu micrófono.";

@@ -4,12 +4,14 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'diario_sueno2_model.dart';
 export 'diario_sueno2_model.dart';
 
@@ -49,7 +51,10 @@ class _DiarioSueno2WidgetState extends State<DiarioSueno2Widget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -782,8 +787,8 @@ class _DiarioSueno2WidgetState extends State<DiarioSueno2Widget> {
                                       safeSetState(() {});
                                     },
                                     child: Container(
-                                      width: 130.0,
-                                      height: 100.0,
+                                      width: 105.0,
+                                      height: 86.0,
                                       decoration: BoxDecoration(
                                         color: _model.alivioSintomas == 'si'
                                             ? FlutterFlowTheme.of(context)
@@ -802,7 +807,7 @@ class _DiarioSueno2WidgetState extends State<DiarioSueno2Widget> {
                                             Icons.check_circle_outline_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            size: 50.0,
+                                            size: 32.0,
                                           ),
                                           Flexible(
                                             child: Text(
@@ -837,8 +842,8 @@ class _DiarioSueno2WidgetState extends State<DiarioSueno2Widget> {
                                       safeSetState(() {});
                                     },
                                     child: Container(
-                                      width: 130.0,
-                                      height: 100.0,
+                                      width: 105.0,
+                                      height: 86.0,
                                       decoration: BoxDecoration(
                                         color: _model.alivioSintomas == 'no'
                                             ? FlutterFlowTheme.of(context)
@@ -857,13 +862,70 @@ class _DiarioSueno2WidgetState extends State<DiarioSueno2Widget> {
                                             Icons.close_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            size: 50.0,
+                                            size: 32.0,
                                           ),
                                           Flexible(
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 'pjtccak8' /* No me ayudó */,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.alivioSintomas = 'sin';
+                                      safeSetState(() {});
+                                    },
+                                    child: Container(
+                                      width: 105.0,
+                                      height: 86.0,
+                                      decoration: BoxDecoration(
+                                        color: _model.alivioSintomas == 'sin'
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondary
+                                            : FlutterFlowTheme.of(context)
+                                                .primary,
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.back_hand_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            size: 32.0,
+                                          ),
+                                          Flexible(
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'mv9mq4ry' /* No tuvo
+efectos */
+                                                ,
                                               ),
                                               textAlign: TextAlign.center,
                                               style:
@@ -1110,13 +1172,18 @@ class _DiarioSueno2WidgetState extends State<DiarioSueno2Widget> {
                                     enableDrag: false,
                                     context: context,
                                     builder: (context) {
-                                      return GestureDetector(
-                                        onTap: () =>
-                                            FocusScope.of(context).unfocus(),
-                                        child: Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: ModalCancelaSuenoWidget(),
+                                      return WebViewAware(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            FocusScope.of(context).unfocus();
+                                            FocusManager.instance.primaryFocus
+                                                ?.unfocus();
+                                          },
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: ModalCancelaSuenoWidget(),
+                                          ),
                                         ),
                                       );
                                     },

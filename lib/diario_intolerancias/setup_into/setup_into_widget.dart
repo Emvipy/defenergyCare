@@ -1,17 +1,18 @@
 import '/backend/api_requests/api_calls.dart';
 import '/diario_intolerancias/modal_fin_setup_into/modal_fin_setup_into_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'setup_into_model.dart';
 export 'setup_into_model.dart';
 
@@ -61,7 +62,10 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -70,20 +74,6 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).background,
             automaticallyImplyLeading: false,
-            leading: FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30.0,
-              borderWidth: 1.0,
-              buttonSize: 60.0,
-              icon: Icon(
-                Icons.arrow_back_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 30.0,
-              ),
-              onPressed: () async {
-                context.pop();
-              },
-            ),
             title: Text(
               FFLocalizations.of(context).getText(
                 'd3bzl3fd' /* Configuración del Diario */,
@@ -467,7 +457,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'mczc0q6v' /* ¿Tienes alguna sensibilidadin... */,
+                                    'mczc0q6v' /* ¿Tienes alguna sensibilidad/in... */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -649,7 +639,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'hnl0nyce' /* ¿Tienes otra sensibilidadinto... */,
+                                      'hnl0nyce' /* ¿Tienes otra sensibilidad/into... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -834,7 +824,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'rhzadlt6' /* ¿Tienes otra sensibilidadinto... */,
+                                      'rhzadlt6' /* ¿Tienes otra sensibilidad/into... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1019,7 +1009,7 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'v8ihp1x1' /* ¿Tienes otra sensibilidadinto... */,
+                                      'v8ihp1x1' /* ¿Tienes otra sensibilidad/into... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -1297,16 +1287,22 @@ class _SetupIntoWidgetState extends State<SetupIntoWidget> {
                                           enableDrag: false,
                                           context: context,
                                           builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () =>
+                                            return WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () {
                                                   FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child:
-                                                    ModalFinSetupIntoWidget(),
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalFinSetupIntoWidget(),
+                                                ),
                                               ),
                                             );
                                           },

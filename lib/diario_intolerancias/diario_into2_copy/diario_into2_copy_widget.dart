@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -46,7 +47,10 @@ class _DiarioInto2CopyWidgetState extends State<DiarioInto2CopyWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -7557,7 +7561,7 @@ class _DiarioInto2CopyWidgetState extends State<DiarioInto2CopyWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'qfkrtq4p' /* ¿Qué verdurashortalizas has c... */,
+                                                    'qfkrtq4p' /* ¿Qué verduras/hortalizas has c... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)

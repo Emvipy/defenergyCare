@@ -6,6 +6,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'listado_widget.dart' show ListadoWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -22,6 +24,10 @@ class ListadoModel extends FlutterFlowModel<ListadoWidget> {
 
   DateTime? fecha;
 
+  String mostrarLista = 'no';
+
+  String spinner = 'si';
+
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - API (resumen variable mes)] action in listado widget.
@@ -29,6 +35,14 @@ class ListadoModel extends FlutterFlowModel<ListadoWidget> {
   Completer<ApiCallResponse>? apiRequestCompleter;
   // State field(s) for Calendar widget.
   DateTimeRange? calendarSelectedDay;
+  // Stores action output result for [Backend Call - API (diario Crea anterior)] action in Row widget.
+  ApiCallResponse? apiDiarioCreaAnterior;
+  // Stores action output result for [Backend Call - API (diario Crea anterior)] action in Row widget.
+  ApiCallResponse? apiDiarioCreaAnterior2;
+  // Stores action output result for [Backend Call - API (sueno crea diario anterior)] action in Row widget.
+  ApiCallResponse? apiCreaSuenoAnterior;
+  // Stores action output result for [Backend Call - API (diario into crea anterior)] action in Row widget.
+  ApiCallResponse? apiDiarioIntoAnterior;
   // Model for menu_usuario component.
   late MenuUsuarioModel menuUsuarioModel;
 

@@ -70,6 +70,9 @@ class _EliminaUsuerWidgetState extends State<EliminaUsuerWidget> {
         FFAppState().deleteCreadoOk();
         FFAppState().creadoOk = '';
 
+        FFAppState().deleteBiopwd();
+        FFAppState().biopwd = '';
+
         safeSetState(() {});
 
         context.goNamed(
@@ -102,7 +105,10 @@ class _EliminaUsuerWidgetState extends State<EliminaUsuerWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(

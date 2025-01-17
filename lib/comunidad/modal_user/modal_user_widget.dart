@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,9 +14,13 @@ class ModalUserWidget extends StatefulWidget {
   const ModalUserWidget({
     super.key,
     required this.postId,
+    required this.grupo,
+    required this.nombre,
   });
 
   final int? postId;
+  final int? grupo;
+  final String? nombre;
 
   @override
   State<ModalUserWidget> createState() => _ModalUserWidgetState();
@@ -142,6 +147,14 @@ class _ModalUserWidgetState extends State<ModalUserWidget> {
                                 widget!.postId,
                                 ParamType.int,
                               ),
+                              'grupo': serializeParam(
+                                widget!.grupo,
+                                ParamType.int,
+                              ),
+                              'nombre': serializeParam(
+                                widget!.nombre,
+                                ParamType.String,
+                              ),
                             }.withoutNulls,
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
@@ -202,6 +215,16 @@ class _ModalUserWidgetState extends State<ModalUserWidget> {
 
                             context.pushNamed(
                               'comunidad',
+                              queryParameters: {
+                                'grupo': serializeParam(
+                                  widget!.grupo,
+                                  ParamType.int,
+                                ),
+                                'nombre': serializeParam(
+                                  widget!.nombre,
+                                  ParamType.String,
+                                ),
+                              }.withoutNulls,
                               extra: <String, dynamic>{
                                 kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
