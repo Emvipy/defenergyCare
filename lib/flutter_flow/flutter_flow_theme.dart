@@ -70,6 +70,7 @@ abstract class FlutterFlowTheme {
   late Color rosaHome;
   late Color share;
   late Color negroPerm;
+  late Color blancoPerm;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -175,6 +176,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color rosaHome = Color(0xFFFED0D3);
   late Color share = Color(0xFF55D365);
   late Color negroPerm = Color(0xFF14181B);
+  late Color blancoPerm = Color(0xFFFFFFFF);
 }
 
 abstract class Typography {
@@ -363,6 +365,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color rosaHome = Color(0xFFFED0D3);
   late Color share = Color(0xFF55D365);
   late Color negroPerm = Color(0xFF14181B);
+  late Color blancoPerm = Color(0xFFFFFFFF);
 }
 
 extension TextStyleHelper on TextStyle {

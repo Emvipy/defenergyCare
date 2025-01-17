@@ -5,8 +5,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'perfil_asociaciones_widget.dart' show PerfilAsociacionesWidget;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -17,9 +19,13 @@ class PerfilAsociacionesModel
     extends FlutterFlowModel<PerfilAsociacionesWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for buscador widget.
+  FocusNode? buscadorFocusNode;
+  TextEditingController? buscadorTextController;
+  String? Function(BuildContext, String?)? buscadorTextControllerValidator;
+  Completer<ApiCallResponse>? apiRequestCompleter;
   // Stores action output result for [Backend Call - API (perfil gestion aso)] action in Container widget.
   ApiCallResponse? apiResult2m0;
-  Completer<ApiCallResponse>? apiRequestCompleter;
   // Stores action output result for [Backend Call - API (perfil gestion aso)] action in Container widget.
   ApiCallResponse? apiResult2m0a;
   // Model for menu_usuario component.
@@ -32,6 +38,9 @@ class PerfilAsociacionesModel
 
   @override
   void dispose() {
+    buscadorFocusNode?.dispose();
+    buscadorTextController?.dispose();
+
     menuUsuarioModel.dispose();
   }
 

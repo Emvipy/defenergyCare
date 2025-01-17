@@ -7,6 +7,7 @@ import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
 import '/registro/modal_info_spam/modal_info_spam_widget.dart';
 import '/registro/modal_zoom/modal_zoom_widget.dart';
 import 'dart:math';
+import 'dart:ui';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'valida_email_model.dart';
 export 'valida_email_model.dart';
 
@@ -47,11 +49,16 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
           enableDrag: false,
           context: context,
           builder: (context) {
-            return GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
-              child: Padding(
-                padding: MediaQuery.viewInsetsOf(context),
-                child: ModalInfoSpamWidget(),
+            return WebViewAware(
+              child: GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+                child: Padding(
+                  padding: MediaQuery.viewInsetsOf(context),
+                  child: ModalInfoSpamWidget(),
+                ),
               ),
             );
           },
@@ -109,7 +116,10 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -880,17 +890,24 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                                     enableDrag: false,
                                                     context: context,
                                                     builder: (context) {
-                                                      return GestureDetector(
-                                                        onTap: () =>
+                                                      return WebViewAware(
+                                                        child: GestureDetector(
+                                                          onTap: () {
                                                             FocusScope.of(
                                                                     context)
-                                                                .unfocus(),
-                                                        child: Padding(
-                                                          padding: MediaQuery
-                                                              .viewInsetsOf(
-                                                                  context),
-                                                          child:
-                                                              ModalZoomWidget(),
+                                                                .unfocus();
+                                                            FocusManager
+                                                                .instance
+                                                                .primaryFocus
+                                                                ?.unfocus();
+                                                          },
+                                                          child: Padding(
+                                                            padding: MediaQuery
+                                                                .viewInsetsOf(
+                                                                    context),
+                                                            child:
+                                                                ModalZoomWidget(),
+                                                          ),
                                                         ),
                                                       );
                                                     },
@@ -951,16 +968,22 @@ class _ValidaEmailWidgetState extends State<ValidaEmailWidget>
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
                                                       FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalCancelaSignWidget(),
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalCancelaSignWidget(),
+                                                    ),
                                                   ),
                                                 );
                                               },

@@ -13,12 +13,15 @@ import '/usuario/modal_info_salud/modal_info_salud_widget.dart';
 import '/usuario/modal_info_sintomas/modal_info_sintomas_widget.dart';
 import '/usuario/modal_info_sueno/modal_info_sueno_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -62,11 +65,16 @@ class _HomeWidgetState extends State<HomeWidget> {
             enableDrag: false,
             context: context,
             builder: (context) {
-              return GestureDetector(
-                onTap: () => FocusScope.of(context).unfocus(),
-                child: Padding(
-                  padding: MediaQuery.viewInsetsOf(context),
-                  child: ModalCierreSesionWidget(),
+              return WebViewAware(
+                child: GestureDetector(
+                  onTap: () {
+                    FocusScope.of(context).unfocus();
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                  child: Padding(
+                    padding: MediaQuery.viewInsetsOf(context),
+                    child: ModalCierreSesionWidget(),
+                  ),
                 ),
               );
             },
@@ -94,7 +102,10 @@ class _HomeWidgetState extends State<HomeWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -162,15 +173,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           enableDrag: false,
                                           context: context,
                                           builder: (context) {
-                                            return GestureDetector(
-                                              onTap: () =>
+                                            return WebViewAware(
+                                              child: GestureDetector(
+                                                onTap: () {
                                                   FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: Padding(
-                                                padding:
-                                                    MediaQuery.viewInsetsOf(
-                                                        context),
-                                                child: ModalErrorCuentaWidget(),
+                                                      .unfocus();
+                                                  FocusManager
+                                                      .instance.primaryFocus
+                                                      ?.unfocus();
+                                                },
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      ModalErrorCuentaWidget(),
+                                                ),
                                               ),
                                             );
                                           },
@@ -197,8 +215,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
-                                    child: Image.network(
-                                      getJsonField(
+                                    child: CachedNetworkImage(
+                                      fadeInDuration:
+                                          Duration(milliseconds: 500),
+                                      fadeOutDuration:
+                                          Duration(milliseconds: 500),
+                                      imageUrl: getJsonField(
                                         FFAppState().userIndividual,
                                         r'''$.avatar.url''',
                                       ).toString(),
@@ -255,6 +277,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                     ),
                                                   },
                                                 );
+
+                                                return;
                                               } else {
                                                 await showModalBottomSheet(
                                                   isScrollControlled: true,
@@ -263,21 +287,29 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () =>
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
                                                           FocusScope.of(context)
-                                                              .unfocus(),
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            ModalErrorCuentaWidget(),
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalErrorCuentaWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
                                                 ).then((value) =>
                                                     safeSetState(() {}));
+
+                                                return;
                                               }
                                             } else {
                                               context.pushNamed(
@@ -293,6 +325,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                   ),
                                                 },
                                               );
+
+                                              return;
                                             }
                                           },
                                           child: Text(
@@ -318,7 +352,89 @@ class _HomeWidgetState extends State<HomeWidget> {
                                           focusColor: Colors.transparent,
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
-                                          onTap: () async {},
+                                          onTap: () async {
+                                            if ((FFAppState().authToken !=
+                                                        null &&
+                                                    FFAppState().authToken !=
+                                                        '') &&
+                                                (FFAppState().email != null &&
+                                                    FFAppState().email != '')) {
+                                              if (FFAppState().creadoOk ==
+                                                  'si') {
+                                                unawaited(
+                                                  () async {
+                                                    await UserLogActivityCall
+                                                        .call(
+                                                      authToken: FFAppState()
+                                                          .authToken,
+                                                      seccion:
+                                                          'Acceso Mi Perfil',
+                                                    );
+                                                  }(),
+                                                );
+
+                                                context.pushNamed(
+                                                  'perfil',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                    ),
+                                                  },
+                                                );
+
+                                                return;
+                                              } else {
+                                                await showModalBottomSheet(
+                                                  isScrollControlled: true,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  enableDrag: false,
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
+                                                          FocusScope.of(context)
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalErrorCuentaWidget(),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then((value) =>
+                                                    safeSetState(() {}));
+                                              }
+                                            } else {
+                                              context.pushNamed(
+                                                'login',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
+                                                  ),
+                                                },
+                                              );
+
+                                              return;
+                                            }
+                                          },
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'ay8wdlx9' /* ¿Cómo te encuentras hoy? */,
@@ -469,6 +585,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
+                                                              var _shouldSetState =
+                                                                  false;
                                                               if ((FFAppState()
                                                                               .authToken !=
                                                                           null &&
@@ -537,6 +655,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             );
                                                                           }(),
                                                                         );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
                                                                       } else {
                                                                         _model.apiDiarioCreaicon =
                                                                             await DiarioCreaCall.call(
@@ -544,6 +666,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               FFAppState().authToken,
                                                                         );
 
+                                                                        _shouldSetState =
+                                                                            true;
                                                                         if ((_model.apiDiarioCreaicon?.succeeded ??
                                                                             true)) {
                                                                           FFAppState().diarioId =
@@ -626,6 +750,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               );
                                                                             }(),
                                                                           );
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
                                                                         } else {
                                                                           ScaffoldMessenger.of(context)
                                                                               .showSnackBar(
@@ -640,6 +767,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               backgroundColor: FlutterFlowTheme.of(context).error,
                                                                             ),
                                                                           );
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
                                                                         }
                                                                       }
                                                                     } else {
@@ -650,6 +780,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             FFAppState().authToken,
                                                                       );
 
+                                                                      _shouldSetState =
+                                                                          true;
                                                                       if ((_model
                                                                               .apiDiarioCrea2icon
                                                                               ?.succeeded ??
@@ -735,6 +867,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             );
                                                                           }(),
                                                                         );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
                                                                       } else {
                                                                         ScaffoldMessenger.of(context)
                                                                             .showSnackBar(
@@ -752,6 +888,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 FlutterFlowTheme.of(context).error,
                                                                           ),
                                                                         );
+                                                                        if (_shouldSetState)
+                                                                          safeSetState(
+                                                                              () {});
+                                                                        return;
                                                                       }
                                                                     }
                                                                   } else {
@@ -769,6 +909,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         ),
                                                                       },
                                                                     );
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
                                                                   }
                                                                 } else {
                                                                   await showModalBottomSheet(
@@ -783,21 +928,32 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return GestureDetector(
-                                                                        onTap: () =>
-                                                                            FocusScope.of(context).unfocus(),
+                                                                      return WebViewAware(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
-                                                                              ModalErrorCuentaWidget(),
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalErrorCuentaWidget(),
+                                                                          ),
                                                                         ),
                                                                       );
                                                                     },
                                                                   ).then((value) =>
                                                                       safeSetState(
                                                                           () {}));
+
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
                                                                 }
                                                               } else {
                                                                 context
@@ -818,10 +974,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     ),
                                                                   },
                                                                 );
+
+                                                                if (_shouldSetState)
+                                                                  safeSetState(
+                                                                      () {});
+                                                                return;
                                                               }
 
-                                                              safeSetState(
-                                                                  () {});
+                                                              if (_shouldSetState)
+                                                                safeSetState(
+                                                                    () {});
                                                             },
                                                             child: Container(
                                                               width: 50.0,
@@ -869,6 +1031,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                   Colors
                                                                       .transparent,
                                                               onTap: () async {
+                                                                var _shouldSetState =
+                                                                    false;
                                                                 if ((FFAppState().authToken !=
                                                                             null &&
                                                                         FFAppState().authToken !=
@@ -928,6 +1092,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               );
                                                                             }(),
                                                                           );
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
                                                                         } else {
                                                                           _model.apiDiarioCreaTitulo =
                                                                               await DiarioCreaCall.call(
@@ -935,6 +1102,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 FFAppState().authToken,
                                                                           );
 
+                                                                          _shouldSetState =
+                                                                              true;
                                                                           if ((_model.apiDiarioCreaTitulo?.succeeded ??
                                                                               true)) {
                                                                             FFAppState().diarioId =
@@ -1004,6 +1173,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 );
                                                                               }(),
                                                                             );
+                                                                            if (_shouldSetState)
+                                                                              safeSetState(() {});
+                                                                            return;
                                                                           } else {
                                                                             ScaffoldMessenger.of(context).showSnackBar(
                                                                               SnackBar(
@@ -1017,6 +1189,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                                 backgroundColor: FlutterFlowTheme.of(context).error,
                                                                               ),
                                                                             );
+                                                                            if (_shouldSetState)
+                                                                              safeSetState(() {});
+                                                                            return;
                                                                           }
                                                                         }
                                                                       } else {
@@ -1026,6 +1201,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               FFAppState().authToken,
                                                                         );
 
+                                                                        _shouldSetState =
+                                                                            true;
                                                                         if ((_model.apiDiarioCrea2Titulo?.succeeded ??
                                                                             true)) {
                                                                           FFAppState().diarioId =
@@ -1108,6 +1285,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               );
                                                                             }(),
                                                                           );
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
                                                                         } else {
                                                                           ScaffoldMessenger.of(context)
                                                                               .showSnackBar(
@@ -1122,6 +1302,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               backgroundColor: FlutterFlowTheme.of(context).error,
                                                                             ),
                                                                           );
+                                                                          if (_shouldSetState)
+                                                                            safeSetState(() {});
+                                                                          return;
                                                                         }
                                                                       }
                                                                     } else {
@@ -1139,6 +1322,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           ),
                                                                         },
                                                                       );
+
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
                                                                     }
                                                                   } else {
                                                                     await showModalBottomSheet(
@@ -1153,21 +1341,30 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalErrorCuentaWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalErrorCuentaWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
                                                                     ).then((value) =>
                                                                         safeSetState(
                                                                             () {}));
+
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
                                                                   }
                                                                 } else {
                                                                   context
@@ -1186,10 +1383,16 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                       ),
                                                                     },
                                                                   );
+
+                                                                  if (_shouldSetState)
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  return;
                                                                 }
 
-                                                                safeSetState(
-                                                                    () {});
+                                                                if (_shouldSetState)
+                                                                  safeSetState(
+                                                                      () {});
                                                               },
                                                               child: Text(
                                                                 FFLocalizations.of(
@@ -1246,15 +1449,21 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         context,
                                                                     builder:
                                                                         (context) {
-                                                                      return GestureDetector(
-                                                                        onTap: () =>
-                                                                            FocusScope.of(context).unfocus(),
+                                                                      return WebViewAware(
                                                                         child:
-                                                                            Padding(
-                                                                          padding:
-                                                                              MediaQuery.viewInsetsOf(context),
+                                                                            GestureDetector(
+                                                                          onTap:
+                                                                              () {
+                                                                            FocusScope.of(context).unfocus();
+                                                                            FocusManager.instance.primaryFocus?.unfocus();
+                                                                          },
                                                                           child:
-                                                                              ModalInfoSintomasWidget(),
+                                                                              Padding(
+                                                                            padding:
+                                                                                MediaQuery.viewInsetsOf(context),
+                                                                            child:
+                                                                                ModalInfoSintomasWidget(),
+                                                                          ),
                                                                         ),
                                                                       );
                                                                     },
@@ -1294,6 +1503,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                         highlightColor:
                                                             Colors.transparent,
                                                         onTap: () async {
+                                                          var _shouldSetState =
+                                                              false;
                                                           if ((FFAppState()
                                                                           .authToken !=
                                                                       null &&
@@ -1371,6 +1582,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         );
                                                                       }(),
                                                                     );
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
                                                                   } else {
                                                                     _model.apiDiarioCrea =
                                                                         await DiarioCreaCall
@@ -1380,6 +1595,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               .authToken,
                                                                     );
 
+                                                                    _shouldSetState =
+                                                                        true;
                                                                     if ((_model
                                                                             .apiDiarioCrea
                                                                             ?.succeeded ??
@@ -1478,6 +1695,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           );
                                                                         }(),
                                                                       );
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
                                                                     } else {
                                                                       ScaffoldMessenger.of(
                                                                               context)
@@ -1497,6 +1718,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                               FlutterFlowTheme.of(context).error,
                                                                         ),
                                                                       );
+                                                                      if (_shouldSetState)
+                                                                        safeSetState(
+                                                                            () {});
+                                                                      return;
                                                                     }
                                                                   }
                                                                 } else {
@@ -1508,6 +1733,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             .authToken,
                                                                   );
 
+                                                                  _shouldSetState =
+                                                                      true;
                                                                   if ((_model
                                                                           .apiDiarioCrea2
                                                                           ?.succeeded ??
@@ -1607,6 +1834,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                         );
                                                                       }(),
                                                                     );
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
                                                                   } else {
                                                                     ScaffoldMessenger.of(
                                                                             context)
@@ -1627,6 +1858,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             FlutterFlowTheme.of(context).error,
                                                                       ),
                                                                     );
+                                                                    if (_shouldSetState)
+                                                                      safeSetState(
+                                                                          () {});
+                                                                    return;
                                                                   }
                                                                 }
                                                               } else {
@@ -1645,6 +1880,11 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     ),
                                                                   },
                                                                 );
+
+                                                                if (_shouldSetState)
+                                                                  safeSetState(
+                                                                      () {});
+                                                                return;
                                                               }
                                                             } else {
                                                               await showModalBottomSheet(
@@ -1659,23 +1899,36 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                     context,
                                                                 builder:
                                                                     (context) {
-                                                                  return GestureDetector(
-                                                                    onTap: () =>
-                                                                        FocusScope.of(context)
-                                                                            .unfocus(),
+                                                                  return WebViewAware(
                                                                     child:
-                                                                        Padding(
-                                                                      padding: MediaQuery
-                                                                          .viewInsetsOf(
-                                                                              context),
+                                                                        GestureDetector(
+                                                                      onTap:
+                                                                          () {
+                                                                        FocusScope.of(context)
+                                                                            .unfocus();
+                                                                        FocusManager
+                                                                            .instance
+                                                                            .primaryFocus
+                                                                            ?.unfocus();
+                                                                      },
                                                                       child:
-                                                                          ModalErrorCuentaWidget(),
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ModalErrorCuentaWidget(),
+                                                                      ),
                                                                     ),
                                                                   );
                                                                 },
                                                               ).then((value) =>
                                                                   safeSetState(
                                                                       () {}));
+
+                                                              if (_shouldSetState)
+                                                                safeSetState(
+                                                                    () {});
+                                                              return;
                                                             }
                                                           } else {
                                                             context.pushNamed(
@@ -1695,9 +1948,15 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                 ),
                                                               },
                                                             );
+
+                                                            if (_shouldSetState)
+                                                              safeSetState(
+                                                                  () {});
+                                                            return;
                                                           }
 
-                                                          safeSetState(() {});
+                                                          if (_shouldSetState)
+                                                            safeSetState(() {});
                                                         },
                                                         child: Row(
                                                           mainAxisSize:
@@ -1977,10 +2236,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             FFAppState().intoBebidas =
                                                                                 'no';
 
-                                                                            context.pushNamed(
-                                                                              'diario_Into1',
+                                                                            context.goNamed(
+                                                                              'diarioIntoCargaDesplegables',
                                                                               queryParameters: {
-                                                                                'primerIdario': serializeParam(
+                                                                                'primerDiario': serializeParam(
                                                                                   'si',
                                                                                   ParamType.String,
                                                                                 ),
@@ -2053,13 +2312,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalErrorCuentaWidget(),
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalErrorCuentaWidget(),
+                                                                              ),
                                                                             ),
                                                                           );
                                                                         },
@@ -2149,15 +2412,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalInfoIntoWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalInfoIntoWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -2402,15 +2669,19 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalErrorCuentaWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalErrorCuentaWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -2647,11 +2918,16 @@ intolerancias */
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: ModalErrorCuentaWidget(),
+                                                                                ),
                                                                               ),
                                                                             );
                                                                           },
@@ -2789,11 +3065,16 @@ intolerancias */
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalAvisoSuenoHechoWidget(),
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: ModalAvisoSuenoHechoWidget(),
+                                                                                ),
                                                                               ),
                                                                             );
                                                                           },
@@ -2865,13 +3146,17 @@ intolerancias */
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalErrorCuentaWidget(),
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalErrorCuentaWidget(),
+                                                                              ),
                                                                             ),
                                                                           );
                                                                         },
@@ -2961,15 +3246,19 @@ intolerancias */
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalInfoSuenoWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalInfoSuenoWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -3045,13 +3334,17 @@ intolerancias */
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalAvisoSuenoHechoWidget(),
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalAvisoSuenoHechoWidget(),
+                                                                              ),
                                                                             ),
                                                                           );
                                                                         },
@@ -3135,15 +3428,19 @@ intolerancias */
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalErrorCuentaWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalErrorCuentaWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -3252,11 +3549,16 @@ intolerancias */
                                                                                 context,
                                                                             builder:
                                                                                 (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalAvisoSuenoHechoWidget(),
+                                                                              return WebViewAware(
+                                                                                child: GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: ModalAvisoSuenoHechoWidget(),
+                                                                                  ),
                                                                                 ),
                                                                               );
                                                                             },
@@ -3325,11 +3627,16 @@ intolerancias */
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: ModalErrorCuentaWidget(),
+                                                                                ),
                                                                               ),
                                                                             );
                                                                           },
@@ -3487,11 +3794,16 @@ intolerancias */
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalSinDiarioWidget(),
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: ModalSinDiarioWidget(),
+                                                                                ),
                                                                               ),
                                                                             );
                                                                           },
@@ -3533,13 +3845,17 @@ intolerancias */
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalErrorCuentaWidget(),
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalErrorCuentaWidget(),
+                                                                              ),
                                                                             ),
                                                                           );
                                                                         },
@@ -3619,15 +3935,19 @@ intolerancias */
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalInfoResumenWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalInfoResumenWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -3701,13 +4021,17 @@ intolerancias */
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalSinDiarioWidget(),
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalSinDiarioWidget(),
+                                                                              ),
                                                                             ),
                                                                           );
                                                                         },
@@ -3756,15 +4080,19 @@ intolerancias */
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalErrorCuentaWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalErrorCuentaWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -3863,11 +4191,16 @@ Diarios */
                                                                                 context,
                                                                             builder:
                                                                                 (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalSinDiarioWidget(),
+                                                                              return WebViewAware(
+                                                                                child: GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: ModalSinDiarioWidget(),
+                                                                                  ),
                                                                                 ),
                                                                               );
                                                                             },
@@ -3908,11 +4241,16 @@ Diarios */
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: ModalErrorCuentaWidget(),
+                                                                                ),
                                                                               ),
                                                                             );
                                                                           },
@@ -4057,11 +4395,16 @@ Diarios */
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalSinDiarioWidget(),
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: ModalSinDiarioWidget(),
+                                                                                ),
                                                                               ),
                                                                             );
                                                                           },
@@ -4105,13 +4448,17 @@ Diarios */
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalErrorCuentaWidget(),
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalErrorCuentaWidget(),
+                                                                              ),
                                                                             ),
                                                                           );
                                                                         },
@@ -4191,15 +4538,19 @@ Diarios */
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalInfoSaludWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalInfoSaludWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -4280,13 +4631,17 @@ Diarios */
                                                                             context,
                                                                         builder:
                                                                             (context) {
-                                                                          return GestureDetector(
-                                                                            onTap: () =>
-                                                                                FocusScope.of(context).unfocus(),
+                                                                          return WebViewAware(
                                                                             child:
-                                                                                Padding(
-                                                                              padding: MediaQuery.viewInsetsOf(context),
-                                                                              child: ModalSinDiarioWidget(),
+                                                                                GestureDetector(
+                                                                              onTap: () {
+                                                                                FocusScope.of(context).unfocus();
+                                                                                FocusManager.instance.primaryFocus?.unfocus();
+                                                                              },
+                                                                              child: Padding(
+                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                child: ModalSinDiarioWidget(),
+                                                                              ),
                                                                             ),
                                                                           );
                                                                         },
@@ -4337,15 +4692,19 @@ Diarios */
                                                                           context,
                                                                       builder:
                                                                           (context) {
-                                                                        return GestureDetector(
-                                                                          onTap: () =>
-                                                                              FocusScope.of(context).unfocus(),
+                                                                        return WebViewAware(
                                                                           child:
-                                                                              Padding(
-                                                                            padding:
-                                                                                MediaQuery.viewInsetsOf(context),
+                                                                              GestureDetector(
+                                                                            onTap:
+                                                                                () {
+                                                                              FocusScope.of(context).unfocus();
+                                                                              FocusManager.instance.primaryFocus?.unfocus();
+                                                                            },
                                                                             child:
-                                                                                ModalErrorCuentaWidget(),
+                                                                                Padding(
+                                                                              padding: MediaQuery.viewInsetsOf(context),
+                                                                              child: ModalErrorCuentaWidget(),
+                                                                            ),
                                                                           ),
                                                                         );
                                                                       },
@@ -4453,11 +4812,16 @@ Salud */
                                                                                 context,
                                                                             builder:
                                                                                 (context) {
-                                                                              return GestureDetector(
-                                                                                onTap: () => FocusScope.of(context).unfocus(),
-                                                                                child: Padding(
-                                                                                  padding: MediaQuery.viewInsetsOf(context),
-                                                                                  child: ModalSinDiarioWidget(),
+                                                                              return WebViewAware(
+                                                                                child: GestureDetector(
+                                                                                  onTap: () {
+                                                                                    FocusScope.of(context).unfocus();
+                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                  },
+                                                                                  child: Padding(
+                                                                                    padding: MediaQuery.viewInsetsOf(context),
+                                                                                    child: ModalSinDiarioWidget(),
+                                                                                  ),
                                                                                 ),
                                                                               );
                                                                             },
@@ -4500,11 +4864,16 @@ Salud */
                                                                               context,
                                                                           builder:
                                                                               (context) {
-                                                                            return GestureDetector(
-                                                                              onTap: () => FocusScope.of(context).unfocus(),
-                                                                              child: Padding(
-                                                                                padding: MediaQuery.viewInsetsOf(context),
-                                                                                child: ModalErrorCuentaWidget(),
+                                                                            return WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () {
+                                                                                  FocusScope.of(context).unfocus();
+                                                                                  FocusManager.instance.primaryFocus?.unfocus();
+                                                                                },
+                                                                                child: Padding(
+                                                                                  padding: MediaQuery.viewInsetsOf(context),
+                                                                                  child: ModalErrorCuentaWidget(),
+                                                                                ),
                                                                               ),
                                                                             );
                                                                           },
@@ -4603,16 +4972,22 @@ Salud */
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
                                                       FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalErrorCuentaWidget(),
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalErrorCuentaWidget(),
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -4648,20 +5023,25 @@ Salud */
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                FFLocalizations.of(context)
-                                                            .languageCode ==
-                                                        'en'
-                                                    ? getJsonField(
-                                                        FFAppState()
-                                                            .userIndividual,
-                                                        r'''$._banner_home.banner_news_en.url''',
-                                                      ).toString()
-                                                    : getJsonField(
-                                                        FFAppState()
-                                                            .userIndividual,
-                                                        r'''$._banner_home.banner_news_es.url''',
-                                                      ).toString(),
+                                              child: CachedNetworkImage(
+                                                fadeInDuration:
+                                                    Duration(milliseconds: 500),
+                                                fadeOutDuration:
+                                                    Duration(milliseconds: 500),
+                                                imageUrl:
+                                                    FFLocalizations.of(context)
+                                                                .languageCode ==
+                                                            'en'
+                                                        ? getJsonField(
+                                                            FFAppState()
+                                                                .userIndividual,
+                                                            r'''$._banner_home.banner_news_en.url''',
+                                                          ).toString()
+                                                        : getJsonField(
+                                                            FFAppState()
+                                                                .userIndividual,
+                                                            r'''$._banner_home.banner_news_es.url''',
+                                                          ).toString(),
                                                 width: 360.0,
                                                 height: 100.0,
                                                 fit: BoxFit.fitWidth,
@@ -4717,16 +5097,22 @@ Salud */
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
                                                       FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalErrorCuentaWidget(),
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalErrorCuentaWidget(),
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -4762,20 +5148,25 @@ Salud */
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
-                                              child: Image.network(
-                                                FFLocalizations.of(context)
-                                                            .languageCode ==
-                                                        'en'
-                                                    ? getJsonField(
-                                                        FFAppState()
-                                                            .userIndividual,
-                                                        r'''$._banner_home.banner_friends_en.url''',
-                                                      ).toString()
-                                                    : getJsonField(
-                                                        FFAppState()
-                                                            .userIndividual,
-                                                        r'''$._banner_home.banner_friends_es.url''',
-                                                      ).toString(),
+                                              child: CachedNetworkImage(
+                                                fadeInDuration:
+                                                    Duration(milliseconds: 500),
+                                                fadeOutDuration:
+                                                    Duration(milliseconds: 500),
+                                                imageUrl:
+                                                    FFLocalizations.of(context)
+                                                                .languageCode ==
+                                                            'en'
+                                                        ? getJsonField(
+                                                            FFAppState()
+                                                                .userIndividual,
+                                                            r'''$._banner_home.banner_friends_en.url''',
+                                                          ).toString()
+                                                        : getJsonField(
+                                                            FFAppState()
+                                                                .userIndividual,
+                                                            r'''$._banner_home.banner_friends_es.url''',
+                                                          ).toString(),
                                                 width: 360.0,
                                                 height: 100.0,
                                                 fit: BoxFit.fitWidth,

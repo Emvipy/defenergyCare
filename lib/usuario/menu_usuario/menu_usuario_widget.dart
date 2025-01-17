@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'menu_usuario_model.dart';
 export 'menu_usuario_model.dart';
 
@@ -382,10 +384,12 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: ModalErrorCuentaWidget(),
+                                        return WebViewAware(
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: ModalErrorCuentaWidget(),
+                                          ),
                                         );
                                       },
                                     ).then((value) => safeSetState(() {}));
@@ -487,10 +491,12 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: ModalErrorCuentaWidget(),
+                                        return WebViewAware(
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: ModalErrorCuentaWidget(),
+                                          ),
                                         );
                                       },
                                     ).then((value) => safeSetState(() {}));
@@ -564,12 +570,13 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                     FFAppState().email != '') {
                                   if (FFAppState().creadoOk == 'si') {
                                     context.pushNamed(
-                                      'comunidad',
+                                      'hubComunidad',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
                                         ),
                                       },
                                     );
@@ -590,10 +597,12 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: ModalErrorCuentaWidget(),
+                                        return WebViewAware(
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: ModalErrorCuentaWidget(),
+                                          ),
                                         );
                                       },
                                     ).then((value) => safeSetState(() {}));
@@ -696,10 +705,12 @@ class _MenuUsuarioWidgetState extends State<MenuUsuarioWidget>
                                     enableDrag: false,
                                     context: context,
                                     builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: ModalErrorCuentaWidget(),
+                                      return WebViewAware(
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        ),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
+import 'dart:ui';
 import 'empresa_pdte_validacion_copy_widget.dart'
     show EmpresaPdteValidacionCopyWidget;
 import 'package:flutter/material.dart';

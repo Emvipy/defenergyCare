@@ -9,10 +9,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'menu_diario_model.dart';
 export 'menu_diario_model.dart';
 
@@ -71,7 +73,10 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
         final menuDiarioDiarioInfoSelectorResponse = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -91,7 +96,16 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                     size: 30.0,
                   ),
                   onPressed: () async {
-                    context.pop();
+                    context.pushNamed(
+                      'Home',
+                      extra: <String, dynamic>{
+                        kTransitionInfoKey: TransitionInfo(
+                          hasTransition: true,
+                          transitionType: PageTransitionType.fade,
+                          duration: Duration(milliseconds: 0),
+                        ),
+                      },
+                    );
                   },
                 ),
                 title: Text(
@@ -229,16 +243,22 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () =>
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
                                                           FocusScope.of(context)
-                                                              .unfocus(),
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            ModalInfoCrearWidget(),
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalInfoCrearWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -267,6 +287,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        var _shouldSetState = false;
                                         if ((DiarioInfoSelectorCall
                                                     .diarioHoyHecho(
                                                   menuDiarioDiarioInfoSelectorResponse
@@ -284,6 +305,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                             authToken: FFAppState().authToken,
                                           );
 
+                                          _shouldSetState = true;
                                           FFAppState().diarioId =
                                               DiarioCreaCall.diarioId(
                                             (_model.apiResultNew1?.jsonBody ??
@@ -313,9 +335,14 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                               );
                                             }(),
                                           );
+                                        } else {
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
+                                          return;
                                         }
 
-                                        safeSetState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                       },
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -457,16 +484,22 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () =>
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
                                                           FocusScope.of(context)
-                                                              .unfocus(),
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            ModalInfoDuplicarWidget(),
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalInfoDuplicarWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -687,16 +720,22 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () =>
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
                                                           FocusScope.of(context)
-                                                              .unfocus(),
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            ModalInfoEditarWidget(),
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalInfoEditarWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -881,16 +920,22 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () =>
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
                                                           FocusScope.of(context)
-                                                              .unfocus(),
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            ModalInfoFinalizarWidget(),
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalInfoFinalizarWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },
@@ -1157,7 +1202,7 @@ class _MenuDiarioWidgetState extends State<MenuDiarioWidget> {
                             ),
                           ),
                         ),
-                      ].addToEnd(SizedBox(height: 30.0)),
+                      ].addToEnd(SizedBox(height: 120.0)),
                     ),
                   ),
                   wrapWithModel(

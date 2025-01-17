@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'noticias_widget.dart' show NoticiasWidget;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -22,16 +23,21 @@ class NoticiasModel extends FlutterFlowModel<NoticiasWidget> {
 
   String filtro = 'Todas';
 
+  String autor = 'Todos';
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
+  // State field(s) for DropDown_enfermedad widget.
+  String? dropDownEnfermedadValue;
+  FormFieldController<String>? dropDownEnfermedadValueController;
   Completer<ApiCallResponse>? apiRequestCompleter;
+  // State field(s) for DropDown_autor widget.
+  String? dropDownAutorValue;
+  FormFieldController<String>? dropDownAutorValueController;
   // Stores action output result for [Backend Call - API (empresa crea noticia)] action in Button widget.
   ApiCallResponse? apiCreaNews;
   // Model for menu_usuario component.

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'chat_conversaciones_model.dart';
 export 'chat_conversaciones_model.dart';
 
@@ -64,7 +66,10 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -84,7 +89,16 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pop();
+                context.pushNamed(
+                  'Home',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
               },
             ),
             title: Text(
@@ -799,19 +813,62 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                     ),
                                                                     child: Image
                                                                         .network(
-                                                                      FFAppState().xUserId ==
-                                                                              functions.parseJsonValueToInteger(getJsonField(
-                                                                                childMisConversacionesItem,
-                                                                                r'''$.user_creador''',
-                                                                              ))
-                                                                          ? getJsonField(
-                                                                              childMisConversacionesItem,
-                                                                              r'''$._user_receptor.avatar.url''',
-                                                                            ).toString()
-                                                                          : getJsonField(
-                                                                              childMisConversacionesItem,
-                                                                              r'''$._user_creador.avatar.url''',
-                                                                            ).toString(),
+                                                                      () {
+                                                                        if ((FFAppState().xUserId ==
+                                                                                functions.parseJsonValueToInteger(getJsonField(
+                                                                                  childMisConversacionesItem,
+                                                                                  r'''$.user_creador''',
+                                                                                ))) &&
+                                                                            (functions
+                                                                                    .parseJsonValueToInteger(getJsonField(
+                                                                                      childMisConversacionesItem,
+                                                                                      r'''$._user_receptor.perfil_id''',
+                                                                                    ))
+                                                                                    .toString() ==
+                                                                                '1')) {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_receptor.avatar.url''',
+                                                                          ).toString();
+                                                                        } else if ((FFAppState().xUserId ==
+                                                                                functions.parseJsonValueToInteger(getJsonField(
+                                                                                  childMisConversacionesItem,
+                                                                                  r'''$.user_creador''',
+                                                                                ))) &&
+                                                                            (functions
+                                                                                    .parseJsonValueToInteger(getJsonField(
+                                                                                      childMisConversacionesItem,
+                                                                                      r'''$._user_receptor.perfil_id''',
+                                                                                    ))
+                                                                                    .toString() !=
+                                                                                '1')) {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_receptor.insignia.url''',
+                                                                          ).toString();
+                                                                        } else if ((FFAppState().xUserId ==
+                                                                                functions.parseJsonValueToInteger(getJsonField(
+                                                                                  childMisConversacionesItem,
+                                                                                  r'''$.user_receptor''',
+                                                                                ))) &&
+                                                                            (functions
+                                                                                    .parseJsonValueToInteger(getJsonField(
+                                                                                      childMisConversacionesItem,
+                                                                                      r'''$._user_creador.perfil_id''',
+                                                                                    ))
+                                                                                    .toString() ==
+                                                                                '1')) {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_creador.avatar.url''',
+                                                                          ).toString();
+                                                                        } else {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_creador.insignia.url''',
+                                                                          ).toString();
+                                                                        }
+                                                                      }(),
                                                                       fit: BoxFit
                                                                           .cover,
                                                                     ),
@@ -982,21 +1039,29 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                     context,
                                                                 builder:
                                                                     (context) {
-                                                                  return GestureDetector(
-                                                                    onTap: () =>
-                                                                        FocusScope.of(context)
-                                                                            .unfocus(),
+                                                                  return WebViewAware(
                                                                     child:
-                                                                        Padding(
-                                                                      padding: MediaQuery
-                                                                          .viewInsetsOf(
-                                                                              context),
+                                                                        GestureDetector(
+                                                                      onTap:
+                                                                          () {
+                                                                        FocusScope.of(context)
+                                                                            .unfocus();
+                                                                        FocusManager
+                                                                            .instance
+                                                                            .primaryFocus
+                                                                            ?.unfocus();
+                                                                      },
                                                                       child:
-                                                                          ModalEliminaConversacionWidget(
-                                                                        conversacionId:
-                                                                            getJsonField(
-                                                                          childMisConversacionesItem,
-                                                                          r'''$.id''',
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ModalEliminaConversacionWidget(
+                                                                          conversacionId:
+                                                                              getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$.id''',
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),

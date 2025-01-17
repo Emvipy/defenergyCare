@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -261,7 +262,10 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -282,7 +286,13 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
               ),
               onPressed: () async {
                 context.pushNamed(
-                  'diario_Into2',
+                  'diario_Into1',
+                  queryParameters: {
+                    'primerIdario': serializeParam(
+                      'no',
+                      ParamType.String,
+                    ),
+                  }.withoutNulls,
                   extra: <String, dynamic>{
                     kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
@@ -10256,9 +10266,11 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                   if (_shouldSetState) safeSetState(() {});
                                   return;
                                 } else {
-                                  if (FFAppState().momento < 3) {
+                                  if (FFAppState().momento < 4) {
                                     FFAppState().momento =
                                         FFAppState().momento + 1;
+                                    FFAppState().intoPlatoId = 0;
+                                    FFAppState().intoBebidaId = 0;
                                     safeSetState(() {});
                                     _model.cefalea = 0;
                                     _model.abdominal = 0;
@@ -10291,6 +10303,9 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                         ),
                                       },
                                     );
+
+                                    if (_shouldSetState) safeSetState(() {});
+                                    return;
                                   } else {
                                     _model.apiFIn2 =
                                         await IntoleranciaFinalizaDiarioCall
@@ -10442,6 +10457,8 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                   FFAppState().intoBebidas = 'no';
                                   FFAppState().mostrarAyer = 'si';
                                   FFAppState().momento = 1;
+                                  FFAppState().intoPlatoId = 0;
+                                  FFAppState().intoBebidaId = 0;
 
                                   context.pushNamed(
                                     'Home',
@@ -10571,6 +10588,8 @@ class _DiarioInto3WidgetState extends State<DiarioInto3Widget> {
                                   FFAppState().intoBebidas = 'no';
                                   FFAppState().mostrarAyer = 'si';
                                   FFAppState().momento = 1;
+                                  FFAppState().intoPlatoId = 0;
+                                  FFAppState().intoBebidaId = 0;
 
                                   safeSetState(() {});
                                 },

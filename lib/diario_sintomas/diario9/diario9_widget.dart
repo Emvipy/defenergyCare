@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +94,10 @@ class _Diario9WidgetState extends State<Diario9Widget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -1169,8 +1173,8 @@ class _Diario9WidgetState extends State<Diario9Widget> {
                                       });
                                     },
                                     child: Container(
-                                      width: 135.0,
-                                      height: 100.0,
+                                      width: 105.0,
+                                      height: 86.0,
                                       decoration: BoxDecoration(
                                         color: _model.alivioSintomas == 'si'
                                             ? FlutterFlowTheme.of(context)
@@ -1189,7 +1193,7 @@ class _Diario9WidgetState extends State<Diario9Widget> {
                                             Icons.check_circle_outline_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            size: 35.0,
+                                            size: 32.0,
                                           ),
                                           Flexible(
                                             child: Text(
@@ -1253,8 +1257,8 @@ síntomas */
                                       });
                                     },
                                     child: Container(
-                                      width: 135.0,
-                                      height: 100.0,
+                                      width: 105.0,
+                                      height: 86.0,
                                       decoration: BoxDecoration(
                                         color: _model.alivioSintomas == 'no'
                                             ? FlutterFlowTheme.of(context)
@@ -1273,7 +1277,7 @@ síntomas */
                                             Icons.close_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            size: 35.0,
+                                            size: 32.0,
                                           ),
                                           Flexible(
                                             child: Text(
@@ -1281,6 +1285,90 @@ síntomas */
                                                   .getText(
                                                 '8ws65dgv' /* No alivió mis
 síntomas */
+                                                ,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      safeSetState(() {
+                                        _model.dropDownMejora1P3ValueController
+                                            ?.reset();
+                                        _model.dropDownMejora2P3ValueController
+                                            ?.reset();
+                                        _model.dropDownMejora3P3ValueController
+                                            ?.reset();
+                                        _model.dropDownMejora4P3ValueController
+                                            ?.reset();
+                                        _model.dropDownMejora5P3ValueController
+                                            ?.reset();
+                                        _model.dropDownEmpeora1P3ValueController
+                                            ?.reset();
+                                        _model.dropDownEmpeora2P3ValueController
+                                            ?.reset();
+                                        _model.dropDownEmpeora3P3ValueController
+                                            ?.reset();
+                                        _model.dropDownEmpeora4P3ValueController
+                                            ?.reset();
+                                        _model.dropDownEmpeora5P3ValueController
+                                            ?.reset();
+                                      });
+                                      _model.alivioSintomas = 'sin';
+                                      safeSetState(() {});
+                                      safeSetState(() {
+                                        _model.textController2?.clear();
+                                        _model.textController1?.clear();
+                                      });
+                                    },
+                                    child: Container(
+                                      width: 105.0,
+                                      height: 86.0,
+                                      decoration: BoxDecoration(
+                                        color: _model.alivioSintomas == 'sin'
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondary
+                                            : FlutterFlowTheme.of(context)
+                                                .primary,
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.back_hand_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            size: 32.0,
+                                          ),
+                                          Flexible(
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'i6n11c6q' /* No tuvo
+efectos */
                                                 ,
                                               ),
                                               textAlign: TextAlign.center,
@@ -2221,7 +2309,8 @@ síntomas */
                           ),
                         if ((FFAppState().tmpCantidadSuplementos < 3) &&
                             (_model.nombreMed != null &&
-                                _model.nombreMed != ''))
+                                _model.nombreMed != '') &&
+                            (_model.alivioSintomas != 'sin'))
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 0.0),
@@ -2416,7 +2505,176 @@ síntomas */
                               ],
                             ),
                           ),
-                        if (_model.nombreMed != null && _model.nombreMed != '')
+                        if ((FFAppState().tmpCantidadSuplementos < 3) &&
+                            (_model.nombreMed != null &&
+                                _model.nombreMed != '') &&
+                            (_model.alivioSintomas == 'sin'))
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 30.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    _model.apiP92sin =
+                                        await DiarioNueveCall.call(
+                                      authToken: FFAppState().authToken,
+                                      diarioId: FFAppState().diarioId,
+                                      med1: _model.nombreMed,
+                                      conAlivio: _model.alivioSintomas,
+                                      sinAlivio: 'n/a',
+                                      mejora1: _model.mejora1 != null &&
+                                              _model.mejora1 != ''
+                                          ? _model.mejora1
+                                          : 'n/a',
+                                      mejora2: _model.mejora2 != null &&
+                                              _model.mejora2 != ''
+                                          ? _model.mejora2
+                                          : 'n/a',
+                                      mejora3: _model.mejora3 != null &&
+                                              _model.mejora3 != ''
+                                          ? _model.mejora3
+                                          : 'n/a',
+                                      mejora4: _model.mejora4 != null &&
+                                              _model.mejora4 != ''
+                                          ? _model.mejora4
+                                          : 'n/a',
+                                      mejora5: _model.mejora5 != null &&
+                                              _model.mejora5 != ''
+                                          ? _model.mejora5
+                                          : 'n/a',
+                                      empeora1: _model.emp1 != null &&
+                                              _model.emp1 != ''
+                                          ? _model.emp1
+                                          : 'n/a',
+                                      empeora2: _model.emp2 != null &&
+                                              _model.emp2 != ''
+                                          ? _model.emp2
+                                          : 'n/a',
+                                      empeora3: _model.emp3 != null &&
+                                              _model.emp3 != ''
+                                          ? _model.emp3
+                                          : 'n/a',
+                                      empeora4: _model.emp4 != null &&
+                                              _model.emp4 != ''
+                                          ? _model.emp4
+                                          : 'n/a',
+                                      empeora5: _model.emp5 != null &&
+                                              _model.emp5 != ''
+                                          ? _model.emp5
+                                          : 'n/a',
+                                      notas: _model.textController2.text !=
+                                                  null &&
+                                              _model.textController2.text != ''
+                                          ? functions
+                                              .formatTextwithLineBreaksToXano(
+                                                  _model.textController2.text)
+                                          : 'n/a',
+                                      numSuplemento:
+                                          FFAppState().tmpCantidadSuplementos,
+                                    );
+
+                                    _model.nombreMed = null;
+                                    _model.ultimoMed = 'empty';
+                                    _model.alivioSintomas = 'x';
+                                    _model.contadorAlivio = 0;
+                                    _model.mejora1 = null;
+                                    _model.mejora2 = null;
+                                    _model.mejora3 = null;
+                                    _model.mejora4 = null;
+                                    _model.mejora5 = null;
+                                    _model.emp1 = null;
+                                    _model.emp2 = null;
+                                    _model.emp3 = null;
+                                    _model.emp4 = null;
+                                    _model.emp5 = null;
+                                    _model.respuestaBusqueda = [];
+                                    safeSetState(() {});
+                                    safeSetState(() {
+                                      _model.textController1?.clear();
+                                      _model.textController2?.clear();
+                                    });
+                                    safeSetState(() {
+                                      _model.dropDownMejora1P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora2P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora3P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora4P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora5P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora1P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora2P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora3P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora4P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora5P3ValueController
+                                          ?.reset();
+                                    });
+                                    safeSetState(() {
+                                      _model.dropDownMejora1P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora2P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora3P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora4P3ValueController
+                                          ?.reset();
+                                      _model.dropDownMejora5P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora1P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora2P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora3P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora4P3ValueController
+                                          ?.reset();
+                                      _model.dropDownEmpeora5P3ValueController
+                                          ?.reset();
+                                    });
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'r88ur5pz' /* Agregar otro suplemento */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        if ((_model.nombreMed != null &&
+                                _model.nombreMed != '') &&
+                            (_model.alivioSintomas != 'sin'))
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 0.0),
@@ -2539,6 +2797,124 @@ síntomas */
                                         .botonDesactivado,
                                     disabledTextColor:
                                         FlutterFlowTheme.of(context).accent4,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        if ((_model.nombreMed != null &&
+                                _model.nombreMed != '') &&
+                            (_model.alivioSintomas == 'sin'))
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 30.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    _model.apiP9sin2 =
+                                        await DiarioNueveCall.call(
+                                      authToken: FFAppState().authToken,
+                                      diarioId: FFAppState().diarioId,
+                                      med1: _model.nombreMed,
+                                      conAlivio: _model.alivioSintomas,
+                                      sinAlivio: 'n/a',
+                                      mejora1: _model.mejora1 != null &&
+                                              _model.mejora1 != ''
+                                          ? _model.mejora1
+                                          : 'n/a',
+                                      mejora2: _model.mejora2 != null &&
+                                              _model.mejora2 != ''
+                                          ? _model.mejora2
+                                          : 'n/a',
+                                      mejora3: _model.mejora3 != null &&
+                                              _model.mejora3 != ''
+                                          ? _model.mejora3
+                                          : 'n/a',
+                                      mejora4: _model.mejora4 != null &&
+                                              _model.mejora4 != ''
+                                          ? _model.mejora4
+                                          : 'n/a',
+                                      mejora5: _model.mejora5 != null &&
+                                              _model.mejora5 != ''
+                                          ? _model.mejora5
+                                          : 'n/a',
+                                      empeora1: _model.emp1 != null &&
+                                              _model.emp1 != ''
+                                          ? _model.emp1
+                                          : 'n/a',
+                                      empeora2: _model.emp2 != null &&
+                                              _model.emp2 != ''
+                                          ? _model.emp2
+                                          : 'n/a',
+                                      empeora3: _model.emp3 != null &&
+                                              _model.emp3 != ''
+                                          ? _model.emp3
+                                          : 'n/a',
+                                      empeora4: _model.emp4 != null &&
+                                              _model.emp4 != ''
+                                          ? _model.emp4
+                                          : 'n/a',
+                                      empeora5: _model.emp5 != null &&
+                                              _model.emp5 != ''
+                                          ? _model.emp5
+                                          : 'n/a',
+                                      notas: _model.textController2.text !=
+                                                  null &&
+                                              _model.textController2.text != ''
+                                          ? functions
+                                              .formatTextwithLineBreaksToXano(
+                                                  _model.textController2.text)
+                                          : 'n/a',
+                                      numSuplemento:
+                                          FFAppState().tmpCantidadSuplementos,
+                                    );
+
+                                    _model.apiResultyly3sin =
+                                        await DiarioFinalizaCall.call(
+                                      authToken: FFAppState().authToken,
+                                      idDiario: FFAppState().diarioId,
+                                    );
+
+                                    context.goNamed(
+                                      'diarioFin',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                        ),
+                                      },
+                                    );
+
+                                    safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'azs4t38r' /* Continuar */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ],

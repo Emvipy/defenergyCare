@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'diario1_widget.dart' show Diario1Widget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

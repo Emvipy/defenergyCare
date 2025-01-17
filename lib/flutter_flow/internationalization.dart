@@ -209,6 +209,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Fecha de Nacimiento',
       'en': 'Birthdate',
     },
+    'naae906h': {
+      'es': '¿Qué tipo de usuario eres?',
+      'en': 'What kind of user are you?',
+    },
+    'nmo79shg': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'sr5jpnd7': {
       'es': 'Paciente',
       'en': 'Patient',
@@ -224,14 +232,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'crvb2rt1': {
       'es': 'Asociación',
       'en': 'Association',
-    },
-    'naae906h': {
-      'es': '¿Qué tipo de usuario eres?',
-      'en': 'What kind of user are you?',
-    },
-    'nmo79shg': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'y5ks55zr': {
       'es': 'Continuar',
@@ -516,6 +516,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '75%',
       'en': '75%',
     },
+    'aetdrzy5': {
+      'es': '¿Cuál es tu género?',
+      'en': 'What is your gender?',
+    },
+    '85q2q5a3': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'ek3xlwpc': {
       'es': 'Femenino',
       'en': 'Female',
@@ -524,11 +532,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Masculino',
       'en': 'Male',
     },
-    'aetdrzy5': {
-      'es': '¿Cuál es tu género?',
-      'en': 'What is your gender?',
+    'uam2dz4k': {
+      'es': '¿Eres fumador/a?',
+      'en': 'Are you a smoker?',
     },
-    '85q2q5a3': {
+    'cwh3joix': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
@@ -540,11 +548,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Si',
       'en': 'Yeah',
     },
-    'uam2dz4k': {
-      'es': '¿Eres fumador/a?',
-      'en': 'Are you a smoker?',
+    '02tno779': {
+      'es': '¿Consumes Alcohol?',
+      'en': 'Do you consume alcohol?',
     },
-    'cwh3joix': {
+    'nk625kim': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
@@ -559,14 +567,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'y8znx99t': {
       'es': 'Diario',
       'en': 'Diary',
-    },
-    '02tno779': {
-      'es': '¿Consumes Alcohol?',
-      'en': 'Do you consume alcohol?',
-    },
-    'nk625kim': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'tsiybb7q': {
       'es': 'Selecciona tu peso',
@@ -590,6 +590,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'In what year did you become infected with SARS-CoV-2 and develop long COVID?',
     },
+    'xtc2t16b': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '1zuwyrwo': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '846kfcjg': {
       'es': '2020',
       'en': '2020',
@@ -610,17 +618,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    'xtc2t16b': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '1zuwyrwo': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '0et0o6am': {
       'es': '¿Cuántas veces te has contagiado COVID? ',
       'en': 'How many times have you had COVID?',
+    },
+    'vemo42xm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '5i8n8jm4': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'vj6k7if2': {
       'es': '1',
@@ -666,26 +674,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    'vemo42xm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '5i8n8jm4': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'axfrptsc': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have or have had long-term COVID?',
-    },
-    '65vs9c8a': {
-      'es': 'Si',
-      'en': 'Yeah',
-    },
-    '31e4wzeg': {
-      'es': 'No',
-      'en': 'No',
     },
     '2wxnmqig': {
       'es': 'Selecciona tu respuesta...',
@@ -695,9 +687,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '65vs9c8a': {
+      'es': 'Si',
+      'en': 'Yeah',
+    },
+    '31e4wzeg': {
+      'es': 'No',
+      'en': 'No',
+    },
     'k199rfjc': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'ms85xsz0': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3d9x3diu': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'enseo557': {
       'es': 'Familiar de primer grado',
@@ -710,14 +718,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'pvq4v9ij': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'ms85xsz0': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3d9x3diu': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'bw9zvjud': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -734,6 +734,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'g4zat2m1': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    'xdcusyx6': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'u45tx5qq': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'qcj6fq48': {
       'es': 'No lo sé',
@@ -763,17 +771,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    'xdcusyx6': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'u45tx5qq': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'znxz8l41': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '5wz9s42j': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ov6t7tyg': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'tx9i4ghr': {
       'es': 'Menos de 1 año',
@@ -785,31 +793,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '05t9o80i': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'phh9pkq1': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    '5wz9s42j': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ov6t7tyg': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'chawyo52': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    'y6t8v16g': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'denaqaju': {
-      'es': 'No',
-      'en': 'No',
     },
     '2v4lrvx9': {
       'es': 'Selecciona tu respuesta...',
@@ -819,17 +811,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'iqqpdxgl': {
-      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
-      'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    'w19ce6zz': {
+    'y6t8v16g': {
       'es': 'Si',
       'en': 'Yes',
     },
-    'rz2t6hum': {
+    'denaqaju': {
       'es': 'No',
       'en': 'No',
+    },
+    'iqqpdxgl': {
+      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
+      'en': 'Do you have any immediate family members who have Fibromyalgia?',
     },
     'g0zddtk0': {
       'es': 'Selecciona tu respuesta...',
@@ -839,9 +831,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'w19ce6zz': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'rz2t6hum': {
+      'es': 'No',
+      'en': 'No',
+    },
     'pvnmnmdz': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'qfk8i4lp': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'yjler4kq': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'anywgijx': {
       'es': 'Familiar de primer grado',
@@ -854,14 +862,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '1pwfc0qu': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'qfk8i4lp': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'yjler4kq': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'drnh1i0t': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -878,6 +878,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '8wv48f1o': {
       'es': '¿Con qué criterios te han diagnosticado?',
       'en': 'What criteria have you been diagnosed with?',
+    },
+    'e3cpz5qm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '9ops1pcc': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'ua4s77wz': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -900,17 +908,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    'e3cpz5qm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '9ops1pcc': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'ycxof0ja': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'ikmr0xro': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'eaq5jrwn': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'rb9seb5w': {
       'es': 'Menos de 1 año',
@@ -922,23 +930,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xxm5lys4': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'tecsc3c7': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'ikmr0xro': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'eaq5jrwn': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'c6b749l8': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    'ux7ssy8m': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '1sf7xpw4': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'xlk7b90w': {
       'es': 'No lo sé',
@@ -968,25 +976,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    'ux7ssy8m': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '1sf7xpw4': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'zex53crn': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    '3q38fn4t': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'zqhhlyus': {
-      'es': 'No',
-      'en': 'No',
     },
     'lptfc47v': {
       'es': 'Selecciona tu respuesta...',
@@ -996,9 +988,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '3q38fn4t': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'zqhhlyus': {
+      'es': 'No',
+      'en': 'No',
+    },
     'r8ai1vfn': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    '46orqyku': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '6acvfkec': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'ay7hnasv': {
       'es': 'Familiar de primer grado',
@@ -1011,14 +1019,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'pelvqqpi': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    '46orqyku': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '6acvfkec': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '6jp4j1c0': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -1048,6 +1048,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'r8w91ivm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'jgmwbew2': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'dv7i5z7e': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -1058,32 +1066,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6gsbji7a': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'chy6std3': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'r8w91ivm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'jgmwbew2': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '1clmpagw': {
       'es': '¿Tienes algún familiar directo que tenga la misma enfermedad?',
       'en':
           'Do you have any immediate family members who have the same disease?',
-    },
-    '8dh15ee4': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '4xrqsvkn': {
-      'es': 'No',
-      'en': 'No',
     },
     '0dka0wgi': {
       'es': 'Selecciona tu respuesta...',
@@ -1093,9 +1085,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '8dh15ee4': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '4xrqsvkn': {
+      'es': 'No',
+      'en': 'No',
+    },
     'oefois7m': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'ot49523d': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'y47pb4vs': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'hyrsxg7i': {
       'es': 'Familiar de primer grado',
@@ -1108,14 +1116,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'eg597q4p': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'ot49523d': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'y47pb4vs': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'awdei4g6': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -1147,6 +1147,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'In what year did you become infected with SARS-CoV-2 and develop long COVID?',
     },
+    '242j530a': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'eqxank3h': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'kf6zmpit': {
       'es': '2020',
       'en': '2020',
@@ -1167,17 +1175,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    '242j530a': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'eqxank3h': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'vgity7l7': {
       'es': '¿Cuántas veces te has contagiado con el SARS-CoV-2?',
       'en': 'How many times have you been infected with SARS-CoV-2?',
+    },
+    'evfpjrcc': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'uco232hw': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '7ruuuj2i': {
       'es': '1',
@@ -1223,26 +1231,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    'evfpjrcc': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'uco232hw': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'o670j55h': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have long-term COVID?',
-    },
-    'v37rm1hx': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'zdvn7txm': {
-      'es': 'No',
-      'en': 'No',
     },
     'yvdrjlkd': {
       'es': 'Selecciona tu respuesta...',
@@ -1252,9 +1244,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'v37rm1hx': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'zdvn7txm': {
+      'es': 'No',
+      'en': 'No',
+    },
     '7cq5c0x7': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'qhr87loa': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'bxsf5r7v': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'v1ymsk20': {
       'es': 'Familiar de primer grado',
@@ -1268,17 +1276,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'qhr87loa': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'bxsf5r7v': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '58d0ty5d': {
       'es': '¿Con qué criterios te han diagnosticado EM/SFC?',
       'en': 'What criteria have you been diagnosed with ME/CFS?',
+    },
+    'wu6hpq88': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'mg3ss6j1': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'd7bf7at1': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -1301,17 +1309,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    'wu6hpq88': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'mg3ss6j1': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'ysl23onx': {
       'es': '¿Cuánto tiempo llevas diagnosticado EM/SFC?',
       'en': 'How long have you been diagnosed with ME/CFS?',
+    },
+    'k3do9eas': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ioqfsgqs': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '8us3ed50': {
       'es': 'Menos de 1 año',
@@ -1323,23 +1331,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zk8m5ogo': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     '8boondpp': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'k3do9eas': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ioqfsgqs': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '3fnvud3s': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    'd6iqbat9': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    's00hyxeb': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'tk7zqabw': {
       'es': 'No lo sé',
@@ -1369,25 +1377,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    'd6iqbat9': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    's00hyxeb': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '7c60glzf': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    'cdj1gjoo': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '1a0sbr89': {
-      'es': 'No',
-      'en': 'No',
     },
     '5ucg3i3g': {
       'es': 'Selecciona tu respuesta...',
@@ -1397,9 +1389,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'cdj1gjoo': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '1a0sbr89': {
+      'es': 'No',
+      'en': 'No',
+    },
     'dx8fdr67': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    '2i7n2pw9': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'tprnd2tg': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'dwivpz3i': {
       'es': 'Familiar de primer grado',
@@ -1412,14 +1420,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '5sqh8qf9': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    '2i7n2pw9': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'tprnd2tg': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'jd0z2daj': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -1436,6 +1436,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'haz3cs2x': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    'tbbwa317': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3nifj4md': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '0ho2hjhk': {
       'es': 'No lo sé',
@@ -1465,17 +1473,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    'tbbwa317': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3nifj4md': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'glz59dry': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'ux3m9pbj': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '4e8wkc6m': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'd8zm4p7n': {
       'es': 'Menos de 1 año',
@@ -1487,31 +1495,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't80k69dh': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'z3tkgy7l': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'ux3m9pbj': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '4e8wkc6m': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'h0m069y8': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    '4pvgn93t': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'ko2k45if': {
-      'es': 'No',
-      'en': 'No',
     },
     'arpgq7xz': {
       'es': 'Selecciona tu respuesta...',
@@ -1521,17 +1513,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'e40t35j2': {
-      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
-      'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    'va3simti': {
+    '4pvgn93t': {
       'es': 'Si',
       'en': 'Yes',
     },
-    'grm67jnq': {
+    'ko2k45if': {
       'es': 'No',
       'en': 'No',
+    },
+    'e40t35j2': {
+      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
+      'en': 'Do you have any immediate family members who have Fibromyalgia?',
     },
     '29dd61ot': {
       'es': 'Selecciona tu respuesta...',
@@ -1541,9 +1533,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'va3simti': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'grm67jnq': {
+      'es': 'No',
+      'en': 'No',
+    },
     'hiz1gsjy': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'fy9e8w3e': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'nzm52x7f': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'nu76fw0r': {
       'es': 'Familiar de primer grado',
@@ -1557,17 +1565,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'fy9e8w3e': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'nzm52x7f': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'mqdeqi0d': {
       'es': '¿Con qué criterios te han diagnosticado?',
       'en': 'What criteria have you been diagnosed with?',
+    },
+    'vrtfvf97': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'jq57bzm8': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '9wdbuop0': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -1590,17 +1598,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    'vrtfvf97': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'jq57bzm8': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'w532t9xh': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'jgqzhiw5': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xngs53fg': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'j5u7yhsr': {
       'es': 'Menos de 1 año',
@@ -1612,23 +1620,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'g7lxte7c': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'qva6ips8': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'jgqzhiw5': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xngs53fg': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'qoqm8f7r': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    't3irg48x': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'nmbbr1bz': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '03wzlmhj': {
       'es': 'No lo sé',
@@ -1658,25 +1666,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    't3irg48x': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'nmbbr1bz': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'jctr0ilq': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    'q66yp0rz': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'gv9ayit9': {
-      'es': 'No',
-      'en': 'No',
     },
     'uj1p0fha': {
       'es': 'Selecciona tu respuesta...',
@@ -1686,9 +1678,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'q66yp0rz': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'gv9ayit9': {
+      'es': 'No',
+      'en': 'No',
+    },
     '4hk5m9yl': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'yq2nfz7v': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ntalws28': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'cd23uhs5': {
       'es': 'Familiar de primer grado',
@@ -1701,14 +1709,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'n7dqsmdq': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'yq2nfz7v': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ntalws28': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '5mls7ju7': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -1727,6 +1727,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           '¿En qué año te infectaste con el SARS-CoV-2 y desarrollaste COVID persistente?',
       'en':
           'In what year did you become infected with SARS-CoV-2 and develop long COVID?',
+    },
+    'cb53z8xa': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'o6likmzd': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'lhxweo8i': {
       'es': '2020',
@@ -1748,17 +1756,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    'cb53z8xa': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'o6likmzd': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'yng0kkls': {
       'es': '¿Cuántas veces te has contagiado con el SARS-CoV-2?',
       'en': 'How many times have you been infected with SARS-CoV-2?',
+    },
+    'r5ga2jd1': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'mmpv3qwh': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '2vxz0fiw': {
       'es': '1',
@@ -1804,26 +1812,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    'r5ga2jd1': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'mmpv3qwh': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'n9sx2ecr': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have long-term COVID?',
-    },
-    '3pyk3tbf': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    't2gjnb93': {
-      'es': 'No',
-      'en': 'No',
     },
     'odk2jivy': {
       'es': 'Selecciona tu respuesta...',
@@ -1833,9 +1825,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '3pyk3tbf': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    't2gjnb93': {
+      'es': 'No',
+      'en': 'No',
+    },
     'mbkvrih5': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    '3yvgrvp0': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'cm22hom2': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'rs6shgy5': {
       'es': 'Familiar de primer grado',
@@ -1849,17 +1857,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    '3yvgrvp0': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'cm22hom2': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'qjer1ysa': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    'xjmcgun6': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'sgybupj5': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '0tswkrxa': {
       'es': 'No lo sé',
@@ -1889,17 +1897,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    'xjmcgun6': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'sgybupj5': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'o8q7jneb': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'tq1fhg0x': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'te3cdai4': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'hh4bduvv': {
       'es': 'Menos de 1 año',
@@ -1911,31 +1919,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pjewwr3i': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     '7fd4w87h': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'tq1fhg0x': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'te3cdai4': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'w3jcp13j': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    'py0c03eu': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'ooc3j0ak': {
-      'es': 'No',
-      'en': 'No',
     },
     'eo3hl3r7': {
       'es': 'Selecciona tu respuesta...',
@@ -1945,17 +1937,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'ui751wv0': {
-      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
-      'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    '80vwmqeu': {
+    'py0c03eu': {
       'es': 'Si',
       'en': 'Yes',
     },
-    'hnd2j57b': {
+    'ooc3j0ak': {
       'es': 'No',
       'en': 'No',
+    },
+    'ui751wv0': {
+      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
+      'en': 'Do you have any immediate family members who have Fibromyalgia?',
     },
     'mf4ly8tl': {
       'es': 'Selecciona tu respuesta...',
@@ -1965,9 +1957,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '80vwmqeu': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'hnd2j57b': {
+      'es': 'No',
+      'en': 'No',
+    },
     '4xn1a8gc': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'xw129lgm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '7s1rj1q5': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '9kacsnu2': {
       'es': 'Familiar de primer grado',
@@ -1980,14 +1988,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '7uctysdv': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'xw129lgm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '7s1rj1q5': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'hcj0ve91': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -2006,6 +2006,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           '¿En qué año te infectaste con el SARS-CoV-2 y desarrollaste COVID persistente?',
       'en':
           'In what year did you become infected with SARS-CoV-2 and develop long COVID?',
+    },
+    'fdi7ifiq': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'pdrupx2w': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '3o9pi4wc': {
       'es': '2020',
@@ -2027,17 +2035,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    'fdi7ifiq': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'pdrupx2w': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'xowbxgy9': {
       'es': '¿Cuántas veces te has contagiado con el SARS-CoV-2?',
       'en': 'How many times have you been infected with SARS-CoV-2?',
+    },
+    'fxyb8879': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'wlhk2n3y': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'lul5v863': {
       'es': '1',
@@ -2083,26 +2091,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    'fxyb8879': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'wlhk2n3y': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'ifvs9y0f': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have long-term COVID?',
-    },
-    'm0fw9ejy': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '55h5sv7r': {
-      'es': 'No',
-      'en': 'No',
     },
     '582vgqt3': {
       'es': 'Selecciona tu respuesta...',
@@ -2112,9 +2104,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'm0fw9ejy': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '55h5sv7r': {
+      'es': 'No',
+      'en': 'No',
+    },
     'r8m65of8': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'b2k8b9td': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'rjwhvoyv': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'omdj9q50': {
       'es': 'Familiar de primer grado',
@@ -2128,17 +2136,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'b2k8b9td': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'rjwhvoyv': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '17mnb83g': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    'o71w9hhf': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ina9cq7l': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '5l7u0yn5': {
       'es': 'No lo sé',
@@ -2168,17 +2176,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    'o71w9hhf': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ina9cq7l': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'z2rug5q5': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '45cuicge': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'mhmi4ocu': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'xferqqem': {
       'es': 'Menos de 1 año',
@@ -2190,31 +2198,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n171jfee': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'fj591oye': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    '45cuicge': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'mhmi4ocu': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '1lho47m8': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    'xwdyi2ac': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'x2ubaad6': {
-      'es': 'No',
-      'en': 'No',
     },
     'xhot6gsq': {
       'es': 'Selecciona tu respuesta...',
@@ -2224,17 +2216,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    '0kfwfk39': {
-      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
-      'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    'j6kha0n2': {
+    'xwdyi2ac': {
       'es': 'Si',
       'en': 'Yes',
     },
-    '8m8ooh4y': {
+    'x2ubaad6': {
       'es': 'No',
       'en': 'No',
+    },
+    '0kfwfk39': {
+      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
+      'en': 'Do you have any immediate family members who have Fibromyalgia?',
     },
     '5hzr0d85': {
       'es': 'Selecciona tu respuesta...',
@@ -2244,9 +2236,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'j6kha0n2': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '8m8ooh4y': {
+      'es': 'No',
+      'en': 'No',
+    },
     'r03ltf9o': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'f16ylfom': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ik3ck37k': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'oktxbq3n': {
       'es': 'Familiar de primer grado',
@@ -2260,17 +2268,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'f16ylfom': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ik3ck37k': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'mnzc3k5z': {
       'es': '¿Con qué criterios te han diagnosticado?',
       'en': 'What criteria have you been diagnosed with?',
+    },
+    '8zhc9fzy': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '8w0osg50': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '0ibbihrt': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -2293,17 +2301,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    '8zhc9fzy': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '8w0osg50': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'dqqj6l3c': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'be8xw81u': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xa2b66bt': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '4ful2zb5': {
       'es': 'Menos de 1 año',
@@ -2315,23 +2323,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nfcpd6le': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     '007r2vkk': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'be8xw81u': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xa2b66bt': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '7xee8y3i': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    'o08e0a91': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '1ldycwwt': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'tjfxqkmq': {
       'es': 'No lo sé',
@@ -2361,25 +2369,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    'o08e0a91': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '1ldycwwt': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '0u5wrpt2': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    'st8pmkcc': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'ark3gzi4': {
-      'es': 'No',
-      'en': 'No',
     },
     '9esrkqn1': {
       'es': 'Selecciona tu respuesta...',
@@ -2389,9 +2381,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'st8pmkcc': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'ark3gzi4': {
+      'es': 'No',
+      'en': 'No',
+    },
     'sdgthtog': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    '8d4nbfc7': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '5de1znrf': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'bum7tgc2': {
       'es': 'Familiar de primer grado',
@@ -2404,14 +2412,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '9i0f3dtx': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    '8d4nbfc7': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '5de1znrf': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'rlnpxn25': {
       'es': 'Escribe aquí tus otras enfermedades',
@@ -2614,6 +2614,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'He olvidado mi contraseña',
       'en': 'I forgot my password',
     },
+    '0avv2omr': {
+      'es': 'Accede a Defenergy',
+      'en': 'Access Defenergy',
+    },
     '8dd3rmos': {
       'es': '¿Aún no tienes cuenta?  ',
       'en': 'Don\'t have an account yet?',
@@ -2771,6 +2775,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // menu_diario
   {
+    'gjihg8om': {
+      'es': 'Diario de Síntomas',
+      'en': 'Symptom Diary',
+    },
     '3i4i9mgm': {
       'es': 'Selecciona una opción',
       'en': 'Select an option',
@@ -2795,10 +2803,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'qq5aoojz': {
       'es': 'Finalizar el último Diario',
       'en': 'Finish the last Diary',
-    },
-    'gjihg8om': {
-      'es': 'Diario de Síntomas',
-      'en': 'Symptom Diary',
     },
     'q0i6gffx': {
       'es': 'Home',
@@ -4063,6 +4067,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'No alivió mis\nsíntomas',
       'en': 'It did not relieve my\nsymptoms',
     },
+    'q4736geo': {
+      'es': 'No tuvo\nefectos',
+      'en': 'It had no\neffects',
+    },
     'p8mxoq4d': {
       'es': 'Por favor indica los síntomas que han mejorado:',
       'en': 'Please indicate the symptoms that have improved:',
@@ -4075,10 +4083,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'fzlikk1s': {
-      'es': 'Option 1',
-      'en': 'Option 1',
-    },
     '9aahy66s': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -4087,7 +4091,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    '9coehomg': {
+    'fzlikk1s': {
       'es': 'Option 1',
       'en': 'Option 1',
     },
@@ -4099,7 +4103,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'fdt33sxu': {
+    '9coehomg': {
       'es': 'Option 1',
       'en': 'Option 1',
     },
@@ -4111,7 +4115,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    't4cmkdhj': {
+    'fdt33sxu': {
       'es': 'Option 1',
       'en': 'Option 1',
     },
@@ -4123,13 +4127,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    't4cmkdhj': {
+      'es': 'Option 1',
+      'en': 'Option 1',
+    },
     '4d8r3olj': {
       'es': 'Por favor indica los síntomas que han empeorado:',
       'en': 'Please indicate the symptoms that have worsened:',
-    },
-    'zxjfr3ku': {
-      'es': 'Option 1',
-      'en': 'Option 1',
     },
     'ij4evcym': {
       'es': 'Selecciona tu respuesta...',
@@ -4139,7 +4143,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    '6xcnfbxv': {
+    'zxjfr3ku': {
       'es': 'Option 1',
       'en': 'Option 1',
     },
@@ -4151,7 +4155,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    '951rhugu': {
+    '6xcnfbxv': {
       'es': 'Option 1',
       'en': 'Option 1',
     },
@@ -4163,7 +4167,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'deae9450': {
+    '951rhugu': {
       'es': 'Option 1',
       'en': 'Option 1',
     },
@@ -4175,7 +4179,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'dbcicu97': {
+    'deae9450': {
       'es': 'Option 1',
       'en': 'Option 1',
     },
@@ -4186,6 +4190,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'r3xdf6je': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'dbcicu97': {
+      'es': 'Option 1',
+      'en': 'Option 1',
     },
     'j7gui6qg': {
       'es': 'Notas',
@@ -4200,6 +4208,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     's7lovtks': {
+      'es': 'Continuar',
+      'en': 'Continue',
+    },
+    'p3y3fkic': {
       'es': 'Continuar',
       'en': 'Continue',
     },
@@ -4252,7 +4264,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4t4jpebj': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last diary made:',
+      'en': 'Or use the one from the last journal made:',
     },
     '83shmgxa': {
       'es': 'Si alivió mis\nsíntomas',
@@ -4261,6 +4273,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'wawgg3dc': {
       'es': 'No alivió mis\nsíntomas',
       'en': 'It did not relieve my\nsymptoms',
+    },
+    'm02d80d4': {
+      'es': 'No tuvo\nefectos',
+      'en': 'It had no\neffects',
     },
     'r4gu6c63': {
       'es': 'Por favor indica los síntomas que han mejorado:',
@@ -4362,6 +4378,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Continuar',
       'en': 'Continue',
     },
+    '338zjkt1': {
+      'es': 'Continuar',
+      'en': 'Continue',
+    },
     'kcxs535m': {
       'es': 'Finalizar más tarde',
       'en': 'Finish later',
@@ -4411,11 +4431,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yr9exkff': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last diary made:',
+      'en': 'Or use the one from the last journal made:',
     },
     '26wb8vcb': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last diary made:',
+      'en': 'Or use the one from the last journal made:',
     },
     'tcb9lgch': {
       'es': 'O usar el del último diario realizado:',
@@ -4428,6 +4448,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '8ws65dgv': {
       'es': 'No alivió mis\nsíntomas',
       'en': 'It did not relieve my\nsymptoms',
+    },
+    'i6n11c6q': {
+      'es': 'No tuvo\nefectos',
+      'en': 'It had no\neffects',
     },
     'cvbrjzok': {
       'es': 'Por favor indica los síntomas que han mejorado:',
@@ -4529,7 +4553,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Agregar otro suplemento',
       'en': 'Add another supplement',
     },
+    'r88ur5pz': {
+      'es': 'Agregar otro suplemento',
+      'en': 'Add another supplement',
+    },
     'h39tznfj': {
+      'es': 'Continuar',
+      'en': 'Continue',
+    },
+    'azs4t38r': {
       'es': 'Continuar',
       'en': 'Continue',
     },
@@ -4593,14 +4625,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    'rhf7qree': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'yywexbl1': {
-      'es': 'No',
-      'en': 'No',
-    },
     'a2dr2mgw': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -4608,6 +4632,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'pcjdrc2u': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'rhf7qree': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'yywexbl1': {
+      'es': 'No',
+      'en': 'No',
     },
     '68q94um6': {
       'es': '¿Cuál?',
@@ -4625,6 +4657,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'ykj68m93': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'fbb4a8w9': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '1ozetcbr': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -4641,27 +4681,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'ykj68m93': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'fbb4a8w9': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'e8wfvixy': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have or have had an autoimmune disease?',
-    },
-    'm2b0hv2u': {
-      'es': 'Si',
-      'en': 'Yeah',
-    },
-    '9xaqbx2a': {
-      'es': 'No',
-      'en': 'No',
     },
     'i0bji4uv': {
       'es': 'Selecciona tu respuesta...',
@@ -4671,9 +4695,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'm2b0hv2u': {
+      'es': 'Si',
+      'en': 'Yeah',
+    },
+    '9xaqbx2a': {
+      'es': 'No',
+      'en': 'No',
+    },
     'lehyu3ml': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'ws7sd1ck': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '9df2bfb5': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'u4syvneq': {
       'es': 'Familiar de primer grado',
@@ -4687,25 +4727,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'ws7sd1ck': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '9df2bfb5': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'r2s2zyhp': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'x9d596we': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'w3rfxree': {
-      'es': 'No',
-      'en': 'No',
     },
     'qp2piw8n': {
       'es': 'Selecciona tu respuesta...',
@@ -4715,9 +4739,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'x9d596we': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'w3rfxree': {
+      'es': 'No',
+      'en': 'No',
+    },
     'lkcvyhkt': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'dh3k2rgz': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ej3ar9cu': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'xsw7ay5n': {
       'es': 'Menos de 1 año',
@@ -4735,27 +4775,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'dh3k2rgz': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ej3ar9cu': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '3x2d4dna': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    'k3lsr9g3': {
-      'es': 'Si',
-      'en': 'Yeah',
-    },
-    'mjiox1lf': {
-      'es': 'No',
-      'en': 'No',
     },
     'y3r27gwm': {
       'es': 'Selecciona tu respuesta...',
@@ -4765,9 +4789,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'k3lsr9g3': {
+      'es': 'Si',
+      'en': 'Yeah',
+    },
+    'mjiox1lf': {
+      'es': 'No',
+      'en': 'No',
+    },
     'lcsd5zhg': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    '0s3r7vii': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ny89f23m': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'xj7zlhva': {
       'es': 'Familiar de primer grado',
@@ -4780,14 +4820,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'vez383ow': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    '0s3r7vii': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ny89f23m': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'lfkl2r4g': {
       'es':
@@ -4806,6 +4838,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '44rsaeul': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '1roec7oj': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'sls180m2': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -4821,14 +4861,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'gtxi9n5w': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '44rsaeul': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '1roec7oj': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'dkvkxqft': {
       'es':
@@ -4847,6 +4879,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'fq4mtgt9': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'mnt8qnmu': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '21a683zi': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -4862,14 +4902,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '810dab81': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'fq4mtgt9': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'mnt8qnmu': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'nptaq986': {
       'es':
@@ -4888,6 +4920,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'nkmd286h': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'vfnlznwe': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '5jbjff6t': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -4903,14 +4943,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'i2xitvvk': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'nkmd286h': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'vfnlznwe': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'h0jaqzot': {
       'es':
@@ -4929,6 +4961,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'sgvwy6vu': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'nnmo0hgw': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '43k1rqb2': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -4945,14 +4985,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'sgvwy6vu': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'nnmo0hgw': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'j4aiyde5': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -4960,14 +4992,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '730du81g': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'ukq9re79': {
-      'es': 'Si',
-      'en': 'Yeah',
-    },
-    'hk6ui87f': {
-      'es': 'No',
-      'en': 'No',
     },
     '59au0z45': {
       'es': 'Selecciona tu respuesta...',
@@ -4977,9 +5001,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'ukq9re79': {
+      'es': 'Si',
+      'en': 'Yeah',
+    },
+    'hk6ui87f': {
+      'es': 'No',
+      'en': 'No',
+    },
     'wh5cldwz': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '296li1wg': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'bcajy7fi': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'x16yruv6': {
       'es': 'Menos de 1 año',
@@ -4997,27 +5037,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '296li1wg': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'bcajy7fi': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '84u4vt5q': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    'br9rfuhs': {
-      'es': 'Si',
-      'en': 'Yeah',
-    },
-    'm7z1dp4v': {
-      'es': 'No',
-      'en': 'No',
     },
     '1kizh8wh': {
       'es': 'Selecciona tu respuesta...',
@@ -5027,9 +5051,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'br9rfuhs': {
+      'es': 'Si',
+      'en': 'Yeah',
+    },
+    'm7z1dp4v': {
+      'es': 'No',
+      'en': 'No',
+    },
     'pg12sf1l': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'cteauoy2': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'qhpz70mw': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'zhlyfvt9': {
       'es': 'Familiar de primer grado',
@@ -5042,14 +5082,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '5hbfu19b': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'cteauoy2': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'qhpz70mw': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'um4d2cwd': {
       'es':
@@ -5068,6 +5100,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'k374uuru': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '5p0kk92v': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'v2svcbnj': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5083,14 +5123,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ufnlgmwo': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'k374uuru': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '5p0kk92v': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'axvsen7q': {
       'es':
@@ -5109,6 +5141,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'pjcb8wpj': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'dbs7agrv': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'snvylgs4': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5124,14 +5164,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'uh91z6qx': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'pjcb8wpj': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'dbs7agrv': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'vmfrzjuj': {
       'es':
@@ -5150,6 +5182,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '1tie1t4i': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'jfebf2ri': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '0nzjwlcy': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5165,14 +5205,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '5nya9ssw': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '1tie1t4i': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'jfebf2ri': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'yvqmuvo3': {
       'es':
@@ -5191,6 +5223,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'jwtfdnw9': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'v0p6wvm0': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'x0s3ppu6': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5206,14 +5246,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'zjbgvo94': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'jwtfdnw9': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'v0p6wvm0': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'qyjshlaz': {
       'es': 'Finalizar',
@@ -5372,7 +5404,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mo74zsty': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last journal made:',
+      'en': 'Or use the one from the last diary made:',
     },
     'g7owvvpa': {
       'es': 'Sí, me ayudó',
@@ -5381,6 +5413,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'pjtccak8': {
       'es': 'No me ayudó',
       'en': 'It didn\'t help me',
+    },
+    'mv9mq4ry': {
+      'es': 'No tuvo\nefectos',
+      'en': 'It had no\neffects',
     },
     'oeax1khx': {
       'es': 'Notas',
@@ -5474,6 +5510,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'No me ayudó',
       'en': 'It didn\'t help me',
     },
+    'sr85wcbw': {
+      'es': 'No tuvo\nefectos',
+      'en': 'It had no\neffects',
+    },
     'rl2n44iy': {
       'es': 'Notas',
       'en': 'Notes',
@@ -5509,14 +5549,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
     },
-    '74b60222': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'cssps8ua': {
-      'es': 'No',
-      'en': 'No',
-    },
     'sn731kma': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -5525,9 +5557,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '74b60222': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'cssps8ua': {
+      'es': 'No',
+      'en': 'No',
+    },
     'gn3pdbh8': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'fs1vfggc': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '1kuyqxnb': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'p0yxh9vu': {
       'es': 'Menos de 1 año',
@@ -5545,27 +5593,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'fs1vfggc': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '1kuyqxnb': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'eg8o6h0p': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have or have had a food intolerance?',
-    },
-    '30w8m94m': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'cm4rcqf2': {
-      'es': 'No',
-      'en': 'No',
     },
     'ih5cvmn9': {
       'es': 'Selecciona tu respuesta...',
@@ -5575,9 +5607,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '30w8m94m': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'cm4rcqf2': {
+      'es': 'No',
+      'en': 'No',
+    },
     'hc5atrqs': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    '82i9h6k9': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'lpt5m0tp': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'v4y9176v': {
       'es': 'Familiar de primer grado',
@@ -5590,14 +5638,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ulhhe10v': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    '82i9h6k9': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'lpt5m0tp': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'mczc0q6v': {
       'es':
@@ -5616,6 +5656,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'au87iaou': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'evvg0nn2': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'um0szp0b': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5631,14 +5679,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'wwgysml0': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'au87iaou': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'evvg0nn2': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'hnl0nyce': {
       'es':
@@ -5657,6 +5697,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'f048nmv7': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3hffthnb': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '0fypzod3': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5672,14 +5720,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'kk6k9ncl': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'f048nmv7': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3hffthnb': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'rhzadlt6': {
       'es':
@@ -5698,6 +5738,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '4ddhp6mb': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'hmc9fr7f': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'd546gojb': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5713,14 +5761,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '1qzj9g0q': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '4ddhp6mb': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'hmc9fr7f': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'v8ihp1x1': {
       'es':
@@ -5739,6 +5779,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'u0emwhko': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3h0bjj65': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'bcl9x731': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -5754,14 +5802,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'b9wizgmg': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'u0emwhko': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3h0bjj65': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'x6177gzs': {
       'es': 'Finalizar',
@@ -5798,55 +5838,39 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': 'Save',
     },
-    '13erp0g4': {
-      'es': 'Carnes',
-      'en': 'Meats',
+    'rkktdvtn': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
     },
-    'virzdhyc': {
-      'es': 'Pescado',
-      'en': 'Fish',
+    'jfg71uy3': {
+      'es': 'Platos ',
+      'en': 'Food Dishes',
     },
-    'd0cepzed': {
-      'es': 'Mariscos',
-      'en': 'Seafood',
+    'yz2qqa9p': {
+      'es': 'Anular selección de platos',
+      'en': '',
     },
-    'vbamupkq': {
-      'es': 'Lácteos',
-      'en': 'Dairy',
+    'w0wwxi66': {
+      'es': 'Añadir Plato',
+      'en': 'Add Dish',
     },
-    '0z492xia': {
-      'es': 'Huevos',
-      'en': 'Eggs',
+    '1cowymuo': {
+      'es': 'Añadir Bebida',
+      'en': 'Add Drink',
     },
-    'h6ozv3vr': {
-      'es': 'Panes y Cereales',
-      'en': 'Breads and Cereals',
+    'kikceog4': {
+      'es': '¿Has tenido algún síntoma tras su ingesta?',
+      'en': 'Have you had any symptoms after taking it?',
     },
-    'xttnnnrd': {
-      'es': 'Frutas',
-      'en': 'Fruit',
+    'ieu9df3h': {
+      'es': 'SI',
+      'en': 'YES',
     },
-    'x7pie9s5': {
-      'es': 'Verduras \ny Hortalizas',
-      'en': 'Vegetables\nand greens',
+    'rzgdwou9': {
+      'es': 'NO',
+      'en': 'NO',
     },
-    'uwqmv5vi': {
-      'es': 'Legumbres',
-      'en': 'Legumes',
-    },
-    '4krmm350': {
-      'es': 'Frutos Secos',
-      'en': 'Dried Fruits',
-    },
-    'wvg3v7zq': {
-      'es': 'Salsas y Condimentos',
-      'en': 'Sauces and Condiments',
-    },
-    'e29cj0bt': {
-      'es': 'Bebidas',
-      'en': 'Drinks',
-    },
-    '6lcxtsj7': {
+    '6rtkt3o4': {
       'es': 'Continuar',
       'en': 'Continue',
     },
@@ -7406,20 +7430,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // listado
   {
     'oid5mtbq': {
-      'es': 'Diarios de Síntomas',
-      'en': 'Symptom Diaries',
+      'es': 'Diarios',
+      'en': 'Diaries',
     },
     '7j47i75c': {
       'es': 'Selecciona un diario para ver el resumen',
       'en': 'Select a journal to view the summary',
+    },
+    'uikjrfgh': {
+      'es': 'Diario de ',
+      'en': 'Diary: ',
+    },
+    '8bztguff': {
+      'es': 'Crear Diario de ',
+      'en': 'Create Diary: ',
     },
     'tbkuqdam': {
       'es': 'Home',
       'en': 'Home',
     },
   },
-  // resumen
+  // resumen_sintomas
   {
+    'hj4llizm': {
+      'es': 'Resumen de Síntomas',
+      'en': '',
+    },
     'jn8et9oh': {
       'es': 'Tu nivel de energía ha sido del ',
       'en': 'Your energy level has been',
@@ -7439,10 +7475,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'acocreii': {
       'es': 'Noche',
       'en': 'Evening',
-    },
-    'jjkqzg44': {
-      'es': 'Esta fue tu calidad de sueño',
-      'en': 'This was your sleep quality',
     },
     '6nd8nlqm': {
       'es': 'Estas son las actividades que has podido realizar:',
@@ -7503,86 +7535,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'w65qtq31': {
       'es': 'Este suplemento ha mejorado estos síntomas:',
       'en': 'This supplement has improved these symptoms:',
-    },
-    'mytkv53k': {
-      'es': 'Resumen de Intolerancias',
-      'en': 'Summary of Intolerances',
-    },
-    'yxbttlka': {
-      'es': 'No tienes hecho el diario de este día.',
-      'en': 'You haven\'t made the diary for this day.',
-    },
-    'an39xahx': {
-      'es': 'Desayuno',
-      'en': 'Breakfast',
-    },
-    'l86c9dd2': {
-      'es': 'Comida',
-      'en': 'Meal',
-    },
-    '0tjdbymj': {
-      'es': 'Cena',
-      'en': 'Dinner',
-    },
-    'uzvpzvre': {
-      'es': 'Estos son los alimentos que has consumido',
-      'en': 'These are the foods you have consumed',
-    },
-    'kr0q9yfo': {
-      'es': 'Carne',
-      'en': 'Meat',
-    },
-    '6sepautv': {
-      'es': 'Pescado',
-      'en': 'Fish',
-    },
-    '8vmsj1sf': {
-      'es': 'Mariscos',
-      'en': 'Seafood',
-    },
-    'ekahm2n1': {
-      'es': 'Lácteos',
-      'en': 'Dairy',
-    },
-    '8koxnjxo': {
-      'es': 'Huevos',
-      'en': 'Eggs',
-    },
-    '8dmi5kmi': {
-      'es': 'Cereales',
-      'en': 'Cereals',
-    },
-    '3mc9gwd5': {
-      'es': 'Frutas',
-      'en': 'Fruit',
-    },
-    '76baffwg': {
-      'es': 'Verduras',
-      'en': 'Vegetables',
-    },
-    'jcqxu66s': {
-      'es': 'Legumbres',
-      'en': 'Legumes',
-    },
-    'ros8y461': {
-      'es': 'Frutos Secos',
-      'en': 'Dried Fruits',
-    },
-    'fj4kcqqn': {
-      'es': 'Condimentos y Salsas',
-      'en': 'Condiments and Sauces',
-    },
-    '6qu1blrw': {
-      'es': 'Bebidas',
-      'en': 'Drinks',
-    },
-    '2hb1yf8k': {
-      'es': 'Síntomas tras la ingesta',
-      'en': 'Symptoms after ingestion',
-    },
-    'czua5f79': {
-      'es': 'No has registrado síntomas',
-      'en': 'You have not registered symptoms',
     },
     'nfpfgfir': {
       'es': 'Home',
@@ -7790,6 +7742,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Meal',
     },
     'zboy0mlw': {
+      'es': 'Merienda',
+      'en': 'Snack',
+    },
+    'vfe8bh5d': {
       'es': 'Cena',
       'en': 'Dinner',
     },
@@ -7816,6 +7772,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Buscador',
       'en': 'Search',
     },
+    'd2u9vyq4': {
+      'es': '',
+      'en': '',
+    },
+    'urot6y3q': {
+      'es': 'Filtro por Enfermedad...',
+      'en': 'Filter by Disease...',
+    },
+    'p12b2i8w': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'to0vrvyf': {
       'es': 'COVID persistente',
       'en': 'Long COVID',
@@ -7840,13 +7808,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Todas',
       'en': 'All',
     },
-    'urot6y3q': {
-      'es': 'Selecciona una enfermedad...',
-      'en': 'Select a disease...',
+    'a9tvvwm3': {
+      'es': '',
+      'en': '',
     },
-    'p12b2i8w': {
+    '7vvu8u5h': {
+      'es': 'Filtro por Autor...',
+      'en': 'Filter by Author...',
+    },
+    '8fowogjc': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'z9qj97jm': {
+      'es': 'Ver noticias de Asociaciones',
+      'en': 'See news from Associations',
     },
     '1v5seaqm': {
       'es': 'Crear Nueva Noticia',
@@ -8015,6 +7991,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Comunidad',
       'en': 'Community',
     },
+    '7bee5vsd': {
+      'es': 'Ordenar por Relevancia',
+      'en': 'Sort by Relevance',
+    },
+    'lblh4afd': {
+      'es': 'Click para ver el link',
+      'en': 'Click to see the link',
+    },
+    'mp8cudec': {
+      'es': 'Ver Vídeo',
+      'en': 'Watch Video',
+    },
     'm1frxwl6': {
       'es': 'Reportar Publicación',
       'en': 'Report Post',
@@ -8034,7 +8022,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Comunidad',
       'en': 'Community',
     },
-    'rkcl89sn': {
+    'tkgj71ir': {
       'es': '¿Qué vamos a compartir hoy?',
       'en': 'What are we going to share today?',
     },
@@ -8046,9 +8034,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Escribe algo aquí...',
       'en': 'Write something here...',
     },
+    'q90a70o1': {
+      'es': 'Link',
+      'en': 'Link',
+    },
+    'xx00cqly': {
+      'es': 'Añade aquí tu link...',
+      'en': 'Add your link here...',
+    },
+    '51j7th5a': {
+      'es': 'Debes escribir la URL con https://...',
+      'en': 'You must write the URL with https://...',
+    },
     'rwop4f3e': {
       'es': 'Click aquí para subir una imagen',
       'en': 'Click here to upload an image',
+    },
+    '7l4k5zmk': {
+      'es': 'Link Youtube',
+      'en': 'Youtube Link',
+    },
+    'p53cykie': {
+      'es': 'Añade aquí tu vídeo de Youtube...',
+      'en': 'Add your Youtube video here...',
     },
     '4ldcdw5g': {
       'es': 'Publicar',
@@ -8069,11 +8077,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Comentarios',
       'en': 'Comments',
     },
-    'kmc0p86m': {
+    '1jncu0fq': {
+      'es': 'Click para ver el link',
+      'en': 'Click to see the link',
+    },
+    'mrlzk03i': {
+      'es': 'Ver Vídeo',
+      'en': 'Watch Video',
+    },
+    'bkwaj1ee': {
+      'es': 'Reportar Publicación',
+      'en': 'Report Post',
+    },
+    'eptoi368': {
       'es': 'Reportar',
       'en': 'Report',
     },
-    '0rd2n0oi': {
+    's9d4wud3': {
       'es': 'Eliminar',
       'en': 'Delete',
     },
@@ -8111,13 +8131,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // chat_mensajes
   {
-    'fg4im354': {
+    'lv6pkqfo': {
       'es': '',
       'en': '',
     },
-    'nqifmsaz': {
-      'es': 'Mensaje...',
-      'en': 'Message...',
+    'h7smhmas': {
+      'es': 'Añade un comentario...',
+      'en': 'Add a comment...',
     },
     'otc6z788': {
       'es': 'Home',
@@ -8154,9 +8174,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Notificaciones',
       'en': 'Notifications',
     },
+    'x8acx4qf': {
+      'es': 'Acceso Biométrico',
+      'en': 'Biometric Access',
+    },
     'f8nfskso': {
-      'es': 'Idiomas ',
-      'en': 'Languages',
+      'es': 'Usuarios Vinculados a la Asociación',
+      'en': 'Users linked to the Association',
     },
     'yxx8zbra': {
       'es': 'Preguntas Frecuentes ',
@@ -8258,6 +8282,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Por favor completa los siguientes campos',
       'en': 'Please complete the following fields',
     },
+    'dij4bq3z': {
+      'es': 'Indica el motivo...',
+      'en': 'Please indicate the reason...',
+    },
+    'd96khnvf': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'a06q2ta0': {
       'es': 'Consulta sobre servicios',
       'en': 'Inquiry about services',
@@ -8278,17 +8310,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Sugerencias o comentarios',
       'en': 'Suggestions or comments',
     },
-    'dij4bq3z': {
-      'es': 'Indica el motivo...',
-      'en': 'Please indicate the reason...',
-    },
-    'd96khnvf': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '6o8z77rb': {
       'es': 'Escribe aquí tu mensaje...',
       'en': 'Write your message here...',
+    },
+    'sdezm11u': {
+      'es': '¿Cómo prefieres que te respondamos?',
+      'en': 'How would you prefer we respond to you?',
+    },
+    'a8nbptkb': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'wdaeghtd': {
       'es': 'Email',
@@ -8301,14 +8333,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '50u6a5lq': {
       'es': 'WhatsApp',
       'en': 'WhatsApp',
-    },
-    'sdezm11u': {
-      'es': '¿Cómo prefieres que te respondamos?',
-      'en': 'How would you prefer we respond to you?',
-    },
-    'a8nbptkb': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'w43hukio': {
       'es': 'Móvil',
@@ -8428,14 +8452,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Género',
       'en': 'Gender',
     },
-    's5te0abl': {
-      'es': 'Femenino',
-      'en': 'Female',
-    },
-    '5az6r6mh': {
-      'es': 'Masculino',
-      'en': 'Male',
-    },
     'ehziw3uh': {
       'es': 'Selecciona tu género...',
       'en': 'Select your gender...',
@@ -8443,6 +8459,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '7w3oag08': {
       'es': 'Search...',
       'en': 'Search...',
+    },
+    's5te0abl': {
+      'es': 'Femenino',
+      'en': 'Female',
+    },
+    '5az6r6mh': {
+      'es': 'Masculino',
+      'en': 'Male',
     },
     'j6ozcflr': {
       'es': 'Peso',
@@ -8472,14 +8496,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Fumador',
       'en': 'Smoker',
     },
-    'bub0yftt': {
-      'es': 'No',
-      'en': 'No',
-    },
-    'd4a9urq0': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
     'pkvdm3fz': {
       'es': '¿eres fumador?',
       'en': 'are you a smoker?',
@@ -8488,9 +8504,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search...',
       'en': 'Search...',
     },
+    'bub0yftt': {
+      'es': 'No',
+      'en': 'No',
+    },
+    'd4a9urq0': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
     'yeworq2k': {
       'es': 'Alcohol',
       'en': 'Alcohol',
+    },
+    '74i3y6sh': {
+      'es': '¿consumes alcohol?',
+      'en': 'do you drink alcohol?',
+    },
+    '14jj9jet': {
+      'es': 'Search...',
+      'en': 'Search...',
     },
     'zztv4m75': {
       'es': 'Nada',
@@ -8503,14 +8535,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'o166vay9': {
       'es': 'Diario',
       'en': 'Diary',
-    },
-    '74i3y6sh': {
-      'es': '¿consumes alcohol?',
-      'en': 'do you drink alcohol?',
-    },
-    '14jj9jet': {
-      'es': 'Search...',
-      'en': 'Search...',
     },
     'ep5ym9ky': {
       'es': 'Guardar cambios',
@@ -8601,6 +8625,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿En qué año te infectaste con el SARS-CoV-2?',
       'en': 'In what year did you get infected with SARS-CoV-2?',
     },
+    'sq44d92b': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'bmpcu2ar': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '3ccxgfp7': {
       'es': '2020',
       'en': '2020',
@@ -8621,17 +8653,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    'sq44d92b': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'bmpcu2ar': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '7jve3ifv': {
       'es': '¿Cuántas veces te has contagiado COVID? ',
       'en': 'How many times have you had COVID?',
+    },
+    'fskwhvjh': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'wd6ruwye': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'abkzlsaw': {
       'es': '1',
@@ -8677,26 +8709,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    'fskwhvjh': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'wd6ruwye': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'h0vtjs2t': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have long-term COVID?',
-    },
-    'awp8ga0g': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '63i86vwt': {
-      'es': 'No',
-      'en': 'No',
     },
     'fhxf2qu6': {
       'es': 'Selecciona tu respuesta...',
@@ -8706,9 +8722,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'awp8ga0g': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '63i86vwt': {
+      'es': 'No',
+      'en': 'No',
+    },
     'ut7bps3p': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'uaxorpro': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'sq071grp': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'hi9iv1o1': {
       'es': 'Familiar de primer grado',
@@ -8722,14 +8754,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'uaxorpro': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'sq071grp': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '717kt5ff': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -8742,14 +8766,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    '39nhr29k': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'nm442z9v': {
-      'es': 'No',
-      'en': 'No',
-    },
     'aolyf5i5': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -8757,6 +8773,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'kkwabwjg': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    '39nhr29k': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'nm442z9v': {
+      'es': 'No',
+      'en': 'No',
     },
     'o15zudum': {
       'es': '¿Cuál?',
@@ -8774,6 +8798,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'ofmonvc8': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '6f782r1a': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'rlh3hx03': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -8790,27 +8822,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'ofmonvc8': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '6f782r1a': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'f388nvlz': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    'qksze73p': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'w2g2l3kn': {
-      'es': 'No',
-      'en': 'No',
     },
     'gxdv5cd6': {
       'es': 'Selecciona tu respuesta...',
@@ -8820,9 +8836,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'qksze73p': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'w2g2l3kn': {
+      'es': 'No',
+      'en': 'No',
+    },
     'md8f5t9o': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    't4h3xvxa': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'nm071l2y': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'iih25grx': {
       'es': 'Familiar de primer grado',
@@ -8836,25 +8868,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    't4h3xvxa': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'nm071l2y': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     't1jkfk4h': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    '1ef0rjss': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'fh2w13b8': {
-      'es': 'No',
-      'en': 'No',
     },
     'spq7xqyh': {
       'es': 'Selecciona tu respuesta...',
@@ -8864,9 +8880,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '1ef0rjss': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'fh2w13b8': {
+      'es': 'No',
+      'en': 'No',
+    },
     'j972k3hp': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '1evauc9c': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '9fz2qima': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'o0qzv12k': {
       'es': 'Menos de 1 año',
@@ -8884,27 +8916,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '1evauc9c': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '9fz2qima': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '31pmd8kx': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    '0j2re4b4': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'kkx17vt3': {
-      'es': 'No',
-      'en': 'No',
     },
     'nd6v6u4m': {
       'es': 'Selecciona tu respuesta...',
@@ -8914,9 +8930,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '0j2re4b4': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'kkx17vt3': {
+      'es': 'No',
+      'en': 'No',
+    },
     '6uxqfsgl': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'r03g2wmc': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'tnr8ylv5': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '82n2r8oh': {
       'es': 'Familiar de primer grado',
@@ -8929,14 +8961,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '5l8wiqrg': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'r03g2wmc': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'tnr8ylv5': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'zmc6lraa': {
       'es':
@@ -8955,6 +8979,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'ymek736z': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'mgz38dtw': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'abp1xe01': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -8970,14 +9002,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'vlhgpqqg': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'ymek736z': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'mgz38dtw': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '8dermrb0': {
       'es':
@@ -8996,6 +9020,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'pyphc35j': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'fopdfg1z': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'f1zjvojl': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9011,14 +9043,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'qxh6mbcb': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'pyphc35j': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'fopdfg1z': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'cc2v35nv': {
       'es':
@@ -9037,6 +9061,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'u09hgljc': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '5m5o28j6': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '1x1pxz6o': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9052,14 +9084,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     't0lbvsgi': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'u09hgljc': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '5m5o28j6': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'dnqakazb': {
       'es':
@@ -9078,6 +9102,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'axbotenj': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'sff57shu': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '0gwji619': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9094,14 +9126,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'axbotenj': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'sff57shu': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'glu87xnz': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -9113,6 +9137,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ftkrzjx7': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    '8lpgspng': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'nyds5l9g': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '8szzkqb5': {
       'es': 'No lo sé',
@@ -9142,17 +9174,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    '8lpgspng': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'nyds5l9g': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'jvqm3o7g': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '8i6nyc6q': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'd6h8twq7': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'seigg9sa': {
       'es': 'Menos de 1 año',
@@ -9164,31 +9196,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm1adce5z': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     '5fz1yc59': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    '8i6nyc6q': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'd6h8twq7': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '72evf7gs': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    '4v95haqg': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'j2w56vdz': {
-      'es': 'No',
-      'en': 'No',
     },
     'xsyvf9ht': {
       'es': 'Selecciona tu respuesta...',
@@ -9198,17 +9214,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    'z3f3m8pw': {
-      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
-      'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    'e3u6z3ui': {
+    '4v95haqg': {
       'es': 'Si',
       'en': 'Yes',
     },
-    '2nirf1sg': {
+    'j2w56vdz': {
       'es': 'No',
       'en': 'No',
+    },
+    'z3f3m8pw': {
+      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
+      'en': 'Do you have any immediate family members who have Fibromyalgia?',
     },
     '11rukfy1': {
       'es': 'Selecciona tu respuesta...',
@@ -9218,9 +9234,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'e3u6z3ui': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '2nirf1sg': {
+      'es': 'No',
+      'en': 'No',
+    },
     'mqfnxe0g': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'httemrpr': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'd3e9avrr': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'actwfxbg': {
       'es': 'Familiar de primer grado',
@@ -9234,14 +9266,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'httemrpr': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'd3e9avrr': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'lcewapo2': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -9254,14 +9278,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    '8ddz0y0m': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'oz70eqw6': {
-      'es': 'No',
-      'en': 'No',
-    },
     'xxpt6p7w': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -9269,6 +9285,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'eqahuan7': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    '8ddz0y0m': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'oz70eqw6': {
+      'es': 'No',
+      'en': 'No',
     },
     '1rceoe1r': {
       'es': '¿Cuál?',
@@ -9286,6 +9310,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'gpgtxas1': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '6orv4913': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '4yv3fdrr': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9302,27 +9334,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'gpgtxas1': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '6orv4913': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '5qd6m463': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    'tjxgffxp': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'e674acbw': {
-      'es': 'No',
-      'en': 'No',
     },
     'vpr38ojj': {
       'es': 'Selecciona tu respuesta...',
@@ -9332,9 +9348,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'tjxgffxp': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'e674acbw': {
+      'es': 'No',
+      'en': 'No',
+    },
     'gt8gxr5d': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'w4ww6oxm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'qeyaj1cm': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'fw1va1pz': {
       'es': 'Familiar de primer grado',
@@ -9348,25 +9380,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'w4ww6oxm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'qeyaj1cm': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'e1lmjsz8': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'epwn3alw': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'w6dsmedv': {
-      'es': 'No',
-      'en': 'No',
     },
     '946extpc': {
       'es': 'Selecciona tu respuesta...',
@@ -9376,9 +9392,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'epwn3alw': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'w6dsmedv': {
+      'es': 'No',
+      'en': 'No',
+    },
     '8jr67nak': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '0s5vxtti': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'tx2y0joz': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '68v7tvm5': {
       'es': 'Menos de 1 año',
@@ -9396,27 +9428,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '0s5vxtti': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'tx2y0joz': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'vk5ploqs': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    '4rn9he2n': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'urcmhm2z': {
-      'es': 'No',
-      'en': 'No',
     },
     'n6hcm7uu': {
       'es': 'Selecciona tu respuesta...',
@@ -9426,9 +9442,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '4rn9he2n': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'urcmhm2z': {
+      'es': 'No',
+      'en': 'No',
+    },
     'f3h5pxsl': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'rhutikch': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'mc2f5o5s': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'nvcv58g4': {
       'es': 'Familiar de primer grado',
@@ -9441,14 +9473,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'xi2678hj': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'rhutikch': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'mc2f5o5s': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'haee8lwl': {
       'es':
@@ -9467,6 +9491,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'quszvimk': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '2r81l0tc': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'cw6kil7g': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9482,14 +9514,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'c6vhgqpo': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'quszvimk': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '2r81l0tc': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'eg1uifu5': {
       'es':
@@ -9508,6 +9532,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '9gmscuwm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'tjmyclrk': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'ulyncl8q': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9523,14 +9555,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '7j33hddd': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '9gmscuwm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'tjmyclrk': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'ue4gs5lt': {
       'es':
@@ -9549,6 +9573,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '98dfxjng': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ib8dhxbv': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '6w1iulsf': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9564,14 +9596,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'dfdu9ypg': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '98dfxjng': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ib8dhxbv': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '8ibq27hz': {
       'es':
@@ -9590,6 +9614,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'lxiqe8lh': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '23ea33uv': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '510m6u82': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9606,14 +9638,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'lxiqe8lh': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '23ea33uv': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'oxozcwl1': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -9625,6 +9649,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4tbbd4k0': {
       'es': '¿Con qué criterios te han diagnosticado?',
       'en': 'What criteria have you been diagnosed with?',
+    },
+    'oo6835h6': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'pdk7gy5c': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'o8zabrzm': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -9647,17 +9679,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    'oo6835h6': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'pdk7gy5c': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'judjhkcl': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '3nymbbxe': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ybab37tw': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '75wbty3j': {
       'es': 'Menos de 1 año',
@@ -9669,23 +9701,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7oij9mlf': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'dr65ks08': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    '3nymbbxe': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ybab37tw': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'f77d10bo': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    'xkc9asdm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'drws3sah': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'svgyvcmm': {
       'es': 'No lo sé',
@@ -9715,25 +9747,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    'xkc9asdm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'drws3sah': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'mrjdke6n': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    '8o3qjctf': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'ko7lcb8e': {
-      'es': 'No',
-      'en': 'No',
     },
     'g98o1g8g': {
       'es': 'Selecciona tu respuesta...',
@@ -9743,9 +9759,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '8o3qjctf': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'ko7lcb8e': {
+      'es': 'No',
+      'en': 'No',
+    },
     '80pw23g0': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'dgq1qk8y': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'no4fx0xs': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '8nehv13z': {
       'es': 'Familiar de primer grado',
@@ -9759,14 +9791,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'dgq1qk8y': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'no4fx0xs': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '978b2yfs': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -9779,14 +9803,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    'ar0s1dba': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'z558e5gj': {
-      'es': 'No',
-      'en': 'No',
-    },
     'l6sordpe': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -9794,6 +9810,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'gbdin27f': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'ar0s1dba': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'z558e5gj': {
+      'es': 'No',
+      'en': 'No',
     },
     'rbitsp8h': {
       'es': '¿Cuál?',
@@ -9811,6 +9835,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'xkcjnn3x': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'semh3q8f': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'c8g2p5l1': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -9827,27 +9859,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'xkcjnn3x': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'semh3q8f': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '5e17dcab': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    '9d4kpyfu': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'n6iachga': {
-      'es': 'No',
-      'en': 'No',
     },
     'ctwca1qf': {
       'es': 'Selecciona tu respuesta...',
@@ -9857,9 +9873,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '9d4kpyfu': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'n6iachga': {
+      'es': 'No',
+      'en': 'No',
+    },
     'i9vrmvos': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'neff3m35': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '265kg9dz': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'suu20dfp': {
       'es': 'Familiar de primer grado',
@@ -9873,25 +9905,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'neff3m35': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '265kg9dz': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '2dwaamyw': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'q7sz8dhb': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'e27vie5x': {
-      'es': 'No',
-      'en': 'No',
     },
     '6mp79v6j': {
       'es': 'Selecciona tu respuesta...',
@@ -9901,9 +9917,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'q7sz8dhb': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'e27vie5x': {
+      'es': 'No',
+      'en': 'No',
+    },
     '866ygc92': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'jmviqgpi': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'prlmdim0': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'gewdb5ip': {
       'es': 'Menos de 1 año',
@@ -9921,27 +9953,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'jmviqgpi': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'prlmdim0': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '0gs20t7w': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    'ozvivxno': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'pnxtdnup': {
-      'es': 'No',
-      'en': 'No',
     },
     'b0k7vzcz': {
       'es': 'Selecciona tu respuesta...',
@@ -9951,9 +9967,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'ozvivxno': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'pnxtdnup': {
+      'es': 'No',
+      'en': 'No',
+    },
     'i2m4lq7v': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'keziumzh': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '86fg20mz': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '5z1jiilp': {
       'es': 'Familiar de primer grado',
@@ -9966,14 +9998,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '3gihs2vz': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'keziumzh': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '86fg20mz': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'wj5mybmk': {
       'es':
@@ -9992,6 +10016,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'kl11feib': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'g5jabuwi': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'wkm7qvqe': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10007,14 +10039,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '9j6z0eo6': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'kl11feib': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'g5jabuwi': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'w9o2chvv': {
       'es':
@@ -10033,6 +10057,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'hea5ybwl': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ee7x8v2b': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'lgfaan24': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10048,14 +10080,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'w15hbej4': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'hea5ybwl': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ee7x8v2b': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '3i6z2xd1': {
       'es':
@@ -10074,6 +10098,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'cs3rv9wu': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xi8f7u6n': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'uxglvavl': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10089,14 +10121,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '6436nw47': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'cs3rv9wu': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xi8f7u6n': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     't755osj1': {
       'es':
@@ -10115,6 +10139,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'mnkwkjnh': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3eagc9mz': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'fiq683hp': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10130,14 +10162,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'oop3py03': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'mnkwkjnh': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3eagc9mz': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '5zt6ou2r': {
       'es': 'Finalizar',
@@ -10163,6 +10187,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'bko4qp3c': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xadnbcri': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '4la33e5y': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10173,32 +10205,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aaw3jcoy': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'xwfd6njh': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'bko4qp3c': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xadnbcri': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '2j23c0z8': {
       'es': '¿Tienes algún familiar directo que tenga la misma enfermedad?',
       'en':
           'Do you have any immediate family members who have the same disease?',
-    },
-    'ok3f1adx': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '0gbvjlp4': {
-      'es': 'No',
-      'en': 'No',
     },
     'aqodu97x': {
       'es': 'Selecciona tu respuesta...',
@@ -10208,9 +10224,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'ok3f1adx': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '0gbvjlp4': {
+      'es': 'No',
+      'en': 'No',
+    },
     'so4pg8zx': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    's37nq4ck': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '9ucvxoq2': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'wys2h69r': {
       'es': 'Familiar de primer grado',
@@ -10224,14 +10256,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    's37nq4ck': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '9ucvxoq2': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'gy2d7mak': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -10244,14 +10268,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    't795dvqb': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'ppqfm5om': {
-      'es': 'No',
-      'en': 'No',
-    },
     '19tifr6z': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -10259,6 +10275,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'kr5kmn1p': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    't795dvqb': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'ppqfm5om': {
+      'es': 'No',
+      'en': 'No',
     },
     'bm5njpgv': {
       'es': '¿Cuál?',
@@ -10276,6 +10300,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'hdt8ceu5': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'yr5s18l4': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'gz776loc': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10292,27 +10324,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'hdt8ceu5': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'yr5s18l4': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'xpfthwhg': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    '5ra3vuze': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'q5x04mou': {
-      'es': 'No',
-      'en': 'No',
     },
     'r23dyzsa': {
       'es': 'Selecciona tu respuesta...',
@@ -10322,9 +10338,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '5ra3vuze': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'q5x04mou': {
+      'es': 'No',
+      'en': 'No',
+    },
     'y5feqfep': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'e6pro3g2': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'vf61egic': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'sqmmwa2j': {
       'es': 'Familiar de primer grado',
@@ -10338,25 +10370,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'e6pro3g2': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'vf61egic': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'jji94x7k': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'ewrgam11': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'm2lm2h9m': {
-      'es': 'No',
-      'en': 'No',
     },
     's7uw4i9d': {
       'es': 'Selecciona tu respuesta...',
@@ -10366,9 +10382,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'ewrgam11': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'm2lm2h9m': {
+      'es': 'No',
+      'en': 'No',
+    },
     '19d921m8': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '0ze730n5': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '7b07a9ok': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '3pm7aagh': {
       'es': 'Menos de 1 año',
@@ -10386,27 +10418,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '0ze730n5': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '7b07a9ok': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '8pyr3h7g': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    '3hy24s25': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '8q4til39': {
-      'es': 'No',
-      'en': 'No',
     },
     'f3tsnp6z': {
       'es': 'Selecciona tu respuesta...',
@@ -10416,9 +10432,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '3hy24s25': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '8q4til39': {
+      'es': 'No',
+      'en': 'No',
+    },
     'yn1er61j': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'dwwzomyb': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '0u5fldcw': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'h3q170vc': {
       'es': 'Familiar de primer grado',
@@ -10431,14 +10463,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'i75dnc0g': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'dwwzomyb': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '0u5fldcw': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'ht4a3cgu': {
       'es':
@@ -10457,6 +10481,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'n0f0g5qn': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ee4g7q7z': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'jhri5o5j': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10472,14 +10504,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'iv4m861h': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'n0f0g5qn': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ee4g7q7z': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'f1mnu5q4': {
       'es':
@@ -10498,6 +10522,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'oumf4puy': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'rn3tnphq': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'eq9r4j2h': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10513,14 +10545,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'yaelu9m8': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'oumf4puy': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'rn3tnphq': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'ww96l3h2': {
       'es':
@@ -10539,6 +10563,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '2o9tupl2': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '297o4gg0': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '19hl0ilh': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10554,14 +10586,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '3ikuyy0n': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '2o9tupl2': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '297o4gg0': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '53umnrj1': {
       'es':
@@ -10580,6 +10604,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'noom7xai': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'jn06emb8': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '61kbm1nc': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10596,14 +10628,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'noom7xai': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'jn06emb8': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'qvtmkw7f': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -10616,14 +10640,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
     },
-    'tbp1xekh': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'mhyusxp8': {
-      'es': 'No',
-      'en': 'No',
-    },
     'ftxmzhwa': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -10632,9 +10648,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'tbp1xekh': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'mhyusxp8': {
+      'es': 'No',
+      'en': 'No',
+    },
     '39bbzsfl': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'ta5uncoj': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '8svd6w1j': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '6g6lo4fc': {
       'es': 'Menos de 1 año',
@@ -10652,27 +10684,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'ta5uncoj': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '8svd6w1j': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'vb47bgb2': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    '4rb65ojy': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'lewvcvgp': {
-      'es': 'No',
-      'en': 'No',
     },
     '7qmkl4ss': {
       'es': 'Selecciona tu respuesta...',
@@ -10682,9 +10698,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '4rb65ojy': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'lewvcvgp': {
+      'es': 'No',
+      'en': 'No',
+    },
     '0qlfhh2z': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'bsc0krrm': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'bhbcygai': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'uoe2tr4d': {
       'es': 'Familiar de primer grado',
@@ -10697,14 +10729,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'fr6m4ved': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'bsc0krrm': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'bhbcygai': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'om19psar': {
       'es':
@@ -10723,6 +10747,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'il3gdewb': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'n81fpk6e': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'eatte6ws': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10738,14 +10770,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'cj5obsk9': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'il3gdewb': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'n81fpk6e': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '1efw8j5d': {
       'es':
@@ -10764,6 +10788,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'ga445qdy': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'zfhbxati': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '4u6ix6cc': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10779,14 +10811,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'z532yr6a': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'ga445qdy': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'zfhbxati': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'fklgbeib': {
       'es':
@@ -10805,6 +10829,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'aqvy2sfh': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'llyww1bu': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'kfqhdip2': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10820,14 +10852,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '98ytbqq1': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'aqvy2sfh': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'llyww1bu': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'e0jrjxy8': {
       'es':
@@ -10846,6 +10870,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'r52qbcnj': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'uh8qisyu': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '8uawfdow': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -10862,14 +10894,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'r52qbcnj': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'uh8qisyu': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'rrtr44f9': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -10881,6 +10905,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'n90qj2pp': {
       'es': '¿En qué año te infectaste con el SARS-CoV-2?',
       'en': 'In what year did you get infected with SARS-CoV-2?',
+    },
+    '50mptb4k': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '2z2p3frd': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '261ayoso': {
       'es': '2020',
@@ -10902,17 +10934,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    '50mptb4k': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '2z2p3frd': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '63zum1tv': {
       'es': '¿Cuántas veces te has contagiado con el SARS-CoV-2?',
       'en': 'How many times have you been infected with SARS-CoV-2?',
+    },
+    'qvejs77v': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xnirapde': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '1g5stbuy': {
       'es': '1',
@@ -10958,26 +10990,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    'qvejs77v': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xnirapde': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'hazdj080': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have long-term COVID?',
-    },
-    'fi6jno00': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'prxh1wqi': {
-      'es': 'No',
-      'en': 'No',
     },
     'rv5oy0qd': {
       'es': 'Selecciona tu respuesta...',
@@ -10987,9 +11003,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'fi6jno00': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'prxh1wqi': {
+      'es': 'No',
+      'en': 'No',
+    },
     'aq0niwij': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'lztezyu1': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'jfwjh214': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'zwibf1ed': {
       'es': 'Familiar de primer grado',
@@ -11003,17 +11035,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'lztezyu1': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'jfwjh214': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'cirb71ws': {
       'es': '¿Con qué criterios te han diagnosticado EM/SFC?',
       'en': 'What criteria have you been diagnosed with ME/CFS?',
+    },
+    'qgn1t59j': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'mnakivij': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '3ftexn6o': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -11036,17 +11068,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    'qgn1t59j': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'mnakivij': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'exovph4o': {
       'es': '¿Cuánto tiempo llevas diagnosticado EM/SFC?',
       'en': 'How long have you been diagnosed with ME/CFS?',
+    },
+    'fe2qk013': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '54f74oo3': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '5tsnl41n': {
       'es': 'Menos de 1 año',
@@ -11058,23 +11090,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'b6aqkfd0': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     '65bx8zeo': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'fe2qk013': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '54f74oo3': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'f8g26vro': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    'qz153dtt': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '16ay4zhs': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '0c6b7vfq': {
       'es': 'No lo sé',
@@ -11104,25 +11136,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    'qz153dtt': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '16ay4zhs': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'aib9mlb4': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    'hjbcyirh': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'glcguai1': {
-      'es': 'No',
-      'en': 'No',
     },
     '8gks6x0a': {
       'es': 'Selecciona tu respuesta...',
@@ -11132,9 +11148,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'hjbcyirh': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'glcguai1': {
+      'es': 'No',
+      'en': 'No',
+    },
     'dk9sr7pe': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'l6t9060s': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'jhzoewcm': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'x8i19xqr': {
       'es': 'Familiar de primer grado',
@@ -11148,14 +11180,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'l6t9060s': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'jhzoewcm': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'kj9s1xpm': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -11168,14 +11192,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    'ucmrbum9': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'wcnwmc3w': {
-      'es': 'No',
-      'en': 'No',
-    },
     '3vehhjne': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -11183,6 +11199,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'x40ctoxt': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'ucmrbum9': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'wcnwmc3w': {
+      'es': 'No',
+      'en': 'No',
     },
     '6eaco1ui': {
       'es': '¿Cuál?',
@@ -11200,6 +11224,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'jlm8gr3v': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'nfaq7qg2': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '98etke0m': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -11216,27 +11248,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'jlm8gr3v': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'nfaq7qg2': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'cn1ufcgf': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    'std95ee4': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'gtzdcgf9': {
-      'es': 'No',
-      'en': 'No',
     },
     'eonm6dbg': {
       'es': 'Selecciona tu respuesta...',
@@ -11246,9 +11262,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'std95ee4': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'gtzdcgf9': {
+      'es': 'No',
+      'en': 'No',
+    },
     '1hk93ik8': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'igwct9mh': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'hzfdnbpa': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '9bocs1w7': {
       'es': 'Familiar de primer grado',
@@ -11262,25 +11294,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'igwct9mh': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'hzfdnbpa': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'ekulf84u': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'jofn303s': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'e2l70jpp': {
-      'es': 'No',
-      'en': 'No',
     },
     'ylsa250c': {
       'es': 'Selecciona tu respuesta...',
@@ -11290,9 +11306,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'jofn303s': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'e2l70jpp': {
+      'es': 'No',
+      'en': 'No',
+    },
     'st61nyyf': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'vj9bs1iv': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3itx5dmo': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '99ewncq3': {
       'es': 'Menos de 1 año',
@@ -11310,27 +11342,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'vj9bs1iv': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3itx5dmo': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'gkjks9yi': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    'fcil6wcg': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'xn48oxlm': {
-      'es': 'No',
-      'en': 'No',
     },
     'jro0ny3w': {
       'es': 'Selecciona tu respuesta...',
@@ -11340,9 +11356,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'fcil6wcg': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'xn48oxlm': {
+      'es': 'No',
+      'en': 'No',
+    },
     'j1tz0gce': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'tzwyytjx': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'njz38r29': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'eo95qjp5': {
       'es': 'Familiar de primer grado',
@@ -11355,14 +11387,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'e3ogpd7b': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'tzwyytjx': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'njz38r29': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '3hkszbln': {
       'es':
@@ -11381,6 +11405,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'yfdxnblq': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'zh5lbdgt': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'zmztzl9w': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -11396,14 +11428,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'uolwdi4j': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'yfdxnblq': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'zh5lbdgt': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'w7zzb433': {
       'es':
@@ -11422,6 +11446,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '6pbhwacs': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '0el9xubv': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'pm43wcz2': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -11437,14 +11469,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '5t60c5xt': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '6pbhwacs': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '0el9xubv': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'bakxjug1': {
       'es':
@@ -11463,6 +11487,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'ngg3oxc2': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'tatedmet': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'otvmgdg1': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -11478,14 +11510,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ynlnvnfa': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'ngg3oxc2': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'tatedmet': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'ure321m1': {
       'es':
@@ -11504,6 +11528,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'zmghpv53': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'c1hcn2tn': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'yniqtn1n': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -11520,14 +11552,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'zmghpv53': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'c1hcn2tn': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'z6ogjht8': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -11539,6 +11563,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '7aqzpyoj': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    'ti35eg1y': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'wehzhzqi': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'rq5zrjw5': {
       'es': 'No lo sé',
@@ -11568,17 +11600,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    'ti35eg1y': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'wehzhzqi': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'jg1gqy3w': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '2m94cqfv': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ff3m05dl': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '11gdxzrf': {
       'es': 'Menos de 1 año',
@@ -11590,31 +11622,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4gllmzno': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'ug2lvmmk': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    '2m94cqfv': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ff3m05dl': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'sp36g35m': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    'qwc9ggyh': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '3nncrk2f': {
-      'es': 'No',
-      'en': 'No',
     },
     '0f4r00h7': {
       'es': 'Selecciona tu respuesta...',
@@ -11624,17 +11640,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
-    '9u05bj4k': {
-      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
-      'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    '3db2noi9': {
+    'qwc9ggyh': {
       'es': 'Si',
       'en': 'Yes',
     },
-    'wl5apkhh': {
+    '3nncrk2f': {
       'es': 'No',
       'en': 'No',
+    },
+    '9u05bj4k': {
+      'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
+      'en': 'Do you have any immediate family members who have Fibromyalgia?',
     },
     '58bzxc75': {
       'es': 'Selecciona tu respuesta...',
@@ -11644,9 +11660,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '3db2noi9': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'wl5apkhh': {
+      'es': 'No',
+      'en': 'No',
+    },
     'uujogvv0': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'srz75znt': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'uvu5t97y': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '3rtw8oim': {
       'es': 'Familiar de primer grado',
@@ -11660,17 +11692,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'srz75znt': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'uvu5t97y': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'n1lapoys': {
       'es': '¿Con qué criterios te han diagnosticado?',
       'en': 'What criteria have you been diagnosed with?',
+    },
+    'h8p6ms43': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3pwizbfn': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'gb0euomc': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -11693,17 +11725,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    'h8p6ms43': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3pwizbfn': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '1wwxmfkr': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '0qrlr1cr': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3ie423dk': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '0n01f3a7': {
       'es': 'Menos de 1 año',
@@ -11715,23 +11747,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'abo6q85v': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'xqssuy8p': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    '0qrlr1cr': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3ie423dk': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'vxg130in': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    'p342k043': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '4cps0vdm': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'eiqh6a7f': {
       'es': 'No lo sé',
@@ -11761,25 +11793,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    'p342k043': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '4cps0vdm': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'dfq8g2v2': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    '3osmv47a': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'x62iu883': {
-      'es': 'No',
-      'en': 'No',
     },
     'vgixgen1': {
       'es': 'Selecciona tu respuesta...',
@@ -11789,9 +11805,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '3osmv47a': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'x62iu883': {
+      'es': 'No',
+      'en': 'No',
+    },
     'aptso0p9': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'pxjp6501': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'i2m95g9c': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'whbuyk52': {
       'es': 'Familiar de primer grado',
@@ -11805,14 +11837,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'pxjp6501': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'i2m95g9c': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'xqbzxakj': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -11825,14 +11849,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    'bkmf6pxl': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'ajwxaqp9': {
-      'es': 'No',
-      'en': 'No',
-    },
     '5manhyae': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -11840,6 +11856,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'y344xgjm': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'bkmf6pxl': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'ajwxaqp9': {
+      'es': 'No',
+      'en': 'No',
     },
     'lgxz5hmt': {
       'es': '¿Cuál?',
@@ -11857,6 +11881,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '7xsr2x3d': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'y20ove9p': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'ehmnkors': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -11873,27 +11905,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '7xsr2x3d': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'y20ove9p': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '1a38u5a7': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    'd3cqvz5b': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'qtqcgzxx': {
-      'es': 'No',
-      'en': 'No',
     },
     'no18oe2p': {
       'es': 'Selecciona tu respuesta...',
@@ -11903,9 +11919,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'd3cqvz5b': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'qtqcgzxx': {
+      'es': 'No',
+      'en': 'No',
+    },
     '8xr6d31n': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'g72rxos9': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '4d1oz9i8': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'b5xpxu5r': {
       'es': 'Familiar de primer grado',
@@ -11919,25 +11951,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'g72rxos9': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '4d1oz9i8': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'wgym5que': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'ladz24nd': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'rf3yadwk': {
-      'es': 'No',
-      'en': 'No',
     },
     'rvkwe93x': {
       'es': 'Selecciona tu respuesta...',
@@ -11947,9 +11963,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'ladz24nd': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'rf3yadwk': {
+      'es': 'No',
+      'en': 'No',
+    },
     'l4n7wtul': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '05gm9zmp': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'cnyqdsts': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'xp0ibyxc': {
       'es': 'Menos de 1 año',
@@ -11967,27 +11999,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '05gm9zmp': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'cnyqdsts': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'mvx2lhss': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    '9922vz7h': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'wbtowrpm': {
-      'es': 'No',
-      'en': 'No',
     },
     's5drg3bq': {
       'es': 'Selecciona tu respuesta...',
@@ -11997,9 +12013,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '9922vz7h': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'wbtowrpm': {
+      'es': 'No',
+      'en': 'No',
+    },
     'kn52tjf7': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'r2hba7vs': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'uhe1zwlh': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'e006vr59': {
       'es': 'Familiar de primer grado',
@@ -12012,14 +12044,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'egwiuk0o': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'r2hba7vs': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'uhe1zwlh': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '18tmzjpr': {
       'es':
@@ -12038,6 +12062,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '34enpe0x': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'x58o2n2x': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'u36l0ams': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12053,14 +12085,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'y7r84a60': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '34enpe0x': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'x58o2n2x': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'ag846xoj': {
       'es':
@@ -12079,6 +12103,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'k7ujhpzk': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'amza40hv': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'anj50btb': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12094,14 +12126,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '99p8167v': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'k7ujhpzk': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'amza40hv': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'z2wqmrvz': {
       'es':
@@ -12120,6 +12144,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '6wpyckgp': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '0pybdg5m': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '1astoei5': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12135,14 +12167,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'zkj0gtuz': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '6wpyckgp': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '0pybdg5m': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'vbjq1f6m': {
       'es':
@@ -12161,6 +12185,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'gsqzi686': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'gr1ba1ps': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'dmfjx5ae': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12177,14 +12209,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'gsqzi686': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'gr1ba1ps': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'sadhmpjg': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -12196,6 +12220,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'tpyjbpi8': {
       'es': '¿En qué año te infectaste con el SARS-CoV-2?',
       'en': 'In what year did you get infected with SARS-CoV-2?',
+    },
+    'k70rs29u': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '7vugdcsy': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'r4v9zypc': {
       'es': '2020',
@@ -12217,17 +12249,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    'k70rs29u': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '7vugdcsy': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'jnium3i9': {
       'es': '¿Cuántas veces te has contagiado con el SARS-CoV-2?',
       'en': 'How many times have you been infected with SARS-CoV-2?',
+    },
+    '1cav17qd': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'dlv4li7u': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'hwttxkwf': {
       'es': '1',
@@ -12273,26 +12305,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    '1cav17qd': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'dlv4li7u': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'l39jmarg': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have long-term COVID?',
-    },
-    'kryrwmil': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'uuza1cob': {
-      'es': 'No',
-      'en': 'No',
     },
     '0udfzhpp': {
       'es': 'Selecciona tu respuesta...',
@@ -12302,9 +12318,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'kryrwmil': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'uuza1cob': {
+      'es': 'No',
+      'en': 'No',
+    },
     '2zaycu31': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    's4gc2y67': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'w1iuef0z': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'qs5kyhnf': {
       'es': 'Familiar de primer grado',
@@ -12318,17 +12350,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    's4gc2y67': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'w1iuef0z': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'pdka2ijy': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    'sbpbej5e': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '243qoj46': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'b66pi0mk': {
       'es': 'No lo sé',
@@ -12358,17 +12390,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    'sbpbej5e': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '243qoj46': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '8jk75az1': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'us50aqkg': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '48g2o5k6': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'wak9rxii': {
       'es': 'Menos de 1 año',
@@ -12380,31 +12412,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n6zjfqxf': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'pv1uw7vb': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'us50aqkg': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '48g2o5k6': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '4f1mnxbz': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    '0qqs9jkn': {
-      'es': 'Si',
-      'en': 'Yeah',
-    },
-    'm720izrj': {
-      'es': 'No',
-      'en': 'No',
     },
     '1tj6jhc0': {
       'es': 'Selecciona tu respuesta...',
@@ -12414,17 +12430,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '0qqs9jkn': {
+      'es': 'Si',
+      'en': 'Yeah',
+    },
+    'm720izrj': {
+      'es': 'No',
+      'en': 'No',
+    },
     'rorsvzax': {
       'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
       'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    'anqkdpd4': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'asmwoate': {
-      'es': 'No',
-      'en': 'No',
     },
     'evfcjwt9': {
       'es': 'Selecciona tu respuesta...',
@@ -12434,9 +12450,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'anqkdpd4': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'asmwoate': {
+      'es': 'No',
+      'en': 'No',
+    },
     'hte4w6hl': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'zu3nns59': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '3a8nmbwl': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'c41mv670': {
       'es': 'Familiar de primer grado',
@@ -12450,14 +12482,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'zu3nns59': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '3a8nmbwl': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '79xku03l': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -12470,14 +12494,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    '0yzgwkcv': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'x9u5dw2j': {
-      'es': 'No',
-      'en': 'No',
-    },
     'xeq05fhf': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -12485,6 +12501,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'fimdoyyk': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    '0yzgwkcv': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'x9u5dw2j': {
+      'es': 'No',
+      'en': 'No',
     },
     'c45k7np3': {
       'es': '¿Cuál?',
@@ -12502,6 +12526,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'qhr159bi': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xo3bc49y': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '7peocr6b': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12518,27 +12550,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'qhr159bi': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xo3bc49y': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'oax0q9ou': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    'nuymcy9t': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'zc7rmejx': {
-      'es': 'No',
-      'en': 'No',
     },
     'eeson7qx': {
       'es': 'Selecciona tu respuesta...',
@@ -12548,9 +12564,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'nuymcy9t': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'zc7rmejx': {
+      'es': 'No',
+      'en': 'No',
+    },
     '21zdurry': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'i1qarz04': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'm75aul6w': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'r8rymg2y': {
       'es': 'Familiar de primer grado',
@@ -12564,25 +12596,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'i1qarz04': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'm75aul6w': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '4pc4fvep': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'ux864b3k': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '3rdx4hn3': {
-      'es': 'No',
-      'en': 'No',
     },
     '2401fsqz': {
       'es': 'Selecciona tu respuesta...',
@@ -12592,9 +12608,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'ux864b3k': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '3rdx4hn3': {
+      'es': 'No',
+      'en': 'No',
+    },
     'kfgt0apa': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '4v92xn8w': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'd2tsmnfn': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'ft2rvz0h': {
       'es': 'Menos de 1 año',
@@ -12612,27 +12644,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '4v92xn8w': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'd2tsmnfn': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'jnttq9jg': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    'hcuh2ud7': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'mw92xvdg': {
-      'es': 'No',
-      'en': 'No',
     },
     'fq0fewcr': {
       'es': 'Selecciona tu respuesta...',
@@ -12642,9 +12658,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'hcuh2ud7': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'mw92xvdg': {
+      'es': 'No',
+      'en': 'No',
+    },
     'gr2k0pra': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'vaa9ya1y': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '8fvd1kjs': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'ssdes69i': {
       'es': 'Familiar de primer grado',
@@ -12657,14 +12689,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'af5qel4v': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'vaa9ya1y': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '8fvd1kjs': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'nealmepg': {
       'es':
@@ -12683,6 +12707,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'qqq25kus': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '5i3ek2aw': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     's0vdsv4a': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12698,14 +12730,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'wyze3tqw': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'qqq25kus': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '5i3ek2aw': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'a6ix2al4': {
       'es':
@@ -12724,6 +12748,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'hsbbnske': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'unomxexc': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '83i0rlve': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12739,14 +12771,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '1er8v1j2': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'hsbbnske': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'unomxexc': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'uzebiau7': {
       'es':
@@ -12765,6 +12789,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'flk9dtyz': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'm9lezx08': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'im3m3mj9': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12780,14 +12812,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'mckackcq': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'flk9dtyz': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'm9lezx08': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     '223nauum': {
       'es':
@@ -12806,6 +12830,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '3giv4lq4': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '89g2kxsb': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'agj6dr9c': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -12822,14 +12854,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '3giv4lq4': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '89g2kxsb': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'et18jrvn': {
       'es': 'Finalizar',
       'en': 'Finish',
@@ -12840,7 +12864,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0kv6j2e9': {
       'es': '¿En qué año te infectaste con el SARS-CoV-2?',
-      'en': 'What year did you get infected with SARS-CoV-2?',
+      'en': 'In what year did you get infected with SARS-CoV-2?',
+    },
+    'l4xtmbum': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'jo4zxz1a': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '1lxevhn2': {
       'es': '2020',
@@ -12862,17 +12894,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '2024',
       'en': '2024',
     },
-    'l4xtmbum': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'jo4zxz1a': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'qxnl6uyb': {
       'es': '¿Cuántas veces te has contagiado con el SARS-CoV-2?',
       'en': 'How many times have you been infected with SARS-CoV-2?',
+    },
+    'sa822lf1': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xybr88xd': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'uclcy5t4': {
       'es': '1',
@@ -12918,26 +12950,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de una vez',
       'en': 'More than once',
     },
-    'sa822lf1': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xybr88xd': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'atdupvlk': {
       'es': '¿Tienes algún familiar directo que tenga COVID persistente?',
       'en':
           'Do you have any immediate family members who have long-term COVID?',
-    },
-    'mfj46d2h': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '3ytvpyjk': {
-      'es': 'No',
-      'en': 'No',
     },
     'nqz5wr6n': {
       'es': 'Selecciona tu respuesta...',
@@ -12947,9 +12963,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'mfj46d2h': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '3ytvpyjk': {
+      'es': 'No',
+      'en': 'No',
+    },
     'ft8ag108': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'v5hagyrv': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '58ui1f45': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'ovyl4983': {
       'es': 'Familiar de primer grado',
@@ -12963,17 +12995,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'v5hagyrv': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '58ui1f45': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'n6diq6tx': {
       'es': '¿Tras qué evento desarrollaste Fibromialgia?',
       'en': 'After what event did you develop Fibromyalgia?',
+    },
+    '6367jvuk': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ulr7vh8a': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'm0frttnk': {
       'es': 'No lo sé',
@@ -13003,17 +13035,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Postparto',
       'en': 'Postpartum',
     },
-    '6367jvuk': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ulr7vh8a': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'wnqlgyhh': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    'lfa2pwwr': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'xjzuopse': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'mig4iv2m': {
       'es': 'Menos de 1 año',
@@ -13025,31 +13057,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8vlrghvs': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'bdfaszi5': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    'lfa2pwwr': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'xjzuopse': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'rcmtckaf': {
       'es': '¿Empeoran tus síntomas tras un leve esfuerzo físico o mental?',
       'en': 'Do your symptoms worsen after mild physical or mental exertion?',
-    },
-    '9ts468l1': {
-      'es': 'Si',
-      'en': 'Yeah',
-    },
-    'm1di5in9': {
-      'es': 'No',
-      'en': 'No',
     },
     'hylgs0ms': {
       'es': 'Selecciona tu respuesta...',
@@ -13059,17 +13075,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '9ts468l1': {
+      'es': 'Si',
+      'en': 'Yeah',
+    },
+    'm1di5in9': {
+      'es': 'No',
+      'en': 'No',
+    },
     'qtdtvamb': {
       'es': '¿Tienes algún familiar directo que tenga Fibromialgia?',
       'en': 'Do you have any immediate family members who have Fibromyalgia?',
-    },
-    'go16zhsf': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'bz4ei8ma': {
-      'es': 'No',
-      'en': 'No',
     },
     'was9qubg': {
       'es': 'Selecciona tu respuesta...',
@@ -13079,9 +13095,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'go16zhsf': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'bz4ei8ma': {
+      'es': 'No',
+      'en': 'No',
+    },
     'u3msrbjw': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'zrdx26tn': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'lw4ryacd': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'i6hubwkk': {
       'es': 'Familiar de primer grado',
@@ -13095,17 +13127,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'zrdx26tn': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'lw4ryacd': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '44otzkv4': {
       'es': '¿Con qué criterios te han diagnosticado?',
       'en': 'What criteria have you been diagnosed with?',
+    },
+    '7wilp1ej': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ex5lj9d5': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'uxcsl26i': {
       'es': 'No lo sé pero tengo el diagnóstico',
@@ -13128,17 +13160,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Criterios de enfermedad de intolerancia al esfuerzo sistémico (SEID)',
       'en': 'Systemic exertion intolerance disease (SEID) criteria',
     },
-    '7wilp1ej': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ex5lj9d5': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'yej11yxp': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '1xy4qyb5': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '76y4udfm': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'oynm9nf4': {
       'es': 'Menos de 1 año',
@@ -13150,23 +13182,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '41pa38wq': {
       'es': 'de 3 a 5 años',
-      'en': 'from 3 to 5 years',
+      'en': '3 to 5 years',
     },
     'bx3axb1i': {
       'es': 'más de 5 años',
       'en': 'more than 5 years',
     },
-    '1xy4qyb5': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '76y4udfm': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'wj3d6rc5': {
       'es': '¿Tras qué evento desarrollaste EM/SFC?',
       'en': 'After what event did you develop ME/CFS?',
+    },
+    'ntoiw4kx': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '0ewmwwmd': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'a0ee41ix': {
       'es': 'No lo sé',
@@ -13196,25 +13228,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Medicación',
       'en': 'Medication',
     },
-    'ntoiw4kx': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '0ewmwwmd': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     's901b7j4': {
       'es': '¿Tienes algún familiar directo que tenga EM/SFC?',
       'en': 'Do you have any immediate family members who have ME/CFS?',
-    },
-    '26bn7nyt': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'kasp1jqm': {
-      'es': 'No',
-      'en': 'No',
     },
     'r8tgl7jw': {
       'es': 'Selecciona tu respuesta...',
@@ -13224,9 +13240,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '26bn7nyt': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'kasp1jqm': {
+      'es': 'No',
+      'en': 'No',
+    },
     'wvka5222': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'jng8abmc': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ufqv09ht': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'e55kj1ep': {
       'es': 'Familiar de primer grado',
@@ -13240,14 +13272,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'jng8abmc': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ufqv09ht': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     '76z666k2': {
       'es': 'Escribe aquí tus otras enfermedades',
       'en': 'Write your other illnesses here',
@@ -13260,14 +13284,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Tienes alguna enfermedad autoinmune diagnosticada?',
       'en': 'Do you have any diagnosed autoimmune disease?',
     },
-    'xq1sji4w': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '7c799p09': {
-      'es': 'No',
-      'en': 'No',
-    },
     'mcryox4a': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -13275,6 +13291,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '5cr2jd3f': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    'xq1sji4w': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '7c799p09': {
+      'es': 'No',
+      'en': 'No',
     },
     'i08ql9z9': {
       'es': '¿Cuál?',
@@ -13292,6 +13316,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'fm6vsjj5': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'hzv37ez6': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'y5mtln6j': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -13308,27 +13340,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    'fm6vsjj5': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'hzv37ez6': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'soix8ec7': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna enfermedad autoinmune?',
       'en':
           'Do you have any immediate family members who have an autoimmune disease?',
-    },
-    'a52w3d91': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    '4d96jy95': {
-      'es': 'No',
-      'en': 'No',
     },
     'wk79e2qq': {
       'es': 'Selecciona tu respuesta...',
@@ -13338,9 +13354,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'a52w3d91': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    '4d96jy95': {
+      'es': 'No',
+      'en': 'No',
+    },
     'tgg783ak': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'j2pvianw': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '5nr3va1e': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     '72gw9b1l': {
       'es': 'Familiar de primer grado',
@@ -13354,25 +13386,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
     },
-    'j2pvianw': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '5nr3va1e': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'xktg83kl': {
       'es': '¿Tienes diagnóstico de síndrome de intestino irritable?',
       'en': 'Have you been diagnosed with irritable bowel syndrome?',
-    },
-    'pq4d18n5': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    't7djq342': {
-      'es': 'No',
-      'en': 'No',
     },
     '7e1y0hb9': {
       'es': 'Selecciona tu respuesta...',
@@ -13382,9 +13398,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    'pq4d18n5': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    't7djq342': {
+      'es': 'No',
+      'en': 'No',
+    },
     'm06pp69i': {
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
+    },
+    '0l2siuyz': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'auogj9i0': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'd12olub8': {
       'es': 'Menos de 1 año',
@@ -13402,27 +13434,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
     },
-    '0l2siuyz': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'auogj9i0': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
-    },
     'fjtodbzz': {
       'es':
           '¿Tienes algún familiar directo que tenga alguna intolerancia alimentaria?',
       'en':
           'Do you have any immediate family members who have a food intolerance?',
-    },
-    '712wb8ls': {
-      'es': 'Si',
-      'en': 'Yes',
-    },
-    'dq1qro17': {
-      'es': 'No',
-      'en': 'No',
     },
     'in9oiunf': {
       'es': 'Selecciona tu respuesta...',
@@ -13432,9 +13448,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Search for an item...',
       'en': 'Search for an item...',
     },
+    '712wb8ls': {
+      'es': 'Si',
+      'en': 'Yes',
+    },
+    'dq1qro17': {
+      'es': 'No',
+      'en': 'No',
+    },
     'jqxdk3q5': {
       'es': 'Indica el grado familiar',
       'en': 'Indicates the family degree',
+    },
+    'wat78ycb': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    '0dgof29g': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
     },
     'i9cgoi1s': {
       'es': 'Familiar de primer grado',
@@ -13447,14 +13479,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'df9in26r': {
       'es': 'Familiar de tercer grado',
       'en': 'Third degree relative',
-    },
-    'wat78ycb': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    '0dgof29g': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'gnf38yuf': {
       'es':
@@ -13473,6 +13497,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'qx9mx4v4': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'ka1304xr': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'tdc87zf0': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -13488,14 +13520,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4l1gqnev': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'qx9mx4v4': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'ka1304xr': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'a1bqyrm0': {
       'es':
@@ -13514,6 +13538,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'g0hjutuc': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'r3lemate': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'mf1ltk66': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -13529,14 +13561,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '418dz3aw': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'g0hjutuc': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'r3lemate': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'imcxck7y': {
       'es':
@@ -13555,6 +13579,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    'y3lz34me': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'y8ugahql': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     'qs9v4nfv': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -13570,14 +13602,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'ful398gd': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    'y3lz34me': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'y8ugahql': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'zky8pus6': {
       'es':
@@ -13596,6 +13620,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '¿Cuánto tiempo llevas diagnosticado?',
       'en': 'How long have you been diagnosed?',
     },
+    '5rkunfmq': {
+      'es': 'Selecciona tu respuesta...',
+      'en': 'Select your answer...',
+    },
+    'rjjeak5f': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
     '2u50fi1c': {
       'es': 'Menos de 1 año',
       'en': 'Less than 1 year',
@@ -13611,14 +13643,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'hagpmzt5': {
       'es': 'Más de 5 años',
       'en': 'More than 5 years',
-    },
-    '5rkunfmq': {
-      'es': 'Selecciona tu respuesta...',
-      'en': 'Select your answer...',
-    },
-    'rjjeak5f': {
-      'es': 'Search for an item...',
-      'en': 'Search for an item...',
     },
     'nfm093rm': {
       'es': 'Finalizar',
@@ -13639,9 +13663,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Mis Asociaciones',
       'en': 'My Associations',
     },
+    'gnczgdb9': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
     '29b9lffl': {
       'es': 'Selecciona si perteneces a alguna de estas Asociaciones',
       'en': 'Select if you belong to any of these Associations',
+    },
+    'fz8robrs': {
+      'es': 'Pendiente de Aprobación',
+      'en': 'Pending Approval',
     },
     'b6pwnxbz': {
       'es': 'Finalizar',
@@ -13996,6 +14028,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Selecciona el tipo de respuesta para esta pregunta',
       'en': 'Select the type of response for this question',
     },
+    'gp0c85v2': {
+      'es': 'Selecciona la opción',
+      'en': 'Select the option',
+    },
+    'szbxv522': {
+      'es': 'Search...',
+      'en': 'Search...',
+    },
     'pb4fgy8g': {
       'es': 'Texto libre',
       'en': 'Free text',
@@ -14011,14 +14051,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'a19n6d9r': {
       'es': 'Escala de 0 a 10',
       'en': 'Scale from 0 to 10',
-    },
-    'gp0c85v2': {
-      'es': 'Selecciona la opción',
-      'en': 'Select the option',
-    },
-    'szbxv522': {
-      'es': 'Search...',
-      'en': 'Search...',
     },
     '7yezy5cy': {
       'es': 'Crea la opciones de respuesta.',
@@ -14075,6 +14107,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Selecciona el tipo de respuesta para esta pregunta',
       'en': 'Select the type of response for this question',
     },
+    'lbsaywum': {
+      'es': 'Selecciona la opción',
+      'en': 'Select the option',
+    },
+    'tyuwob4r': {
+      'es': 'Search...',
+      'en': 'Search...',
+    },
     'vh35j9d3': {
       'es': 'Texto libre',
       'en': 'Free text',
@@ -14090,14 +14130,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'odq4p4lk': {
       'es': 'Escala de 0 a 10',
       'en': 'Scale from 0 to 10',
-    },
-    'lbsaywum': {
-      'es': 'Selecciona la opción',
-      'en': 'Select the option',
-    },
-    'tyuwob4r': {
-      'es': 'Search...',
-      'en': 'Search...',
     },
     'licvga01': {
       'es': 'Crea las opciones de respuesta.',
@@ -14142,10 +14174,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Escribe tu respuesta...',
       'en': 'Write your answer...',
     },
-    '9r1x2373': {
-      'es': 'Option 1',
-      'en': 'Option 1',
-    },
     '2nh3wz88': {
       'es': 'Selecciona tu respuesta...',
       'en': 'Select your answer...',
@@ -14153,6 +14181,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'rnueewxb': {
       'es': 'Search for an item...',
       'en': 'Search for an item...',
+    },
+    '9r1x2373': {
+      'es': 'Option 1',
+      'en': 'Option 1',
     },
     'nyp6l20d': {
       'es': 'Selecciona tu respuesta de 0 a 5',
@@ -14301,25 +14333,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Understood',
     },
     'bng3gmva': {
-      'es': 'Home',
-      'en': 'Home',
-    },
-  },
-  // comunidadCopy
-  {
-    'nbg0vvi3': {
-      'es': 'Comunidad',
-      'en': 'Community',
-    },
-    'omw4sf0z': {
-      'es': 'Reportar Publicación',
-      'en': 'Report Post',
-    },
-    '5t4h1bhb': {
-      'es': 'Crear Publicación',
-      'en': 'Create Post',
-    },
-    'sdhgv1je': {
       'es': 'Home',
       'en': 'Home',
     },
@@ -15146,6 +15159,2477 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Home',
     },
   },
+  // diario_Into1Copy
+  {
+    'w77j5cuj': {
+      'es': 'Diario de Intolerancias',
+      'en': 'Diary of Intolerances',
+    },
+    'qp4x5a0t': {
+      'es': '¿Te ha sentado mal algo de lo que comiste ayer?',
+      'en': 'Did something you eat yesterday upset your stomach?',
+    },
+    'jm5h4t61': {
+      'es': 'SI',
+      'en': 'YES',
+    },
+    'p3x01anv': {
+      'es': 'NO',
+      'en': 'NO',
+    },
+    'mc65jeu5': {
+      'es': 'No lo sé',
+      'en': 'Don\'t know',
+    },
+    'vhbw1tvw': {
+      'es': 'Guardar',
+      'en': 'Save',
+    },
+    'j8yh1eph': {
+      'es': 'Carnes',
+      'en': 'Meats',
+    },
+    'ewhbrsa2': {
+      'es': 'Pescado',
+      'en': 'Fish',
+    },
+    'w2h5l2lj': {
+      'es': 'Mariscos',
+      'en': 'Seafood',
+    },
+    '7vrqu8mr': {
+      'es': 'Lácteos',
+      'en': 'Dairy',
+    },
+    'xzuk64w2': {
+      'es': 'Huevos',
+      'en': 'Eggs',
+    },
+    'at79w83z': {
+      'es': 'Panes y Cereales',
+      'en': 'Breads and Cereals',
+    },
+    's0o8bgzl': {
+      'es': 'Frutas',
+      'en': 'Fruit',
+    },
+    '9tbyesf2': {
+      'es': 'Verduras \ny Hortalizas',
+      'en': 'Vegetables\nand greens',
+    },
+    'ncp73m94': {
+      'es': 'Legumbres',
+      'en': 'Legumes',
+    },
+    'uui4bj4l': {
+      'es': 'Frutos Secos',
+      'en': 'Dried Fruits',
+    },
+    'uqrr1kk3': {
+      'es': 'Salsas y Condimentos',
+      'en': 'Sauces and Condiments',
+    },
+    'r4m5skvg': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    '8wmioy7j': {
+      'es': 'Continuar',
+      'en': 'Continue',
+    },
+    '53ieq0cs': {
+      'es': 'Finalizar más tarde',
+      'en': 'End later',
+    },
+    'vdb0mguf': {
+      'es': 'Guardar',
+      'en': 'Save',
+    },
+    '6shd3or9': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // diario_Into_crea_plato
+  {
+    '0uao57rq': {
+      'es': 'Diario de Intolerancias',
+      'en': 'Diary of Intolerances',
+    },
+    'cg1qu8ag': {
+      'es': 'Crea un nuevo plato',
+      'en': 'Create a new dish',
+    },
+    'r10laudu': {
+      'es': 'Nombre del plato',
+      'en': 'Name of the dish',
+    },
+    '4lkdcer5': {
+      'es': 'Indica un nombre para el plato...',
+      'en': 'Enter a name for the dish...',
+    },
+    '17ag4hjb': {
+      'es': 'Selecciona los alimentos que lleva tu plato',
+      'en': 'Select the foods that go on your plate',
+    },
+    '83urup2t': {
+      'es': 'Carnes',
+      'en': 'Meats',
+    },
+    'upww5ah6': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '9w8yqy1u': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '75qyonsg': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ot0yrl6h': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'obva3zs2': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'jl7fqg2n': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'o9nl3x5a': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'minrtfnv': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ko6nk2fy': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'oneq83wi': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'pxdabti8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'bzkx43l6': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'u9z23iza': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'x5n3zr5o': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'evbg8xo3': {
+      'es': 'Pescados',
+      'en': 'Fish',
+    },
+    'rp3l4bpm': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '4zqkjkxl': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7sk4j5sq': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '6l9h4pod': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'pysf4z2g': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '3140r3rb': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    'bort7bhi': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'izdee2kj': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '1hgqpvc4': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'p0bik0z0': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    't6kmq3ai': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'efzp1w9s': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'srrzp9zs': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'e6bj1s1u': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7c82hp5y': {
+      'es': 'Mariscos',
+      'en': 'Seafood',
+    },
+    'cfypnv07': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'a0o29u78': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'xnx2f6zv': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'it6ncq75': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'wujnk9wx': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    's4x3yibn': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'sahhihea': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'likxfdx1': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'cb4vikav': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ifceh1ze': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '5cew67ud': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'p4g3141z': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '322nf3eh': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tnbghh1v': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'fhmcu6z3': {
+      'es': 'Lácteos',
+      'en': 'Dairy',
+    },
+    'sm2915oy': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'l7w1lkpu': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'budc8f7c': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tk67wnn4': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'hm1v3fc1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'cf9fupw4': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '72r42egm': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '1mg7vrpe': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'confjfao': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'fmsoc5b7': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'kwn0c128': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'b8nodwhj': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'o565hw09': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '823jku5n': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'v31y7dlm': {
+      'es': 'Huevos',
+      'en': 'Eggs',
+    },
+    '19mdxrfi': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '717ibww6': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
+    'c1ftniju': {
+      'es': 'Panes y Cereales',
+      'en': 'Breads and Cereals',
+    },
+    '4gb35dhm': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ps3mulrh': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'kou5c6q1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'qbhade7n': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '6vdqhbd2': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '1yzngvb2': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'qejchkie': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'iqz3napa': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rvixgoh2': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'o4yc4nmu': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'e39hyb6e': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '3xd590he': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rr76c9ka': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'pyvxq84f': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'y95elklj': {
+      'es': 'Frutas',
+      'en': 'Fruit',
+    },
+    'i57sn5nn': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'iuadirqw': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'xm5vq938': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ndzy7b8v': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '1uqxno5g': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'bj7rx37h': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '5la6trvh': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ofetodm4': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'kijtqk4a': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'cqrx2udr': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'cniv0afc': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'jbkmae2h': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'u67o528g': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ch3yojhl': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'olkjijuc': {
+      'es': 'Verduras y hortalizas',
+      'en': 'Vegetables and greens',
+    },
+    '2wdqktgr': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ymbsvu41': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'uhmz4rd5': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '4yyx54g1': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'qw9ilrkq': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '8qsssy55': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ajjnuxjy': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '4eznu9uu': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rraxrtp3': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ub8ka6uu': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'n5qu83u8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'cainlvx9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'hbge7he6': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'vf5yofdd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7tc4mp6y': {
+      'es': 'Legumbres',
+      'en': 'Legumes',
+    },
+    'lrdseafo': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '5bivl38j': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'kbubf8yl': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ngwwchdi': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '3pluxllr': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'lv4t183m': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '191a13q6': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'pqsl5tx0': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'r2kmkldl': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'a21yj0ec': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    's5fn5kuj': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '0xwqsv6z': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'c08bbnq3': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'lc6bcwrc': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'emk5gou1': {
+      'es': 'Frutos Secos',
+      'en': 'Dried Fruits',
+    },
+    'zlrde49t': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ydw7sr5x': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'eet4vhnl': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '1ublkwai': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '9wk8tcwe': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'pimmpqxu': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'e17b90hi': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2jsw3334': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'jptwrycr': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ihu8h6nd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '6rhfba4h': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '3p6qc7bd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '1axn4t22': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'u1h6unzz': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'f0fjonyg': {
+      'es': 'Salsas y condimentos',
+      'en': 'Sauces and condiments',
+    },
+    'oc2ot62w': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '8dwiy8k7': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'swnvzxj8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'boaun8yq': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'h9t43j8o': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'u46csyhy': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'vx6wbk7a': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'jbo5wcpl': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '4uww6sr4': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tyh0m79m': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'xvnrfsd0': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'p6iw30mc': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'njhhgk5o': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '76snnnp9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'unxuqn2y': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    'g2ak4g2k': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '3wocpklm': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'zntt2k9w': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'epy5xvp9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'aoeqgitp': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2udcix6z': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '9rw6v8jr': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'dacbrksm': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'fwluzxlq': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    's23qwous': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'y5ro2r63': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'j7rtsyh8': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '8noe4t8v': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'xvto4bmw': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    '1xdkua5q': {
+      'es': 'Guardar',
+      'en': 'Keep',
+    },
+    'z1upseej': {
+      'es': 'Cancelar',
+      'en': 'Save',
+    },
+    'vv56rrps': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // diario_Into_crea_bebida
+  {
+    '5s4ejnpa': {
+      'es': 'Diario de Intolerancias',
+      'en': 'Diary of Intolerances',
+    },
+    'eorvqk12': {
+      'es': 'Crea una nueva bebida',
+      'en': 'Create a new drink',
+    },
+    'r0fzgnn4': {
+      'es': 'Nombre de la bebida',
+      'en': 'Name of the drink',
+    },
+    'nqedjm3c': {
+      'es': 'Indica un nombre para tu bebida...',
+      'en': 'Enter a name for your drink...',
+    },
+    'kgr61w4p': {
+      'es': 'Selecciona las bebidas',
+      'en': 'Select drinks',
+    },
+    'kw3kzc46': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    '7vc3y3t1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '5hu4vnst': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'x0wth18g': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '6t5dmys4': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '6gb7h6v9': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'xwhk3tke': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ae93rz0t': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'zu4qjttx': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '133hlgao': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tprgwky7': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'n8w85vb1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'th4665z4': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '016b2cma': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ow2ztoyi': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    'hzr493m6': {
+      'es': 'Guardar',
+      'en': 'Keep',
+    },
+    'ng2jpgjr': {
+      'es': 'Cancelar',
+      'en': 'Save',
+    },
+    '3tvfqxkq': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // diario_Into_edita_plato
+  {
+    'ui605a40': {
+      'es': 'Diario de Intolerancias',
+      'en': 'Diary of Intolerances',
+    },
+    'e5zh9rho': {
+      'es': 'Editar Plato',
+      'en': 'Edit Dish',
+    },
+    'rzszlzlv': {
+      'es': 'Nombre del plato',
+      'en': 'Name of the dish',
+    },
+    '81sv1md7': {
+      'es': 'Indica un nombre para el plato...',
+      'en': 'Enter a name for the dish...',
+    },
+    '4xtxh8pv': {
+      'es': 'Selecciona los alimentos que lleva tu plato',
+      'en': 'Select the foods that go on your plate',
+    },
+    're3zmqi3': {
+      'es': 'Carnes',
+      'en': 'Meats',
+    },
+    'pm8d3o2n': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'onqrgvvu': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'z0xi3s52': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'lh9k4hn4': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '6hnyto4i': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'vhafffns': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'zhmght17': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '5qj93b5h': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'a79cnmir': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'c4jrar15': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'dxhuwqwr': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ph7inu6a': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '0lx3sfp1': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'c4484zlt': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'gxfxyxb8': {
+      'es': 'Pescados',
+      'en': 'Fish',
+    },
+    'i42oido9': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '1gn5suag': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'j56itxt4': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'dsp0pztq': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'as6347bs': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '92pketph': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    '48l296rd': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'bfzerl1f': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'p51x8tb7': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'p3e9mc91': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'joax6fqo': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '4wqca6cx': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '2pml5c92': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'xmwu0j2x': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rf8fwh4y': {
+      'es': 'Mariscos',
+      'en': 'Seafood',
+    },
+    '11hlpqb8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '7bjfs7sa': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'hg4h6nlx': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '9yqoycxe': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rvzj6s5v': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'gfco24qy': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'fupmv1dq': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'q65ybyge': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '3kezk8o8': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'mpfhj5qd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '9v2u7stw': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'zxh0fnht': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'nl5ieu5e': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2oh8suqc': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'e4axavtq': {
+      'es': 'Lácteos',
+      'en': 'Dairy',
+    },
+    'q736v5gv': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'tfhahqie': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'onhwb3ke': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'l7syhddm': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '5jkxiiiu': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '3i4yvc1i': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'lq2fo675': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'flz8i6a5': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'tny1u2hy': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'p4elhwww': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'szwrf6zw': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'uwbyao6b': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'qn8cuyy3': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'z4529ge8': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '5ybmwweo': {
+      'es': 'Huevos',
+      'en': 'Eggs',
+    },
+    'xteh8ew3': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'dwii1016': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
+    'cj74bnf9': {
+      'es': 'Panes y Cereales',
+      'en': 'Breads and Cereals',
+    },
+    'mvvrsnxa': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '7kjpbp8p': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7mps3y5b': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ek9on5g9': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '4gx0o3j7': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'r5mtc1x3': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'yfxqaryt': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ro9k1ji2': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'pj0hj8zp': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'gqc2ibix': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '57s8cclg': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'pa48vgp8': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'lw8fzh0r': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'b5pnjps7': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'susx56sp': {
+      'es': 'Frutas',
+      'en': 'Fruit',
+    },
+    '5oha8l2w': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'yiuno16f': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'orv0qdjt': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'loqhyux1': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'd2wu0ao3': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '3u2mmoik': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'awfq1b6y': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ts0fsv5c': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'p7i4r7b6': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'jgxc4nex': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '3cnsd0rz': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '1u0010vn': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'rht66kkn': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'neyu3r2y': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'g9z0nfzy': {
+      'es': 'Verduras y hortalizas',
+      'en': 'Vegetables and greens',
+    },
+    'rx813wwh': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'yjqcarm2': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '52c16soa': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'i7k2uh63': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'g9m4fob0': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '0ohb8rgk': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'fsi1jk2v': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '8sgnlhdf': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'nkoltv1a': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'dxw19zpm': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '1g07153i': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'cl0k3jip': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'p4c922cx': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2cmy9uos': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'sl39ak2u': {
+      'es': 'Legumbres',
+      'en': 'Legumes',
+    },
+    'fmtyhv65': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'pykj87p3': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'fhkc7g7r': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'fddav3r2': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '8wwrcqor': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'pufglray': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'wfe4hg5h': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'hjghkpev': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '39o7qg0k': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'z2uz3mys': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'w9ega1kn': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'fjhe2qkk': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '954b8lbw': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ygjc6z6r': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '4a1dm3f1': {
+      'es': 'Frutos Secos',
+      'en': 'Dried Fruits',
+    },
+    'fwm03oei': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'nojz5e7e': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '033ikeyv': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '45jbnrjg': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'x4il112h': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'qxpakvl3': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '6jrws0s0': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'mghqot24': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'pmh9uj7i': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'juuzcjbl': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '64fmpg2w': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '2befhaxj': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'kittzlio': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '957q3c2i': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'h7c0df0g': {
+      'es': 'Salsas y condimentos',
+      'en': 'Sauces and condiments',
+    },
+    'fgizodfu': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '925lf7p8': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'o497sraa': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ta3rwowd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'mdomwb5v': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'cgahacy3': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ehpq0rbp': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'mkyufflq': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'm1jgjzsu': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'nth3q5gq': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '2si7wfbx': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '1yucihxd': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '0g3uy6km': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'wesfaxe8': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'qdqy25ju': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    '4l5vjzog': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'mdi647ls': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'n25ds9ru': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'mg24vgz3': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ksyc7117': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'p4f720yv': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '1l7i9i0q': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'wf6imyea': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'b6xa8ict': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '62cmtrkv': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '4bgtcxiz': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '25pdsf5c': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'hc7m4647': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '35zq00qi': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    'heiyinmv': {
+      'es': 'Guardar',
+      'en': 'Keep',
+    },
+    '5a0mj1zp': {
+      'es': 'Eliminar Plato',
+      'en': 'Save',
+    },
+    'wcvw90q7': {
+      'es': 'Cancelar',
+      'en': 'Save',
+    },
+    '9u3yloo9': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // diario_Into_edita_bebida
+  {
+    'vl33qisd': {
+      'es': 'Diario de Intolerancias',
+      'en': 'Diary of Intolerances',
+    },
+    'yt7sa1dl': {
+      'es': 'Nombre del plato',
+      'en': 'Name of the dish',
+    },
+    'femddogw': {
+      'es': 'Indica un nombre para el plato...',
+      'en': 'Enter a name for the dish...',
+    },
+    '02he9d4b': {
+      'es': 'Selecciona las bebidas',
+      'en': 'Select drinks',
+    },
+    'o32fpkec': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    'nbpxh0a3': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'd21datg7': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'ynow10nm': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'huipzkta': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'qdry7u8h': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'wxesktg6': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'q0tq7meh': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    '15r2pcwx': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '7f9zasda': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'novefcsv': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    '57g482ow': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'asef5m6v': {
+      'es': 'Buscador...',
+      'en': 'Search...',
+    },
+    'tutlll4c': {
+      'es': 'Selecciona tu respuesta',
+      'en': 'Select your answer',
+    },
+    'ypiuiqln': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    'ec1qwfw1': {
+      'es': 'Guardar',
+      'en': 'Keep',
+    },
+    'ukdygehm': {
+      'es': 'Eliminar Bebida',
+      'en': 'Save',
+    },
+    'm9ulivio': {
+      'es': 'Cancelar',
+      'en': 'Save',
+    },
+    'l578grb3': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // hubComunidad
+  {
+    'nfn6fcuj': {
+      'es': 'Comunidades',
+      'en': 'Communities',
+    },
+    'rkhke10m': {
+      'es': 'Selecciona la comunidad a la que quieres acceder',
+      'en': 'Select the community you want to access',
+    },
+    'lp3ylyxf': {
+      'es': 'Comunidad General',
+      'en': 'General Community',
+    },
+    '8yqtrw99': {
+      'es': 'General',
+      'en': 'General',
+    },
+    'qy7667q1': {
+      'es': 'CP',
+      'en': 'CP',
+    },
+    '2u2u69yp': {
+      'es': 'COVID\nPersistente',
+      'en': 'Intolerences Diary',
+    },
+    'st5ln59z': {
+      'es': 'COVID Persistente',
+      'en': 'General',
+    },
+    '1mgasdlp': {
+      'es': 'FM',
+      'en': 'FM',
+    },
+    'q7mhdup2': {
+      'es': 'Fibromialgia',
+      'en': 'Fibromyalgia',
+    },
+    'yphmhodd': {
+      'es': 'Fibromialgia',
+      'en': 'General',
+    },
+    'arpom9wx': {
+      'es': 'EM',
+      'en': 'EM',
+    },
+    '4a8y7jrx': {
+      'es': 'Encefalomielitis\nMiálgica',
+      'en': 'Intolerences Diary',
+    },
+    'p3lhkeba': {
+      'es': 'Encefalomielitis Miálgica',
+      'en': 'General',
+    },
+    'tjdc0tsq': {
+      'es': 'OA',
+      'en': 'OA',
+    },
+    '5oh444nx': {
+      'es': 'Otras Enf.\nAutoinmunes',
+      'en': 'Intolerences Diary',
+    },
+    'izu08uxx': {
+      'es': 'Otras Enf. Autoinmunes',
+      'en': 'General',
+    },
+    'wi7s7ve4': {
+      'es': 'SA',
+      'en': 'SA',
+    },
+    'yes6msl0': {
+      'es': 'Sensibilidad\nAlimentaria',
+      'en': 'Intolerences Diary',
+    },
+    'bu5sx24s': {
+      'es': 'Intolerancias Alimentarias',
+      'en': 'General',
+    },
+    '3my96ryw': {
+      'es': 'Comunidades de tus Asociaciones',
+      'en': 'Communities of your Associations',
+    },
+    '1s13e0uw': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // youtube
+  {
+    'mmj0cfjz': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // perfil_users_aso
+  {
+    'yd83t73u': {
+      'es': 'Usuarios',
+      'en': 'Users',
+    },
+    'tlxl9ds5': {
+      'es': 'Por Aprobar',
+      'en': 'To be approved',
+    },
+    'c4nsu5l4': {
+      'es': 'Aprobados',
+      'en': 'Approved',
+    },
+    '7u3ytizk': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    'w43uch18': {
+      'es': 'Selecciona si perteneces a alguna de estas Asociaciones',
+      'en': 'Select if you belong to any of these Associations',
+    },
+    'gk3bjnzf': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // noticiasDetalleNew
+  {
+    'u7edt4ag': {
+      'es': 'Noticias de salud',
+      'en': 'Health News',
+    },
+    'j0hjjrgl': {
+      'es': 'Editar Noticia',
+      'en': 'Edit News',
+    },
+    'ezz6yqwd': {
+      'es': 'Comentarios',
+      'en': 'Comments',
+    },
+    '5uymumff': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // noticiasCreaNew
+  {
+    '6tm8ws9p': {
+      'es': 'Crea nueva Noticia',
+      'en': 'Create new News',
+    },
+    'y7c5tzfj': {
+      'es': 'Publica una nueva noticia',
+      'en': 'Post a new news item',
+    },
+    'x25b2uwt': {
+      'es': 'Edita la Publicación',
+      'en': 'Edit the Post',
+    },
+    '5muxwhj5': {
+      'es': 'Titulo Español',
+      'en': 'Spanish Title',
+    },
+    'vl7oqb6c': {
+      'es': 'Introduce el titulo para idioma Español',
+      'en': 'Enter the title for the Spanish language',
+    },
+    'r79g0m55': {
+      'es': 'Titulo Inglés',
+      'en': 'English Title',
+    },
+    '5um81xlr': {
+      'es': 'Introduce el titulo para idioma Inglés',
+      'en': 'Enter the title for English language',
+    },
+    'qdj6dxkt': {
+      'es': 'Descripción en Español',
+      'en': 'Description in Spanish',
+    },
+    'jornfh4u': {
+      'es': 'Descripción en Español',
+      'en': 'Description in Spanish',
+    },
+    'huwak7xa': {
+      'es': 'Descripción en Inglés',
+      'en': 'Description in English',
+    },
+    '54qrnhjm': {
+      'es': 'Descripción en Inglés',
+      'en': 'Description in English',
+    },
+    '5vd7vmcg': {
+      'es': 'Añadir texto español',
+      'en': 'Add Spanish text',
+    },
+    'l918rbn7': {
+      'es': 'Editar texto español',
+      'en': 'Edit Spanish text',
+    },
+    'a4lxtbl9': {
+      'es': 'Editar texto inglés',
+      'en': 'Edit English text',
+    },
+    '5umbxid9': {
+      'es': 'Añadir texto inglés',
+      'en': 'Add English text',
+    },
+    'pbgtvc7c': {
+      'es': 'Etiquetas enfermedades',
+      'en': 'Tags diseases',
+    },
+    'slr97iig': {
+      'es': 'COVID Fibromialgia Enfermedades Autoinmunes Intolerancias ',
+      'en': 'COVID Fibromyalgia Autoimmune Diseases Intolerances',
+    },
+    'i6jv6bq4': {
+      'es': 'Url Vídeo Youtube',
+      'en': 'Youtube Video Url',
+    },
+    'd1ra6232': {
+      'es': 'URL Youtube',
+      'en': 'URL Link Button',
+    },
+    'bxpfeqpi': {
+      'es': 'URL Link Botón',
+      'en': 'URL Link Button',
+    },
+    'kpk2xmdl': {
+      'es': 'URL Link botón',
+      'en': 'URL Link Button',
+    },
+    'tbyryoqq': {
+      'es': 'Nombre del Botón en Español',
+      'en': 'Button Name in Spanish',
+    },
+    'qt8voj7o': {
+      'es': 'español',
+      'en': 'Spanish',
+    },
+    'cd4if9g4': {
+      'es': 'Nombre del Botón en Inglés',
+      'en': 'Button Name in English',
+    },
+    '8y3r8mbk': {
+      'es': 'español',
+      'en': 'Spanish',
+    },
+    'zhdilof5': {
+      'es': 'Esta noticia es privada para los miembros de mi asociación',
+      'en': 'This news is private for the members of my association',
+    },
+    'd69ayld1': {
+      'es': 'Guardar',
+      'en': 'Save',
+    },
+    'fbh1on9e': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // noticiasTexto
+  {
+    '1ckfdcnz': {
+      'es': 'Texto de la noticia',
+      'en': 'Text of the news',
+    },
+    'qwv0de1r': {
+      'es': 'Escribe tu noticia aquí...',
+      'en': 'Write your news here...',
+    },
+    'iyx1euit': {
+      'es': 'Guardar',
+      'en': 'Keep',
+    },
+    'flfsxer1': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // noticiasPrivadas
+  {
+    'b011sb94': {
+      'es': 'Noticias de Asociaciones',
+      'en': 'Association News',
+    },
+    'ppkkx288': {
+      'es': '',
+      'en': '',
+    },
+    'czipqra0': {
+      'es': 'Buscador',
+      'en': 'Search',
+    },
+    'jc8xxm8l': {
+      'es': '',
+      'en': '',
+    },
+    'klshs2ap': {
+      'es': 'Filtro por Enfermedad...',
+      'en': 'Filter by Disease...',
+    },
+    'uzgmig32': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
+    'sth75fal': {
+      'es': 'COVID persistente',
+      'en': 'Long COVID',
+    },
+    'e48de6h1': {
+      'es': 'Encefalomielitis Miálgica',
+      'en': 'Myalgic Encephalomyelitis',
+    },
+    'gi5aj5el': {
+      'es': 'Fibromialgia',
+      'en': 'Fibromyalgia',
+    },
+    'qvx6oalt': {
+      'es': 'Enfermedad Autoinmune',
+      'en': 'Autoimmune Disease',
+    },
+    'uy3j70sf': {
+      'es': 'Intolerancias alimentarias',
+      'en': 'Food intolerances',
+    },
+    'op0cxka0': {
+      'es': 'Todas',
+      'en': 'All',
+    },
+    'k29asybk': {
+      'es': '',
+      'en': '',
+    },
+    'ml0zsqgi': {
+      'es': 'Filtro por Autor...',
+      'en': 'Filter by Author...',
+    },
+    'pzkd732w': {
+      'es': 'Search for an item...',
+      'en': 'Search for an item...',
+    },
+    'bekeoerd': {
+      'es': 'Crear Nueva Noticia',
+      'en': 'Create New News',
+    },
+    'dkkig7oq': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // perfil_biometrico
+  {
+    'jnx6xoae': {
+      'es': 'Acceso Biométrico',
+      'en': 'Biometric Access',
+    },
+    'hwmdklsh': {
+      'es':
+          'Si activas el reconocimiento biométrico, podrás acceder a la aplicación sin necesidad de poner tu contraseña.',
+      'en':
+          'If you activate biometric recognition, you will be able to access the application without having to enter your password.',
+    },
+    'vm75m4th': {
+      'es': 'Touch ID / Face ID',
+      'en': 'Touch ID / Face ID',
+    },
+    '9f86c8g0': {
+      'es': 'Introduce tu contraseña para activar la funcionalidad',
+      'en': 'Enter your password to activate the functionality',
+    },
+    '331ct5iw': {
+      'es': '',
+      'en': '',
+    },
+    'qqfhx3js': {
+      'es': 'Contraseña',
+      'en': 'Password',
+    },
+    '5olgjrdb': {
+      'es': 'Contraseña Incorrecta',
+      'en': 'Incorrect Password',
+    },
+    'q2vrtxgm': {
+      'es': 'Activar',
+      'en': 'Activate',
+    },
+    'dbk68mc8': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // comunidadRelevancia
+  {
+    't9ii63dz': {
+      'es': 'Comunidad',
+      'en': 'Community',
+    },
+    'xela1wbn': {
+      'es': 'Ordenar por Relevancia',
+      'en': 'Sort by Relevance',
+    },
+    '0y6dfpp5': {
+      'es': 'Click para ver el link',
+      'en': 'Click to see the link',
+    },
+    'dbwe2rz7': {
+      'es': 'Ver Vídeo',
+      'en': 'Watch Video',
+    },
+    'vlwp9b98': {
+      'es': 'Reportar Publicación',
+      'en': 'Report Post',
+    },
+    'kkrf1na6': {
+      'es': 'Crear Publicación',
+      'en': 'Create Post',
+    },
+    'w36vba6j': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // noticiasAso
+  {
+    'g958b34k': {
+      'es': 'Mis Asociaciones',
+      'en': 'My Associations',
+    },
+    '4jecbizl': {
+      'es': 'Buscador...',
+      'en': 'Seeker...',
+    },
+    '3b6ph7td': {
+      'es': 'Selecciona una Asociación para ver sus publicaciones',
+      'en': 'Select an Association to see its publications',
+    },
+    'ooaocyiy': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // chat_mensajesCopy
+  {
+    'cmxatxw6': {
+      'es': '',
+      'en': '',
+    },
+    'hx5ci7bj': {
+      'es': 'Mensaje...',
+      'en': 'Message...',
+    },
+    '9ps4cy1y': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // resumen_sueno
+  {
+    'ii6k49r0': {
+      'es': 'Resumen de Sueño',
+      'en': '',
+    },
+    'xqm5ik06': {
+      'es': 'Has dormido',
+      'en': 'This was your sleep quality',
+    },
+    'bfxdpk98': {
+      'es': 'horas',
+      'en': '',
+    },
+    '04oczcif': {
+      'es': 'Esta fue tu calidad de sueño',
+      'en': 'This was your sleep quality',
+    },
+    'piyx5myn': {
+      'es': 'Estrategias utilizadas para dormir:',
+      'en': 'This was your sleep quality',
+    },
+    'fgsuygbf': {
+      'es': 'Cuarto\nOscuro',
+      'en': 'Dark Room',
+    },
+    '10afn74e': {
+      'es': 'Antifaz para\ndormir',
+      'en': 'Sleep mask',
+    },
+    'elui4vpu': {
+      'es': 'Tapones para\ndormir',
+      'en': 'Earplugs for\nsleeping',
+    },
+    '0906hvx8': {
+      'es': 'No usar  el\nmóvil',
+      'en': 'Do not use the\nmobile',
+    },
+    'yood4s07': {
+      'es': 'Cenar ligero',
+      'en': 'Eat light',
+    },
+    'znbh6r0x': {
+      'es': 'Otras',
+      'en': 'Others',
+    },
+    'q6zvpk0z': {
+      'es': 'No he probado ninguna',
+      'en': 'I haven\'t tried any',
+    },
+    '20ywux47': {
+      'es': 'No has utilizado ningún medicamento o suplemento para dormir',
+      'en': 'This was your sleep quality',
+    },
+    'se9wy0ej': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // resumen_into
+  {
+    '7ra60aw5': {
+      'es': 'Resumen de Intolerancias',
+      'en': '',
+    },
+    'rihjlh0k': {
+      'es': 'Resumen de Intolerancias',
+      'en': 'Summary of Intolerances',
+    },
+    '9598ljrt': {
+      'es': 'Desayuno',
+      'en': 'Breakfast',
+    },
+    'zqlaj28e': {
+      'es': 'Comida',
+      'en': 'Meal',
+    },
+    '2c8upbbq': {
+      'es': 'Cena',
+      'en': 'Dinner',
+    },
+    'ws1mg2pm': {
+      'es': 'Estos son los alimentos que has consumido',
+      'en': 'These are the foods you have consumed',
+    },
+    'mywlur07': {
+      'es': 'Carne',
+      'en': 'Meat',
+    },
+    '9nltvyff': {
+      'es': 'Pescado',
+      'en': 'Fish',
+    },
+    '66fnfgdm': {
+      'es': 'Mariscos',
+      'en': 'Seafood',
+    },
+    'kf3tgw2f': {
+      'es': 'Lácteos',
+      'en': 'Dairy',
+    },
+    '02v0xiia': {
+      'es': 'Huevos',
+      'en': 'Eggs',
+    },
+    'zdddfk9f': {
+      'es': 'Cereales',
+      'en': 'Cereals',
+    },
+    'p5d80vtj': {
+      'es': 'Frutas',
+      'en': 'Fruit',
+    },
+    '2wjrofbr': {
+      'es': 'Verduras',
+      'en': 'Vegetables',
+    },
+    '46d20a3b': {
+      'es': 'Legumbres',
+      'en': 'Legumes',
+    },
+    'vqv1kewr': {
+      'es': 'Frutos Secos',
+      'en': 'Dried Fruits',
+    },
+    'pckea3ba': {
+      'es': 'Condimentos y Salsas',
+      'en': 'Condiments and Sauces',
+    },
+    'ueibqmgm': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    'm2gex6it': {
+      'es': 'Síntomas tras la ingesta',
+      'en': 'Symptoms after ingestion',
+    },
+    '1kz4mpmt': {
+      'es': 'No has registrado síntomas',
+      'en': 'You have not registered symptoms',
+    },
+    '8rxm4955': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
+  // resumen_sintomasBackUp
+  {
+    'nt31dzqj': {
+      'es': 'Resumen de Síntomas',
+      'en': '',
+    },
+    '9hdzocjb': {
+      'es': 'Tu nivel de energía ha sido del ',
+      'en': 'Your energy level has been',
+    },
+    'xfs0417x': {
+      'es': 'Tuviste menos energía en la ',
+      'en': 'You had less energy in the',
+    },
+    'gzq5dtyr': {
+      'es': 'Mañana',
+      'en': 'Tomorrow',
+    },
+    '7fsgma2o': {
+      'es': 'Tarde',
+      'en': 'Late',
+    },
+    'olgg73k5': {
+      'es': 'Noche',
+      'en': 'Evening',
+    },
+    '6izyix9n': {
+      'es': 'Esta fue tu calidad de sueño',
+      'en': 'This was your sleep quality',
+    },
+    '2lvpn6c3': {
+      'es': 'Estas son las actividades que has podido realizar:',
+      'en': 'These are the activities you have been able to do:',
+    },
+    '0fz0l6c9': {
+      'es': 'Síntomas que más has experimentado:',
+      'en': 'Symptoms you have experienced most:',
+    },
+    'kbplg9w3': {
+      'es': 'Tu nivel de dolor ha sido de:',
+      'en': 'Your pain level has been:',
+    },
+    'mxar2l3v': {
+      'es': 'Tomaste estos medicamentos / suplementos',
+      'en': 'You took these medications/supplements',
+    },
+    'agnowgzn': {
+      'es': 'No has registrado medicamentos o suplementos',
+      'en': 'You have not registered medications or supplements',
+    },
+    'cw67f1zj': {
+      'es': 'Este medicamento no ha mejorado mis síntomas',
+      'en': 'This medicine has not improved my symptoms.',
+    },
+    'z4bte4fy': {
+      'es': 'Este medicamento ha mejorado estos síntomas:',
+      'en': 'This medicine has improved these symptoms:',
+    },
+    'x8ip770q': {
+      'es': 'Este medicamento no ha mejorado mis síntomas',
+      'en': 'This medicine has not improved my symptoms.',
+    },
+    '4pd7n5vv': {
+      'es': 'Este medicamento ha mejorado estos síntomas:',
+      'en': 'This medicine has improved these symptoms:',
+    },
+    '87vshqtg': {
+      'es': 'Este medicamento no ha mejorado mis síntomas',
+      'en': 'This medicine has not improved my symptoms.',
+    },
+    'ql0jdigu': {
+      'es': 'Este suplemento ha mejorado estos síntomas:',
+      'en': 'This supplement has improved these symptoms:',
+    },
+    'a0kpc54j': {
+      'es': 'Este medicamento no ha mejorado mis síntomas',
+      'en': 'This medicine has not improved my symptoms.',
+    },
+    'ouy28lcf': {
+      'es': 'Este suplemento ha mejorado estos síntomas:',
+      'en': 'This supplement has improved these symptoms:',
+    },
+    'mju5t9o7': {
+      'es': 'Este medicamento no ha mejorado mis síntomas',
+      'en': 'This medicine has not improved my symptoms.',
+    },
+    'c8fymbcj': {
+      'es': 'Este suplemento ha mejorado estos síntomas:',
+      'en': 'This supplement has improved these symptoms:',
+    },
+    '2m9cckne': {
+      'es': 'Resumen de Intolerancias',
+      'en': 'Summary of Intolerances',
+    },
+    'sxhn3a3b': {
+      'es': 'No tienes hecho el diario de este día.',
+      'en': 'You haven\'t made the diary for this day.',
+    },
+    'wpakrof7': {
+      'es': 'Desayuno',
+      'en': 'Breakfast',
+    },
+    'gytkyijx': {
+      'es': 'Comida',
+      'en': 'Meal',
+    },
+    'rpbfwtli': {
+      'es': 'Cena',
+      'en': 'Dinner',
+    },
+    'gcet2hr0': {
+      'es': 'Estos son los alimentos que has consumido',
+      'en': 'These are the foods you have consumed',
+    },
+    'e11bhvch': {
+      'es': 'Carne',
+      'en': 'Meat',
+    },
+    'r3rhx4yc': {
+      'es': 'Pescado',
+      'en': 'Fish',
+    },
+    'kwuiyefm': {
+      'es': 'Mariscos',
+      'en': 'Seafood',
+    },
+    'eewt13of': {
+      'es': 'Lácteos',
+      'en': 'Dairy',
+    },
+    'hwn8epzv': {
+      'es': 'Huevos',
+      'en': 'Eggs',
+    },
+    'udjxxeoo': {
+      'es': 'Cereales',
+      'en': 'Cereals',
+    },
+    'hc3qxdto': {
+      'es': 'Frutas',
+      'en': 'Fruit',
+    },
+    'x3hmc6xb': {
+      'es': 'Verduras',
+      'en': 'Vegetables',
+    },
+    'buoxplks': {
+      'es': 'Legumbres',
+      'en': 'Legumes',
+    },
+    'h6tbndr3': {
+      'es': 'Frutos Secos',
+      'en': 'Dried Fruits',
+    },
+    'nlllpko9': {
+      'es': 'Condimentos y Salsas',
+      'en': 'Condiments and Sauces',
+    },
+    'rkr2uezs': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    'c5ehooff': {
+      'es': 'Síntomas tras la ingesta',
+      'en': 'Symptoms after ingestion',
+    },
+    '6zk2stve': {
+      'es': 'No has registrado síntomas',
+      'en': 'You have not registered symptoms',
+    },
+    'mu4427in': {
+      'es': 'Home',
+      'en': 'Home',
+    },
+  },
   // modal_cancela_sign
   {
     '9brglm8b': {
@@ -15186,7 +17670,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'Hemos detectado una incidencia con tu cuenta. Por favor tus datos de acceso',
       'en':
-          'We have detected an issue with your account. Please enter your login details.',
+          'We have detected an incident with your account. Please enter your access data',
     },
     'xlwjvmuc': {
       'es': 'Contraseña',
@@ -15371,7 +17855,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'bsove0iv': {
       'es': 'Diario de Intolerancias',
-      'en': 'Diary of Intolerances',
+      'en': 'Intolerences Diary',
     },
     'gtiyptcd': {
       'es':
@@ -15507,10 +17991,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en':
           'Indicate the year for which you want to generate the report and press the “Generate Reports” button.',
     },
-    'bo1d05jk': {
-      'es': '2024',
-      'en': '2024',
-    },
     'l8ugz2z9': {
       'es': 'Selecciona el año...',
       'en': 'Select the year...',
@@ -15518,6 +17998,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'fzkkk8lt': {
       'es': 'Buscar...',
       'en': 'Look for...',
+    },
+    'bo1d05jk': {
+      'es': '2024',
+      'en': '2024',
     },
     'pdbiwk8h': {
       'es':
@@ -15985,6 +18469,206 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Understood',
     },
   },
+  // modal_elimina_plato
+  {
+    'iyl22lk3': {
+      'es': 'Eliminar Plato/Bebida',
+      'en': 'Remove Plate/Drink',
+    },
+    'ayg4w9i8': {
+      'es': 'Esta acción no se puede deshacer.',
+      'en': 'This action cannot be undone.',
+    },
+    'n59ogksz': {
+      'es': '¿Estás segur@ de borrar este plato?',
+      'en': 'Are you sure you want to delete this dish?',
+    },
+    'bokzvz04': {
+      'es': 'Eliminar Plato',
+      'en': 'Remove Plate',
+    },
+  },
+  // modal_comida_guardada
+  {
+    'ibxmc3pu': {
+      'es': 'Tu información se ha guardado correctamente',
+      'en': 'Your dish has been saved successfully',
+    },
+    'l205kmbg': {
+      'es': 'Ahora vamos a la siguiente comida',
+      'en': 'Now let\'s go to the next meal',
+    },
+    '9567wkpk': {
+      'es': 'Continuar',
+      'en': 'Continue',
+    },
+  },
+  // modal_adjuntos
+  {
+    't7viox00': {
+      'es': '¿Qué deseas adjuntar?',
+      'en': 'What do you want to attach?',
+    },
+    'q7dfc303': {
+      'es': 'Imagen',
+      'en': 'Image',
+    },
+    't7bnebef': {
+      'es': 'Audio',
+      'en': 'Audio',
+    },
+    'xfj1jfwx': {
+      'es': 'Archivo',
+      'en': 'Archive',
+    },
+    'p9e2nef6': {
+      'es': 'Comentario',
+      'en': 'Comment',
+    },
+    'z0f145le': {
+      'es': 'Finalizar',
+      'en': 'Finish',
+    },
+    '4ixppym2': {
+      'es': 'Archivo Cargado',
+      'en': 'File Uploaded',
+    },
+    'mwga5r3x': {
+      'es': 'Comentario',
+      'en': 'Comment',
+    },
+    'j3sptprr': {
+      'es': 'Finalizar',
+      'en': 'Finish',
+    },
+    '85714sr4': {
+      'es': 'Iniciar Grabación',
+      'en': 'Start Recording',
+    },
+    'irsmznb8': {
+      'es': 'Detener Grabación',
+      'en': 'Stop Recording',
+    },
+    '48oct065': {
+      'es': 'Grabando...',
+      'en': 'Recording...',
+    },
+    'sglhsphq': {
+      'es': 'Eliminar Audio',
+      'en': 'Delete Audio',
+    },
+    'r00xoup2': {
+      'es': 'Comentario',
+      'en': 'Comment',
+    },
+    'zbbnxz0v': {
+      'es': 'Finalizar',
+      'en': 'Finish',
+    },
+  },
+  // modal_rechaza_user_aso
+  {
+    'n7nuslgj': {
+      'es': 'Recharzar Solicitud Usuario',
+      'en': 'Reject User Request',
+    },
+    'tu3a8gsx': {
+      'es': '¿Estás segur@ que deseas rechazar la solicitud de este usuario?',
+      'en': 'Are you sure you want to reject this user\'s request?',
+    },
+    '7tchusdp': {
+      'es': 'Esta acción no se puede deshacer.',
+      'en': 'This action cannot be undone.',
+    },
+    '5y6fy90i': {
+      'es': 'Rechazar',
+      'en': 'Decline',
+    },
+  },
+  // modal_elimina_user_aso
+  {
+    'kbch2nzl': {
+      'es': 'Eliminar Usuario',
+      'en': 'Delete User',
+    },
+    'uwrjolgs': {
+      'es':
+          '¿Estás segur@ que deseas eliminar a este usaurio para que no pueda ver contenido de tu Asociación?',
+      'en':
+          'Are you sure you want to delete this user so that he/she cannot see content from your Association?',
+    },
+    'hpvi8dra': {
+      'es': 'Esta acción no se puede deshacer.',
+      'en': 'This action cannot be undone.',
+    },
+    'y1bbnhj2': {
+      'es': 'Eliminar',
+      'en': 'Eliminate',
+    },
+  },
+  // modal_adjuntosChat
+  {
+    'knaegwn5': {
+      'es': '¿Qué deseas adjuntar?',
+      'en': 'What do you want to attach?',
+    },
+    '0ownw1ga': {
+      'es': 'Imagen',
+      'en': 'Image',
+    },
+    'ckdz5xbs': {
+      'es': 'Audio',
+      'en': 'Audio',
+    },
+    'iu6lmr5m': {
+      'es': 'Archivo',
+      'en': 'Archive',
+    },
+    '48pv5vdo': {
+      'es': 'Comentario',
+      'en': 'Comment',
+    },
+    'u1p0c6di': {
+      'es': 'Finalizar',
+      'en': 'Finish',
+    },
+    'e0wq7442': {
+      'es': 'Archivo Cargado',
+      'en': 'File Uploaded',
+    },
+    'vexezi7v': {
+      'es': 'Comentario',
+      'en': 'Comment',
+    },
+    'oqdmekjr': {
+      'es': 'Finalizar',
+      'en': 'Finish',
+    },
+    'oj4r79ow': {
+      'es': 'Iniciar Grabación',
+      'en': 'Start Recording',
+    },
+    '8aejnpqh': {
+      'es': 'Detener Grabación',
+      'en': 'Stop Recording',
+    },
+    '2peqy65i': {
+      'es': 'Grabando...',
+      'en': 'Recording...',
+    },
+    '3a61noyn': {
+      'es': 'Eliminar Audio',
+      'en': 'Delete Audio',
+    },
+    '8egq82hc': {
+      'es': 'Comentario',
+      'en': 'Comment',
+    },
+    '6o7gmlxf': {
+      'es': 'Finalizar',
+      'en': 'Finish',
+    },
+  },
   // Miscellaneous
   {
     'kqz45rle': {
@@ -16002,6 +18686,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '3b16l1mp': {
       'es': 'Accede a Defenergy con autenticación biométrica',
       'en': 'Access Defenergy with biometric authentication',
+    },
+    'z54z5gxf': {
+      'es': '',
+      'en': '',
+    },
+    'dbkpzrn7': {
+      'es':
+          'Para grabar audios en el chat es necesario acceder a tu micrófono.',
+      'en': 'To record audio in the chat, you need to access your microphone.',
     },
     '0eyisszg': {
       'es': 'Error. Tu usuario o contraseña son incorrectos',

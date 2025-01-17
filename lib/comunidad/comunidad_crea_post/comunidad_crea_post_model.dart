@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'comunidad_crea_post_widget.dart' show ComunidadCreaPostWidget;
 import 'package:easy_debounce/easy_debounce.dart';
@@ -24,8 +25,13 @@ class ComunidadCreaPostModel extends FlutterFlowModel<ComunidadCreaPostWidget> {
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for TextField_link widget.
+  FocusNode? textFieldLinkFocusNode1;
+  TextEditingController? textFieldLinkTextController1;
+  String? Function(BuildContext, String?)?
+      textFieldLinkTextController1Validator;
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -39,8 +45,13 @@ class ComunidadCreaPostModel extends FlutterFlowModel<ComunidadCreaPostWidget> {
 
   // Stores action output result for [Backend Call - API (comunidad sube imagen)] action in Text widget.
   ApiCallResponse? apiResult93t;
-  // Stores action output result for [Backend Call - API (camunidad guarda datos)] action in Button widget.
-  ApiCallResponse? apiResultf6y;
+  // State field(s) for TextField_link widget.
+  FocusNode? textFieldLinkFocusNode2;
+  TextEditingController? textFieldLinkTextController2;
+  String? Function(BuildContext, String?)?
+      textFieldLinkTextController2Validator;
+  // Stores action output result for [Backend Call - API (comunidad guarda datos new)] action in Button widget.
+  ApiCallResponse? guardaPostNew;
   // Model for menu_usuario component.
   late MenuUsuarioModel menuUsuarioModel;
 
@@ -52,7 +63,13 @@ class ComunidadCreaPostModel extends FlutterFlowModel<ComunidadCreaPostWidget> {
   @override
   void dispose() {
     textFieldFocusNode?.dispose();
-    textController?.dispose();
+    textController1?.dispose();
+
+    textFieldLinkFocusNode1?.dispose();
+    textFieldLinkTextController1?.dispose();
+
+    textFieldLinkFocusNode2?.dispose();
+    textFieldLinkTextController2?.dispose();
 
     menuUsuarioModel.dispose();
   }

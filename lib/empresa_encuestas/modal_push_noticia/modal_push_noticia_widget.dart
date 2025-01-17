@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,7 +54,7 @@ class _ModalPushNoticiaWidgetState extends State<ModalPushNoticiaWidget> {
         alignment: AlignmentDirectional(0.0, 1.0),
         child: Container(
           width: double.infinity,
-          height: 270.0,
+          height: 306.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
@@ -89,7 +90,7 @@ class _ModalPushNoticiaWidgetState extends State<ModalPushNoticiaWidget> {
                       highlightColor: Colors.transparent,
                       onTap: () async {
                         context.pushNamed(
-                          'Home',
+                          'Home_empresa',
                           extra: <String, dynamic>{
                             kTransitionInfoKey: TransitionInfo(
                               hasTransition: true,
@@ -287,7 +288,7 @@ class _ModalPushNoticiaWidgetState extends State<ModalPushNoticiaWidget> {
                               );
 
                               context.pushNamed(
-                                'Home',
+                                'Home_empresa',
                                 extra: <String, dynamic>{
                                   kTransitionInfoKey: TransitionInfo(
                                     hasTransition: true,

@@ -56,7 +56,8 @@ export '/diario_intolerancias/diario_into3/diario_into3_widget.dart'
 export '/diario_intolerancias/diario_into4/diario_into4_widget.dart'
     show DiarioInto4Widget;
 export '/resumen_diarios/listado/listado_widget.dart' show ListadoWidget;
-export '/resumen_diarios/resumen/resumen_widget.dart' show ResumenWidget;
+export '/resumen_diarios/resumen_sintomas/resumen_sintomas_widget.dart'
+    show ResumenSintomasWidget;
 export '/carpeta_salud/reporte_salud/reporte_salud_widget.dart'
     show ReporteSaludWidget;
 export '/carpeta_salud/reporte_intolerancias/reporte_intolerancias_widget.dart'
@@ -120,8 +121,6 @@ export '/empresa_encuestas/noticias_crea/noticias_crea_widget.dart'
     show NoticiasCreaWidget;
 export '/registro/empresa_pdte_validacion_copy/empresa_pdte_validacion_copy_widget.dart'
     show EmpresaPdteValidacionCopyWidget;
-export '/comunidad/comunidad_copy/comunidad_copy_widget.dart'
-    show ComunidadCopyWidget;
 export '/perfil/perfil_medicamentos_crea/perfil_medicamentos_crea_widget.dart'
     show PerfilMedicamentosCreaWidget;
 export '/perfil/perfil_medicamentos_edita/perfil_medicamentos_edita_widget.dart'
@@ -138,3 +137,39 @@ export '/diario_intolerancias/diario_into_hub_finaliza/diario_into_hub_finaliza_
     show DiarioIntoHubFinalizaWidget;
 export '/perfil/elimina_usuer/elimina_usuer_widget.dart'
     show EliminaUsuerWidget;
+export '/diario_intolerancias/diario_into1_copy/diario_into1_copy_widget.dart'
+    show DiarioInto1CopyWidget;
+export '/diario_intolerancias/diario_into_crea_plato/diario_into_crea_plato_widget.dart'
+    show DiarioIntoCreaPlatoWidget;
+export '/diario_intolerancias/diario_into_crea_bebida/diario_into_crea_bebida_widget.dart'
+    show DiarioIntoCreaBebidaWidget;
+export '/diario_intolerancias/diario_into_edita_plato/diario_into_edita_plato_widget.dart'
+    show DiarioIntoEditaPlatoWidget;
+export '/diario_intolerancias/diario_into_edita_bebida/diario_into_edita_bebida_widget.dart'
+    show DiarioIntoEditaBebidaWidget;
+export '/comunidad/hub_comunidad/hub_comunidad_widget.dart'
+    show HubComunidadWidget;
+export '/comunidad/youtube/youtube_widget.dart' show YoutubeWidget;
+export '/perfil/perfil_users_aso/perfil_users_aso_widget.dart'
+    show PerfilUsersAsoWidget;
+export '/noticias/noticias_detalle_new/noticias_detalle_new_widget.dart'
+    show NoticiasDetalleNewWidget;
+export '/empresa_encuestas/noticias_crea_new/noticias_crea_new_widget.dart'
+    show NoticiasCreaNewWidget;
+export '/empresa_encuestas/noticias_texto/noticias_texto_widget.dart'
+    show NoticiasTextoWidget;
+export '/noticias/noticias_privadas/noticias_privadas_widget.dart'
+    show NoticiasPrivadasWidget;
+export '/perfil/perfil_biometrico/perfil_biometrico_widget.dart'
+    show PerfilBiometricoWidget;
+export '/comunidad/comunidad_relevancia/comunidad_relevancia_widget.dart'
+    show ComunidadRelevanciaWidget;
+export '/noticias/noticias_aso/noticias_aso_widget.dart' show NoticiasAsoWidget;
+export '/chat/chat_mensajes_copy/chat_mensajes_copy_widget.dart'
+    show ChatMensajesCopyWidget;
+export '/resumen_diarios/resumen_sueno/resumen_sueno_widget.dart'
+    show ResumenSuenoWidget;
+export '/resumen_diarios/resumen_into/resumen_into_widget.dart'
+    show ResumenIntoWidget;
+export '/resumen_diarios/resumen_sintomas_back_up/resumen_sintomas_back_up_widget.dart'
+    show ResumenSintomasBackUpWidget;

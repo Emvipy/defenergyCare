@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'modal_modifica_enfermedad_widget.dart'
     show ModalModificaEnfermedadWidget;
 import 'package:flutter/material.dart';

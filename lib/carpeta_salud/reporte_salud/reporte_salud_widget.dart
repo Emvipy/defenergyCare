@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'reporte_salud_model.dart';
 export 'reporte_salud_model.dart';
 
@@ -121,7 +123,10 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -141,7 +146,16 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pop();
+                context.pushNamed(
+                  'Home',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
               },
             ),
             title: Align(
@@ -2400,13 +2414,19 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                 enableDrag: false,
                                 context: context,
                                 builder: (context) {
-                                  return GestureDetector(
-                                    onTap: () =>
-                                        FocusScope.of(context).unfocus(),
-                                    child: Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: ModalPDFWidget(
-                                        reporte: 'sintomas',
+                                  return WebViewAware(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        FocusScope.of(context).unfocus();
+                                        FocusManager.instance.primaryFocus
+                                            ?.unfocus();
+                                      },
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: ModalPDFWidget(
+                                          reporte: 'sintomas',
+                                        ),
                                       ),
                                     ),
                                   );
@@ -2457,13 +2477,19 @@ class _ReporteSaludWidgetState extends State<ReporteSaludWidget> {
                                 enableDrag: false,
                                 context: context,
                                 builder: (context) {
-                                  return GestureDetector(
-                                    onTap: () =>
-                                        FocusScope.of(context).unfocus(),
-                                    child: Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: ModalPDFWidget(
-                                        reporte: 'sueno',
+                                  return WebViewAware(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        FocusScope.of(context).unfocus();
+                                        FocusManager.instance.primaryFocus
+                                            ?.unfocus();
+                                      },
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: ModalPDFWidget(
+                                          reporte: 'sueno',
+                                        ),
                                       ),
                                     ),
                                   );

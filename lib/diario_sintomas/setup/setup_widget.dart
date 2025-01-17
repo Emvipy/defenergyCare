@@ -1,16 +1,17 @@
 import '/backend/api_requests/api_calls.dart';
 import '/diario_sintomas/modal_fin_setup/modal_fin_setup_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'setup_model.dart';
 export 'setup_model.dart';
 
@@ -49,7 +50,10 @@ class _SetupWidgetState extends State<SetupWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -58,22 +62,8 @@ class _SetupWidgetState extends State<SetupWidget> {
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).background,
             automaticallyImplyLeading: false,
-            leading: FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30.0,
-              borderWidth: 1.0,
-              buttonSize: 60.0,
-              icon: Icon(
-                Icons.arrow_back_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 30.0,
-              ),
-              onPressed: () async {
-                context.pop();
-              },
-            ),
             title: Align(
-              alignment: AlignmentDirectional(-1.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'na21u7wp' /* Configuración del Diario */,
@@ -879,7 +869,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'lfkl2r4g' /* ¿Tienes alguna sensibilidadin... */,
+                                        'lfkl2r4g' /* ¿Tienes alguna sensibilidad/in... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1065,7 +1055,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'dkvkxqft' /* ¿Tienes otra sensibilidadinto... */,
+                                        'dkvkxqft' /* ¿Tienes otra sensibilidad/into... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1251,7 +1241,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'nptaq986' /* ¿Tienes otra sensibilidadinto... */,
+                                        'nptaq986' /* ¿Tienes otra sensibilidad/into... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1437,7 +1427,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'h0jaqzot' /* ¿Tienes otra sensibilidadinto... */,
+                                        'h0jaqzot' /* ¿Tienes otra sensibilidad/into... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1741,15 +1731,22 @@ class _SetupWidgetState extends State<SetupWidget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () =>
+                                              return WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () {
                                                     FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: ModalFinSetupWidget(),
+                                                        .unfocus();
+                                                    FocusManager
+                                                        .instance.primaryFocus
+                                                        ?.unfocus();
+                                                  },
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        ModalFinSetupWidget(),
+                                                  ),
                                                 ),
                                               );
                                             },
@@ -2107,7 +2104,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'um4d2cwd' /* ¿Tienes alguna sensibilidadin... */,
+                                      'um4d2cwd' /* ¿Tienes alguna sensibilidad/in... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -2289,7 +2286,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'axvsen7q' /* ¿Tienes otra sensibilidadinto... */,
+                                        'axvsen7q' /* ¿Tienes otra sensibilidad/into... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -2475,7 +2472,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'vmfrzjuj' /* ¿Tienes otra sensibilidadinto... */,
+                                        'vmfrzjuj' /* ¿Tienes otra sensibilidad/into... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -2661,7 +2658,7 @@ class _SetupWidgetState extends State<SetupWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'yvqmuvo3' /* ¿Tienes otra sensibilidadinto... */,
+                                        'yvqmuvo3' /* ¿Tienes otra sensibilidad/into... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -2944,15 +2941,22 @@ class _SetupWidgetState extends State<SetupWidget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () =>
+                                              return WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () {
                                                     FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: ModalFinSetupWidget(),
+                                                        .unfocus();
+                                                    FocusManager
+                                                        .instance.primaryFocus
+                                                        ?.unfocus();
+                                                  },
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        ModalFinSetupWidget(),
+                                                  ),
                                                 ),
                                               );
                                             },

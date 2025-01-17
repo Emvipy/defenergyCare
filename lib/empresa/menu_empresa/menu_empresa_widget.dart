@@ -1,16 +1,20 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
+import 'dart:async';
 import 'dart:math';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'menu_empresa_model.dart';
 export 'menu_empresa_model.dart';
 
@@ -284,10 +288,12 @@ class _MenuEmpresaWidgetState extends State<MenuEmpresaWidget>
                                     enableDrag: false,
                                     context: context,
                                     builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: ModalErrorCuentaWidget(),
+                                      return WebViewAware(
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        ),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));
@@ -361,10 +367,12 @@ class _MenuEmpresaWidgetState extends State<MenuEmpresaWidget>
                                     enableDrag: false,
                                     context: context,
                                     builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: ModalErrorCuentaWidget(),
+                                      return WebViewAware(
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        ),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));
@@ -398,85 +406,98 @@ class _MenuEmpresaWidgetState extends State<MenuEmpresaWidget>
                     ],
                   ),
                 ),
-                if (FFAppState().email == 'enrique@emvipy.com')
-                  Flexible(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Opacity(
-                          opacity: widget!.index == 6 ? 1.0 : 0.5,
-                          child: FlutterFlowIconButton(
-                            borderColor: Colors.transparent,
-                            borderRadius: 20.0,
-                            borderWidth: 0.0,
-                            buttonSize: 55.0,
-                            icon: Icon(
-                              Icons.post_add_rounded,
-                              color: FlutterFlowTheme.of(context).info,
-                              size: 28.0,
-                            ),
-                            onPressed: () async {
-                              if (FFAppState().email == 'enrique@emvipy.com') {
-                                if ((FFAppState().authToken != null &&
-                                        FFAppState().authToken != '') &&
-                                    (FFAppState().email != null &&
-                                        FFAppState().email != '')) {
-                                  if (FFAppState().creadoOk == 'si') {
-                                    context.pushNamed(
-                                      'comunidad',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.fade,
-                                        ),
-                                      },
-                                    );
-                                  } else {
-                                    await showModalBottomSheet(
-                                      isScrollControlled: true,
-                                      backgroundColor: Colors.transparent,
-                                      enableDrag: false,
-                                      context: context,
-                                      builder: (context) {
-                                        return Padding(
-                                          padding:
-                                              MediaQuery.viewInsetsOf(context),
-                                          child: ModalErrorCuentaWidget(),
-                                        );
-                                      },
-                                    ).then((value) => safeSetState(() {}));
-                                  }
-                                } else {
-                                  context.pushNamed(
-                                    'login',
-                                    extra: <String, dynamic>{
-                                      kTransitionInfoKey: TransitionInfo(
-                                        hasTransition: true,
-                                        transitionType: PageTransitionType.fade,
-                                        duration: Duration(milliseconds: 0),
-                                      ),
-                                    },
-                                  );
-                                }
-                              }
-                            },
+                Flexible(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Opacity(
+                        opacity: widget!.index == 6 ? 1.0 : 0.5,
+                        child: FlutterFlowIconButton(
+                          borderColor: Colors.transparent,
+                          borderRadius: 20.0,
+                          borderWidth: 0.0,
+                          buttonSize: 55.0,
+                          icon: Icon(
+                            Icons.post_add_rounded,
+                            color: FlutterFlowTheme.of(context).info,
+                            size: 28.0,
                           ),
+                          onPressed: () async {
+                            if ((FFAppState().authToken != null &&
+                                    FFAppState().authToken != '') &&
+                                (FFAppState().email != null &&
+                                    FFAppState().email != '')) {
+                              if (FFAppState().creadoOk == 'si') {
+                                context.pushNamed(
+                                  'hubComunidad',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
+                                    ),
+                                  },
+                                );
+
+                                unawaited(
+                                  () async {
+                                    await UserLogActivityCall.call(
+                                      authToken: FFAppState().authToken,
+                                      seccion: 'Menú Comunidad',
+                                    );
+                                  }(),
+                                );
+                                return;
+                              } else {
+                                await showModalBottomSheet(
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  enableDrag: false,
+                                  context: context,
+                                  builder: (context) {
+                                    return WebViewAware(
+                                      child: Padding(
+                                        padding:
+                                            MediaQuery.viewInsetsOf(context),
+                                        child: ModalErrorCuentaWidget(),
+                                      ),
+                                    );
+                                  },
+                                ).then((value) => safeSetState(() {}));
+
+                                return;
+                              }
+                            } else {
+                              context.pushNamed(
+                                'login',
+                                extra: <String, dynamic>{
+                                  kTransitionInfoKey: TransitionInfo(
+                                    hasTransition: true,
+                                    transitionType: PageTransitionType.fade,
+                                    duration: Duration(milliseconds: 0),
+                                  ),
+                                },
+                              );
+
+                              return;
+                            }
+                          },
                         ),
-                        if (widget!.index == 6)
-                          SizedBox(
-                            width: 30.0,
-                            child: Divider(
-                              height: 2.0,
-                              thickness: 2.0,
-                              color: FlutterFlowTheme.of(context).info,
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['dividerOnPageLoadAnimation4']!),
-                      ],
-                    ),
+                      ),
+                      if (widget!.index == 6)
+                        SizedBox(
+                          width: 30.0,
+                          child: Divider(
+                            height: 2.0,
+                            thickness: 2.0,
+                            color: FlutterFlowTheme.of(context).info,
+                          ),
+                        ).animateOnPageLoad(
+                            animationsMap['dividerOnPageLoadAnimation4']!),
+                    ],
                   ),
+                ),
                 Flexible(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -517,10 +538,12 @@ class _MenuEmpresaWidgetState extends State<MenuEmpresaWidget>
                                     enableDrag: false,
                                     context: context,
                                     builder: (context) {
-                                      return Padding(
-                                        padding:
-                                            MediaQuery.viewInsetsOf(context),
-                                        child: ModalErrorCuentaWidget(),
+                                      return WebViewAware(
+                                        child: Padding(
+                                          padding:
+                                              MediaQuery.viewInsetsOf(context),
+                                          child: ModalErrorCuentaWidget(),
+                                        ),
                                       );
                                     },
                                   ).then((value) => safeSetState(() {}));

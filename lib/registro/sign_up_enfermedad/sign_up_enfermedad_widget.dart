@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/registro/modal_cancela_modificacion/modal_cancela_modificacion_widget.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
 import 'dart:math';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'sign_up_enfermedad_model.dart';
 export 'sign_up_enfermedad_model.dart';
 
@@ -102,7 +104,10 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -692,16 +697,22 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                 enableDrag: false,
                                                 context: context,
                                                 builder: (context) {
-                                                  return GestureDetector(
-                                                    onTap: () =>
+                                                  return WebViewAware(
+                                                    child: GestureDetector(
+                                                      onTap: () {
                                                         FocusScope.of(context)
-                                                            .unfocus(),
-                                                    child: Padding(
-                                                      padding: MediaQuery
-                                                          .viewInsetsOf(
-                                                              context),
-                                                      child:
-                                                          ModalCancelaSignWidget(),
+                                                            .unfocus();
+                                                        FocusManager.instance
+                                                            .primaryFocus
+                                                            ?.unfocus();
+                                                      },
+                                                      child: Padding(
+                                                        padding: MediaQuery
+                                                            .viewInsetsOf(
+                                                                context),
+                                                        child:
+                                                            ModalCancelaSignWidget(),
+                                                      ),
                                                     ),
                                                   );
                                                 },
@@ -719,16 +730,22 @@ class _SignUpEnfermedadWidgetState extends State<SignUpEnfermedadWidget>
                                                   enableDrag: false,
                                                   context: context,
                                                   builder: (context) {
-                                                    return GestureDetector(
-                                                      onTap: () =>
+                                                    return WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () {
                                                           FocusScope.of(context)
-                                                              .unfocus(),
-                                                      child: Padding(
-                                                        padding: MediaQuery
-                                                            .viewInsetsOf(
-                                                                context),
-                                                        child:
-                                                            ModalCancelaModificacionWidget(),
+                                                              .unfocus();
+                                                          FocusManager.instance
+                                                              .primaryFocus
+                                                              ?.unfocus();
+                                                        },
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              ModalCancelaModificacionWidget(),
+                                                        ),
                                                       ),
                                                     );
                                                   },

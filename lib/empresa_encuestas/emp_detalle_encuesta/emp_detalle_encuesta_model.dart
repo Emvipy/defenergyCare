@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'emp_detalle_encuesta_widget.dart' show EmpDetalleEncuestaWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

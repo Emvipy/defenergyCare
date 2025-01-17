@@ -5,7 +5,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -42,6 +44,9 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
         });
       });
     }
+
+    _model.buscadorTextController ??= TextEditingController();
+    _model.buscadorFocusNode ??= FocusNode();
   }
 
   @override
@@ -59,7 +64,10 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -79,7 +87,16 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pop();
+                context.pushNamed(
+                  'perfil',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
               },
             ),
             title: Text(
@@ -105,6 +122,147 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  30.0, 0.0, 0.0, 0.0),
+                              child: Container(
+                                width: 270.0,
+                                child: TextFormField(
+                                  controller: _model.buscadorTextController,
+                                  focusNode: _model.buscadorFocusNode,
+                                  onChanged: (_) => EasyDebounce.debounce(
+                                    '_model.buscadorTextController',
+                                    Duration(milliseconds: 300),
+                                    () => safeSetState(() {}),
+                                  ),
+                                  autofocus: false,
+                                  textInputAction: TextInputAction.search,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    labelStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'gnczgdb9' /* Buscador... */,
+                                    ),
+                                    hintStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    focusedErrorBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    filled: true,
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    prefixIcon: Icon(
+                                      Icons.search_sharp,
+                                    ),
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 0.0,
+                                      ),
+                                  cursorColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  validator: _model
+                                      .buscadorTextControllerValidator
+                                      .asValidator(context),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  safeSetState(() {
+                                    _model.buscadorTextController?.clear();
+                                  });
+                                  safeSetState(
+                                      () => _model.apiRequestCompleter = null);
+                                  await _model.waitForApiRequestCompleted();
+                                },
+                                child: Icon(
+                                  Icons.close_rounded,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 24.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  safeSetState(
+                                      () => _model.apiRequestCompleter = null);
+                                  await _model.waitForApiRequestCompleted();
+                                },
+                                child: Icon(
+                                  Icons.arrow_circle_right,
+                                  color: FlutterFlowTheme.of(context).secondary,
+                                  size: 24.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 15.0),
@@ -138,6 +296,8 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                 Completer<ApiCallResponse>()
                                   ..complete(PerfilMisAsociacionesCall.call(
                                     authToken: FFAppState().authToken,
+                                    buscador:
+                                        _model.buscadorTextController.text,
                                   )))
                             .future,
                         builder: (context, snapshot) {
@@ -194,12 +354,13 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        if (functions.parseJsonValueToString(
+                                        var _shouldSetState = false;
+                                        if (functions.parseJsonValueToBoolean(
                                                 getJsonField(
                                               childAsociacionesItem,
-                                              r'''$.asociado''',
+                                              r'''$._mis_asociaciones_of_user''',
                                             )) ==
-                                            'no') {
+                                            false) {
                                           _model.apiResult2m0 =
                                               await PerfilGestionAsoCall.call(
                                             authToken: FFAppState().authToken,
@@ -210,12 +371,20 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                             accion: 'alta',
                                           );
 
+                                          _shouldSetState = true;
                                           if ((_model.apiResult2m0?.succeeded ??
                                               true)) {
                                             safeSetState(() => _model
                                                 .apiRequestCompleter = null);
                                             await _model
                                                 .waitForApiRequestCompleted();
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
+                                          } else {
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
                                           }
                                         } else {
                                           _model.apiResult2m0a =
@@ -228,26 +397,35 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                             accion: 'baja',
                                           );
 
+                                          _shouldSetState = true;
                                           if ((_model.apiResult2m0?.succeeded ??
                                               true)) {
                                             safeSetState(() => _model
                                                 .apiRequestCompleter = null);
                                             await _model
                                                 .waitForApiRequestCompleted();
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
+                                          } else {
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
                                           }
                                         }
 
-                                        safeSetState(() {});
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
                                       },
                                       child: Material(
                                         color: Colors.transparent,
                                         elevation:
-                                            functions.parseJsonValueToString(
+                                            functions.parseJsonValueToBoolean(
                                                         getJsonField(
                                                       childAsociacionesItem,
-                                                      r'''$.asociado''',
+                                                      r'''$._mis_asociaciones_of_user''',
                                                     )) ==
-                                                    'si'
+                                                    true
                                                 ? 0.0
                                                 : 4.0,
                                         shape: RoundedRectangleBorder(
@@ -256,15 +434,14 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                         ),
                                         child: Container(
                                           width: 350.0,
-                                          height: 69.0,
                                           decoration: BoxDecoration(
                                             color: functions
-                                                        .parseJsonValueToString(
+                                                        .parseJsonValueToBoolean(
                                                             getJsonField(
                                                       childAsociacionesItem,
-                                                      r'''$.asociado''',
+                                                      r'''$._mis_asociaciones_of_user''',
                                                     )) ==
-                                                    'si'
+                                                    true
                                                 ? FlutterFlowTheme.of(context)
                                                     .secondary
                                                 : FlutterFlowTheme.of(context)
@@ -272,84 +449,142 @@ class _PerfilAsociacionesWidgetState extends State<PerfilAsociacionesWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
                                           ),
-                                          child: Row(
+                                          child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        5.0, 0.0, 0.0, 0.0),
-                                                child: Container(
-                                                  width: 60.0,
-                                                  height: 60.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                  child: Icon(
-                                                    Icons
-                                                        .account_balance_outlined,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText,
-                                                    size: 28.0,
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  getJsonField(
-                                                    childAsociacionesItem,
-                                                    r'''$.nombre''',
-                                                  ).toString(),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 5.0,
+                                                                0.0, 5.0),
+                                                    child: Container(
+                                                      width: 45.0,
+                                                      height: 45.0,
+                                                      decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        fontSize: 15.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
+                                                        shape: BoxShape.circle,
                                                       ),
-                                                ),
-                                              ),
-                                              if (functions
-                                                      .parseJsonValueToString(
-                                                          getJsonField(
-                                                    childAsociacionesItem,
-                                                    r'''$.asociado''',
-                                                  )) ==
-                                                  'si')
-                                                Flexible(
-                                                  child: Align(
-                                                    alignment:
-                                                        AlignmentDirectional(
-                                                            1.0, 0.0),
-                                                    child: Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  10.0,
-                                                                  0.0),
                                                       child: Icon(
-                                                        Icons.check_circle,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        size: 30.0,
+                                                        Icons
+                                                            .account_balance_outlined,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 28.0,
                                                       ),
                                                     ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(10.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      getJsonField(
+                                                        childAsociacionesItem,
+                                                        r'''$.nombre''',
+                                                      ).toString(),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            fontSize: 15.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  if (functions
+                                                          .parseJsonValueToBoolean(
+                                                              getJsonField(
+                                                        childAsociacionesItem,
+                                                        r'''$._mis_asociaciones_of_user''',
+                                                      )) ==
+                                                      true)
+                                                    Flexible(
+                                                      child: Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0),
+                                                          child: Icon(
+                                                            Icons.check_circle,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            size: 30.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                              if ((functions
+                                                          .parseJsonValueToBoolean(
+                                                              getJsonField(
+                                                        childAsociacionesItem,
+                                                        r'''$._sin_aprobar''',
+                                                      )) ==
+                                                      true) &&
+                                                  (functions
+                                                          .parseJsonValueToBoolean(
+                                                              getJsonField(
+                                                        childAsociacionesItem,
+                                                        r'''$._mis_asociaciones_of_user''',
+                                                      )) ==
+                                                      true))
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 3.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Flexible(
+                                                        child: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'fz8robrs' /* Pendiente de Aprobación */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                             ],

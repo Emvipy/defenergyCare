@@ -3,11 +3,13 @@ import '/diario_sintomas/modal_push/modal_push_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'diario_fin_model.dart';
 export 'diario_fin_model.dart';
 
@@ -64,7 +66,10 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
         final diarioFinDiarioPantallaFinalResponse = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -295,11 +300,17 @@ class _DiarioFinWidgetState extends State<DiarioFinWidget> {
                               enableDrag: false,
                               context: context,
                               builder: (context) {
-                                return GestureDetector(
-                                  onTap: () => FocusScope.of(context).unfocus(),
-                                  child: Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: ModalPushWidget(),
+                                return WebViewAware(
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      FocusScope.of(context).unfocus();
+                                      FocusManager.instance.primaryFocus
+                                          ?.unfocus();
+                                    },
+                                    child: Padding(
+                                      padding: MediaQuery.viewInsetsOf(context),
+                                      child: ModalPushWidget(),
+                                    ),
                                   ),
                                 );
                               },

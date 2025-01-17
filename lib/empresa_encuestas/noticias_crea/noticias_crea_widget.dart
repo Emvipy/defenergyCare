@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/usuario/menu_usuario/menu_usuario_widget.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'noticias_crea_model.dart';
 export 'noticias_crea_model.dart';
 
@@ -56,11 +58,16 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
           enableDrag: false,
           context: context,
           builder: (context) {
-            return GestureDetector(
-              onTap: () => FocusScope.of(context).unfocus(),
-              child: Padding(
-                padding: MediaQuery.viewInsetsOf(context),
-                child: ModalAvisoIdiomaWidget(),
+            return WebViewAware(
+              child: GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  FocusManager.instance.primaryFocus?.unfocus();
+                },
+                child: Padding(
+                  padding: MediaQuery.viewInsetsOf(context),
+                  child: ModalAvisoIdiomaWidget(),
+                ),
               ),
             );
           },
@@ -143,7 +150,10 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
         final noticiasCreaEmpresaNoticiaIndividualResponse = snapshot.data!;
 
         return GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
           child: WillPopScope(
             onWillPop: () async => false,
             child: Scaffold(
@@ -1413,16 +1423,22 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
                                                       FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalPushNoticiaWidget(),
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalPushNoticiaWidget(),
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1441,16 +1457,22 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                               enableDrag: false,
                                               context: context,
                                               builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () =>
+                                                return WebViewAware(
+                                                  child: GestureDetector(
+                                                    onTap: () {
                                                       FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        ModalNoticiaCreadaWidget(),
+                                                          .unfocus();
+                                                      FocusManager
+                                                          .instance.primaryFocus
+                                                          ?.unfocus();
+                                                    },
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          ModalNoticiaCreadaWidget(),
+                                                    ),
                                                   ),
                                                 );
                                               },
@@ -1468,15 +1490,22 @@ class _NoticiasCreaWidgetState extends State<NoticiasCreaWidget> {
                                             enableDrag: false,
                                             context: context,
                                             builder: (context) {
-                                              return GestureDetector(
-                                                onTap: () =>
+                                              return WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () {
                                                     FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: Padding(
-                                                  padding:
-                                                      MediaQuery.viewInsetsOf(
-                                                          context),
-                                                  child: ModalComillasWidget(),
+                                                        .unfocus();
+                                                    FocusManager
+                                                        .instance.primaryFocus
+                                                        ?.unfocus();
+                                                  },
+                                                  child: Padding(
+                                                    padding:
+                                                        MediaQuery.viewInsetsOf(
+                                                            context),
+                                                    child:
+                                                        ModalComillasWidget(),
+                                                  ),
                                                 ),
                                               );
                                             },

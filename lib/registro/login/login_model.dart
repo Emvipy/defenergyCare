@@ -8,16 +8,20 @@ import '/registro/modal_error_cuenta/modal_error_cuenta_widget.dart';
 import '/registro/modal_update/modal_update_widget.dart';
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui';
 import '/custom_code/actions/index.dart' as actions;
 import 'login_widget.dart' show LoginWidget;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class LoginModel extends FlutterFlowModel<LoginWidget> {
   ///  State fields for stateful widgets in this page.
@@ -35,6 +39,11 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? passCopy;
   // Stores action output result for [Backend Call - API (login)] action in Button widget.
   ApiCallResponse? apiloginCopy;
+  bool bioDef = false;
+  // Stores action output result for [Custom Action - encodeBase64] action in Image widget.
+  String? passCopy2;
+  // Stores action output result for [Backend Call - API (login)] action in Image widget.
+  ApiCallResponse? apiloginBio2;
 
   @override
   void initState(BuildContext context) {

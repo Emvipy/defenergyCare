@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -793,7 +794,10 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -8354,7 +8358,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '1kfl4zsg' /* ¿Qué verdurashortalizas has c... */,
+                                                    '1kfl4zsg' /* ¿Qué verduras/hortalizas has c... */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -14312,9 +14316,11 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                               safeSetState(() {});
                                             return;
                                           } else {
-                                            if (FFAppState().momento < 3) {
+                                            if (FFAppState().momento < 4) {
                                               FFAppState().momento =
                                                   FFAppState().momento + 1;
+                                              FFAppState().intoPlatoId = 0;
+                                              FFAppState().intoBebidaId = 0;
                                               safeSetState(() {});
 
                                               context.pushNamed(
@@ -14523,6 +14529,27 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         .success,
                                               ),
                                             );
+                                            FFAppState().deleteDiarioIntoId();
+                                            FFAppState().diarioIntoId = 0;
+
+                                            FFAppState().primerDiarioInto = '';
+                                            FFAppState().diarioIntoAnterior = 0;
+                                            FFAppState().intoCarnes = 'no';
+                                            FFAppState().intoMarisco = 'no';
+                                            FFAppState().momento = 1;
+                                            FFAppState().intoPescado = 'no';
+                                            FFAppState().intoLacteos = 'no';
+                                            FFAppState().intoHuevos = 'no';
+                                            FFAppState().intoCereales = 'no';
+                                            FFAppState().intoFrutas = 'no';
+                                            FFAppState().intoVerduras = 'no';
+                                            FFAppState().intoLegumbres = 'no';
+                                            FFAppState().intoFrutosSecos = 'no';
+                                            FFAppState().intoSalsas = 'no';
+                                            FFAppState().intoBebidas = 'no';
+                                            FFAppState().mostrarAyer = 'si';
+                                            FFAppState().intoPlatoId = 0;
+                                            FFAppState().intoBebidaId = 0;
 
                                             context.goNamed(
                                               'Home',
@@ -14700,6 +14727,27 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                         .success,
                                               ),
                                             );
+                                            FFAppState().deleteDiarioIntoId();
+                                            FFAppState().diarioIntoId = 0;
+
+                                            FFAppState().primerDiarioInto = '';
+                                            FFAppState().diarioIntoAnterior = 0;
+                                            FFAppState().intoCarnes = 'no';
+                                            FFAppState().intoMarisco = 'no';
+                                            FFAppState().momento = 1;
+                                            FFAppState().intoPescado = 'no';
+                                            FFAppState().intoLacteos = 'no';
+                                            FFAppState().intoHuevos = 'no';
+                                            FFAppState().intoCereales = 'no';
+                                            FFAppState().intoFrutas = 'no';
+                                            FFAppState().intoVerduras = 'no';
+                                            FFAppState().intoLegumbres = 'no';
+                                            FFAppState().intoFrutosSecos = 'no';
+                                            FFAppState().intoSalsas = 'no';
+                                            FFAppState().intoBebidas = 'no';
+                                            FFAppState().mostrarAyer = 'si';
+                                            FFAppState().intoPlatoId = 0;
+                                            FFAppState().intoBebidaId = 0;
 
                                             context.goNamed(
                                               'Home',

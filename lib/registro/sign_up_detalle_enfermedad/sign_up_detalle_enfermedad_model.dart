@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/registro/modal_cancela_sign/modal_cancela_sign_widget.dart';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'sign_up_detalle_enfermedad_widget.dart'
     show SignUpDetalleEnfermedadWidget;
@@ -14,6 +15,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class SignUpDetalleEnfermedadModel
     extends FlutterFlowModel<SignUpDetalleEnfermedadWidget> {

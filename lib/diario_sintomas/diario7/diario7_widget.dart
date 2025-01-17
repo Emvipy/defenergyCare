@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
+import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -93,7 +94,10 @@ class _Diario7WidgetState extends State<Diario7Widget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -899,8 +903,8 @@ class _Diario7WidgetState extends State<Diario7Widget> {
                                       });
                                     },
                                     child: Container(
-                                      width: 135.0,
-                                      height: 100.0,
+                                      width: 105.0,
+                                      height: 86.0,
                                       decoration: BoxDecoration(
                                         color: _model.alivioSintomas == 'si'
                                             ? FlutterFlowTheme.of(context)
@@ -919,7 +923,7 @@ class _Diario7WidgetState extends State<Diario7Widget> {
                                             Icons.check_circle_outline_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            size: 35.0,
+                                            size: 32.0,
                                           ),
                                           Flexible(
                                             child: Text(
@@ -980,8 +984,8 @@ síntomas */
                                       });
                                     },
                                     child: Container(
-                                      width: 135.0,
-                                      height: 100.0,
+                                      width: 105.0,
+                                      height: 86.0,
                                       decoration: BoxDecoration(
                                         color: _model.alivioSintomas == 'no'
                                             ? FlutterFlowTheme.of(context)
@@ -1000,7 +1004,7 @@ síntomas */
                                             Icons.close_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            size: 35.0,
+                                            size: 32.0,
                                           ),
                                           Flexible(
                                             child: Text(
@@ -1028,381 +1032,104 @@ síntomas */
                                       ),
                                     ),
                                   ),
+                                  InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      _model.alivioSintomas = 'sin';
+                                      _model.mejora1 = null;
+                                      _model.mejora2 = null;
+                                      _model.mejora3 = null;
+                                      _model.mejora4 = null;
+                                      _model.mejora5 = null;
+                                      _model.emp1 = null;
+                                      _model.emp2 = null;
+                                      _model.emp3 = null;
+                                      _model.emp4 = null;
+                                      _model.emp5 = null;
+                                      safeSetState(() {});
+                                      safeSetState(() {
+                                        _model.dropN1P1ValueController?.reset();
+                                        _model.dropN2P1ValueController?.reset();
+                                        _model.dropN3P1ValueController?.reset();
+                                        _model.dropN4P1ValueController?.reset();
+                                        _model.dropn5P1ValueController?.reset();
+                                        _model.dropn6P1ValueController?.reset();
+                                        _model.dropn7P1ValueController?.reset();
+                                        _model.dropn8P1ValueController?.reset();
+                                        _model.dropn9P1ValueController?.reset();
+                                        _model.dropn10P1ValueController
+                                            ?.reset();
+                                      });
+                                    },
+                                    child: Container(
+                                      width: 105.0,
+                                      height: 86.0,
+                                      decoration: BoxDecoration(
+                                        color: _model.alivioSintomas == 'sin'
+                                            ? FlutterFlowTheme.of(context)
+                                                .secondary
+                                            : FlutterFlowTheme.of(context)
+                                                .primary,
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.back_hand_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            size: 30.0,
+                                          ),
+                                          Flexible(
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'q4736geo' /* No tuvo
+efectos */
+                                                ,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
                           ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 15.0, 0.0, 0.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              if (_model.alivioSintomas == 'si')
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'p8mxoq4d' /* Por favor indica los síntomas ... */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              if (_model.alivioSintomas == 'si')
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropN1P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropN1P1Value = val);
-                                      _model.mejora1 = _model.dropN1P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '7xdpvr3o' /* Selecciona tu respuesta... */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ),
-                              if ((_model.mejora1 != null &&
-                                      _model.mejora1 != '') &&
-                                  (_model.mejora1 !=
-                                      'No ha mejorado más síntomas'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropN2P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropN2P1Value = val);
-                                      _model.mejora2 = _model.dropN2P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '9aahy66s' /* Selecciona tu respuesta... */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ),
-                              if ((_model.mejora2 != null &&
-                                      _model.mejora2 != '') &&
-                                  (_model.mejora2 !=
-                                      'No ha mejorado más síntomas') &&
-                                  (_model.alivioSintomas == 'si'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropN3P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropN3P1Value = val);
-                                      _model.mejora3 = _model.dropN3P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '5pymbygx' /* Selecciona tu respuesta... */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ),
-                              if ((_model.dropN3P1Value != null &&
-                                      _model.dropN3P1Value != '') &&
-                                  (_model.mejora3 !=
-                                      'No ha mejorado más síntomas') &&
-                                  (_model.alivioSintomas == 'si'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropN4P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropN4P1Value = val);
-                                      _model.mejora4 = _model.dropN4P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '8bntfzt0' /* Selecciona tu respuesta... */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ),
-                              if ((_model.dropN4P1Value != null &&
-                                      _model.dropN4P1Value != '') &&
-                                  (_model.mejora4 !=
-                                      'No ha mejorado más síntomas') &&
-                                  (_model.alivioSintomas == 'si'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropn5P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.mejoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropn5P1Value = val);
-                                      _model.mejora5 = _model.dropn5P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '1f6hzuh3' /* Selecciona tu respuesta... */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
-                                  ),
-                                ),
-                              if ((_model.alivioSintomas == 'si') ||
-                                  (_model.alivioSintomas == 'no'))
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 10.0, 0.0, 0.0),
+                        if (_model.alivioSintomas != 'sin')
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 15.0, 0.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                if (_model.alivioSintomas == 'si')
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        '4d8r3olj' /* Por favor indica los síntomas ... */,
+                                        'p8mxoq4d' /* Por favor indica los síntomas ... */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1412,348 +1139,707 @@ síntomas */
                                           ),
                                     ),
                                   ),
-                                ),
-                              if ((_model.alivioSintomas == 'si') ||
-                                  (_model.alivioSintomas == 'no'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropn6P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropn6P1Value = val);
-                                      _model.emp1 = _model.dropn6P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'ij4evcym' /* Selecciona tu respuesta... */,
+                                if (_model.alivioSintomas == 'si')
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropN1P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropN1P1Value = val);
+                                        _model.mejora1 = _model.dropN1P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '7xdpvr3o' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
                                     ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
                                   ),
-                                ),
-                              if ((_model.dropn6P1Value != null &&
-                                      _model.dropn6P1Value != '') &&
-                                  (_model.emp1 !=
-                                      'No ha empeorado más síntomas'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropn7P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropn7P1Value = val);
-                                      _model.emp2 = _model.dropn7P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      '0jk3yqig' /* Selecciona tu respuesta... */,
+                                if ((_model.mejora1 != null &&
+                                        _model.mejora1 != '') &&
+                                    (_model.mejora1 !=
+                                        'No ha mejorado más síntomas'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropN2P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropN2P1Value = val);
+                                        _model.mejora2 = _model.dropN2P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '9aahy66s' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
                                     ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
                                   ),
-                                ),
-                              if ((_model.dropn7P1Value != null &&
-                                      _model.dropn7P1Value != '') &&
-                                  (_model.emp2 !=
-                                      'No ha empeorado más síntomas'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropn8P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropn8P1Value = val);
-                                      _model.emp3 = _model.dropn8P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'lebhnlxx' /* Selecciona tu respuesta... */,
+                                if ((_model.mejora2 != null &&
+                                        _model.mejora2 != '') &&
+                                    (_model.mejora2 !=
+                                        'No ha mejorado más síntomas') &&
+                                    (_model.alivioSintomas == 'si'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropN3P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropN3P1Value = val);
+                                        _model.mejora3 = _model.dropN3P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '5pymbygx' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
                                     ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
                                   ),
-                                ),
-                              if ((_model.dropn8P1Value != null &&
-                                      _model.dropn8P1Value != '') &&
-                                  (_model.emp3 !=
-                                      'No ha empeorado más síntomas'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropn9P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropn9P1Value = val);
-                                      _model.emp4 = _model.dropn9P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'etqp4xba' /* Selecciona tu respuesta... */,
+                                if ((_model.dropN3P1Value != null &&
+                                        _model.dropN3P1Value != '') &&
+                                    (_model.mejora3 !=
+                                        'No ha mejorado más síntomas') &&
+                                    (_model.alivioSintomas == 'si'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropN4P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropN4P1Value = val);
+                                        _model.mejora4 = _model.dropN4P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '8bntfzt0' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
                                     ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 4.0, 16.0, 4.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
                                   ),
-                                ),
-                              if ((_model.dropn9P1Value != null &&
-                                      _model.dropn9P1Value != '') &&
-                                  (_model.emp4 !=
-                                      'No ha empeorado más síntomas'))
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropn10P1ValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: FFLocalizations.of(context)
-                                                .languageCode ==
-                                            'es'
-                                        ? _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList()
-                                        : _model.empeoraSintomas
-                                            .map((e) => getJsonField(
-                                                  e,
-                                                  r'''$.mejora_en''',
-                                                ))
-                                            .toList()
-                                            .map((e) => e.toString())
-                                            .toList(),
-                                    onChanged: (val) async {
-                                      safeSetState(
-                                          () => _model.dropn10P1Value = val);
-                                      _model.emp5 = _model.dropn10P1Value;
-                                      safeSetState(() {});
-                                    },
-                                    width: 350.0,
-                                    height: 50.0,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'vu9qh4fp' /* Selecciona tu respuesta... */,
+                                if ((_model.dropN4P1Value != null &&
+                                        _model.dropN4P1Value != '') &&
+                                    (_model.mejora4 !=
+                                        'No ha mejorado más síntomas') &&
+                                    (_model.alivioSintomas == 'si'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropn5P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.mejoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropn5P1Value = val);
+                                        _model.mejora5 = _model.dropn5P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '1f6hzuh3' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
                                     ),
-                                    icon: Icon(
-                                      Icons.keyboard_arrow_down_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor: Colors.transparent,
-                                    borderWidth: 2.0,
-                                    borderRadius: 8.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    hidesUnderline: true,
-                                    isOverButton: true,
-                                    isSearchable: false,
-                                    isMultiSelect: false,
                                   ),
-                                ),
-                            ],
+                                if ((_model.alivioSintomas == 'si') ||
+                                    (_model.alivioSintomas == 'no'))
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          '4d8r3olj' /* Por favor indica los síntomas ... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                if ((_model.alivioSintomas == 'si') ||
+                                    (_model.alivioSintomas == 'no'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropn6P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropn6P1Value = val);
+                                        _model.emp1 = _model.dropn6P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'ij4evcym' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                if ((_model.dropn6P1Value != null &&
+                                        _model.dropn6P1Value != '') &&
+                                    (_model.emp1 !=
+                                        'No ha empeorado más síntomas'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropn7P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropn7P1Value = val);
+                                        _model.emp2 = _model.dropn7P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '0jk3yqig' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                if ((_model.dropn7P1Value != null &&
+                                        _model.dropn7P1Value != '') &&
+                                    (_model.emp2 !=
+                                        'No ha empeorado más síntomas'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropn8P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropn8P1Value = val);
+                                        _model.emp3 = _model.dropn8P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'lebhnlxx' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                if ((_model.dropn8P1Value != null &&
+                                        _model.dropn8P1Value != '') &&
+                                    (_model.emp3 !=
+                                        'No ha empeorado más síntomas'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropn9P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropn9P1Value = val);
+                                        _model.emp4 = _model.dropn9P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'etqp4xba' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 4.0, 16.0, 4.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                                if ((_model.dropn9P1Value != null &&
+                                        _model.dropn9P1Value != '') &&
+                                    (_model.emp4 !=
+                                        'No ha empeorado más síntomas'))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 5.0, 0.0, 0.0),
+                                    child: FlutterFlowDropDown<String>(
+                                      controller:
+                                          _model.dropn10P1ValueController ??=
+                                              FormFieldController<String>(null),
+                                      options: FFLocalizations.of(context)
+                                                  .languageCode ==
+                                              'es'
+                                          ? _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList()
+                                          : _model.empeoraSintomas
+                                              .map((e) => getJsonField(
+                                                    e,
+                                                    r'''$.mejora_en''',
+                                                  ))
+                                              .toList()
+                                              .map((e) => e.toString())
+                                              .toList(),
+                                      onChanged: (val) async {
+                                        safeSetState(
+                                            () => _model.dropn10P1Value = val);
+                                        _model.emp5 = _model.dropn10P1Value;
+                                        safeSetState(() {});
+                                      },
+                                      width: 350.0,
+                                      height: 50.0,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'vu9qh4fp' /* Selecciona tu respuesta... */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_down_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 24.0,
+                                      ),
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor: Colors.transparent,
+                                      borderWidth: 2.0,
+                                      borderRadius: 8.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      hidesUnderline: true,
+                                      isOverButton: true,
+                                      isSearchable: false,
+                                      isMultiSelect: false,
+                                    ),
+                                  ),
+                              ],
+                            ),
                           ),
-                        ),
                         if ((_model.alivioSintomas == 'si') ||
                             (_model.alivioSintomas == 'no'))
                           Padding(
@@ -1869,7 +1955,9 @@ síntomas */
                               ],
                             ),
                           ),
-                        if (_model.nombreMed != null && _model.nombreMed != '')
+                        if ((_model.nombreMed != null &&
+                                _model.nombreMed != '') &&
+                            (_model.alivioSintomas != 'sin'))
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 30.0, 0.0, 0.0),
@@ -2022,6 +2110,164 @@ síntomas */
                                         .botonDesactivado,
                                     disabledTextColor:
                                         FlutterFlowTheme.of(context).accent4,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        if ((_model.nombreMed != null &&
+                                _model.nombreMed != '') &&
+                            (_model.alivioSintomas == 'sin'))
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 30.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FFButtonWidget(
+                                  onPressed: () async {
+                                    var _shouldSetState = false;
+                                    _model.apiP7sin =
+                                        await DiarioSieteCall.call(
+                                      authToken: FFAppState().authToken,
+                                      diarioId: FFAppState().diarioId,
+                                      med1: _model.nombreMed,
+                                      conAlivio: _model.alivioSintomas,
+                                      sinAlivio: 'n/a',
+                                      mejora1: _model.mejora1 != null &&
+                                              _model.mejora1 != ''
+                                          ? _model.mejora1
+                                          : 'n/a',
+                                      mejora2: _model.mejora2 != null &&
+                                              _model.mejora2 != ''
+                                          ? _model.mejora2
+                                          : 'n/a',
+                                      mejora3: _model.mejora3 != null &&
+                                              _model.mejora3 != ''
+                                          ? _model.mejora3
+                                          : 'n/a',
+                                      mejora4: _model.mejora4 != null &&
+                                              _model.mejora4 != ''
+                                          ? _model.mejora4
+                                          : 'n/a',
+                                      mejora5: _model.mejora5 != null &&
+                                              _model.mejora5 != ''
+                                          ? _model.mejora5
+                                          : 'n/a',
+                                      empeora1: _model.emp1 != null &&
+                                              _model.emp1 != ''
+                                          ? _model.emp1
+                                          : 'n/a',
+                                      empeora2: _model.emp2 != null &&
+                                              _model.emp2 != ''
+                                          ? _model.emp2
+                                          : 'n/a',
+                                      empeora3: _model.emp3 != null &&
+                                              _model.emp3 != ''
+                                          ? _model.emp3
+                                          : 'n/a',
+                                      empeora4: _model.emp4 != null &&
+                                              _model.emp4 != ''
+                                          ? _model.emp4
+                                          : 'n/a',
+                                      empeora5: _model.emp5 != null &&
+                                              _model.emp5 != ''
+                                          ? _model.emp5
+                                          : 'n/a',
+                                      notas: _model.textController2.text !=
+                                                  null &&
+                                              _model.textController2.text != ''
+                                          ? functions
+                                              .formatTextwithLineBreaksToXano(
+                                                  _model.textController2.text)
+                                          : 'n/a',
+                                      editando: FFAppState().editandoDiario,
+                                    );
+
+                                    _shouldSetState = true;
+                                    if (FFAppState().diarioMed2 == 'si') {
+                                      context.pushNamed(
+                                        'diario8',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.fade,
+                                          ),
+                                        },
+                                      );
+
+                                      if (_shouldSetState) safeSetState(() {});
+                                      return;
+                                    } else {
+                                      if (FFAppState().diarioVit == 'si') {
+                                        context.pushNamed(
+                                          'diario9',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                            ),
+                                          },
+                                        );
+
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
+                                        return;
+                                      } else {
+                                        _model.apiResultyly1sin =
+                                            await DiarioFinalizaCall.call(
+                                          authToken: FFAppState().authToken,
+                                          idDiario: FFAppState().diarioId,
+                                        );
+
+                                        _shouldSetState = true;
+
+                                        context.pushNamed(
+                                          'diarioFin',
+                                          extra: <String, dynamic>{
+                                            kTransitionInfoKey: TransitionInfo(
+                                              hasTransition: true,
+                                              transitionType:
+                                                  PageTransitionType.fade,
+                                            ),
+                                          },
+                                        );
+
+                                        if (_shouldSetState)
+                                          safeSetState(() {});
+                                        return;
+                                      }
+                                    }
+
+                                    if (_shouldSetState) safeSetState(() {});
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'p3y3fkic' /* Continuar */,
+                                  ),
+                                  options: FFButtonOptions(
+                                    width: 300.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
                               ],
