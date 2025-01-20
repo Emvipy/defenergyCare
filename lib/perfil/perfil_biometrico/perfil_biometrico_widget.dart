@@ -229,6 +229,8 @@ class _PerfilBiometricoWidgetState extends State<PerfilBiometricoWidget> {
                                             _model.pass = 'no';
                                             _model.enProceso = 'no';
                                             safeSetState(() {});
+                                            await Future.delayed(const Duration(
+                                                milliseconds: 1000));
 
                                             context.pushNamed(
                                               'perfil',
