@@ -42,6 +42,8 @@ class _HubLoginWidgetState extends State<HubLoginWidget> {
               ),
             },
           );
+
+          return;
         } else {
           context.pushNamed(
             'Home_empresa',
@@ -53,6 +55,8 @@ class _HubLoginWidgetState extends State<HubLoginWidget> {
               ),
             },
           );
+
+          return;
         }
       } else {
         await showModalBottomSheet(
@@ -75,6 +79,8 @@ class _HubLoginWidgetState extends State<HubLoginWidget> {
             );
           },
         ).then((value) => safeSetState(() {}));
+
+        return;
       }
     });
   }

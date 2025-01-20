@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -14,58 +12,63 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Defenergy</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>es</string>
 		<string>en</string>
 	</array>
-	<key>CFBundleName</key>
-	<string>Defenergy</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
+
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array/>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>defenergy.com</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>defenergy</string>
-			</array>
-		</dict>
-	</array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <!--FF_REVERSED_CLIENT_ID-->
+                
+            </array>
+        </dict>
+
+        <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>defenergy.com</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+        <string>defenergy</string>
+        </array>
+        </dict>
+    </array>
+    <key>FlutterDeepLinkingEnabled</key>
+    <true/>
+
+
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
-	<key>FlutterDeepLinkingEnabled</key>
-	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+
 	<key>NSCameraUsageDescription</key>
-	<string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para usar la cámara.</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Accede a Defenergy con autenticación biométrica</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>This app requires permissions to record audio.</string>
+    <string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para usar la cámara.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para acceder a tus imágenes.</string>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
+    <string>Para poder tomar fotos o publicar imágenes la app te pedirá permiso para acceder a tus imágenes.</string>
+	<key>NSFaceIDUsageDescription</key>
+    <string>Accede a Defenergy con autenticación biométrica</string>
+	<key>NSMicrophoneUsageDescription</key>
+    <string>This app requires permissions to record audio.</string>
+
+
+
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -85,5 +88,6 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
 </dict>
 </plist>
