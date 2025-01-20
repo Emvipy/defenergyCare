@@ -1105,8 +1105,8 @@ Miálgica */
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      '5oh444nx' /* Otras Enf.
-Autoinmunes */
+                                                      '5oh444nx' /* Enfermedad
+Autoinmune */
                                                       ,
                                                     ),
                                                     style: FlutterFlowTheme.of(
@@ -1329,8 +1329,8 @@ Autoinmunes */
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'yes6msl0' /* Sensibilidad
-Alimentaria */
+                                                      'yes6msl0' /* Intolerancias 
+Alimentarias */
                                                       ,
                                                     ),
                                                     style: FlutterFlowTheme.of(
@@ -1367,6 +1367,29 @@ Alimentaria */
                                             ),
                                           ],
                                         ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 10.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Opacity(
+                                    opacity: 0.7,
+                                    child: Container(
+                                      width: 170.0,
+                                      height: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0x00F1F4F8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                     ),
                                   ),

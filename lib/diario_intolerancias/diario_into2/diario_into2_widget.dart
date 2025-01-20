@@ -530,9 +530,256 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
         return;
       }
       if (FFAppState().momento == 3) {
-        _model.apiCargaCena = await DiarioIntoleranciaDosCargaCall.call(
+        _model.apiCargaMerienda = await DiarioIntoleranciaDosCargaCall.call(
           diarioId: FFAppState().diarioIntoId,
           momento: 3,
+        );
+
+        _model.carne1 = DiarioIntoleranciaDosCargaCall.carne1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.carne2 = DiarioIntoleranciaDosCargaCall.carne2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.carne3 = DiarioIntoleranciaDosCargaCall.carne3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.carne4 = DiarioIntoleranciaDosCargaCall.carne4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.carne5 = DiarioIntoleranciaDosCargaCall.carne5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.carne6 = DiarioIntoleranciaDosCargaCall.carne6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.carne7 = DiarioIntoleranciaDosCargaCall.carne7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.pescado1 = DiarioIntoleranciaDosCargaCall.pescado1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.pescado2 = DiarioIntoleranciaDosCargaCall.pescado2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.pescado3 = DiarioIntoleranciaDosCargaCall.pescado3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.pescado4 = DiarioIntoleranciaDosCargaCall.pescado4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.pescado5 = DiarioIntoleranciaDosCargaCall.pescado5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.pescado6 = DiarioIntoleranciaDosCargaCall.pescado6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.pescado7 = DiarioIntoleranciaDosCargaCall.pescado7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.marisco1 = DiarioIntoleranciaDosCargaCall.marisco1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.marisco2 = DiarioIntoleranciaDosCargaCall.marisco2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.marisco3 = DiarioIntoleranciaDosCargaCall.marisco3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.marisco4 = DiarioIntoleranciaDosCargaCall.marisco4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.marisco5 = DiarioIntoleranciaDosCargaCall.marisco5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.marisco6 = DiarioIntoleranciaDosCargaCall.marisco6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.marisco7 = DiarioIntoleranciaDosCargaCall.marisco7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.lacteos1 = DiarioIntoleranciaDosCargaCall.lacteos1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.lacteos2 = DiarioIntoleranciaDosCargaCall.lacteos2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.lacteos3 = DiarioIntoleranciaDosCargaCall.lacteos3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.lacteos4 = DiarioIntoleranciaDosCargaCall.lacteos4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.lacteos5 = DiarioIntoleranciaDosCargaCall.lacteos5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.lacteos6 = DiarioIntoleranciaDosCargaCall.lacteos6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.lacteos7 = DiarioIntoleranciaDosCargaCall.lacteos7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.huevos1 = DiarioIntoleranciaDosCargaCall.huevos1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        )!;
+        _model.cereales1 = DiarioIntoleranciaDosCargaCall.cereales1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.cereales2 = DiarioIntoleranciaDosCargaCall.cereales2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.cereales3 = DiarioIntoleranciaDosCargaCall.cereales3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.cereales4 = DiarioIntoleranciaDosCargaCall.cereales4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.cereales5 = DiarioIntoleranciaDosCargaCall.cereales5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.cereales6 = DiarioIntoleranciaDosCargaCall.cereales6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.cereales7 = DiarioIntoleranciaDosCargaCall.cereales7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.frutas1 = DiarioIntoleranciaDosCargaCall.frutas1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.frutas2 = DiarioIntoleranciaDosCargaCall.frutas2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.frutas3 = DiarioIntoleranciaDosCargaCall.frutas3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.frutas4 = DiarioIntoleranciaDosCargaCall.frutas4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.frutas5 = DiarioIntoleranciaDosCargaCall.frutas5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.frutas6 = DiarioIntoleranciaDosCargaCall.frutas6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.frutas7 = DiarioIntoleranciaDosCargaCall.frutas7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.verduras1 = DiarioIntoleranciaDosCargaCall.verduras1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.verduras2 = DiarioIntoleranciaDosCargaCall.verduras2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.verduras3 = DiarioIntoleranciaDosCargaCall.verduras3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.verduras4 = DiarioIntoleranciaDosCargaCall.verduras4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.verduras5 = DiarioIntoleranciaDosCargaCall.verduras5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.verduras6 = DiarioIntoleranciaDosCargaCall.verduras6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.verduras7 = DiarioIntoleranciaDosCargaCall.verduras7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.legumbres1 = DiarioIntoleranciaDosCargaCall.legumbres1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.legumbres2 = DiarioIntoleranciaDosCargaCall.legumbres2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.legumbres3 = DiarioIntoleranciaDosCargaCall.legumbres3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.legumbres4 = DiarioIntoleranciaDosCargaCall.legumbres4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.legumbres5 = DiarioIntoleranciaDosCargaCall.legumbres5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.legumbres6 = DiarioIntoleranciaDosCargaCall.legumbres6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.legumbres7 = DiarioIntoleranciaDosCargaCall.legumbres7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.secos1 = DiarioIntoleranciaDosCargaCall.secos1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.secos2 = DiarioIntoleranciaDosCargaCall.secos2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.secos3 = DiarioIntoleranciaDosCargaCall.secos3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.secos4 = DiarioIntoleranciaDosCargaCall.secos4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.secos5 = DiarioIntoleranciaDosCargaCall.secos5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.secos6 = DiarioIntoleranciaDosCargaCall.secos6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.secos7 = DiarioIntoleranciaDosCargaCall.secos7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.salsas1 = DiarioIntoleranciaDosCargaCall.salsas1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.salsas2 = DiarioIntoleranciaDosCargaCall.salsas2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.salsas3 = DiarioIntoleranciaDosCargaCall.salsas3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.salsas4 = DiarioIntoleranciaDosCargaCall.salsas4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.salsas5 = DiarioIntoleranciaDosCargaCall.salsas5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.salsas6 = DiarioIntoleranciaDosCargaCall.salsas6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.salsas7 = DiarioIntoleranciaDosCargaCall.salsas7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.bebida1 = DiarioIntoleranciaDosCargaCall.bebidas1Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.bebida2 = DiarioIntoleranciaDosCargaCall.bebidas2Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.bebida3 = DiarioIntoleranciaDosCargaCall.bebidas3Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.bebida4 = DiarioIntoleranciaDosCargaCall.bebidas4Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.bebida5 = DiarioIntoleranciaDosCargaCall.bebidas5Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.bebida6 = DiarioIntoleranciaDosCargaCall.bebidas6Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.bebida7 = DiarioIntoleranciaDosCargaCall.bebidas7Merienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.sintoma = DiarioIntoleranciaDosCargaCall.sintomaMerienda(
+          (_model.apiCargaMerienda?.jsonBody ?? ''),
+        );
+        _model.contenido = 'si';
+        safeSetState(() {});
+        return;
+      }
+      if (FFAppState().momento == 4) {
+        _model.apiCargaCena = await DiarioIntoleranciaDosCargaCall.call(
+          diarioId: FFAppState().diarioIntoId,
+          momento: 4,
         );
 
         _model.carne1 = DiarioIntoleranciaDosCargaCall.carneCena1(
@@ -946,6 +1193,8 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                           return 'el desayuno';
                                         } else if (FFAppState().momento == 2) {
                                           return 'la comida';
+                                        } else if (FFAppState().momento == 3) {
+                                          return 'la merienda';
                                         } else {
                                           return 'la cena';
                                         }

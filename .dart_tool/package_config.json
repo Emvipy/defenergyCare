@@ -1028,6 +1028,24 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "sensors_plus",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/sensors_plus-6.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "sensors_plus_platform_interface",
+      "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/sensors_plus_platform_interface-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "shake",
+      "rootUri": "file:///Users/zacheo/.pub-cache/git/shake-5d7d94e7d166159be621df1892c41d7279814a38/",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "share_plus",
       "rootUri": "file:///Users/zacheo/.pub-cache/hosted/pub.dev/share_plus-10.0.2",
       "packageUri": "lib/",
@@ -1388,7 +1406,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2025-01-17T21:16:54.495299Z",
+  "generated": "2025-01-20T01:38:00.491239Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
   "flutterRoot": "file:///Users/zacheo/development/flutter",

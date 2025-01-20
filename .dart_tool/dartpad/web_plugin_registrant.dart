@@ -22,6 +22,7 @@ import 'package:image_picker_for_web/image_picker_for_web.dart';
 import 'package:permission_handler_html/permission_handler_html.dart';
 import 'package:pointer_interceptor_web/pointer_interceptor_web.dart';
 import 'package:record_web/record_web.dart';
+import 'package:sensors_plus/src/sensors_plus_web.dart';
 import 'package:share_plus/src/share_plus_web.dart';
 import 'package:shared_preferences_web/shared_preferences_web.dart';
 import 'package:sign_in_with_apple_web/sign_in_with_apple_web.dart';
@@ -48,6 +49,7 @@ void registerPlugins([final Registrar? pluginRegistrar]) {
   WebPermissionHandler.registerWith(registrar);
   PointerInterceptorWeb.registerWith(registrar);
   RecordPluginWeb.registerWith(registrar);
+  WebSensorsPlugin.registerWith(registrar);
   SharePlusWebPlugin.registerWith(registrar);
   SharedPreferencesPlugin.registerWith(registrar);
   SignInWithApplePlugin.registerWith(registrar);

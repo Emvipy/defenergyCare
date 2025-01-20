@@ -1270,15 +1270,18 @@ class _ComunidadComentariosWidgetState
                                                                                   child: Padding(
                                                                                     padding: MediaQuery.viewInsetsOf(context),
                                                                                     child: ModalSolicitaContactoWidget(
-                                                                                      contactoId: ComunidadPostIndividualCall.creadorId(
-                                                                                        comunidadComentariosComunidadPostIndividualResponse.jsonBody,
-                                                                                      )!,
-                                                                                      nombreContacto: ComunidadPostIndividualCall.nombre(
-                                                                                        comunidadComentariosComunidadPostIndividualResponse.jsonBody,
-                                                                                      )!,
-                                                                                      apellidosContacto: ComunidadPostIndividualCall.apellidos(
-                                                                                        comunidadComentariosComunidadPostIndividualResponse.jsonBody,
-                                                                                      )!,
+                                                                                      contactoId: getJsonField(
+                                                                                        childComentariosItem,
+                                                                                        r'''$.user_id''',
+                                                                                      ),
+                                                                                      nombreContacto: getJsonField(
+                                                                                        childComentariosItem,
+                                                                                        r'''$.nombre''',
+                                                                                      ).toString(),
+                                                                                      apellidosContacto: getJsonField(
+                                                                                        childComentariosItem,
+                                                                                        r'''$.apellidos''',
+                                                                                      ).toString(),
                                                                                       grupo: widget!.grupo!,
                                                                                       nombre: widget!.nombre!,
                                                                                     ),

@@ -318,6 +318,8 @@ class DiarioInto2Model extends FlutterFlowModel<DiarioInto2Widget> {
   // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.
   ApiCallResponse? apiCargaComida;
   // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.
+  ApiCallResponse? apiCargaMerienda;
+  // Stores action output result for [Backend Call - API (diario intolerancia Dos Carga)] action in diario_Into2 widget.
   ApiCallResponse? apiCargaCena;
   // State field(s) for Drop_carne1 widget.
   String? dropCarne1Value;

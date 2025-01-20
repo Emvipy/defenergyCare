@@ -5404,7 +5404,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mo74zsty': {
       'es': 'O usar el del último diario realizado:',
-      'en': 'Or use the one from the last diary made:',
+      'en': 'Or use the one from the last journal made:',
     },
     'g7owvvpa': {
       'es': 'Sí, me ayudó',
@@ -5844,11 +5844,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jfg71uy3': {
       'es': 'Platos ',
-      'en': 'Food Dishes',
+      'en': 'Dishes',
     },
     'yz2qqa9p': {
       'es': 'Anular selección de platos',
-      'en': '',
+      'en': 'Deselect dishes',
     },
     'w0wwxi66': {
       'es': 'Añadir Plato',
@@ -5870,15 +5870,91 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'NO',
       'en': 'NO',
     },
-    '6rtkt3o4': {
-      'es': 'Continuar',
-      'en': 'Continue',
-    },
     'x7nnorqe': {
       'es': 'Finalizar más tarde',
       'en': 'End later',
     },
     'p9spofzb': {
+      'es': 'Guardar',
+      'en': 'Save',
+    },
+    'o044rzbv': {
+      'es': '¿Te ha sentado mal algo de lo que comiste ayer?',
+      'en': 'Did something you eat yesterday upset your stomach?',
+    },
+    'feqtngdh': {
+      'es': 'SI',
+      'en': 'YES',
+    },
+    'n7c4b1yi': {
+      'es': 'NO',
+      'en': 'NO',
+    },
+    'qetg3tgy': {
+      'es': 'No lo sé',
+      'en': 'Don\'t know',
+    },
+    'r0le0qet': {
+      'es': 'Guardar',
+      'en': 'Save',
+    },
+    '4oqpikk0': {
+      'es': 'Carnes',
+      'en': 'Meats',
+    },
+    'r9q2hjjw': {
+      'es': 'Pescado',
+      'en': 'Fish',
+    },
+    'cl9vqpxb': {
+      'es': 'Mariscos',
+      'en': 'Seafood',
+    },
+    'jifmav6n': {
+      'es': 'Lácteos',
+      'en': 'Dairy',
+    },
+    'ydzwq20r': {
+      'es': 'Huevos',
+      'en': 'Eggs',
+    },
+    'pzp2psuw': {
+      'es': 'Panes y Cereales',
+      'en': 'Breads and Cereals',
+    },
+    '50jobbdc': {
+      'es': 'Frutas',
+      'en': 'Fruit',
+    },
+    '5i6xan1i': {
+      'es': 'Verduras \ny Hortalizas',
+      'en': 'Vegetables\nand greens',
+    },
+    'pfkx7tc0': {
+      'es': 'Legumbres',
+      'en': 'Legumes',
+    },
+    'vmkb2xvi': {
+      'es': 'Frutos Secos',
+      'en': 'Dried Fruits',
+    },
+    'i7th3hzj': {
+      'es': 'Salsas y Condimentos',
+      'en': 'Sauces and Condiments',
+    },
+    'zxtl0pom': {
+      'es': 'Bebidas',
+      'en': 'Drinks',
+    },
+    'ezbcxlwo': {
+      'es': 'Continuar',
+      'en': 'Continue',
+    },
+    'zhb4hhru': {
+      'es': 'Finalizar más tarde',
+      'en': 'End later',
+    },
+    'wyqo8kc8': {
       'es': 'Guardar',
       'en': 'Save',
     },
@@ -7454,7 +7530,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'hj4llizm': {
       'es': 'Resumen de Síntomas',
-      'en': '',
+      'en': 'Symptom Summary',
     },
     'jn8et9oh': {
       'es': 'Tu nivel de energía ha sido del ',
@@ -9196,7 +9272,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm1adce5z': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     '5fz1yc59': {
       'es': 'más de 5 años',
@@ -9701,7 +9777,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7oij9mlf': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     'dr65ks08': {
       'es': 'más de 5 años',
@@ -10205,7 +10281,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aaw3jcoy': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     'xwfd6njh': {
       'es': 'más de 5 años',
@@ -11090,7 +11166,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'b6aqkfd0': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     '65bx8zeo': {
       'es': 'más de 5 años',
@@ -11622,7 +11698,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4gllmzno': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     'ug2lvmmk': {
       'es': 'más de 5 años',
@@ -11747,7 +11823,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'abo6q85v': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     'xqssuy8p': {
       'es': 'más de 5 años',
@@ -12412,7 +12488,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n6zjfqxf': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     'pv1uw7vb': {
       'es': 'más de 5 años',
@@ -13057,7 +13133,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8vlrghvs': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     'bdfaszi5': {
       'es': 'más de 5 años',
@@ -13182,7 +13258,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '41pa38wq': {
       'es': 'de 3 a 5 años',
-      'en': '3 to 5 years',
+      'en': 'from 3 to 5 years',
     },
     'bx3axb1i': {
       'es': 'más de 5 años',
@@ -16917,7 +16993,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'OA',
     },
     '5oh444nx': {
-      'es': 'Otras Enf.\nAutoinmunes',
+      'es': 'Enfermedad\nAutoinmune',
       'en': 'Intolerences Diary',
     },
     'izu08uxx': {
@@ -16929,7 +17005,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'SA',
     },
     'yes6msl0': {
-      'es': 'Sensibilidad\nAlimentaria',
+      'es': 'Intolerancias \nAlimentarias',
       'en': 'Intolerences Diary',
     },
     'bu5sx24s': {
@@ -18492,7 +18568,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ibxmc3pu': {
       'es': 'Tu información se ha guardado correctamente',
-      'en': 'Your dish has been saved successfully',
+      'en': 'Your information has been saved successfully',
     },
     'l205kmbg': {
       'es': 'Ahora vamos a la siguiente comida',

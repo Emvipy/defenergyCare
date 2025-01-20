@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.55+87
+version: 1.0.55+88
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -137,6 +137,11 @@ dependencies:
   record_web: 1.1.3
   record_windows: 1.0.3
   rxdart: 0.27.7
+  sensors_plus: 6.0.1
+  sensors_plus_platform_interface: 2.0.0
+  shake: 
+    git:
+      url: https://github.com/FlutterFlow/shake.git
   share_plus: 10.0.2
   share_plus_platform_interface: 5.0.0
   shared_preferences: 2.3.2
