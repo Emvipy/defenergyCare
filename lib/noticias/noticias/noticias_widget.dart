@@ -384,7 +384,9 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     FutureBuilder<ApiCallResponse>(
-                                      future: DespAutorNoticiasCall.call(),
+                                      future: DespAutorNoticiasCall.call(
+                                        privada: 'no',
+                                      ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -415,6 +417,9 @@ class _NoticiasWidgetState extends State<NoticiasWidget> {
                                           onChanged: (val) async {
                                             safeSetState(() => _model
                                                 .dropDownAutorValue = val);
+                                            _model.autor =
+                                                _model.dropDownAutorValue!;
+                                            safeSetState(() {});
                                             safeSetState(() => _model
                                                 .apiRequestCompleter = null);
                                             await _model

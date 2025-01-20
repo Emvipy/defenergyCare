@@ -16,6 +16,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
+import 'package:shake/shake.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 
 class DiarioInto1Model extends FlutterFlowModel<DiarioInto1Widget> {
@@ -34,9 +35,9 @@ class DiarioInto1Model extends FlutterFlowModel<DiarioInto1Widget> {
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - API (diario intolerancia Uno Carga)] action in diario_Into1 widget.
-  ApiCallResponse? cargaUnoInto;
+  ApiCallResponse? cargaUnoIntoOld;
   // Stores action output result for [Backend Call - API (diario into ayer)] action in Button widget.
-  ApiCallResponse? apiResultozv;
+  ApiCallResponse? apiResultozvPlatos;
   // State field(s) for buscador_plato widget.
   FocusNode? buscadorPlatoFocusNode;
   TextEditingController? buscadorPlatoTextController;
@@ -56,11 +57,17 @@ class DiarioInto1Model extends FlutterFlowModel<DiarioInto1Widget> {
   ApiCallResponse? apipasa1;
   // Stores action output result for [Backend Call - API (intolerancia finaliza diario)] action in Container_no widget.
   ApiCallResponse? apiFIn2;
+  // Stores action output result for [Backend Call - API (intolerancias Uno New)] action in Button widget.
+  ApiCallResponse? apiIntoP1FPlatos;
+  // Stores action output result for [Backend Call - API (intolerancias Uno New)] action in Button widget.
+  ApiCallResponse? apiIntoP1FCopyPlatos;
+  // Stores action output result for [Backend Call - API (diario into ayer)] action in Button widget.
+  ApiCallResponse? apiResultozv;
   // Stores action output result for [Backend Call - API (diario intolerancia Uno)] action in Button widget.
   ApiCallResponse? apiIntoP1;
-  // Stores action output result for [Backend Call - API (intolerancias Uno New)] action in Button widget.
+  // Stores action output result for [Backend Call - API (diario intolerancia Uno)] action in Button widget.
   ApiCallResponse? apiIntoP1F;
-  // Stores action output result for [Backend Call - API (intolerancias Uno New)] action in Button widget.
+  // Stores action output result for [Backend Call - API (diario intolerancia Uno)] action in Button widget.
   ApiCallResponse? apiIntoP1FCopy;
 
   @override

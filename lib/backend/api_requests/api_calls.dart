@@ -3690,6 +3690,70 @@ class DiarioIntoleranciaUnoCargaCall {
         response,
         r'''$.bebida_id_cena''',
       ));
+  static String? carneMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda''',
+      ));
+  static String? pescadoMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda''',
+      ));
+  static String? mariscosMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda''',
+      ));
+  static String? lactiosMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda''',
+      ));
+  static String? huevosMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.huevos_merienda''',
+      ));
+  static String? cerealesMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda''',
+      ));
+  static String? frutasMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda''',
+      ));
+  static String? verdurasMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda''',
+      ));
+  static String? lrgumbresMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda''',
+      ));
+  static String? secosMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda''',
+      ));
+  static String? salsasMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda''',
+      ));
+  static String? bebidasMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda''',
+      ));
+  static int? contadoMerienda(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.contador_merienda''',
+      ));
 }
 
 class DespComidaPescadoCall {
@@ -5775,6 +5839,401 @@ class DiarioIntoleranciaDosCargaCall {
       castToType<String>(getJsonField(
         response,
         r'''$.sintoma_tras_ingesta_cena''',
+      ));
+  static String? carne1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda1''',
+      ));
+  static String? carne2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda2''',
+      ));
+  static String? carne3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda3''',
+      ));
+  static String? carne4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda4''',
+      ));
+  static String? carne5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda5''',
+      ));
+  static String? carne6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda6''',
+      ));
+  static String? carne7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.carne_merienda7''',
+      ));
+  static String? pescado1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda1''',
+      ));
+  static String? pescado2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda2''',
+      ));
+  static String? pescado3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda3''',
+      ));
+  static String? pescado4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda4''',
+      ));
+  static String? pescado5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda5''',
+      ));
+  static String? pescado6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda6''',
+      ));
+  static String? pescado7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.pescado_merienda7''',
+      ));
+  static String? marisco1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda1''',
+      ));
+  static String? marisco2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda2''',
+      ));
+  static String? marisco3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda3''',
+      ));
+  static String? marisco4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda4''',
+      ));
+  static String? marisco5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda5''',
+      ));
+  static String? marisco6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda6''',
+      ));
+  static String? marisco7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.mariscos_merienda7''',
+      ));
+  static String? lacteos1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda1''',
+      ));
+  static String? lacteos2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda2''',
+      ));
+  static String? lacteos3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda3''',
+      ));
+  static String? lacteos4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda4''',
+      ));
+  static String? lacteos5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda5''',
+      ));
+  static String? lacteos6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda6''',
+      ));
+  static String? lacteos7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.lacteos_merienda7''',
+      ));
+  static String? huevos1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.huevos_merienda1''',
+      ));
+  static String? cereales1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda1''',
+      ));
+  static String? cereales2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda2''',
+      ));
+  static String? cereales3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda3''',
+      ));
+  static String? cereales4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda4''',
+      ));
+  static String? cereales5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda5''',
+      ));
+  static String? cereales6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda6''',
+      ));
+  static String? cereales7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.cereales_merienda7''',
+      ));
+  static String? frutas1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda1''',
+      ));
+  static String? frutas2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda2''',
+      ));
+  static String? frutas3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda3''',
+      ));
+  static String? frutas4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda4''',
+      ));
+  static String? frutas5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda5''',
+      ));
+  static String? frutas6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda6''',
+      ));
+  static String? frutas7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.frutas_merienda7''',
+      ));
+  static String? verduras1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda1''',
+      ));
+  static String? verduras2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda2''',
+      ));
+  static String? verduras3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda3''',
+      ));
+  static String? verduras4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda4''',
+      ));
+  static String? verduras5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda5''',
+      ));
+  static String? verduras6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda6''',
+      ));
+  static String? verduras7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.verduras_merienda7''',
+      ));
+  static String? legumbres1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda1''',
+      ));
+  static String? legumbres2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda2''',
+      ));
+  static String? legumbres3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda3''',
+      ));
+  static String? legumbres4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda4''',
+      ));
+  static String? legumbres5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda5''',
+      ));
+  static String? legumbres6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda6''',
+      ));
+  static String? legumbres7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.legumbres_merienda7''',
+      ));
+  static String? secos1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda1''',
+      ));
+  static String? secos2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda2''',
+      ));
+  static String? secos3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda3''',
+      ));
+  static String? secos4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda4''',
+      ));
+  static String? secos5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda5''',
+      ));
+  static String? secos6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda6''',
+      ));
+  static String? secos7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.secos_merienda7''',
+      ));
+  static String? salsas1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda1''',
+      ));
+  static String? salsas2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda2''',
+      ));
+  static String? salsas3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda3''',
+      ));
+  static String? salsas4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda4''',
+      ));
+  static String? salsas5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda5''',
+      ));
+  static String? salsas6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda6''',
+      ));
+  static String? salsas7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.salsas_merienda7''',
+      ));
+  static String? bebidas1Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda1''',
+      ));
+  static String? bebidas2Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda2''',
+      ));
+  static String? bebidas3Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda3''',
+      ));
+  static String? bebidas4Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda4''',
+      ));
+  static String? bebidas5Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda5''',
+      ));
+  static String? bebidas6Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda6''',
+      ));
+  static String? bebidas7Merienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.bebida_merienda7''',
+      ));
+  static String? sintomaMerienda(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.sintoma_tras_ingesta_merienda''',
       ));
 }
 
@@ -14990,14 +15449,18 @@ class AsoGestionaUserCall {
 }
 
 class DespAutorNoticiasCall {
-  static Future<ApiCallResponse> call() async {
+  static Future<ApiCallResponse> call({
+    String? privada = '',
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'desp autor noticias',
       apiUrl:
           'https://x7sh-lgcd-5iob.f2.xano.io/api:zq5X2Mvh/noticias/desp_autor',
       callType: ApiCallType.GET,
       headers: {},
-      params: {},
+      params: {
+        'privada': privada,
+      },
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,

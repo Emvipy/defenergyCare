@@ -374,7 +374,9 @@ class _NoticiasPrivadasWidgetState extends State<NoticiasPrivadasWidget> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     FutureBuilder<ApiCallResponse>(
-                                      future: DespAutorNoticiasCall.call(),
+                                      future: DespAutorNoticiasCall.call(
+                                        privada: 'si',
+                                      ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {

@@ -222,11 +222,16 @@ class _PerfilBiometricoWidgetState extends State<PerfilBiometricoWidget> {
                                             _model.enProceso = 'si';
                                             safeSetState(() {});
                                           } else {
-                                            FFAppState().tmpPwd = '';
+                                            FFAppState().deleteBiopwd();
+                                            FFAppState().biopwd = '';
+
+                                            safeSetState(() {});
+                                            _model.pass = 'no';
+                                            _model.enProceso = 'no';
                                             safeSetState(() {});
 
                                             context.pushNamed(
-                                              'perfil_biometrico',
+                                              'perfil',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
