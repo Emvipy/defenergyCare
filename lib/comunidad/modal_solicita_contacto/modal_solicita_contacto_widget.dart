@@ -260,7 +260,7 @@ class _ModalSolicitaContactoWidgetState
                                       ParamType.int,
                                     ),
                                     'nombre': serializeParam(
-                                      widget!.grupo?.toString(),
+                                      widget!.nombre,
                                       ParamType.String,
                                     ),
                                   }.withoutNulls,
