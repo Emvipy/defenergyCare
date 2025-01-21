@@ -377,10 +377,8 @@ class _NoticiasDetalleNewWidgetState extends State<NoticiasDetalleNewWidget> {
                                   children: [
                                     Container(
                                       width: 350.0,
-                                      height: 300.0,
+                                      height: 600.0,
                                       decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
@@ -409,7 +407,7 @@ class _NoticiasDetalleNewWidgetState extends State<NoticiasDetalleNewWidget> {
                                               '-',
                                             ),
                                             width: 350.0,
-                                            height: 300.0,
+                                            height: 600.0,
                                             verticalScroll: true,
                                             horizontalScroll: false,
                                             html: true,

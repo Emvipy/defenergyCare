@@ -583,7 +583,7 @@ class _PerfilUsersAsoWidgetState extends State<PerfilUsersAsoWidget> {
                                                         child: Text(
                                                           getJsonField(
                                                             childUsersItem,
-                                                            r'''$.nombre''',
+                                                            r'''$.nombre_user''',
                                                           ).toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)

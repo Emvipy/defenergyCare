@@ -1163,6 +1163,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .headlineSmall
                                                       .override(
                                                         fontFamily: 'Open Sans',
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1324,10 +1327,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -1407,7 +1409,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -1468,7 +1470,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -2504,10 +2506,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -2563,7 +2564,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -2624,7 +2625,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -3660,10 +3661,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -3719,7 +3719,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -3780,7 +3780,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -4816,10 +4816,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -4875,7 +4874,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -4936,7 +4935,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -5971,10 +5970,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -6030,7 +6028,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -6091,7 +6089,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -6303,10 +6301,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -6362,7 +6359,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -6423,7 +6420,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -7458,10 +7455,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -7517,7 +7513,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -7578,7 +7574,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -8614,10 +8610,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -8673,7 +8668,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -8734,7 +8729,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -9770,10 +9765,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -9829,7 +9823,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -9890,7 +9884,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -10925,10 +10919,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -10984,7 +10977,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -11045,7 +11038,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -12080,10 +12073,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -12139,7 +12131,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -12200,7 +12192,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -13236,10 +13228,9 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         fontSize: 14.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
@@ -13295,7 +13286,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_up_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),
@@ -13356,7 +13347,7 @@ class _DiarioInto2WidgetState extends State<DiarioInto2Widget> {
                                                                   .keyboard_arrow_down_sharp,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .info,
+                                                                  .primaryBackground,
                                                               size: 24.0,
                                                             ),
                                                           ),

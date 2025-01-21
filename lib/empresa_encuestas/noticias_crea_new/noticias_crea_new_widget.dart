@@ -103,7 +103,7 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
 
     _model.urlYoutubeFocusNode ??= FocusNode();
 
-    _model.urlFocusNode ??= FocusNode();
+    _model.urlBotonFocusNode ??= FocusNode();
 
     _model.botonEsFocusNode ??= FocusNode();
 
@@ -1184,14 +1184,14 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                             child: Container(
                               width: 350.0,
                               child: TextFormField(
-                                controller: _model.urlTextController ??=
+                                controller: _model.urlBotonTextController ??=
                                     TextEditingController(
                                   text: EmpresaNoticiaIndividualCall.url(
                                     noticiasCreaNewEmpresaNoticiaIndividualResponse
                                         .jsonBody,
                                   ),
                                 ),
-                                focusNode: _model.urlFocusNode,
+                                focusNode: _model.urlBotonFocusNode,
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -1258,7 +1258,8 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                                 minLines: 1,
                                 cursorColor:
                                     FlutterFlowTheme.of(context).primaryText,
-                                validator: _model.urlTextControllerValidator
+                                validator: _model
+                                    .urlBotonTextControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -1783,14 +1784,14 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                                               .formatTextwithLineBreaksToXano(
                                                   _model
                                                       .tagTextController.text),
-                                          url: _model.urlYoutubeTextController
+                                          url: _model.urlBotonTextController
                                                           .text !=
                                                       null &&
-                                                  _model.urlYoutubeTextController
+                                                  _model.urlBotonTextController
                                                           .text !=
                                                       ''
                                               ? _model
-                                                  .urlYoutubeTextController.text
+                                                  .urlBotonTextController.text
                                               : 'empty',
                                           botonEs:
                                               _model.botonEsTextController.text,
@@ -1798,7 +1799,11 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                                               _model.botonEnTextController.text,
                                           urlYoutube: _model
                                               .urlYoutubeTextController.text,
-                                          privada: _model.privada,
+                                          privada: (_model.privada == 'no') ||
+                                                  (_model.privada == null ||
+                                                      _model.privada == '')
+                                              ? 'no'
+                                              : 'si',
                                         );
 
                                         _shouldSetState = true;
