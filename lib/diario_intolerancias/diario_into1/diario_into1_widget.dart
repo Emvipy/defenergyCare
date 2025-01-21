@@ -3150,6 +3150,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoCarnes =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3158,6 +3159,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoCarnes =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -3260,6 +3262,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoPescado =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3268,6 +3271,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoPescado =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -3370,6 +3374,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoMarisco =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3378,6 +3383,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoMarisco =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -3496,6 +3502,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoLacteos =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3504,6 +3511,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoLacteos =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -3612,6 +3620,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoHuevos =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3620,6 +3629,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoHuevos =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -3722,6 +3732,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoCereales =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3730,6 +3741,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoCereales =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -3848,6 +3860,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoFrutas =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3856,6 +3869,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoFrutas =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -3964,6 +3978,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoVerduras =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -3972,6 +3987,7 @@ class _DiarioInto1WidgetState extends State<DiarioInto1Widget> {
                                                   FFAppState().intoVerduras =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -4080,6 +4096,7 @@ y Hortalizas */
                                                   FFAppState().intoLegumbres =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -4088,6 +4105,7 @@ y Hortalizas */
                                                   FFAppState().intoLegumbres =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -4207,6 +4225,7 @@ y Hortalizas */
                                                   FFAppState().intoFrutosSecos =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -4215,6 +4234,7 @@ y Hortalizas */
                                                   FFAppState().intoFrutosSecos =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(
@@ -4438,6 +4458,7 @@ y Hortalizas */
                                                   FFAppState().intoBebidas =
                                                       'si';
                                                   safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.contadorComida =
                                                       _model.contadorComida +
@@ -4446,6 +4467,7 @@ y Hortalizas */
                                                   FFAppState().intoBebidas =
                                                       'no';
                                                   safeSetState(() {});
+                                                  return;
                                                 }
                                               },
                                               child: Container(

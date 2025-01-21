@@ -27,8 +27,6 @@ class ChatConversacionesModel
   Completer<ApiCallResponse>? apiRequestCompleter2;
   // Stores action output result for [Backend Call - API (chat gestiona invitaciones)] action in IconButton widget.
   ApiCallResponse? apiResult5344444;
-  // Stores action output result for [Backend Call - API (chat actualiza leidos)] action in CircleImage widget.
-  ApiCallResponse? apiResultx2k;
   // Stores action output result for [Backend Call - API (chat actualiza leidos)] action in Text widget.
   ApiCallResponse? apiResultx2kr;
   // Model for menu_usuario component.

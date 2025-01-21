@@ -16989,7 +16989,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'General',
     },
     'tjdc0tsq': {
-      'es': 'OA',
+      'es': 'EA',
       'en': 'OA',
     },
     '5oh444nx': {
@@ -17001,7 +17001,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'General',
     },
     'wi7s7ve4': {
-      'es': 'SA',
+      'es': 'IA',
       'en': 'SA',
     },
     'yes6msl0': {

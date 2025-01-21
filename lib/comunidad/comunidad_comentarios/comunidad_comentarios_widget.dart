@@ -1276,11 +1276,11 @@ class _ComunidadComentariosWidgetState
                                                                                       ),
                                                                                       nombreContacto: getJsonField(
                                                                                         childComentariosItem,
-                                                                                        r'''$.nombre''',
+                                                                                        r'''$._user.nombre''',
                                                                                       ).toString(),
                                                                                       apellidosContacto: getJsonField(
                                                                                         childComentariosItem,
-                                                                                        r'''$.apellidos''',
+                                                                                        r'''$._user.apellidos''',
                                                                                       ).toString(),
                                                                                       grupo: widget!.grupo!,
                                                                                       nombre: widget!.nombre!,

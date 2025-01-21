@@ -382,8 +382,8 @@ class _ModalAdjuntosWidgetState extends State<ModalAdjuntosWidget>
                                 final selectedMedia =
                                     await selectMediaWithSourceBottomSheet(
                                   context: context,
-                                  maxWidth: 300.00,
-                                  maxHeight: 200.00,
+                                  maxWidth: 600.00,
+                                  maxHeight: 400.00,
                                   allowPhoto: true,
                                 );
                                 if (selectedMedia != null &&

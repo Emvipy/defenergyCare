@@ -692,118 +692,47 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                           mainAxisSize:
                                                               MainAxisSize.max,
                                                           children: [
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Container(
-                                                                width: 52.0,
-                                                                height: 52.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  shape: BoxShape
-                                                                      .circle,
-                                                                  border: Border
-                                                                      .all(
+                                                            if (functions
+                                                                    .parseJsonValueToInteger(
+                                                                        getJsonField(
+                                                                      childMisConversacionesItem,
+                                                                      r'''$._user_receptor.perfil_id''',
+                                                                    ))
+                                                                    .toString() ==
+                                                                '1')
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 45.0,
+                                                                  height: 45.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .secondary,
+                                                                        .secondaryBackground,
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    unawaited(
-                                                                      () async {
-                                                                        _model.apiResultx2k =
-                                                                            await ChatActualizaLeidosCall.call(
-                                                                          authToken:
-                                                                              FFAppState().authToken,
-                                                                          conversacionId:
-                                                                              getJsonField(
-                                                                            childMisConversacionesItem,
-                                                                            r'''$.id''',
-                                                                          ),
-                                                                        );
-                                                                      }(),
-                                                                    );
-
-                                                                    context
-                                                                        .pushNamed(
-                                                                      'chat_mensajes',
-                                                                      queryParameters:
-                                                                          {
-                                                                        'nombre':
-                                                                            serializeParam(
-                                                                          FFAppState().xUserId ==
-                                                                                  functions.parseJsonValueToInteger(getJsonField(
-                                                                                    childMisConversacionesItem,
-                                                                                    r'''$.user_creador''',
-                                                                                  ))
-                                                                              ? getJsonField(
-                                                                                  childMisConversacionesItem,
-                                                                                  r'''$.titulo_receptor''',
-                                                                                ).toString()
-                                                                              : getJsonField(
-                                                                                  childMisConversacionesItem,
-                                                                                  r'''$.titulo_creador''',
-                                                                                ).toString(),
-                                                                          ParamType
-                                                                              .String,
-                                                                        ),
-                                                                        'conversacionId':
-                                                                            serializeParam(
-                                                                          getJsonField(
-                                                                            childMisConversacionesItem,
-                                                                            r'''$.id''',
-                                                                          ),
-                                                                          ParamType
-                                                                              .int,
-                                                                        ),
-                                                                      }.withoutNulls,
-                                                                      extra: <String,
-                                                                          dynamic>{
-                                                                        kTransitionInfoKey:
-                                                                            TransitionInfo(
-                                                                          hasTransition:
-                                                                              true,
-                                                                          transitionType:
-                                                                              PageTransitionType.fade,
-                                                                        ),
-                                                                      },
-                                                                    );
-
-                                                                    FFAppState()
-                                                                            .activarCargaChat =
-                                                                        'si';
-                                                                    safeSetState(
-                                                                        () {});
-
-                                                                    safeSetState(
-                                                                        () {});
-                                                                  },
                                                                   child:
                                                                       Container(
-                                                                    width: 50.0,
+                                                                    width:
+                                                                        200.0,
                                                                     height:
-                                                                        50.0,
+                                                                        200.0,
                                                                     clipBehavior:
                                                                         Clip.antiAlias,
                                                                     decoration:
@@ -875,7 +804,104 @@ class _ChatConversacionesWidgetState extends State<ChatConversacionesWidget> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ),
+                                                            if (functions
+                                                                    .parseJsonValueToInteger(
+                                                                        getJsonField(
+                                                                      childMisConversacionesItem,
+                                                                      r'''$._user_receptor.perfil_id''',
+                                                                    ))
+                                                                    .toString() !=
+                                                                '1')
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 45.0,
+                                                                  height: 27.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .rectangle,
+                                                                  ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      () {
+                                                                        if ((FFAppState().xUserId ==
+                                                                                functions.parseJsonValueToInteger(getJsonField(
+                                                                                  childMisConversacionesItem,
+                                                                                  r'''$.user_creador''',
+                                                                                ))) &&
+                                                                            (functions
+                                                                                    .parseJsonValueToInteger(getJsonField(
+                                                                                      childMisConversacionesItem,
+                                                                                      r'''$._user_receptor.perfil_id''',
+                                                                                    ))
+                                                                                    .toString() ==
+                                                                                '1')) {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_receptor.avatar.url''',
+                                                                          ).toString();
+                                                                        } else if ((FFAppState().xUserId ==
+                                                                                functions.parseJsonValueToInteger(getJsonField(
+                                                                                  childMisConversacionesItem,
+                                                                                  r'''$.user_creador''',
+                                                                                ))) &&
+                                                                            (functions
+                                                                                    .parseJsonValueToInteger(getJsonField(
+                                                                                      childMisConversacionesItem,
+                                                                                      r'''$._user_receptor.perfil_id''',
+                                                                                    ))
+                                                                                    .toString() !=
+                                                                                '1')) {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_receptor.insignia.url''',
+                                                                          ).toString();
+                                                                        } else if ((FFAppState().xUserId ==
+                                                                                functions.parseJsonValueToInteger(getJsonField(
+                                                                                  childMisConversacionesItem,
+                                                                                  r'''$.user_receptor''',
+                                                                                ))) &&
+                                                                            (functions
+                                                                                    .parseJsonValueToInteger(getJsonField(
+                                                                                      childMisConversacionesItem,
+                                                                                      r'''$._user_creador.perfil_id''',
+                                                                                    ))
+                                                                                    .toString() ==
+                                                                                '1')) {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_creador.avatar.url''',
+                                                                          ).toString();
+                                                                        } else {
+                                                                          return getJsonField(
+                                                                            childMisConversacionesItem,
+                                                                            r'''$._user_creador.insignia.url''',
+                                                                          ).toString();
+                                                                        }
+                                                                      }(),
+                                                                      width:
+                                                                          45.0,
+                                                                      height:
+                                                                          27.0,
+                                                                      fit: BoxFit
+                                                                          .contain,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
                                                             Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional

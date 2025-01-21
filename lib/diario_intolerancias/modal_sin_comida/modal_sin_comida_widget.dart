@@ -140,6 +140,8 @@ class _ModalSinComidaWidgetState extends State<ModalSinComidaWidget> {
                               return 'el desayuno?';
                             } else if (FFAppState().momento == 2) {
                               return 'la comida?';
+                            } else if (FFAppState().momento == 3) {
+                              return 'la merienda?';
                             } else {
                               return 'la cena?';
                             }
@@ -175,6 +177,8 @@ class _ModalSinComidaWidgetState extends State<ModalSinComidaWidget> {
                               return 'breakfast?';
                             } else if (FFAppState().momento == 2) {
                               return 'for lunch?';
+                            } else if (FFAppState().momento == 3) {
+                              return 'at the afternoon snack?';
                             } else {
                               return 'dinner?';
                             }

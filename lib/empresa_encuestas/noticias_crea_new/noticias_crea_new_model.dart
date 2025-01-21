@@ -62,10 +62,10 @@ class NoticiasCreaNewModel extends FlutterFlowModel<NoticiasCreaNewWidget> {
   FocusNode? urlYoutubeFocusNode;
   TextEditingController? urlYoutubeTextController;
   String? Function(BuildContext, String?)? urlYoutubeTextControllerValidator;
-  // State field(s) for url widget.
-  FocusNode? urlFocusNode;
-  TextEditingController? urlTextController;
-  String? Function(BuildContext, String?)? urlTextControllerValidator;
+  // State field(s) for url_boton widget.
+  FocusNode? urlBotonFocusNode;
+  TextEditingController? urlBotonTextController;
+  String? Function(BuildContext, String?)? urlBotonTextControllerValidator;
   // State field(s) for botonEs widget.
   FocusNode? botonEsFocusNode;
   TextEditingController? botonEsTextController;
@@ -111,8 +111,8 @@ class NoticiasCreaNewModel extends FlutterFlowModel<NoticiasCreaNewWidget> {
     urlYoutubeFocusNode?.dispose();
     urlYoutubeTextController?.dispose();
 
-    urlFocusNode?.dispose();
-    urlTextController?.dispose();
+    urlBotonFocusNode?.dispose();
+    urlBotonTextController?.dispose();
 
     botonEsFocusNode?.dispose();
     botonEsTextController?.dispose();
