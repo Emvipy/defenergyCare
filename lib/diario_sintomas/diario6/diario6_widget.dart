@@ -679,6 +679,7 @@ Medicamentos */
                                     onPressed: (_model.contador < 2)
                                         ? null
                                         : () async {
+                                            var _shouldSetState = false;
                                             _model.apiP6 =
                                                 await DiarioSeisCall.call(
                                               authToken: FFAppState().authToken,
@@ -694,6 +695,7 @@ Medicamentos */
                                                   FFAppState().editandoDiario,
                                             );
 
+                                            _shouldSetState = true;
                                             if ((FFAppState().diarioMed1 == 'si') ||
                                                 (FFAppState().diarioMed2 ==
                                                     'si') ||
@@ -706,6 +708,7 @@ Medicamentos */
                                                     FFAppState().authToken,
                                               );
 
+                                              _shouldSetState = true;
                                               FFAppState().diarioUltimoMed1 =
                                                   DiarioUltimosMedsCall.med1(
                                                 (_model.apiUltMeds?.jsonBody ??
@@ -747,6 +750,10 @@ Medicamentos */
                                                   ),
                                                 },
                                               );
+
+                                              if (_shouldSetState)
+                                                safeSetState(() {});
+                                              return;
                                             } else {
                                               if (FFAppState().diarioMed2 ==
                                                   'si') {
@@ -762,10 +769,18 @@ Medicamentos */
                                                     ),
                                                   },
                                                 );
+
+                                                if (_shouldSetState)
+                                                  safeSetState(() {});
+                                                return;
                                               } else {
                                                 if (FFAppState().diarioVit ==
                                                     'si') {
                                                   context.pushNamed('diario9');
+
+                                                  if (_shouldSetState)
+                                                    safeSetState(() {});
+                                                  return;
                                                 } else {
                                                   _model.apiResultyly =
                                                       await DiarioFinalizaCall
@@ -774,7 +789,11 @@ Medicamentos */
                                                         FFAppState().authToken,
                                                     idDiario:
                                                         FFAppState().diarioId,
+                                                    edita: FFAppState()
+                                                        .editandoDiario,
                                                   );
+
+                                                  _shouldSetState = true;
 
                                                   context.pushNamed(
                                                     'diarioFin',
@@ -788,11 +807,16 @@ Medicamentos */
                                                       ),
                                                     },
                                                   );
+
+                                                  if (_shouldSetState)
+                                                    safeSetState(() {});
+                                                  return;
                                                 }
                                               }
                                             }
 
-                                            safeSetState(() {});
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
                                           },
                                     text: FFLocalizations.of(context).getText(
                                       '3jwtdya8' /* Continuar */,

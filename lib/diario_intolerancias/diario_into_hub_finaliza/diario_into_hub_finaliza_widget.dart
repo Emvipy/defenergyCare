@@ -63,93 +63,23 @@ class _DiarioIntoHubFinalizaWidgetState
             );
           }(),
         );
-        if (DiarioInfoSelectorCall.pantallIntoFinalizar(
-              (_model.selector?.jsonBody ?? ''),
-            ) ==
-            'p1') {
-          context.goNamed(
-            'diario_Into1',
-            queryParameters: {
-              'primerIdario': serializeParam(
-                'no',
-                ParamType.String,
-              ),
-            }.withoutNulls,
-            extra: <String, dynamic>{
-              kTransitionInfoKey: TransitionInfo(
-                hasTransition: true,
-                transitionType: PageTransitionType.fade,
-              ),
-            },
-          );
 
-          return;
-        } else {
-          if (DiarioInfoSelectorCall.pantallIntoFinalizar(
-                (_model.selector?.jsonBody ?? ''),
-              ) ==
-              'p2') {
-            context.goNamed(
-              'diario_Into2',
-              extra: <String, dynamic>{
-                kTransitionInfoKey: TransitionInfo(
-                  hasTransition: true,
-                  transitionType: PageTransitionType.fade,
-                ),
-              },
-            );
-
-            return;
-          } else {
-            if (DiarioInfoSelectorCall.pantallIntoFinalizar(
-                  (_model.selector?.jsonBody ?? ''),
-                ) ==
-                'p3') {
-              context.goNamed(
-                'diario_Into3',
-                extra: <String, dynamic>{
-                  kTransitionInfoKey: TransitionInfo(
-                    hasTransition: true,
-                    transitionType: PageTransitionType.fade,
-                  ),
-                },
-              );
-
-              return;
-            } else {
-              if (DiarioInfoSelectorCall.pantallIntoFinalizar(
-                    (_model.selector?.jsonBody ?? ''),
-                  ) ==
-                  'p4') {
-                context.goNamed(
-                  'diario_Into4',
-                  extra: <String, dynamic>{
-                    kTransitionInfoKey: TransitionInfo(
-                      hasTransition: true,
-                      transitionType: PageTransitionType.fade,
-                    ),
-                  },
-                );
-
-                return;
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      'Error última página...',
-                      style: TextStyle(
-                        color: FlutterFlowTheme.of(context).info,
-                      ),
-                    ),
-                    duration: Duration(milliseconds: 4000),
-                    backgroundColor: FlutterFlowTheme.of(context).error,
-                  ),
-                );
-                return;
-              }
-            }
-          }
-        }
+        context.pushNamed(
+          'diario_Into1',
+          queryParameters: {
+            'primerIdario': serializeParam(
+              'no',
+              ParamType.String,
+            ),
+          }.withoutNulls,
+          extra: <String, dynamic>{
+            kTransitionInfoKey: TransitionInfo(
+              hasTransition: true,
+              transitionType: PageTransitionType.fade,
+              duration: Duration(milliseconds: 0),
+            ),
+          },
+        );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(

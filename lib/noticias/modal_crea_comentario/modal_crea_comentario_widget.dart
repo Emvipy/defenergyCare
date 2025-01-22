@@ -241,10 +241,10 @@ class _ModalCreaComentarioWidgetState extends State<ModalCreaComentarioWidget> {
                                   );
 
                                   context.pushNamed(
-                                    'noticiasDetalle',
+                                    'noticiasDetalleNew',
                                     queryParameters: {
                                       'noticiasId': serializeParam(
-                                        widget!.noticiaId,
+                                        0,
                                         ParamType.int,
                                       ),
                                     }.withoutNulls,

@@ -2075,6 +2075,7 @@ efectos */
                                           _model.emp1 == '')
                                       ? null
                                       : () async {
+                                          var _shouldSetState = false;
                                           _model.apiP8 =
                                               await DiarioOchoCall.call(
                                             authToken: FFAppState().authToken,
@@ -2137,6 +2138,7 @@ efectos */
                                                 FFAppState().editandoDiario,
                                           );
 
+                                          _shouldSetState = true;
                                           if (FFAppState().diarioVit == 'si') {
                                             context.pushNamed(
                                               'diario9',
@@ -2149,12 +2151,20 @@ efectos */
                                                 ),
                                               },
                                             );
+
+                                            if (_shouldSetState)
+                                              safeSetState(() {});
+                                            return;
                                           } else {
                                             _model.apiResultyly2 =
                                                 await DiarioFinalizaCall.call(
                                               authToken: FFAppState().authToken,
                                               idDiario: FFAppState().diarioId,
+                                              edita:
+                                                  FFAppState().editandoDiario,
                                             );
+
+                                            _shouldSetState = true;
 
                                             context.pushNamed(
                                               'diarioFin',
@@ -2169,7 +2179,8 @@ efectos */
                                             );
                                           }
 
-                                          safeSetState(() {});
+                                          if (_shouldSetState)
+                                            safeSetState(() {});
                                         },
                                   text: FFLocalizations.of(context).getText(
                                     'lvzdyqvs' /* Continuar */,
@@ -2293,6 +2304,7 @@ efectos */
                                           await DiarioFinalizaCall.call(
                                         authToken: FFAppState().authToken,
                                         idDiario: FFAppState().diarioId,
+                                        edita: FFAppState().editandoDiario,
                                       );
 
                                       _shouldSetState = true;

@@ -98,22 +98,33 @@ class _NoticiasTextoWidgetState extends State<NoticiasTextoWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                  child: Container(
-                    width: 350.0,
-                    height: 460.0,
-                    child: custom_widgets.RichTextEditor(
+                Container(
+                  width: 350.0,
+                  height: 460.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).blancoPerm,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                    child: Container(
                       width: 350.0,
                       height: 460.0,
-                      darkMode:
-                          (Theme.of(context).brightness == Brightness.dark) ==
-                                  true
-                              ? true
-                              : false,
-                      spellCheck: false,
-                      hint: FFLocalizations.of(context).getText(
-                        'qwv0de1r' /* Escribe tu noticia aquí... */,
+                      child: custom_widgets.RichTextEditor(
+                        width: 350.0,
+                        height: 460.0,
+                        darkMode:
+                            (Theme.of(context).brightness == Brightness.dark) ==
+                                    true
+                                ? true
+                                : false,
+                        spellCheck: false,
+                        editorBackgroundColor:
+                            FlutterFlowTheme.of(context).blancoPerm,
+                        hint: FFLocalizations.of(context).getText(
+                          'qwv0de1r' /* Escribe tu noticia aquí... */,
+                        ),
                       ),
                     ),
                   ),
@@ -137,66 +148,30 @@ class _NoticiasTextoWidgetState extends State<NoticiasTextoWidget> {
 
                         _shouldSetState = true;
                         if ((_model.apicargaTexto?.succeeded ?? true)) {
-                          if (widget!.idioma == 'es') {
-                            FFAppState().textES = FFAppState().HTMLMessage;
-                            safeSetState(() {});
-
-                            context.goNamed(
-                              'noticiasCreaNew',
-                              queryParameters: {
-                                'noticiaId': serializeParam(
-                                  widget!.noticiaId,
-                                  ParamType.int,
-                                ),
-                                'edita': serializeParam(
-                                  widget!.edita,
-                                  ParamType.String,
-                                ),
-                                'recargar': serializeParam(
-                                  'si',
-                                  ParamType.String,
-                                ),
-                              }.withoutNulls,
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
-                          } else {
-                            FFAppState().textEN = FFAppState().HTMLMessage;
-                            safeSetState(() {});
-
-                            context.goNamed(
-                              'noticiasCreaNew',
-                              queryParameters: {
-                                'noticiaId': serializeParam(
-                                  widget!.noticiaId,
-                                  ParamType.int,
-                                ),
-                                'edita': serializeParam(
-                                  widget!.edita,
-                                  ParamType.String,
-                                ),
-                                'recargar': serializeParam(
-                                  'si',
-                                  ParamType.String,
-                                ),
-                              }.withoutNulls,
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 0),
-                                ),
-                              },
-                            );
-                          }
-
-                          if (_shouldSetState) safeSetState(() {});
-                          return;
+                          context.goNamed(
+                            'noticiasCreaNew',
+                            queryParameters: {
+                              'noticiaId': serializeParam(
+                                widget!.noticiaId,
+                                ParamType.int,
+                              ),
+                              'edita': serializeParam(
+                                widget!.edita,
+                                ParamType.String,
+                              ),
+                              'recargar': serializeParam(
+                                'si',
+                                ParamType.String,
+                              ),
+                            }.withoutNulls,
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.fade,
+                                duration: Duration(milliseconds: 0),
+                              ),
+                            },
+                          );
                         } else {
                           if (_shouldSetState) safeSetState(() {});
                           return;
