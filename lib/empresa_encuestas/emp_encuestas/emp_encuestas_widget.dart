@@ -179,7 +179,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .negroPerm,
+                                              .primaryText,
                                           fontSize: 13.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
@@ -220,7 +220,7 @@ class _EmpEncuestasWidgetState extends State<EmpEncuestasWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .negroPerm,
+                                              .primaryText,
                                           fontSize: 13.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,

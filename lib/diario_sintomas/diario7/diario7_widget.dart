@@ -2064,6 +2064,8 @@ efectos */
                                                 authToken:
                                                     FFAppState().authToken,
                                                 idDiario: FFAppState().diarioId,
+                                                edita:
+                                                    FFAppState().editandoDiario,
                                               );
 
                                               context.pushNamed(
@@ -2221,6 +2223,7 @@ efectos */
                                             await DiarioFinalizaCall.call(
                                           authToken: FFAppState().authToken,
                                           idDiario: FFAppState().diarioId,
+                                          edita: FFAppState().editandoDiario,
                                         );
 
                                         _shouldSetState = true;

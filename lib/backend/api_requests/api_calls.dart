@@ -2486,10 +2486,12 @@ class DiarioFinalizaCall {
   static Future<ApiCallResponse> call({
     String? authToken = '',
     int? idDiario,
+    String? edita = '',
   }) async {
     final ffApiRequestBody = '''
 {
-  "id_diario": ${idDiario}
+  "id_diario": ${idDiario},
+  "edita": "${edita}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'diario finaliza',
@@ -13990,6 +13992,7 @@ class EmpresaEditaNewsCall {
     String? botonEn = '',
     String? urlYoutube = '',
     String? privada = '',
+    String? esFin = '',
   }) async {
     final ffApiRequestBody = '''
 {
@@ -14005,7 +14008,8 @@ class EmpresaEditaNewsCall {
   "boton_es": "${botonEs}",
   "boton_en": "${botonEn}",
   "url_youtube": "${urlYoutube}",
-  "privada": "${privada}"
+  "privada": "${privada}",
+  "es_fin": "${esFin}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'empresa edita news',

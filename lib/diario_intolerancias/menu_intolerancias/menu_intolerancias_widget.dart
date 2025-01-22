@@ -763,6 +763,10 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        FFAppState().intoPlatoId = 0;
+                                        FFAppState().intoBebidaId = 0;
+                                        safeSetState(() {});
+
                                         context.pushNamed(
                                           'diarioIntoCargaDesplegablesEdita',
                                           queryParameters: {
@@ -791,9 +795,6 @@ class _MenuIntoleranciasWidgetState extends State<MenuIntoleranciasWidget> {
                                             );
                                           }(),
                                         );
-                                        FFAppState().intoPlatoId = 0;
-                                        FFAppState().intoBebidaId = 0;
-                                        safeSetState(() {});
                                       },
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,

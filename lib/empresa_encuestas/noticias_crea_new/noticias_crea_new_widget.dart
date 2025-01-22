@@ -726,23 +726,33 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                               ],
                             ),
                           ),
-                        if (FFAppState().textES != null &&
-                            FFAppState().textES != '')
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
-                              child: FlutterFlowWebView(
-                                content: FFAppState().textES,
-                                width: 350.0,
-                                height: 200.0,
-                                verticalScroll: true,
-                                horizontalScroll: false,
-                                html: true,
+                        Container(
+                          width: 350.0,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).blancoPerm,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Visibility(
+                            visible: FFAppState().textES != null &&
+                                FFAppState().textES != '',
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: FlutterFlowWebView(
+                                  content: FFAppState().textES,
+                                  width: 350.0,
+                                  height: 200.0,
+                                  verticalScroll: true,
+                                  horizontalScroll: false,
+                                  html: true,
+                                ),
                               ),
                             ),
                           ),
+                        ),
                         if (FFAppState().textES != null &&
                             FFAppState().textES != '')
                           Padding(
@@ -809,23 +819,33 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                               ],
                             ),
                           ),
-                        if (FFAppState().textEN != null &&
-                            FFAppState().textEN != '')
-                          Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 0.0),
-                              child: FlutterFlowWebView(
-                                content: FFAppState().textEN,
-                                width: 350.0,
-                                height: 200.0,
-                                verticalScroll: true,
-                                horizontalScroll: false,
-                                html: true,
+                        Container(
+                          width: 350.0,
+                          height: 200.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).blancoPerm,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Visibility(
+                            visible: FFAppState().textEN != null &&
+                                FFAppState().textEN != '',
+                            child: Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: FlutterFlowWebView(
+                                  content: FFAppState().textEN,
+                                  width: 350.0,
+                                  height: 200.0,
+                                  verticalScroll: true,
+                                  horizontalScroll: false,
+                                  html: true,
+                                ),
                               ),
                             ),
                           ),
+                        ),
                         if (FFAppState().textEN != null &&
                             FFAppState().textEN != '')
                           Padding(
@@ -1804,6 +1824,7 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                                                       _model.privada == '')
                                               ? 'no'
                                               : 'si',
+                                          esFin: 'si',
                                         );
 
                                         _shouldSetState = true;

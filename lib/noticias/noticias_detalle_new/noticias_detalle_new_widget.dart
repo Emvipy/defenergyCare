@@ -379,6 +379,8 @@ class _NoticiasDetalleNewWidgetState extends State<NoticiasDetalleNewWidget> {
                                       width: 350.0,
                                       height: 600.0,
                                       decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .blancoPerm,
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),
