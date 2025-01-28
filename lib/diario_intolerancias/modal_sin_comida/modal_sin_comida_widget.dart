@@ -216,7 +216,7 @@ class _ModalSinComidaWidgetState extends State<ModalSinComidaWidget> {
                                 0.0, 0.0, 0.0, 20.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                if (FFAppState().momento < 3) {
+                                if (FFAppState().momento < 4) {
                                   FFAppState().momento =
                                       FFAppState().momento + 1;
                                   FFAppState().mostrarAyer = 'no';
