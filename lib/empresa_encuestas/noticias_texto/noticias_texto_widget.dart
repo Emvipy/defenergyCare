@@ -148,6 +148,14 @@ class _NoticiasTextoWidgetState extends State<NoticiasTextoWidget> {
 
                         _shouldSetState = true;
                         if ((_model.apicargaTexto?.succeeded ?? true)) {
+                          if (widget!.idioma == 'es') {
+                            FFAppState().textES = FFAppState().HTMLMessage;
+                            safeSetState(() {});
+                          } else {
+                            FFAppState().textEN = FFAppState().HTMLMessage;
+                            safeSetState(() {});
+                          }
+
                           context.goNamed(
                             'noticiasCreaNew',
                             queryParameters: {
@@ -172,6 +180,9 @@ class _NoticiasTextoWidgetState extends State<NoticiasTextoWidget> {
                               ),
                             },
                           );
+
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
                         } else {
                           if (_shouldSetState) safeSetState(() {});
                           return;

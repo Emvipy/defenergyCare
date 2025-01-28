@@ -33,7 +33,7 @@ class NoticiasCreaNewModel extends FlutterFlowModel<NoticiasCreaNewWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - API (noticia individual)] action in noticiasCreaNew widget.
-  ApiCallResponse? apiCargaNoticiaCopy;
+  ApiCallResponse? apiCargaNoticiaText;
   // State field(s) for tituloEs widget.
   FocusNode? tituloEsFocusNode;
   TextEditingController? tituloEsTextController;

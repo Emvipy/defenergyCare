@@ -50,14 +50,21 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.apiCargaNoticiaCopy = await NoticiaIndividualCall.call(
+      _model.apiCargaNoticiaText = await NoticiaIndividualCall.call(
         noticiasId: FFAppState().noticiaId,
         authToken: FFAppState().authToken,
       );
 
-      if ((_model.apiCargaNoticiaCopy?.succeeded ?? true)) {
+      if ((_model.apiCargaNoticiaText?.succeeded ?? true)) {
         _model.privada = NoticiaIndividualCall.privado(
-          (_model.apiCargaNoticiaCopy?.jsonBody ?? ''),
+          (_model.apiCargaNoticiaText?.jsonBody ?? ''),
+        )!;
+        safeSetState(() {});
+        FFAppState().textES = NoticiaIndividualCall.texto1es(
+          (_model.apiCargaNoticiaText?.jsonBody ?? ''),
+        )!;
+        FFAppState().textEN = NoticiaIndividualCall.texto1en(
+          (_model.apiCargaNoticiaText?.jsonBody ?? ''),
         )!;
         safeSetState(() {});
         if (FFAppState().avisoIdiomas == 'si') {
@@ -669,6 +676,7 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                                           _model.botonEsTextController.text,
                                       botonEn:
                                           _model.botonEnTextController.text,
+                                      esFin: 'no',
                                     );
 
                                     _shouldSetState = true;
@@ -726,16 +734,15 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                               ],
                             ),
                           ),
-                        Container(
-                          width: 350.0,
-                          height: 200.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).blancoPerm,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Visibility(
-                            visible: FFAppState().textES != null &&
-                                FFAppState().textES != '',
+                        if (FFAppState().textES != null &&
+                            FFAppState().textES != '')
+                          Container(
+                            width: 350.0,
+                            height: 200.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).blancoPerm,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
                             child: Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
@@ -752,7 +759,6 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                               ),
                             ),
                           ),
-                        ),
                         if (FFAppState().textES != null &&
                             FFAppState().textES != '')
                           Padding(
@@ -819,16 +825,15 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                               ],
                             ),
                           ),
-                        Container(
-                          width: 350.0,
-                          height: 200.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).blancoPerm,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Visibility(
-                            visible: FFAppState().textEN != null &&
-                                FFAppState().textEN != '',
+                        if (FFAppState().textEN != null &&
+                            FFAppState().textEN != '')
+                          Container(
+                            width: 350.0,
+                            height: 200.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).blancoPerm,
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
                             child: Align(
                               alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
@@ -845,7 +850,6 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                               ),
                             ),
                           ),
-                        ),
                         if (FFAppState().textEN != null &&
                             FFAppState().textEN != '')
                           Padding(
@@ -963,6 +967,7 @@ class _NoticiasCreaNewWidgetState extends State<NoticiasCreaNewWidget> {
                                           _model.botonEsTextController.text,
                                       botonEn:
                                           _model.botonEnTextController.text,
+                                      esFin: 'no',
                                     );
 
                                     _shouldSetState = true;
